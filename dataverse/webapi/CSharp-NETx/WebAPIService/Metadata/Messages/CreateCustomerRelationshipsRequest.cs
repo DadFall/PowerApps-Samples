@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to create a new customer lookup attribute, and optionally, to add it to a specified unmanaged solution.
-    /// </summary>
+        /// Contains the data to create a new customer lookup attribute, and optionally, to add it to a specified unmanaged solution.
+        /// </summary>
     public sealed class CreateCustomerRelationshipsRequest : HttpRequestMessage
     {
         /// <summary>

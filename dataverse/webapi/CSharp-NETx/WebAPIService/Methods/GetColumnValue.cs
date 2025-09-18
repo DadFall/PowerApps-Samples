@@ -8,7 +8,7 @@ namespace PowerApps.Samples.Methods
         /// Retrieves a single column value from a table.
         /// </summary>
         /// <typeparam name="T">The type of the value</typeparam>
-        /// <param name="service">The service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityReference">A reference to the record.</param>
         /// <param name="property">The name of the column.</param>
         /// <returns></returns>

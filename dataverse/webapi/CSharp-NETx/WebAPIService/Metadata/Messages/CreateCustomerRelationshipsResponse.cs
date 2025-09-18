@@ -8,8 +8,8 @@ namespace PowerApps.Samples.Metadata.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response to the CreateCustomerRelationshipsRequest
-    /// </summary>
+        /// Contains the response to the CreateCustomerRelationshipsRequest
+        /// </summary>
     public sealed class CreateCustomerRelationshipsResponse : HttpResponseMessage
     {
         // Cache the async content

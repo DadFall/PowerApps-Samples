@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve the count of a collection up to 5000.
-    /// </summary>
+        /// Contains the data to retrieve the count of a collection up to 5000.
+        /// </summary>
     public sealed class GetCollectionCountRequest : HttpRequestMessage
     {
         /// <summary>

@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to commits the uploaded data blocks to the File store.
-    /// </summary>
+        /// Contains the data to commits the uploaded data blocks to the File store.
+        /// </summary>
     public sealed class CommitFileBlocksUploadRequest : HttpRequestMessage
     {
         /// <summary>

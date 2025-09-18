@@ -8,8 +8,8 @@ namespace PowerApps.Samples.Metadata.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the GetValidReferencingEntitiesRequest
-    /// </summary>
+        /// Contains the response from the GetValidReferencingEntitiesRequest
+        /// </summary>
     public sealed class GetValidReferencingEntitiesResponse : HttpResponseMessage
     {
         // Cache the async content

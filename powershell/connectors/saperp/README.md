@@ -15,7 +15,7 @@ See the `Get-Help .\saperp-opdg-check.ps1 -Detailed` for specific parameter info
   -sapCclIniPath c:\sapcryptolib\sapcrypto.ini
 ```
 
-# Prerequisites
+# 先决条件
 1. Powershell (Run as Administrator)
 2. [Active Directory Remote Power Shell module](https://go.microsoft.com/fwlink/?linkid=2243545)
 

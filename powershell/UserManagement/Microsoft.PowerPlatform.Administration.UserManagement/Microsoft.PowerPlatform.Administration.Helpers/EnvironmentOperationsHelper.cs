@@ -1,5 +1,5 @@
-﻿// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
+﻿// 版权所有 (c) 微软公司。
+// 根据 MIT 许可证授权。
 
 using Microsoft.Xrm.Sdk.Discovery;
 using Microsoft.Xrm.Tooling.Connector;
@@ -282,8 +282,8 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
     }
 
     /// <summary>
-    /// Cloud information for Discovery service.
-    /// </summary>
+        /// Cloud information for Discovery service.
+        /// </summary>
     public enum Cloud
     {
         Unknown,

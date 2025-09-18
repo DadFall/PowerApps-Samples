@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve a global optionset (choice)
-    /// </summary>
+        /// Contains the data to retrieve a global optionset (choice)
+        /// </summary>
     public sealed class RetrieveGlobalOptionSetRequest : HttpRequestMessage
     {
         /// <summary>

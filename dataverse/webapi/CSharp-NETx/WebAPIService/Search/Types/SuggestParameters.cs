@@ -3,25 +3,25 @@
 namespace PowerApps.Samples.Search.Types;
 
 /// <summary>
-/// Data contract for suggest request to Dataverse Search api. 
-/// </summary>
+        /// Data contract for suggest request to Dataverse Search api. 
+        /// </summary>
 public sealed class SuggestParameters
 {
     /// <summary>
-    /// Gets or sets the search terms.
-    /// </summary>
+        /// Gets or sets the search terms.
+        /// </summary>
     [DataMember(Name = "search", IsRequired = true)]
     public string Search { get; set; }
 
     /// <summary>
-    /// Gets or sets list of entities to scope the suggest query by listing the tables and their search columns, select columns and filters.
-    /// </summary>
+        /// Gets or sets list of entities to scope the suggest query by listing the tables and their search columns, select columns and filters.
+        /// </summary>
     [DataMember(Name = "entities")]
     public List<SearchEntity> Entities { get; set; }
 
     /// <summary>
-    /// Gets or sets the common filters applied on the request.
-    /// </summary>
+        /// Gets or sets the common filters applied on the request.
+        /// </summary>
     [DataMember(Name = "filter")]
     public string Filter { get; set; }
 
@@ -48,8 +48,8 @@ public sealed class SuggestParameters
     public List<string> OrderBy { get; set; }
 
     /// <summary>
-    /// Gets or sets the number of suggest results to be retrieved. 
-    /// </summary>
+        /// Gets or sets the number of suggest results to be retrieved. 
+        /// </summary>
     [DataMember(Name = "top")]
     public int Top { get; set; }
 }

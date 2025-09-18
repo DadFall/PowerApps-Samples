@@ -4,8 +4,8 @@ using Newtonsoft.Json.Linq;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to commits the uploaded data blocks to the annotation store.
-    /// </summary>
+        /// Contains the data to commits the uploaded data blocks to the annotation store.
+        /// </summary>
     public sealed class CommitAnnotationBlocksUploadRequest : HttpRequestMessage
     {
         /// <summary>

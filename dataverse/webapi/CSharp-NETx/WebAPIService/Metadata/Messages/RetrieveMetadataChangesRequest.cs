@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve schema data and changes over time.
-    /// </summary>
+        /// Contains the data to retrieve schema data and changes over time.
+        /// </summary>
     public sealed class RetrieveMetadataChangesRequest : HttpRequestMessage
     {
         private string _uri = string.Empty;

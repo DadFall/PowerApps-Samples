@@ -4,8 +4,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve the ComplexEntityMetadata for a table definition.
-    /// </summary>
+        /// Contains the data to retrieve the ComplexEntityMetadata for a table definition.
+        /// </summary>
     public sealed class RetrieveEntityRequest : HttpRequestMessage
     {
         // This uses the RetrieveEntity Function

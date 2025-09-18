@@ -5,8 +5,8 @@
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the DownloadAnnotationFileRequest.
-    /// </summary>
+        /// Contains the data from the DownloadAnnotationFileRequest.
+        /// </summary>
     public sealed class DownloadAnnotationFileResponse : HttpResponseMessage
     {
         /// <summary>

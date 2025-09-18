@@ -8,8 +8,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the GetColumnValueRequest.
-    /// </summary>
+        /// Contains the data from the GetColumnValueRequest.
+        /// </summary>
     /// <typeparam name="T"></typeparam>
     public sealed class GetColumnValueResponse<T> : HttpResponseMessage
     {

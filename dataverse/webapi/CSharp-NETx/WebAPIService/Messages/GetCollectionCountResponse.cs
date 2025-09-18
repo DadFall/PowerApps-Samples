@@ -5,8 +5,8 @@
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the GetCollectionCountRequest
-    /// </summary>
+        /// Contains the response from the GetCollectionCountRequest
+        /// </summary>
     public sealed class GetCollectionCountResponse : HttpResponseMessage
     {
         /// <summary>

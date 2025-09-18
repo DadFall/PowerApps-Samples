@@ -9,8 +9,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the RetrieveCurrentOrganizationRequest 
-    /// </summary>
+        /// Contains the response from the RetrieveCurrentOrganizationRequest 
+        /// </summary>
     public sealed class RetrieveCurrentOrganizationResponse : HttpResponseMessage
     {
 

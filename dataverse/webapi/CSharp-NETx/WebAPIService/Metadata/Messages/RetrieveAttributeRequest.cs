@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve a column definition
-    /// </summary>
+        /// Contains the data to retrieve a column definition
+        /// </summary>
     public sealed class RetrieveAttributeRequest : HttpRequestMessage
     {
         private string _entityLogicalName;

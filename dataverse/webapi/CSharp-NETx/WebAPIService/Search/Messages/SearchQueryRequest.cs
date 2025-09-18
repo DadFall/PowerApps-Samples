@@ -5,8 +5,8 @@ using PowerApps.Samples.Search.Types;
 namespace PowerApps.Samples.Search.Messages
 {
     /// <summary>
-    /// Contains the data to send a searchquery request
-    /// </summary>
+        /// Contains the data to send a searchquery request
+        /// </summary>
     public sealed class SearchQueryRequest : HttpRequestMessage
     {
         private int? _top;

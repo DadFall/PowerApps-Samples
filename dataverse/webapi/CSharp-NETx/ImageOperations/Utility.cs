@@ -5,14 +5,14 @@ using PowerApps.Samples.Metadata.Types;
 namespace ImageOperations
 {
     /// <summary>
-    /// Contains methods to work with ImageAttributeMetadata to support ImageOperations sample.
-    /// </summary>
+        /// Contains methods to work with ImageAttributeMetadata to support ImageOperations sample.
+        /// </summary>
     internal class Utility
     {
         /// <summary>
         /// Creates an image column if it doesn't already exist.
         /// </summary>
-        /// <param name="service">The service.</param>
+        /// <param name="service">服务.</param>
         /// <param name="entityLogicalName">The logical name of the table to create the image column in.</param>
         /// <param name="imageColumnSchemaName">The schema name of the image column.</param>
         /// <param name="maxSizeInKb">The maximum size of image the column will store.</param>
@@ -72,7 +72,7 @@ namespace ImageOperations
         /// <summary>
         /// Deletes an image column
         /// </summary>
-        /// <param name="service">The service.</param>
+        /// <param name="service">服务.</param>
         /// <param name="entityLogicalName">The logical name of the table the image column exists in.</param>
         /// <param name="imageColumnSchemaName">The schema name of the image column.</param>
         public static async Task DeleteImageColumn(
@@ -95,7 +95,7 @@ namespace ImageOperations
         /// <summary>
         /// Update the CanStoreFullImage for a image column
         /// </summary>
-        /// <param name="service">The service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityLogicalName">The logical name of the table that has the column.</param>
         /// <param name="imageColumnSchemaName">The logical name of the image column.</param>
         /// <param name="canStoreFullImage">The new value for CanStoreFullImage</param>
@@ -129,7 +129,7 @@ namespace ImageOperations
         /// <summary>
         /// Gets the name of the primary image column for the table
         /// </summary>
-        /// <param name="service">The service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityLogicalName">The logical name of the table that has the column.</param>
         /// <returns>The EntityMetadata.PrimaryImageAttribute value.</returns>
         public static async Task<string> GetTablePrimaryImageName(
@@ -149,7 +149,7 @@ namespace ImageOperations
         /// <summary>
         /// Set ImageAttributeMetadata IsPrimaryImage property
         /// </summary>
-        /// <param name="service">The service.</param>
+        /// <param name="service">服务.</param>
         /// <param name="entityLogicalName">The logical name of the table that has the image column.</param>
         /// <param name="imageAttributeName">The logical name of the image column.</param>
         /// <returns></returns>

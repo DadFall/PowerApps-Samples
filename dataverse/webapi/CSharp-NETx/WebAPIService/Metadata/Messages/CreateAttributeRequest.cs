@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to update a column definitions
-    /// </summary>
+        /// Contains the data to update a column definitions
+        /// </summary>
     public sealed class CreateAttributeRequest : HttpRequestMessage
     {
         /// <summary>

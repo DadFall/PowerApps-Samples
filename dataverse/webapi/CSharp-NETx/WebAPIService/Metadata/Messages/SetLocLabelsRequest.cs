@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data that is needed to set localized labels for a limited set of entity attributes.
-    /// </summary>
+        /// Contains the data that is needed to set localized labels for a limited set of entity attributes.
+        /// </summary>
     public sealed class SetLocLabelsRequest : HttpRequestMessage
     {
         /// <summary>

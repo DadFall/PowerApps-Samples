@@ -8,8 +8,8 @@ namespace PowerApps.Samples.Metadata.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the RetrieveRelationshipRequest
-    /// </summary>
+        /// Contains the response from the RetrieveRelationshipRequest
+        /// </summary>
     /// <typeparam name="T">The type of RelationshipMetadata. Either ManyToManyRelationshipMetadata or OneToManyRelationshipMetadata</typeparam>
     public sealed class RetrieveRelationshipResponse<T> : HttpResponseMessage where T : RelationshipMetadataBase
     {

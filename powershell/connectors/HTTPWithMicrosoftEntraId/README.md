@@ -1,7 +1,7 @@
 # What is this for?
 This is a helper script that is used to configure grant to the Microsoft application used by the connector "HTTP With Microsoft Entra Id"
 
-# Prerequisites
+# 先决条件
 1. Powershell 7 (Run as Administrator)
 
 # Links

@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the FormatAddressRequest
-    /// </summary>
+        /// Contains the response from the FormatAddressRequest
+        /// </summary>
     public sealed class FormatAddressResponse : HttpResponseMessage
     {
         // Cache the async content

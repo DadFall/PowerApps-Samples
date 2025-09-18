@@ -3,13 +3,13 @@
 namespace PowerApps.Samples.Search.Types;
 
 /// <summary>
-/// The query context returned as part of response.
-/// </summary>
+        /// The query context returned as part of response.
+        /// </summary>
 public sealed class QueryContext
 {
     /// <summary>
-    /// Gets or sets the query string as specified in the request.
-    /// </summary>
+        /// Gets or sets the query string as specified in the request.
+        /// </summary>
     [DataMember(Name = "originalquery")]
     public string OriginalQuery { get; set; }
 
@@ -21,8 +21,8 @@ public sealed class QueryContext
     public string AlteredQuery { get; set; }
 
     /// <summary>
-    /// Gets or sets the reason behind query alter decision by Dataverse search.
-    /// </summary>
+        /// Gets or sets the reason behind query alter decision by Dataverse search.
+        /// </summary>
     [DataMember(Name = "reason")]
     public List<string> Reason { get; set; }
 

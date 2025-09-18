@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the CommitAttachmentBlocksUploadRequest
-    /// </summary>
+        /// Contains the data from the CommitAttachmentBlocksUploadRequest
+        /// </summary>
     public sealed class CommitAttachmentBlocksUploadResponse : HttpResponseMessage
     {
 

@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to Retrieve information about the current organization.
-    /// </summary>
+        /// Contains the data to Retrieve information about the current organization.
+        /// </summary>
     public sealed class RetrieveCurrentOrganizationRequest : HttpRequestMessage
     {
 

@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to set the order of options in a Choice attribute
-    /// </summary>
+        /// Contains the data to set the order of options in a Choice attribute
+        /// </summary>
     public sealed class OrderOptionRequest : HttpRequestMessage
     {
         public OrderOptionRequest(

@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to create a record.
-    /// </summary>
+        /// Contains the data to create a record.
+        /// </summary>
     public sealed class CreateRequest : HttpRequestMessage
     {
         /// <summary>

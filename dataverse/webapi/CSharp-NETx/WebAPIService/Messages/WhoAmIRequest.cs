@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to perform the WhoAmI function
-    /// </summary>
+        /// Contains the data to perform the WhoAmI function
+        /// </summary>
     public sealed class WhoAmIRequest : HttpRequestMessage
     {
         /// <summary>

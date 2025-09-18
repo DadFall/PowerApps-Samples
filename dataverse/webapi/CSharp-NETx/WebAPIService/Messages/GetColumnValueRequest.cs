@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve a column value
-    /// </summary>
+        /// Contains the data to retrieve a column value
+        /// </summary>
     public sealed class GetColumnValueRequest : HttpRequestMessage
     {
         /// <summary>

@@ -15,7 +15,7 @@ namespace PowerApps.Samples
 
             // Azure Active Directory app registration shared by all Power App samples.
             // For your custom apps, you will need to register them with Azure AD yourself.
-            // See https://learn.microsoft.com/powerapps/developer/data-platform/walkthrough-register-app-azure-active-directory
+            // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/walkthrough-register-app-azure-active-directory
             var clientId = "51f81489-12ee-4a9e-aaae-a2591f45987d";
             var redirectUri = new Uri("app://58145B91-0C36-4500-8554-080854F2AC97");
 
@@ -25,9 +25,9 @@ namespace PowerApps.Samples
             var authContext = new AuthenticationContext(
                 "https://login.microsoftonline.com/common", false);
 
-            // Get the web service access token. Its lifetime is about one hour after
+            // 获取the web service access token. Its lifetime is about one hour after
             // which it must be refreshed. For this simple sample, no refresh is needed.
-            // See https://learn.microsoft.com/powerapps/developer/data-platform/authenticate-oauth
+            // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/authenticate-oauth
             var token = authContext.AcquireTokenAsync(
                 resource, clientId, redirectUri,
                 new PlatformParameters(
@@ -41,13 +41,13 @@ namespace PowerApps.Samples
 
             var client = new HttpClient
             {
-                // See https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors#web-api-url-and-versions
+                // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors#web-api-url-and-versions
                 BaseAddress = new Uri(resource + "/api/data/v9.2/"),
                 Timeout = new TimeSpan(0, 2, 0)    // Standard two minute timeout on web service calls.
             };
 
             // Default headers for each Web API call.
-            // See https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors#http-headers
+            // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors#http-headers
             HttpRequestHeaders headers = client.DefaultRequestHeaders;
             headers.Authorization = new AuthenticationHeaderValue("Bearer", token.AccessToken);
             headers.Add("OData-MaxVersion", "4.0");
@@ -59,8 +59,8 @@ namespace PowerApps.Samples
             #region Web API call
 
             // Invoke the Web API 'WhoAmI' unbound function.
-            // See https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors
-            // See https://learn.microsoft.com/powerapps/developer/data-platform/webapi/use-web-api-functions#unbound-functions
+            // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors
+            // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/use-web-api-functions#unbound-functions
             var response = client.GetAsync("WhoAmI").Result;
 
             if (response.IsSuccessStatusCode)

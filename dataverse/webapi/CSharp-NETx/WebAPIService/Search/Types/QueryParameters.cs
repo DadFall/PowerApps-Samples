@@ -3,19 +3,19 @@
 namespace PowerApps.Samples.Search.Types;
 
 /// <summary>
-/// Data contract for query request to Dataverse Search api. 
-/// </summary>
+        /// Data contract for query request to Dataverse Search api. 
+        /// </summary>
 public sealed class QueryParameters
 {
     /// <summary>
-    /// Gets or sets the search terms. These special characters must be escaped using '\' : + - & | ! ( ) { } [ ] ^ " ~ * ? : \ /
-    /// </summary>
+        /// Gets or sets the search terms. These special characters must be escaped using '\' : + - & | ! ( ) { } [ ] ^ " ~ * ? : \ /
+        /// </summary>
     [DataMember(Name = "search", IsRequired = true)]
     public string Search { get; set; }
 
     /// <summary>
-    /// Gets or sets list of entities to scope the search query by listing the tables and their search columns, select columns and filters.
-    /// </summary>
+        /// Gets or sets list of entities to scope the search query by listing the tables and their search columns, select columns and filters.
+        /// </summary>
     [DataMember(Name = "entities")]
     public List<SearchEntity> Entities { get; set; }
 
@@ -27,8 +27,8 @@ public sealed class QueryParameters
     public List<string> Facets { get; set; }
 
     /// <summary>
-    /// Gets or sets the common filters applied on the request.
-    /// </summary>
+        /// Gets or sets the common filters applied on the request.
+        /// </summary>
     [DataMember(Name = "filter")]
     public string Filter { get; set; }
 
@@ -60,14 +60,14 @@ public sealed class QueryParameters
     public bool Count { get; set; }
 
     /// <summary>
-    /// Gets or sets the number of search results to skip. 
-    /// </summary>
+        /// Gets or sets the number of search results to skip. 
+        /// </summary>
     [DataMember(Name = "skip")]
     public int Skip { get; set; }
 
     /// <summary>
-    /// Gets or sets the number of search results to retrieve. 
-    /// </summary>
+        /// Gets or sets the number of search results to retrieve. 
+        /// </summary>
     [DataMember(Name = "top")]
     public int Top { get; set; }
 }

@@ -9,8 +9,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the RetrieveTotalRecordCountRequest 
-    /// </summary>
+        /// Contains the response from the RetrieveTotalRecordCountRequest 
+        /// </summary>
     public sealed class RetrieveTotalRecordCountResponse : HttpResponseMessage
     {
         // Cache the async content

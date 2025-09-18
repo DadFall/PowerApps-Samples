@@ -19,7 +19,7 @@ namespace PowerApps.Samples
 
             var service = new Service(config);
 
-            // Get current MaxUploadFileSize
+            // 获取current MaxUploadFileSize
             int originalMaxUploadFileSize = await Utility.GetMaxUploadFileSize(service);
             Console.WriteLine($"Current MaxUploadFileSize: {originalMaxUploadFileSize}");
 
@@ -30,7 +30,7 @@ namespace PowerApps.Samples
 
             EntityReference accountRef = await service.Create(
                 entitySetName: "accounts",
-                record: account);// To delete later
+                record: account);// 稍后删除。
             Console.WriteLine("Created an account record to associate notes with.");
 
             // Create note
@@ -240,7 +240,7 @@ namespace PowerApps.Samples
                     blockData: buffer,
                     fileContinuationToken: fileContinuationToken);
 
-                // Send the request
+                // 发送请求
                 await service.SendAsync(uploadBlockRequest);
             }
 
@@ -291,7 +291,7 @@ namespace PowerApps.Samples
                     blockLength: blockSizeDownload, fileContinuationToken: fileContinuationToken);
 
 
-                // Send the request
+                // 发送请求
                 var downloadBlockResponse =
                            await service.SendAsync<DownloadBlockResponse>(request: downLoadBlockRequest);
 

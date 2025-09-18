@@ -97,7 +97,7 @@ namespace PowerApps.Samples
             httpClient.Timeout = TimeSpan.FromSeconds(config.TimeoutInSeconds);
             httpClient.DefaultRequestHeaders.Add("User-Agent", $"WebAPIService/{Assembly.GetExecutingAssembly().GetName().Version}");
             // Set default headers for all requests
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/webapi/compose-http-requests-handle-errors#http-headers
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/compose-http-requests-handle-errors#http-headers
             httpClient.DefaultRequestHeaders.Add("OData-MaxVersion", "4.0");
             httpClient.DefaultRequestHeaders.Add("OData-Version", "4.0");
             httpClient.DefaultRequestHeaders.TryAddWithoutValidation("If-None-Match", "null");           
@@ -123,7 +123,7 @@ namespace PowerApps.Samples
                         HttpResponseHeaders headers = response.Result.Headers;
 
                         // Use the value of the Retry-After header if it exists
-                        // See https://learn.microsoft.com/power-apps/developer/data-platform/api-limits#retry-operations
+                        // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/api-limits#retry-operations
 
                         if (headers.Contains("Retry-After"))
                         {
@@ -161,7 +161,7 @@ namespace PowerApps.Samples
         public async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request)
         {
             // Session token used by elastic tables to enable strong consistency
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#sending-the-session-token
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#sending-the-session-token
             if (!string.IsNullOrWhiteSpace(_sessionToken) && request.Method == HttpMethod.Get) {
                 request.Headers.Add("MSCRM.SessionToken", _sessionToken);
             }
@@ -169,13 +169,13 @@ namespace PowerApps.Samples
             // Set the access token using the function from the Config passed to the constructor
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", await config.GetAccessToken());
 
-            // Get the named HttpClient from the IHttpClientFactory
+            // 获取the named HttpClient from the IHttpClientFactory
             var client = GetHttpClientFactory().CreateClient(WebAPIClientName);
 
             HttpResponseMessage response = await client.SendAsync(request);
 
             // Capture the current session token value
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#getting-the-session-token
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#getting-the-session-token
             if (response.Headers.Contains("x-ms-session-token"))
             {
                 _sessionToken = response.Headers.GetValues("x-ms-session-token")?.FirstOrDefault()?.ToString();

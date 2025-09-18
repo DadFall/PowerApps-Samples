@@ -20,11 +20,11 @@ namespace BlazorCDS
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-            // Get configuration data about the Global Discovery API set in wwwroot/appsettings.json
+            // 获取configuration data about the Global Discovery API set in wwwroot/appsettings.json
             var GDSWebApiConfig = builder.Configuration.GetSection("GDSWebAPI");
             var gdsResourceUrl = "https://globaldisco.crm.dynamics.com";
 
-            // Get configuration data about the Web API set in wwwroot/appsettings.json
+            // 获取configuration data about the Web API set in wwwroot/appsettings.json
             var CDSWebApiConfig = builder.Configuration.GetSection("CDSWebAPI");
             var version = CDSWebApiConfig.GetSection("Version").Value;
             var timeoutSeconds = int.Parse(CDSWebApiConfig.GetSection("TimeoutSeconds").Value);
@@ -39,7 +39,7 @@ namespace BlazorCDS
             // Create an named definition of an HttpClient that can be created in a component page
             builder.Services.AddHttpClient("CDSClient", client =>
             {
-                // See https://learn.microsoft.com/powerapps/developer/common-data-service/webapi/compose-http-requests-handle-errors                
+                // 参见 https://learn.microsoft.com/powerapps/developer/common-data-service/webapi/compose-http-requests-handle-errors                
                 client.Timeout = TimeSpan.FromSeconds(timeoutSeconds);
                 client.DefaultRequestHeaders.Add("OData-Version", "4.0");
                 client.DefaultRequestHeaders.Add("OData-MaxVersion", "4.0");

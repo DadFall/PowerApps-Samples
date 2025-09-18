@@ -143,8 +143,8 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
     }
 
     /// <summary>
-    /// Person with access to the Microsoft CRM system and who owns objects in the Microsoft CRM database.
-    /// </summary>
+        /// Person with access to the Microsoft CRM system and who owns objects in the Microsoft CRM database.
+        /// </summary>
     [System.Runtime.Serialization.DataContractAttribute()]
     [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemuser")]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "7.0.0001.0117")]
@@ -281,8 +281,8 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
 
 
     /// <summary>
-    /// Grouping of security privileges. Users are assigned roles that authorize their access to the Microsoft CRM system.
-    /// </summary>
+        /// Grouping of security privileges. Users are assigned roles that authorize their access to the Microsoft CRM system.
+        /// </summary>
     [System.Runtime.Serialization.DataContractAttribute()]
     [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("role")]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "7.0.0001.0117")]

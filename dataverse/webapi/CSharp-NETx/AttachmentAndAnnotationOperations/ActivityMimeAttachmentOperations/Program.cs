@@ -21,12 +21,12 @@ namespace PowerApps.Samples
 
             List<(string FileName, EntityReference ActivityMimeAttachmentRef)> reusableAttachments = new();
 
-            // Get the configuration data from the app
+            // 获取the configuration data from the app
             Config config = App.InitializeApp();
             // Create a WebAPIService service client using the configuration data
             var service = new Service(config);
 
-            // Get current MaxUploadFileSize
+            // 获取current MaxUploadFileSize
             int originalMaxUploadFileSize = await Utility.GetMaxUploadFileSize(service);
             Console.WriteLine($"Current MaxUploadFileSize: {originalMaxUploadFileSize}");
 
@@ -92,7 +92,7 @@ namespace PowerApps.Samples
                 $"\n\t\tActivityMimeAttachmentId:{uploadAttachmentResponse.ActivityMimeAttachmentId} \n\t\tFileSizeInBytes: {uploadAttachmentResponse.FileSizeInBytes}");
 
             // Retrieve information about the attachments related to the email
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/webapi/retrieve-entity-using-web-api#retrieve-navigation-property-values
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/retrieve-entity-using-web-api#retrieve-navigation-property-values
             RetrieveMultipleResponse relatedAttachmentsResponse = await service.RetrieveMultiple(
                 queryUri: $"{emailRef.Path}/activity_pointer_activity_mime_attachment?$select=filename");
 
@@ -126,7 +126,7 @@ namespace PowerApps.Samples
             Console.WriteLine($"Saved the attachment to \\bin\\Debug\\net6.0\\DownloadedAgain{pdfDoc.Name}.");
 
 
-            // Delete the email activity and the attachments will be deleted as well
+            // 删除the email activity and the attachments will be deleted as well
             await service.Delete(emailRef);
 
             #endregion Create single-use attachments
@@ -173,7 +173,7 @@ namespace PowerApps.Samples
                     { "title", "Example Account Template" }
             };
 
-            // Create the template
+            // 创建template
             EntityReference templateRef = await service.Create("templates", template);
 
             Console.WriteLine("Created an email template.");
@@ -190,7 +190,7 @@ namespace PowerApps.Samples
                         { "mimetype", Utility.GetMimeType(file)}
                 };
 
-                // Create the attachment with upload synchronously while in loop.
+                // 创建attachment with upload synchronously while in loop.
                 CommitAttachmentBlocksUploadResponse uploadAttachmentResponse2 = UploadAttachment(
                        service: service,
                        attachment: attachment,
@@ -237,7 +237,7 @@ namespace PowerApps.Samples
 
             }
 
-            // Delete the second email
+            // 删除the second email
 
             await service.Delete(email2Ref);
             Console.WriteLine($"Deleted the second email.");
@@ -257,7 +257,7 @@ namespace PowerApps.Samples
             // Clean up
 
 
-            // Delete the template
+            // 删除the template
             await service.Delete(templateRef); //Will delete re-usable attachments
 
             #endregion Create re-usable attachments
@@ -358,7 +358,7 @@ namespace PowerApps.Samples
                     fileContinuationToken: fileContinuationToken);
 
 
-                // Send the request
+                // 发送请求
                 await service.SendAsync(uploadBlockRequest);
             }
 
@@ -419,7 +419,7 @@ namespace PowerApps.Samples
                     blockLength: blockSizeDownload,
                     fileContinuationToken: fileContinuationToken);
 
-                // Send the request
+                // 发送请求
                 var downloadBlockResponse =
                            await service.SendAsync<DownloadBlockResponse>(downLoadBlockRequest);
 

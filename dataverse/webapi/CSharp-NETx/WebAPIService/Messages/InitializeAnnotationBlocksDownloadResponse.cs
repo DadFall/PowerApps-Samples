@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the InitializeAnnotationBlocksDownloadRequest
-    /// </summary>
+        /// Contains the data from the InitializeAnnotationBlocksDownloadRequest
+        /// </summary>
     public sealed class InitializeAnnotationBlocksDownloadResponse : HttpResponseMessage
     {
 

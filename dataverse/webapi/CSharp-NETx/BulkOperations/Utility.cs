@@ -347,8 +347,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-		/// Creates alternate key to the entity requested.
-		/// </summary>
+        /// Creates alternate key to the entity requested.
+        /// </summary>
 		/// <param name="entityLogicalName">Table logical name</param>
 		/// <param name="schemaName">Schema name of the Key.</param>
 		/// <param name="displayName">Display name of the Key.</param>

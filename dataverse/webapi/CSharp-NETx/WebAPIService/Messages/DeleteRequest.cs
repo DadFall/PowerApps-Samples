@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to delete a record
-    /// </summary>
+        /// Contains the data to delete a record
+        /// </summary>
     public sealed class DeleteRequest : HttpRequestMessage
     {
         /// <summary>

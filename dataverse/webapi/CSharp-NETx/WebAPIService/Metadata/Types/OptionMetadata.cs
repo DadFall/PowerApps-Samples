@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Metadata.Types
 {
     /// <summary>
-    /// Contains metadata representing an option within an Option set.
-    /// </summary>
+        /// Contains metadata representing an option within an Option set.
+        /// </summary>
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class OptionMetadata : MetadataBase
     {

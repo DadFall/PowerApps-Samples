@@ -8,8 +8,8 @@ namespace PowerApps.Samples.Metadata.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the GetValidManyToMany Function
-    /// </summary>
+        /// Contains the response from the GetValidManyToMany Function
+        /// </summary>
     public sealed class GetValidManyToManyResponse : HttpResponseMessage
     {
         // Cache the async content

@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the InitializeFileBlocksUploadRequest
-    /// </summary>
+        /// Contains the data from the InitializeFileBlocksUploadRequest
+        /// </summary>
     public sealed class InitializeFileBlocksUploadResponse : HttpResponseMessage
     {
 

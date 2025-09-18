@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Retrieves all security principals (users, teams, or organizations) that have access to, and access rights for, the specified record because it was shared with them.
-    /// </summary>
+        /// Retrieves all security principals (users, teams, or organizations) that have access to, and access rights for, the specified record because it was shared with them.
+        /// </summary>
     public sealed class RetrieveSharedPrincipalsAndAccessRequest : HttpRequestMessage
     {
         /// <summary>

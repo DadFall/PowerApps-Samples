@@ -4,8 +4,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to determine whether an entity can be the referencing entity in a one-to-many relationship.
-    /// </summary>
+        /// Contains the data to determine whether an entity can be the referencing entity in a one-to-many relationship.
+        /// </summary>
     public sealed class CanBeReferencingRequest : HttpRequestMessage
     {
         /// <summary>

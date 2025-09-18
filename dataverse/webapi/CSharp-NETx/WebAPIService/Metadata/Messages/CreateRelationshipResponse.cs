@@ -5,8 +5,8 @@
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response to the CreateRelationshipRequest
-    /// </summary>
+        /// Contains the response to the CreateRelationshipRequest
+        /// </summary>
     public sealed class CreateRelationshipResponse : HttpResponseMessage
     {
         /// <summary>

@@ -4,8 +4,8 @@ namespace PowerApps.Samples.Messages
 {
 
     /// <summary>
-    /// Contains the data to retrieve a record
-    /// </summary>
+        /// Contains the data to retrieve a record
+        /// </summary>
     public sealed class RetrieveRequest : HttpRequestMessage
     {
         /// <summary>

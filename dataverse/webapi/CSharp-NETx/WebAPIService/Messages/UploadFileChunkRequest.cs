@@ -2,8 +2,8 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Uploads a block of data to storage.
-    /// </summary>
+        /// Uploads a block of data to storage.
+        /// </summary>
     public sealed class UploadFileChunkRequest : HttpRequestMessage
     {
         /// <summary>

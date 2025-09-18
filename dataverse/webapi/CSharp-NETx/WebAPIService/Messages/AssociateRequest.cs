@@ -4,8 +4,8 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to associate a record to a collection.
-    /// </summary>
+        /// Contains the data to associate a record to a collection.
+        /// </summary>
     public sealed class AssociateRequest : HttpRequestMessage
     {
         /// <summary>

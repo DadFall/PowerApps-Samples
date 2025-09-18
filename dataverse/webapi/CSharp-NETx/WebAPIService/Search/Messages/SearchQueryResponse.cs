@@ -9,8 +9,8 @@ namespace PowerApps.Samples.Search.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the SearchQueryRequest
-    /// </summary>
+        /// Contains the response from the SearchQueryRequest
+        /// </summary>
     public sealed class SearchQueryResponse : HttpResponseMessage
     {
         // Cache the async content

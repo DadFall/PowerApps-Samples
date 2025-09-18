@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the WhoAmIRequest
-    /// </summary>
+        /// Contains the response from the WhoAmIRequest
+        /// </summary>
     public sealed class WhoAmIResponse : HttpResponseMessage
     {
 

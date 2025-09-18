@@ -314,7 +314,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             if (measureDuration)
             {
                 Stopwatch upsertStopwatch = Stopwatch.StartNew();
-                // Send the request
+                // 发送请求
                 await service.SendAsync(upsertMultipleRequest);
                 upsertStopwatch.Stop();
                 Console.WriteLine($"\tUpserted {entityList.Count} records " +
@@ -333,7 +333,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <param name="alternateKey"></param>
         private static async Task BulkDeleteCreatedRecords(Service service, string alternateKey, string retrieveQuery)
         {
-            // Delete created rows asynchronously
+            // 删除created rows asynchronously
             // When testing plug-ins, set break point here to observe data
             Console.WriteLine($"\nStarting asynchronous bulk delete " +
                 $"of {numberOfRecords} upserted records...");
@@ -383,7 +383,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             if (measureDuration)
             {
                 Stopwatch createStopwatch = Stopwatch.StartNew();
-                // Send the request
+                // 发送请求
                 response = await service.SendAsync<CreateMultipleResponse>(createMultipleRequest);
                 createStopwatch.Stop();
                 Console.WriteLine($"\tcreateed {entityList.Count} records " +

@@ -3,13 +3,13 @@
 namespace PowerApps.Samples.Search.Types;
 
 /// <summary>
-/// The entity schema to scope the search request.
-/// </summary>
+        /// The entity schema to scope the search request.
+        /// </summary>
 public sealed class SearchEntity
 {
     /// <summary>
-    /// Gets or sets the logical name of the table. Specifies scope of the query.
-    /// </summary>
+        /// Gets or sets the logical name of the table. Specifies scope of the query.
+        /// </summary>
     [DataMember(Name = "name", IsRequired = true)]
     public string Name { get; set; }
 
@@ -28,8 +28,8 @@ public sealed class SearchEntity
     public List<string> SearchColumns { get; set; }
 
     /// <summary>
-    /// Gets or sets the filters applied on the entity.
-    /// </summary>
+        /// Gets or sets the filters applied on the entity.
+        /// </summary>
     [DataMember(Name = "filter")]
     public string Filter { get; set; }
 }

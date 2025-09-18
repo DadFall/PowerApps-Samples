@@ -5,8 +5,8 @@ using Newtonsoft.Json.Linq;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to execute a query using FetchXml
-    /// </summary>
+        /// Contains the data to execute a query using FetchXml
+        /// </summary>
     public sealed class FetchXmlRequest : HttpRequestMessage
     {
 

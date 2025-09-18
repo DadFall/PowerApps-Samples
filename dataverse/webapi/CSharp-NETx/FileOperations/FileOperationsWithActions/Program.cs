@@ -24,7 +24,7 @@ namespace PowerApps.Samples
             int fileColumnMaxSizeInKb;
             Guid? fileId = null;
 
-            // Create the File Column with 10MB limit
+            // 创建File Column with 10MB limit
             await Utility.CreateFileColumn(service,entityLogicalName,fileColumnSchemaName);
 
             // Update the MaxSizeInKB value: Comment this line to get error about file too large for column.
@@ -95,11 +95,11 @@ namespace PowerApps.Samples
 
 
 
-            // Delete the account record
+            // 删除the account record
             await service.Delete(createdAccountRef);
             Console.WriteLine("Deleted the account record.");
 
-            // Delete the file column
+            // 删除the file column
             await Utility.DeleteFileColumn(service,entityLogicalName,fileColumnSchemaName.ToLower());
 
         }
@@ -107,7 +107,7 @@ namespace PowerApps.Samples
         /// <summary>
         /// Uploads a file using Web API Actions
         /// </summary>
-        /// <param name="service">The service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityLogicalName">The logical name of the table</param>
         /// <param name="primaryKeyLogicalName">The logical name of the primary key for the table</param>
         /// <param name="entityId">The Id of the record.</param>
@@ -181,7 +181,7 @@ namespace PowerApps.Samples
                     blockData: buffer,
                     fileContinuationToken: fileContinuationToken);
 
-                // Send the request
+                // 发送请求
                 await service.SendAsync(uploadBlockRequest);
             }
 
@@ -214,7 +214,7 @@ namespace PowerApps.Samples
         /// <summary>
         /// Downloads a file using Web API Actions
         /// </summary>
-        /// <param name="service">The service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityLogicalName">The logical name of the table</param>
         /// <param name="primaryKeyLogicalName">The logical name of the primary key for the table</param>
         /// <param name="entityId">The Id of the record.</param>
@@ -257,7 +257,7 @@ namespace PowerApps.Samples
                     blockLength: blockSizeDownload,
                     fileContinuationToken: fileContinuationToken);
 
-                // Send the request
+                // 发送请求
                 DownloadBlockResponse downloadBlockResponse =
                            await service.SendAsync<DownloadBlockResponse>(downLoadBlockRequest);
 

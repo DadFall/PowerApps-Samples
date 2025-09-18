@@ -4,8 +4,8 @@ using PowerApps.Samples.Types;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to modify the access granted to a security principal (user, team, or organization) for the specified record.
-    /// </summary>
+        /// Contains the data to modify the access granted to a security principal (user, team, or organization) for the specified record.
+        /// </summary>
     public sealed class ModifyAccessRequest : HttpRequestMessage
     {
         /// <summary>

@@ -65,7 +65,7 @@ namespace ParallelOperations
                 Console.WriteLine($"Creating {accountsToImport.Count} accounts");
                 var startCreate = DateTime.Now;
 
-                // Send the requests in parallel
+                // 发送请求s in parallel
                 await Parallel.ForEachAsync(accountsToImport, parallelOptions, async (account, token) =>
                   {
                       var createResponse = await service.SendAsync<CreateResponse>(account);
@@ -83,7 +83,7 @@ namespace ParallelOperations
                 Console.WriteLine($"Deleting {accountsToDelete.Count} accounts");
                 var startDelete = DateTime.Now;
 
-                // Delete the accounts in parallel
+                // 删除the accounts in parallel
                 await Parallel.ForEachAsync(accountsToDelete, parallelOptions, async (deleteRequest, token) =>
                  {
                      await service.SendAsync(deleteRequest);

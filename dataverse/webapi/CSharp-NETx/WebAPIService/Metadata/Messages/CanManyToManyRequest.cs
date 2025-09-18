@@ -4,8 +4,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to determine whether whether an entity can participate in a many-to-many relationship.
-    /// </summary>
+        /// Contains the data to determine whether whether an entity can participate in a many-to-many relationship.
+        /// </summary>
     public sealed class CanManyToManyRequest : HttpRequestMessage
     {
         /// <summary>

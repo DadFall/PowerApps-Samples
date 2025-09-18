@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to delete a column.
-    /// </summary>
+        /// Contains the data to delete a column.
+        /// </summary>
     public sealed class DeleteAttributeRequest : HttpRequestMessage
     {
         /// <summary>

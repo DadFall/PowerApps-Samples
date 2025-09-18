@@ -230,7 +230,7 @@ namespace ConditionalOperations
 
             Console.WriteLine("\n--Section 3 started--");
 
-            // Delete all the created sample records.  
+            // 删除all the created sample records.  
 
             if (!deleteCreatedRecords)
             {

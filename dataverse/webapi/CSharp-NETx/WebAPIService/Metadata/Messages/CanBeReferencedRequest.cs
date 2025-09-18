@@ -4,8 +4,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to determine whether the specified entity can be the primary entity (one) in a one-to-many relationship.
-    /// </summary>
+        /// Contains the data to determine whether the specified entity can be the primary entity (one) in a one-to-many relationship.
+        /// </summary>
     public sealed class CanBeReferencedRequest : HttpRequestMessage
     {
         /// <summary>

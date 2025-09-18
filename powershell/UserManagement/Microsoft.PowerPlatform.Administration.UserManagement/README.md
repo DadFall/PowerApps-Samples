@@ -2,7 +2,7 @@
 
 These code samples help customers perform user management operations across one or multiple environments in a tenant.
 
-## What this sample does
+## 此示例的功能
 
 This sample helps customers do the following for: an environment, all environments in a geography, all environments in the tenant.
 
@@ -12,14 +12,14 @@ This sample helps customers do the following for: an environment, all environmen
 
 This code can be run by Global / Power Platform Administrator users.
 
-## Requirements
+## 要求
 
 - Powershell 5.1.22 (default for windows 10 & 11) or lower
 - .NET Framework 4.6.2 Developer Pack
 - Visual Studio 2017 or a newer version
 - NuGet version 4.7 or higher
 
-## How to run this sample
+## 如何运行此示例
 
 1. Install [NuGet](https://www.nuget.org/downloads) 
 2. Clone the [Powerapps-Samples repo](https://github.com/microsoft/PowerApps-Samples.git).
@@ -93,10 +93,10 @@ This code can be run by Global / Power Platform Administrator users.
 |outputLogsDirectory|Location folder for the logs & reports to be written to.|
 
 
-## Contributing
+## 贡献
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+Contributor 许可证 Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
 When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
@@ -107,6 +107,6 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## Security
+## 安全
 
-For reporting security issues, please refer to this [security](https://github.com/microsoft/PowerApps-Samples/blob/master/SECURITY.md) document.
+报告安全问题, please refer to this [security](https://github.com/microsoft/PowerApps-Samples/blob/master/SECURITY.md) document.

@@ -6,8 +6,8 @@ using System.Security;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Manages authentication and initializing samples using WebAPIService
-    /// </summary>
+        /// Manages authentication and initializing samples using WebAPIService
+        /// </summary>
     public class App
     {
         private static readonly IConfiguration appSettings = new ConfigurationBuilder()

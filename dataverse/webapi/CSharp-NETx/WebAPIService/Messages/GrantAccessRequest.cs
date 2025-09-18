@@ -4,8 +4,8 @@ using PowerApps.Samples.Types;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to grant a security principal (user or team) access to the specified record.
-    /// </summary>
+        /// Contains the data to grant a security principal (user or team) access to the specified record.
+        /// </summary>
     public sealed class GrantAccessRequest : HttpRequestMessage
     {
         /// <summary>

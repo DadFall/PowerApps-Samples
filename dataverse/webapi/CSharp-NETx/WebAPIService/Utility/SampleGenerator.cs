@@ -5,8 +5,8 @@ using System.Web;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Contains method to generate Http samples in Markdown
-    /// </summary>
+        /// Contains method to generate Http samples in Markdown
+        /// </summary>
     public class SampleGenerator
     {
         /// <summary>
@@ -14,7 +14,7 @@ namespace PowerApps.Samples
         /// </summary>
         /// <param name="request">The request</param>
         /// <param name="response">The response</param>
-        /// <param name="baseAddress">The service base address</param>
+        /// <param name="baseAddress">服务 base address</param>
         /// <param name="outputFolder">The location to save the markdown text of the sample.</param>
         /// <returns></returns>
         public static async Task WriteHttpSample(HttpRequestMessage request, HttpResponseMessage response, Uri baseAddress, string outputFolder)

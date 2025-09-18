@@ -5,8 +5,8 @@ using PowerApps.Samples.Search.Types;
 namespace PowerApps.Samples.Search.Messages
 {
     /// <summary>
-    /// Contains the data to send an autocomplete request
-    /// </summary>
+        /// Contains the data to send an autocomplete request
+        /// </summary>
     public sealed class SearchAutoCompleteRequest : HttpRequestMessage
     {
         private string? _entities;

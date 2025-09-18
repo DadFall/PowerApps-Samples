@@ -3,25 +3,25 @@
 namespace PowerApps.Samples.Search.Types;
 
 /// <summary>
-/// Data contract for autocomplete parameters. 
-/// </summary>
+        /// Data contract for autocomplete parameters. 
+        /// </summary>
 public sealed class AutocompleteParameters
 {
     /// <summary>
-    /// Gets or sets the search terms.
-    /// </summary>
+        /// Gets or sets the search terms.
+        /// </summary>
     [DataMember(Name = "search", IsRequired = true)]
     public string Search { get; set; }
 
     /// <summary>
-    /// Gets or sets list of entities.
-    /// </summary>
+        /// Gets or sets list of entities.
+        /// </summary>
     [DataMember(Name = "entities")]
     public List<SearchEntity> Entities { get; set; }
 
     /// <summary>
-    /// Gets or sets the common filters applied on the request.
-    /// </summary>
+        /// Gets or sets the common filters applied on the request.
+        /// </summary>
     [DataMember(Name = "filter")]
     public string? Filter { get; set; }
 

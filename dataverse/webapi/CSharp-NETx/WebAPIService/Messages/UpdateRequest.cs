@@ -4,8 +4,8 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to update a record
-    /// </summary>
+        /// Contains the data to update a record
+        /// </summary>
     public sealed class UpdateRequest : HttpRequestMessage
     {
         /// <summary>

@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to initialize download of an note.
-    /// </summary>
+        /// Contains the data to initialize download of an note.
+        /// </summary>
     public sealed class InitializeAnnotationBlocksDownloadRequest : HttpRequestMessage
     {
 

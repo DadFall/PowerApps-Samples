@@ -6,7 +6,7 @@ Custom connectors is a feature that provides a way for developers to surface inf
 
 For more information, see [Use custom connectors with the timeline control](https://learn.microsoft.com/powerapps/maker/model-driven-apps/custom-connectors-timeline-control).
 
-## What this sample does
+## 此示例的功能
 
 This sample uses the custom connector feature of TimelineWallControl to configure an IRecordSource to surface information as custom records.
 

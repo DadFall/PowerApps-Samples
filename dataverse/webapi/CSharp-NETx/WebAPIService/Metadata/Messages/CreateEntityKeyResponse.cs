@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Metadata.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response to the CreateEntityRequest
-    /// </summary>
+        /// Contains the response to the CreateEntityRequest
+        /// </summary>
     public sealed class CreateEntityKeyResponse : HttpResponseMessage
     {
         //Provides JObject for property getters

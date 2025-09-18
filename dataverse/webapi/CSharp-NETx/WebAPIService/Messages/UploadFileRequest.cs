@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to update file column
-    /// </summary>
+        /// Contains the data to update file column
+        /// </summary>
     public sealed class UploadFileRequest : HttpRequestMessage
     {
         public UploadFileRequest(

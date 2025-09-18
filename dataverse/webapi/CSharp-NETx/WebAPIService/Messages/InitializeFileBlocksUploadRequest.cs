@@ -4,8 +4,8 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to initialize upload of an file column
-    /// </summary>
+        /// Contains the data to initialize upload of an file column
+        /// </summary>
     public sealed class InitializeFileBlocksUploadRequest : HttpRequestMessage
     {
         /// <summary>

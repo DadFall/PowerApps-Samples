@@ -6,7 +6,7 @@ using System.Threading.Tasks.Dataflow;
 namespace TPLDataFlowParallelOperations
 {
     // This sample demonstrates the use of Task Parallel Library (TPL) Dataflow components
-    // See https://learn.microsoft.com/dotnet/standard/parallel-programming/dataflow-task-parallel-library
+    // 参见 https://learn.microsoft.com/dotnet/standard/parallel-programming/dataflow-task-parallel-library
 
     internal class Program
     {
@@ -72,7 +72,7 @@ namespace TPLDataFlowParallelOperations
         /// <summary>
         /// Creates and deletes a set of account records
         /// </summary>
-        /// <param name="service">The service</param>
+        /// <param name="service">服务</param>
         /// <param name="accountCreateRequests">The list of create requests to execute in parallel.</param>
         /// <param name="executionDataflowBlockOptions">Specifies the behavior of the Dataflow Block Options</param>
         /// <returns></returns>

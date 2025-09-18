@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to disassociate a record
-    /// </summary>
+        /// Contains the data to disassociate a record
+        /// </summary>
     public sealed class DisassociateRequest : HttpRequestMessage
     {
         /// <summary>

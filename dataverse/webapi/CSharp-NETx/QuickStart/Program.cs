@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Demonstrates Azure authentication and execution of a Dataverse Web API function.
-    /// </summary>
+        /// Demonstrates Azure authentication and execution of a Dataverse Web API function.
+        /// </summary>
     class Program
     {
         static async Task Main()
         {
             // TODO Specify the Dataverse environment name to connect with.
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/webapi/compose-http-requests-handle-errors#web-api-url-and-versions
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/compose-http-requests-handle-errors#web-api-url-and-versions
             string resource = "https://<env-name>.api.<region>.dynamics.com";
 
             // Azure Active Directory app registration shared by all Power App samples.
@@ -23,7 +23,7 @@ namespace PowerApps.Samples
             var redirectUri = "http://localhost"; // Loopback for the interactive login.
 
             // For your custom apps, you will need to register them with Azure AD yourself.
-            // See https://learn.microsoft.com/powerapps/developer/data-platform/walkthrough-register-app-azure-active-directory
+            // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/walkthrough-register-app-azure-active-directory
 
             #region Authentication
 
@@ -42,13 +42,13 @@ namespace PowerApps.Samples
 
             var client = new HttpClient
             {
-                // See https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors#web-api-url-and-versions
+                // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors#web-api-url-and-versions
                 BaseAddress = new Uri(resource + "/api/data/v9.2/"),
                 Timeout = new TimeSpan(0, 2, 0)    // Standard two minute timeout on web service calls.
             };
 
             // Default headers for each Web API call.
-            // See https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors#http-headers
+            // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors#http-headers
             HttpRequestHeaders headers = client.DefaultRequestHeaders;
             headers.Authorization = new AuthenticationHeaderValue("Bearer", token.AccessToken);
             headers.Add("OData-MaxVersion", "4.0");
@@ -60,14 +60,14 @@ namespace PowerApps.Samples
             #region Web API call
 
             // Invoke the Web API 'WhoAmI' unbound function.
-            // See https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors
-            // See https://learn.microsoft.com/powerapps/developer/data-platform/webapi/use-web-api-functions#unbound-functions
+            // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors
+            // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/use-web-api-functions#unbound-functions
             var response = await client.GetAsync("WhoAmI");
 
             if (response.IsSuccessStatusCode)
             {
                 // Parse the JSON formatted service response (WhoAmIResponse) to obtain the user ID value.
-                // See https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/whoamiresponse
+                // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/whoamiresponse
                 Guid userId = new();
 
                 string jsonContent = await response.Content.ReadAsStringAsync();
@@ -96,8 +96,8 @@ namespace PowerApps.Samples
     }
 
     /// <summary>
-    /// WhoAmIResponse class definition 
-    /// </summary>
+        /// WhoAmIResponse class definition 
+        /// </summary>
     /// <remarks>To be used for JSON deserialization.</remarks>
     /// <see cref="https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/whoamiresponse"/>
     public class WhoAmIResponse

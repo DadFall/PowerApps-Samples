@@ -20,7 +20,7 @@ namespace PowerApps.Samples
             bool fileUploaded = false;
             int? fileColumnMaxSizeInKb;
 
-            // Create the File Column with 10MB limit
+            // 创建File Column with 10MB limit
             await Utility.CreateFileColumn(service, entityLogicalName, fileColumnSchemaName);
 
             // Update the MaxSizeInKB value to 100MB. Comment this line to get error about file too large for column.
@@ -81,7 +81,7 @@ namespace PowerApps.Samples
                 Console.WriteLine($"Downloaded the file to {Environment.CurrentDirectory}//downloaded-{fileName}.");
 
 
-                // Delete file
+                // 删除file
                 DeleteColumnValueRequest deleteColumnValueRequest = new(
                     entityReference: createdAccountRef,
                     propertyName: filePropertyName);
@@ -90,11 +90,11 @@ namespace PowerApps.Samples
                 Console.WriteLine($"Deleted file at: {deleteColumnValueRequest.RequestUri}.");
             }
 
-            // Delete the account record
+            // 删除the account record
             await service.Delete(createdAccountRef);
             Console.WriteLine("Deleted the account record.");
 
-            // Delete the file column
+            // 删除the file column
             await Utility.DeleteFileColumn(service, entityLogicalName, fileColumnSchemaName.ToLower());
 
         }

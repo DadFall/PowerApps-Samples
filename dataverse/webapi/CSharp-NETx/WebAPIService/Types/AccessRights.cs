@@ -4,8 +4,8 @@ using Newtonsoft.Json.Converters;
 namespace PowerApps.Samples.Types
 {
     /// <summary>
-    /// Contains the possible access rights for a user.
-    /// </summary>
+        /// Contains the possible access rights for a user.
+        /// </summary>
     [Serializable]
     [JsonConverter(typeof(StringEnumConverter))]
     [Flags]

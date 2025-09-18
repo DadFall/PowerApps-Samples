@@ -8,7 +8,7 @@ namespace PowerApps.Samples.Methods
         /// <summary>
         /// Retrieves a record.
         /// </summary>
-        /// <param name="service">The service.</param>
+        /// <param name="service">服务.</param>
         /// <param name="entityReference">A reference to the record to retrieve</param>
         /// <param name="query">The query string parameters</param>
         /// <param name="includeAnnotations">Whether to include annotations with the data.</param>

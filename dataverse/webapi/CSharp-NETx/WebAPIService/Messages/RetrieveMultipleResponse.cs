@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the RetrieveMultipleRequest
-    /// </summary>
+        /// Contains the response from the RetrieveMultipleRequest
+        /// </summary>
     public sealed class RetrieveMultipleResponse : HttpResponseMessage
     {        
         //cache the async content

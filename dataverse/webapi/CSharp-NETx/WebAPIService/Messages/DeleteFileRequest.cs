@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to delete a stored binary file, attachment, or annotation.
-    /// </summary>
+        /// Contains the data to delete a stored binary file, attachment, or annotation.
+        /// </summary>
     public sealed class DeleteFileRequest : HttpRequestMessage
     {
         /// <summary>

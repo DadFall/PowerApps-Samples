@@ -8,8 +8,8 @@ namespace PowerApps.Samples.Metadata.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the RetrieveAttributeRequest
-    /// </summary>
+        /// Contains the response from the RetrieveAttributeRequest
+        /// </summary>
     /// <typeparam name="T">The type of attribute.</typeparam>
     public sealed class RetrieveAttributeResponse<T> : HttpResponseMessage where T : AttributeMetadata
     {

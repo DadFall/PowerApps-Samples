@@ -5,8 +5,8 @@
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the CreateAttributeRequest
-    /// </summary>
+        /// Contains the response from the CreateAttributeRequest
+        /// </summary>
     public sealed class CreateAttributeResponse : HttpResponseMessage
     {
         /// <summary>

@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the a CreateRetrieveRequest
-    /// </summary>
+        /// Contains the data from the a CreateRetrieveRequest
+        /// </summary>
     public sealed class CreateRetrieveResponse : HttpResponseMessage
     {
         /// <summary>

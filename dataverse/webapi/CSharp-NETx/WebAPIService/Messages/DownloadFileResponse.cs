@@ -5,8 +5,8 @@
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the GetColumnValueRequest.
-    /// </summary>
+        /// Contains the data from the GetColumnValueRequest.
+        /// </summary>
     public sealed class DownloadFileResponse : HttpResponseMessage
     {
         /// <summary>

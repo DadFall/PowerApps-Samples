@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to initialize download of an attachment.
-    /// </summary>
+        /// Contains the data to initialize download of an attachment.
+        /// </summary>
     public sealed class InitializeAttachmentBlocksDownloadRequest : HttpRequestMessage
     {
         /// <summary>

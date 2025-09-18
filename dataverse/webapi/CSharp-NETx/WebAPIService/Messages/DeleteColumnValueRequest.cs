@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to delete a column value
-    /// </summary>
+        /// Contains the data to delete a column value
+        /// </summary>
     public sealed class DeleteColumnValueRequest : HttpRequestMessage
     {
         /// <summary>

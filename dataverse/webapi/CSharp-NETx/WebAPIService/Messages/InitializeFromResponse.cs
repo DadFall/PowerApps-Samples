@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the InitializeFromRequest
-    /// </summary>
+        /// Contains the data from the InitializeFromRequest
+        /// </summary>
     public sealed class InitializeFromResponse : HttpResponseMessage
     {
         /// <summary>

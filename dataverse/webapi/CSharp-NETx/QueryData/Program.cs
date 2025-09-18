@@ -604,7 +604,7 @@ namespace QueryData
 
             Console.WriteLine("\n--Section 7 started--");
 
-            // Get aggregated salary information about Contacts working for Contoso
+            // 获取aggregated salary information about Contacts working for Contoso
 
             Console.WriteLine("\nAggregated Annual Income information for Contoso contacts:");
 
@@ -735,7 +735,7 @@ namespace QueryData
                 // Set the paging cookie value in the FetchXML paging-cookie attribute
                 fetchXmlQueryDoc.Root.Attribute("paging-cookie").Value = decodedPagingCookie;
 
-                // Send the request
+                // 发送请求
                 cookiePagedContacts = await service.FetchXml(
                 entitySetName: "contacts",
                 fetchXml: fetchXmlQueryDoc,
@@ -766,14 +766,14 @@ namespace QueryData
             // 1) Saved Query - retrieve "Active Accounts", run it, then display the results.
             Console.WriteLine("\n-- Saved Query -- ");
 
-            // Get the 'Active Accounts' Saved Query Id
+            // 获取the 'Active Accounts' Saved Query Id
             RetrieveMultipleResponse activeAccountsSavedQueryIdResponse =
                 await service.RetrieveMultiple(
                     queryUri: "savedqueries?$select=name,savedqueryid" +
                     "&$filter=name eq 'Active Accounts'");
             var activeAccountsSavedQueryId = (Guid)activeAccountsSavedQueryIdResponse.Records.FirstOrDefault()["savedqueryid"];
 
-            // Get 3 accounts using the saved query
+            // 获取3 accounts using the saved query
             RetrieveMultipleResponse activeAccounts =
                 await service.RetrieveMultiple(
                     queryUri: $"accounts?savedQuery={activeAccountsSavedQueryId}",
@@ -832,7 +832,7 @@ namespace QueryData
             #region Section 10: Delete sample records
 
             Console.WriteLine("\n--Section 10 started--");
-            // Delete all the created sample records.  Note that explicit deletion is not required  
+            // 删除all the created sample records.  Note that explicit deletion is not required  
             // for contact tasks because these are automatically cascade-deleted with owner.  
 
             if (!deleteCreatedRecords)

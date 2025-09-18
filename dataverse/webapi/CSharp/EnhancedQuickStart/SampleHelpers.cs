@@ -5,8 +5,8 @@ using System.Net.Http;
 namespace EnhancedQuickStart
 {
     /// <summary>
-    /// Shared code for common operations used by many Power Apps samples.
-    /// </summary>
+        /// Shared code for common operations used by many Power Apps samples.
+        /// </summary>
     class SampleHelpers
     {
         //These sample application registration values are available for all online instances.

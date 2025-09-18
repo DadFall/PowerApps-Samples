@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the ExecuteCosmosSqlQueryRequest
-    /// </summary>
+        /// Contains the data from the ExecuteCosmosSqlQueryRequest
+        /// </summary>
 
     public class ExecuteCosmosSqlQueryResponse : HttpResponseMessage
     {

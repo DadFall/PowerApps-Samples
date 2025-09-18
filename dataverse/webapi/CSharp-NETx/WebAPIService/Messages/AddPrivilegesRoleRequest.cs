@@ -5,8 +5,8 @@ using PowerApps.Samples.Types;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to add privileges to a role
-    /// </summary>
+        /// Contains the data to add privileges to a role
+        /// </summary>
     public sealed class AddPrivilegesRoleRequest : HttpRequestMessage
     {
        

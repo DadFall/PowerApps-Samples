@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve data from Dataverse for a specified table.
-    /// </summary>
+        /// Contains the data to retrieve data from Dataverse for a specified table.
+        /// </summary>
     public sealed class RetrieveMultipleRequest : HttpRequestMessage
     {
         /*

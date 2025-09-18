@@ -5,8 +5,8 @@
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response to the CreateEntityRequest
-    /// </summary>
+        /// Contains the response to the CreateEntityRequest
+        /// </summary>
     public sealed class CreateEntityResponse : HttpResponseMessage
     {
         /// <summary>

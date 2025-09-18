@@ -9,8 +9,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from RetrieveSharedPrincipalsAndAccessRequest
-    /// </summary>
+        /// Contains the response from RetrieveSharedPrincipalsAndAccessRequest
+        /// </summary>
     public sealed class RetrieveSharedPrincipalsAndAccessResponse : HttpResponseMessage
     {
         // Cache the async content

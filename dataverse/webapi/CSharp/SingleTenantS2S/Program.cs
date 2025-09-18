@@ -76,7 +76,7 @@ namespace PowerApps.Samples
         public static async Task<HttpResponseMessage> SendMessageAsync(WebApiConfiguration webConfig,
             HttpMethod httpMethod, string messageUri, string body = null)
         {
-            // Get the access token that is required for authentication.
+            // 获取the access token that is required for authentication.
             var accessToken = await GetAccessToken(webConfig);
 
             // Create an HTTP message with the required Web API headers populated.
@@ -97,7 +97,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Get the authentication access token.
+        /// 获取the authentication access token.
         /// </summary>
         /// <param name="webConfig">The Web API configuration.</param>
         /// <returns>Authentication access token</returns>

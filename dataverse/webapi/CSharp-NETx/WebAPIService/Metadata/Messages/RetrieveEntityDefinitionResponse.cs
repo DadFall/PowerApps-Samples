@@ -8,8 +8,8 @@ namespace PowerApps.Samples.Metadata.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the RetrieveEntityDefinitionRequest
-    /// </summary>
+        /// Contains the response from the RetrieveEntityDefinitionRequest
+        /// </summary>
     public sealed class RetrieveEntityDefinitionResponse : HttpResponseMessage
     {
         /// <summary>

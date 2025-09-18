@@ -209,9 +209,9 @@ namespace BasicOperations
             #endregion Section 2: Create record associated to another
 
             #region Section 3: Create related entities
-            /// <summary>  
-            /// Demonstrates creation of entity instance and related entities in a single operation.  
-            /// </summary>
+            /// <summary>
+        /// Demonstrates creation of entity instance and related entities in a single operation.  
+        /// </summary>
             /// 
             Console.WriteLine("\n--Section 3 started--");
             //Create the following entries in one operation: an account, its 
@@ -353,9 +353,9 @@ namespace BasicOperations
             #endregion Section 3: Create related entities
 
             #region Section 4: Associate and Disassociate entities
-            /// <summary>  
-            /// Demonstrates associating and disassociating of existing entity instances. 
-            /// </summary>
+            /// <summary>
+        /// Demonstrates associating and disassociating of existing entity instances. 
+        /// </summary>
             Console.WriteLine("\n--Section 4 started--");
 
             // Add 'Rafel Shillo' to the contact list of 'Fourth Coffee', 
@@ -409,7 +409,7 @@ namespace BasicOperations
 
             // Create role and assign it to systemuser using systemuserroles_association
 
-            // Get your BusinessUnitId and UserId using WhoAmI
+            // 获取your BusinessUnitId and UserId using WhoAmI
             var whoIAm = await service.SendAsync<WhoAmIResponse>(new WhoAmIRequest());
 
             //Define a new security role
@@ -488,7 +488,7 @@ namespace BasicOperations
 
             #region Section 5: Delete sample entities  
             Console.WriteLine("\n--Section 5 started--");
-            // Delete all the created sample records.  Note that explicit deletion is not required  
+            // 删除all the created sample records.  Note that explicit deletion is not required  
             // for contact tasks because these are automatically cascade-deleted with owner.  
 
             if (!deleteCreatedRecords)
@@ -510,7 +510,7 @@ namespace BasicOperations
 
             foreach (EntityReference recordToDelete in recordsToDelete)
             {
-                // Delete a record with HttpRequestMessage
+                // 删除a record with HttpRequestMessage
                 // See PowerApps.Samples.Messages DeleteRequest class use in later samples.
                 // See Service.Delete method.
                 HttpRequestMessage deleteRequest = new(

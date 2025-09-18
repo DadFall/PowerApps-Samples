@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Types
 {
     /// <summary>
-    /// Contains access rights information for the security principal (user or team).
-    /// </summary>
+        /// Contains access rights information for the security principal (user or team).
+        /// </summary>
     public class PrincipalAccess
     {
         /// <summary>

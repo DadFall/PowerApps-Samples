@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to download a block of data.
-    /// </summary>
+        /// Contains the data to download a block of data.
+        /// </summary>
     public sealed class DownloadBlockRequest : HttpRequestMessage
     {
         /// <summary>

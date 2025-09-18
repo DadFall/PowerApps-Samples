@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to delete an option
-    /// </summary>
+        /// Contains the data to delete an option
+        /// </summary>
     public sealed class DeleteOptionValueRequest : HttpRequestMessage
     {
         /// <summary>

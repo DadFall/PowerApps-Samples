@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Search.Types
 {
     /// <summary>
-    /// Result object for suggest results.
-    /// </summary>
+        /// Result object for suggest results.
+        /// </summary>
     public sealed class SuggestResult
     {
         /// <summary>

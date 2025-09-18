@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to insert a option into a StatusAttributeMetadata attribute.
-    /// </summary>
+        /// Contains the data to insert a option into a StatusAttributeMetadata attribute.
+        /// </summary>
     public sealed class InsertStatusValueRequest : HttpRequestMessage
     {
         /// <summary>

@@ -5,8 +5,8 @@
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the DownloadFileChunkRequest
-    /// </summary>
+        /// Contains the data from the DownloadFileChunkRequest
+        /// </summary>
     public sealed class DownloadFileChunkResponse : HttpResponseMessage
     {
         /// <summary>

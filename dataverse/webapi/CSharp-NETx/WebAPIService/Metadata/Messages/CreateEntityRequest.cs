@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to create a table
-    /// </summary>
+        /// Contains the data to create a table
+        /// </summary>
     public sealed class CreateEntityRequest : HttpRequestMessage
     {
         /// <summary>

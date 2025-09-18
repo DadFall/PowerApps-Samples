@@ -6,8 +6,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to update a table definition.
-    /// </summary>
+        /// Contains the data to update a table definition.
+        /// </summary>
     public sealed class UpdateEntityRequest : HttpRequestMessage
     {
         /// <summary>

@@ -4,8 +4,8 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to upsert a record.
-    /// </summary>
+        /// Contains the data to upsert a record.
+        /// </summary>
     public sealed class UpsertRequest : HttpRequestMessage
     {
 
@@ -40,8 +40,8 @@ namespace PowerApps.Samples.Messages
     }
 
     /// <summary>
-    /// Specifies the behavior for an Upsert operation.
-    /// </summary>
+        /// Specifies the behavior for an Upsert operation.
+        /// </summary>
     public enum UpsertBehavior
     {
         CreateOrUpdate = 0,

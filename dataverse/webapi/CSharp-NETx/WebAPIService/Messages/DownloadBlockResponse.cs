@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the a DownloadBlockRequest
-    /// </summary>
+        /// Contains the data from the a DownloadBlockRequest
+        /// </summary>
     public sealed class DownloadBlockResponse : HttpResponseMessage
     {
         //Provides JObject for property getters

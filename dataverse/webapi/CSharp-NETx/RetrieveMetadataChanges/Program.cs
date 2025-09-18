@@ -25,7 +25,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             #region Define query
 
-            // Define query for all Picklist Choice columns from Contact table
+            // 定义query for all Picklist Choice columns from Contact table
             EntityQueryExpression query = new()
             {
                 Properties = new MetadataPropertiesExpression("LogicalName", "Attributes"),
@@ -155,7 +155,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
             catch (ServiceException ex)
             {
-                // Check for ErrorCodes.ExpiredVersionStamp (0x80044352)
+                // 检查for ErrorCodes.ExpiredVersionStamp (0x80044352)
                 // Message: Version stamp associated with the client has expired. Please perform a full sync.
                 // Will occur when the timestamp exceeds the Organization.ExpireSubscriptionsInDays value, which is 90 by default.
                 if (ex.ODataError.Error.Code == "0x80044352")
@@ -227,7 +227,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
             catch (ServiceException ex)
             {
-                // Check for ErrorCodes.ExpiredVersionStamp (0x80044352)
+                // 检查for ErrorCodes.ExpiredVersionStamp (0x80044352)
                 // Message: Version stamp associated with the client has expired. Please perform a full sync.
                 // Will occur when the timestamp exceeds the Organization.ExpireSubscriptionsInDays value, which is 90 by default.
                 if (ex.ODataError.Error.Code == "0x80044352")

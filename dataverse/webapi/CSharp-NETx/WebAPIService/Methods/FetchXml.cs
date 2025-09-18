@@ -9,7 +9,7 @@ namespace PowerApps.Samples.Methods
         /// <summary>
         /// Retrieves the results of a FetchXml query.
         /// </summary>
-        /// <param name="service">The service</param>
+        /// <param name="service">服务</param>
         /// <param name="entitySetName">The entity set name</param>
         /// <param name="fetchXml">The fetchXml Query</param>
         /// <param name="includeAnnotations">Whether to include annotations with the results.</param>

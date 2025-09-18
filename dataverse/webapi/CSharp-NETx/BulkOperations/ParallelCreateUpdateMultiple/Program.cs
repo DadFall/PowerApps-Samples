@@ -86,7 +86,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                                 CreateMultipleRequest createMultipleRequest = new(entitySetName: tableSetName, targets: entities.ToList());
 
                                 // Add a tag optional parameter to set a shared variable to be available to a plug-in.
-                                // See https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters?tabs=webapi#add-a-shared-variable-to-the-plugin-execution-context
+                                // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters?tabs=webapi#add-a-shared-variable-to-the-plugin-execution-context
                                 createMultipleRequest.RequestUri = new Uri(
                                     createMultipleRequest.RequestUri.ToString() + "?tag=ParallelCreateUpdateMultiple",
                                     uriKind: UriKind.Relative);
@@ -132,7 +132,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                                 UpdateMultipleRequest updateMultipleRequest = new(entitySetName: tableSetName, targets: entities.ToList());
 
                                 // Add a tag optional parameter to set a shared variable to be available to a plug-in.
-                                // See https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters?tabs=webapi#add-a-shared-variable-to-the-plugin-execution-context
+                                // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters?tabs=webapi#add-a-shared-variable-to-the-plugin-execution-context
                                 updateMultipleRequest.RequestUri = new Uri(
                                     updateMultipleRequest.RequestUri.ToString() + "?tag=ParallelCreateUpdateMultiple",
                                     uriKind: UriKind.Relative);
@@ -152,7 +152,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     Console.WriteLine($"\tUpdated {numberOfRecords} records " +
                         $"in {Math.Round(updateStopwatch.Elapsed.TotalSeconds)} seconds.");
 
-                    // Delete created rows asynchronously
+                    // 删除created rows asynchronously
                     // When testing plug-ins, set break point here to observe data
                     Console.WriteLine($"\nStarting asynchronous bulk delete " +
                         $"of {entityList.Count} created records...");

@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to create a relationship between tables
-    /// </summary>
+        /// Contains the data to create a relationship between tables
+        /// </summary>
     public sealed class CreateRelationshipRequest : HttpRequestMessage
     {
         /// <summary>

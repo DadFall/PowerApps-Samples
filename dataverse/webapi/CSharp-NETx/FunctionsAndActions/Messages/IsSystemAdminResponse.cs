@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the IsSystemAdminRequest
-    /// </summary>
+        /// Contains the response from the IsSystemAdminRequest
+        /// </summary>
     public sealed class IsSystemAdminResponse : HttpResponseMessage
     {
         // Cache the async content

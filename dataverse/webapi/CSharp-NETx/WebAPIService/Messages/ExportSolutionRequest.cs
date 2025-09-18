@@ -4,8 +4,8 @@ using PowerApps.Samples.Types;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to export a solution
-    /// </summary>
+        /// Contains the data to export a solution
+        /// </summary>
     public sealed class ExportSolutionRequest : HttpRequestMessage
     {
 

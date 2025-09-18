@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Retrieves the access rights of the specified security principal (team or user) to the specified record.
-    /// </summary>
+        /// Retrieves the access rights of the specified security principal (team or user) to the specified record.
+        /// </summary>
     public sealed class RetrievePrincipalAccessRequest : HttpRequestMessage
     {
         /// <summary>

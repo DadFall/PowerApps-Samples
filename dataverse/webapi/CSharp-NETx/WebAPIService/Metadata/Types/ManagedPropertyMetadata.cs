@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Metadata.Types
 {
     /// <summary>
-    /// For internal use only
-    /// </summary>
+        /// For internal use only
+        /// </summary>
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class ManagedPropertyMetadata : MetadataBase
     {

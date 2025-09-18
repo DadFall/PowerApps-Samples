@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to revoke the shared access granted to a security principal (user, team, or organization) for the specified record.
-    /// </summary>
+        /// Contains the data to revoke the shared access granted to a security principal (user, team, or organization) for the specified record.
+        /// </summary>
     public sealed class RevokeAccessRequest : HttpRequestMessage
     {
         /// <summary>

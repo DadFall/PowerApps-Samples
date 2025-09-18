@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to perform the FormatAddress function
-    /// </summary>
+        /// Contains the data to perform the FormatAddress function
+        /// </summary>
     public sealed class FormatAddressRequest : HttpRequestMessage
     {
         /// <summary>

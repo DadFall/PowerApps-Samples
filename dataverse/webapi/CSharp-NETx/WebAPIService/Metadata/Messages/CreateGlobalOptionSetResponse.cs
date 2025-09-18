@@ -5,8 +5,8 @@
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response to the CreateGlobalOptionSetRequest
-    /// </summary>
+        /// Contains the response to the CreateGlobalOptionSetRequest
+        /// </summary>
     public sealed class CreateGlobalOptionSetResponse : HttpResponseMessage
     {
         /// <summary>

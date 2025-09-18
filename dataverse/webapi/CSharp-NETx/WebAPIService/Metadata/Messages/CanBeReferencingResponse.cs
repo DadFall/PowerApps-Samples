@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Metadata.Messages
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the CanBeReferencing action.
-    /// </summary>
+        /// Contains the response from the CanBeReferencing action.
+        /// </summary>
     public sealed class CanBeReferencingResponse : HttpResponseMessage
     {
         // Cache the async content

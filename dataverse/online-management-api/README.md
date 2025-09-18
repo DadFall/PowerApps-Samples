@@ -4,7 +4,7 @@ The C# sample demonstrates how to authenticate to the Online Management API and 
 
 The sample uses the authentication [helper code](sample-authentication-helper.md) to easily authenticate to Online Management API using the OAuth 2.0 protocol and pass in the access token in header of your request.
 
-## What this sample does?
+## 此示例的功能?
 
 The sample performs the following tasks:
 

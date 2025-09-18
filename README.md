@@ -10,11 +10,11 @@ Welcome to the samples repo for Power Apps. The repo contains sample code for Po
 - [Power Apps component framework docs](https://learn.microsoft.com/power-apps/developer/component-framework/overview)
 - [Power Platform developer docs](https://learn.microsoft.com/power-platform/developer)
 
-## Contributing
+## 贡献
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. Learn more in [Contributor License Agreements](https://cla.microsoft.com).
+Contributor 许可证 Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. Learn more in [Contributor 许可证 Agreements](https://cla.microsoft.com).
 
 When you submit a pull request, a CLA-bot automatically determines whether you need to provide
 a CLA and decorate the PR appropriately, for example with a label or comment. Follow the instructions

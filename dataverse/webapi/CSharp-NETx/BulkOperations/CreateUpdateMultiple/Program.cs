@@ -52,7 +52,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                         targets: entityList);
 
                     // Add a tag optional parameter to set a shared variable to be available to a plug-in.
-                    // See https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters?tabs=webapi#add-a-shared-variable-to-the-plugin-execution-context
+                    // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters?tabs=webapi#add-a-shared-variable-to-the-plugin-execution-context
                     createMultipleRequest.RequestUri = new Uri(
                         createMultipleRequest.RequestUri.ToString() + "?tag=CreateUpdateMultiple",
                         uriKind: UriKind.Relative);
@@ -67,7 +67,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                     Console.WriteLine($"Sending POST request to /{tableSetName}/Microsoft.Dynamics.CRM.CreateMultiple");
                     Stopwatch createStopwatch = Stopwatch.StartNew();
-                    // Send the request
+                    // 发送请求
                     var createMultipleResponse = await service.SendAsync<CreateMultipleResponse>(createMultipleRequest);
                     Console.WriteLine($"\tCreated {entityList.Count} records " +
                         $"in {Math.Round(createStopwatch.Elapsed.TotalSeconds)} seconds.");
@@ -93,7 +93,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                         targets: entityList);
 
                     // Add a tag optional parameter to set a shared variable to be available to a plug-in.
-                    // See https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters?tabs=webapi#add-a-shared-variable-to-the-plugin-execution-context
+                    // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters?tabs=webapi#add-a-shared-variable-to-the-plugin-execution-context
                     updateMultipleRequest.RequestUri = new Uri(updateMultipleRequest.RequestUri.ToString() + "?tag=CreateUpdateMultiple", uriKind: UriKind.Relative);
 
                     if (Settings.BypassCustomPluginExecution)
@@ -105,13 +105,13 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                     Console.WriteLine($"Sending POST request to /{tableSetName}/Microsoft.Dynamics.CRM.UpdateMultiple");
                     Stopwatch updateStopwatch = Stopwatch.StartNew();
-                    // Send the request
+                    // 发送请求
                     await service.SendAsync(updateMultipleRequest);
                     updateStopwatch.Stop();
                     Console.WriteLine($"\tUpdated {entityList.Count} records " +
                         $"in {Math.Round(updateStopwatch.Elapsed.TotalSeconds)} seconds.");
 
-                    // Delete created rows asynchronously
+                    // 删除created rows asynchronously
                     // When testing plug-ins, set break point here to observe data
                     Console.WriteLine($"\nStarting asynchronous bulk delete " +
                         $"of {createMultipleResponse.Ids.Length} created records...");

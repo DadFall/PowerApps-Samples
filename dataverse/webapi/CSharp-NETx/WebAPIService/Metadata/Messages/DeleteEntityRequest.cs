@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to delete a table.
-    /// </summary>
+        /// Contains the data to delete a table.
+        /// </summary>
     public sealed class DeleteEntityRequest : HttpRequestMessage
     {
         /// <summary>

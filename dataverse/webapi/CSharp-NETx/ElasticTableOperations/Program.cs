@@ -40,7 +40,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             {
                 #region Create Elastic table
                 Console.WriteLine("=== Start Region 0: Creating contoso_SensorData table === \n");
-                // Define the table and columns
+                // 定义the table and columns
                 var sensorDataTable = new EntityMetadata
                 {
                     SchemaName = TABLE_SCHEMA_NAME,
@@ -123,7 +123,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 This code includes the MSCRM.SessionToken header with all GET operations before the request is sent
 
                     // Session token used by elastic tables to enable strong consistency
-                    // See https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#sending-the-session-token
+                    // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#sending-the-session-token
                     if (!string.IsNullOrWhiteSpace(_sessionToken) && request.Method == HttpMethod.Get) {
                         request.Headers.Add("MSCRM.SessionToken", _sessionToken);
                     }
@@ -131,7 +131,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 This code captures the current session token, if it is included, after every response is recieved.
 
                     // Capture the current session token value
-                    // See https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#getting-the-session-token
+                    // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#getting-the-session-token
                     if (response.Headers.Contains("x-ms-session-token"))
                     {
                         _sessionToken = response.Headers.GetValues("x-ms-session-token")?.FirstOrDefault()?.ToString();
