@@ -2,9 +2,8 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
+// 程序集的一般信息由以下属性集控制。
+// 更改这些属性值以修改与程序集关联的信息。
 [assembly: AssemblyTitle("ExternalWebApiConsumingPortalOAuthTokenSample")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -14,12 +13,11 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// Setting ComVisible to false makes the types in this assembly not visible
-// to COM components.  If you need to access a type in this assembly from
-// COM, set the ComVisible attribute to true on that type.
+// 将 ComVisible 设置为 false 使此程序集中的类型对 COM 组件不可见。
+// 如果需要从 COM 访问此程序集中的类型，请将该类型的 ComVisible 属性设置为 true。
 [assembly: ComVisible(false)]
 
-// The following GUID is for the ID of the typelib if this project is exposed to COM
+// 如果此项目向 COM 公开，则下面的 GUID 用于类型库的 ID
 [assembly: Guid("661dcd67-ac8c-491b-a13b-a16524f084b7")]
 
 // Version information for an assembly consists of the following four values:
