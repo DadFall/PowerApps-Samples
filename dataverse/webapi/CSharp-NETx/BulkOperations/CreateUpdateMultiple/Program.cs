@@ -33,7 +33,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 else
                 {
 
-                    // Create a List of entity instances.
+                    // 创建a List of entity instances.
                     Console.WriteLine($"\nPreparing {numberOfRecords} records to create..");
                     List<JObject> entityList = new();
                     // Populate the list with the number of records to test.
@@ -41,7 +41,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     {
                         entityList.Add(new JObject() {
                             {"sample_name", $"sample record {i+1:0000000}"},
-                            // Each record MUST have the @odata.type specified.
+                            // 每个record MUST have the @odata.type specified.
                             {"@odata.type",$"Microsoft.Dynamics.CRM.{tableLogicalName}" }
                         });
                     }
@@ -51,7 +51,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                         entitySetName: tableSetName,
                         targets: entityList);
 
-                    // Add a tag optional parameter to set a shared variable to be available to a plug-in.
+                    // 添加a tag optional parameter to set a shared variable to be available to a plug-in.
                     // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters?tabs=webapi#add-a-shared-variable-to-the-plugin-execution-context
                     createMultipleRequest.RequestUri = new Uri(
                         createMultipleRequest.RequestUri.ToString() + "?tag=CreateUpdateMultiple",
@@ -81,7 +81,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                     }
 
-                    // Update the sample_name value:
+                    // 更新the sample_name value:
                     foreach (JObject entity in entityList)
                     {
                         entity[tablePrimaryNameColumnName] += " Updated";
@@ -92,7 +92,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                         entitySetName: tableSetName,
                         targets: entityList);
 
-                    // Add a tag optional parameter to set a shared variable to be available to a plug-in.
+                    // 添加a tag optional parameter to set a shared variable to be available to a plug-in.
                     // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters?tabs=webapi#add-a-shared-variable-to-the-plugin-execution-context
                     updateMultipleRequest.RequestUri = new Uri(updateMultipleRequest.RequestUri.ToString() + "?tag=CreateUpdateMultiple", uriKind: UriKind.Relative);
 
@@ -112,7 +112,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                         $"in {Math.Round(updateStopwatch.Elapsed.TotalSeconds)} seconds.");
 
                     // 删除created rows asynchronously
-                    // When testing plug-ins, set break point here to observe data
+                    // 当testing plug-ins, set break point here to observe data
                     Console.WriteLine($"\nStarting asynchronous bulk delete " +
                         $"of {createMultipleResponse.Ids.Length} created records...");
 

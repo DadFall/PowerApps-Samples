@@ -4,16 +4,16 @@ using PowerApps.Samples.Types;
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-        /// Contains the response from the RetrieveTotalRecordCountRequest 
+        /// Contains the response from the RetrieveTotalRecordCountRequest
         /// </summary>
     public sealed class RetrieveTotalRecordCountResponse : HttpResponseMessage
     {
-        // Cache the async content
+        // 缓存the async content
         private string? _content;
 
         //Provides JObject for property getters
@@ -28,7 +28,7 @@ namespace PowerApps.Samples.Messages
         }
 
         /// <summary>
-        /// Gets the collection of results for the RetrieveTotalRecordCount Function.
+        /// 获取 the collection of results for the RetrieveTotalRecordCount Function.
         /// </summary>
         public EntityRecordCountCollection EntityRecordCountCollection
         {

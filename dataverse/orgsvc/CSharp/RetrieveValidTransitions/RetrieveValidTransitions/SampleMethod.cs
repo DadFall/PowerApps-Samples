@@ -22,10 +22,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -39,9 +39,9 @@ namespace PowerApps.Samples
         /// <summary>
         /// Returns valid status option transitions regardless of whether state transitions are enabled for the entity
         /// </summary>
-        /// <param name="entityLogicalName">The logical name of the entity</param>
-        /// <param name="currentStatusValue">The current status of the entity instance</param>
-        /// <returns>A list of StatusOptions that represent the valid transitions</returns>
+        /// <param name="entityLogicalName">logical 名称 of the entity</param>
+        /// <param name="currentStatusValue">current status of the entity 实例</param>
+        /// <returns>一个list of StatusOptions that represent the valid transitions</returns>
         public static List<StatusOption> GetValidStatusOptions(CrmServiceClient service, String entityLogicalName, int currentStatusValue)
         {
 
@@ -98,7 +98,7 @@ namespace PowerApps.Samples
 
             if (EnforceStateTransitions.HasValue && EnforceStateTransitions.Value == true)
             {
-                //When EnforceStateTransitions is true use the TransitionData to filter the valid options
+                //当EnforceStateTransitions is true use the TransitionData to filter the valid options
                 foreach (StatusOptionMetadata option in statusAttribute.OptionSet.Options)
                 {
                     if (option.Value == currentStatusValue)
@@ -139,7 +139,7 @@ namespace PowerApps.Samples
             }
             else
             {
-                ////When EnforceStateTransitions is false do not filter the available options
+                ////当EnforceStateTransitions is false do not filter the available options
 
                 foreach (StatusOptionMetadata option in statusAttribute.OptionSet.Options)
                 {
@@ -176,9 +176,9 @@ namespace PowerApps.Samples
         /// <summary>
         /// Returns a string representing the label of an option in an optionset
         /// </summary>
-        /// <param name="attribute">The metadata for an an attribute with options</param>
-        /// <param name="value">The value of the option</param>
-        /// <returns>The label for the option</returns>
+        /// <param name="attribute">meta数据 for an an attribute with 选项</param>
+        /// <param name="value">值 of the option</param>
+        /// <returns>label for the option</returns>
         public static String GetOptionSetLabel(CrmServiceClient service, EnumAttributeMetadata attribute, int value)
         {
             String label = "";

@@ -25,7 +25,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create the BulkDetectDuplicatesRequest object
+                    // 创建the BulkDetectDuplicatesRequest object
                     Console.WriteLine("  Creating the BulkDetectDuplicatesRequest object");
                     var request = new BulkDetectDuplicatesRequest()
                     {
@@ -41,7 +41,7 @@ namespace PowerApps.Samples
                         CCRecipients = new Guid[0]
                     };
 
-                    // Execute the request
+                    // 执行the request
                     Console.WriteLine("  Executing BulkDetectDuplicatesRequest");
                     response = (BulkDetectDuplicatesResponse)service
                         .Execute(request);

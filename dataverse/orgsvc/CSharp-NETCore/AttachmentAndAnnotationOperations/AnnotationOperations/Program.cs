@@ -16,12 +16,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
@@ -43,18 +43,18 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Program app = new();
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"))
                 {
                     UseWebApi = false
                 };
 
-            // Get current MaxUploadFileSize
+            // 获取current MaxUploadFileSize
             int originalMaxUploadFileSize = Utility.GetMaxUploadFileSize(serviceClient);
             Console.WriteLine($"Current MaxUploadFileSize: {originalMaxUploadFileSize}");
 
-            // Create account to associate note with.
+            // 创建account to associate note with.
             Entity account = new("account")
             {
                 Attributes =
@@ -63,10 +63,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 }
             };
 
-            Guid accountid = serviceClient.Create(entity: account); // To delete later
+            Guid accountid = serviceClient.Create(entity: account); // 稍后删除
             Console.WriteLine("Created an account record to associate notes with.");
 
-            // Create note
+            // 创建note
             Entity note = new("annotation")
             {
                 Attributes =
@@ -83,7 +83,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 }
             };
 
-            // Create note
+            // 创建note
             Guid annotationid = serviceClient.Create(entity:note);
             Console.WriteLine($"Created note with attached Word document.");
 
@@ -289,7 +289,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     FileContinuationToken = fileContinuationToken,
                 };
 
-                // Send the request
+                // 发送the request
                 service.Execute(uploadBlockRequest);
             }
 
@@ -352,7 +352,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     Offset = offset
                 };
 
-                // Send the request
+                // 发送the request
                 var downloadBlockResponse =
                            (DownloadBlockResponse)service.Execute(downLoadBlockRequest);
 

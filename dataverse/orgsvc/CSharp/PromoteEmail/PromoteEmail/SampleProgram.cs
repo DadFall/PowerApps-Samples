@@ -8,7 +8,7 @@ namespace PowerApps.Samples
 {
     public partial  class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         private static Guid _contactId;
         private static Guid _emailId;
         private static bool prompt = true;
@@ -28,7 +28,7 @@ namespace PowerApps.Samples
                     SetUpSample(service);
                     #endregion Setup
                     #region Demonstrate
-                    // Create a contact to send an email to (To: field)
+                    // 创建a contact to send an email to (To: field)
                     Contact emailContact = new Contact()
                     {
                         FirstName = "Lisa",
@@ -38,7 +38,7 @@ namespace PowerApps.Samples
                     _contactId = service.Create(emailContact);
                     Console.WriteLine("Created a sample contact.");
 
-                    // Get a system user to send the email (From: field)
+                    // 获取a system user to send the email (From: field)
                     WhoAmIRequest systemUserRequest = new WhoAmIRequest();
                     WhoAmIResponse systemUserResponse = (WhoAmIResponse)service.Execute(systemUserRequest);
 
@@ -46,7 +46,7 @@ namespace PowerApps.Samples
                     SystemUser emailSender = (SystemUser)service.Retrieve(SystemUser.EntityLogicalName, systemUserResponse.UserId, cols);
 
 
-                    // Create the request.
+                    // 创建the request.
                     DeliverPromoteEmailRequest deliverEmailRequest = new DeliverPromoteEmailRequest
                     {
                         Subject = "SDK Sample Email",
@@ -65,10 +65,10 @@ namespace PowerApps.Samples
                     deliverEmailRequest.Attachments = new EntityCollection(new ActivityMimeAttachment[0]);
                     deliverEmailRequest.Attachments.EntityName = ActivityMimeAttachment.EntityLogicalName;
 
-                    // Execute the request.
+                    // 执行the request.
                     DeliverPromoteEmailResponse deliverEmailResponse = (DeliverPromoteEmailResponse)service.Execute(deliverEmailRequest);
 
-                    // Verify the success.
+                    // 验证the success.
 
                     // Define an anonymous type to define the possible values for
                     // email status
@@ -84,7 +84,7 @@ namespace PowerApps.Samples
                         Failed = 8,
                     };
 
-                    // Query for the delivered email, and verify the status code is "Sent".
+                    // 查询for the delivered email, and verify the status code is "Sent".
                     ColumnSet deliveredMailColumns = new ColumnSet("statuscode");
                     Email deliveredEmail = (Email)service.Retrieve(Email.EntityLogicalName, deliverEmailResponse.EmailId, deliveredMailColumns);
 

@@ -20,7 +20,7 @@ namespace PowerApps.Samples
 
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
@@ -36,7 +36,7 @@ namespace PowerApps.Samples
                     };
                     service.Execute(activateRequest);
 
-                    // Verify that the workflow is activated.
+                    // 验证that the workflow is activated.
                     Workflow retrievedWorkflow =
                         (Workflow)service.Retrieve("workflow", _workflowId, new ColumnSet("statecode", "name"));
 
@@ -56,7 +56,7 @@ namespace PowerApps.Samples
                         service.Execute(deactivateRequest);
                     }
 
-                    // Verify that the workflow is deactivated (in a draft state).
+                    // 验证that the workflow is deactivated (in a draft state).
                     retrievedWorkflow =
                         (Workflow)service.Retrieve("workflow", _workflowId, new ColumnSet("statecode", "name"));
 
@@ -104,10 +104,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("9.0.0.0")))
             {
-                //The environment version is lower than version 9.0.0.0
+                //environment version is lower than version 9.0.0.0
                 return;
             }
 
@@ -120,8 +120,8 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -129,7 +129,7 @@ namespace PowerApps.Samples
 
             string xamlWF;
 
-            // This xml defines a workflow that creates a new task when executed
+            // 此xml defines a workflow that creates a new task when executed
             xamlWF = @"<?xml version=""1.0"" encoding=""utf-16""?>
 <Activity x:Class=""CreateTask""
           xmlns=""http://schemas.microsoft.com/netfx/2009/xaml/activities""
@@ -275,7 +275,7 @@ namespace PowerApps.Samples
 
             #endregion Define workflow XAML
 
-            // Create the workflow
+            // 创建the workflow
             Workflow workflow = new Workflow()
             {
                 Name = "CreateTask",
@@ -296,7 +296,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>
@@ -314,7 +314,7 @@ namespace PowerApps.Samples
 
             if (deleteRecords)
             {
-                // Delete the workflow.
+                // 删除the workflow.
                 service.Delete(Workflow.EntityLogicalName, _workflowId);
                 Console.WriteLine("The workflow has been deleted.");
             }

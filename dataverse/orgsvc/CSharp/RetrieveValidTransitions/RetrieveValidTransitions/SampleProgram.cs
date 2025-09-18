@@ -30,7 +30,7 @@ namespace PowerApps.Samples
                     #region Demonstrate
 
                     String entityLogicalName = "email"; // Also try "incident"
-                    // Retrieve status options for the Incident entity
+                    // 检索status options for the Incident entity
 
                     //Retrieve just the incident entity and its attributes
                     MetadataFilterExpression entityFilter = new MetadataFilterExpression(LogicalOperator.And);

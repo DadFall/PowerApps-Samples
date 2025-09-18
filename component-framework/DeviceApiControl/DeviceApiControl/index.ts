@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding

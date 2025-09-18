@@ -16,12 +16,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
@@ -54,7 +54,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             #endregion Optimize Connection settings
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"))
                 {
@@ -66,13 +66,13 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine($"RecommendedDegreesOfParallelism:{serviceClient.RecommendedDegreesOfParallelism}\n");
 
-            // Create sample_Example table for this sample.
+            // 创建sample_Example table for this sample.
             Utility.CreateExampleTable(
                 serviceClient: serviceClient,
                 tableSchemaName: tableSchemaName,
                 isElastic: Settings.UseElastic);
 
-            // Create a List of entity instances.
+            // 创建a List of entity instances.
             Console.WriteLine($"\nPreparing {numberOfRecords} records to create..");
             List<Entity> entityList = new();
             // Populate the list with the number of records to test.
@@ -194,7 +194,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             if (Settings.UseElastic)
             {
                 Console.WriteLine($"\nPreparing {numberOfRecords} records to delete..");
-                // Delete created rows with DeleteMultiple
+                // 删除created rows with DeleteMultiple
                 List<EntityReference> entityReferences = new();
                 foreach (Entity entity in entityList)
                 {
@@ -226,7 +226,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
             else
             {
-                // Delete created rows asynchronously
+                // 删除created rows asynchronously
                 Console.WriteLine($"\nStarting asynchronous bulk delete of {numberOfRecords} created records...");
 
                 string deleteJobStatus = Utility.BulkDeleteRecordsByIds(
@@ -239,7 +239,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             }
 
-            // Delete sample_example table
+            // 删除sample_example table
             Utility.DeleteExampleTable(
                 service: serviceClient,
                 tableSchemaName: tableSchemaName);

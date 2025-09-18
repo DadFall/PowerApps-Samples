@@ -15,22 +15,22 @@ namespace PowerApps.Samples.Metadata.Types
         public AttributeTypeDisplayName AttributeTypeName { get; } = new AttributeTypeDisplayName(AttributeTypeDisplayNameValues.DoubleType);
 
         /// <summary>
-        /// The minimum supported value for this attribute.
+        /// minimum supported value for this attribute.
         /// </summary>
         public double MaxValue { get; set; }
 
         /// <summary>
-        /// The maximum supported value for this attribute.
+        /// maximum supported value for this attribute.
         /// </summary>
         public double MinValue { get; set; }
 
         /// <summary>
-        /// The precision for the attribute.
+        /// precision for the attribute.
         /// </summary>
         public int Precision { get; set; }
 
         /// <summary>
-        /// The input method editor (IME) mode for the attribute.
+        /// input method editor (IME) mode for the attribute.
         /// </summary>
         public ImeMode ImeMode { get; set; }
     }

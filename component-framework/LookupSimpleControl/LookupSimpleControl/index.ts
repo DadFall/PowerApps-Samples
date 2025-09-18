@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -14,7 +14,7 @@ import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
 export class LookupSimpleControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 	// Reference to the control container HTMLDivElement
-	// This element contains all elements of our custom control example
+	// 此element contains all elements of our custom control example
 	private _container: HTMLDivElement;
 
 	// Reference to ComponentFramework Context object
@@ -67,7 +67,7 @@ export class LookupSimpleControl implements ComponentFramework.StandardControl<I
 		this._container = container;
 		this._notifyOutputChanged = notifyOutputChanged;
 
-		// Cache information necessary for lookupObjects API based on control context
+		// 缓存information necessary for lookupObjects API based on control context
 		this._entityType1 = context.parameters.controlValue.getTargetEntityType?.();
 		this._defaultViewId1 = context.parameters.controlValue.getViewId?.();
 		this._entityType2 = context.parameters.controlValue1.getTargetEntityType?.();
@@ -75,7 +75,7 @@ export class LookupSimpleControl implements ComponentFramework.StandardControl<I
 
 		const contentContainer = document.createElement("div");
 
-		// Add title label to control
+		// 添加title label to control
 		const contentLabel = document.createElement("label");
 		contentLabel.textContent = this._contentLabel;
 		contentContainer.appendChild(contentLabel);
@@ -84,7 +84,7 @@ export class LookupSimpleControl implements ComponentFramework.StandardControl<I
 		contentContainer.append(document.createElement("br"));
 		contentContainer.append(document.createElement("br"));
 
-		// Add element to display raw entity data
+		// 添加element to display raw entity data
 		this._inputData1 = document.createElement("label");
 		this._inputData1.textContent = "";
 		contentContainer.appendChild(this._inputData1);
@@ -93,7 +93,7 @@ export class LookupSimpleControl implements ComponentFramework.StandardControl<I
 		contentContainer.append(document.createElement("br"));
 		contentContainer.append(document.createElement("br"));
 
-		// Add button to trigger lookupObjects API for the primary lookup property
+		// 添加button to trigger lookupObjects API for the primary lookup property
 		const lookupObjectsButton1 = document.createElement("button");
 		lookupObjectsButton1.innerText = "Lookup Objects";
 		lookupObjectsButton1.onclick = this.performLookupObjects.bind(
@@ -110,7 +110,7 @@ export class LookupSimpleControl implements ComponentFramework.StandardControl<I
 		contentContainer.append(document.createElement("br"));
 		contentContainer.append(document.createElement("br"));
 
-		// Add element to display raw entity data
+		// 添加element to display raw entity data
 		this._inputData2 = document.createElement("label");
 		this._inputData2.textContent = "";
 		contentContainer.appendChild(this._inputData2);
@@ -119,7 +119,7 @@ export class LookupSimpleControl implements ComponentFramework.StandardControl<I
 		contentContainer.append(document.createElement("br"));
 		contentContainer.append(document.createElement("br"));
 
-		// Add button to trigger lookupObjects API for the secondary lookup property
+		// 添加button to trigger lookupObjects API for the secondary lookup property
 		const lookupObjectsButton2 = document.createElement("button");
 		lookupObjectsButton2.innerText = "Lookup Objects";
 		lookupObjectsButton2.onclick = this.performLookupObjects.bind(
@@ -163,7 +163,7 @@ export class LookupSimpleControl implements ComponentFramework.StandardControl<I
 		return this._context.utils.lookupObjects(lookupOptions).then(
 			(success) => {
 				if (success && success.length > 0) {
-					// Cache the necessary information for the newly selected entity lookup
+					// 缓存the necessary information for the newly selected entity lookup
 					const selectedReference = success[0];
 					const selectedLookupValue: ComponentFramework.LookupValue = {
 						id: selectedReference.id,
@@ -171,7 +171,7 @@ export class LookupSimpleControl implements ComponentFramework.StandardControl<I
 						entityType: selectedReference.entityType,
 					};
 
-					// Update the primary or secondary lookup property
+					// 更新the primary or secondary lookup property
 					setSelected(selectedLookupValue);
 
 					// Trigger a control update
@@ -192,7 +192,7 @@ export class LookupSimpleControl implements ComponentFramework.StandardControl<I
 	 * @param context The entire property bag available to control via Context Object; It contains values as set up by the customizer mapped to names defined in the manifest, as well as utility functions
 	 */
 	public updateView(context: ComponentFramework.Context<IInputs>): void {
-		// Update the main text field of the control to contain the raw data of the entity selected via lookup
+		// 更新the main text field of the control to contain the raw data of the entity selected via lookup
 
 		const lookupValue1: ComponentFramework.LookupValue = context.parameters.controlValue.raw[0];
 		const lookupValue2: ComponentFramework.LookupValue = context.parameters.controlValue1.raw[0];
@@ -208,7 +208,7 @@ export class LookupSimpleControl implements ComponentFramework.StandardControl<I
 	 * @returns an object based on nomenclature defined in manifest, expecting object[s] for property marked as "bound" or "output"
 	 */
 	public getOutputs(): IOutputs {
-		// Send the updated selected lookup item back to the ComponentFramework, based on the currently selected item
+		// 发送the updated selected lookup item back to the ComponentFramework, based on the currently selected item
 		return this._updateSelected1 ? { controlValue: [this._selectedItem1] } : { controlValue1: [this._selectedItem2] };
 	}
 

@@ -19,12 +19,12 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
 
-                    // Create the custom entity.
+                    // 创建the custom entity.
                     var createrequest = new CreateEntityRequest
                     {
                         // Define an entity to enable for emailing. In order to do so,
@@ -60,13 +60,13 @@ namespace PowerApps.Samples
                     service.Execute(createrequest);
                     Console.WriteLine("The emailable entity has been created.");
 
-                    // The entity will not be selectable as an activity party until its customizations
+                    // entity will not be selectable as an activity party until its customizations
                     // have been published. Otherwise, the e-mail activity dialog cannot find
                     // a correct default view.
                     PublishAllXmlRequest publishRequest = new PublishAllXmlRequest();
                     service.Execute(publishRequest);
 
-                    // Before any emails can be created for this entity, an Email attribute
+                    // 在any emails can be created for this entity, an Email attribute之前
                     // must be defined.
                     var createFirstEmailAttributeRequest = new CreateAttributeRequest
                     {
@@ -85,7 +85,7 @@ namespace PowerApps.Samples
                     service.Execute(createFirstEmailAttributeRequest);
                     Console.WriteLine("An email attribute has been added to the emailable entity.");
 
-                    // Create a second, alternate email address. Since there is already one 
+                    // 创建a second, alternate email address. Since there is already one 
                     // email attribute on the entity, this will never be used for emailing
                     // even if the first one is not populated.
                     var createSecondEmailAttributeRequest = new CreateAttributeRequest

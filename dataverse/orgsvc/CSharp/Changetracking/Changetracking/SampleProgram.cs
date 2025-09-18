@@ -30,12 +30,12 @@ namespace PowerApps.Samples
                     #region Demonstrate
 
                     /*
-                        The Sample setup will import a ChangeTracking solution that contains 
+ The Sample setup will import a ChangeTracking solution that contains 
                         a sample_book entity that has an alternate key named sample_bookcode.
 
                         10 initial sample_book entity records are created so that changes to those
                         entities can be tracked.
-                    */
+ */
 
                     //To cache the RetrieveEntityChangesResponse.EntityChanges.DataToken value
                     string dataVersionToken;
@@ -74,7 +74,7 @@ namespace PowerApps.Samples
                     List<EntityReference> deletedRecords = new List<EntityReference>();
 
                     //Retrieve Changes since the initial records were created
-                    //The request is identical except it now has the DataVersion value set to the DataToken of the previous request.
+                    //request is identical except it now has the DataVersion value set to the DataToken of the previous request.
                     RetrieveEntityChangesRequest secondRequest = new RetrieveEntityChangesRequest()
                     {
                         EntityName = "sample_book",
@@ -103,7 +103,7 @@ namespace PowerApps.Samples
                         Console.WriteLine(" name: {0}", e["sample_name"]);
 
                             /*
-                             Expected:
+ Expected:
                                name: Demo Book 10
                                name: Demo Book 11
                                name: Demo Book 12
@@ -115,7 +115,7 @@ namespace PowerApps.Samples
                                name: Demo Book 18
                                name: Demo Book 19
                                name: Demo Book 0 updated < Time record was updated >
-                            */
+ */
                     }
                     );
 
@@ -125,9 +125,9 @@ namespace PowerApps.Samples
                         Console.WriteLine(" LogicalName: {0} Id:{1}", e.LogicalName, e.Id);
 
                             /*
-                             Expected:
+ Expected:
                                LogicalName: sample_book Id:< GUID of record that was deleted >
-                            */
+ */
 
                     }
                     );

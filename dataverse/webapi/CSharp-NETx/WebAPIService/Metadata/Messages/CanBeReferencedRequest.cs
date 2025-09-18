@@ -11,7 +11,7 @@ namespace PowerApps.Samples.Metadata.Messages
         /// <summary>
         /// Returns an HttpRequestMessage for the CanBeReferenced Action
         /// </summary>
-        /// <param name="entityName">Logical entity name.</param>
+        /// <param name="entityName">Logical entity 名称.</param>
         public CanBeReferencedRequest(string entityName)
         {
             Method = HttpMethod.Post;

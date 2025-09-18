@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -39,11 +39,11 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.        
+        /// 此method creates any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a contact to send an email to (To: field)
+            // 创建a contact to send an email to (To: field)
             var emailContact = new Contact
             {
                 FirstName = "Nancy",
@@ -53,25 +53,25 @@ namespace PowerApps.Samples
             contactId = service.Create(emailContact);
             Console.WriteLine("Created a contact: {0}.", emailContact.FirstName + " " + emailContact.LastName);
 
-            // Get a system user to send the email (From: field)
+            // 获取a system user to send the email (From: field)
             var systemUserRequest = new WhoAmIRequest();
             var systemUserResponse = (WhoAmIResponse)service.Execute(systemUserRequest);
             userId = systemUserResponse.UserId;
 
-            // Create the 'From:' activity party for the email
+            // 创建the 'From:' activity party for the email
             var fromParty = new ActivityParty
             {
                 PartyId = new EntityReference(SystemUser.EntityLogicalName, userId)
             };
 
-            // Create the 'To:' activity party for the email
+            // 创建the 'To:' activity party for the email
             var toParty = new ActivityParty
             {
                 PartyId = new EntityReference(Contact.EntityLogicalName, contactId)
             };
             Console.WriteLine("Created activity parties.");
 
-            // Create an e-mail message.
+            // 创建an e-mail message.
             var email = new Email
             {
                 To = new ActivityParty[] { toParty },
@@ -86,7 +86,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

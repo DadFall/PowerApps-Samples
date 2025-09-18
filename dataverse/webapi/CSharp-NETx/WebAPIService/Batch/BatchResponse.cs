@@ -4,7 +4,7 @@
     {
 
         /// <summary>
-        /// Gets the responses from the batch operation
+        /// 获取 the responses from the batch operation
         /// </summary>
         public List<HttpResponseMessage> HttpResponseMessages
         {
@@ -21,9 +21,9 @@
             }
         }
         /// <summary>
-        /// Processes the Multi-part content returned from the batch into a list of responses.
+        /// 处理 the Multi-part content returned from the batch into a list of responses.
         /// </summary>
-        /// <param name="content">The Content of the response.</param>
+        /// <param name="content">Content of the 响应.</param>
         /// <returns></returns>
         private static async Task<List<HttpResponseMessage>> ParseMultipartContent(HttpContent content)
         {
@@ -36,14 +36,14 @@
                 batchResponseContent.Contents.ToList().ForEach(async httpContent =>
                 {
 
-                    //This is true for changesets
+                    //此is true for changesets
                     if (httpContent.IsMimeMultipartContent())
                     {
                         //Recursive call
                         responses.AddRange(await ParseMultipartContent(httpContent));
                     }
 
-                    //This is for individual responses outside of a change set.
+                    //此is for individual responses outside of a change set.
                     else
                     {
                         //Must change Content-Type for ReadAsHttpResponseMessageAsync method to work.

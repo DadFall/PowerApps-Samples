@@ -13,7 +13,7 @@ namespace PowerApps.Samples
 {
     public class Service : IDisposable
     {
-        // Service configuration data passed into the constructor
+        // 服务配置数据passed into the constructor
         private readonly Config config;
 
         private static IServiceProvider _serviceProvider { get; set; }
@@ -27,7 +27,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// The constructor for the service
+        /// constructor for the service
         /// </summary>
         /// <param name="configParam"></param>
         /// <exception cref="InvalidOperationException"></exception>
@@ -42,7 +42,7 @@ namespace PowerApps.Samples
             {
                 if (config.DisableCookies)
                 {
-                    //Don't use cookies
+                    //不使用 cookie
                     services.AddHttpClient(
                         name: WebAPIClientName,
                         configureClient: ConfigureHttpClient
@@ -55,7 +55,7 @@ namespace PowerApps.Samples
                     ).AddPolicyHandler(GetRetryPolicy(config));
 
                 }
-                else //Use cookies
+                else //使用 cookie
                 {
                     services.AddHttpClient(
                         name: WebAPIClientName,
@@ -74,13 +74,13 @@ namespace PowerApps.Samples
                 logging.ClearProviders();
             });
 
-            // Add the named HttpClient configuration to the service provider.
+            // 添加the named HttpClient configuration to the service provider.
             _serviceProvider = builder.Build().Services;
 
-            // Send a simple request to access the recommended degree of parallelism (DOP).
+            // 发送a simple request to access the recommended degree of parallelism (DOP).
             var whoAmIResponse =  SendAsync<WhoAmIResponse>(new WhoAmIRequest()).GetAwaiter().GetResult();
             _recommendedDegreeOfParallelism = int.Parse(whoAmIResponse.Headers.GetValues("x-ms-dop-hint").FirstOrDefault());
-            // Set the users details
+            // 设置the users details
             _userId = whoAmIResponse.UserId;
             _businessUnitId = whoAmIResponse.BusinessUnitId;
             _organizationId = whoAmIResponse.OrganizationId;
@@ -96,7 +96,7 @@ namespace PowerApps.Samples
             httpClient.BaseAddress = BaseAddress;
             httpClient.Timeout = TimeSpan.FromSeconds(config.TimeoutInSeconds);
             httpClient.DefaultRequestHeaders.Add("User-Agent", $"WebAPIService/{Assembly.GetExecutingAssembly().GetName().Version}");
-            // Set default headers for all requests
+            // 设置default headers for all requests
             // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/compose-http-requests-handle-errors#http-headers
             httpClient.DefaultRequestHeaders.Add("OData-MaxVersion", "4.0");
             httpClient.DefaultRequestHeaders.Add("OData-Version", "4.0");
@@ -153,10 +153,10 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Processes requests and returns responses. Manages Service Protection Limit errors.
+        /// 处理 requests and returns responses. 管理 Service Protection Limit errors.
         /// </summary>
-        /// <param name="request">The request to send.</param>
-        /// <returns>The response from the HttpClient</returns>
+        /// <param name="request">请求 to send.</param>
+        /// <returns>response from the HttpClient</returns>
         /// <exception cref="Exception"></exception>
         public async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request)
         {
@@ -166,7 +166,7 @@ namespace PowerApps.Samples
                 request.Headers.Add("MSCRM.SessionToken", _sessionToken);
             }
 
-            // Set the access token using the function from the Config passed to the constructor
+            // 设置the access token using the function from the Config passed to the constructor
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", await config.GetAccessToken());
 
             // 获取the named HttpClient from the IHttpClientFactory
@@ -183,7 +183,7 @@ namespace PowerApps.Samples
 
              //SampleGenerator.WriteHttpSample(request, response, BaseAddress, "H:\\temp\\GeneratedSamples");
 
-            // Throw an exception if the request is not successful
+            // 抛出an exception if the request is not successful
             if (!response.IsSuccessStatusCode)
             {
                 ServiceException exception = await ParseError(response);
@@ -193,10 +193,10 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Processes requests with typed responses
+        /// 处理 requests with typed responses
         /// </summary>
         /// <typeparam name="T">The type derived from HttpResponseMessage</typeparam>
-        /// <param name="request">The request</param>
+        /// <param name="request">请求</param>
         /// <returns></returns>
         public async Task<T> SendAsync<T>(HttpRequestMessage request) where T : HttpResponseMessage
         {
@@ -228,7 +228,7 @@ namespace PowerApps.Samples
             }
             catch (Exception)
             {
-                // Error may not be in correct OData Error format, so keep trying...
+                // 错误may not be in correct OData Error format, so keep trying...
             }
 
             if (oDataError?.Error != null)
@@ -265,7 +265,7 @@ namespace PowerApps.Samples
 
                 }
 
-                //When nothing else works
+                //当nothing else works
                 ServiceException exception = new(response.ReasonPhrase)
                 {
                     Content = content,
@@ -278,12 +278,12 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// The BaseAddress property of the WebAPI httpclient.
+        /// BaseAddress property of the WebAPI httpclient.
         /// </summary>
         public Uri BaseAddress { get; }
 
         /// <summary>
-        /// The recommended degree of parallelism for the connection.
+        /// recommended degree of parallelism for the connection.
         /// </summary>
         public int RecommendedDegreeOfParallelism {
             get {
@@ -292,7 +292,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// The UserId of the connected user
+        /// UserId of the connected user
         /// </summary>
         public Guid UserId
         {
@@ -303,7 +303,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// The OrganizationId of the connected user
+        /// OrganizationId of the connected user
         /// </summary>
         public Guid OrganizationId
         {
@@ -314,7 +314,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// The BusinessUnitId of the connected user
+        /// BusinessUnitId of the connected user
         /// </summary>
         public Guid BusinessUnitId
         {

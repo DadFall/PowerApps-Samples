@@ -6,10 +6,10 @@
     public sealed class DeleteEntityRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the DeleteEntityRequest
+        /// 初始化 the DeleteEntityRequest
         /// </summary>
-        /// <param name="logicalName">The logical name of the table.</param>
-        /// <param name="strongConsistency">Whether to apply strong consistency header to the request.</param>
+        /// <param name="logicalName">logical 名称 of the table.</param>
+        /// <param name="strongConsistency">Whether to apply strong consistency header to the 请求.</param>
         public DeleteEntityRequest(string logicalName, bool strongConsistency = false)
         {
             Method = HttpMethod.Delete;

@@ -128,7 +128,7 @@ namespace FunctionsAndActions
             Console.WriteLine();
             //Output when all columns are mapped for account_parent_account relationship using Generate Mappings:
             /*
-            {
+ {
               "@odata.context": "[Organization URI]/api/data/v9.2/$metadata#accounts/$entity",
               "@odata.type": "#Microsoft.Dynamics.CRM.account",
               "territorycode": 1,
@@ -173,9 +173,8 @@ namespace FunctionsAndActions
               "address1_stateorprovince": "WA",
               "ownerid@odata.bind": "systemusers()",
               "parentaccountid@odata.bind": "accounts(fe9873ac-2f1b-ed11-b83e-00224837179f)"
-            }          
-
-            */
+            }
+ */
             JObject newAccount = initializeFromResponse.Record;
 
             //Set different properties for new record
@@ -197,8 +196,7 @@ namespace FunctionsAndActions
             Console.WriteLine();
 
             /*
-
-            {
+ {
               "@odata.context": "[Organization URI]/api/data/v9.2/$metadata#accounts/$entity",
               "@odata.type": "#Microsoft.Dynamics.CRM.account",
               "territorycode": 1,
@@ -243,11 +241,11 @@ namespace FunctionsAndActions
               "address1_stateorprovince": "IL",
               "parentaccountid@odata.bind": "accounts(561c9519-331b-ed11-b83e-00224837179f)"
             }
-            */
+ */
 
             //Create the new record with default values copied from the original
             EntityReference newAccountReference = await service.Create("accounts", newAccount);
-            recordsToDelete.Add(newAccountReference); //To delete later
+            recordsToDelete.Add(newAccountReference); //稍后删除
 
             #endregion Section 3: Unbound Functions: InitializeFrom
 
@@ -418,7 +416,7 @@ namespace FunctionsAndActions
 
                 Console.WriteLine($"Current users access: {retrievePrincipalAccessResponse1.AccessRights}");
 
-                //If they don't already have Delete Access, grant it to them.
+                //如果they don't already have Delete Access, grant it to them.
                 if (!retrievePrincipalAccessResponse1.AccessRights.HasFlag(AccessRights.DeleteAccess))
                 {
                     //Create request to share the record with the user
@@ -469,7 +467,7 @@ namespace FunctionsAndActions
 
 
             EntityReference roleReference = await service.Create("roles", role);
-            recordsToDelete.Add(roleReference); //To delete later
+            recordsToDelete.Add(roleReference); //稍后删除
 
             JObject retrievedRole = await service.Retrieve(
                 entityReference: roleReference, 
@@ -486,7 +484,7 @@ namespace FunctionsAndActions
             Console.WriteLine();
 
             /*
-             Number of privileges in new role: 9
+ Number of privileges in new role: 9
                 prvReadSharePointData
                 prvReadSdkMessage
                 prvWriteSharePointData
@@ -495,8 +493,8 @@ namespace FunctionsAndActions
                 prvReadPluginAssembly
                 prvCreateSharePointData
                 prvReadPluginType
-                prvReadSharePointDocument 
-            */
+                prvReadSharePointDocument
+ */
 
             //Add privileges to the role
 
@@ -547,8 +545,7 @@ namespace FunctionsAndActions
             Console.WriteLine();
 
             /*
-
-            Number of privileges after: 11
+ Number of privileges after: 11
                     prvReadAccount          <- New
                     prvReadSharePointData
                     prvReadSdkMessage
@@ -559,8 +556,8 @@ namespace FunctionsAndActions
                     prvReadPluginAssembly
                     prvCreateSharePointData
                     prvReadPluginType
-                    prvReadSharePointDocument 
-            */
+                    prvReadSharePointDocument
+ */
 
             #endregion Section 8: Bound Actions: AddPrivilegesRole
 

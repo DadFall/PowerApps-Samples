@@ -8,8 +8,8 @@ using MyApp.DataModel;
 internal class Program
 {
     /// <summary>
-    /// Assign ownership of an entity record.
-    /// </summary>
+        /// Assign ownership of an entity record.
+        /// </summary>
     /// <param name="service">Authenticated web service connection.</param>
     /// <param name="entity1">Entity record to assign.</param>
     /// <param name="entity2">Entity that is to own the record.</param>
@@ -24,21 +24,21 @@ internal class Program
     }
 
     /// <summary>
-    /// Contains the application's configuration settings. 
-    /// </summary>
+        /// Contains the application's configuration settings.
+        /// </summary>
     static IConfiguration Configuration { get; }
 
     /// <summary>
-    /// Constructor. Loads the application settings from a JSON configuration file.
-    /// </summary>
+        /// Constructor. 加载 the application settings from a JSON configuration file.
+        /// </summary>
     static Program()
     {
-        // Get the path to the appsettings file. If the environment variable is set,
+        // 获取the path to the appsettings file. If the environment variable is set,
         // use that file path. Otherwise, use the runtime folder's settings file.
         string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
         if (path == null) path = "appsettings.json";
 
-        // Load the app's configuration settings from the JSON file.
+        // 加载the app's configuration settings from the JSON file.
         Configuration = new ConfigurationBuilder()
             .AddJsonFile(path, optional: false, reloadOnChange: true)
             .Build();
@@ -49,36 +49,36 @@ internal class Program
         // Entity name and reference collection.
         Dictionary<string, EntityReference> entityStore;
 
-        // Create a Dataverse service client using the default connection string.
+        // 创建a Dataverse service client using the default connection string.
         ServiceClient serviceClient =
             new(Configuration.GetConnectionString("default"));
 
         // Pre-create any table rows that Run() requires.
         Setup(serviceClient, out entityStore);
 
-        // Execute the main logic of this program
+        // 执行the main logic of this program
         Run(serviceClient, entityStore);
 
         // Pause program execution before resource cleanup.
         Console.WriteLine("Press any key to undo environment data changes.");
         Console.ReadKey();
 
-        // Delete any created table rows and then dispose the service connection.
+        // 删除any created table rows and then dispose the service connection.
         Cleanup(serviceClient, entityStore);
         serviceClient.Dispose();
     }
 
     /// <summary>
-    /// Initializes any pre-existing data and resources required by the Run() method.
-    /// </summary>
+        /// 初始化 any pre-existing data and resources required by the Run() method.
+        /// </summary>
     /// <param name="service">Authenticated web service connection.</param>
-    /// <param name="entityStore">Entity name and reference collection.</param>
+    /// <param name="entityStore">Entity 名称 and reference 集合.</param>
     static public void Setup(IOrganizationService service, out Dictionary<string,
         EntityReference> entityStore)
     {
         entityStore = new Dictionary<string, EntityReference>();
 
-        // Create an account.
+        // 创建an account.
         Account setupAccount = new Account { Name = "Example Account" };
         setupAccount.Id = service.Create(setupAccount);
         Console.WriteLine("Created account '{0}'.", setupAccount.Name);
@@ -86,7 +86,7 @@ internal class Program
         entityStore.Add("Example Account", 
             new EntityReference("account", setupAccount.Id));
 
-        // Retrieve the default business unit needed to create the team and role.
+        // 检索the default business unit needed to create the team and role.
         var queryDefaultBusinessUnit = new QueryExpression
         {
             EntityName = BusinessUnit.EntityLogicalName,
@@ -100,7 +100,7 @@ internal class Program
         var defaultBusinessUnit = (BusinessUnit)service.RetrieveMultiple(
             queryDefaultBusinessUnit).Entities[0];
 
-        // Create a team.
+        // 创建a team.
         var setupTeam = new Team
         {
             Name = "Team First Coffee",
@@ -114,7 +114,7 @@ internal class Program
         entityStore.Add("Team First Coffee", 
             new EntityReference("team", setupTeam.Id));
 
-        // Create a role.
+        // 创建a role.
         var setupRole = new Role
         {
             Name = "Custom Role",
@@ -127,7 +127,7 @@ internal class Program
 
         entityStore.Add("Custom Role", new EntityReference("role", setupRole.Id));
 
-        // Execute  a query to find the prvReadAccount privilege.
+        // 执行 a query to find the prvReadAccount privilege.
         var queryReadAccountPrivilege = new QueryExpression
         {
             EntityName = Privilege.EntityLogicalName,
@@ -141,7 +141,7 @@ internal class Program
             queryReadAccountPrivilege)[0];
         Console.WriteLine("Retrieved '{0}'.", readAccountPrivilege.Attributes["name"]);
 
-        // Add the prvReadAccount privilege to the example role to assure the
+        // 添加the prvReadAccount privilege to the example role to assure the
         // team can read accounts.
         var addPrivilegesRequest = new AddPrivilegesRoleRequest
         {
@@ -159,7 +159,7 @@ internal class Program
 
         Console.WriteLine("Added privilege to role.");
 
-        // Add the role to the team.
+        // 添加the role to the team.
         service.Associate(
                    Team.EntityLogicalName,
                    setupTeam.Id,
@@ -203,10 +203,10 @@ internal class Program
     }
 
     /// <summary>
-    /// The main logic of this program being demonstrated.
-    /// </summary>
+        /// main logic of this program being demonstrated.
+        /// </summary>
     /// <param name="service">Authenticated web service connection.</param>
-    /// <param name="entityStore">Entity name and reference collection.</param>
+    /// <param name="entityStore">Entity 名称 and reference 集合.</param>
     /// <returns>True if successful; otherwise false.</returns>
     static public bool Run(IOrganizationService service,
         Dictionary<string, EntityReference> entityStore)
@@ -221,10 +221,10 @@ internal class Program
     }
 
     /// <summary>
-    /// Dispose of any data and resources created by the this program.
-    /// </summary>
+        /// Dispose of any data and resources created by the this program.
+        /// </summary>
     /// <param name="service">Authenticated web service connection.</param>
-    /// <param name="entityStore">Entity name and reference collection.</param>
+    /// <param name="entityStore">Entity 名称 and reference 集合.</param>
     static public void Cleanup(ServiceClient service,
         Dictionary<string, EntityReference> entityStore)
     {
@@ -245,7 +245,7 @@ internal class Program
         // Collect the keys of entities to be deleted.
         var keysToDelete = new List<string>(entityStore.Keys);
 
-        // Delete in Dataverse each entity in the entity store.
+        // 删除in Dataverse each entity in the entity store.
         foreach (var key in keysToDelete)
         {
             var entref = entityStore[key];

@@ -9,10 +9,10 @@ namespace PowerApps.Samples.Messages
     public sealed class GrantAccessRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the GrantAccessRequest
+        /// 初始化 the GrantAccessRequest
         /// </summary>
-        /// <param name="target">The entity that is the target of the request to grant access.</param>
-        /// <param name="principalAccess">The team or user that is granted access to the specified record.</param>
+        /// <param name="target">entity that is the target of the 请求 to grant access.</param>
+        /// <param name="principalAccess">team or user that is granted access to the specified record.</param>
         public GrantAccessRequest(JObject target, PrincipalAccess principalAccess)
         {
             Method = HttpMethod.Post;

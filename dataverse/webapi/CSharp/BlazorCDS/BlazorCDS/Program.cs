@@ -29,14 +29,14 @@ namespace BlazorCDS
             var version = CDSWebApiConfig.GetSection("Version").Value;
             var timeoutSeconds = int.Parse(CDSWebApiConfig.GetSection("TimeoutSeconds").Value);
 
-            // Create an named definition of an HttpClient that can be created in a component page
+            // 创建an named definition of an HttpClient that can be created in a component page
             builder.Services.AddHttpClient("GDSClient", client =>
             {
                 client.BaseAddress = new Uri(gdsResourceUrl);
                 client.Timeout = TimeSpan.FromSeconds(timeoutSeconds);
             });
 
-            // Create an named definition of an HttpClient that can be created in a component page
+            // 创建an named definition of an HttpClient that can be created in a component page
             builder.Services.AddHttpClient("CDSClient", client =>
             {
                 // 参见 https://learn.microsoft.com/powerapps/developer/common-data-service/webapi/compose-http-requests-handle-errors                
@@ -49,7 +49,7 @@ namespace BlazorCDS
             {
                 builder.Configuration.Bind("AzureAd", options.ProviderOptions.Authentication);
 
-                // Add access to Global Discovery Service to the scope of the access token when the user signs in                
+                // 添加access to Global Discovery Service to the scope of the access token when the user signs in                
                 options.ProviderOptions.DefaultAccessTokenScopes.Add($"{gdsResourceUrl}/user_impersonation");
             });
 

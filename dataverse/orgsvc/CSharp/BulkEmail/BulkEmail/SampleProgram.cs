@@ -29,17 +29,17 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Get a system user to use as the sender.
+                    // 获取a system user to use as the sender.
                     var emailSenderRequest = new WhoAmIRequest();
                     var emailSenderResponse =
                         service.Execute(emailSenderRequest) as WhoAmIResponse;
 
-                    // Set trackingId for bulk mail request.
+                    // 设置trackingId for bulk mail request.
                     Guid trackingId = Guid.NewGuid();
 
                     var bulkMailRequest = new SendBulkMailRequest()
                     {
-                        // Create a query expression for the bulk operation to use to retrieve 
+                        // 创建a query expression for the bulk operation to use to retrieve 
                         // the contacts in the email list.
                         Query = new QueryExpression()
                         {
@@ -53,21 +53,21 @@ namespace PowerApps.Samples
                             }
                             }
                         },
-                        // Set the Sender.
+                        // 设置the Sender.
                         Sender = new EntityReference(SystemUser.EntityLogicalName, emailSenderResponse.UserId),
-                        // Set the RegardingId - this field is required.
+                        // 设置the RegardingId - this field is required.
                         //RegardingId = Guid.Empty,
                         //RegardingType = SystemUser.EntityLogicalName,
 
                         // Use a built-in Microsoft Dynamics CRM email template.
-                        // NOTE: The email template's "template type" must match the type of 
+                        // 注意： The email template's "template type" must match the type of 
                         // customers in the email list.  Our list contains contacts, so our 
                         // template must be for contacts.
                         TemplateId = new Guid("07B94C1D-C85F-492F-B120-F0A743C540E6"),
                         RequestId = trackingId
                     };
 
-                    // Execute the async bulk email request
+                    // 执行the async bulk email request
                     var resp = (SendBulkMailResponse)
                         service.Execute(bulkMailRequest);
 
@@ -91,7 +91,7 @@ namespace PowerApps.Samples
                     };
 
                     
-                    // Retrieve the bulk email async operation.
+                    // 检索the bulk email async operation.
                     EntityCollection aResponse = service.RetrieveMultiple(bulkQuery);
                     
 
@@ -113,21 +113,21 @@ namespace PowerApps.Samples
                             // Grab the one bulk operation that has been created.
                             createdBulkMailOperation = (AsyncOperation)aResponse.Entities[0];
 
-                            // Check the operation's state.
+                            // 检查the operation's state.
                             if (createdBulkMailOperation.StateCode.Value !=
                                 AsyncOperationState.Completed)
                             {
-                                // The operation has not yet completed. 
+                                // operation has not yet completed. 
                                 // Wait a second for the status to change.
                                 System.Threading.Thread.Sleep(1000);
                                 secondsTicker--;
 
-                                // Retrieve a fresh version the bulk delete operation.
+                                // 检索a fresh version the bulk delete operation.
                                 aResponse = service.RetrieveMultiple(bulkQuery);
                             }
                             else
                             {
-                                // Stop polling because the operation's state is now complete.
+                                // 停止polling because the operation's state is now complete.
                                 secondsTicker = 0;
                             }
                         }
@@ -137,12 +137,12 @@ namespace PowerApps.Samples
                             System.Threading.Thread.Sleep(1000);
                             secondsTicker--;
 
-                            // Retrieve the entity again
+                            // 检索the entity again
                             aResponse = service.RetrieveMultiple(bulkQuery);
                         }
                     }
 
-                    // When the bulk email operation has completed, all sent emails will 
+                    // 当the bulk email operation has completed, all sent emails will 
                     // have a status of "Pending Send" and will be picked up by your email 
                     // router.  Alternatively, you can then use BackgroundSendEmail to download
                     // all the emails created with the SendBulkEmail message. 
@@ -151,7 +151,7 @@ namespace PowerApps.Samples
 
                     #region Check success
 
-                    // Validate async operation succeeded
+                    // 验证async operation succeeded
                     if (createdBulkMailOperation.StateCode.Value == AsyncOperationState.Completed)
                     {
                         Console.WriteLine("Operation Completed.");

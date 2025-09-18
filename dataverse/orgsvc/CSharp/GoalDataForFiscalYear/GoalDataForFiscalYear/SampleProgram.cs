@@ -28,7 +28,7 @@ namespace GoalDataForFiscalYear
 
                     #region Create goal metric
 
-                    // Create the metric, setting the Metric Type to 'Count' and enabling
+                    // 创建the metric, setting the Metric Type to 'Count' and enabling
                     // stretch tracking.
                     Metric metric = new Metric()
                     {
@@ -45,7 +45,7 @@ namespace GoalDataForFiscalYear
 
                     #region Create RollupFields
 
-                    // Create RollupField which targets completed (received) phone calls.
+                    // 创建RollupField which targets completed (received) phone calls.
                     RollupField actual = new RollupField()
                     {
                         SourceEntity = PhoneCall.EntityLogicalName,
@@ -68,7 +68,7 @@ namespace GoalDataForFiscalYear
                     // rollup queries causes the length property to be greater than 1,000
                     // chars and will cause an exception.
 
-                    // The following query locates closed incoming phone calls.
+                    // following query locates closed incoming phone calls.
                     GoalRollupQuery goalRollupQuery = new GoalRollupQuery()
                     {
                         Name = "Example Goal Rollup Query",
@@ -78,7 +78,7 @@ namespace GoalDataForFiscalYear
                     _rollupQueryIds.Add(service.Create(goalRollupQuery));
                     goalRollupQuery.Id = _rollupQueryIds[0];
 
-                    // The following query locates closed outgoing phone calls.
+                    // following query locates closed outgoing phone calls.
                     GoalRollupQuery goalRollupQuery2 = new GoalRollupQuery()
                     {
                         Name = "Example Goal Rollup Query",
@@ -101,7 +101,7 @@ namespace GoalDataForFiscalYear
                     int quarterNumber = (date.Month - 1) / 3 + 1;
                     int yearNumber = date.Year;
 
-                    // Create three goals: one parent goal and two child goals.
+                    // 创建three goals: one parent goal and two child goals.
                     Goal parentGoal = new Goal()
                     {
                         Title = "Parent Goal Example",
@@ -219,7 +219,7 @@ namespace GoalDataForFiscalYear
 
                     #region Calculate rollup and display result
 
-                    // Calculate roll-up of goals.
+                    // 计算roll-up of goals.
                     RecalculateRequest recalculateRequest = new RecalculateRequest()
                     {
                         Target = new EntityReference(Goal.EntityLogicalName, _parentGoalId)
@@ -228,7 +228,7 @@ namespace GoalDataForFiscalYear
 
                     Console.WriteLine("Calculated roll-up of goals.");
 
-                    // Retrieve and report 3 different computed values for the goals
+                    // 检索and report 3 different computed values for the goals
                     // - Percentage
                     // - ComputedTargetAsOfTodayPercentageAchieved
                     // - ComputedTargetAsOfTodayInteger

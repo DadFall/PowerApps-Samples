@@ -18,7 +18,7 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
@@ -54,19 +54,19 @@ namespace PowerApps.Samples
                         }
                     };
 
-                    //This query should return one and only one result.
+                    //此query should return one and only one result.
                     SavedQuery defaultOpportunityQuery = service.RetrieveMultiple(mySavedQuery)
                         .Entities.Select(x => (SavedQuery)x).FirstOrDefault();
 
-                    // Retrieve visualizations out of the system. 
-                    // This sample assumes that you have the "Top Opportunities"
+                    // 检索visualizations out of the system. 
+                    // 此sample assumes that you have the "Top Opportunities"
                     // visualization that is installed with Microsoft Dynamics CRM.
                     QueryByAttribute visualizationQuery = new QueryByAttribute
                     {
                         EntityName = SavedQueryVisualization.EntityLogicalName,
                         ColumnSet = new ColumnSet("savedqueryvisualizationid"),
                         Attributes = { "name" },
-                        //If you do not have this visualization, you will need to change
+                        //如果you do not have this visualization, you will need to change
                         //this line.
                         Values = { "Top Opportunities" }
                     };
@@ -74,7 +74,7 @@ namespace PowerApps.Samples
 
                     SavedQueryVisualization visualization = service.RetrieveMultiple(visualizationQuery).
                         Entities.Select(x => (SavedQueryVisualization)x).FirstOrDefault();
-                    //This is the language code for U.S. English. If you are running this code
+                    //此is the language code for U.S. English. If you are running this code
                     //in a different locale, you will need to modify this value.
                     int languageCode = 1033;
 
@@ -180,7 +180,7 @@ namespace PowerApps.Samples
                     SystemForm retrievedDashboard = (SystemForm)service.Retrieve(SystemForm.EntityLogicalName, _dashboardId, new ColumnSet(true));
                     Console.WriteLine("Retrieved the dashboard.");
 
-                    // Update the retrieved dashboard. Enable the chart picker on the chart.                                       
+                    // 更新the retrieved dashboard. Enable the chart picker on the chart.                                       
                     var xDocument = XDocument.Parse(retrievedDashboard.FormXml);
 
                     var chartPicker = (from control in xDocument.Descendants("control")
@@ -194,7 +194,7 @@ namespace PowerApps.Samples
                     service.Update(retrievedDashboard);
 
                     // Publish the dashboard changes to the solution. 
-                    // This is only required for organization-owned dashboards.
+                    // 此is only required for organization-owned dashboards.
                     var updateRequest = new PublishXmlRequest
                     {
                         ParameterXml = @"<dashboard>_dashboardId</dashboard>"

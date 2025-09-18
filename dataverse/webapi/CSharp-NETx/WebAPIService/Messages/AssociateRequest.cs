@@ -9,12 +9,12 @@ namespace PowerApps.Samples.Messages
     public sealed class AssociateRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the AssociateRequest.
+        /// 初始化 the AssociateRequest.
         /// </summary>
-        /// <param name="baseAddress">The Service.BaseAddress</param>
-        /// <param name="entityWithCollection">The entity with the collection.</param>
-        /// <param name="collectionName">The name of the collection</param>
-        /// <param name="entityToAdd">The record to add</param>
+        /// <param name="baseAddress">Service.BaseAddress</param>
+        /// <param name="entityWithCollection">entity with the 集合.</param>
+        /// <param name="collectionName">名称 of the 集合</param>
+        /// <param name="entityToAdd">record to add</param>
         public AssociateRequest(Uri baseAddress,
             EntityReference entityWithCollection,
             string collectionName,

@@ -11,7 +11,7 @@ namespace PowerApps.Samples
 {
    public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.    
+        // 定义IDs needed for this sample.    
         public static Guid _accountId;
         public static Guid[] _setupOpportunitiyIds;
         private static bool prompt = true;
@@ -21,19 +21,19 @@ namespace PowerApps.Samples
         /// <param name="service">Specifies the service to connect to.</param>
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             CreateRequiredRecords(service);
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Create a sample account record.
-        /// Create 3 opportunity records associate to the account record.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建a sample account record.
+        /// 创建3 opportunity records associate to the account record.
         /// Mark all 3 opportunity records as won.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
@@ -63,7 +63,7 @@ namespace PowerApps.Samples
                 Id = _accountId
             };
 
-            // Create 3 sample opportunities.
+            // 创建3 sample opportunities.
             // Instantiate opportunity entity records and set there property values.
             // See the Entity Metadata topic in the SDK documentation
             // to determine which attributes must be set for each entity.
@@ -120,7 +120,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user to delete the records created in this sample.</param>
         /// </summary>
         public static void DeleteRequiredRecords(CrmServiceClient service, bool prompt)

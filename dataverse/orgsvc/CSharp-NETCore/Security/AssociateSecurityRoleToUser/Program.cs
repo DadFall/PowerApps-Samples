@@ -68,10 +68,10 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// <param name="service">Authenticated web service connection.param>
         /// <param name="securityRole">Dataverse security role 名称.</param>
         /// <returns>Dataverse security role.</returns>
-        /// <exception cref="Exception">General exception when role name not found.</exception>
+        /// <exception cref="Exception">General exception when role name 未找到.</exception>
         private static Role GetRoleByName(IOrganizationService service, string securityRole)
         {
-            // Create a query to find the role by name.
+            // 创建a query to find the role by name.
             QueryExpression query = new QueryExpression
             {
                 EntityName = Role.EntityLogicalName,
@@ -113,11 +113,11 @@ namespace PowerPlatform_Dataverse_CodeSamples
         static IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Constructor. Loads the application settings from a JSON configuration file.
+        /// Constructor. 加载 the application settings from a JSON configuration file.
         /// </summary>
         static Program()
         {
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
@@ -133,7 +133,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // Entity name and reference collection.
             Dictionary<string, EntityReference> entityStore;
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(Configuration.GetConnectionString("default"));
 

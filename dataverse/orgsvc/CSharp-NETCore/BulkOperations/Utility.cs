@@ -155,7 +155,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             QueryExpression query = new("sample_example")
             {
                 ColumnSet = new ColumnSet("sample_exampleid"),
-                Criteria = new FilterExpression(LogicalOperator.And) // No conditions
+                Criteria = new FilterExpression(LogicalOperator.And) // 没有conditions
             };
 
 
@@ -225,7 +225,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             QueryExpression query = new(tableLogicalName)
             {
                 ColumnSet = new ColumnSet(primaryKeyName),
-                Criteria = new FilterExpression(LogicalOperator.And) // No conditions
+                Criteria = new FilterExpression(LogicalOperator.And) // 没有conditions
             };
 
 
@@ -493,7 +493,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
             else
             {
-                // Create standard table
+                // 创建standard table
                 CreateEntityRequest createEntityRequest = new()
                 {
                     Entity = new EntityMetadata
@@ -523,7 +523,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                 if (createAlternateKey)
                 {
-                    // Create attributes that will form the alternate key
+                    // 创建attributes that will form the alternate key
                     string keySchemaName = "sample_key";
                     string keyAttribute1 = "sample_keyattribute";
 
@@ -541,7 +541,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     };
                     serviceClient.Execute(createKeyAttributeRequest);
 
-                    // Create an alternate key on the entity using the attributes created
+                    // 创建an alternate key on the entity using the attributes created
                     CreateEntityKeyRequest createEntityKeyRequest = new()
                     {
                         EntityName = tableSchemaName.ToLower(),
@@ -690,7 +690,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             IOrganizationService service, 
             out EntityCollection entities)
         {
-            // Create a List of entity instances.
+            // 创建a List of entity instances.
             Console.WriteLine($"\nPreparing {numberOfRecords} entities to create..");
             List<Entity> entityList = new();
             // Populate the list with the number of records to test.
@@ -719,7 +719,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                 entityList.Add(entity);
             }
-            // Create an EntityCollection populated with the list of entities.
+            // 创建an EntityCollection populated with the list of entities.
             entities = new(entityList)
             {
                 EntityName = tableLogicalName
@@ -741,7 +741,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 #pragma warning restore CS0162 // Unreachable code detected: Configurable by setting
             }
 
-            // Send the request
+            // 发送the request
             CreateMultipleResponse createMultipleResponse =
                 (CreateMultipleResponse)service.Execute(createMultipleRequest);
 

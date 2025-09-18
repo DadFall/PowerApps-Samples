@@ -7,8 +7,8 @@ using System.Windows.Threading;
 namespace PowerApps.Samples.LoginUX
 {
     /// <summary>
-    /// Interaction logic for ExampleLoginForm.xaml
-    /// </summary>
+        /// Interaction logic for ExampleLoginForm.xaml
+        /// </summary>
     public partial class ExampleLoginForm : Window
     {
         #region Vars
@@ -17,29 +17,29 @@ namespace PowerApps.Samples.LoginUX
         /// </summary>
         private CrmServiceClient CrmSvc = null;
         /// <summary>
-        /// Bool flag to determine if there is a connection 
+        /// Bool flag to determine if there is a connection
         /// </summary>
         private bool bIsConnectedComplete = false;
         /// <summary>
-        /// CRM Connection Manager component. 
+        /// CRM Connection Manager component.
         /// </summary>
         private CrmConnectionManager mgr = null;
         /// <summary>
-        ///  This is used to allow the UI to reset w/out closing 
+        ///  This is used to allow the UI to reset w/out closing
         /// </summary>
         private bool resetUiFlag = false;
         #endregion
 
         #region Properties
         /// <summary>
-        /// CRM Connection Manager 
+        /// CRM Connection Manager
         /// </summary>
         public CrmConnectionManager CrmConnectionMgr { get { return mgr; } }
         #endregion
 
         #region Event
         /// <summary>
-        /// Raised when a connection to CRM has completed. 
+        /// Raised when a connection to CRM has completed.
         /// </summary>
         public event EventHandler ConnectionToCrmCompleted;
         #endregion
@@ -57,19 +57,19 @@ namespace PowerApps.Samples.LoginUX
         }
 
         /// <summary>
-        /// Raised when the window loads for the first time. 
+        /// Raised when the window loads for the first time.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             /*
-				This is the setup process for the login control, 
+ This is the setup process for the login control, 
 				The login control uses a class called CrmConnectionManager to manage the interaction with CRM, this class and also be queried as later points for information about the current connection. 
 				In this case, the login control is referred to as CrmLoginCtrl
-			 */
+ */
 
-            // Set off flag. 
+            // 设置off flag. 
             bIsConnectedComplete = false;
 
             // Init the CRM Connection manager.. 
@@ -99,18 +99,18 @@ namespace PowerApps.Samples.LoginUX
             CrmLoginCtrl.ConnectionStatusEvent += new EventHandler<ConnectStatusEventArgs>(CrmLoginCtrl_ConnectionStatusEvent);
             // this wires an event that is raised when the user clicks the cancel button. 
             CrmLoginCtrl.UserCancelClicked += new EventHandler(CrmLoginCtrl_UserCancelClicked);
-            // Check to see if its possible to do an Auto Login 
+            // 检查to see if its possible to do an Auto Login 
             if (!mgr.RequireUserLogin())
             {
                 if (MessageBox.Show("Credentials already saved in configuration\nChoose Yes to Auto Login or No to Reset Credentials", "Auto Login", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
-                    // If RequireUserLogin is false, it means that there has been a successful login here before and the credentials are cached. 
+                    // 如果RequireUserLogin is false, it means that there has been a successful login here before and the credentials are cached. 
                     CrmLoginCtrl.IsEnabled = false;
-                    // When running an auto login,  you need to wire and listen to the events from the connection manager.
-                    // Run Auto User Login process, Wire events. 
+                    // 当running an auto login,  you need to wire and listen to the events from the connection manager.
+                    // 运行Auto User Login process, Wire events. 
                     mgr.ServerConnectionStatusUpdate += new EventHandler<ServerConnectStatusEventArgs>(mgr_ServerConnectionStatusUpdate);
                     mgr.ConnectionCheckComplete += new EventHandler<ServerConnectStatusEventArgs>(mgr_ConnectionCheckComplete);
-                    // Start the connection process. 
+                    // 开始the connection process. 
                     mgr.ConnectToServerCheck();
 
                     // Show the message grid. 
@@ -122,14 +122,14 @@ namespace PowerApps.Samples.LoginUX
         #region Events
 
         /// <summary>
-        /// Updates from the Auto Login process. 
+        /// 更新 from the Auto Login process.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void mgr_ServerConnectionStatusUpdate(object sender, ServerConnectStatusEventArgs e)
         {
-            // The Status event will contain information about the current login process,  if Connected is false, then there is not yet a connection. 
-            // Set the updated status of the loading process. 
+            // Status event will contain information about the current login process,  if Connected is false, then there is not yet a connection. 
+            // 设置the updated status of the loading process. 
             Dispatcher.Invoke(DispatcherPriority.Normal,
                                new System.Action(() =>
                                {
@@ -140,13 +140,13 @@ namespace PowerApps.Samples.LoginUX
         }
 
         /// <summary>
-        /// Complete Event from the Auto Login process
+        /// 完成Event from the Auto Login process
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void mgr_ConnectionCheckComplete(object sender, ServerConnectStatusEventArgs e)
         {
-            // The Status event will contain information about the current login process,  if Connected is false, then there is not yet a connection. 
+            // Status event will contain information about the current login process,  if Connected is false, then there is not yet a connection. 
             // Unwire events that we are not using anymore, this prevents issues if the user uses the control after a failed login. 
             ((CrmConnectionManager)sender).ConnectionCheckComplete -= mgr_ConnectionCheckComplete;
             ((CrmConnectionManager)sender).ServerConnectionStatusUpdate -= mgr_ServerConnectionStatusUpdate;
@@ -182,7 +182,7 @@ namespace PowerApps.Samples.LoginUX
         }
 
         /// <summary>
-        ///  Login control connect check starting. 
+        ///  Login control connect check starting.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -199,7 +199,7 @@ namespace PowerApps.Samples.LoginUX
         }
 
         /// <summary>
-        /// Login control connect check status event. 
+        /// Login control connect check status event.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -212,7 +212,7 @@ namespace PowerApps.Samples.LoginUX
         }
 
         /// <summary>
-        /// Login control Error event. 
+        /// Login control Error event.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -222,7 +222,7 @@ namespace PowerApps.Samples.LoginUX
         }
 
         /// <summary>
-        /// Login Control Cancel event raised. 
+        /// Login Control Cancel event raised.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -235,7 +235,7 @@ namespace PowerApps.Samples.LoginUX
         #endregion
 
         /// <summary>
-        /// This raises and processes Success
+        /// 此raises and processes Success
         /// </summary>
         private void ProcessSuccess()
         {
@@ -262,9 +262,9 @@ namespace PowerApps.Samples.LoginUX
 
     #region system.diagnostics settings for this control
 
-    // Add or merge this section to your app to enable diagnostics on the use of the CRM login control and connection
+    // 添加or merge this section to your app to enable diagnostics on the use of the CRM login control and connection
     /*
-  <system.diagnostics>
+ <system.diagnostics>
     <trace autoflush="true" />
     <sources>
       <source name="Microsoft.Xrm.Tooling.Connector.CrmServiceClient"
@@ -339,7 +339,7 @@ namespace PowerApps.Samples.LoginUX
       <add name="xml" type="System.Diagnostics.XmlWriterTraceListener" initializeData="CrmToolBox.svclog" />
     </sharedListeners>
   </system.diagnostics>
-*/
+ */
 
     #endregion
 }

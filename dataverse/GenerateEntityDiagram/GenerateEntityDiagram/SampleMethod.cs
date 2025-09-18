@@ -12,7 +12,7 @@ namespace PowerApps.Samples
     {
         // Specify which language code to use in the sample. If you are using a language
         // other than US English, you will need to modify this value accordingly.
-        // See https://learn.microsoft.com/previous-versions/windows/embedded/ms912047(v=winembedded.10)
+        // 参见 https://learn.microsoft.com/previous-versions/windows/embedded/ms912047(v=winembedded.10)
         public const int _languageCode = 1033;
 
 
@@ -88,25 +88,25 @@ namespace PowerApps.Samples
         }
 
        /// <summary>
-        /// Create a new page in a Visio file showing all the direct entity relationships participated in
+        /// 创建a new page in a Visio file showing all the direct entity relationships participated in
         /// by the passed-in array of entities.
         /// </summary>
         /// <param name="entities">Core entities for the diagram</param>
         /// <param name="pageTitle">Page title</param>
        private void BuildDiagram(ServiceClient service, string[] entities, string pageTitle)
         {
-            // Get the default page of our new document
+            // 获取the default page of our new document
             VisioApi.Page page = _document.Pages[1];
             page.Name = pageTitle;
 
-            // Get the metadata for each passed-in entity, draw it, and draw its relationships.
+            // 获取the metadata for each passed-in entity, draw it, and draw its relationships.
             foreach (string entityName in entities)
             {
                 Console.Write("Processing entity: {0} ", entityName);
 
                 EntityMetadata entity = GetEntityMetadata(service, entityName);
 
-                // Create a Visio rectangle shape.
+                // 创建a Visio rectangle shape.
                 VisioApi.Shape rect;
 
                 try
@@ -184,7 +184,7 @@ namespace PowerApps.Samples
                     attribute = GetAttributeMetadata(service, entity, areReferencingRelationships ? currentOneToManyRelationship.ReferencedAttribute : currentOneToManyRelationship.ReferencingAttribute);
                     metadataID = currentOneToManyRelationship.MetadataId.Value;
                 }
-                // Verify relationship is either ManyToManyMetadata or OneToManyMetadata
+                // 验证relationship is either ManyToManyMetadata or OneToManyMetadata
                 if (entity2 != null)
                 {
                     if (_processedRelationships.Contains(metadataID))

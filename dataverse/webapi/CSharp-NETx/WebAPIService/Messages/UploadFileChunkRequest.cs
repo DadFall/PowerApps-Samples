@@ -7,13 +7,13 @@ namespace PowerApps.Samples.Messages
     public sealed class UploadFileChunkRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the UploadFileChunkRequest
+        /// 初始化 the UploadFileChunkRequest
         /// </summary>
-        /// <param name="url">The InitializeChunkedFileUploadResponse.Url value</param>
-        /// <param name="uploadFileName">The name of the file to upload</param>
-        /// <param name="chunkSize">The InitializeChunkedFileUploadResponse.ChunkSize value</param>
-        /// <param name="fileBytes">The bytes for the chunk.</param>
-        /// <param name="offSet">The offset for the chunk.</param>
+        /// <param name="url">InitializeChunkedFileUploadResponse.Url 值</param>
+        /// <param name="uploadFileName">名称 of the file to upload</param>
+        /// <param name="chunkSize">InitializeChunkedFileUploadResponse.ChunkSize 值</param>
+        /// <param name="fileBytes">bytes for the chunk.</param>
+        /// <param name="offSet">offset for the chunk.</param>
         public UploadFileChunkRequest(
             Uri url,
             string uploadFileName,

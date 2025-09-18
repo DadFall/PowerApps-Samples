@@ -9,7 +9,7 @@ namespace PowerApps.Samples
 {
     public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         public static Guid _dashboardId;
         private static bool prompt = true;
         /// <summary>
@@ -19,10 +19,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -37,7 +37,7 @@ namespace PowerApps.Samples
       
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

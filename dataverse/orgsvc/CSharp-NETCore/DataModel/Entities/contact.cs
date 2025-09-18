@@ -1983,7 +1983,7 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-        /// A token used to manage the web authentication session.
+        /// 一个token used to manage the web authentication session.
         /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_securitystamp")]
 		public string adx_identity_securitystamp

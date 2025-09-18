@@ -28,10 +28,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -43,14 +43,14 @@ namespace PowerApps.Samples
             DeleteRequiredRecords(service, prompt);
         }
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
 
             #region Create or Retrieve the necessary system users
 
-            // Retrieve a sales manager.
+            // 检索a sales manager.
             _salesManagerId =
                 SystemUserProvider.RetrieveMarketingManager(service);
 
@@ -66,11 +66,11 @@ namespace PowerApps.Samples
             _accountId = (service.Create(newAccount));
             newAccount.Id = _accountId;
 
-            // Create Guids for PhoneCalls
+            // 创建Guids for PhoneCalls
             _phoneCallId = Guid.NewGuid();
             _phoneCall2Id = Guid.NewGuid();
 
-            // Create ActivityPartys for the phone calls' "From" field.
+            // 创建ActivityPartys for the phone calls' "From" field.
             ActivityParty activityParty = new ActivityParty()
             {
                 PartyId = newAccount.ToEntityReference(),
@@ -93,7 +93,7 @@ namespace PowerApps.Samples
                 ParticipationTypeMask = new OptionSetValue(9)
             };
 
-            // Create an open phone call.
+            // 创建an open phone call.
             PhoneCall phoneCall = new PhoneCall()
             {
                 Id = _phoneCallId,
@@ -103,7 +103,7 @@ namespace PowerApps.Samples
             };
             service.Create(phoneCall);
 
-            // Create a second phone call to close
+            // 创建a second phone call to close
             phoneCall = new PhoneCall()
             {
                 Id = _phoneCall2Id,
@@ -127,13 +127,13 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
         public static void DeleteRequiredRecords(CrmServiceClient service, bool prompt)
         {
-            // The three system users that were created by this sample will continue to 
+            // three system users that were created by this sample will continue to 
             // exist on your system because system users cannot be deleted in Microsoft
             // Dynamics CRM.  They can only be enabled or disabled.
 
@@ -158,7 +158,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete all records created in this sample.
+                // 删除all records created in this sample.
                 service.Delete("phonecall", _phoneCallId);
                 service.Delete("phonecall", _phoneCall2Id);
                 service.Delete("goal", _goalId);

@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -32,7 +32,7 @@ export class NavigationAPIControl implements ComponentFramework.StandardControl<
 	private openUrlButton: HTMLButtonElement;
 
 	// Reference to the control container HTMLDivElement
-	// This element contains all elements of our custom control example
+	// 此element contains all elements of our custom control example
 	private _container: HTMLDivElement;
 
 	// Reference to ComponentFramework Context object
@@ -66,22 +66,22 @@ export class NavigationAPIControl implements ComponentFramework.StandardControl<
 		this.divElement = document.createElement("div");
 		this.divElement.setAttribute("class", "NavigationAPI");
 
-		// Create the HTML button elements for openAlertDialog button
+		// 创建the HTML button elements for openAlertDialog button
 		this.openAlertDialogButton = document.createElement("button");
 		this.openAlertDialogButton.setAttribute("id", "openAlertDialogButton");
 		this.openAlertDialogButton.innerHTML = "openAlertDialogButton";
 
-		// Create the HTML button elements for openConfirmDialog button
+		// 创建the HTML button elements for openConfirmDialog button
 		this.openConfirmDialogButton = document.createElement("button");
 		this.openConfirmDialogButton.setAttribute("id", "openConfirmDialogButton");
 		this.openConfirmDialogButton.innerHTML = "openConfirmDialogButton";
 
-		// Create the HTML button elements for openFile button
+		// 创建the HTML button elements for openFile button
 		this.openFileButton = document.createElement("button");
 		this.openFileButton.setAttribute("id", "openFileButton");
 		this.openFileButton.innerHTML = "openFileButton";
 
-		// Create the HTML button elements for openUrl button
+		// 创建the HTML button elements for openUrl button
 		this.openUrlButton = document.createElement("button");
 		this.openUrlButton.setAttribute("id", "openUrlButton");
 		this.openUrlButton.innerHTML = "openUrlButton";

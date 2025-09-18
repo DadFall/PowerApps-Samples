@@ -23,7 +23,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create an ExecuteMultipleRequest object.
+                    // 创建an ExecuteMultipleRequest object.
                    var requestWithResults = new ExecuteMultipleRequest()
                     {
                         // Assign settings that define execution behavior: continue on error, return responses. 
@@ -32,32 +32,32 @@ namespace PowerApps.Samples
                             ContinueOnError = false,
                             ReturnResponses = true
                         },
-                        // Create an empty organization request collection.
+                        // 创建an empty organization request collection.
                         Requests = new OrganizationRequestCollection()
                     };
 
-                    // Create several (local, in memory) entities in a collection. 
+                    // 创建several (local, in memory) entities in a collection. 
                     EntityCollection input = GetCollectionOfEntitiesToCreate();
 
-                    // Add a CreateRequest for each entity to the request collection.
+                    // 添加a CreateRequest for each entity to the request collection.
                     foreach (var entity in input.Entities)
                     {
                         var createRequest = new CreateRequest { Target = entity };
                         requestWithResults.Requests.Add(createRequest);
                     }
 
-                    // Execute all the requests in the request collection using a single web method call.
+                    // 执行all the requests in the request collection using a single web method call.
                     var responseWithResults =
                         (ExecuteMultipleResponse)service.Execute(requestWithResults);
 
                     // Display the results returned in the responses.
                     foreach (var responseItem in responseWithResults.Responses)
                     {
-                        // A valid response.
+                        // 一个valid response.
                         if (responseItem.Response != null)
                             DisplayResponse(requestWithResults.Requests[responseItem.RequestIndex], responseItem.Response);
 
-                        // An error has occurred.
+                        // 一个error has occurred.
                         else if (responseItem.Fault != null)
                             DisplayFault(requestWithResults.Requests[responseItem.RequestIndex],
                                 responseItem.RequestIndex, responseItem.Fault);
@@ -69,7 +69,7 @@ namespace PowerApps.Samples
 
                     var requestWithNoResults = new ExecuteMultipleRequest()
                     {
-                        // Set the execution behavior to not continue after the first error is received
+                        // 设置the execution behavior to not continue after the first error is received
                         // and to not return responses.
                         Settings = new ExecuteMultipleSettings()
                         {
@@ -79,7 +79,7 @@ namespace PowerApps.Samples
                         Requests = new OrganizationRequestCollection()
                     };
 
-                    // Update the entities that were previously created.
+                    // 更新the entities that were previously created.
                     EntityCollection update = GetCollectionOfEntitiesToUpdate();
 
                     foreach (var entity in update.Entities)
@@ -114,7 +114,7 @@ namespace PowerApps.Samples
 
                     var requestWithContinueOnError = new ExecuteMultipleRequest()
                     {
-                        // Set the execution behavior to continue on an error and not return responses.
+                        // 设置the execution behavior to continue on an error and not return responses.
                         Settings = new ExecuteMultipleSettings()
                         {
                             ContinueOnError = true,
@@ -123,7 +123,7 @@ namespace PowerApps.Samples
                         Requests = new OrganizationRequestCollection()
                     };
 
-                    // Update the entities but introduce some bad attribute values so we get errors.
+                    // 更新the entities but introduce some bad attribute values so we get errors.
                     EntityCollection updateWithErrors = GetCollectionOfEntitiesToUpdateWithErrors();
 
                     foreach (var entity in updateWithErrors.Entities)
@@ -151,7 +151,7 @@ namespace PowerApps.Samples
                     }
                     else
                     {
-                        // No errors means all transactions are successful.
+                        // 没有errors means all transactions are successful.
                         Console.WriteLine("All account records have been updated successfully.");
                     }
 

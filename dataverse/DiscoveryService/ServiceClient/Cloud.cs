@@ -3,7 +3,7 @@
 namespace PowerApps.Samples
 {
     /// <summary>
-        /// An enum for the known Clouds
+        /// 一个enum for the known Clouds
         /// </summary>
     public enum Cloud
     {

@@ -2,7 +2,7 @@
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
@@ -12,7 +12,7 @@ namespace PowerApps.Samples.Messages
     public sealed class CommitFileBlocksUploadResponse : HttpResponseMessage
     {
 
-        // Cache the async content
+        // 缓存the async content
         private string? _content;
 
         // Provides JObject for property getters
@@ -27,12 +27,12 @@ namespace PowerApps.Samples.Messages
         }
 
         /// <summary>
-        /// The unique identifier of the stored File.
+        /// unique identifier of the stored File.
         /// </summary>
         public Guid FileId => (Guid)content.GetValue(nameof(FileId));
 
         /// <summary>
-        /// The size of the stored File in bytes.
+        /// size of the stored File in bytes.
         /// </summary>
         public int FileSizeInBytes => (int)content.GetValue(nameof(FileSizeInBytes));
 

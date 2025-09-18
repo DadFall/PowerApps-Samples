@@ -1,6 +1,6 @@
 ﻿namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
@@ -10,7 +10,7 @@
     public sealed class DownloadFileResponse : HttpResponseMessage
     {
         /// <summary>
-        /// The requested file column  value.
+        /// requested file column  value.
         /// </summary>
         public byte[] File => Content.ReadAsByteArrayAsync().GetAwaiter().GetResult();
     }

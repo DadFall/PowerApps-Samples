@@ -10,13 +10,13 @@ namespace PowerApps.Samples.Metadata.Messages
     public sealed class UpdateAttributeRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the UpdateAttributeRequest
+        /// 初始化 the UpdateAttributeRequest
         /// </summary>
-        /// <param name="entityLogicalName">The logical name of the table</param>
-        /// <param name="attributeLogicalName">The logical name of the column.</param>
-        /// <param name="attributeMetadata">The table definition with changes.</param>
-        /// <param name="solutionUniqueName">The solution name to associate the changes with.</param>
-        /// <param name="doNotMergeLabels">Whether to merge any lables included in the data.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table</param>
+        /// <param name="attributeLogicalName">logical 名称 of the column.</param>
+        /// <param name="attributeMetadata">table definition with changes.</param>
+        /// <param name="solutionUniqueName">solution 名称 to associate the changes with.</param>
+        /// <param name="doNotMergeLabels">Whether to merge any lables included in the 数据.</param>
         public UpdateAttributeRequest(
             string entityLogicalName, 
             string attributeLogicalName, 

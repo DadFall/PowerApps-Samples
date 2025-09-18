@@ -30,12 +30,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
@@ -50,11 +50,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
         {
             Program app = new();
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"));
 
-            // A simple list of column definitions to represent the cache
+            // 一个simple list of column definitions to represent the cache
             List<AttributeMetadata> cachedAttributes = new();
             string clientVersionStamp = string.Empty;
             // name of a column to create when demonstrating changes
@@ -187,7 +187,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
             catch (FaultException<OrganizationServiceFault> ex)
             {
-                // Check for ErrorCodes.ExpiredVersionStamp (0x80044352)
+                // 检查for ErrorCodes.ExpiredVersionStamp (0x80044352)
                 // Message: Version stamp associated with the client has expired. Please perform a full sync.
                 // Will occur when the timestamp exceeds the Organization.ExpireSubscriptionsInDays value, which is 90 by default.
                 if (ex.Detail.ErrorCode == unchecked((int)0x80044352))
@@ -262,7 +262,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
             catch (FaultException<OrganizationServiceFault> ex)
             {
-                // Check for ErrorCodes.ExpiredVersionStamp (0x80044352)
+                // 检查for ErrorCodes.ExpiredVersionStamp (0x80044352)
                 // Message: Version stamp associated with the client has expired. Please perform a full sync.
                 // Will occur when the timestamp exceeds the Organization.ExpireSubscriptionsInDays value, which is 90 by default.
                 if (ex.Detail.ErrorCode == unchecked((int)0x80044352))

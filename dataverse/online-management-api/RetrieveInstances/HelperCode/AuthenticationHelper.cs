@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Crm.Sdk.Samples.HelperCode
 {
     /// <summary>
-        /// Manages authentication to the Online Management API service.
+        /// 管理 authentication to the Online Management API service.
     /// Uses Microsoft Azure Active Directory Authentication Library (ADAL) 
     /// to handle the OAuth 2.0 protocol.
         /// </summary>

@@ -10,11 +10,11 @@ namespace PowerApps.Samples.Messages
     public sealed class SetColumnValueRequest<T> : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the SetColumnValueRequest
+        /// 初始化 the SetColumnValueRequest
         /// </summary>
-        /// <param name="entityReference">A reference to the record that has the column.</param>
-        /// <param name="propertyName">The name of the column</param>
-        /// <param name="value">The value to set</param>
+        /// <param name="entityReference">一个reference to the record that has the column.</param>
+        /// <param name="propertyName">名称 of the column</param>
+        /// <param name="value">值 to set</param>
         public SetColumnValueRequest(EntityReference entityReference, string propertyName, T value)
         {
             Method = HttpMethod.Put;

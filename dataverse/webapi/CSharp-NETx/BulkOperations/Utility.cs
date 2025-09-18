@@ -18,8 +18,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Detects whether a table with the specified schema name exists.
         /// </summary>
-        /// <param name="service">The WebAPIService</param>
-        /// <param name="tableSchemaName">The schema name of the table to check.</param>
+        /// <param name="service">WebAPIService</param>
+        /// <param name="tableSchemaName">schema 名称 of the table to check.</param>
         /// <returns></returns>
         private static async Task<bool> TableExists(Service service, string tableSchemaName)
         {
@@ -62,10 +62,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Asynchronously deletes a group of records for a specified table by id.
         /// </summary>
-        /// <param name="service">The WebAPIService</param>
-        /// <param name="tableLogicalName">The logical name of the table.</param>
-        /// <param name="iDs">The id values of the records to create.</param>
-        /// <param name="jobName">A name for the system job to delete the records.</param>
+        /// <param name="service">WebAPIService</param>
+        /// <param name="tableLogicalName">logical 名称 of the table.</param>
+        /// <param name="iDs">id 值s of the records to create.</param>
+        /// <param name="jobName">一个名称 for the system job to delete the records.</param>
         /// <returns></returns>
         public static async Task<string> BulkDeleteRecordsByIds(
             Service service,
@@ -129,7 +129,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                             id: bulkDeleteResponse.JobId),
                     query: "?$select=statecode,statuscode");
 
-                // When it is completed
+                // 当it is completed
                 if (((int)job.GetValue("statecode")) == 3)
                 {
 
@@ -149,7 +149,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 count++;
             }
 
-            // If the test limit is exceeded
+            // 如果the test limit is exceeded
             deleteAsync.Stop();
             Console.WriteLine(string.Format(message, iDs.Length, Math.Round(deleteAsync.Elapsed.TotalSeconds)));
             return "TestLimitExceeded";
@@ -158,9 +158,9 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Detect whether a specified message is supported for the specified table.
         /// </summary>
-        /// <param name="service">The WebAPIService instance.</param>
-        /// <param name="entityLogicalName">The logical name of the table.</param>
-        /// <param name="messageName">The name of the message.</param>
+        /// <param name="service">WebAPIService 实例.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table.</param>
+        /// <param name="messageName">名称 of the message.</param>
         /// <returns></returns>
         public static async Task<bool> IsMessageAvailable(
             Service service,
@@ -178,10 +178,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Creates the table used by projects in this solution.
+        /// 创建 the table used by projects in this solution.
         /// </summary>
-        /// <param name="service">The WebAPIService instance.</param>
-        /// <param name="tableSchemaName">The SchemaName of the table to create.</param>
+        /// <param name="service">WebAPIService 实例.</param>
+        /// <param name="tableSchemaName">SchemaName of the table to create.</param>
         public static async Task CreateExampleTable(Service service, string tableSchemaName, bool isElastic = false)
         {
 
@@ -249,7 +249,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             await service.SendAsync<CreateEntityResponse>(createEntityRequest);
 
 
-            // Create alternate key for standard table and validate that the key is created
+            // 创建alternate key for standard table and validate that the key is created
             // before sending Bulk Operation resquests
             if (Settings.CreateAlternateKey && !Settings.UseElastic)
             {
@@ -265,10 +265,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Deletes the table used by projects in this solution.
+        /// 删除 the table used by projects in this solution.
         /// </summary>
-        /// <param name="service">The WebAPIService instance.</param>
-        /// <param name="tableSchemaName">The SchemaName of the table to delete.</param>
+        /// <param name="service">WebAPIService 实例.</param>
+        /// <param name="tableSchemaName">SchemaName of the table to delete.</param>
         public static async Task DeleteExampleTable(Service service, string tableSchemaName)
         {
             if (Settings.DeleteTable)
@@ -347,14 +347,14 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Creates alternate key to the entity requested.
+        /// 创建 alternate key to the entity requested.
         /// </summary>
-		/// <param name="entityLogicalName">Table logical name</param>
-		/// <param name="schemaName">Schema name of the Key.</param>
-		/// <param name="displayName">Display name of the Key.</param>
+		/// <param name="entityLogicalName">Table logical 名称</param>
+		/// <param name="schemaName">Schema 名称 of the Key.</param>
+		/// <param name="displayName">Display 名称 of the Key.</param>
 		/// <param name="keyAttributes">List of Key Attributes.
 		/// These attributes should exists in the specified entity.
-		/// These attributes must be of type Decimal or Integer or String.</param>
+		/// These attributes must be of 类型 Decimal or Integer or String.</param>
 		/// <returns>Return True if success</returns>
 		internal static async void CreateAlternateKeyToEntity(Service service, 
             string entityLogicalName, 

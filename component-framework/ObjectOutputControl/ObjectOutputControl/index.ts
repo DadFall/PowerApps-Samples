@@ -66,7 +66,7 @@ export class ObjectOutputControl implements ComponentFramework.ReactControl<IInp
 	 * i.e. cancelling any pending remote calls, removing listeners, etc.
 	 */
 	public destroy(): void {
-		// Add code to cleanup control if necessary
+		// 添加code to cleanup control if necessary
 	}
 
 	/**

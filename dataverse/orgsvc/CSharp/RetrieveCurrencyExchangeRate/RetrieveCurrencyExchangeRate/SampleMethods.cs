@@ -24,10 +24,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             
@@ -49,7 +49,7 @@ namespace PowerApps.Samples
         //    {
         //        discoveryProxy.Authenticate();
 
-        //        // Get all Organizations using Discovery Service
+        //        // 获取all Organizations using Discovery Service
 
         //        RetrieveOrganizationsRequest retrieveOrganizationsRequest = new RetrieveOrganizationsRequest()
         //        {
@@ -76,7 +76,7 @@ namespace PowerApps.Samples
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
             Console.WriteLine("  Creating currency 'Canadian Dollar'");
-            // Create another currency
+            // 创建another currency
             _currency = new TransactionCurrency()
             {
                 CurrencyName = "Canadian Dollar",

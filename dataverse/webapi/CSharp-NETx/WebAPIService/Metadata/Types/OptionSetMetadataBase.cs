@@ -9,22 +9,22 @@ namespace PowerApps.Samples.Metadata.Types
         
 
         /// <summary>
-        /// A description for the option set.
+        /// 一个description for the option set.
         /// </summary>
         public Label Description { get; set; }
 
         /// <summary>
-        /// A label containing the display name for the global option set.
+        /// 一个label containing the display name for the global option set.
         /// </summary>
         public Label DisplayName { get; set; }
 
         /// <summary>
-        /// TODO: Something related to Virtual Entities
+        /// 待办： Something related to Virtual Entities
         /// </summary>
         public string ExternalTypeName { get; set; }
 
         /// <summary>
-        /// A string identifying the solution version that the solution component was added in.
+        /// 一个string identifying the solution version that the solution component was added in.
         /// </summary>
         public string IntroducedVersion { get; set; }
 
@@ -49,12 +49,12 @@ namespace PowerApps.Samples.Metadata.Types
         public bool? IsManaged { get; set; }
 
         /// <summary>
-        /// The name of a global option set.
+        /// name of a global option set.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// The type of option set.
+        /// type of option set.
         /// </summary>
         public OptionSetType OptionSetType { get; set; }
     }

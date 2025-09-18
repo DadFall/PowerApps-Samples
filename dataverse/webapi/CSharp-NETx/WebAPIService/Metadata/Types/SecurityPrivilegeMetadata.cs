@@ -41,17 +41,17 @@ namespace PowerApps.Samples.Metadata.Types
         public bool CanBeParentEntityReference { get; set; }
 
         /// <summary>
-        /// The name of the privilege.
+        /// name of the privilege.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// The ID of the privilege.
+        /// ID of the privilege.
         /// </summary>
         public Guid PrivilegeId { get; set; }
 
         /// <summary>
-        /// The type of the privilege.
+        /// type of the privilege.
         /// </summary>
         public PrivilegeType PrivilegeType { get; set; }
     }

@@ -33,14 +33,14 @@
 // Support: Firefox 18+
 //"use strict";
 var
-	// The deferred used on DOM ready
+	// deferred used on DOM ready
 	readyList,
 
-	// A central reference to the root jQuery(document)
+	// 一个central reference to the root jQuery(document)
 	rootjQuery,
 
 	// Support: IE<10
-	// For `typeof xmlNode.method` instead of `xmlNode.method !== undefined`
+	// 对于`typeof xmlNode.method` instead of `xmlNode.method !== undefined`
 	core_strundefined = typeof undefined,
 
 	// Use the correct document accordingly with window argument (sandbox)
@@ -62,7 +62,7 @@ var
 
 	core_version = "1.10.2",
 
-	// Save a reference to some core methods
+	// 保存a reference to some core methods
 	core_concat = core_deletedIds.concat,
 	core_push = core_deletedIds.push,
 	core_slice = core_deletedIds.slice,
@@ -73,7 +73,7 @@ var
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
-		// The jQuery object is actually just the init constructor 'enhanced'
+		// jQuery object is actually just the init constructor 'enhanced'
 		return new jQuery.fn.init( selector, context, rootjQuery );
 	},
 
@@ -86,7 +86,7 @@ var
 	// Make sure we trim BOM and NBSP (here's looking at you, Safari 5.0 and IE)
 	rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
 
-	// A simple way to check for HTML strings
+	// 一个simple way to check for HTML strings
 	// Prioritize #id over <tag> to avoid XSS via location.hash (#9521)
 	// Strict HTML recognition (#11290: must start with <)
 	rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,
@@ -109,7 +109,7 @@ var
 		return letter.toUpperCase();
 	},
 
-	// The ready event handler
+	// ready event handler
 	completed = function( event ) {
 
 		// readyState === "complete" is good enough for us to call the dom ready in oldIE
@@ -131,7 +131,7 @@ var
 	};
 
 jQuery.fn = jQuery.prototype = {
-	// The current version of jQuery being used
+	// current version of jQuery being used
 	jquery: core_version,
 
 	constructor: jQuery,
@@ -143,7 +143,7 @@ jQuery.fn = jQuery.prototype = {
 			return this;
 		}
 
-		// Handle HTML strings
+		// 处理HTML strings
 		if ( typeof selector === "string" ) {
 			if ( selector.charAt(0) === "<" && selector.charAt( selector.length - 1 ) === ">" && selector.length >= 3 ) {
 				// Assume that strings that start and end with <> are HTML and skip the regex check
@@ -187,10 +187,10 @@ jQuery.fn = jQuery.prototype = {
 				} else {
 					elem = document.getElementById( match[2] );
 
-					// Check parentNode to catch when Blackberry 4.6 returns
+					// 检查parentNode to catch when Blackberry 4.6 returns
 					// nodes that are no longer in the document #6963
 					if ( elem && elem.parentNode ) {
-						// Handle the case where IE and Opera return items
+						// 处理the case where IE and Opera return items
 						// by name instead of ID
 						if ( elem.id !== match[2] ) {
 							return rootjQuery.find( selector );
@@ -236,25 +236,25 @@ jQuery.fn = jQuery.prototype = {
 		return jQuery.makeArray( selector, this );
 	},
 
-	// Start with an empty selector
+	// 开始with an empty selector
 	selector: "",
 
-	// The default length of a jQuery object is 0
+	// default length of a jQuery object is 0
 	length: 0,
 
 	toArray: function() {
 		return core_slice.call( this );
 	},
 
-	// Get the Nth element in the matched element set OR
-	// Get the whole matched element set as a clean array
+	// 获取the Nth element in the matched element set OR
+	// 获取the whole matched element set as a clean array
 	get: function( num ) {
 		return num == null ?
 
-			// Return a 'clean' array
+			// 返回a 'clean' array
 			this.toArray() :
 
-			// Return just the object
+			// 返回just the object
 			( num < 0 ? this[ this.length + num ] : this[ num ] );
 	},
 
@@ -262,18 +262,18 @@ jQuery.fn = jQuery.prototype = {
 	// (returning the new matched element set)
 	pushStack: function( elems ) {
 
-		// Build a new jQuery matched element set
+		// 构建a new jQuery matched element set
 		var ret = jQuery.merge( this.constructor(), elems );
 
-		// Add the old object onto the stack (as a reference)
+		// 添加the old object onto the stack (as a reference)
 		ret.prevObject = this;
 		ret.context = this.context;
 
-		// Return the newly-formed element set
+		// 返回the newly-formed element set
 		return ret;
 	},
 
-	// Execute a callback for every element in the matched set.
+	// 执行a callback for every element in the matched set.
 	// (You can seed the arguments with an array of args, but this is
 	// only used internally.)
 	each: function( callback, args ) {
@@ -281,7 +281,7 @@ jQuery.fn = jQuery.prototype = {
 	},
 
 	ready: function( fn ) {
-		// Add the callback
+		// 添加the callback
 		jQuery.ready.promise().done( fn );
 
 		return this;
@@ -315,7 +315,7 @@ jQuery.fn = jQuery.prototype = {
 		return this.prevObject || this.constructor(null);
 	},
 
-	// For internal use only.
+	// 对于internal use only.
 	// Behaves like an Array's method, not like a jQuery method.
 	push: core_push,
 	sort: [].sort,
@@ -332,7 +332,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		length = arguments.length,
 		deep = false;
 
-	// Handle a deep copy situation
+	// 处理a deep copy situation
 	if ( typeof target === "boolean" ) {
 		deep = target;
 		target = arguments[1] || {};
@@ -340,7 +340,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		i = 2;
 	}
 
-	// Handle case when target is a string or something (possible in deep copy)
+	// 处理case when target is a string or something (possible in deep copy)
 	if ( typeof target !== "object" && !jQuery.isFunction(target) ) {
 		target = {};
 	}
@@ -385,7 +385,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		}
 	}
 
-	// Return the modified object
+	// 返回the modified object
 	return target;
 };
 
@@ -409,7 +409,7 @@ jQuery.extend({
 	// Is the DOM ready to be used? Set to true once it occurs.
 	isReady: false,
 
-	// A counter to track how many items to wait for before
+	// 一个counter to track how many items to wait for before
 	// the ready event fires. See #6781
 	readyWait: 1,
 
@@ -422,7 +422,7 @@ jQuery.extend({
 		}
 	},
 
-	// Handle when the DOM is ready
+	// 处理when the DOM is ready
 	ready: function( wait ) {
 
 		// Abort if there are pending holds or we're already ready
@@ -438,12 +438,12 @@ jQuery.extend({
 		// Remember that the DOM is ready
 		jQuery.isReady = true;
 
-		// If a normal DOM Ready event fired, decrement, and wait if need be
+		// 如果a normal DOM Ready event fired, decrement, and wait if need be
 		if ( wait !== true && --jQuery.readyWait > 0 ) {
 			return;
 		}
 
-		// If there are functions bound, to execute
+		// 如果there are functions bound, to execute
 		readyList.resolveWith( document, [ jQuery ] );
 
 		// Trigger any bound ready events
@@ -504,7 +504,7 @@ jQuery.extend({
 		}
 
 		// Support: IE<9
-		// Handle iteration over inherited properties before own properties.
+		// 处理iteration over inherited properties before own properties.
 		if ( jQuery.support.ownLast ) {
 			for ( key in obj ) {
 				return core_hasOwn.call( obj, key );
@@ -628,7 +628,7 @@ jQuery.extend({
 		}
 	},
 
-	// Convert dashed to camelCase; used by the css and data modules
+	// 转换dashed to camelCase; used by the css and data modules
 	// Microsoft forgot to hump their vendor prefix (#9572)
 	camelCase: function( string ) {
 		return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
@@ -664,7 +664,7 @@ jQuery.extend({
 				}
 			}
 
-		// A special, fast, case for the most common use of each
+		// 一个special, fast, case for the most common use of each
 		} else {
 			if ( isArray ) {
 				for ( ; i < length; i++ ) {
@@ -815,7 +815,7 @@ jQuery.extend({
 		return core_concat.apply( [], ret );
 	},
 
-	// A global GUID counter for objects
+	// 一个global GUID counter for objects
 	guid: 1,
 
 	// Bind a function to a context, optionally partially applying any
@@ -841,14 +841,14 @@ jQuery.extend({
 			return fn.apply( context || this, args.concat( core_slice.call( arguments ) ) );
 		};
 
-		// Set the guid of unique handler to the same of original handler, so it can be removed
+		// 设置the guid of unique handler to the same of original handler, so it can be removed
 		proxy.guid = fn.guid = fn.guid || jQuery.guid++;
 
 		return proxy;
 	},
 
 	// Multifunctional method to get and set values of a collection
-	// The value/s can optionally be executed if it's a function
+	// value/s can optionally be executed if it's a function
 	access: function( elems, fn, key, value, chainable, emptyGet, raw ) {
 		var i = 0,
 			length = elems.length,
@@ -904,9 +904,9 @@ jQuery.extend({
 		return ( new Date() ).getTime();
 	},
 
-	// A method for quickly swapping in/out CSS properties to get correct calculations.
+	// 一个method for quickly swapping in/out CSS properties to get correct calculations.
 	// Note: this method belongs to the css module but it's needed here for the support module.
-	// If support gets modularized, this method should be moved back to the css module.
+	// 如果support gets modularized, this method should be moved back to the css module.
 	swap: function( elem, options, callback, args ) {
 		var ret, name,
 			old = {};
@@ -933,11 +933,11 @@ jQuery.ready.promise = function( obj ) {
 
 		readyList = jQuery.Deferred();
 
-		// Catch cases where $(document).ready() is called after the browser event has already occurred.
+		// 捕获cases where $(document).ready() is called after the browser event has already occurred.
 		// we once tried to use readyState "interactive" here, but it caused issues like the one
 		// discovered by ChrisS here: http://bugs.jquery.com/ticket/12282#comment:15
 		if ( document.readyState === "complete" ) {
-			// Handle it asynchronously to allow scripts the opportunity to delay ready
+			// 处理it asynchronously to allow scripts the opportunity to delay ready
 			setTimeout( jQuery.ready );
 
 		// Standards-based browsers support DOMContentLoaded
@@ -945,18 +945,18 @@ jQuery.ready.promise = function( obj ) {
 			// Use the handy event callback
 			document.addEventListener( "DOMContentLoaded", completed, false );
 
-			// A fallback to window.onload, that will always work
+			// 一个fallback to window.onload, that will always work
 			window.addEventListener( "load", completed, false );
 
-		// If IE event model is used
+		// 如果IE event model is used
 		} else {
 			// Ensure firing before onload, maybe late but safe also for iframes
 			document.attachEvent( "onreadystatechange", completed );
 
-			// A fallback to window.onload, that will always work
+			// 一个fallback to window.onload, that will always work
 			window.attachEvent( "onload", completed );
 
-			// If IE and not a frame
+			// 如果IE and not a frame
 			// continually check to see if the document is ready
 			var top = false;
 
@@ -1011,7 +1011,7 @@ function isArraylike( obj ) {
 		typeof length === "number" && length > 0 && ( length - 1 ) in obj );
 }
 
-// All jQuery objects should point back to these
+// 所有jQuery objects should point back to these
 rootjQuery = jQuery(document);
 /*!
  * Sizzle CSS Selector Engine v1.10.2
@@ -1095,7 +1095,7 @@ var i,
 	characterEncoding = "(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",
 
 	// Loosely modeled on CSS identifier characters
-	// An unquoted value should be a CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
+	// 一个unquoted value should be a CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
 	// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
 	identifier = characterEncoding.replace( "w", "w#" ),
 
@@ -1133,7 +1133,7 @@ var i,
 			"*(even|odd|(([+-]|)(\\d*)n|)" + whitespace + "*(?:([+-]|)" + whitespace +
 			"*(\\d+)|))" + whitespace + "*\\)|)", "i" ),
 		"bool": new RegExp( "^(?:" + booleans + ")$", "i" ),
-		// For use in libraries implementing .is()
+		// 对于use in libraries implementing .is()
 		// We use this for POS matching in `select`
 		"needsContext": new RegExp( "^" + whitespace + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" +
 			whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
@@ -1165,7 +1165,7 @@ var i,
 				String.fromCharCode( high >> 10 | 0xD800, high & 0x3FF | 0xDC00 );
 	};
 
-// Optimize for push.apply( _, NodeList )
+// 优化for push.apply( _, NodeList )
 try {
 	push.apply(
 		(arr = slice.call( preferredDoc.childNodes )),
@@ -1222,10 +1222,10 @@ function Sizzle( selector, context, results, seed ) {
 			if ( (m = match[1]) ) {
 				if ( nodeType === 9 ) {
 					elem = context.getElementById( m );
-					// Check parentNode to catch when Blackberry 4.6 returns
+					// 检查parentNode to catch when Blackberry 4.6 returns
 					// nodes that are no longer in the document #6963
 					if ( elem && elem.parentNode ) {
-						// Handle the case where IE, Opera, and Webkit return items
+						// 处理the case where IE, Opera, and Webkit return items
 						// by name instead of ID
 						if ( elem.id === m ) {
 							results.push( elem );
@@ -1299,7 +1299,7 @@ function Sizzle( selector, context, results, seed ) {
 		}
 	}
 
-	// All others
+	// 所有others
 	return select( selector.replace( rtrim, "$1" ), context, results, seed );
 }
 
@@ -1344,7 +1344,7 @@ function assert( fn ) {
 	} catch (e) {
 		return false;
 	} finally {
-		// Remove from its parent by default
+		// 移除from its parent by default
 		if ( div.parentNode ) {
 			div.parentNode.removeChild( div );
 		}
@@ -1384,7 +1384,7 @@ function siblingCheck( a, b ) {
 		return diff;
 	}
 
-	// Check if b follows a
+	// 检查if b follows a
 	if ( cur ) {
 		while ( (cur = cur.nextSibling) ) {
 			if ( cur === b ) {
@@ -1463,12 +1463,12 @@ setDocument = Sizzle.setDocument = function( node ) {
 	var doc = node ? node.ownerDocument || node : preferredDoc,
 		parent = doc.defaultView;
 
-	// If no document and documentElement is available, return
+	// 如果no document and documentElement is available, return
 	if ( doc === document || doc.nodeType !== 9 || !doc.documentElement ) {
 		return document;
 	}
 
-	// Set our document
+	// 设置our document
 	document = doc;
 	docElem = doc.documentElement;
 
@@ -1476,7 +1476,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	documentIsHTML = !isXML( doc );
 
 	// Support: IE>8
-	// If iframe document is assigned to "document" variable and if iframe has been reloaded,
+	// 如果iframe document is assigned to "document" variable and if iframe has been reloaded,
 	// IE will throw "permission denied" error when accessing "document" variable, see jQuery #13936
 	// IE6-8 do not support the defaultView property so parent will be undefined
 	if ( parent && parent.attachEvent && parent !== parent.top ) {
@@ -1489,7 +1489,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	---------------------------------------------------------------------- */
 
 	// Support: IE<8
-	// Verify that getAttribute really returns attributes and not properties (excepting IE8 booleans)
+	// 验证that getAttribute really returns attributes and not properties (excepting IE8 booleans)
 	support.attributes = assert(function( div ) {
 		div.className = "i";
 		return !div.getAttribute("className");
@@ -1498,27 +1498,27 @@ setDocument = Sizzle.setDocument = function( node ) {
 	/* getElement(s)By*
 	---------------------------------------------------------------------- */
 
-	// Check if getElementsByTagName("*") returns only elements
+	// 检查if getElementsByTagName("*") returns only elements
 	support.getElementsByTagName = assert(function( div ) {
 		div.appendChild( doc.createComment("") );
 		return !div.getElementsByTagName("*").length;
 	});
 
-	// Check if getElementsByClassName can be trusted
+	// 检查if getElementsByClassName can be trusted
 	support.getElementsByClassName = assert(function( div ) {
 		div.innerHTML = "<div class='a'></div><div class='a i'></div>";
 
 		// Support: Safari<4
-		// Catch class over-caching
+		// 捕获class over-caching
 		div.firstChild.className = "i";
 		// Support: Opera<10
-		// Catch gEBCN failure to find non-leading classes
+		// 捕获gEBCN failure to find non-leading classes
 		return div.getElementsByClassName("i").length === 2;
 	});
 
 	// Support: IE<10
-	// Check if getElementById returns elements by name
-	// The broken getElementById methods don't pick up programatically-set names,
+	// 检查if getElementById returns elements by name
+	// broken getElementById methods don't pick up programatically-set names,
 	// so use a roundabout getElementsByName test
 	support.getById = assert(function( div ) {
 		docElem.appendChild( div ).id = expando;
@@ -1530,7 +1530,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		Expr.find["ID"] = function( id, context ) {
 			if ( typeof context.getElementById !== strundefined && documentIsHTML ) {
 				var m = context.getElementById( id );
-				// Check parentNode to catch when Blackberry 4.6 returns
+				// 检查parentNode to catch when Blackberry 4.6 returns
 				// nodes that are no longer in the document #6963
 				return m && m.parentNode ? [m] : [];
 			}
@@ -1568,7 +1568,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				i = 0,
 				results = context.getElementsByTagName( tag );
 
-			// Filter out possible comments
+			// 过滤out possible comments
 			if ( tag === "*" ) {
 				while ( (elem = results[i++]) ) {
 					if ( elem.nodeType === 1 ) {
@@ -1604,11 +1604,11 @@ setDocument = Sizzle.setDocument = function( node ) {
 	rbuggyQSA = [];
 
 	if ( (support.qsa = rnative.test( doc.querySelectorAll )) ) {
-		// Build QSA regex
+		// 构建QSA regex
 		// Regex strategy adopted from Diego Perini
 		assert(function( div ) {
-			// Select is set to empty string on purpose
-			// This is to test IE's treatment of not explicitly
+			// 选择is set to empty string on purpose
+			// 此is to test IE's treatment of not explicitly
 			// setting a boolean content attribute,
 			// since its presence should be enough
 			// http://bugs.jquery.com/ticket/12359
@@ -1634,7 +1634,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// ^= $= *= and empty values
 			// Should not select anything
 			// Support: Windows 8 Native Apps
-			// The type attribute is restricted during .innerHTML assignment
+			// type attribute is restricted during .innerHTML assignment
 			var input = doc.createElement("input");
 			input.setAttribute( "type", "hidden" );
 			div.appendChild( input ).setAttribute( "t", "" );
@@ -1661,11 +1661,11 @@ setDocument = Sizzle.setDocument = function( node ) {
 		docElem.msMatchesSelector) )) ) {
 
 		assert(function( div ) {
-			// Check to see if it's possible to do matchesSelector
+			// 检查to see if it's possible to do matchesSelector
 			// on a disconnected node (IE 9)
 			support.disconnectedMatch = matches.call( div, "div" );
 
-			// This should fail with an exception
+			// 此should fail with an exception
 			// Gecko does not error, returns false instead
 			matches.call( div, "[s!='']:x" );
 			rbuggyMatches.push( "!=", pseudos );
@@ -1765,7 +1765,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				( indexOf.call( sortInput, a ) - indexOf.call( sortInput, b ) ) :
 				0;
 
-		// If the nodes are siblings, we can do a quick check
+		// 如果the nodes are siblings, we can do a quick check
 		} else if ( aup === bup ) {
 			return siblingCheck( a, b );
 		}
@@ -1803,7 +1803,7 @@ Sizzle.matches = function( expr, elements ) {
 };
 
 Sizzle.matchesSelector = function( elem, expr ) {
-	// Set document vars if needed
+	// 设置document vars if needed
 	if ( ( elem.ownerDocument || elem ) !== document ) {
 		setDocument( elem );
 	}
@@ -1832,7 +1832,7 @@ Sizzle.matchesSelector = function( elem, expr ) {
 };
 
 Sizzle.contains = function( context, elem ) {
-	// Set document vars if needed
+	// 设置document vars if needed
 	if ( ( context.ownerDocument || context ) !== document ) {
 		setDocument( context );
 	}
@@ -1840,7 +1840,7 @@ Sizzle.contains = function( context, elem ) {
 };
 
 Sizzle.attr = function( elem, name ) {
-	// Set document vars if needed
+	// 设置document vars if needed
 	if ( ( elem.ownerDocument || elem ) !== document ) {
 		setDocument( elem );
 	}
@@ -1904,7 +1904,7 @@ getText = Sizzle.getText = function( elem ) {
 		nodeType = elem.nodeType;
 
 	if ( !nodeType ) {
-		// If no nodeType, this is expected to be an array
+		// 如果no nodeType, this is expected to be an array
 		for ( ; (node = elem[i]); i++ ) {
 			// Do not traverse comment nodes
 			ret += getText( node );
@@ -2008,7 +2008,7 @@ Expr = Sizzle.selectors = {
 
 			// Strip excess characters from unquoted arguments
 			} else if ( unquoted && rpseudo.test( unquoted ) &&
-				// Get excess from tokenize (recursively)
+				// 获取excess from tokenize (recursively)
 				(excess = tokenize( unquoted, true )) &&
 				// advance to the next closing parenthesis
 				(excess = unquoted.indexOf( ")", unquoted.length - excess ) - unquoted.length) ) {
@@ -2018,7 +2018,7 @@ Expr = Sizzle.selectors = {
 				match[2] = unquoted.slice( 0, excess );
 			}
 
-			// Return only captures needed by the pseudo filter method (type and argument)
+			// 返回only captures needed by the pseudo filter method (type and argument)
 			return match.slice( 0, 3 );
 		}
 	},
@@ -2120,7 +2120,7 @@ Expr = Sizzle.selectors = {
 								// Fallback to seeking `elem` from the start
 								(diff = nodeIndex = 0) || start.pop()) ) {
 
-								// When found, cache indexes on `parent` and break
+								// 当found, cache indexes on `parent` and break
 								if ( node.nodeType === 1 && ++diff && node === elem ) {
 									outerCache[ type ] = [ dirruns, nodeIndex, diff ];
 									break;
@@ -2138,7 +2138,7 @@ Expr = Sizzle.selectors = {
 								(diff = nodeIndex = 0) || start.pop()) ) {
 
 								if ( ( ofType ? node.nodeName.toLowerCase() === name : node.nodeType === 1 ) && ++diff ) {
-									// Cache the index of each encountered element
+									// 缓存the index of each encountered element
 									if ( useCache ) {
 										(node[ expando ] || (node[ expando ] = {}))[ type ] = [ dirruns, diff ];
 									}
@@ -2166,7 +2166,7 @@ Expr = Sizzle.selectors = {
 				fn = Expr.pseudos[ pseudo ] || Expr.setFilters[ pseudo.toLowerCase() ] ||
 					Sizzle.error( "unsupported pseudo: " + pseudo );
 
-			// The user may use createPseudo to indicate that
+			// user may use createPseudo to indicate that
 			// arguments are needed to create the filter function
 			// just as Sizzle does
 			if ( fn[ expando ] ) {
@@ -2241,8 +2241,8 @@ Expr = Sizzle.selectors = {
 		// is based solely on the element's language value
 		// being equal to the identifier C,
 		// or beginning with the identifier C immediately followed by "-".
-		// The matching of C against the element's language value is performed case-insensitively.
-		// The identifier C does not have to be a valid language name."
+		// matching of C against the element's language value is performed case-insensitively.
+		// identifier C does not have to be a valid language name."
 		// http://www.w3.org/TR/selectors/#lang-pseudo
 		"lang": markFunction( function( lang ) {
 			// lang value must be a valid identifier
@@ -2396,7 +2396,7 @@ Expr = Sizzle.selectors = {
 
 Expr.pseudos["nth"] = Expr.pseudos["eq"];
 
-// Add button/input type pseudos
+// 添加button/input type pseudos
 for ( i in { radio: true, checkbox: true, file: true, password: true, image: true } ) {
 	Expr.pseudos[ i ] = createInputPseudo( i );
 }
@@ -2465,14 +2465,14 @@ function tokenize( selector, parseOnly ) {
 		}
 	}
 
-	// Return the length of the invalid excess
+	// 返回the length of the invalid excess
 	// if we're just parsing
 	// Otherwise, throw an error or return tokens
 	return parseOnly ?
 		soFar.length :
 		soFar ?
 			Sizzle.error( selector ) :
-			// Cache the tokens
+			// 缓存the tokens
 			tokenCache( selector, groups ).slice( 0 );
 }
 
@@ -2492,7 +2492,7 @@ function addCombinator( matcher, combinator, base ) {
 		doneName = done++;
 
 	return combinator.first ?
-		// Check against closest ancestor/preceding element
+		// 检查against closest ancestor/preceding element
 		function( elem, context, xml ) {
 			while ( (elem = elem[ dir ]) ) {
 				if ( elem.nodeType === 1 || checkNonElements ) {
@@ -2501,7 +2501,7 @@ function addCombinator( matcher, combinator, base ) {
 			}
 		} :
 
-		// Check against all ancestor/preceding elements
+		// 检查against all ancestor/preceding elements
 		function( elem, context, xml ) {
 			var data, cache, outerCache,
 				dirkey = dirruns + " " + doneName;
@@ -2584,7 +2584,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 			postMap = [],
 			preexisting = results.length,
 
-			// Get initial elements from seed or context
+			// 获取initial elements from seed or context
 			elems = seed || multipleContexts( selector || "*", context.nodeType ? [ context ] : context, [] ),
 
 			// Prefilter to get matcher input, preserving a map for seed-results synchronization
@@ -2593,7 +2593,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 				elems,
 
 			matcherOut = matcher ?
-				// If we have a postFinder, or filtered seed, or non-seed postFilter or preexisting results,
+				// 如果we have a postFinder, or filtered seed, or non-seed postFilter or preexisting results,
 				postFinder || ( seed ? preFilter : preexisting || postFilter ) ?
 
 					// ...intermediate processing is necessary
@@ -2603,7 +2603,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 					results :
 				matcherIn;
 
-		// Find primary matches
+		// 查找primary matches
 		if ( matcher ) {
 			matcher( matcherIn, matcherOut, context, xml );
 		}
@@ -2625,7 +2625,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 		if ( seed ) {
 			if ( postFinder || preFilter ) {
 				if ( postFinder ) {
-					// Get the final matcherOut by condensing this intermediate into postFinder contexts
+					// 获取the final matcherOut by condensing this intermediate into postFinder contexts
 					temp = [];
 					i = matcherOut.length;
 					while ( i-- ) {
@@ -2648,7 +2648,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 				}
 			}
 
-		// Add elements to results, through postFinder if defined
+		// 添加elements to results, through postFinder if defined
 		} else {
 			matcherOut = condense(
 				matcherOut === results ?
@@ -2671,7 +2671,7 @@ function matcherFromTokens( tokens ) {
 		implicitRelative = leadingRelative || Expr.relative[" "],
 		i = leadingRelative ? 1 : 0,
 
-		// The foundational matcher ensures that elements are reachable from top-level context(s)
+		// foundational matcher ensures that elements are reachable from top-level context(s)
 		matchContext = addCombinator( function( elem ) {
 			return elem === checkContext;
 		}, implicitRelative, true ),
@@ -2691,9 +2691,9 @@ function matcherFromTokens( tokens ) {
 		} else {
 			matcher = Expr.filter[ tokens[i].type ].apply( null, tokens[i].matches );
 
-			// Return special upon seeing a positional matcher
+			// 返回special upon seeing a positional matcher
 			if ( matcher[ expando ] ) {
-				// Find the next relative operator (if any) for proper handling
+				// 查找the next relative operator (if any) for proper handling
 				j = ++i;
 				for ( ; j < len; j++ ) {
 					if ( Expr.relative[ tokens[j].type ] ) {
@@ -2703,7 +2703,7 @@ function matcherFromTokens( tokens ) {
 				return setMatcher(
 					i > 1 && elementMatcher( matchers ),
 					i > 1 && toSelector(
-						// If the preceding token was a descendant combinator, insert an implicit any-element `*`
+						// 如果the preceding token was a descendant combinator, insert an implicit any-element `*`
 						tokens.slice( 0, i - 1 ).concat({ value: tokens[ i - 2 ].type === " " ? "*" : "" })
 					).replace( rtrim, "$1" ),
 					matcher,
@@ -2720,7 +2720,7 @@ function matcherFromTokens( tokens ) {
 }
 
 function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
-	// A counter to specify which element is currently being matched
+	// 一个counter to specify which element is currently being matched
 	var matcherCachedRuns = 0,
 		bySet = setMatchers.length > 0,
 		byElement = elementMatchers.length > 0,
@@ -2742,7 +2742,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 				cachedruns = matcherCachedRuns;
 			}
 
-			// Add elements passing elementMatchers directly to results
+			// 添加elements passing elementMatchers directly to results
 			// Keep `i` a string if there are no elements so `matchedCount` will be "00" below
 			for ( ; (elem = elems[i]) != null; i++ ) {
 				if ( byElement && elem ) {
@@ -2795,7 +2795,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 					setMatched = condense( setMatched );
 				}
 
-				// Add matches to results
+				// 添加matches to results
 				push.apply( results, setMatched );
 
 				// Seedless set matches succeeding multiple successful matchers stipulate sorting
@@ -2827,7 +2827,7 @@ compile = Sizzle.compile = function( selector, group /* Internal Use Only */ ) {
 		cached = compilerCache[ selector + " " ];
 
 	if ( !cached ) {
-		// Generate a function of recursive functions that can be used to check each element
+		// 生成a function of recursive functions that can be used to check each element
 		if ( !group ) {
 			group = tokenize( selector );
 		}
@@ -2841,7 +2841,7 @@ compile = Sizzle.compile = function( selector, group /* Internal Use Only */ ) {
 			}
 		}
 
-		// Cache the compiled function
+		// 缓存the compiled function
 		cached = compilerCache( selector, matcherFromGroupMatchers( elementMatchers, setMatchers ) );
 	}
 	return cached;
@@ -2861,7 +2861,7 @@ function select( selector, context, results, seed ) {
 		match = tokenize( selector );
 
 	if ( !seed ) {
-		// Try to minimize operations if there is only one group
+		// 尝试to minimize operations if there is only one group
 		if ( match.length === 1 ) {
 
 			// Take a shortcut and set the context if the root selector is an ID
@@ -2893,7 +2893,7 @@ function select( selector, context, results, seed ) {
 						rsibling.test( tokens[0].type ) && context.parentNode || context
 					)) ) {
 
-						// If seed is empty or no tokens remain, we can return early
+						// 如果seed is empty or no tokens remain, we can return early
 						tokens.splice( i, 1 );
 						selector = seed.length && toSelector( tokens );
 						if ( !selector ) {
@@ -2908,7 +2908,7 @@ function select( selector, context, results, seed ) {
 		}
 	}
 
-	// Compile and execute a filtering function
+	// 编译and execute a filtering function
 	// Provide `match` to avoid retokenization if we modified the selector above
 	compile( selector, match )(
 		seed,
@@ -2922,14 +2922,14 @@ function select( selector, context, results, seed ) {
 
 // One-time assignments
 
-// Sort stability
+// 排序stability
 support.sortStable = expando.split("").sort( sortOrder ).join("") === expando;
 
 // Support: Chrome<14
 // Always assume duplicates if they aren't passed to the comparison function
 support.detectDuplicates = hasDuplicate;
 
-// Initialize against the default document
+// 初始化against the default document
 setDocument();
 
 // Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
@@ -2995,7 +2995,7 @@ jQuery.contains = Sizzle.contains;
 // String to Object options format cache
 var optionsCache = {};
 
-// Convert String-formatted options into Object-formatted ones and store in cache
+// 转换String-formatted options into Object-formatted ones and store in cache
 function createOptions( options ) {
 	var object = optionsCache[ options ] = {};
 	jQuery.each( options.match( core_rnotwhite ) || [], function( _, flag ) {
@@ -3028,7 +3028,7 @@ function createOptions( options ) {
  */
 jQuery.Callbacks = function( options ) {
 
-	// Convert options from String-formatted to Object-formatted if needed
+	// 转换options from String-formatted to Object-formatted if needed
 	// (we check in cache first)
 	options = typeof options === "string" ?
 		( optionsCache[ options ] || createOptions( options ) ) :
@@ -3040,7 +3040,7 @@ jQuery.Callbacks = function( options ) {
 		memory,
 		// Flag to know if list was already fired
 		fired,
-		// End of the loop when firing
+		// 结束of the loop when firing
 		firingLength,
 		// Index of currently firing callback (modified by remove if needed)
 		firingIndex,
@@ -3048,7 +3048,7 @@ jQuery.Callbacks = function( options ) {
 		firingStart,
 		// Actual callback list
 		list = [],
-		// Stack of fire calls for repeatable lists
+		// 堆栈of fire calls for repeatable lists
 		stack = !options.once && [],
 		// Fire callbacks
 		fire = function( data ) {
@@ -3079,7 +3079,7 @@ jQuery.Callbacks = function( options ) {
 		},
 		// Actual Callbacks object
 		self = {
-			// Add a callback or a collection of callbacks to the list
+			// 添加a callback or a collection of callbacks to the list
 			add: function() {
 				if ( list ) {
 					// First, we save the current length
@@ -3101,7 +3101,7 @@ jQuery.Callbacks = function( options ) {
 					// current firing batch?
 					if ( firing ) {
 						firingLength = list.length;
-					// With memory, if we're not firing then
+					// 使用memory, if we're not firing then
 					// we should call right away
 					} else if ( memory ) {
 						firingStart = start;
@@ -3110,14 +3110,14 @@ jQuery.Callbacks = function( options ) {
 				}
 				return this;
 			},
-			// Remove a callback from the list
+			// 移除a callback from the list
 			remove: function() {
 				if ( list ) {
 					jQuery.each( arguments, function( _, arg ) {
 						var index;
 						while( ( index = jQuery.inArray( arg, list, index ) ) > -1 ) {
 							list.splice( index, 1 );
-							// Handle firing indexes
+							// 处理firing indexes
 							if ( firing ) {
 								if ( index <= firingLength ) {
 									firingLength--;
@@ -3131,12 +3131,12 @@ jQuery.Callbacks = function( options ) {
 				}
 				return this;
 			},
-			// Check if a given callback is in the list.
-			// If no argument is given, return whether or not list has callbacks attached.
+			// 检查if a given callback is in the list.
+			// 如果no argument is given, return whether or not list has callbacks attached.
 			has: function( fn ) {
 				return fn ? jQuery.inArray( fn, list ) > -1 : !!( list && list.length );
 			},
-			// Remove all callbacks from the list
+			// 移除all callbacks from the list
 			empty: function() {
 				list = [];
 				firingLength = 0;
@@ -3163,7 +3163,7 @@ jQuery.Callbacks = function( options ) {
 			locked: function() {
 				return !stack;
 			},
-			// Call all callbacks with the given context and arguments
+			// 调用all callbacks with the given context and arguments
 			fireWith: function( context, args ) {
 				if ( list && ( !fired || stack ) ) {
 					args = args || [];
@@ -3176,7 +3176,7 @@ jQuery.Callbacks = function( options ) {
 				}
 				return this;
 			},
-			// Call all the callbacks with the given arguments
+			// 调用all the callbacks with the given arguments
 			fire: function() {
 				self.fireWith( this, arguments );
 				return this;
@@ -3229,8 +3229,8 @@ jQuery.extend({
 						fns = null;
 					}).promise();
 				},
-				// Get a promise for this deferred
-				// If obj is provided, the promise aspect is added to the object
+				// 获取a promise for this deferred
+				// 如果obj is provided, the promise aspect is added to the object
 				promise: function( obj ) {
 					return obj != null ? jQuery.extend( obj, promise ) : promise;
 				}
@@ -3240,7 +3240,7 @@ jQuery.extend({
 		// Keep pipe for back-compat
 		promise.pipe = promise.then;
 
-		// Add list-specific methods
+		// 添加list-specific methods
 		jQuery.each( tuples, function( i, tuple ) {
 			var list = tuple[ 2 ],
 				stateString = tuple[ 3 ];
@@ -3248,7 +3248,7 @@ jQuery.extend({
 			// promise[ done | fail | progress ] = list.add
 			promise[ tuple[1] ] = list.add;
 
-			// Handle state
+			// 处理state
 			if ( stateString ) {
 				list.add(function() {
 					// state = [ resolved | rejected ]
@@ -3269,12 +3269,12 @@ jQuery.extend({
 		// Make the deferred a promise
 		promise.promise( deferred );
 
-		// Call given func if any
+		// 调用given func if any
 		if ( func ) {
 			func.call( deferred, deferred );
 		}
 
-		// All done!
+		// 所有done!
 		return deferred;
 	},
 
@@ -3290,7 +3290,7 @@ jQuery.extend({
 			// the master Deferred. If resolveValues consist of only a single Deferred, just use that.
 			deferred = remaining === 1 ? subordinate : jQuery.Deferred(),
 
-			// Update function for both resolve and progress values
+			// 更新function for both resolve and progress values
 			updateFunc = function( i, contexts, values ) {
 				return function( value ) {
 					contexts[ i ] = this;
@@ -3339,7 +3339,7 @@ jQuery.support = (function( support ) {
 	div.setAttribute( "className", "t" );
 	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
 
-	// Finish early in limited (non-browser) environments
+	// 完成early in limited (non-browser) environments
 	all = div.getElementsByTagName("*") || [];
 	a = div.getElementsByTagName("a")[ 0 ];
 	if ( !a || !a.style || !all.length ) {
@@ -3353,7 +3353,7 @@ jQuery.support = (function( support ) {
 
 	a.style.cssText = "top:1px;float:left;opacity:.5";
 
-	// Test setAttribute on camelCase class. If it works, we need attrFixes when doing get/setAttribute (ie6/7)
+	// 测试setAttribute on camelCase class. If it works, we need attrFixes when doing get/setAttribute (ie6/7)
 	support.getSetAttribute = div.className !== "t";
 
 	// IE strips leading whitespace when .innerHTML is used
@@ -3364,10 +3364,10 @@ jQuery.support = (function( support ) {
 	support.tbody = !div.getElementsByTagName("tbody").length;
 
 	// Make sure that link elements get serialized correctly by innerHTML
-	// This requires a wrapper element in IE
+	// 此requires a wrapper element in IE
 	support.htmlSerialize = !!div.getElementsByTagName("link").length;
 
-	// Get the style information from getAttribute
+	// 获取the style information from getAttribute
 	// (IE uses .cssText instead)
 	support.style = /top/.test( a.getAttribute("style") );
 
@@ -3380,11 +3380,11 @@ jQuery.support = (function( support ) {
 	// Use a regex to work around a WebKit issue. See #5145
 	support.opacity = /^0.5/.test( a.style.opacity );
 
-	// Verify style float existence
+	// 验证style float existence
 	// (IE uses styleFloat instead of cssFloat)
 	support.cssFloat = !!a.style.cssFloat;
 
-	// Check the default checkbox/radio value ("" on WebKit; "on" elsewhere)
+	// 检查the default checkbox/radio value ("" on WebKit; "on" elsewhere)
 	support.checkOn = !!input.value;
 
 	// Make sure that a selected-by-default option has a working selected property.
@@ -3423,12 +3423,12 @@ jQuery.support = (function( support ) {
 		support.deleteExpando = false;
 	}
 
-	// Check if we can trust getAttribute("value")
+	// 检查if we can trust getAttribute("value")
 	input = document.createElement("input");
 	input.setAttribute( "value", "" );
 	support.input = input.getAttribute( "value" ) === "";
 
-	// Check if an input maintains its value after becoming a radio
+	// 检查if an input maintains its value after becoming a radio
 	input.value = "t";
 	input.setAttribute( "type", "radio" );
 	support.radioValue = input.value === "t";
@@ -3440,7 +3440,7 @@ jQuery.support = (function( support ) {
 	fragment = document.createDocumentFragment();
 	fragment.appendChild( input );
 
-	// Check if a disconnected checkbox will retain its checked
+	// 检查if a disconnected checkbox will retain its checked
 	// value of true after appended to the DOM (IE6/7)
 	support.appendChecked = input.checked;
 
@@ -3477,14 +3477,14 @@ jQuery.support = (function( support ) {
 	}
 	support.ownLast = i !== "0";
 
-	// Run tests that need a body at doc ready
+	// 运行tests that need a body at doc ready
 	jQuery(function() {
 		var container, marginDiv, tds,
 			divReset = "padding:0;margin:0;border:0;display:block;box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;",
 			body = document.getElementsByTagName("body")[0];
 
 		if ( !body ) {
-			// Return for frameset docs that don't have a body
+			// 返回for frameset docs that don't have a body
 			return;
 		}
 
@@ -3494,7 +3494,7 @@ jQuery.support = (function( support ) {
 		body.appendChild( container ).appendChild( div );
 
 		// Support: IE8
-		// Check if table cells still have offsetWidth/Height when they are set
+		// 检查if table cells still have offsetWidth/Height when they are set
 		// to display:none and there are still other visible table cells in a
 		// table row; if so, offsetWidth/Height are not reliable for use when
 		// determining if an element has been hidden directly using
@@ -3509,10 +3509,10 @@ jQuery.support = (function( support ) {
 		tds[ 1 ].style.display = "none";
 
 		// Support: IE8
-		// Check if empty table cells still have offsetWidth/Height
+		// 检查if empty table cells still have offsetWidth/Height
 		support.reliableHiddenOffsets = isSupported && ( tds[ 0 ].offsetHeight === 0 );
 
-		// Check box-sizing and margin behavior.
+		// 检查box-sizing and margin behavior.
 		div.innerHTML = "";
 		div.style.cssText = "box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;padding:1px;border:1px;display:block;width:4px;margin-top:1%;position:absolute;top:1%;";
 
@@ -3527,7 +3527,7 @@ jQuery.support = (function( support ) {
 			support.pixelPosition = ( window.getComputedStyle( div, null ) || {} ).top !== "1%";
 			support.boxSizingReliable = ( window.getComputedStyle( div, null ) || { width: "4px" } ).width === "4px";
 
-			// Check if div with explicit width and no margin-right incorrectly
+			// 检查if div with explicit width and no margin-right incorrectly
 			// gets computed margin-right based on width of container. (#3333)
 			// Fails in WebKit before Feb 2011 nightlies
 			// WebKit Bug 13343 - getComputedStyle returns wrong value for margin-right
@@ -3542,7 +3542,7 @@ jQuery.support = (function( support ) {
 
 		if ( typeof div.style.zoom !== core_strundefined ) {
 			// Support: IE<8
-			// Check if natively block-level elements act like inline-block
+			// 检查if natively block-level elements act like inline-block
 			// elements when setting their display to 'inline' and giving
 			// them layout
 			div.innerHTML = "";
@@ -3550,7 +3550,7 @@ jQuery.support = (function( support ) {
 			support.inlineBlockNeedsLayout = ( div.offsetWidth === 3 );
 
 			// Support: IE6
-			// Check if elements with layout shrink-wrap their children
+			// 检查if elements with layout shrink-wrap their children
 			div.style.display = "block";
 			div.innerHTML = "<div></div>";
 			div.firstChild.style.width = "5px";
@@ -3621,7 +3621,7 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ){
 		cache[ id ] = isNode ? {} : { toJSON: jQuery.noop };
 	}
 
-	// An object can be passed to jQuery.data instead of a key/value pair; this gets
+	// 一个object can be passed to jQuery.data instead of a key/value pair; this gets
 	// shallow copied over onto the existing cache
 	if ( typeof name === "object" || typeof name === "function" ) {
 		if ( pvt ) {
@@ -3648,17 +3648,17 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ){
 		thisCache[ jQuery.camelCase( name ) ] = data;
 	}
 
-	// Check for both converted-to-camel and non-converted data property names
-	// If a data property was specified
+	// 检查for both converted-to-camel and non-converted data property names
+	// 如果a data property was specified
 	if ( typeof name === "string" ) {
 
 		// First Try to find as-is property data
 		ret = thisCache[ name ];
 
-		// Test for null|undefined property data
+		// 测试for null|undefined property data
 		if ( ret == null ) {
 
-			// Try to find the camelCased property
+			// 尝试to find the camelCased property
 			ret = thisCache[ jQuery.camelCase( name ) ];
 		}
 	} else {
@@ -3680,7 +3680,7 @@ function internalRemoveData( elem, name, pvt ) {
 		cache = isNode ? jQuery.cache : elem,
 		id = isNode ? elem[ jQuery.expando ] : jQuery.expando;
 
-	// If there is already no cache entry for this object, there is no
+	// 如果there is already no cache entry for this object, there is no
 	// purpose in continuing
 	if ( !cache[ id ] ) {
 		return;
@@ -3709,12 +3709,12 @@ function internalRemoveData( elem, name, pvt ) {
 					}
 				}
 			} else {
-				// If "name" is an array of keys...
-				// When data is initially created, via ("key", "val") signature,
+				// 如果"name" is an array of keys...
+				// 当data is initially created, via ("key", "val") signature,
 				// keys will be converted to camelCase.
 				// Since there is no way to tell _how_ a key was added, remove
 				// both plain key and camelCase key. #12786
-				// This will only penalize the array argument path.
+				// 此will only penalize the array argument path.
 				name = name.concat( jQuery.map( name, jQuery.camelCase ) );
 			}
 
@@ -3723,7 +3723,7 @@ function internalRemoveData( elem, name, pvt ) {
 				delete thisCache[ name[i] ];
 			}
 
-			// If there is no data left in the cache, we want to continue
+			// 如果there is no data left in the cache, we want to continue
 			// and let the cache object itself get destroyed
 			if ( pvt ? !isEmptyDataObject(thisCache) : !jQuery.isEmptyObject(thisCache) ) {
 				return;
@@ -3752,7 +3752,7 @@ function internalRemoveData( elem, name, pvt ) {
 		/* jshint eqeqeq: true */
 		delete cache[ id ];
 
-	// When all else fails, null
+	// 当all else fails, null
 	} else {
 		cache[ id ] = null;
 	}
@@ -3761,7 +3761,7 @@ function internalRemoveData( elem, name, pvt ) {
 jQuery.extend({
 	cache: {},
 
-	// The following elements throw uncatchable exceptions if you
+	// following elements throw uncatchable exceptions if you
 	// attempt to add expando properties to them.
 	noData: {
 		"applet": true,
@@ -3783,7 +3783,7 @@ jQuery.extend({
 		return internalRemoveData( elem, name );
 	},
 
-	// For internal use only.
+	// 对于internal use only.
 	_data: function( elem, name, data ) {
 		return internalData( elem, name, data, true );
 	},
@@ -3792,7 +3792,7 @@ jQuery.extend({
 		return internalRemoveData( elem, name, true );
 	},
 
-	// A method for determining if a DOM node can handle the data expando
+	// 一个method for determining if a DOM node can handle the data expando
 	acceptData: function( elem ) {
 		// Do not set data on non-element because it will not be cleared (#8335).
 		if ( elem.nodeType && elem.nodeType !== 1 && elem.nodeType !== 9 ) {
@@ -3854,7 +3854,7 @@ jQuery.fn.extend({
 			}) :
 
 			// Gets one value
-			// Try to fetch any internally stored data first
+			// 尝试to fetch any internally stored data first
 			elem ? dataAttr( elem, key, jQuery.data( elem, key ) ) : null;
 	},
 
@@ -3866,7 +3866,7 @@ jQuery.fn.extend({
 });
 
 function dataAttr( elem, key, data ) {
-	// If nothing was found internally, try to fetch any
+	// 如果nothing was found internally, try to fetch any
 	// data from the HTML5 data-* attribute
 	if ( data === undefined && elem.nodeType === 1 ) {
 
@@ -3943,7 +3943,7 @@ jQuery.extend({
 				jQuery.dequeue( elem, type );
 			};
 
-		// If the fx queue is dequeued, always remove the progress sentinel
+		// 如果the fx queue is dequeued, always remove the progress sentinel
 		if ( fn === "inprogress" ) {
 			fn = queue.shift();
 			startLength--;
@@ -3951,7 +3951,7 @@ jQuery.extend({
 
 		if ( fn ) {
 
-			// Add a progress sentinel to prevent the fx queue from being
+			// 添加a progress sentinel to prevent the fx queue from being
 			// automatically dequeued
 			if ( type === "fx" ) {
 				queue.unshift( "inprogress" );
@@ -4027,7 +4027,7 @@ jQuery.fn.extend({
 	clearQueue: function( type ) {
 		return this.queue( type || "fx", [] );
 	},
-	// Get a promise resolved when queues of a certain type
+	// 获取a promise resolved when queues of a certain type
 	// are emptied (fx is the type by default)
 	promise: function( type, obj ) {
 		var tmp,
@@ -4106,7 +4106,7 @@ jQuery.fn.extend({
 		}
 
 		if ( proceed ) {
-			// The disjunction here is for better compressibility (see removeClass)
+			// disjunction here is for better compressibility (see removeClass)
 			classes = ( value || "" ).match( core_rnotwhite ) || [];
 
 			for ( ; i < len; i++ ) {
@@ -4148,7 +4148,7 @@ jQuery.fn.extend({
 
 			for ( ; i < len; i++ ) {
 				elem = this[ i ];
-				// This expression is here for better compressibility (see addClass)
+				// 此expression is here for better compressibility (see addClass)
 				cur = elem.nodeType === 1 && ( elem.className ?
 					( " " + elem.className + " " ).replace( rclass, " " ) :
 					""
@@ -4157,7 +4157,7 @@ jQuery.fn.extend({
 				if ( cur ) {
 					j = 0;
 					while ( (clazz = classes[j++]) ) {
-						// Remove *all* instances
+						// 移除*all* instances
 						while ( cur.indexOf( " " + clazz + " " ) >= 0 ) {
 							cur = cur.replace( " " + clazz + " ", " " );
 						}
@@ -4207,7 +4207,7 @@ jQuery.fn.extend({
 					jQuery._data( this, "__className__", this.className );
 				}
 
-				// If the element has a class name or if we're passed "false",
+				// 如果the element has a class name or if we're passed "false",
 				// then remove the whole classname (if there was one, the above saved it).
 				// Otherwise bring back whatever was previously saved (if anything),
 				// falling back to the empty string if nothing was stored.
@@ -4281,7 +4281,7 @@ jQuery.fn.extend({
 
 			hooks = jQuery.valHooks[ this.type ] || jQuery.valHooks[ this.nodeName.toLowerCase() ];
 
-			// If set returns undefined, fall back to normal setting
+			// 如果set returns undefined, fall back to normal setting
 			if ( !hooks || !("set" in hooks) || hooks.set( this, val, "value" ) === undefined ) {
 				this.value = val;
 			}
@@ -4322,7 +4322,7 @@ jQuery.extend({
 							( jQuery.support.optDisabled ? !option.disabled : option.getAttribute("disabled") === null ) &&
 							( !option.parentNode.disabled || !jQuery.nodeName( option.parentNode, "optgroup" ) ) ) {
 
-						// Get the specific value for the option
+						// 获取the specific value for the option
 						value = jQuery( option ).val();
 
 						// We don't need an array for one selects
@@ -4374,7 +4374,7 @@ jQuery.extend({
 			return jQuery.prop( elem, name, value );
 		}
 
-		// All attributes are lowercase
+		// 所有attributes are lowercase
 		// Grab necessary hook if one is defined
 		if ( nType !== 1 || !jQuery.isXMLDoc( elem ) ) {
 			name = name.toLowerCase();
@@ -4419,7 +4419,7 @@ jQuery.extend({
 
 				// Boolean attributes get special treatment (#10870)
 				if ( jQuery.expr.match.bool.test( name ) ) {
-					// Set corresponding property to false
+					// 设置corresponding property to false
 					if ( getSetInput && getSetAttribute || !ruseDefault.test( name ) ) {
 						elem[ propName ] = false;
 					// Support: IE<9
@@ -4444,7 +4444,7 @@ jQuery.extend({
 			set: function( elem, value ) {
 				if ( !jQuery.support.radioValue && value === "radio" && jQuery.nodeName(elem, "input") ) {
 					// Setting the type on a radio button after the value resets the value in IE6-9
-					// Reset value to default in case type is set after value during creation
+					// 重置value to default in case type is set after value during creation
 					var val = elem.value;
 					elem.setAttribute( "type", value );
 					if ( val ) {
@@ -4512,7 +4512,7 @@ jQuery.extend({
 boolHook = {
 	set: function( elem, value, name ) {
 		if ( value === false ) {
-			// Remove boolean attributes when set to false
+			// 移除boolean attributes when set to false
 			jQuery.removeAttr( elem, name );
 		} else if ( getSetInput && getSetAttribute || !ruseDefault.test( name ) ) {
 			// IE<8 needs the *property* name
@@ -4571,10 +4571,10 @@ if ( !getSetInput || !getSetAttribute ) {
 if ( !getSetAttribute ) {
 
 	// Use this for any attribute in IE6/7
-	// This fixes almost every IE6/7 issue
+	// 此fixes almost every IE6/7 issue
 	nodeHook = {
 		set: function( elem, value, name ) {
-			// Set the existing or create a new attribute node
+			// 设置the existing or create a new attribute node
 			var ret = elem.getAttributeNode( name );
 			if ( !ret ) {
 				elem.setAttributeNode(
@@ -4591,7 +4591,7 @@ if ( !getSetAttribute ) {
 		}
 	};
 	jQuery.expr.attrHandle.id = jQuery.expr.attrHandle.name = jQuery.expr.attrHandle.coords =
-		// Some attributes are constructed with empty-string values when not defined
+		// 一些attributes are constructed with empty-string values when not defined
 		function( elem, name, isXML ) {
 			var ret;
 			return isXML ?
@@ -4610,7 +4610,7 @@ if ( !getSetAttribute ) {
 		set: nodeHook.set
 	};
 
-	// Set contenteditable to false on removals(#10429)
+	// 设置contenteditable to false on removals(#10429)
 	// Setting to empty string throws an error as an invalid value
 	jQuery.attrHooks.contenteditable = {
 		set: function( elem, value, name ) {
@@ -4618,8 +4618,8 @@ if ( !getSetAttribute ) {
 		}
 	};
 
-	// Set width and height to auto instead of 0 on empty string( Bug #8150 )
-	// This is for removals
+	// 设置width and height to auto instead of 0 on empty string( Bug #8150 )
+	// 此is for removals
 	jQuery.each([ "width", "height" ], function( i, name ) {
 		jQuery.attrHooks[ name ] = {
 			set: function( elem, value ) {
@@ -4633,7 +4633,7 @@ if ( !getSetAttribute ) {
 }
 
 
-// Some attributes require a special call on IE
+// 一些attributes require a special call on IE
 // https://developer.mozilla.org/docs/Web/API/Element/getAttribute
 if ( !jQuery.support.hrefNormalized ) {
 	// href/src property should get the full normalized URL (#10299/#12915)
@@ -4649,7 +4649,7 @@ if ( !jQuery.support.hrefNormalized ) {
 if ( !jQuery.support.style ) {
 	jQuery.attrHooks.style = {
 		get: function( elem ) {
-			// Return undefined in the case of empty string
+			// 返回undefined in the case of empty string
 			// Note: IE uppercases css property names, but if we were to .toLowerCase()
 			// .cssText, that would destroy case senstitivity in URL's, like in "background"
 			return elem.style.cssText || undefined;
@@ -4780,11 +4780,11 @@ jQuery.event = {
 					jQuery.event.dispatch.apply( eventHandle.elem, arguments ) :
 					undefined;
 			};
-			// Add elem as a property of the handle fn to prevent a memory leak with IE non-native events
+			// 添加elem as a property of the handle fn to prevent a memory leak with IE non-native events
 			eventHandle.elem = elem;
 		}
 
-		// Handle multiple events separated by a space
+		// 处理multiple events separated by a space
 		types = ( types || "" ).match( core_rnotwhite ) || [""];
 		t = types.length;
 		while ( t-- ) {
@@ -4797,13 +4797,13 @@ jQuery.event = {
 				continue;
 			}
 
-			// If event changes its type, use the special event handlers for the changed type
+			// 如果event changes its type, use the special event handlers for the changed type
 			special = jQuery.event.special[ type ] || {};
 
-			// If selector defined, determine special event api type, otherwise given type
+			// 如果selector defined, determine special event api type, otherwise given type
 			type = ( selector ? special.delegateType : special.bindType ) || type;
 
-			// Update special based on newly reset type
+			// 更新special based on newly reset type
 			special = jQuery.event.special[ type ] || {};
 
 			// handleObj is passed to all event handlers
@@ -4843,7 +4843,7 @@ jQuery.event = {
 				}
 			}
 
-			// Add to the element's handler list, delegates in front
+			// 添加to the element's handler list, delegates in front
 			if ( selector ) {
 				handlers.splice( handlers.delegateCount++, 0, handleObj );
 			} else {
@@ -4891,7 +4891,7 @@ jQuery.event = {
 			handlers = events[ type ] || [];
 			tmp = tmp[2] && new RegExp( "(^|\\.)" + namespaces.join("\\.(?:.*\\.|)") + "(\\.|$)" );
 
-			// Remove matching events
+			// 移除matching events
 			origCount = j = handlers.length;
 			while ( j-- ) {
 				handleObj = handlers[ j ];
@@ -4911,7 +4911,7 @@ jQuery.event = {
 				}
 			}
 
-			// Remove generic event handler if we removed something and no more handlers exist
+			// 移除generic event handler if we removed something and no more handlers exist
 			// (avoids potential for endless recursion during removal of special event handlers)
 			if ( origCount && !handlers.length ) {
 				if ( !special.teardown || special.teardown.call( elem, namespaces, elemData.handle ) === false ) {
@@ -4922,7 +4922,7 @@ jQuery.event = {
 			}
 		}
 
-		// Remove the expando if it's no longer used
+		// 移除the expando if it's no longer used
 		if ( jQuery.isEmptyObject( events ) ) {
 			delete elemData.handle;
 
@@ -5029,13 +5029,13 @@ jQuery.event = {
 		}
 		event.type = type;
 
-		// If nobody prevented the default action, do it now
+		// 如果nobody prevented the default action, do it now
 		if ( !onlyHandlers && !event.isDefaultPrevented() ) {
 
 			if ( (!special._default || special._default.apply( eventPath.pop(), data ) === false) &&
 				jQuery.acceptData( elem ) ) {
 
-				// Call a native DOM method on the target with the same name name as the event.
+				// 调用a native DOM method on the target with the same name name as the event.
 				// Can't use an .isFunction() check here because IE6/7 fails that test.
 				// Don't do default actions on window, that's where global variables be (#6170)
 				if ( ontype && elem[ type ] && !jQuery.isWindow( elem ) ) {
@@ -5082,7 +5082,7 @@ jQuery.event = {
 		args[0] = event;
 		event.delegateTarget = this;
 
-		// Call the preDispatch hook for the mapped type, and let it bail if desired
+		// 调用the preDispatch hook for the mapped type, and let it bail if desired
 		if ( special.preDispatch && special.preDispatch.call( this, event ) === false ) {
 			return;
 		}
@@ -5090,7 +5090,7 @@ jQuery.event = {
 		// Determine handlers
 		handlerQueue = jQuery.event.handlers.call( this, event, handlers );
 
-		// Run delegates first; they may want to stop propagation beneath us
+		// 运行delegates first; they may want to stop propagation beneath us
 		i = 0;
 		while ( (matched = handlerQueue[ i++ ]) && !event.isPropagationStopped() ) {
 			event.currentTarget = matched.elem;
@@ -5118,7 +5118,7 @@ jQuery.event = {
 			}
 		}
 
-		// Call the postDispatch hook for the mapped type
+		// 调用the postDispatch hook for the mapped type
 		if ( special.postDispatch ) {
 			special.postDispatch.call( this, event );
 		}
@@ -5132,7 +5132,7 @@ jQuery.event = {
 			delegateCount = handlers.delegateCount,
 			cur = event.target;
 
-		// Find delegate handlers
+		// 查找delegate handlers
 		// Black-hole SVG <use> instance trees (#13180)
 		// Avoid non-left-click bubbling in Firefox (#3861)
 		if ( delegateCount && cur.nodeType && (!event.button || event.type !== "click") ) {
@@ -5167,7 +5167,7 @@ jQuery.event = {
 			}
 		}
 
-		// Add the remaining (directly-bound) handlers
+		// 添加the remaining (directly-bound) handlers
 		if ( delegateCount < handlers.length ) {
 			handlerQueue.push({ elem: this, handlers: handlers.slice( delegateCount ) });
 		}
@@ -5180,7 +5180,7 @@ jQuery.event = {
 			return event;
 		}
 
-		// Create a writable copy of the event object and normalize some properties
+		// 创建a writable copy of the event object and normalize some properties
 		var i, prop, copy,
 			type = event.type,
 			originalEvent = event,
@@ -5215,7 +5215,7 @@ jQuery.event = {
 		}
 
 		// Support: IE<9
-		// For mouse/key events, metaKey==false if it's undefined (#3368, #11328)
+		// 对于mouse/key events, metaKey==false if it's undefined (#3368, #11328)
 		event.metaKey = !!event.metaKey;
 
 		return fixHook.filter ? fixHook.filter( event, originalEvent ) : event;
@@ -5230,7 +5230,7 @@ jQuery.event = {
 		props: "char charCode key keyCode".split(" "),
 		filter: function( event, original ) {
 
-			// Add which for key events
+			// 添加which for key events
 			if ( event.which == null ) {
 				event.which = original.charCode != null ? original.charCode : original.keyCode;
 			}
@@ -5246,7 +5246,7 @@ jQuery.event = {
 				button = original.button,
 				fromElement = original.fromElement;
 
-			// Calculate pageX/Y if missing and clientX/Y available
+			// 计算pageX/Y if missing and clientX/Y available
 			if ( event.pageX == null && original.clientX != null ) {
 				eventDoc = event.target.ownerDocument || document;
 				doc = eventDoc.documentElement;
@@ -5256,12 +5256,12 @@ jQuery.event = {
 				event.pageY = original.clientY + ( doc && doc.scrollTop  || body && body.scrollTop  || 0 ) - ( doc && doc.clientTop  || body && body.clientTop  || 0 );
 			}
 
-			// Add relatedTarget, if necessary
+			// 添加relatedTarget, if necessary
 			if ( !event.relatedTarget && fromElement ) {
 				event.relatedTarget = fromElement === event.target ? original.toElement : fromElement;
 			}
 
-			// Add which for click: 1 === left; 2 === middle; 3 === right
+			// 添加which for click: 1 === left; 2 === middle; 3 === right
 			// Note: button is not normalized, so don't use it
 			if ( !event.which && button !== undefined ) {
 				event.which = ( button & 1 ? 1 : ( button & 2 ? 3 : ( button & 4 ? 2 : 0 ) ) );
@@ -5285,7 +5285,7 @@ jQuery.event = {
 						return false;
 					} catch ( e ) {
 						// Support: IE<9
-						// If we error on focus to hidden element (#1486, #12518),
+						// 如果we error on focus to hidden element (#1486, #12518),
 						// let .trigger() run the handlers
 					}
 				}
@@ -5302,7 +5302,7 @@ jQuery.event = {
 			delegateType: "focusout"
 		},
 		click: {
-			// For checkbox, fire native event so checked state will be right
+			// 对于checkbox, fire native event so checked state will be right
 			trigger: function() {
 				if ( jQuery.nodeName( this, "input" ) && this.type === "checkbox" && this.click ) {
 					this.click();
@@ -5310,7 +5310,7 @@ jQuery.event = {
 				}
 			},
 
-			// For cross-browser consistency, don't fire native .click() on links
+			// 对于cross-browser consistency, don't fire native .click() on links
 			_default: function( event ) {
 				return jQuery.nodeName( event.target, "a" );
 			}
@@ -5398,7 +5398,7 @@ jQuery.Event = function( src, props ) {
 		jQuery.extend( this, props );
 	}
 
-	// Create a timestamp if incoming event doesn't have one
+	// 创建a timestamp if incoming event doesn't have one
 	this.timeStamp = src && src.timeStamp || jQuery.now();
 
 	// Mark it as fixed
@@ -5420,7 +5420,7 @@ jQuery.Event.prototype = {
 			return;
 		}
 
-		// If preventDefault exists, run it on the original event
+		// 如果preventDefault exists, run it on the original event
 		if ( e.preventDefault ) {
 			e.preventDefault();
 
@@ -5437,13 +5437,13 @@ jQuery.Event.prototype = {
 		if ( !e ) {
 			return;
 		}
-		// If stopPropagation exists, run it on the original event
+		// 如果stopPropagation exists, run it on the original event
 		if ( e.stopPropagation ) {
 			e.stopPropagation();
 		}
 
 		// Support: IE
-		// Set the cancelBubble property of the original event to true
+		// 设置the cancelBubble property of the original event to true
 		e.cancelBubble = true;
 	},
 	stopImmediatePropagation: function() {
@@ -5452,7 +5452,7 @@ jQuery.Event.prototype = {
 	}
 };
 
-// Create mouseenter/leave events using mouseover/out and event-time checks
+// 创建mouseenter/leave events using mouseover/out and event-time checks
 jQuery.each({
 	mouseenter: "mouseover",
 	mouseleave: "mouseout"
@@ -5467,7 +5467,7 @@ jQuery.each({
 				related = event.relatedTarget,
 				handleObj = event.handleObj;
 
-			// For mousenter/leave call the handler if related is outside the target.
+			// 对于mousenter/leave call the handler if related is outside the target.
 			// NB: No relatedTarget if the mouse left/entered the browser window
 			if ( !related || (related !== target && !jQuery.contains( target, related )) ) {
 				event.type = handleObj.origType;
@@ -5505,7 +5505,7 @@ if ( !jQuery.support.submitBubbles ) {
 		},
 
 		postDispatch: function( event ) {
-			// If form was submitted by the user, bubble the event up the tree
+			// 如果form was submitted by the user, bubble the event up the tree
 			if ( event._submit_bubble ) {
 				delete event._submit_bubble;
 				if ( this.parentNode && !event.isTrigger ) {
@@ -5520,7 +5520,7 @@ if ( !jQuery.support.submitBubbles ) {
 				return false;
 			}
 
-			// Remove delegated handlers; cleanData eventually reaps submit handlers attached above
+			// 移除delegated handlers; cleanData eventually reaps submit handlers attached above
 			jQuery.event.remove( this, "._submit" );
 		}
 	};
@@ -5536,7 +5536,7 @@ if ( !jQuery.support.changeBubbles ) {
 			if ( rformElems.test( this.nodeName ) ) {
 				// IE doesn't fire change on a check/radio until blur; trigger it on click
 				// after a propertychange. Eat the blur-change in special.change.handle.
-				// This still fires onchange a second time for check/radio after blur.
+				// 此still fires onchange a second time for check/radio after blur.
 				if ( this.type === "checkbox" || this.type === "radio" ) {
 					jQuery.event.add( this, "propertychange._change", function( event ) {
 						if ( event.originalEvent.propertyName === "checked" ) {
@@ -5585,7 +5585,7 @@ if ( !jQuery.support.changeBubbles ) {
 	};
 }
 
-// Create "bubbling" focus and blur events
+// 创建"bubbling" focus and blur events
 if ( !jQuery.support.focusinBubbles ) {
 	jQuery.each({ focus: "focusin", blur: "focusout" }, function( orig, fix ) {
 
@@ -5776,7 +5776,7 @@ jQuery.fn.extend({
 		return !!winnow(
 			this,
 
-			// If this is a positional/relative selector, check membership in the returned set
+			// 如果this is a positional/relative selector, check membership in the returned set
 			// so $("p:first").is("p:last") won't return true for a doc with two "p".
 			typeof selector === "string" && rneedsContext.test( selector ) ?
 				jQuery( selector ) :
@@ -5817,7 +5817,7 @@ jQuery.fn.extend({
 	// the matched set of elements
 	index: function( elem ) {
 
-		// No argument, return index in parent
+		// 没有argument, return index in parent
 		if ( !elem ) {
 			return ( this[0] && this[0].parentNode ) ? this.first().prevAll().length : -1;
 		}
@@ -5829,7 +5829,7 @@ jQuery.fn.extend({
 
 		// Locate the position of the desired element
 		return jQuery.inArray(
-			// If it receives a jQuery object, the first element is used
+			// 如果it receives a jQuery object, the first element is used
 			elem.jquery ? elem[0] : elem, this );
 	},
 
@@ -5910,7 +5910,7 @@ jQuery.each({
 		}
 
 		if ( this.length > 1 ) {
-			// Remove duplicates
+			// 移除duplicates
 			if ( !guaranteedUnique[ name ] ) {
 				ret = jQuery.unique( ret );
 			}
@@ -6119,17 +6119,17 @@ jQuery.fn.extend({
 			i = 0;
 
 		for ( ; (elem = this[i]) != null; i++ ) {
-			// Remove element nodes and prevent memory leaks
+			// 移除element nodes and prevent memory leaks
 			if ( elem.nodeType === 1 ) {
 				jQuery.cleanData( getAll( elem, false ) );
 			}
 
-			// Remove any remaining nodes
+			// 移除any remaining nodes
 			while ( elem.firstChild ) {
 				elem.removeChild( elem.firstChild );
 			}
 
-			// If this is a select, ensure that it displays empty (#12336)
+			// 如果this is a select, ensure that it displays empty (#12336)
 			// Support: IE<9
 			if ( elem.options && jQuery.nodeName( elem, "select" ) ) {
 				elem.options.length = 0;
@@ -6170,7 +6170,7 @@ jQuery.fn.extend({
 
 				try {
 					for (; i < l; i++ ) {
-						// Remove element nodes and prevent memory leaks
+						// 移除element nodes and prevent memory leaks
 						elem = this[i] || {};
 						if ( elem.nodeType === 1 ) {
 							jQuery.cleanData( getAll( elem, false ) );
@@ -6180,7 +6180,7 @@ jQuery.fn.extend({
 
 					elem = 0;
 
-				// If using innerHTML throws an exception, use the fallback method
+				// 如果using innerHTML throws an exception, use the fallback method
 				} catch(e) {}
 			}
 
@@ -6404,9 +6404,9 @@ function fixCloneNodeIssues( src, dest ) {
 			dest.outerHTML = src.outerHTML;
 		}
 
-		// This path appears unavoidable for IE9. When cloning an object
+		// 此path appears unavoidable for IE9. When cloning an object
 		// element in IE9, the outerHTML strategy above is not sufficient.
-		// If the src has innerHTML and the destination does not,
+		// 如果the src has innerHTML and the destination does not,
 		// copy the src.innerHTML into the dest.innerHTML. #10324
 		if ( jQuery.support.html5Clone && ( src.innerHTML && !jQuery.trim(dest.innerHTML) ) ) {
 			dest.innerHTML = src.innerHTML;
@@ -6544,7 +6544,7 @@ jQuery.extend({
 
 		destElements = srcElements = node = null;
 
-		// Return the cloned set
+		// 返回the cloned set
 		return clone;
 	},
 
@@ -6564,15 +6564,15 @@ jQuery.extend({
 
 			if ( elem || elem === 0 ) {
 
-				// Add nodes directly
+				// 添加nodes directly
 				if ( jQuery.type( elem ) === "object" ) {
 					jQuery.merge( nodes, elem.nodeType ? [ elem ] : elem );
 
-				// Convert non-html into a text node
+				// 转换non-html into a text node
 				} else if ( !rhtml.test( elem ) ) {
 					nodes.push( context.createTextNode( elem ) );
 
-				// Convert html into DOM nodes
+				// 转换html into DOM nodes
 				} else {
 					tmp = tmp || safe.appendChild( context.createElement("div") );
 
@@ -6593,7 +6593,7 @@ jQuery.extend({
 						nodes.push( context.createTextNode( rleadingWhitespace.exec( elem )[0] ) );
 					}
 
-					// Remove IE's autoinserted <tbody> from table fragments
+					// 移除IE's autoinserted <tbody> from table fragments
 					if ( !jQuery.support.tbody ) {
 
 						// String was a <table>, *may* have spurious <tbody>
@@ -6634,7 +6634,7 @@ jQuery.extend({
 			safe.removeChild( tmp );
 		}
 
-		// Reset defaultChecked for any radios and checkboxes
+		// 重置defaultChecked for any radios and checkboxes
 		// about to be appended to the DOM in IE 6/7 (#8060)
 		if ( !jQuery.support.appendChecked ) {
 			jQuery.grep( getAll( nodes, "input" ), fixDefaultChecked );
@@ -6696,14 +6696,14 @@ jQuery.extend({
 							if ( special[ type ] ) {
 								jQuery.event.remove( elem, type );
 
-							// This is a shortcut to avoid jQuery.event.remove's overhead
+							// 此is a shortcut to avoid jQuery.event.remove's overhead
 							} else {
 								jQuery.removeEvent( elem, type, data.handle );
 							}
 						}
 					}
 
-					// Remove cache only if it was not already removed by jQuery.event.remove
+					// 移除cache only if it was not already removed by jQuery.event.remove
 					if ( cache[ id ] ) {
 
 						delete cache[ id ];
@@ -6748,7 +6748,7 @@ jQuery.fn.extend({
 		}
 
 		if ( this[0] ) {
-			// The elements to wrap the target around
+			// elements to wrap the target around
 			var wrap = jQuery( html, this[0].ownerDocument ).eq(0).clone(true);
 
 			if ( this[0].parentNode ) {
@@ -6872,13 +6872,13 @@ function showHide( elements, show ) {
 		values[ index ] = jQuery._data( elem, "olddisplay" );
 		display = elem.style.display;
 		if ( show ) {
-			// Reset the inline display of this element to learn if it is
+			// 重置the inline display of this element to learn if it is
 			// being hidden by cascaded rules or not
 			if ( !values[ index ] && display === "none" ) {
 				elem.style.display = "";
 			}
 
-			// Set elements which have been overridden with display: none
+			// 设置elements which have been overridden with display: none
 			// in a stylesheet to whatever the default browser style is
 			// for such an element
 			if ( elem.style.display === "" && isHidden( elem ) ) {
@@ -6896,7 +6896,7 @@ function showHide( elements, show ) {
 		}
 	}
 
-	// Set the display of most of the elements in a second loop
+	// 设置the display of most of the elements in a second loop
 	// to avoid the constant reflow
 	for ( index = 0; index < length; index++ ) {
 		elem = elements[ index ];
@@ -6956,7 +6956,7 @@ jQuery.fn.extend({
 });
 
 jQuery.extend({
-	// Add in style property hooks for overriding the default
+	// 添加in style property hooks for overriding the default
 	// behavior of getting and setting a style property
 	cssHooks: {
 		opacity: {
@@ -6984,14 +6984,14 @@ jQuery.extend({
 		"zoom": true
 	},
 
-	// Add in properties whose names you wish to fix before
+	// 添加in properties whose names you wish to fix before
 	// setting or getting the value
 	cssProps: {
 		// normalize float css property
 		"float": jQuery.support.cssFloat ? "cssFloat" : "styleFloat"
 	},
 
-	// Get and set the style property on a DOM Node
+	// 获取and set the style property on a DOM Node
 	style: function( elem, name, value, extra ) {
 		// Don't set styles on text and comment nodes
 		if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style ) {
@@ -7009,7 +7009,7 @@ jQuery.extend({
 		// followed by the unprefixed version
 		hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
 
-		// Check if we're setting a value
+		// 检查if we're setting a value
 		if ( value !== undefined ) {
 			type = typeof value;
 
@@ -7025,7 +7025,7 @@ jQuery.extend({
 				return;
 			}
 
-			// If a number was passed in, add 'px' to the (except for certain CSS properties)
+			// 如果a number was passed in, add 'px' to the (except for certain CSS properties)
 			if ( type === "number" && !jQuery.cssNumber[ origName ] ) {
 				value += "px";
 			}
@@ -7036,7 +7036,7 @@ jQuery.extend({
 				style[ name ] = "inherit";
 			}
 
-			// If a hook was provided, use that value, otherwise just set the specified value
+			// 如果a hook was provided, use that value, otherwise just set the specified value
 			if ( !hooks || !("set" in hooks) || (value = hooks.set( elem, value, extra )) !== undefined ) {
 
 				// Wrapped to prevent IE from throwing errors when 'invalid' values are provided
@@ -7047,7 +7047,7 @@ jQuery.extend({
 			}
 
 		} else {
-			// If a hook was provided get the non-computed value from there
+			// 如果a hook was provided get the non-computed value from there
 			if ( hooks && "get" in hooks && (ret = hooks.get( elem, false, extra )) !== undefined ) {
 				return ret;
 			}
@@ -7068,7 +7068,7 @@ jQuery.extend({
 		// followed by the unprefixed version
 		hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
 
-		// If a hook was provided get the computed value from there
+		// 如果a hook was provided get the computed value from there
 		if ( hooks && "get" in hooks ) {
 			val = hooks.get( elem, true, extra );
 		}
@@ -7092,7 +7092,7 @@ jQuery.extend({
 	}
 });
 
-// NOTE: we've included the "window" in window.getComputedStyle
+// 注意： we've included the "window" in window.getComputedStyle
 // because jsdom on node.js will break without it.
 if ( window.getComputedStyle ) {
 	getStyles = function( elem ) {
@@ -7113,7 +7113,7 @@ if ( window.getComputedStyle ) {
 				ret = jQuery.style( elem, name );
 			}
 
-			// A tribute to the "awesome hack by Dean Edwards"
+			// 一个tribute to the "awesome hack by Dean Edwards"
 			// Chrome < 17 and Safari 5.0 uses "computed value" instead of "used value" for margin-right
 			// Safari 5.1.7 (at least) returns percentage for a larger set of values, but width seems to be reliably pixels
 			// this is against the CSSOM draft spec: http://dev.w3.org/csswg/cssom/#resolved-values
@@ -7157,7 +7157,7 @@ if ( window.getComputedStyle ) {
 		// From the awesome hack by Dean Edwards
 		// http://erik.eae.net/archives/2007/07/27/18.54.15/#comment-102291
 
-		// If we're not dealing with a regular pixel number
+		// 如果we're not dealing with a regular pixel number
 		// but a number that has a weird ending, we need to convert it to pixels
 		// but not position css attributes, as those are proportional to the parent element instead
 		// and we can't measure the parent instead because it might trigger a "stacking dolls" problem
@@ -7196,7 +7196,7 @@ function setPositiveNumber( elem, value, subtract ) {
 
 function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 	var i = extra === ( isBorderBox ? "border" : "content" ) ?
-		// If we already have the right measurement, avoid augmentation
+		// 如果we already have the right measurement, avoid augmentation
 		4 :
 		// Otherwise initialize for horizontal or vertical properties
 		name === "width" ? 1 : 0,
@@ -7235,7 +7235,7 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 
 function getWidthOrHeight( elem, name, extra ) {
 
-	// Start with offset property, which is equivalent to the border-box value
+	// 开始with offset property, which is equivalent to the border-box value
 	var valueIsBorderBox = true,
 		val = name === "width" ? elem.offsetWidth : elem.offsetHeight,
 		styles = getStyles( elem ),
@@ -7276,7 +7276,7 @@ function getWidthOrHeight( elem, name, extra ) {
 	) + "px";
 }
 
-// Try to determine the default display value of an element
+// 尝试to determine the default display value of an element
 function css_defaultDisplay( nodeName ) {
 	var doc = document,
 		display = elemdisplay[ nodeName ];
@@ -7284,7 +7284,7 @@ function css_defaultDisplay( nodeName ) {
 	if ( !display ) {
 		display = actualDisplay( nodeName, doc );
 
-		// If the simple way fails, read from inside an iframe
+		// 如果the simple way fails, read from inside an iframe
 		if ( display === "none" || !display ) {
 			// Use the already-created iframe if possible
 			iframe = ( iframe ||
@@ -7509,17 +7509,17 @@ jQuery.param = function( a, traditional ) {
 	var prefix,
 		s = [],
 		add = function( key, value ) {
-			// If value is a function, invoke it and return its value
+			// 如果value is a function, invoke it and return its value
 			value = jQuery.isFunction( value ) ? value() : ( value == null ? "" : value );
 			s[ s.length ] = encodeURIComponent( key ) + "=" + encodeURIComponent( value );
 		};
 
-	// Set traditional to true for jQuery <= 1.3.2 behavior.
+	// 设置traditional to true for jQuery <= 1.3.2 behavior.
 	if ( traditional === undefined ) {
 		traditional = jQuery.ajaxSettings && jQuery.ajaxSettings.traditional;
 	}
 
-	// If an array was passed in, assume that it is an array of form elements.
+	// 如果an array was passed in, assume that it is an array of form elements.
 	if ( jQuery.isArray( a ) || ( a.jquery && !jQuery.isPlainObject( a ) ) ) {
 		// Serialize the form elements
 		jQuery.each( a, function() {
@@ -7527,14 +7527,14 @@ jQuery.param = function( a, traditional ) {
 		});
 
 	} else {
-		// If traditional, encode the "old" way (the way 1.3.2 or older
+		// 如果traditional, encode the "old" way (the way 1.3.2 or older
 		// did it), otherwise encode params recursively.
 		for ( prefix in a ) {
 			buildParams( prefix, a[ prefix ], traditional, add );
 		}
 	}
 
-	// Return the resulting serialization
+	// 返回the resulting serialization
 	return s.join( "&" ).replace( r20, "+" );
 };
 
@@ -7569,7 +7569,7 @@ jQuery.each( ("blur focus focusin focusout load resize scroll unload click dblcl
 	"mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
 	"change select submit keydown keypress keyup error contextmenu").split(" "), function( i, name ) {
 
-	// Handle event binding
+	// 处理event binding
 	jQuery.fn[ name ] = function( data, fn ) {
 		return arguments.length > 0 ?
 			this.on( name, null, data, fn ) :
@@ -7668,7 +7668,7 @@ function addToPrefiltersOrTransports( structure ) {
 			dataTypes = dataTypeExpression.toLowerCase().match( core_rnotwhite ) || [];
 
 		if ( jQuery.isFunction( func ) ) {
-			// For each dataType in the dataTypeExpression
+			// 对于each dataType in the dataTypeExpression
 			while ( (dataType = dataTypes[i++]) ) {
 				// Prepend if requested
 				if ( dataType[0] === "+" ) {
@@ -7709,7 +7709,7 @@ function inspectPrefiltersOrTransports( structure, options, originalOptions, jqX
 	return inspect( options.dataTypes[ 0 ] ) || !inspected[ "*" ] && inspect( "*" );
 }
 
-// A special extend for ajax options
+// 一个special extend for ajax options
 // that takes "flat" options (not to be deep extended)
 // Fixes #9887
 function ajaxExtend( target, src ) {
@@ -7742,7 +7742,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		url = url.slice( 0, off );
 	}
 
-	// If it's a function
+	// 如果it's a function
 	if ( jQuery.isFunction( params ) ) {
 
 		// We assume that it's the callback
@@ -7754,7 +7754,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		type = "POST";
 	}
 
-	// If we have elements to modify, make the request
+	// 如果we have elements to modify, make the request
 	if ( self.length > 0 ) {
 		jQuery.ajax({
 			url: url,
@@ -7765,12 +7765,12 @@ jQuery.fn.load = function( url, params, callback ) {
 			data: params
 		}).done(function( responseText ) {
 
-			// Save response for use in complete callback
+			// 保存response for use in complete callback
 			response = arguments;
 
 			self.html( selector ?
 
-				// If a selector was specified, locate the right elements in a dummy div
+				// 如果a selector was specified, locate the right elements in a dummy div
 				// Exclude scripts to avoid IE 'Permission Denied' errors
 				jQuery("<div>").append( jQuery.parseHTML( responseText ) ).find( selector ) :
 
@@ -7810,7 +7810,7 @@ jQuery.extend({
 		async: true,
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		/*
-		timeout: 0,
+ timeout: 0,
 		data: null,
 		dataType: null,
 		username: null,
@@ -7819,7 +7819,7 @@ jQuery.extend({
 		throws: false,
 		traditional: false,
 		headers: {},
-		*/
+ */
 
 		accepts: {
 			"*": allTypes,
@@ -7845,7 +7845,7 @@ jQuery.extend({
 		// Keys separate source (or catchall "*") and destination types with a single space
 		converters: {
 
-			// Convert anything to text
+			// 转换anything to text
 			"* text": String,
 
 			// Text to html (true = no transformation)
@@ -7854,11 +7854,11 @@ jQuery.extend({
 			// Evaluate text as a json expression
 			"text json": jQuery.parseJSON,
 
-			// Parse text as xml
+			// 解析text as xml
 			"text xml": jQuery.parseXML
 		},
 
-		// For options that shouldn't be deep extended:
+		// 对于options that shouldn't be deep extended:
 		// you can add your own custom options here if
 		// and when you create one that shouldn't be
 		// deep extended (see ajaxExtend)
@@ -7870,7 +7870,7 @@ jQuery.extend({
 
 	// Creates a full fledged settings object into target
 	// with both ajaxSettings and settings fields.
-	// If target is omitted, writes into ajaxSettings.
+	// 如果target is omitted, writes into ajaxSettings.
 	ajaxSetup: function( target, settings ) {
 		return settings ?
 
@@ -7887,7 +7887,7 @@ jQuery.extend({
 	// Main method
 	ajax: function( url, options ) {
 
-		// If url is an object, simulate pre-1.5 signature
+		// 如果url is an object, simulate pre-1.5 signature
 		if ( typeof url === "object" ) {
 			options = url;
 			url = undefined;
@@ -7913,7 +7913,7 @@ jQuery.extend({
 			transport,
 			// Response headers
 			responseHeaders,
-			// Create the final options object
+			// 创建the final options object
 			s = jQuery.ajaxSetup( {}, options ),
 			// Callbacks context
 			callbackContext = s.context || s,
@@ -7929,7 +7929,7 @@ jQuery.extend({
 			// Headers (they are sent all at once)
 			requestHeaders = {},
 			requestHeadersNames = {},
-			// The jqXHR state
+			// jqXHR state
 			state = 0,
 			// Default abort message
 			strAbort = "canceled",
@@ -7985,7 +7985,7 @@ jQuery.extend({
 								statusCode[ code ] = [ statusCode[ code ], map[ code ] ];
 							}
 						} else {
-							// Execute the appropriate callbacks
+							// 执行the appropriate callbacks
 							jqXHR.always( map[ jqXHR.status ] );
 						}
 					}
@@ -8008,9 +8008,9 @@ jQuery.extend({
 		jqXHR.success = jqXHR.done;
 		jqXHR.error = jqXHR.fail;
 
-		// Remove hash character (#7531: and string promotion)
-		// Add protocol if not provided (#5866: IE7 issue with protocol-less urls)
-		// Handle falsy url in the settings object (#10093: consistency with old signature)
+		// 移除hash character (#7531: and string promotion)
+		// 添加protocol if not provided (#5866: IE7 issue with protocol-less urls)
+		// 处理falsy url in the settings object (#10093: consistency with old signature)
 		// We also use the url parameter if available
 		s.url = ( ( url || s.url || ajaxLocation ) + "" ).replace( rhash, "" ).replace( rprotocol, ajaxLocParts[ 1 ] + "//" );
 
@@ -8020,7 +8020,7 @@ jQuery.extend({
 		// Extract dataTypes list
 		s.dataTypes = jQuery.trim( s.dataType || "*" ).toLowerCase().match( core_rnotwhite ) || [""];
 
-		// A cross-domain request is in order when we have a protocol:host:port mismatch
+		// 一个cross-domain request is in order when we have a protocol:host:port mismatch
 		if ( s.crossDomain == null ) {
 			parts = rurl.exec( s.url.toLowerCase() );
 			s.crossDomain = !!( parts &&
@@ -8030,7 +8030,7 @@ jQuery.extend({
 			);
 		}
 
-		// Convert data if not already a string
+		// 转换data if not already a string
 		if ( s.data && s.processData && typeof s.data !== "string" ) {
 			s.data = jQuery.param( s.data, s.traditional );
 		}
@@ -8038,7 +8038,7 @@ jQuery.extend({
 		// Apply prefilters
 		inspectPrefiltersOrTransports( prefilters, s, options, jqXHR );
 
-		// If request was aborted inside a prefilter, stop there
+		// 如果request was aborted inside a prefilter, stop there
 		if ( state === 2 ) {
 			return jqXHR;
 		}
@@ -8057,25 +8057,25 @@ jQuery.extend({
 		// Determine if request has content
 		s.hasContent = !rnoContent.test( s.type );
 
-		// Save the URL in case we're toying with the If-Modified-Since
+		// 保存the URL in case we're toying with the If-Modified-Since
 		// and/or If-None-Match header later on
 		cacheURL = s.url;
 
 		// More options handling for requests with no content
 		if ( !s.hasContent ) {
 
-			// If data is available, append data to url
+			// 如果data is available, append data to url
 			if ( s.data ) {
 				cacheURL = ( s.url += ( ajax_rquery.test( cacheURL ) ? "&" : "?" ) + s.data );
 				// #9682: remove data so that it's not used in an eventual retry
 				delete s.data;
 			}
 
-			// Add anti-cache in url if needed
+			// 添加anti-cache in url if needed
 			if ( s.cache === false ) {
 				s.url = rts.test( cacheURL ) ?
 
-					// If there is already a '_' parameter, set its value
+					// 如果there is already a '_' parameter, set its value
 					cacheURL.replace( rts, "$1_=" + ajax_nonce++ ) :
 
 					// Otherwise add one to the end
@@ -8083,7 +8083,7 @@ jQuery.extend({
 			}
 		}
 
-		// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
+		// 设置the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
 		if ( s.ifModified ) {
 			if ( jQuery.lastModified[ cacheURL ] ) {
 				jqXHR.setRequestHeader( "If-Modified-Since", jQuery.lastModified[ cacheURL ] );
@@ -8093,12 +8093,12 @@ jQuery.extend({
 			}
 		}
 
-		// Set the correct header, if data is being sent
+		// 设置the correct header, if data is being sent
 		if ( s.data && s.hasContent && s.contentType !== false || options.contentType ) {
 			jqXHR.setRequestHeader( "Content-Type", s.contentType );
 		}
 
-		// Set the Accepts header for the server, depending on the dataType
+		// 设置the Accepts header for the server, depending on the dataType
 		jqXHR.setRequestHeader(
 			"Accept",
 			s.dataTypes[ 0 ] && s.accepts[ s.dataTypes[0] ] ?
@@ -8106,7 +8106,7 @@ jQuery.extend({
 				s.accepts[ "*" ]
 		);
 
-		// Check for headers option
+		// 检查for headers option
 		for ( i in s.headers ) {
 			jqXHR.setRequestHeader( i, s.headers[ i ] );
 		}
@@ -8125,16 +8125,16 @@ jQuery.extend({
 			jqXHR[ i ]( s[ i ] );
 		}
 
-		// Get transport
+		// 获取transport
 		transport = inspectPrefiltersOrTransports( transports, s, options, jqXHR );
 
-		// If no transport, we auto-abort
+		// 如果no transport, we auto-abort
 		if ( !transport ) {
 			done( -1, "No Transport" );
 		} else {
 			jqXHR.readyState = 1;
 
-			// Send global event
+			// 发送global event
 			if ( fireGlobals ) {
 				globalEventContext.trigger( "ajaxSend", [ jqXHR, s ] );
 			}
@@ -8172,7 +8172,7 @@ jQuery.extend({
 			// State is "done" now
 			state = 2;
 
-			// Clear timeout if it exists
+			// 清除timeout if it exists
 			if ( timeoutTimer ) {
 				clearTimeout( timeoutTimer );
 			}
@@ -8181,27 +8181,27 @@ jQuery.extend({
 			// (no matter how long the jqXHR object will be used)
 			transport = undefined;
 
-			// Cache response headers
+			// 缓存response headers
 			responseHeadersString = headers || "";
 
-			// Set readyState
+			// 设置readyState
 			jqXHR.readyState = status > 0 ? 4 : 0;
 
 			// Determine if successful
 			isSuccess = status >= 200 && status < 300 || status === 304;
 
-			// Get response data
+			// 获取response data
 			if ( responses ) {
 				response = ajaxHandleResponses( s, jqXHR, responses );
 			}
 
-			// Convert no matter what (that way responseXXX fields are always set)
+			// 转换no matter what (that way responseXXX fields are always set)
 			response = ajaxConvert( s, response, jqXHR, isSuccess );
 
-			// If successful, handle type chaining
+			// 如果successful, handle type chaining
 			if ( isSuccess ) {
 
-				// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
+				// 设置the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
 				if ( s.ifModified ) {
 					modified = jqXHR.getResponseHeader("Last-Modified");
 					if ( modified ) {
@@ -8221,7 +8221,7 @@ jQuery.extend({
 				} else if ( status === 304 ) {
 					statusText = "notmodified";
 
-				// If we have data, let's convert it
+				// 如果we have data, let's convert it
 				} else {
 					statusText = response.state;
 					success = response.data;
@@ -8240,7 +8240,7 @@ jQuery.extend({
 				}
 			}
 
-			// Set data for the fake xhr object
+			// 设置data for the fake xhr object
 			jqXHR.status = status;
 			jqXHR.statusText = ( nativeStatusText || statusText ) + "";
 
@@ -8265,7 +8265,7 @@ jQuery.extend({
 
 			if ( fireGlobals ) {
 				globalEventContext.trigger( "ajaxComplete", [ jqXHR, s ] );
-				// Handle the global AJAX counter
+				// 处理the global AJAX counter
 				if ( !( --jQuery.active ) ) {
 					jQuery.event.trigger("ajaxStop");
 				}
@@ -8312,7 +8312,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		contents = s.contents,
 		dataTypes = s.dataTypes;
 
-	// Remove auto dataType and get content-type in the process
+	// 移除auto dataType and get content-type in the process
 	while( dataTypes[ 0 ] === "*" ) {
 		dataTypes.shift();
 		if ( ct === undefined ) {
@@ -8320,7 +8320,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		}
 	}
 
-	// Check if we're dealing with a known content-type
+	// 检查if we're dealing with a known content-type
 	if ( ct ) {
 		for ( type in contents ) {
 			if ( contents[ type ] && contents[ type ].test( ct ) ) {
@@ -8330,11 +8330,11 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		}
 	}
 
-	// Check to see if we have a response for the expected dataType
+	// 检查to see if we have a response for the expected dataType
 	if ( dataTypes[ 0 ] in responses ) {
 		finalDataType = dataTypes[ 0 ];
 	} else {
-		// Try convertible dataTypes
+		// 尝试convertible dataTypes
 		for ( type in responses ) {
 			if ( !dataTypes[ 0 ] || s.converters[ type + " " + dataTypes[0] ] ) {
 				finalDataType = type;
@@ -8348,7 +8348,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		finalDataType = finalDataType || firstDataType;
 	}
 
-	// If we found a dataType
+	// 如果we found a dataType
 	// We add the dataType to the list if needed
 	// and return the corresponding response
 	if ( finalDataType ) {
@@ -8368,7 +8368,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 		// Work with a copy of dataTypes in case we need to modify it for conversion
 		dataTypes = s.dataTypes.slice();
 
-	// Create converters map with lowercased keys
+	// 创建converters map with lowercased keys
 	if ( dataTypes[ 1 ] ) {
 		for ( conv in s.converters ) {
 			converters[ conv.toLowerCase() ] = s.converters[ conv ];
@@ -8377,7 +8377,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 
 	current = dataTypes.shift();
 
-	// Convert to each sequential dataType
+	// 转换to each sequential dataType
 	while ( current ) {
 
 		if ( s.responseFields[ current ] ) {
@@ -8399,21 +8399,21 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 
 				current = prev;
 
-			// Convert response if prev dataType is non-auto and differs from current
+			// 转换response if prev dataType is non-auto and differs from current
 			} else if ( prev !== "*" && prev !== current ) {
 
 				// Seek a direct converter
 				conv = converters[ prev + " " + current ] || converters[ "* " + current ];
 
-				// If none found, seek a pair
+				// 如果none found, seek a pair
 				if ( !conv ) {
 					for ( conv2 in converters ) {
 
-						// If conv2 outputs current
+						// 如果conv2 outputs current
 						tmp = conv2.split( " " );
 						if ( tmp[ 1 ] === current ) {
 
-							// If prev can be converted to accepted input
+							// 如果prev can be converted to accepted input
 							conv = converters[ prev + " " + tmp[ 0 ] ] ||
 								converters[ "* " + tmp[ 0 ] ];
 							if ( conv ) {
@@ -8468,7 +8468,7 @@ jQuery.ajaxSetup({
 	}
 });
 
-// Handle cache's special case and global
+// 处理cache's special case and global
 jQuery.ajaxPrefilter( "script", function( s ) {
 	if ( s.cache === undefined ) {
 		s.cache = false;
@@ -8482,7 +8482,7 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 // Bind script tag hack transport
 jQuery.ajaxTransport( "script", function(s) {
 
-	// This transport only deals with cross domain requests
+	// 此transport only deals with cross domain requests
 	if ( s.crossDomain ) {
 
 		var script,
@@ -8507,10 +8507,10 @@ jQuery.ajaxTransport( "script", function(s) {
 
 					if ( isAbort || !script.readyState || /loaded|complete/.test( script.readyState ) ) {
 
-						// Handle memory leak in IE
+						// 处理memory leak in IE
 						script.onload = script.onreadystatechange = null;
 
-						// Remove the script
+						// 移除the script
 						if ( script.parentNode ) {
 							script.parentNode.removeChild( script );
 						}
@@ -8560,15 +8560,15 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			typeof s.data === "string" && !( s.contentType || "" ).indexOf("application/x-www-form-urlencoded") && rjsonp.test( s.data ) && "data"
 		);
 
-	// Handle iff the expected data type is "jsonp" or we have a parameter to set
+	// 处理iff the expected data type is "jsonp" or we have a parameter to set
 	if ( jsonProp || s.dataTypes[ 0 ] === "jsonp" ) {
 
-		// Get callback name, remembering preexisting value associated with it
+		// 获取callback name, remembering preexisting value associated with it
 		callbackName = s.jsonpCallback = jQuery.isFunction( s.jsonpCallback ) ?
 			s.jsonpCallback() :
 			s.jsonpCallback;
 
-		// Insert callback into url or form data
+		// 插入callback into url or form data
 		if ( jsonProp ) {
 			s[ jsonProp ] = s[ jsonProp ].replace( rjsonp, "$1" + callbackName );
 		} else if ( s.jsonp !== false ) {
@@ -8597,7 +8597,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			// Restore preexisting value
 			window[ callbackName ] = overwritten;
 
-			// Save back as free
+			// 保存back as free
 			if ( s[ callbackName ] ) {
 				// make sure that re-using the options doesn't screw things around
 				s.jsonpCallback = originalSettings.jsonpCallback;
@@ -8606,7 +8606,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 				oldCallbacks.push( callbackName );
 			}
 
-			// Call if it was a function and we have a response
+			// 调用if it was a function and we have a response
 			if ( responseContainer && jQuery.isFunction( overwritten ) ) {
 				overwritten( responseContainer[ 0 ] );
 			}
@@ -8642,7 +8642,7 @@ function createActiveXHR() {
 	} catch( e ) {}
 }
 
-// Create the request object
+// 创建the request object
 // (This is still attached to ajaxSettings for backward compatibility)
 jQuery.ajaxSettings.xhr = window.ActiveXObject ?
 	/* Microsoft failed to properly
@@ -8654,7 +8654,7 @@ jQuery.ajaxSettings.xhr = window.ActiveXObject ?
 	function() {
 		return !this.isLocal && createStandardXHR() || createActiveXHR();
 	} :
-	// For all other browsers, use the standard XMLHttpRequest object
+	// 对于all other browsers, use the standard XMLHttpRequest object
 	createStandardXHR;
 
 // Determine support properties
@@ -8662,7 +8662,7 @@ xhrSupported = jQuery.ajaxSettings.xhr();
 jQuery.support.cors = !!xhrSupported && ( "withCredentials" in xhrSupported );
 xhrSupported = jQuery.support.ajax = !!xhrSupported;
 
-// Create transport if the browser can provide an xhr
+// 创建transport if the browser can provide an xhr
 if ( xhrSupported ) {
 
 	jQuery.ajaxTransport(function( s ) {
@@ -8674,7 +8674,7 @@ if ( xhrSupported ) {
 			return {
 				send: function( headers, complete ) {
 
-					// Get a new xhr
+					// 获取a new xhr
 					var handle, i,
 						xhr = s.xhr();
 
@@ -8699,10 +8699,10 @@ if ( xhrSupported ) {
 					}
 
 					// X-Requested-With header
-					// For cross-domain requests, seeing as conditions for a preflight are
+					// 对于cross-domain requests, seeing as conditions for a preflight are
 					// akin to a jigsaw puzzle, we simply never set it to be sure.
 					// (it can always be set on a per-request basis or even using ajaxSetup)
-					// For same-domain requests, won't change header if already provided.
+					// 对于same-domain requests, won't change header if already provided.
 					if ( !s.crossDomain && !headers["X-Requested-With"] ) {
 						headers["X-Requested-With"] = "XMLHttpRequest";
 					}
@@ -8715,7 +8715,7 @@ if ( xhrSupported ) {
 					} catch( err ) {}
 
 					// Do send the request
-					// This may raise an exception which is actually
+					// 此may raise an exception which is actually
 					// handled in jQuery.ajax (so no try/catch here)
 					xhr.send( ( s.hasContent && s.data ) || null );
 
@@ -8742,7 +8742,7 @@ if ( xhrSupported ) {
 									}
 								}
 
-								// If it's an abort
+								// 如果it's an abort
 								if ( isAbort ) {
 									// Abort it manually if needed
 									if ( xhr.readyState !== 4 ) {
@@ -8753,7 +8753,7 @@ if ( xhrSupported ) {
 									status = xhr.status;
 									responseHeaders = xhr.getAllResponseHeaders();
 
-									// When requesting binary data, IE6-9 will throw an exception
+									// 当requesting binary data, IE6-9 will throw an exception
 									// on any attempt to access responseText (#11426)
 									if ( typeof xhr.responseText === "string" ) {
 										responses.text = xhr.responseText;
@@ -8768,9 +8768,9 @@ if ( xhrSupported ) {
 										statusText = "";
 									}
 
-									// Filter status for non standard behaviors
+									// 过滤status for non standard behaviors
 
-									// If the request is local and we have data: assume a success
+									// 如果the request is local and we have data: assume a success
 									// (success with no data won't get notified, that's the best we
 									// can do given current implementations)
 									if ( !status && s.isLocal && !s.crossDomain ) {
@@ -8787,7 +8787,7 @@ if ( xhrSupported ) {
 							}
 						}
 
-						// Call complete if needed
+						// 调用complete if needed
 						if ( responses ) {
 							complete( status, statusText, responses, responseHeaders );
 						}
@@ -8803,13 +8803,13 @@ if ( xhrSupported ) {
 					} else {
 						handle = ++xhrId;
 						if ( xhrOnUnloadAbort ) {
-							// Create the active xhrs callbacks list if needed
+							// 创建the active xhrs callbacks list if needed
 							// and attach the unload handler
 							if ( !xhrCallbacks ) {
 								xhrCallbacks = {};
 								jQuery( window ).unload( xhrOnUnloadAbort );
 							}
-							// Add to list of active xhrs callbacks
+							// 添加to list of active xhrs callbacks
 							xhrCallbacks[ handle ] = callback;
 						}
 						xhr.onreadystatechange = callback;
@@ -8854,7 +8854,7 @@ var fxNow, timerId,
 				start = +target || 1;
 
 				do {
-					// If previous iteration zeroed out, double until we get *something*
+					// 如果previous iteration zeroed out, double until we get *something*
 					// Use a string for doubling factor so we don't accidentally see scale as unchanged below
 					scale = scale || ".5";
 
@@ -8862,16 +8862,16 @@ var fxNow, timerId,
 					start = start / scale;
 					jQuery.style( tween.elem, prop, start + unit );
 
-				// Update scale, tolerating zero or NaN from tween.cur()
+				// 更新scale, tolerating zero or NaN from tween.cur()
 				// And breaking the loop if scale is unchanged or perfect, or if we've just had enough
 				} while ( scale !== (scale = tween.cur() / target) && scale !== 1 && --maxIterations );
 			}
 
-			// Update tween properties
+			// 更新tween properties
 			if ( parts ) {
 				start = tween.start = +start || +target || 0;
 				tween.unit = unit;
-				// If a +=/-= token was provided, we're doing a relative animation
+				// 如果a +=/-= token was provided, we're doing a relative animation
 				tween.end = parts[ 1 ] ?
 					start + ( parts[ 1 ] + 1 ) * parts[ 2 ] :
 					+parts[ 2 ];
@@ -9117,7 +9117,7 @@ function defaultPrefilter( elem, props, opts ) {
 		// overflowY are set to the same value
 		opts.overflow = [ style.overflow, style.overflowX, style.overflowY ];
 
-		// Set display property to inline-block for height/width
+		// 设置display property to inline-block for height/width
 		// animations on inline elements that are having width/height animated
 		if ( jQuery.css( elem, "display" ) === "inline" &&
 				jQuery.css( elem, "float" ) === "none" ) {
@@ -9422,7 +9422,7 @@ jQuery.fn.extend({
 	}
 });
 
-// Generate parameters to create a standard animation
+// 生成parameters to create a standard animation
 function genFx( type, includeWidth ) {
 	var which,
 		attrs = { height: type },
@@ -9443,7 +9443,7 @@ function genFx( type, includeWidth ) {
 	return attrs;
 }
 
-// Generate shortcuts for custom animations
+// 生成shortcuts for custom animations
 jQuery.each({
 	slideDown: genFx("show"),
 	slideUp: genFx("hide"),
@@ -9582,7 +9582,7 @@ jQuery.fn.offset = function( options ) {
 		return box;
 	}
 
-	// If we don't have gBCR, just use 0,0 rather than error
+	// 如果we don't have gBCR, just use 0,0 rather than error
 	// BlackBerry 5, iOS 3 (original iPhone)
 	if ( typeof elem.getBoundingClientRect !== core_strundefined ) {
 		box = elem.getBoundingClientRect();
@@ -9657,16 +9657,16 @@ jQuery.fn.extend({
 			// we assume that getBoundingClientRect is available when computed position is fixed
 			offset = elem.getBoundingClientRect();
 		} else {
-			// Get *real* offsetParent
+			// 获取*real* offsetParent
 			offsetParent = this.offsetParent();
 
-			// Get correct offsets
+			// 获取correct offsets
 			offset = this.offset();
 			if ( !jQuery.nodeName( offsetParent[ 0 ], "html" ) ) {
 				parentOffset = offsetParent.offset();
 			}
 
-			// Add offsetParent borders
+			// 添加offsetParent borders
 			parentOffset.top  += jQuery.css( offsetParent[ 0 ], "borderTopWidth", true );
 			parentOffset.left += jQuery.css( offsetParent[ 0 ], "borderLeftWidth", true );
 		}
@@ -9692,7 +9692,7 @@ jQuery.fn.extend({
 });
 
 
-// Create scrollLeft and scrollTop methods
+// 创建scrollLeft and scrollTop methods
 jQuery.each( {scrollLeft: "pageXOffset", scrollTop: "pageYOffset"}, function( method, prop ) {
 	var top = /Y/.test( prop );
 
@@ -9726,7 +9726,7 @@ function getWindow( elem ) {
 			elem.defaultView || elem.parentWindow :
 			false;
 }
-// Create innerHeight, innerWidth, height, width, outerHeight and outerWidth methods
+// 创建innerHeight, innerWidth, height, width, outerHeight and outerWidth methods
 jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 	jQuery.each( { padding: "inner" + name, content: type, "": "outer" + name }, function( defaultExtra, funcName ) {
 		// margin is only for outerHeight, outerWidth
@@ -9744,7 +9744,7 @@ jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 					return elem.document.documentElement[ "client" + name ];
 				}
 
-				// Get document width or height
+				// 获取document width or height
 				if ( elem.nodeType === 9 ) {
 					doc = elem.documentElement;
 
@@ -9758,10 +9758,10 @@ jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 				}
 
 				return value === undefined ?
-					// Get width or height on the element, requesting but not forcing parseFloat
+					// 获取width or height on the element, requesting but not forcing parseFloat
 					jQuery.css( elem, type, extra ) :
 
-					// Set width or height on the element
+					// 设置width or height on the element
 					jQuery.style( elem, type, value, extra );
 			}, type, chainable ? margin : undefined, chainable, null );
 		};
@@ -9770,7 +9770,7 @@ jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 // Limit scope pollution from any deprecated API
 // (function() {
 
-// The number of elements contained in the matched element set
+// number of elements contained in the matched element set
 jQuery.fn.size = function() {
 	return this.length;
 };

@@ -23,11 +23,11 @@ namespace PowerPlatform_Dataverse_CodeSamples
         IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
@@ -42,11 +42,11 @@ namespace PowerPlatform_Dataverse_CodeSamples
         {
             Program app = new();
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new( app.Configuration.GetConnectionString("default") );
 
-            // Create an in-memory account named Nightmare Coffee.
+            // 创建an in-memory account named Nightmare Coffee.
             Entity account = new("account");
             account["name"] = "Nightmare Coffee";
 

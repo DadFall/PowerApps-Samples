@@ -40,10 +40,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -56,12 +56,12 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create leads for relating activity feed records to. Since there is an
+            // 创建leads for relating activity feed records to. Since there is an
             // active post rule config for creation of a new lead, creating the leads
             // should add an auto post to the record wall for each of the leads.
             _lead1 = new Lead
@@ -108,7 +108,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>
@@ -127,7 +127,7 @@ namespace PowerApps.Samples
             if (deleteRecords)
             {
 
-                // Handle reverting the configurations appropriately - delete them
+                // 处理reverting the configurations appropriately - delete them
                 // if they did not exist before.  Otherwise update them to their
                 // original values.  Lead must be reverted first since it must be deleted
                 // first if systemuser is to be deleted.
@@ -137,7 +137,7 @@ namespace PowerApps.Samples
                 // Revert the form changes.
                 PublishSystemUserAndLead(service);
 
-                // Delete the leads.
+                // 删除the leads.
                 DeleteFromContext(_lead1);
                 DeleteFromContext(_lead2);
                 DeleteFromContext(_lead3);
@@ -147,7 +147,7 @@ namespace PowerApps.Samples
                 Console.WriteLine("  The post follow records were deleted with the leads.");
                 Console.WriteLine("  Posts that were related to leads were deleted with the leads.");
 
-                // Delete posts that aren't regarding entities that were deleted.
+                // 删除posts that aren't regarding entities that were deleted.
                 DeleteFromContext(_post1);
                 DeleteFromContext(_post2);
                 DeleteFromContext(_post3);
@@ -155,7 +155,7 @@ namespace PowerApps.Samples
                 _serviceContext.SaveChanges();
                 Console.WriteLine("  Posts that weren't regarding deleted entities were deleted.");
 
-                // Delete the generated entities.
+                // 删除the generated entities.
                 foreach (var entityRef in _generatedEntities)
                 {
                     service.Delete(entityRef.LogicalName, entityRef.Id);
@@ -168,7 +168,7 @@ namespace PowerApps.Samples
         {
             Console.WriteLine("== Configuring Activity Feeds ==");
 
-            // Get the original systemuser config in order to keep a copy for reverting
+            // 获取the original systemuser config in order to keep a copy for reverting
             // after the sample has completed.
             _originalSystemUserConfig =
                 (from c in _serviceContext.msdyn_PostConfigSet
@@ -180,9 +180,9 @@ namespace PowerApps.Samples
                      msdyn_EntityName = c.msdyn_EntityName
                  }).FirstOrDefault();
 
-            // Retrieve or Create an instance of msdyn_PostConfig to enable activity
+            // 检索or Create an instance of msdyn_PostConfig to enable activity
             // feeds for leads (or make sure they are already enabled).
-            // If a new msdyn_PostConfig record gets created, activity feeds for
+            // 如果a new msdyn_PostConfig record gets created, activity feeds for
             // systemusers will be enabled automatically.
             _leadConfig =
                 (from c in _serviceContext.msdyn_PostConfigSet
@@ -196,7 +196,7 @@ namespace PowerApps.Samples
 
             if (_leadConfig == null)
             {
-                // Create the configuration record for leads.
+                // 创建the configuration record for leads.
                 _leadConfig = new msdyn_PostConfig
                 {
                     msdyn_EntityName = Lead.EntityLogicalName,
@@ -225,7 +225,7 @@ namespace PowerApps.Samples
                 }
             }
 
-            // Get the original systemuser config in order to keep a copy for reverting
+            // 获取the original systemuser config in order to keep a copy for reverting
             // after the sample has completed.
             _systemuserConfig =
                 (from c in _serviceContext.msdyn_PostConfigSet
@@ -275,7 +275,7 @@ namespace PowerApps.Samples
         private static void PostToRecordWalls(CrmServiceClient service)
         {
             Console.WriteLine("\r\n== Working with Record Walls ==");
-            // Create the leads.
+            // 创建the leads.
             CreateRequiredRecords(service);
 
             // Follow each of the leads.
@@ -300,8 +300,8 @@ namespace PowerApps.Samples
             _serviceContext.SaveChanges();
             Console.WriteLine("  The 3 leads are now followed.");
 
-            // Create posts, mentions, and comments related to the leads.
-            // Create a post related to lead 1 with a mention and a comment.
+            // 创建posts, mentions, and comments related to the leads.
+            // 创建a post related to lead 1 with a mention and a comment.
             _leadPost1 = new Post
             {
                 RegardingObjectId = _lead1.ToEntityReference(),
@@ -326,7 +326,7 @@ namespace PowerApps.Samples
             _serviceContext.SaveChanges();
             Console.WriteLine("  Comment 1 has been created.");
 
-            // Create a post related to lead 2 with three comments.
+            // 创建a post related to lead 2 with three comments.
             var post2 = new Post
             {
                 RegardingObjectId = _lead2.ToEntityReference(),
@@ -407,14 +407,14 @@ namespace PowerApps.Samples
         private static void PostToPersonalWalls(CrmServiceClient service)
         {
             Console.WriteLine("\r\n== Working with Personal Walls ==");
-            // Create manual (user) posts on a user's Personal wall.
+            // 创建manual (user) posts on a user's Personal wall.
             var whoAmIRequest = new WhoAmIRequest();
             var whoAmIResponse = (WhoAmIResponse)service.Execute(whoAmIRequest);
             var currentUserRef = new EntityReference(
                 SystemUser.EntityLogicalName, whoAmIResponse.UserId);
 
-            // Create a post that mentions lead 1.
-            // The Regarding object should be set to the user whose wall the post should
+            // 创建a post that mentions lead 1.
+            // Regarding object should be set to the user whose wall the post should
             // be posted to (we'll just use the current user).
             _post1 = new Post
             {
@@ -428,7 +428,7 @@ namespace PowerApps.Samples
             _serviceContext.SaveChanges();
             Console.WriteLine("  Personal wall post 1 was created.");
 
-            // Create a related comment.
+            // 创建a related comment.
             var comment1 = new PostComment
             {
                 PostId = _post1.ToEntityReference(),
@@ -450,7 +450,7 @@ namespace PowerApps.Samples
             _serviceContext.SaveChanges();
             Console.WriteLine("  Personal wall post 2 was created.");
 
-            // Create a few related comments.
+            // 创建a few related comments.
             var comment2 = new PostComment
             {
                 PostId = _post2.ToEntityReference(),
@@ -482,7 +482,7 @@ namespace PowerApps.Samples
             _serviceContext.SaveChanges();
             Console.WriteLine("  Personal wall comments 2, 3, 4, and 5 were created.");
 
-            // Create a couple more posts just to show how paging works.
+            // 创建a couple more posts just to show how paging works.
             _post3 = new Post
             {
                 RegardingObjectId = currentUserRef,
@@ -502,11 +502,11 @@ namespace PowerApps.Samples
             _serviceContext.SaveChanges();
             Console.WriteLine("  Personal wall posts 3 and 4 were created.");
 
-            // Retrieve this user's personal wall.
-            // Retrieve the first page of posts.
+            // 检索this user's personal wall.
+            // 检索the first page of posts.
             DisplayPersonalWallPage(service, 1);
 
-            // Retrieve the second page of posts.
+            // 检索the second page of posts.
             DisplayPersonalWallPage(service, 2);
 
             // Sleep for a second so that the time of the newly created comment will
@@ -514,7 +514,7 @@ namespace PowerApps.Samples
             // Post 3 will not be escalated to the top of the wall).
             Thread.Sleep(1000);
 
-            // Create a new comment on the last post, which will bring the post to the
+            // 创建a new comment on the last post, which will bring the post to the
             // top.
             var newPostComment = new PostComment
             {
@@ -531,7 +531,7 @@ namespace PowerApps.Samples
             DisplayPersonalWallPage(service, 1);
 
             // Show paging of comments.
-            // Retrieve comments 2 at a time, starting with page 1.
+            // 检索comments 2 at a time, starting with page 1.
             var commentsQuery = new QueryExpression(PostComment.EntityLogicalName)
             {
                 ColumnSet = new ColumnSet(true),
@@ -571,7 +571,7 @@ namespace PowerApps.Samples
         {
             Console.WriteLine("\r\n== Showing Record Walls ==");
 
-            // Create a new post on one of the leads.
+            // 创建a new post on one of the leads.
             var newLeadPost = new Post
             {
                 Source = new OptionSetValue((int)PostSource.AutoPost),
@@ -610,7 +610,7 @@ namespace PowerApps.Samples
 
         private static void DisplayPersonalWallPage(CrmServiceClient service, int pageNumber)
         {
-            // Retrieve the page of posts.  We'll only retrieve 5 at a time so that
+            // 检索the page of posts.  We'll only retrieve 5 at a time so that
             // we will have more than one page.
             var pageSize = 5;
 
@@ -680,7 +680,7 @@ namespace PowerApps.Samples
 
         private static void PublishSystemUserAndLead(CrmServiceClient service)
         {
-            // The systemuser and lead entities must be published because otherwise the
+            // systemuser and lead entities must be published because otherwise the
             // record walls on the respective forms will not update.
             service.Execute(new PublishXmlRequest
             {
@@ -714,7 +714,7 @@ namespace PowerApps.Samples
                 foreach (var rule in _postRuleConfigs.Where(
                     x => x.msdyn_PostConfigId.Id == newConfig.msdyn_PostConfigId))
                 {
-                    // Set the state to the original value.
+                    // 设置the state to the original value.
                     service.Execute(new SetStateRequest
                     {
                         EntityMoniker = rule.ToEntityReference(),
@@ -723,7 +723,7 @@ namespace PowerApps.Samples
                     });
                 }
 
-                // Update the config to the values from the original config.
+                // 更新the config to the values from the original config.
                 // Make sure the context is not tracking the new config and is tracking
                 // the original config.
                 if (!_serviceContext.IsAttached(originalConfig))

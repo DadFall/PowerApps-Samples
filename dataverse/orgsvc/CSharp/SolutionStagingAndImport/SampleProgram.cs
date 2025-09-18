@@ -11,9 +11,9 @@ using System.Threading;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Stage and asynchronously import a solution. Environment variables and
+        /// Stage and asynchronously import a solution. Environment variables and
     /// connection references in the solution are supported.
-    /// </summary>
+        /// </summary>
     /// <see cref="https://learn.microsoft.com/power-platform/alm/solution-async"/>
     class Program
     {
@@ -75,9 +75,9 @@ namespace PowerApps.Samples
         /// <summary>
         /// Stage and validate a solution.
         /// </summary>
-        /// <param name="service">The Organization service on the 2011 SOAP endpoint.</param>
-        /// <param name="solutionFilePath">The path to the compressed solution file.</param>
-        /// <returns>The results from staging the solution.</returns>
+        /// <param name="service">Organization service on the 2011 SOAP endpoint.</param>
+        /// <param name="solutionFilePath">path to the compressed solution file.</param>
+        /// <returns>results from staging the solution.</returns>
         //<snippet_stage-solution>
         public static StageSolutionResults StageSolution(IOrganizationService service, string solutionFilePath)
         {
@@ -95,11 +95,11 @@ namespace PowerApps.Samples
         /// <summary>
         /// Import a staged solution.
         /// </summary>
-        /// <param name="service">The Organization service on the 2011 SOAP endpoint.</param>
-        /// <param name="stagingResults">The results from staging the solution.</param>
-        /// <param name="connectionIds">The identifier of each connection in the solution.</param> 
-        /// <param name="envarValues">The value of each environment variable.</param>
-        /// <returns>The response returned from the service after processing the import request.</returns>
+        /// <param name="service">Organization service on the 2011 SOAP endpoint.</param>
+        /// <param name="stagingResults">结果s from staging the solution.</param>
+        /// <param name="connectionIds">标识符 of each connection in the solution.</param> 
+        /// <param name="envarValues">值 of each environment variable.</param>
+        /// <returns>response returned from the service after processing the import request.</returns>
         //<snippet_import-solution-async>
         public static ImportSolutionAsyncResponse ImportSolution(
             IOrganizationService service,
@@ -120,7 +120,7 @@ namespace PowerApps.Samples
 
             var componentParams = new EntityCollection();
 
-            // Add each connection reference to the component parmameters entity collection.
+            // 添加each connection reference to the component parmameters entity collection.
             foreach (var conn in connectionReferences)
             {
                 var e = new Entity("connectionreference")
@@ -133,7 +133,7 @@ namespace PowerApps.Samples
                 componentParams.Entities.Add(e);
             }
             
-            // Add each environment variable to the component parmameters entity collection.
+            // 添加each environment variable to the component parmameters entity collection.
             foreach (var value in envVarValue)
             {
                 var e = new Entity("environmentvariablevalue")
@@ -160,15 +160,15 @@ namespace PowerApps.Samples
         //</snippet_import-solution-async>
 
         /// <summary>
-        /// Check the solution import status.
+        /// 检查the solution import status.
         /// </summary>
-        /// <param name="service">The Organization service on the 2011 SOAP endpoint.</param>
-        /// <param name="asyncOperationId">The identifier of the asynchronous job performing the solution import.</param>
-        /// <param name="importJobKey">The key that identifies the import job.</param>
+        /// <param name="service">Organization service on the 2011 SOAP endpoint.</param>
+        /// <param name="asyncOperationId">标识符 of the asynchronous job performing the solution import.</param>
+        /// <param name="importJobKey">key that identifies the import job.</param>
         //<snippet_check-import-status>
         public static void CheckImportStatus(IOrganizationService service, Guid asyncOperationId, Guid importJobKey)
         {
-            // Get solution import status
+            // 获取solution import status
             var finished = false;
             Entity asyncOperation = null;
 

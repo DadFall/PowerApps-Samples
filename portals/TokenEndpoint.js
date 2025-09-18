@@ -1,5 +1,5 @@
-/* 
-    Portals - Implicit Grant Sample
+/*
+ Portals - Implicit Grant Sample
     
     Token Endpoint
 
@@ -10,7 +10,7 @@
         * getAuthenticationToken accepts a callback function to handle the token returned from Portals.
         * Token is returned only for authenticated users.
         * ImplicitGrantForceLogin cookie key is used to decide whether or not to redirect user to login page based on the Token endpoint's response.
-*/
+ */
 
 // Part 1: Add getAuthenticationToken to window.auth
 
@@ -41,7 +41,7 @@
         if (jsonResult && jsonResult.status == 401) {
             var forceLogin = Number($.cookie("ImplicitGrantForceLogin")) === 1;
             if (forceLogin) {
-                // If the user is not logged in, redirect to login page
+                // 如果the user is not logged in, redirect to login page
                 redirectToLogin();
             } else {
                 callback(null,jsonResult); //Run callback method with error message

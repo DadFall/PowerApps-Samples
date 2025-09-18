@@ -8,16 +8,16 @@ using System.ServiceModel;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Base class for all plug-in classes.
+        /// Base class for all plug-in classes.
     /// Plugin development guide: https://docs.microsoft.com/powerapps/developer/common-data-service/plug-ins
     /// Best practices and guidance: https://docs.microsoft.com/powerapps/developer/common-data-service/best-practices/business-logic/
-    /// </summary>
+        /// </summary>
     public abstract class PluginBase : IPlugin
     {
         protected string PluginClassName { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PluginBase"/> class.
+        /// 初始化 a new instance of the <see cref="PluginBase"/> class.
         /// </summary>
         /// <param name="pluginClassName">The <see cref="Type"/> of the plugin class.</param>
         internal PluginBase(Type pluginClassName)
@@ -28,7 +28,7 @@ namespace PowerApps.Samples
         /// <summary>
         /// Main entry point for he business logic that the plug-in is to execute.
         /// </summary>
-        /// <param name="serviceProvider">The service provider.</param>
+        /// <param name="serviceProvider">service provider.</param>
         /// <remarks>
         /// </remarks>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", Justification = "Execute")]
@@ -48,7 +48,7 @@ namespace PowerApps.Samples
 
             try
             {
-                // Invoke the custom implementation
+                // 调用the custom implementation
                 ExecuteDataversePlugin(localPluginContext);
 
                 // Now exit - if the derived plugin has incorrectly registered overlapping event registrations, guard against multiple executions.
@@ -77,17 +77,17 @@ namespace PowerApps.Samples
     }
 
     /// <summary>
-    /// This interface provides an abstraction on top of IServiceProvider for commonly used PowerPlatform Dataverse Plugin development constructs
-    /// </summary>
+        /// 此interface provides an abstraction on top of IServiceProvider for commonly used PowerPlatform Dataverse Plugin development constructs
+        /// </summary>
     public interface ILocalPluginContext
     {
         /// <summary>
-        /// The PowerPlatform Dataverse organization service for the Current Executing user.
+        /// PowerPlatform Dataverse organization service for the Current Executing user.
         /// </summary>
         IOrganizationService InitiatingUserService { get; }
 
         /// <summary>
-        /// The PowerPlatform Dataverse organization service for the Account that was registered to run this plugin, This could be the same user as InitiatingUserService.
+        /// PowerPlatform Dataverse organization service for the Account that was registered to run this plugin, This could be the same user as InitiatingUserService.
         /// </summary>
         IOrganizationService PluginUserService { get; }
 
@@ -125,22 +125,22 @@ namespace PowerApps.Samples
         /// <summary>
         /// Writes a trace message to the trace log.
         /// </summary>
-        /// <param name="message">Message name to trace.</param>
+        /// <param name="message">Message 名称 to trace.</param>
         void Trace(string message, [CallerMemberName] string method = null);
     }
 
     /// <summary>
-    /// Plug-in context object.
-    /// </summary>
+        /// Plug-in context object.
+        /// </summary>
     public class LocalPluginContext : ILocalPluginContext
     {
         /// <summary>
-        /// The PowerPlatform Dataverse organization service for the Current Executing user.
+        /// PowerPlatform Dataverse organization service for the Current Executing user.
         /// </summary>
         public IOrganizationService InitiatingUserService { get; }
 
         /// <summary>
-        /// The PowerPlatform Dataverse organization service for the Account that was registered to run this plugin, This could be the same user as InitiatingUserService.
+        /// PowerPlatform Dataverse organization service for the Account that was registered to run this plugin, This could be the same user as InitiatingUserService.
         /// </summary>
         public IOrganizationService PluginUserService { get; }
 
@@ -207,7 +207,7 @@ namespace PowerApps.Samples
         /// <summary>
         /// Writes a trace message to the trace log.
         /// </summary>
-        /// <param name="message">Message name to trace.</param>
+        /// <param name="message">Message 名称 to trace.</param>
         public void Trace(string message, [CallerMemberName] string method = null)
         {
             if (string.IsNullOrWhiteSpace(message) || TracingService == null)
@@ -223,8 +223,8 @@ namespace PowerApps.Samples
     }
 
     /// <summary>
-    /// Specialized ITracingService implementation that prefixes all traced messages with a time delta for Plugin performance diagnostics
-    /// </summary>
+        /// Specialized ITracingService implementation that prefixes all traced messages with a time delta for Plugin performance diagnostics
+        /// </summary>
     public class LocalTracingService : ITracingService
     {
         private readonly ITracingService _tracingService;
@@ -253,7 +253,7 @@ namespace PowerApps.Samples
         {
             var utcNow = DateTime.UtcNow;
 
-            // The duration since the last trace.
+            // duration since the last trace.
             var deltaMilliseconds = utcNow.Subtract(_previousTraceTime).TotalMilliseconds;
 
             _tracingService.Trace($"[+{deltaMilliseconds:N0}ms] - {string.Format(message, args)}");

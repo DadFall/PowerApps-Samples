@@ -24,7 +24,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create the revenue metric, setting the Amount Data Type to 'Money'
+                    // 创建the revenue metric, setting the Amount Data Type to 'Money'
                     // and the Metric Type to 'Amount'.
                     Metric sampleMetric = new Metric()
                     {
@@ -39,7 +39,7 @@ namespace PowerApps.Samples
 
                     #region Create RollupFields
 
-                    // Create RollupField which targets the actual totals.
+                    // 创建RollupField which targets the actual totals.
                     RollupField actual = new RollupField()
                     {
                         SourceEntity = SalesOrder.EntityLogicalName,
@@ -58,7 +58,7 @@ namespace PowerApps.Samples
 
                     #region Create the goal rollup query
 
-                    // The query locates sales orders in the first sales 
+                    // query locates sales orders in the first sales 
                     // representative's area (zip code: 60661) and with a value
                     // greater than $1,000.
                     GoalRollupQuery goalRollupQuery = new GoalRollupQuery()
@@ -77,7 +77,7 @@ namespace PowerApps.Samples
 
                     #region Create two goals: one parent and one child goal
 
-                    // Create the parent goal.
+                    // 创建the parent goal.
                     Goal parentGoal = new Goal()
                     {
                         Title = "Parent Goal Example",
@@ -110,7 +110,7 @@ namespace PowerApps.Samples
                     Console.WriteLine("<End of Listing>");
                     Console.WriteLine();
 
-                    // Create the child goal.
+                    // 创建the child goal.
                     Goal firstChildGoal = new Goal()
                     {
                         Title = "First Child Goal Example",
@@ -146,7 +146,7 @@ namespace PowerApps.Samples
 
                     #endregion
 
-                    // Calculate roll-up of goals.
+                    // 计算roll-up of goals.
                     // Note: Recalculate can be run against any goal in the tree to cause
                     // a rollup of the whole tree.
                     RecalculateRequest recalculateRequest = new RecalculateRequest()
@@ -158,7 +158,7 @@ namespace PowerApps.Samples
                     Console.WriteLine("Calculated roll-up of goals.");
                     Console.WriteLine();
 
-                    // Retrieve and report 3 different computed values for the goals
+                    // 检索and report 3 different computed values for the goals
                     // - Percentage
                     // - ComputedTargetAsOfTodayPercentageAchieved
                     // - ComputedTargetAsOfTodayMoney

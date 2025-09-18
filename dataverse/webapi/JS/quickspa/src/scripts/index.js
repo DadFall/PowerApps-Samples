@@ -1,7 +1,7 @@
 import { PublicClientApplication } from "@azure/msal-browser";
 import 'dotenv/config'
 
-// Load the environment variables from the .env file
+// 加载the environment variables from the .env file
 const config = {
    baseUrl: process.env.BASE_URL,
    clientId: process.env.CLIENT_ID,
@@ -18,12 +18,12 @@ const msalConfig = {
     postLogoutRedirectUri: config.redirectUri,
   },
   cache: {
-    cacheLocation: "sessionStorage", // This configures where your cache will be stored
+    cacheLocation: "sessionStorage", // 此configures where your cache will be stored
     storeAuthStateInCookie: true,
   },
 };
 
-// Create an instance of MSAL
+// 创建an instance of MSAL
 const msalInstance = new PublicClientApplication(msalConfig);
 
 // body/main element where messages are displayed
@@ -48,7 +48,7 @@ async function logIn() {
       const logoutButton = document.getElementById("logoutButton");
       logoutButton.innerHTML = "Logout " + response.account.name;
       logoutButton.style.display = "block";
-      // Enable any buttons in the nav element
+      // 启用any buttons in the nav element
       document.getElementsByTagName("nav")[0].classList.remove("disabled");
     } catch (error) {
       let p = document.createElement("p");
@@ -57,7 +57,7 @@ async function logIn() {
       container.append(p);
     }
   } else {
-    // Clear the active account and try again
+    // 清除the active account and try again
     msalInstance.setActiveAccount(null);
     this.click();
   }
@@ -112,10 +112,10 @@ async function getToken() {
   }
 }
 
-// Add event listener to the login button
+// 添加event listener to the login button
 document.getElementById("loginButton").onclick = logIn;
 
-// Add event listener to the logout button
+// 添加event listener to the logout button
 document.getElementById("logoutButton").onclick = logOut;
 
 /// Function to get the current user's information
@@ -132,9 +132,9 @@ async function whoAmI() {
       "OData-MaxVersion": "4.0",
     },
   });
-  // Send the request to the API
+  // 发送the request to the API
   const response = await fetch(request);
-  // Handle the response
+  // 处理the response
   if (!response.ok) {
     throw new Error("Network response was not ok: " + response.statusText);
   }
@@ -142,9 +142,9 @@ async function whoAmI() {
   return await response.json();
 }
 
-// Add event listener to the whoAmI button
+// 添加event listener to the whoAmI button
 document.getElementById("whoAmIButton").onclick = async function () {
-  // Clear any previous messages
+  // 清除any previous messages
   container.replaceChildren();
   try {
     const response = await whoAmI();

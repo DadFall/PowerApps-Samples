@@ -25,7 +25,7 @@ namespace PowerApps.Samples
         private static bool prompt = true;
         // Specify which language code to use in the sample. If you are using a language
         // other than US English, you will need to modify this value accordingly.
-        // See https://learn.microsoft.com/previous-versions/windows/embedded/ms912047(v=winembedded.10)
+        // 参见 https://learn.microsoft.com/previous-versions/windows/embedded/ms912047(v=winembedded.10)
         private const int _languageCode = 1033;
         // <summary>
         /// Function to set up the sample.
@@ -34,10 +34,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -57,11 +57,11 @@ namespace PowerApps.Samples
             SampleHelpers.DeleteSolution(service, "SampleSolution");
         }
         /// <summary>
-        /// This method creates any entity records that this sample requires.
+        /// 此method creates any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a managed solution for the Install or upgrade a solution sample
+            // 创建a managed solution for the Install or upgrade a solution sample
 
             Guid _tempPublisherId = new Guid();
             System.String _tempCustomizationPrefix = "new";
@@ -94,14 +94,14 @@ namespace PowerApps.Samples
             EntityCollection querySDKSamplePublisherResults = service.RetrieveMultiple(querySDKSamplePublisher);
             Publisher SDKSamplePublisherResults = null;
 
-            //If it already exists, use it
+            //如果it already exists, use it
             if (querySDKSamplePublisherResults.Entities.Count > 0)
             {
                 SDKSamplePublisherResults = (Publisher)querySDKSamplePublisherResults.Entities[0];
                 _tempPublisherId = (Guid)SDKSamplePublisherResults.PublisherId;
                 _tempCustomizationPrefix = SDKSamplePublisherResults.CustomizationPrefix;
             }
-            //If it doesn't exist, create it
+            //如果it doesn't exist, create it
             if (SDKSamplePublisherResults == null)
             {
                 _tempPublisherId = service.Create(_powerappsSdkPublisher);
@@ -142,7 +142,7 @@ namespace PowerApps.Samples
                 _solutionCreated = true;
             }
 
-            // Add a solution Component
+            // 添加a solution Component
             OptionSetMetadata optionSetMetadata = new OptionSetMetadata()
             {
                 Name = _tempCustomizationPrefix + _TempGlobalOptionSetName,
@@ -178,7 +178,7 @@ namespace PowerApps.Samples
             System.IO.Directory.CreateDirectory(outputDir);
             File.WriteAllBytes(ManagedSolutionLocation, exportXml);
 
-            // Delete the solution and the components so it can be installed.
+            // 删除the solution and the components so it can be installed.
 
             DeleteOptionSetRequest delOptSetReq = new DeleteOptionSetRequest { Name = (_tempCustomizationPrefix + _TempGlobalOptionSetName).ToLower() };
             service.Execute(delOptSetReq);
@@ -198,7 +198,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user to delete the records created in this sample.</param>
         /// </summary>
         public static void DeleteRequiredRecords(CrmServiceClient service, bool prompt)
@@ -217,7 +217,7 @@ namespace PowerApps.Samples
             {
                 service.Delete(Solution.EntityLogicalName, _solutionsSampleSolutionId);
                 service.Delete(Publisher.EntityLogicalName, _powerappsSdkPublisherId);
-                // Remove the managed solution created by the create required fields code.
+                // 移除the managed solution created by the create required fields code.
                 File.Delete(ManagedSolutionLocation);
 
 

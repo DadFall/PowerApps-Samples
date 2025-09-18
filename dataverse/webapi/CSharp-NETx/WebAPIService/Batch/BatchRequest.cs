@@ -5,7 +5,7 @@
         /// <summary>
         /// BatchRequest constructor
         /// </summary>
-        /// <param name="serviceBaseAddress">The Service.BaseAddress value.</param>
+        /// <param name="serviceBaseAddress">Service.BaseAddress 值.</param>
         public BatchRequest(Uri serviceBaseAddress)
         {
             Method = HttpMethod.Post;
@@ -18,7 +18,7 @@
         private readonly Uri ServiceBaseAddress;
 
         /// <summary>
-        /// Sets the Prefer: odata.continue-on-error request header for the request.
+        /// 设置 the Prefer: odata.continue-on-error request header for the request.
         /// </summary>
         public bool ContinueOnError
         {
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// Sets the ChangeSets to be included in the request.
+        /// 设置 the Change设置 to be included in the request.
         /// </summary>
         public List<ChangeSet> ChangeSets
         {
@@ -73,7 +73,7 @@
         }
 
         /// <summary>
-        /// Sets any requests to be sent outside of any ChangeSet
+        /// 设置 any requests to be sent outside of any ChangeSet
         /// </summary>
         public List<HttpRequestMessage> Requests
         {
@@ -89,9 +89,9 @@
         }
 
         /// <summary>
-        /// Converts a HttpRequestMessage to HttpMessageContent
+        /// 转换 a HttpRequestMessage to HttpMessageContent
         /// </summary>
-        /// <param name="request">The HttpRequestMessage to convert.</param>
+        /// <param name="request">HttpRequestMessage to convert.</param>
         /// <returns>HttpMessageContent with the correct headers.</returns>
         private HttpMessageContent ToMessageContent(HttpRequestMessage request)
         {

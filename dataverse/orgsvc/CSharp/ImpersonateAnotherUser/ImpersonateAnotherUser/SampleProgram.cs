@@ -18,10 +18,10 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Retrieve the system user ID of the user to impersonate.
+                    // 检索the system user ID of the user to impersonate.
                     var orgContext = new OrganizationServiceContext(service);
                     _userId = (from user in orgContext.CreateQuery<SystemUser>()
                                where user.FullName == "Kevin Cook"
@@ -36,12 +36,12 @@ namespace PowerApps.Samples
                     // which attributes must be set for each entity.
                     Account account = new Account { Name = "Fourth Coffee" };
 
-                    // Create an account record named Fourth Coffee.
+                    // 创建an account record named Fourth Coffee.
                     _accountId = service.Create(account);
                     Console.Write("{0} {1} created, ", account.LogicalName, account.Name);
                     //</snippetImpersonateWithOnBehalfOfPrivilege2>
 
-                    // Retrieve the account containing several of its attributes.
+                    // 检索the account containing several of its attributes.
                     // CreatedBy should reference the impersonated SystemUser.
                     // CreatedOnBehalfBy should reference the running SystemUser.
                     ColumnSet cols = new ColumnSet(
@@ -56,10 +56,10 @@ namespace PowerApps.Samples
                             _accountId, cols);
                     Console.Write("retrieved, ");
 
-                    // Update the postal code attribute.
+                    // 更新the postal code attribute.
                     retrievedAccount.Address1_PostalCode = "98052";
 
-                    // The address 2 postal code was set accidentally, so set it to null.
+                    // address 2 postal code was set accidentally, so set it to null.
                     retrievedAccount.Address2_PostalCode = null;
 
                     // Shows use of a Money value.
@@ -68,7 +68,7 @@ namespace PowerApps.Samples
                     // Shows use of a boolean value.
                     retrievedAccount.CreditOnHold = false;
 
-                    // Update the account record.
+                    // 更新the account record.
                     service.Update(retrievedAccount);
                     Console.Write("updated, ");
                     #endregion Demonstrate

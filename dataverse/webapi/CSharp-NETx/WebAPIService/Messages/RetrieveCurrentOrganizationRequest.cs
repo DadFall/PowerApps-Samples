@@ -9,9 +9,9 @@ namespace PowerApps.Samples.Messages
     {
 
         /// <summary>
-        /// Initializes the RetrieveCurrentOrganizationRequest
+        /// 初始化 the RetrieveCurrentOrganizationRequest
         /// </summary>
-        /// <param name="AccessType">The access type of the organization’s service endpoint.</param>
+        /// <param name="AccessType">access 类型 of the organization’s service endpoint.</param>
         public RetrieveCurrentOrganizationRequest(EndpointAccessType accessType)
         {
             Method = HttpMethod.Get;

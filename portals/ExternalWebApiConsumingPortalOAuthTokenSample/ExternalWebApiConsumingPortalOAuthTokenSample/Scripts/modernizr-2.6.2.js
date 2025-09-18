@@ -42,7 +42,7 @@
  * which tests to include, go to www.modernizr.com/download/
  *
  * Authors        Faruk Ates, Paul Irish, Alex Sexton
- * Contributors   Ryan Seddon, Ben Alman
+ * Contri但是ors   Ryan Seddon, Ben Alman
  */
 
 window.Modernizr = (function( window, document, undefined ) {
@@ -121,14 +121,14 @@ window.Modernizr = (function( window, document, undefined ) {
 
       var style, ret, node, docOverflow,
           div = document.createElement('div'),
-          // After page load injecting a fake body doesn't work so check if body exists
+          // 在page load injecting a fake body doesn't work so check if body exists之后
           body = document.body,
           // IE6 and 7 won't return offsetWidth or offsetHeight unless it's in the body element, so we fake it.
           fakeBody = body || document.createElement('body');
 
       if ( parseInt(nodes, 10) ) {
           // In order not to give false positives we create a node for each test
-          // This also allows the method to scale for unspecified uses
+          // 此also allows the method to scale for unspecified uses
           while ( nodes-- ) {
               node = document.createElement('div');
               node.id = testnames ? testnames[nodes] : mod + (nodes + 1);
@@ -158,7 +158,7 @@ window.Modernizr = (function( window, document, undefined ) {
       }
 
       ret = callback(div, rule);
-      // If this is done after page load we don't want to remove the body so check if body exists
+      // 如果this is done after page load we don't want to remove the body so check if body exists
       if ( !body ) {
           fakeBody.parentNode.removeChild(fakeBody);
           docElement.style.overflow = docOverflow;
@@ -201,7 +201,7 @@ window.Modernizr = (function( window, document, undefined ) {
     // isEventSupported determines if a given element supports the given event
     // kangax.github.com/iseventsupported/
     //
-    // The following results are known incorrects:
+    // following results are known incorrects:
     //   Modernizr.hasEvent("webkitTransitionEnd", elem) // false negative
     //   Modernizr.hasEvent("textInput") // in Webkit. github.com/Modernizr/Modernizr/issues/333
     //   ...
@@ -218,11 +218,11 @@ window.Modernizr = (function( window, document, undefined ) {
         element = element || document.createElement(TAGNAMES[eventName] || 'div');
         eventName = 'on' + eventName;
 
-        // When using `setAttribute`, IE skips "unload", WebKit skips "unload" and "resize", whereas `in` "catches" those
+        // 当using `setAttribute`, IE skips "unload", WebKit skips "unload" and "resize", whereas `in` "catches" those
         var isSupported = eventName in element;
 
         if ( !isSupported ) {
-          // If it has no `setAttribute` (i.e. doesn't implement Node interface), try generic element
+          // 如果it has no `setAttribute` (i.e. doesn't implement Node interface), try generic element
           if ( !element.setAttribute ) {
             element = document.createElement('div');
           }
@@ -230,7 +230,7 @@ window.Modernizr = (function( window, document, undefined ) {
             element.setAttribute(eventName, '');
             isSupported = is(element[eventName], 'function');
 
-            // If property was created, "remove it" (by setting value to `undefined`)
+            // 如果property was created, "remove it" (by setting value to `undefined`)
             if ( !is(element[eventName], 'undefined') ) {
               element[eventName] = undefined;
             }
@@ -340,7 +340,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     // In testing support for a given CSS property, it's legit to test:
     //    `elem.style[styleName] !== undefined`
-    // If the property is supported it will return an empty string,
+    // 如果the property is supported it will return an empty string,
     // if unsupported it will return undefined.
 
     // We'll take advantage of this quick test and skip setting a style
@@ -421,14 +421,14 @@ window.Modernizr = (function( window, document, undefined ) {
      * -----
      */
 
-    // The *new* flexbox
+    // *new* flexbox
     // dev.w3.org/csswg/css3-flexbox
 
     tests['flexbox'] = function() {
       return testPropsAll('flexWrap');
     };
 
-    // The *old* flexbox
+    // *old* flexbox
     // www.w3.org/TR/2009/WD-css3-flexbox-20090723/
 
     tests['flexboxlegacy'] = function() {
@@ -458,18 +458,18 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
     /*
-     * The Modernizr.touch test only indicates if the browser supports
+ * The Modernizr.touch test only indicates if the browser supports
      *    touch events, which does not necessarily reflect a touchscreen
      *    device, as evidenced by tablets running Windows 7 or, alas,
      *    the Palm Pre / WebOS (touch) phones.
      *
      * Additionally, Chrome (desktop) used to lie about its support on this,
-     *    but that has since been rectified: crbug.com/36415
+     *    但是 that has since been rectified: crbug.com/36415
      *
      * We also test for Firefox 4 Multitouch Support.
      *
      * For more info, see: modernizr.github.com/Modernizr/touch.html
-     */
+ */
 
     tests['touch'] = function() {
         var bool;
@@ -515,7 +515,7 @@ window.Modernizr = (function( window, document, undefined ) {
     // Vendors had inconsistent prefixing with the experimental Indexed DB:
     // - Webkit's implementation is accessible through webkitIndexedDB
     // - Firefox shipped moz_indexedDB before FF4b9, but since then has been mozIndexedDB
-    // For speed, we don't test the legacy (and beta-only) indexedDB
+    // 对于speed, we don't test the legacy (and beta-only) indexedDB
     tests['indexedDB'] = function() {
       return !!testPropsAll("indexedDB", window);
     };
@@ -527,9 +527,9 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
     // Per 1.6:
-    // This used to be Modernizr.historymanagement but the longer
+    // 此used to be Modernizr.historymanagement but the longer
     // name has been deprecated in favor of a shorter and property-matching one.
-    // The old API is still available in 1.6, but as of 2.0 will throw a warning,
+    // old API is still available in 1.6, but as of 2.0 will throw a warning,
     // and in the first release thereafter disappear entirely.
     tests['history'] = function() {
       return !!(window.history && history.pushState);
@@ -551,7 +551,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     // css-tricks.com/rgba-browser-support/
     tests['rgba'] = function() {
-        // Set an rgba() color and check the returned value
+        // 设置an rgba() color and check the returned value
 
         setCss('background-color:rgba(150,255,150,.5)');
 
@@ -574,7 +574,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
         setCss('background:url(https://),url(https://),red url(https://)');
 
-        // If the UA supports multiple backgrounds, there should be three occurrences
+        // 如果the UA supports multiple backgrounds, there should be three occurrences
         //   of the string "url(" in the return value for elemStyle.background
 
         return (/(url\s*\(.*?){3}/).test(mStyle.background);
@@ -619,7 +619,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
         setCssAll('opacity:.55');
 
-        // The non-literal . in this regex is intentional:
+        // non-literal . in this regex is intentional:
         //   German Chrome returns this value as 0,55
         // github.com/Modernizr/Modernizr/issues/#issue/59/comment/516632
         return (/^0.55$/).test(mStyle.opacity);
@@ -757,7 +757,7 @@ window.Modernizr = (function( window, document, undefined ) {
                 bool      = new Boolean(bool);
                 bool.ogg  = elem.canPlayType('video/ogg; codecs="theora"')      .replace(/^no$/,'');
 
-                // Without QuickTime, this value will be `undefined`. github.com/Modernizr/Modernizr/issues/546
+                // 不使用QuickTime, this value will be `undefined`. github.com/Modernizr/Modernizr/issues/546
                 bool.h264 = elem.canPlayType('video/mp4; codecs="avc1.42E01E"') .replace(/^no$/,'');
 
                 bool.webm = elem.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/,'');
@@ -857,7 +857,7 @@ window.Modernizr = (function( window, document, undefined ) {
         return !!document.createElementNS && /SVGAnimate/.test(toString.call(document.createElementNS(ns.svg, 'animate')));
     };
 
-    // This test is only for clip paths in SVG proper, not clip paths on HTML content
+    // 此test is only for clip paths in SVG proper, not clip paths on HTML content
     // demo: srufaculty.sru.edu/david.dailey/svg/newstuff/clipPath4.svg
 
     // However read the comments to dig into applying SVG clippaths to HTML content here:
@@ -871,7 +871,7 @@ window.Modernizr = (function( window, document, undefined ) {
     // Hold this guy to execute in a moment.
     function webforms() {
         /*>>input*/
-        // Run through HTML5's new input attributes to see if the UA understands any.
+        // 运行through HTML5's new input attributes to see if the UA understands any.
         // We're using f which is the <input> element created early on
         // Mike Taylr has created a comprehensive resource for testing these attributes
         //   when applied to all input types:
@@ -895,7 +895,7 @@ window.Modernizr = (function( window, document, undefined ) {
         /*>>input*/
 
         /*>>inputtypes*/
-        // Run through HTML5's new input types to see if the UA understands any.
+        // 运行through HTML5's new input types to see if the UA understands any.
         //   This is put behind the tests runloop because it doesn't return a
         //   true/false like all the other tests; instead, it returns an object
         //   containing each input type with its corresponding true/false value
@@ -909,8 +909,8 @@ window.Modernizr = (function( window, document, undefined ) {
                 bool = inputElem.type !== 'text';
 
                 // We first check to see if the type we give it sticks..
-                // If the type does, we feed it a textual value, which shouldn't be valid.
-                // If the value doesn't stick, we know there's input sanitization which infers a custom UI
+                // 如果the type does, we feed it a textual value, which shouldn't be valid.
+                // 如果the value doesn't stick, we know there's input sanitization which infers a custom UI
                 if ( bool ) {
 
                     inputElem.value         = smile;
@@ -942,7 +942,7 @@ window.Modernizr = (function( window, document, undefined ) {
                       bool = inputElem.checkValidity && inputElem.checkValidity() === false;
 
                     } else {
-                      // If the upgraded input compontent rejects the :) text, we got a winner
+                      // 如果the upgraded input compontent rejects the :) text, we got a winner
                       bool = inputElem.value != smile;
                     }
                 }
@@ -956,12 +956,12 @@ window.Modernizr = (function( window, document, undefined ) {
     /*>>webforms*/
 
 
-    // End of test definitions
+    // 结束of test definitions
     // -----------------------
 
 
 
-    // Run through all tests and detect their support in the current UA.
+    // 运行through all tests and detect their support in the current UA.
     // todo: hypothetically we could be doing an array of tests and use a basic loop here.
     for ( var feature in tests ) {
         if ( hasOwnProp(tests, feature) ) {
@@ -1022,7 +1022,7 @@ window.Modernizr = (function( window, document, undefined ) {
      };
 
 
-    // Reset modElem.cssText to nothing to reduce memory footprint.
+    // 重置modElem.cssText to nothing to reduce memory footprint.
     setCss('');
     modElem = inputElem = null;
 
@@ -1331,7 +1331,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     /*>>mq*/
     // Modernizr.mq tests a given media query, live against the current state of the window
-    // A few important notes:
+    // 一个few important notes:
     //   * If a browser does not support media queries at all (eg. oldIE) the mq() will always return false
     //   * A max-width or orientation query will be evaluated against the current state, which may change later.
     //   * You must specify values. Eg. If you are testing support for the min-width media query use:
@@ -1377,11 +1377,11 @@ window.Modernizr = (function( window, document, undefined ) {
     // Modernizr.prefixed('boxSizing') // 'MozBoxSizing'
 
     // Properties must be passed as dom-style camelcase, rather than `box-sizing` hypentated style.
-    // Return values will also be the camelCase variant, if you need to translate that to hypenated style use:
+    // 返回values will also be the camelCase variant, if you need to translate that to hypenated style use:
     //
     //     str.replace(/([A-Z])/g, function(str,m1){ return '-' + m1.toLowerCase(); }).replace(/^ms-/,'-ms-');
 
-    // If you're trying to ascertain which transition end event to bind to, you might do something like...
+    // 如果you're trying to ascertain which transition end event to bind to, you might do something like...
     //
     //     var transEndEventNames = {
     //       'WebkitTransition' : 'webkitTransitionEnd',
@@ -1404,10 +1404,10 @@ window.Modernizr = (function( window, document, undefined ) {
 
 
     /*>>cssclasses*/
-    // Remove "no-js" class from <html> element, if it exists:
+    // 移除"no-js" class from <html> element, if it exists:
     docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2') +
 
-                            // Add the new classes to the <html> element.
+                            // 添加the new classes to the <html> element.
                             (enableClasses ? ' js ' + classes.join(' ') : '');
     /*>>cssclasses*/
 

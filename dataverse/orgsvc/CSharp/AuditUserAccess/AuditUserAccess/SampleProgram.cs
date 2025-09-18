@@ -27,7 +27,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Enable auditing on the organization and for user access by editing the
+                    // 启用auditing on the organization and for user access by editing the
                     // organization's settings.
                     // First, get the organization's ID from the system user record.
 
@@ -58,7 +58,7 @@ namespace PowerApps.Samples
                         Console.WriteLine("Auditing was enabled before the sample began, so no auditing settings were changed.");
                     }
 
-                    // Enable auditing on the account entity, since no audits will be created
+                    // 启用auditing on the account entity, since no audits will be created
                     // when we create/update an account entity, otherwise.
                     var oldAccountAuditing = EnableEntityAuditing(service, Account.EntityLogicalName, true);
 
@@ -73,7 +73,7 @@ namespace PowerApps.Samples
                     service.Update(newAccount);
                     Console.WriteLine("Created an account and made updates which should be captured by auditing.");
 
-                    // Set the organization and account auditing flags back to the old values
+                    // 设置the organization and account auditing flags back to the old values
                     if (!organizationAuditingFlag || !userAccessAuditingFlag)
                     {
                         // Only revert them if they were actually changed to begin with.
@@ -94,7 +94,7 @@ namespace PowerApps.Samples
 
                     #region Show Audited Records
 
-                    // Select all columns for convenience.
+                    // 选择all columns for convenience.
                     var query = new QueryExpression(Audit.EntityLogicalName)
                     {
                         ColumnSet = new ColumnSet(true),

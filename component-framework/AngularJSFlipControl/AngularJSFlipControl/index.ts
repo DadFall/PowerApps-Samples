@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -75,10 +75,10 @@ export class AngularJSFlipControl implements ComponentFramework.StandardControl<
 		// Assign Model the value of the bind attribute
 		this._currentValue = context.parameters.flipModel.raw;
 
-		// Initialize the True/False Label texts from the attribute metadata
+		// 初始化the True/False Label texts from the attribute metadata
 		this.initializeOptionsLabel(context);
 
-		// Create HTML structure for the control
+		// 创建HTML structure for the control
 		const appDiv: HTMLDivElement = document.createElement("div");
 		appDiv.setAttribute("id", this._appDivId);
 		appDiv.setAttribute("ng-controller", this._appId);
@@ -104,14 +104,14 @@ export class AngularJSFlipControl implements ComponentFramework.StandardControl<
 			// Watch the click of the flip button
 			// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 			$scope.$watchCollection("flipButtonModel", () => {
-				// Update the label text when Flip Button clicks
+				// 更新the label text when Flip Button clicks
 				if ($scope.flipButtonModel) {
 					$scope.labelModel = this._optionFalseLabel;
 				} else {
 					$scope.labelModel = this._optionTrueLabel;
 				}
 
-				// Call updateOutputIfNeeded and inform PCF framework that bind attribute value need update
+				// 调用updateOutputIfNeeded and inform PCF framework that bind attribute value need update
 				this.updateOutputIfNeeded(!$scope.flipButtonModel);
 			});
 		});
@@ -145,7 +145,7 @@ export class AngularJSFlipControl implements ComponentFramework.StandardControl<
 	 * @param context The "Input Properties" containing the parameters, control metadata and interface functions.
 	 */
 	private initializeOptionsLabel(context: ComponentFramework.Context<IInputs>): void {
-		// Get option label texts from metadata
+		// 获取option label texts from metadata
 		const optionsMetadata = context.parameters.flipModel.attributes?.Options;
 		optionsMetadata?.forEach((option: ComponentFramework.PropertyHelper.OptionMetadata) => {
 			if (option.Value) {
@@ -191,7 +191,7 @@ export class AngularJSFlipControl implements ComponentFramework.StandardControl<
 	 * @param context The entire property bag available to control via Context Object; It contains values as set up by the customizer mapped to names defined in the manifest, as well as utility functions
 	 */
 	public updateView(context: ComponentFramework.Context<IInputs>): void {
-		// An attribute value from Control Framework could be updated even after init cycle, clientAPI, post Save response can update the attribute value and the Flip control should reveal the new value.
+		// 一个attribute value from Control Framework could be updated even after init cycle, clientAPI, post Save response can update the attribute value and the Flip control should reveal the new value.
 		this.updateFlipButtonModelIfNeeded(context.parameters.flipModel.raw);
 	}
 

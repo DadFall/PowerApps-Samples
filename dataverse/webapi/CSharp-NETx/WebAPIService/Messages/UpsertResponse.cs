@@ -1,6 +1,6 @@
 ﻿namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
@@ -10,7 +10,7 @@
     public sealed class UpsertResponse : HttpResponseMessage
     {
         /// <summary>
-        /// A reference to the record.
+        /// 一个reference to the record.
         /// </summary>
         public EntityReference? EntityReference => new EntityReference(
                         uri: Headers.GetValues("OData-EntityId").FirstOrDefault());

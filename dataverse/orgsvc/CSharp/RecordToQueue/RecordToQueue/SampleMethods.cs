@@ -28,10 +28,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -44,10 +44,10 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Create source queue and destination queue.
-        /// Create a letter  entity.
-        /// Add letter  entity to source queue.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建source queue and destination queue.
+        /// 创建a letter  entity.
+        /// 添加letter  entity to source queue.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -78,7 +78,7 @@ namespace PowerApps.Samples
             Console.WriteLine("Created {0}", destinationQueue.Name);
 
 
-            // Create a letter  entity.
+            // 创建a letter  entity.
             Letter newLetter = new Letter
             {
                 Description = "Example Letter"
@@ -110,7 +110,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user to delete 
         /// the records created in this sample.</param>
         /// </summary>

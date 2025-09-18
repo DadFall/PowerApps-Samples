@@ -47,7 +47,7 @@ namespace PowerApps.Samples
                     account.AccountCategoryCode = new OptionSetValue((int)AccountAccountCategoryCode.PreferredCustomer);
                     account.CustomerTypeCode = new OptionSetValue((int)AccountCustomerTypeCode.Investor);
 
-                    // Create an account record named Fourth Coffee.
+                    // 创建an account record named Fourth Coffee.
                     _accountId = service.Create(account);
 
                     Console.Write("{0} {1} created, ", account.LogicalName, account.Name);

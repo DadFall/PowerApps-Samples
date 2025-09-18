@@ -1,11 +1,11 @@
-/* 
-    Portals - Implicit Grant Sample
+/*
+ Portals - Implicit Grant Sample
     
     Authorize Endpoint
 
     Description:
 		* Authorize Endpoint returns the ID token as a fragment in the Redirected URL.
-		* This sample also covers state validation supported in Implicit Grant.
+		* 此示例 also covers state validation supported in Implicit Grant.
 		* There are two parts in Authorize Endpoint Sample.
 		* Part 1: Redirect to Authorize Endpoint
 			* Save state as a cookie.
@@ -14,7 +14,7 @@
 			* Fetch the parameters in url fragment.
 			* State validation
 			* Return the token.
-*/
+ */
 
 //Part 1 - Call Authorize Endpoint to Get Token
 

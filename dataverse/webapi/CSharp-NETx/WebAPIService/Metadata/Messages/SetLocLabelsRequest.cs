@@ -10,12 +10,12 @@ namespace PowerApps.Samples.Metadata.Messages
     public sealed class SetLocLabelsRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the SetLocLabelsRequest
+        /// 初始化 the SetLocLabelsRequest
         /// </summary>
         /// <param name="entityMoniker">Reference to the item</param>
         /// <param name="attributeName">Name of the property</param>
-        /// <param name="labels">The labels to set.</param>
-        /// <param name="solutionUniqueName">The name of the solution.</param>
+        /// <param name="labels">labels to set.</param>
+        /// <param name="solutionUniqueName">名称 of the solution.</param>
         public SetLocLabelsRequest(JObject entityMoniker, string attributeName, LocalizedLabel[] labels, string? solutionUniqueName = null)
         {
             Method = HttpMethod.Post;

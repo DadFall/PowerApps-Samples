@@ -8,7 +8,7 @@
         /// <summary>
         /// Returns an HttpRequestMessage for the GetValidReferencingEntities Function
         /// </summary>
-        /// <param name="referencedEntityName">The name of the primary entity in the relationship</param>
+        /// <param name="referencedEntityName">名称 of the primary entity in the relationship</param>
         public GetValidReferencingEntitiesRequest(
             string referencedEntityName)
         {

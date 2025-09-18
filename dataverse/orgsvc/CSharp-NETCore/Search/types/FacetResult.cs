@@ -3,7 +3,7 @@
 namespace PowerApps.Samples.Search.Types;
 
 /// <summary>
-        /// A facet query result that reports the number of documents with a field
+        /// 一个facet query result that reports the number of documents with a field
 /// falling within a particular range or having a particular value or interval.
         /// </summary>
 public sealed class FacetResult

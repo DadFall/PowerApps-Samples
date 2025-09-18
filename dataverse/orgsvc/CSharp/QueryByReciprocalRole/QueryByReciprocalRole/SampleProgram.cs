@@ -23,7 +23,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // This query retrieves all connection roles that have this role
+                    // 此query retrieves all connection roles that have this role
                     // listed as a reciprocal role.
                     QueryExpression query = new QueryExpression
                     {
@@ -57,7 +57,7 @@ namespace PowerApps.Samples
 
                     EntityCollection results = service.RetrieveMultiple(query);
 
-                    // TODO: Here you would perform some operation on the retrieved
+                    // 待办： Here you would perform some operation on the retrieved
                     // roles. 
 
                     Console.WriteLine("Retrieved {0} connectionrole instance.", results.Entities.Count);

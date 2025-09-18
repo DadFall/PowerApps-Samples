@@ -28,7 +28,7 @@ namespace PowerApps.Samples
                     Console.Write("Press [1] to Install, [2] to Uninstall: ");
                     String answer = Console.ReadLine();
 
-                    // Update the sample data based on the user's response.
+                    // 更新the sample data based on the user's response.
                     switch (answer)
                     {
                         case "1":

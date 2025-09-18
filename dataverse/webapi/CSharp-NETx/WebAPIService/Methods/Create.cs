@@ -6,12 +6,12 @@ namespace PowerApps.Samples.Methods
     public static partial class Extensions
     {
         /// <summary>
-        /// Creates a record
+        /// 创建 a record
         /// </summary>
-        /// <param name="service">The Service</param>
-        /// <param name="entitySetName">The EntitySetName for the table</param>
-        /// <param name="record">Contains the data to create the record.</param>
-        /// <returns>A reference to the created record.</returns>
+        /// <param name="service">Service</param>
+        /// <param name="entitySetName">EntitySetName for the table</param>
+        /// <param name="record">Contains the 数据 to create the record.</param>
+        /// <returns>一个reference to the created record.</returns>
         public static async Task<EntityReference> Create(
             this Service service, 
             string entitySetName, 

@@ -14,7 +14,7 @@ namespace PowerApps.Samples
             // Files used in this sample
             FileInfo wordDoc = new("Files/WordDoc.docx");
             FileInfo excelDoc = new("Files/ExcelDoc.xlsx");
-            FileInfo pdfDoc = new("Files/25mb.pdf");// A large file over default size
+            FileInfo pdfDoc = new("Files/25mb.pdf");// 一个large file over default size
 
             List<FileInfo> smallFiles = new() { wordDoc, excelDoc };
             List<FileInfo> allFiles = new() { wordDoc, excelDoc, pdfDoc };
@@ -23,7 +23,7 @@ namespace PowerApps.Samples
 
             // 获取the configuration data from the app
             Config config = App.InitializeApp();
-            // Create a WebAPIService service client using the configuration data
+            // 创建a WebAPIService service client using the configuration data
             var service = new Service(config);
 
             // 获取current MaxUploadFileSize
@@ -34,7 +34,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine("Start: Create single-use attachments");
 
-            // Create email activity
+            // 创建email activity
             JObject email = new() {
                 {"subject", "This is an example email." }
             };
@@ -57,7 +57,7 @@ namespace PowerApps.Samples
                         { "mimetype", Utility.GetMimeType(smallFile)}
                 };
 
-                // Create synchronously while in loop.
+                // 创建synchronously while in loop.
                 service.Create(
                     entitySetName: "activitymimeattachments",
                     record: attachment).GetAwaiter().GetResult();
@@ -65,7 +65,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine("Created two e-mail attachments with small files for the e-mail activity.");
 
-            // Set MaxUploadFileSize to the maximum value
+            // 设置MaxUploadFileSize to the maximum value
             await Utility.SetMaxUploadFileSize(service, 131072000);
 
             Console.WriteLine($"Updated MaxUploadFileSize to: {await Utility.GetMaxUploadFileSize(service)}");
@@ -91,7 +91,7 @@ namespace PowerApps.Samples
             Console.WriteLine($"\tUploaded {pdfDoc.Name} as attachment. " +
                 $"\n\t\tActivityMimeAttachmentId:{uploadAttachmentResponse.ActivityMimeAttachmentId} \n\t\tFileSizeInBytes: {uploadAttachmentResponse.FileSizeInBytes}");
 
-            // Retrieve information about the attachments related to the email
+            // 检索information about the attachments related to the email
             // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/retrieve-entity-using-web-api#retrieve-navigation-property-values
             RetrieveMultipleResponse relatedAttachmentsResponse = await service.RetrieveMultiple(
                 queryUri: $"{emailRef.Path}/activity_pointer_activity_mime_attachment?$select=filename");
@@ -135,7 +135,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine("\nStart: Create re-usable attachments");
 
-            // Create an email template to add the re-usable attachments to.
+            // 创建an email template to add the re-usable attachments to.
             // ActivityMimeAttachment ObjectId and ObjectTypeCode are SystemRequired.
 
             JObject template = new() {
@@ -178,7 +178,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine("Created an email template.");
 
-            // Add all files (large and small) as attachments to the template in the same way.
+            // 添加all files (large and small) as attachments to the template in the same way.
             allFiles.ForEach(file => {
 
                 JObject attachment = new() {
@@ -207,7 +207,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine("Added all files as attachment to email template.");
 
-            // Create new email to re-use attachments from Template
+            // 创建new email to re-use attachments from Template
             JObject email2 = new()
             {
                 {"subject", "This is an example email with re-used attachments." }
@@ -242,7 +242,7 @@ namespace PowerApps.Samples
             await service.Delete(email2Ref);
             Console.WriteLine($"Deleted the second email.");
 
-            // Verify the re-used attachments still exist
+            // 验证the re-used attachments still exist
             foreach ((string FileName, EntityReference ActivityMimeAttachmentRef) in reusableAttachments) {
 
                 JObject attachment = await service.Retrieve(ActivityMimeAttachmentRef, "?$select=filename");
@@ -262,19 +262,19 @@ namespace PowerApps.Samples
 
             #endregion Create re-usable attachments
 
-            // Return MaxUploadFileSize to the original value
+            // 返回MaxUploadFileSize to the original value
             await Utility.SetMaxUploadFileSize(service, originalMaxUploadFileSize);
 
             Console.WriteLine($"Current MaxUploadFileSize: {await Utility.GetMaxUploadFileSize(service)}");
         }
 
         /// <summary>
-        /// Creates an activitymimeattachment with file.
+        /// 创建 an activitymimeattachment with file.
         /// </summary>
-        /// <param name="service">The WebAPIService instance to use.</param>
-        /// <param name="attachment">The activitymimeattachment data to create.</param>
-        /// <param name="fileInfo">A reference to the file to upload.</param>
-        /// <param name="fileMimeType">The mimetype of the file.</param>
+        /// <param name="service">WebAPIService 实例 to use.</param>
+        /// <param name="attachment">activitymimeattachment 数据 to create.</param>
+        /// <param name="fileInfo">一个reference to the file to upload.</param>
+        /// <param name="fileMimeType">mime类型 of the file.</param>
         /// <returns>CommitAttachmentBlocksUploadResponse containing ActivityMimeAttachmentId and FileSizeInBytes.</returns>
         static async Task<CommitAttachmentBlocksUploadResponse> UploadAttachment(
         Service service,
@@ -293,7 +293,7 @@ namespace PowerApps.Samples
                 attachment.Remove("body");
             }
 
-            // Try to get the mimetype if not provided.
+            // 尝试to get the mimetype if not provided.
             if (string.IsNullOrEmpty(fileMimeType))
             {
                 var provider = new FileExtensionContentTypeProvider();
@@ -309,7 +309,7 @@ namespace PowerApps.Samples
                 attachment.Add("mimetype", fileMimeType);
             }
 
-            // Initialize the upload
+            // 初始化the upload
             InitializeAttachmentBlocksUploadRequest initializeRequest = new(
                 target: attachment);
 
@@ -332,14 +332,14 @@ namespace PowerApps.Samples
 
             long fileSize = fileInfo.Length;
 
-            // The number of iterations that will be required:
+            // number of iterations that will be required:
             // int blocksCount = (int)Math.Ceiling(fileSize / (float)blockSize);
             int blockNumber = 0;
 
             // While there is unread data from the file
             while ((bytesRead = uploadFileStream.Read(buffer, 0, buffer.Length)) > 0)
             {
-                // The file or final block may be smaller than 4MB
+                // file or final block may be smaller than 4MB
                 if (bytesRead < buffer.Length)
                 {
                     Array.Resize(ref buffer, bytesRead);
@@ -377,10 +377,10 @@ namespace PowerApps.Samples
         /// <summary>
         /// Downloads the file for an activitymimeattachment.
         /// </summary>
-        /// <param name="service">The WebAPIService instance to use.</param>
-        /// <param name="target">A reference to the activitymimeattachment containing the file.</param>
+        /// <param name="service">WebAPIService 实例 to use.</param>
+        /// <param name="target">一个reference to the activitymimeattachment containing the file.</param>
         /// <returns>Tuple of bytes and fileName</returns>
-        /// <exception cref="ArgumentException">The target parameter must refer to an activitymimeattachment record.</exception>
+        /// <exception cref="ArgumentException">The target 参数 must refer to an activitymimeattachment record.</exception>
         static async Task<(byte[] bytes, string fileName)> DownloadAttachment(
             Service service,
             EntityReference target)
@@ -423,7 +423,7 @@ namespace PowerApps.Samples
                 var downloadBlockResponse =
                            await service.SendAsync<DownloadBlockResponse>(downLoadBlockRequest);
 
-                // Add the block returned to the list
+                // 添加the block returned to the list
                 fileBytes.AddRange(downloadBlockResponse.Data);
 
                 // Subtract the amount downloaded,

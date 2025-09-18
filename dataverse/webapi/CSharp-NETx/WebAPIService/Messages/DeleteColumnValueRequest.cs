@@ -6,10 +6,10 @@
     public sealed class DeleteColumnValueRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes a DeleteColumnValueRequest
+        /// 初始化 a DeleteColumnValueRequest
         /// </summary>
-        /// <param name="entityReference">A reference to a record that has the property</param>
-        /// <param name="propertyName">The name of the property with the value to delete.</param>
+        /// <param name="entityReference">一个reference to a record that has the property</param>
+        /// <param name="propertyName">名称 of the property with the 值 to delete.</param>
         public DeleteColumnValueRequest(EntityReference entityReference, string propertyName)
         {
             Method = HttpMethod.Delete;

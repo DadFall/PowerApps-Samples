@@ -20,10 +20,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -36,7 +36,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
@@ -57,7 +57,7 @@ namespace PowerApps.Samples
 
             var requestWithNoResults = new ExecuteMultipleRequest()
             {
-                // Set the execution behavior to not continue after the first error is received
+                // 设置the execution behavior to not continue after the first error is received
                 // and to not return responses.
                 Settings = new ExecuteMultipleSettings()
                 {
@@ -67,7 +67,7 @@ namespace PowerApps.Samples
                 Requests = new OrganizationRequestCollection()
             };
 
-            // Update the entities that were previously created.
+            // 更新the entities that were previously created.
             EntityCollection delete = GetCollectionOfEntitiesToDelete();
 
             foreach (var entity in delete.Entities)
@@ -96,11 +96,11 @@ namespace PowerApps.Samples
             }
         }
         /// <summary>
-        /// Create a collection of entity objects for updating. Give these entities a new
+        /// 创建a collection of entity objects for updating. Give these entities a new
         /// name for the update. However, use a bad (empty) GUID in some entities to demonstrate
         /// returning errors in ExecuteMultipleResponse.
         /// </summary>
-        /// <returns>An entity collection.</returns>
+        /// <returns>一个entity collection.</returns>
         private static EntityCollection GetCollectionOfEntitiesToUpdateWithErrors()
         {
             EntityCollection collection = new EntityCollection()
@@ -135,10 +135,10 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Create a collection of entity objects for updating. Give these entities a new
+        /// 创建a collection of entity objects for updating. Give these entities a new
         /// name for the update.
         /// </summary>
-        /// <returns>An entity collection.</returns>
+        /// <returns>一个entity collection.</returns>
         private static EntityCollection GetCollectionOfEntitiesToUpdate()
         {
             EntityCollection collection = new EntityCollection()
@@ -160,9 +160,9 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Create a collection of new entity objects.
+        /// 创建a collection of new entity objects.
         /// </summary>
-        /// <returns>A collection of entity objects.</returns>
+        /// <returns>一个collection of entity objects.</returns>
         private static EntityCollection GetCollectionOfEntitiesToCreate()
         {
             return new EntityCollection()
@@ -179,9 +179,9 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Delete a collection of entity objects.
+        /// 删除a collection of entity objects.
         /// </summary>
-        /// <returns>A collection of entity objects</returns>
+        /// <returns>一个collection of entity objects</returns>
         private static EntityCollection GetCollectionOfEntitiesToDelete()
         {
             EntityCollection collection = new EntityCollection()
@@ -204,8 +204,8 @@ namespace PowerApps.Samples
         /// <summary>
         /// Display the response of an organization message request.
         /// </summary>
-        /// <param name="organizationRequest">The organization message request.</param>
-        /// <param name="organizationResponse">The organization message response.</param>
+        /// <param name="organizationRequest">organization message 请求.</param>
+        /// <param name="organizationResponse">organization message 响应.</param>
         private static void DisplayResponse(OrganizationRequest organizationRequest, OrganizationResponse organizationResponse)
         {
             Console.WriteLine("Created " + ((Account)organizationRequest.Parameters["Target"]).Name
@@ -216,9 +216,9 @@ namespace PowerApps.Samples
         /// <summary>
         /// Display the fault that resulted from processing an organization message request.
         /// </summary>
-        /// <param name="organizationRequest">The organization message request.</param>
-        /// <param name="count">nth request number from ExecuteMultiple request</param>
-        /// <param name="organizationServiceFault">A WCF fault.</param>
+        /// <param name="organizationRequest">organization message 请求.</param>
+        /// <param name="count">nth 请求 number from ExecuteMultiple 请求</param>
+        /// <param name="organizationServiceFault">一个WCF fault.</param>
         private static void DisplayFault(OrganizationRequest organizationRequest, int count,
             OrganizationServiceFault organizationServiceFault)
         {

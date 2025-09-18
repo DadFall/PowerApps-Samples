@@ -10,15 +10,15 @@ namespace PowerApps.Samples
 {
     public partial class SampleProgram
     {
-        // Create storage for new attributes being created
+        // 创建storage for new attributes being created
         public static List<AttributeMetadata> addedAttributes;
 
         // Specify which language code to use in the sample. If you are using a language
         // other than US English, you will need to modify this value accordingly.
-        // See https://learn.microsoft.com/previous-versions/windows/embedded/ms912047(v=winembedded.10)
+        // 参见 https://learn.microsoft.com/previous-versions/windows/embedded/ms912047(v=winembedded.10)
         public const int _languageCode = 1033;
 
-        // Define the IDs/variables needed for this sample.
+        // 定义IDs/variables needed for this sample.
         public int _insertedStatusValue;
         private static bool prompt = true;
         /// <summary>
@@ -28,10 +28,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -44,8 +44,8 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -56,7 +56,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

@@ -14,7 +14,7 @@ namespace PowerApps.Samples
         /// Checks whether the current environment will support this sample.
         /// </summary>
         /// <param name="service">服务 to use to check the version. </param>
-        /// <param name="minVersion">The minimum version.</param>
+        /// <param name="minVersion">minimum version.</param>
         /// <returns>true when the version is higher than the minimum verions, otherwise false.</returns>
         public static bool CheckVersion(CrmServiceClient service, Version minVersion)
         {
@@ -34,9 +34,9 @@ namespace PowerApps.Samples
         /// Imports a solution if it is not already installed.
         /// </summary>
         /// <param name="service">服务 to use to import the solution. </param>
-        /// <param name="uniqueName">The unique name of the solution to install.</param>
-        /// <param name="pathToFile">The path to the solution file.</param>
-        /// <returns>true if the solution was installed, otherwise false.</returns>
+        /// <param name="uniqueName">unique 名称 of the solution to install.</param>
+        /// <param name="pathToFile">path to the solution file.</param>
+        /// <returns>如果为真则返回 true the solution was installed, otherwise false.</returns>
         public static bool ImportSolution(CrmServiceClient service, string uniqueName, string pathToFile)
         {
 
@@ -61,10 +61,10 @@ namespace PowerApps.Samples
             }
         }
         /// <summary>
-        /// Prompts user to delete solution. Deletes solution if they choose.
+        /// Prompts user to delete solution. 删除 solution if they choose.
         /// </summary>
         /// <param name="service">服务 to use to delete the solution. </param>
-        /// <param name="uniqueName">The unique name of the solution to delete.</param>
+        /// <param name="uniqueName">unique 名称 of the solution to delete.</param>
         /// <returns>true when the solution was deleted, otherwise false.</returns>
         public static bool DeleteSolution(CrmServiceClient service, string uniqueName)
         {
@@ -104,9 +104,9 @@ namespace PowerApps.Samples
             return false;
         }
         /// <summary>
-        /// A function to manage exceptions thrown by console application samples
+        /// 一个function to manage exceptions thrown by console application samples
         /// </summary>
-        /// <param name="exceptionFromSample">The exception thrown</param>
+        /// <param name="exceptionFromSample">exception thrown</param>
         public static void HandleException(Exception exceptionFromSample) {
             Console.WriteLine("The application terminated with an error.");
 
@@ -153,10 +153,10 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Gets a named connection string from App.config
+        /// 获取 a named connection string from App.config
         /// </summary>
-        /// <param name="name">The name of the connection string to return</param>
-        /// <returns>The named connection string</returns>
+        /// <param name="name">名称 of the connection 字符串 to return</param>
+        /// <returns>named connection string</returns>
         private static string GetConnectionStringFromAppConfig(string name)
         {
             //Verify cds/App.config contains a valid connection string with the name.
@@ -184,7 +184,7 @@ namespace PowerApps.Samples
                 // Show the dialog here. 
                 loginFrm.ShowDialog();
 
-                // If the login process completed, assign the connected service to the CRMServiceClient var 
+                // 如果the login process completed, assign the connected service to the CRMServiceClient var 
                 if (loginFrm.CrmConnectionMgr != null && loginFrm.CrmConnectionMgr.CrmSvc != null && loginFrm.CrmConnectionMgr.CrmSvc.IsReady)
                     service = loginFrm.CrmConnectionMgr.CrmSvc;
                     
@@ -192,7 +192,7 @@ namespace PowerApps.Samples
             }
             else
             {
-                // Try to create via connection string. 
+                // 尝试to create via connection string. 
                 service = new CrmServiceClient(GetConnectionStringFromAppConfig("Connect"));
                 
             }
@@ -202,7 +202,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Handle closing the dialog when completed. 
+        /// 处理closing the dialog when completed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

@@ -7,8 +7,8 @@ using System.Collections.Generic;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// This sample has been updated work with Power Platform (online only).
-    /// </summary>
+        /// 此sample has been updated work with Power Platform (online only).
+        /// </summary>
     public partial class SampleProgram
     {
         //These sample application registration values are available for all online instances.

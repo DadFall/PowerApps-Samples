@@ -8,13 +8,13 @@ using System.Activities;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Activity will return the next upcoming birthday that has just passed
+        /// Activity will return the next upcoming birthday that has just passed
     /// 
-    /// If this year's birthday has not yet occurred, it will return this year's birthday
+    /// 如果this year's birthday has not yet occurred, it will return this year's birthday
     /// Otherwise, it will return the birthday for next year
     /// 
-    /// A workflow can timeout when on this date
-    /// </summary>
+    /// 一个workflow can timeout when on this date
+        /// </summary>
     [Persist]
     public sealed class UpdateNextBirthday : CodeActivity
     {
@@ -65,7 +65,7 @@ namespace PowerApps.Samples
             service.Update(updateEntity);
         }
 
-        //Define the properties
+        //定义
         [RequiredArgument]
         [Input("Update Next Birthdate for")]
         [ReferenceTarget("contact")]

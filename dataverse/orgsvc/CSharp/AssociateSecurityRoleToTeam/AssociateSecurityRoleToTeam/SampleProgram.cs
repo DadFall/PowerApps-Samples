@@ -20,10 +20,10 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Retrieve a role from CRM.
+                    // 检索a role from CRM.
                     var query = new QueryExpression
                     {
                         EntityName = Role.EntityLogicalName,
@@ -48,7 +48,7 @@ namespace PowerApps.Samples
                         Cast<Role>().First();
 
 
-                    // Add the role to the team.
+                    // 添加the role to the team.
                     service.Associate(
                            Team.EntityLogicalName,
                            _teamId,

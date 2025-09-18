@@ -12,7 +12,7 @@ namespace MetaViz
 
     internal class HttpDownloadClient
     {
-        // The URL to the CDS environment you want to connect with
+        // URL to the CDS environment you want to connect with
         // i.e. https://yourOrg.crm.dynamics.com/
         private string baseUrl;
 

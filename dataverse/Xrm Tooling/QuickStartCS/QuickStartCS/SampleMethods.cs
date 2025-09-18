@@ -19,10 +19,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -65,10 +65,10 @@ namespace PowerApps.Samples
         /// <returns>一个string containing web service connection configuration information.</returns>
         private static String GetServiceConfiguration()
         {
-            // Get available connection strings from app.config.
+            // 获取available connection strings from app.config.
             int count = ConfigurationManager.ConnectionStrings.Count;
 
-            // Create a filter list of connection strings so that we have a list of valid
+            // 创建a filter list of connection strings so that we have a list of valid
             // connection strings for Microsoft Dynamics CRM only.
             List<KeyValuePair<String, String>> filteredConnectionStrings =
                 new List<KeyValuePair<String, String>>();
@@ -82,7 +82,7 @@ namespace PowerApps.Samples
                             ConfigurationManager.ConnectionStrings[a].ConnectionString));
             }
 
-            // No valid connections strings found. Write out and error message.
+            // 没有valid connections strings found. Write out and error message.
             if (filteredConnectionStrings.Count == 0)
             {
                 Console.WriteLine("An app.config file containing at least one valid Microsoft Dynamics CRM " +

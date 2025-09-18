@@ -14,10 +14,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             CreateRequiredRecords(service);
@@ -28,11 +28,11 @@ namespace PowerApps.Samples
             DeleteRequiredRecords(service, prompt);
         }
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create an account.
+            // 创建an account.
             Account account = new Account
             {
                 Name = "Fourth Coffee",
@@ -40,7 +40,7 @@ namespace PowerApps.Samples
             _accountId = service.Create(account);
             Console.WriteLine("Created a sample account: {0}.", account.Name);
 
-            // Define the body and subject of the email template in XML format.
+            // 定义body and subject of the email template in XML format.
             string bodyXml =
                "<?xml version=\"1.0\" ?>"
                + "<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">"
@@ -63,7 +63,7 @@ namespace PowerApps.Samples
             string subjectPresentationXml =
                "<template><text><![CDATA[New account notification]]></text></template>";
 
-            // Create an e-mail template.
+            // 创建an e-mail template.
             Template template = new Template
             {
                 Title = "Sample E-mail Template for Account",
@@ -72,7 +72,7 @@ namespace PowerApps.Samples
                 PresentationXml = presentationXml,
                 SubjectPresentationXml = subjectPresentationXml,
                 TemplateTypeCode = Account.EntityLogicalName,
-                LanguageCode = 1033, // For US English.
+                LanguageCode = 1033, // 对于US English.
                 IsPersonal = false
             };
 
@@ -82,7 +82,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
@@ -109,7 +109,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete all records created in this sample.
+                // 删除all records created in this sample.
                 service.Delete(Template.EntityLogicalName, _templateId);
                 service.Delete(Account.EntityLogicalName, _accountId); ;
 

@@ -14,18 +14,18 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
 
-                    // Create a queue instance and set its property values.
+                    // 创建a queue instance and set its property values.
                     var newQueue = new Queue()
                     {
                         Name = "Example Queue.",
                         Description = "This is an example queue."
                     };
 
-                    // Create a new queue instance.
+                    // 创建a new queue instance.
                     _queueId = service.Create(newQueue);
 
                     Console.WriteLine("Created {0}.", newQueue.Name);

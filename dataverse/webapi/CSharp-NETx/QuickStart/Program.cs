@@ -22,7 +22,7 @@ namespace PowerApps.Samples
             var clientId = "51f81489-12ee-4a9e-aaae-a2591f45987d";
             var redirectUri = "http://localhost"; // Loopback for the interactive login.
 
-            // For your custom apps, you will need to register them with Azure AD yourself.
+            // 对于your custom apps, you will need to register them with Azure AD yourself.
             // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/walkthrough-register-app-azure-active-directory
 
             #region Authentication
@@ -59,14 +59,14 @@ namespace PowerApps.Samples
 
             #region Web API call
 
-            // Invoke the Web API 'WhoAmI' unbound function.
+            // 调用the Web API 'WhoAmI' unbound function.
             // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors
             // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/use-web-api-functions#unbound-functions
             var response = await client.GetAsync("WhoAmI");
 
             if (response.IsSuccessStatusCode)
             {
-                // Parse the JSON formatted service response (WhoAmIResponse) to obtain the user ID value.
+                // 解析the JSON formatted service response (WhoAmIResponse) to obtain the user ID value.
                 // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/whoamiresponse
                 Guid userId = new();
 
@@ -96,7 +96,7 @@ namespace PowerApps.Samples
     }
 
     /// <summary>
-        /// WhoAmIResponse class definition 
+        /// WhoAmIResponse class definition
         /// </summary>
     /// <remarks>To be used for JSON deserialization.</remarks>
     /// <see cref="https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/whoamiresponse"/>

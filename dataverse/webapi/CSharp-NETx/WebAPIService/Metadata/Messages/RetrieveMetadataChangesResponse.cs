@@ -4,7 +4,7 @@ using PowerApps.Samples.Metadata.Types;
 
 namespace PowerApps.Samples.Metadata.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
@@ -13,7 +13,7 @@ namespace PowerApps.Samples.Metadata.Messages
         /// </summary>
     public sealed class RetrieveMetadataChangesResponse : HttpResponseMessage
     {
-        // Cache the async content
+        // 缓存the async content
         private string? _content;
 
         //Provides JObject for property getters

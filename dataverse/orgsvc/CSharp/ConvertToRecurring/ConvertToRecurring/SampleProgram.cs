@@ -24,7 +24,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Specify the recurrence information that needs to be added to the
+                    // 指定recurrence information that needs to be added to the
                     // existing appointment.
                     // 1.  Define an anonymous type to define the possible recurrence pattern values.
                     var RecurrencePatternTypes = new
@@ -88,7 +88,7 @@ namespace PowerApps.Samples
                     AddRecurrenceResponse recurringInfoResponse = (AddRecurrenceResponse)service.Execute(recurringInfoRequest);
                     __recurringAppointmentMasterId = recurringInfoResponse.id;
 
-                    // Verify that the newly created recurring appointment master has same 'subject' 
+                    // 验证that the newly created recurring appointment master has same 'subject' 
                     // as the existing appointment.
 
                     RecurringAppointmentMaster retrievedMasterAppointment = (RecurringAppointmentMaster)service.Retrieve(RecurringAppointmentMaster.EntityLogicalName, __recurringAppointmentMasterId, new ColumnSet(true));

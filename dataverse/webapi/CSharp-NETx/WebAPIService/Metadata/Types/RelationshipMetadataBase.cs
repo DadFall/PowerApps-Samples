@@ -7,7 +7,7 @@ namespace PowerApps.Samples.Metadata.Types
     public class RelationshipMetadataBase : MetadataBase
     {
         /// <summary>
-        /// A string identifying the solution version that the solution component was added in.
+        /// 一个string identifying the solution version that the solution component was added in.
         /// </summary>
         public string IntroducedVersion { get; set; }
 
@@ -32,17 +32,17 @@ namespace PowerApps.Samples.Metadata.Types
         public bool IsValidForAdvancedFind { get; set; }
 
         /// <summary>
-        /// The type of relationship.
+        /// type of relationship.
         /// </summary>
         public RelationshipType RelationshipType { get; set; }
 
         /// <summary>
-        /// The schema name for the entity relationship.
+        /// schema name for the entity relationship.
         /// </summary>
         public string SchemaName { get; set; }
 
         /// <summary>
-        /// The security type for the relationship.
+        /// security type for the relationship.
         /// </summary>
         public SecurityTypes SecurityTypes { get; set; }
     }

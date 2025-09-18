@@ -10,10 +10,10 @@ namespace PowerApps.Samples.Messages
         /// <summary>
         /// Intializes the CreateRequest
         /// </summary>
-        /// <param name="entitySetName">The name of the entity set.</param>
-        /// <param name="record">Contains the data for the record to create.</param>
+        /// <param name="entitySetName">名称 of the entity set.</param>
+        /// <param name="record">Contains the 数据 for the record to create.</param>
         /// <param name="preventDuplicateRecord">Whether to throw an error when a duplicate record is detected.</param>
-        /// <param name="partitionId">The partition key to use.</param>
+        /// <param name="partitionId">partition key to use.</param>
         public CreateRequest(string entitySetName, JObject record, bool preventDuplicateRecord = false, string? partitionId = null)
         {
             string path;
@@ -37,7 +37,7 @@ namespace PowerApps.Samples.Messages
                     mediaType: "application/json");
             if (preventDuplicateRecord)
             {
-                //If duplicate detection enabled for table only
+                //如果duplicate detection enabled for table only
                 Headers.Add("MSCRM.SuppressDuplicateDetection", "false");
             }
         }

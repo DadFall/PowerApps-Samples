@@ -17,10 +17,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -33,16 +33,16 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.        
+        /// 此method creates any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // No entity records are created for this sample.
+            // 没有entity records are created for this sample.
         }
 
         public static void DeleteRequiredRecords(CrmServiceClient service, bool prompt)
         {
-            // No entity records are deleted for this sample.
+            // 没有entity records are deleted for this sample.
         }
     }
 }

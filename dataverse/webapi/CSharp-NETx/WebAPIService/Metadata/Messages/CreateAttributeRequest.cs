@@ -10,11 +10,11 @@ namespace PowerApps.Samples.Metadata.Messages
     public sealed class CreateAttributeRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the CreateAttributeRequest
+        /// 初始化 the CreateAttributeRequest
         /// </summary>
-        /// <param name="entityLogicalName">The logical name of the table that will contain the column</param>
-        /// <param name="attributeMetadata">The data defining the column</param>
-        /// <param name="solutionUniqueName">The name of the solution to add the column to.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table that will contain the column</param>
+        /// <param name="attributeMetadata">数据 defining the column</param>
+        /// <param name="solutionUniqueName">名称 of the solution to add the column to.</param>
         public CreateAttributeRequest(
             string entityLogicalName, 
             AttributeMetadata attributeMetadata, 

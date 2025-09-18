@@ -9,12 +9,12 @@ namespace PowerApps.Samples.Messages
     {
 
         /// <summary>
-        /// Initializes a CreateRetrieveRequest
+        /// 初始化 a CreateRetrieveRequest
         /// </summary>
-        /// <param name="entitySetName">The name of the entity set</param>
-        /// <param name="record">The record to create.</param>
-        /// <param name="query">The query for data to return.</param>
-        /// <param name="includeAnnotations">Whether the results should include annotations</param>
+        /// <param name="entitySetName">名称 of the entity set</param>
+        /// <param name="record">record to create.</param>
+        /// <param name="query">query for 数据 to return.</param>
+        /// <param name="includeAnnotations">Whether the 结果s should include annotations</param>
         public CreateRetrieveRequest(string entitySetName, JObject record, string? query, bool includeAnnotations = false)
         {
             Method = HttpMethod.Post;

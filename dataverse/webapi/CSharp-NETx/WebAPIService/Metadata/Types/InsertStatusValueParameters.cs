@@ -12,12 +12,12 @@ namespace PowerApps.Samples.Metadata.Types
         [JsonProperty("OptionSetName", NullValueHandling = NullValueHandling.Ignore)]
         public string? OptionSetName { get; set; }
         /// <summary>
-        /// The logical name of the status attribute.
+        /// logical name of the status attribute.
         /// </summary>
         [JsonProperty("AttributeLogicalName", NullValueHandling = NullValueHandling.Ignore)]
         public string? AttributeLogicalName { get; set; }
         /// <summary>
-        /// The logical name of the status attribute.
+        /// logical name of the status attribute.
         /// </summary>
         [JsonProperty("EntityLogicalName", NullValueHandling = NullValueHandling.Ignore)]
         public string? EntityLogicalName { get; set; }
@@ -42,7 +42,7 @@ namespace PowerApps.Samples.Metadata.Types
         [JsonProperty("StateCode", NullValueHandling = NullValueHandling.Ignore)]
         public int StateCode { get; set; }
         /// <summary>
-        /// The name of the unmanaged solution that this status options should be associated with.
+        /// name of the unmanaged solution that this status options should be associated with.
         /// </summary>
         [JsonProperty("SolutionUniqueName", NullValueHandling = NullValueHandling.Ignore)]
         public string? SolutionUniqueName { get; set; }

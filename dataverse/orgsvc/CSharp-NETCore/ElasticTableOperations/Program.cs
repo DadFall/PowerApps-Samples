@@ -20,12 +20,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
@@ -44,7 +44,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"));
 
@@ -165,7 +165,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 Console.WriteLine($"\tcontoso_energyconsumption {retrievedRecord.GetAttributeValue<string>("contoso_energyconsumption")}\n");
 
 
-                // Delete sensordata record
+                // 删除sensordata record
                 DeleteRequest deleteRequest = new()
                 {
                     Target = new EntityReference("contoso_sensordata", sensordataId)
@@ -183,8 +183,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                 // using deviceId as the partitionid for these samples.
                 string deviceId = "Device-ABC-1234";
-                Guid record1Id; //The first record created
-                Guid record2Id; //The second record created
+                Guid record1Id; //first record created
+                Guid record2Id; //second record created
 
                 Console.WriteLine("Creating record...");
                 record1Id = CreateRecord(serviceClient, deviceId, ref sessionToken);
@@ -216,7 +216,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 DeleteRecord(serviceClient, record1Id, deviceId, ref sessionToken);
                 Console.WriteLine($"\tRecord deleted.");
 
-                // Create another record to demonstrate delete with alternate key
+                // 创建another record to demonstrate delete with alternate key
                 record2Id = CreateRecord(serviceClient, deviceId, ref sessionToken);
 
                 Console.WriteLine($"Deleting record with alternate key...");
@@ -262,7 +262,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 query.Append("from c where c.props.contoso_sensortype='Humidity' ");
                 query.Append("and c.props.contoso_energyconsumption.power > 50");
 
-                int pageSize = 100; //The number of results to return per page
+                int pageSize = 100; //number of results to return per page
 
                 Console.WriteLine($"Requesting ExecuteCosmosSqlQuery.. \n");
 
@@ -277,7 +277,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                 Console.WriteLine($"Output first page of {pageSize} results:\n");
 
-                // All the results will be added to this
+                // 所有the results will be added to this
                 JArray results = JArray.Parse(json: response.Result);
 
                 Console.WriteLine($"Returned initial {results.Count} results from ExecuteCosmosSqlQuery:");
@@ -822,7 +822,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             IOrganizationService service,
             List<Entity> entities)
         {
-            // Create an EntityCollection populated with the list of entities.
+            // 创建an EntityCollection populated with the list of entities.
             EntityCollection entityCollection = new(entities)
             {
                 EntityName = "contoso_sensordata"
@@ -870,7 +870,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             // ExecuteCosmosSqlQuery returns an Entity
             Entity resultEntity = (Entity)response.Results["Result"];
 
-            // Get the known properties of the entity returned
+            // 获取the known properties of the entity returned
             resultEntity.TryGetAttributeValue("PagingCookie", out pagingCookie);
             resultEntity.TryGetAttributeValue("HasMore", out bool hasMore);
             resultEntity.TryGetAttributeValue("Result", out string result);

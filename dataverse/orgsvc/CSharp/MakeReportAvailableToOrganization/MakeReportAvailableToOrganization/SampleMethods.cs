@@ -10,7 +10,7 @@ namespace PowerApps.Samples
 {
     public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         private static Guid _reportId;
         private static bool prompt = true;
         /// <summary>
@@ -20,10 +20,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -36,8 +36,8 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -50,7 +50,7 @@ namespace PowerApps.Samples
                 LinkedReport = 3
             };
 
-            // Create a report 
+            // 创建a report 
             var newReport = new Report
             {
                 Name = "Sample Report",
@@ -68,7 +68,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>
@@ -86,7 +86,7 @@ namespace PowerApps.Samples
 
             if (deleteRecords)
             {
-                // Delete all records created in this sample.
+                // 删除all records created in this sample.
                 service.Delete(Report.EntityLogicalName, _reportId);
                 Console.WriteLine("Entity record(s) have been deleted.");  
             }

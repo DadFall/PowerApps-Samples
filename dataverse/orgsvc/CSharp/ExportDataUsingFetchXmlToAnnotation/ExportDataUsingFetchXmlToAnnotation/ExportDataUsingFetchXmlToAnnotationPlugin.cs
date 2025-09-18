@@ -47,11 +47,11 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Retrieves a list or records defined by a FetchXml query
+        /// 检索 a list or records defined by a FetchXml query
         /// </summary>
-        /// <param name="fetchXml">The fetchXml query definition.</param>
-        /// <param name="organizationService">The service implementing IOrganizationService interface.</param>
-        /// <param name="tracingService">The tracing service to log errors.</param>
+        /// <param name="fetchXml">fetchXml query definition.</param>
+        /// <param name="organizationService">service implementing IOrganizationService interface.</param>
+        /// <param name="tracingService">tracing service to log errors.</param>
         /// <returns></returns>
         private List<Entity> FetchAllDataFromFetchXml(string fetchXml, IOrganizationService organizationService, ITracingService tracingService)
         {
@@ -111,11 +111,11 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates an annotation record
+        /// 创建 an annotation record
         /// </summary>
-        /// <param name="organizationService">The service implementing IOrganizationService interface.</param>
-        /// <param name="csvString">A string containing the data of a CSV file</param>
-        /// <returns>The id of the annotation record.</returns>
+        /// <param name="organizationService">service implementing IOrganizationService interface.</param>
+        /// <param name="csvString">一个字符串 containing the 数据 of a CSV file</param>
+        /// <returns>id of the annotation record.</returns>
         private Guid CreateAnnotationEntity(IOrganizationService organizationService, string csvString)
         {
             Entity attachment = new Entity("annotation");

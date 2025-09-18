@@ -9,7 +9,7 @@ namespace PowerApps.Samples
     public partial class SampleProgram
     {
 
-        // Define the IDs needed for this sample.        
+        // 定义IDs needed for this sample.        
         private static Guid _accountId;
         private static Guid _templateId;
         private static bool prompt = true;

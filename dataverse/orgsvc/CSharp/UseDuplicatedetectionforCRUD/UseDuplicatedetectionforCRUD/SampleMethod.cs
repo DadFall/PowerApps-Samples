@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -38,11 +38,11 @@ namespace PowerApps.Samples
             DeleteRequiredRecords(service, prompt);
         }
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create an account record named Fourth Coffee.
+            // 创建an account record named Fourth Coffee.
             var account = new Account
             {
                 Name = "Fourth Coffee",
@@ -51,7 +51,7 @@ namespace PowerApps.Samples
             accountId = service.Create(account);
             Console.Write("Account {0} {1} created, ", account.Name, account.AccountNumber);
 
-            // Create a duplicate detection rule
+            // 创建a duplicate detection rule
             var accountDuplicateRule = new DuplicateRule
             {
                 Name = "DuplicateRule: Accounts with the same Account Number",
@@ -60,7 +60,7 @@ namespace PowerApps.Samples
             };
             ruleId = service.Create(accountDuplicateRule);
 
-            // Create a duplicate detection rule condition
+            // 创建a duplicate detection rule condition
             DuplicateRuleCondition accountDupCondition = new DuplicateRuleCondition
             {
                 BaseAttributeName = "accountnumber",
@@ -72,11 +72,11 @@ namespace PowerApps.Samples
 
             Console.Write("'{0}' created, ", accountDuplicateRule.Name);
 
-            // Execute the publish request.
+            // 执行the publish request.
             var response =
                 (PublishDuplicateRuleResponse)service.Execute(new PublishDuplicateRuleRequest() { DuplicateRuleId = ruleId });
 
-            // When the publishDuplicateRule request returns, the state of the rule will still be "Publishing" (StatusCode = 1).
+            // 当the publishDuplicateRule request returns, the state of the rule will still be "Publishing" (StatusCode = 1).
             // we need to wait for the publishing operation to complete, so we keep polling the state of the
             // rule until it becomes "Published" (StatusCode = 2).
             int i = 0;
@@ -94,7 +94,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>

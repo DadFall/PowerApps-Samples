@@ -1,5 +1,5 @@
 ﻿/*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -58,15 +58,15 @@ export class TableGrid implements ComponentFramework.StandardControl<IInputs, IO
 		// Need to track container resize so that control could get the available width. The available height won't be provided even this is true
 		context.mode.trackContainerResize(true);
 
-		// Create main table container div.
+		// 创建main table container div.
 		this.mainContainer = document.createElement("div");
 		this.mainContainer.classList.add("SimpleTable_MainContainer_Style");
 
-		// Create data table container div.
+		// 创建data table container div.
 		this.dataTable = document.createElement("table");
 		this.dataTable.classList.add("SimpleTable_Table_Style");
 
-		// Create data table container div.
+		// 创建data table container div.
 		this.loadPageButton = document.createElement("button");
 		this.loadPageButton.setAttribute("type", "button");
 		this.loadPageButton.innerText = context.resources.getString("PCF_TableGrid_LoadMore_ButtonLabel");
@@ -89,7 +89,7 @@ export class TableGrid implements ComponentFramework.StandardControl<IInputs, IO
 		this.toggleLoadMoreButtonWhenNeeded(context.parameters.simpleTableGrid);
 
 		if (!context.parameters.simpleTableGrid.loading) {
-			// Get sorted columns on View
+			// 获取sorted columns on View
 			const columnsOnView = this.getSortedColumnsOnView(context);
 
 			if (!columnsOnView?.length) {
@@ -142,7 +142,7 @@ export class TableGrid implements ComponentFramework.StandardControl<IInputs, IO
 			return columnItem.order >= 0;
 		});
 
-		// Sort those columns so that they will be rendered in order
+		// 排序those columns so that they will be rendered in order
 		columns.sort((a: DataSetInterfaces.Column, b: DataSetInterfaces.Column) => {
 			return a.order - b.order;
 		});
@@ -223,7 +223,7 @@ export class TableGrid implements ComponentFramework.StandardControl<IInputs, IO
 				tableRecordRow.classList.add("SimpleTable_TableRow_Style");
 				tableRecordRow.addEventListener("click", this.onRowClick.bind(this));
 
-				// Set the recordId on the row dom
+				// 设置the recordId on the row dom
 				tableRecordRow.setAttribute(RowRecordId, gridParam.records[currentRecordId].getRecordId());
 
 				columnsOnView.forEach((columnItem, index) => {

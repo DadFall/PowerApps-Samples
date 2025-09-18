@@ -13,9 +13,9 @@ namespace PowerApps.Samples.Messages
         private JObject _content;
 
         /// <summary>
-        /// Initializes the AddPrivilegesRoleRequest
+        /// 初始化 the AddPrivilegesRoleRequest
         /// </summary>
-        /// <param name="roleId">The Id of the role to add the privileges to.</param>
+        /// <param name="roleId">Id of the role to add the privileges to.</param>
         public AddPrivilegesRoleRequest(Guid roleId, List<RolePrivilege> privileges)
         {
             Method = HttpMethod.Post;

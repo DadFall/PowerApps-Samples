@@ -12,7 +12,7 @@ namespace PowerApps.Samples
 {
     public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         public static Guid parentAccountId;
         public static Guid[] childAccountIds;
         private static bool prompt = true;
@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -39,16 +39,16 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Create a parent account record.
-        /// Create 10 child accounts to the parent account record.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建a parent account record.
+        /// 创建10 child accounts to the parent account record.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
             // Instantiate a account entity record and set its property values.
             // See the Entity Metadata topic in the SDK documentation
             // to determine which attributes must be set for each entity.
-            // Create the parent account.
+            // 创建the parent account.
             var parentAccount = new Account
             {
                 Name = "Root Test Account",
@@ -58,7 +58,7 @@ namespace PowerApps.Samples
 
             parentAccountId = service.Create(parentAccount);
 
-            // Create 10 child accounts.
+            // 创建10 child accounts.
             childAccountIds = new Guid[10];
             int count = 1;
             while (true)
@@ -106,7 +106,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user to delete the records created in this sample.</param>
         /// </summary>
         public static void DeleteRequiredRecords(CrmServiceClient service ,bool prompt)
@@ -123,10 +123,10 @@ namespace PowerApps.Samples
 
             if (deleteRecords)
             {
-                // Remove the test parent account.
+                // 移除the test parent account.
                 service.Delete(Account.EntityLogicalName, parentAccountId);
 
-                // Remove 10 test child accounts.
+                // 移除10 test child accounts.
                 int deleteCount = 0;
                 while (deleteCount < 10)
                 {

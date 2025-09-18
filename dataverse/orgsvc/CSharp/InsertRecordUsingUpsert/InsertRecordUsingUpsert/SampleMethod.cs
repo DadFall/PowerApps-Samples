@@ -21,10 +21,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             //Import the ChangeTrackingSample solution
@@ -48,12 +48,12 @@ namespace PowerApps.Samples
 
         /// <summary>
         /// Alternate keys may not be active immediately after a solution defining them is installed.
-        /// This method polls the metadata for a specific entity
+        /// 此method polls the metadata for a specific entity
         /// to delay execution of the rest of the sample until the alternate keys are ready.
         /// </summary>
         /// <param name="service">Specifies the service to connect to.</param>
-        /// <param name="asyncJob">The system job that creates the index to support the alternate key</param>
-        /// <param name="iteration">The number of times this method has been called.</param>
+        /// <param name="asyncJob">system job that creates the index to support the alternate key</param>
+        /// <param name="iteration">number of times this method has been called.</param>
         /// 
         private static bool VerifyBookCodeKeyIsActive(CrmServiceClient service, EntityReference asyncJob = null, int iteration = 0)
         {
@@ -170,7 +170,7 @@ namespace PowerApps.Samples
 
                 try
                 {
-                    // Execute UpsertRequest and obtain UpsertResponse. 
+                    // 执行UpsertRequest and obtain UpsertResponse. 
                     var response = (UpsertResponse)service.Execute(request);
                     if (response.RecordCreated)
                         Console.WriteLine("New record {0} is created!", productName);
@@ -178,7 +178,7 @@ namespace PowerApps.Samples
                         Console.WriteLine("Existing record {0} is updated!", productName);
                 }
 
-                // Catch any service fault exceptions that Microsoft Dynamics CRM throws.
+                // 捕获any service fault exceptions that Microsoft Dynamics CRM throws.
                 catch (FaultException<Microsoft.Xrm.Sdk.OrganizationServiceFault>)
                 {
                     throw;

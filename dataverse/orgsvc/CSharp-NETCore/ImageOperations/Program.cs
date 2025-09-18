@@ -24,12 +24,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
@@ -45,7 +45,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         {
             Program app = new();
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient service =
                 new(app.Configuration.GetConnectionString("default"));
 
@@ -59,7 +59,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             List<string> fileNames = new() { "144x144.png", "144x400.png", "400x144.png", "400x500.png", "60x80.png" };
 
 
-            // Create the Image Column with CanStoreFullImage = false.
+            // 创建the Image Column with CanStoreFullImage = false.
             Utility.CreateImageColumn(service, entityLogicalName, imageColumnSchemaName);
 
             // 更新the image column to set it as the primary image
@@ -68,7 +68,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("Create 5 records while CanStoreFullImage is false.");
 
-            // Create account records with each size image
+            // 创建account records with each size image
             foreach (string fileName in fileNames)
             {
                 string name = $"CanStoreFullImage false {fileName}";
@@ -90,7 +90,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("Create 5 records while CanStoreFullImage is true.");
 
-            // Create account records with each size image
+            // 创建account records with each size image
             foreach (string fileName in fileNames)
             {
                 string name = $"CanStoreFullImage true {fileName}";
@@ -150,7 +150,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     if (errorCode == -2147220969)
                     {
                         // ObjectDoesNotExist error
-                        // No FileAttachment records found for imagedescriptorId: <guid> for image attribute: sample_imagecolumn of account record with id <guid>
+                        // 没有FileAttachment records found for imagedescriptorId: <guid> for image attribute: sample_imagecolumn of account record with id <guid>
                         // These 5 images were created while CanStoreFullImage was false
                         Console.WriteLine($"\tDownload failed: {faultException.Message}");
                     }
@@ -167,7 +167,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             }
 
-            // Delete Image data with Update.
+            // 删除Image data with Update.
             foreach (Entity account in accountsWithImages.Entities)
             {
                 Entity deleteImageAccount = new("account");
@@ -177,7 +177,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 service.Update(deleteImageAccount);
             }
 
-            // Verify that the images are deleted:
+            // 验证that the images are deleted:
             // 检索the accounts again using the same query as before:
             EntityCollection accountsWithOutImages = service.RetrieveMultiple(query);
 
@@ -191,7 +191,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
 
 
-            // Delete the records that were created by this sample
+            // 删除the records that were created by this sample
             foreach (Guid id in accountsWithImagesIds)
             {
                 service.Delete("account", id);
@@ -205,7 +205,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 entityLogicalName, 
                 originalAccountPrimaryImageAttributeName);
 
-            // Delete the Image Column
+            // 删除the Image Column
             Utility.DeleteImageColumn(
                 service, 
                 entityLogicalName, 
@@ -261,7 +261,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     Offset = offset
                 };
 
-                // Send the request
+                // 发送the request
                 var downloadBlockResponse =
                            (DownloadBlockResponse)service.Execute(downLoadBlockRequest);
 

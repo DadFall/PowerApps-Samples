@@ -119,7 +119,7 @@ namespace MetaViz
         internal Graph ConvertToGraph(List<string> targetEntities, int depth)
         {
             // Populate MSAGL Graph object for the selected entities.
-            // Find related entities as well if depth is set larger than 0 (i.e. 1 means related entities. 2+ depth is too large to use practically)
+            // 查找related entities as well if depth is set larger than 0 (i.e. 1 means related entities. 2+ depth is too large to use practically)
             ExpandTargetEntities(targetEntities, depth);
 
             Graph graph = new Graph("graph");
@@ -183,7 +183,7 @@ namespace MetaViz
 
         internal static bool IsEntityInSkipList(string entityName)
         {
-            // Some entities (such as SystemUser entity) are not useful for ER diagram. Skip those noisy not useful entities for visualization.
+            // 一些entities (such as SystemUser entity) are not useful for ER diagram. Skip those noisy not useful entities for visualization.
             return (SKIP_ENTITIES_FOR_GRAPH.Contains($",{entityName},"));
         }
     }
@@ -208,7 +208,7 @@ namespace MetaViz
 
         private static void DumpERRelationsInSpecFile(StreamWriter specWriter, ERInformation entityRelations)
         {
-            // Add all relationship information in the scheme (spec file) at the end
+            // 添加all relationship information in the scheme (spec file) at the end
             foreach (ERRelation relation in entityRelations.ERRelations.Distinct().OrderBy(obj => obj.EntityOne))
             {
                 specWriter.WriteLine("{0,50} 1-n {1}.{2}", relation.EntityOne, relation.EntityMany, relation.LookupField);

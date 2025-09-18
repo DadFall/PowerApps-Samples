@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -68,11 +68,11 @@ export class PropertySetTableControl implements ComponentFramework.StandardContr
 		// In Canvas-app, the available height will be provided in context.mode.allocatedHeight
 		context.mode.trackContainerResize(true);
 
-		// Create main table container div.
+		// 创建main table container div.
 		this.mainContainer = document.createElement("div");
 		this.mainContainer.classList.add("SimpleTable_MainContainer_Style");
 		this.mainContainer.id = "SimpleTableMainContainer";
-		// Create data table container div.
+		// 创建data table container div.
 		this.dataTable = document.createElement("table");
 		this.dataTable.classList.add("SimpleTable_Table_Style");
 
@@ -90,7 +90,7 @@ export class PropertySetTableControl implements ComponentFramework.StandardContr
 		this.loadNextPageButton.classList.add("Button_Style");
 		this.loadNextPageButton.addEventListener("click", this.onLoadNextButtonClick.bind(this));
 
-		// Create main table container div.
+		// 创建main table container div.
 		this.mainContainer = document.createElement("div");
 
 		// Adding the main table and loadNextPage button created to the container DIV.
@@ -112,7 +112,7 @@ export class PropertySetTableControl implements ComponentFramework.StandardContr
 		this.toggleLoadPreviousButtonWhenNeeded(context.parameters.sampleDataSet);
 
 		if (!context.parameters.sampleDataSet.loading) {
-			// Get sorted columns on View
+			// 获取sorted columns on View
 			const columnsOnView = this.getSortedColumnsOnView(context);
 			if (!columnsOnView?.length) {
 				return;
@@ -121,8 +121,8 @@ export class PropertySetTableControl implements ComponentFramework.StandardContr
 			//calculate the width for each column
 			const columnWidthDistribution = this.getColumnWidthDistribution(context, columnsOnView);
 
-			//When new data is received, it needs to first remove the table element, allowing it to properly render a table with updated data
-			//This only needs to be done on elements having child elements which is tied to data received from canvas/model ..
+			//当new data is received, it needs to first remove the table element, allowing it to properly render a table with updated data
+			//此only needs to be done on elements having child elements which is tied to data received from canvas/model ..
 			while (this.dataTable.firstChild) {
 				this.dataTable.removeChild(this.dataTable.firstChild);
 			}
@@ -278,7 +278,7 @@ export class PropertySetTableControl implements ComponentFramework.StandardContr
 				tableRecordRow.classList.add("SimpleTable_TableRow_Style");
 				tableRecordRow.addEventListener("click", this.onRowClick.bind(this));
 
-				// Set the recordId on the row dom, this is the simplest way to help us track which record has been clicked.
+				// 设置the recordId on the row dom, this is the simplest way to help us track which record has been clicked.
 				tableRecordRow.setAttribute(RowRecordId, gridParam.records[currentRecordId].getRecordId());
 
 				columnsOnView.forEach((columnItem, index) => {

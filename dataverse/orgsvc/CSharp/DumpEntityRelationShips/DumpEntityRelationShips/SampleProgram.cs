@@ -10,15 +10,15 @@ namespace PowerApps.Samples
 {
     public partial class SampleProgram
     {
-        // Create storage for new attributes being created
+        // 创建storage for new attributes being created
         public List<Microsoft.Xrm.Sdk.Metadata.AttributeMetadata> addedAttributes;
 
         // Specify which language code to use in the sample. If you are using a language
         // other than US English, you will need to modify this value accordingly.
-        // See https://learn.microsoft.com/previous-versions/windows/embedded/ms912047(v=winembedded.10)
+        // 参见 https://learn.microsoft.com/previous-versions/windows/embedded/ms912047(v=winembedded.10)
         public const int _languageCode = 1033;
 
-        // Define the IDs/variables needed for this sample.
+        // 定义IDs/variables needed for this sample.
         public int _insertedStatusValue;
         [STAThread] // Required to support the interactive login experience
         static void Main(string[] args)
@@ -30,7 +30,7 @@ namespace PowerApps.Samples
                 if (service.IsReady)
                 {
                     #region Demonstrate
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     var request = new RetrieveAllEntitiesRequest()
                     {
@@ -38,22 +38,22 @@ namespace PowerApps.Samples
                         RetrieveAsIfPublished = true
                     };
 
-                    // Retrieve the MetaData.
+                    // 检索the MetaData.
                     var response = (RetrieveAllEntitiesResponse)service.Execute(request);
 
 
-                    // Create an instance of StreamWriter to write text to a file.
-                    // The using statement also closes the StreamWriter.
+                    // 创建an instance of StreamWriter to write text to a file.
+                    // using statement also closes the StreamWriter.
                     // To view this file, right click the file and choose open with Excel. 
                     // Excel will figure out the schema and display the information in columns.
 
                     String filename = String.Concat("RelationshipInfo.xml");
                     using (var sw = new StreamWriter(filename))
                     {
-                        // Create Xml Writer.
+                        // 创建Xml Writer.
                         var metadataWriter = new XmlTextWriter(sw);
 
-                        // Start Xml File.
+                        // 开始Xml File.
                         metadataWriter.WriteStartDocument();
 
                         // Metadata Xml Node.
@@ -64,83 +64,83 @@ namespace PowerApps.Samples
                             //if (currentEntity.IsIntersect.Value == false)
                             if (true)
                             {
-                                // Start Entity Node
+                                // 开始Entity Node
                                 metadataWriter.WriteStartElement("Entity");
 
                                 // Write the Entity's Information.
                                 metadataWriter.WriteElementString("EntitySchemaName", currentEntity.SchemaName);
 
-                                // Start OneToManyRelationships Node
+                                // 开始OneToManyRelationships Node
                                 metadataWriter.WriteStartElement("OneToManyRelationships");
 
                                 foreach (OneToManyRelationshipMetadata currentRelationship in currentEntity.OneToManyRelationships)
                                 {
-                                    // Start  Node
+                                    // 开始 Node
                                     metadataWriter.WriteStartElement("Relationship");
 
                                     metadataWriter.WriteElementString("OtoM_SchemaName", currentRelationship.SchemaName);
                                     metadataWriter.WriteElementString("OtoM_ReferencingEntity", currentRelationship.ReferencingEntity);
                                     metadataWriter.WriteElementString("OtoM_ReferencedEntity", currentRelationship.ReferencedEntity);
-                                    // End  Node
+                                    // 结束 Node
                                     metadataWriter.WriteEndElement();
 
                                 }
 
-                                // End OneToManyRelationships Node
+                                // 结束OneToManyRelationships Node
                                 metadataWriter.WriteEndElement();
 
-                                // Start ManyToManyRelationships Node
+                                // 开始ManyToManyRelationships Node
                                 metadataWriter.WriteStartElement("ManyToManyRelationships");
 
 
                                 foreach (ManyToManyRelationshipMetadata currentRelationship in currentEntity.ManyToManyRelationships)
                                 {
-                                    // Start  Node
+                                    // 开始 Node
                                     metadataWriter.WriteStartElement("Relationship");
 
                                     metadataWriter.WriteElementString("MtoM_SchemaName", currentRelationship.SchemaName);
                                     metadataWriter.WriteElementString("MtoM_Entity1", currentRelationship.Entity1LogicalName);
                                     metadataWriter.WriteElementString("MtoM_Entity2", currentRelationship.Entity2LogicalName);
                                     metadataWriter.WriteElementString("IntersectEntity", currentRelationship.IntersectEntityName);
-                                    // End  Node
+                                    // 结束 Node
                                     metadataWriter.WriteEndElement();
 
                                 }
 
-                                // End ManyToManyRelationships Node
+                                // 结束ManyToManyRelationships Node
                                 metadataWriter.WriteEndElement();
 
-                                // Start ManyToOneRelationships Node
+                                // 开始ManyToOneRelationships Node
                                 metadataWriter.WriteStartElement("ManyToOneRelationships");
 
 
                                 foreach (OneToManyRelationshipMetadata currentRelationship in currentEntity.ManyToOneRelationships)
                                 {
-                                    // Start  Node
+                                    // 开始 Node
                                     metadataWriter.WriteStartElement("Relationship");
 
                                     metadataWriter.WriteElementString("MtoO_SchemaName", currentRelationship.SchemaName);
                                     metadataWriter.WriteElementString("MtoO_ReferencingEntity", currentRelationship.ReferencingEntity);
                                     metadataWriter.WriteElementString("MtoO_ReferencedEntity", currentRelationship.ReferencedEntity);
-                                    // End  Node
+                                    // 结束 Node
                                     metadataWriter.WriteEndElement();
 
                                 }
 
-                                // End ManyToOneRelationships Node
+                                // 结束ManyToOneRelationships Node
                                 metadataWriter.WriteEndElement();
 
-                                // End Relationships Node
+                                // 结束Relationships Node
                                 // metadataWriter.WriteEndElement();
 
 
 
-                                // End Entity Node
+                                // 结束Entity Node
                                 metadataWriter.WriteEndElement();
                             }
                         }
 
-                        // End Metadata Xml Node
+                        // 结束Metadata Xml Node
                         metadataWriter.WriteEndElement();
                         metadataWriter.WriteEndDocument();
 

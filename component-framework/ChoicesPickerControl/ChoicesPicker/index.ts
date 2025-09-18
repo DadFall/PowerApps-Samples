@@ -34,7 +34,7 @@ export class ChoicesPicker implements ComponentFramework.StandardControl<IInputs
 		state: ComponentFramework.Dictionary,
 		container: HTMLDivElement
 	): void {
-		// Add control initialization code
+		// 添加control initialization code
 		this.notifyOutputChanged = notifyOutputChanged;
 		this.rootContainer = container;
 		this.context = context;
@@ -94,7 +94,7 @@ export class ChoicesPicker implements ComponentFramework.StandardControl<IInputs
 	 * i.e. cancelling any pending remote calls, removing listeners, etc.
 	 */
 	public destroy(): void {
-		// Add code to cleanup control if necessary
+		// 添加code to cleanup control if necessary
 		ReactDOM.unmountComponentAtNode(this.rootContainer);
 	}
 }

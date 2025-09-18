@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -44,7 +44,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Create some account records to retrieve duplicates
+        /// 创建some account records to retrieve duplicates
         /// </summary>
         private static void CreateAccountRecords(CrmServiceClient service)
         {
@@ -57,7 +57,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Call the method to retrieve duplicate records.  
+        /// 调用the method to retrieve duplicate records.
         /// </summary>
         private static void RetrieveDuplicates(CrmServiceClient service)
         {
@@ -85,7 +85,7 @@ namespace PowerApps.Samples
         /// </summary>
         private static void EnableDuplicateDetectionForOrg(CrmServiceClient service)
         {
-            // Retrieve the org ID
+            // 检索the org ID
             var orgId = RetrieveOrganizationId(service);
             if (!orgId.HasValue)
                 return;
@@ -93,7 +93,7 @@ namespace PowerApps.Samples
             Console.WriteLine(String.Concat("Enabling duplicate detection for organization: ",
                 orgId.Value));
 
-            // Enable dupe detection for each type
+            // 启用dupe detection for each type
             var crmOrganization = new Organization
             {
                 Id = orgId.Value,
@@ -108,12 +108,12 @@ namespace PowerApps.Samples
 
         /// <summary>
         /// Enabling the dupe detection unpublishes the rules.  
-        /// This will publish them, and wait for them to complete publishing.
+        /// 此will publish them, and wait for them to complete publishing.
         /// </summary>
         /// <param name="entityName"></param>
         private static void PublishRulesForEntity(CrmServiceClient service ,string entityName)
         {
-            // Retrieve all rules for the entity
+            // 检索all rules for the entity
             var rules = service.RetrieveMultiple(
                 new QueryByAttribute(DuplicateRule.EntityLogicalName)
                 {
@@ -139,7 +139,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Updates the entity customizations and publishes the entity 
+        /// 更新 the entity customizations and publishes the entity
         /// </summary>
         /// <param name="entityName"></param>
         private static void EnableDuplicateDetectionForEntity(CrmServiceClient service ,string entityName)
@@ -147,7 +147,7 @@ namespace PowerApps.Samples
             Console.WriteLine(String.Format("Retrieving entity metadata for {0}",
                 entityName));
 
-            // Retrieve the entity metadata
+            // 检索the entity metadata
             var crmEntity = ((RetrieveEntityResponse)service.Execute(
                 new RetrieveEntityRequest
                 {
@@ -157,11 +157,11 @@ namespace PowerApps.Samples
 
             Console.WriteLine(String.Concat("Enabling duplicate for ", entityName));
 
-            // Update the duplicate detection flag
+            // 更新the duplicate detection flag
             crmEntity.IsDuplicateDetectionEnabled =
                 new BooleanManagedProperty(true);
 
-            // Update the entity metadata
+            // 更新the entity metadata
             service.Execute(new UpdateEntityRequest
             {
                 Entity = crmEntity
@@ -185,7 +185,7 @@ namespace PowerApps.Samples
         /// <returns></returns>
         private static Guid? RetrieveOrganizationId(CrmServiceClient service)
         {
-            // Retrieve the first record in the organization table.  
+            // 检索the first record in the organization table.  
             // There should only be one organization record. 
             var entities = service.RetrieveMultiple(
                 new QueryExpression(Organization.EntityLogicalName)
@@ -227,7 +227,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete records created in this sample.
+                // 删除records created in this sample.
                 if (accountId1.HasValue)
                 {
                     Console.WriteLine(String.Concat("Deleting account: ", accountId1.Value));
@@ -254,7 +254,7 @@ namespace PowerApps.Samples
 
             while (asyncJobList.Count != 0 && retryCount > 0)
             {
-                // Retrieve the async operations based on the ids
+                // 检索the async operations based on the ids
                 var crmAsyncJobs = service.RetrieveMultiple(
                     new QueryExpression("asyncoperation")
                     {
@@ -269,7 +269,7 @@ namespace PowerApps.Samples
                         }
                     });
 
-                // Check to see if the operations are completed and if so remove them from the Async Guid list
+                // 检查to see if the operations are completed and if so remove them from the Async Guid list
                 foreach (var item in crmAsyncJobs.Entities)
                 {
                     var crmAsyncJob = item.ToEntity<AsyncOperation>();
@@ -282,7 +282,7 @@ namespace PowerApps.Samples
                         ", async operation id: ", crmAsyncJob.AsyncOperationId.Value.ToString()));
                 }
 
-                // If there are still jobs remaining, sleep the thread.
+                // 如果there are still jobs remaining, sleep the thread.
                 if (asyncJobList.Count > 0)
                     System.Threading.Thread.Sleep(2000);
 

@@ -26,7 +26,7 @@ using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Sdk.Messages;
 
-// This namespace is found in the Microsoft.Crm.Sdk.Proxy.dll assembly
+// 此namespace is found in the Microsoft.Crm.Sdk.Proxy.dll assembly
 // located in the SDK\bin folder of the SDK download.
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Tooling.Connector;
@@ -34,9 +34,9 @@ using Microsoft.Xrm.Tooling.Connector;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// This class contains methods which retrieve the IDs of several fictitious Microsoft Dynamics
+        /// 此class contains methods which retrieve the IDs of several fictitious Microsoft Dynamics
     /// CRM system users.  Several SDK samples require these additional user accounts in order to run.
-    /// </summary>
+        /// </summary>
     /// <remarks>For On-premises and IFD deployments, if these users do not exist they are created in
     /// Active Directory. This assumes that the system user account under which the application runs has
     /// system administrator privileges. Since it is not possible to programmatically create user accounts
@@ -97,19 +97,19 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Retrieves the requested SystemUser record.  If the record does not exist, a new
+        /// 检索 the requested SystemUser record.  If the record does not exist, a new
         /// Microsoft Dynamics CRM SystemUser record is created and an associated Active
         /// Directory account is created, if it doesn't currently exist.
         /// </summary>
-        /// <param name="userName">The username field as set in Microsoft Dynamics CRM</param>
-        /// <param name="firstName">The first name of the system user to be retrieved</param>
-        /// <param name="lastName">The last name of the system user to be retrieved</param>
-        /// <param name="roleStr">The string representing the Microsoft Dynamics CRM security
+        /// <param name="userName">user名称 field as set in Microsoft Dynamics CRM</param>
+        /// <param name="firstName">first 名称 of the system user to be retrieved</param>
+        /// <param name="lastName">last 名称 of the system user to be retrieved</param>
+        /// <param name="roleStr">字符串 representing the Microsoft Dynamics CRM security
         /// role for the user</param>
-        /// <param name="serviceProxy">The OrganizationServiceProxy object to your Microsoft
+        /// <param name="serviceProxy">OrganizationServiceProxy 对象 to your Microsoft
         /// Dynamics CRM environment</param>
-        /// <param name="ldapPath">The LDAP path for your network - you can either call
-        /// ConsolePromptForLDAPPath() to prompt the user or provide a value in code</param>
+        /// <param name="ldapPath">LDAP path for your network - you can either call
+        /// ConsolePromptForLDAPPath() to prompt the user or provide a 值 in code</param>
         /// <returns></returns>
         public static Guid RetrieveSystemUser(String userName, String firstName,
             String lastName, String roleStr, CrmServiceClient service,
@@ -156,7 +156,7 @@ namespace PowerApps.Samples
 
                 if (!String.IsNullOrWhiteSpace(roleStr))
                 {
-                    // Check to make sure the user is assigned the correct role.
+                    // 检查to make sure the user is assigned the correct role.
                     Role role = RetrieveRoleByName(service, roleStr);
 
                     // Associate the user with the role when needed.
@@ -186,12 +186,12 @@ namespace PowerApps.Samples
         /// <summary>
         /// Helper method to check if system user already exist with either given username or first and last name.
         /// </summary>
-        /// <param name="serviceProxy">The OrganizationServiceProxy object to your Microsoft
+        /// <param name="serviceProxy">OrganizationServiceProxy 对象 to your Microsoft
         /// Dynamics CRM environment</param>
-        /// <param name="domainName">Current domain name of the account.</param>
-        /// <param name="userName">The username field as set in Microsoft Dynamics CRM</param>
-        /// <param name="firstName">The first name of the system user to be retrieved</param>
-        /// <param name="lastName">The last name of the system user to be retrieved</param>
+        /// <param name="domainName">Current domain 名称 of the account.</param>
+        /// <param name="userName">user名称 field as set in Microsoft Dynamics CRM</param>
+        /// <param name="firstName">first 名称 of the system user to be retrieved</param>
+        /// <param name="lastName">last 名称 of the system user to be retrieved</param>
         /// <returns></returns>
         public static SystemUser GetUserIdIfExist(CrmServiceClient service,
             String domainName, String userName, String firstName, String lastName)
@@ -239,7 +239,7 @@ namespace PowerApps.Samples
         /// <summary>
         /// Helper method to prompt the user for the LDAP path for the network
         /// </summary>
-        /// <returns>The LDAP path for your network</returns>
+        /// <returns>LDAP path for your network</returns>
 
 
         private static bool UserInRole(CrmServiceClient service,
@@ -262,7 +262,7 @@ namespace PowerApps.Samples
                 }
             };
 
-            // Build the query.
+            // 构建the query.
             QueryExpression query = new QueryExpression()
             {
                 EntityName = Role.EntityLogicalName,
@@ -287,7 +287,7 @@ namespace PowerApps.Samples
                 }
             };
 
-            // Retrieve matching roles.
+            // 检索matching roles.
             EntityCollection ec = service.RetrieveMultiple(query);
 
             if (ec.Entities.Count > 0)

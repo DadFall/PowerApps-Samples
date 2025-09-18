@@ -23,7 +23,7 @@ namespace PowerApps.Samples
             int originalMaxUploadFileSize = await Utility.GetMaxUploadFileSize(service);
             Console.WriteLine($"Current MaxUploadFileSize: {originalMaxUploadFileSize}");
 
-            // Create account to associate note with.
+            // 创建account to associate note with.
             JObject account = new() {
                 {"name","Test Account for AnnotationOperations" }
             };
@@ -33,14 +33,14 @@ namespace PowerApps.Samples
                 record: account);// 稍后删除。
             Console.WriteLine("Created an account record to associate notes with.");
 
-            // Create note
+            // 创建note
             JObject note = new() {
                     { "subject", "Example Note" },
                     { "filename", wordDoc.Name },
                     { "documentbody", Convert.ToBase64String(File.ReadAllBytes(wordDoc.FullName))},
                     { "notetext", "Please see attached file." },
                     // mimetype is optional. Will be set to "application/octet-stream" if not specified.
-                    // This will be 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                    // 此will be 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
                     { "mimetype", Utility.GetMimeType(wordDoc)},
                 // Associate with the account
                     { "objectid_account@odata.bind", accountRef.Path }
@@ -49,7 +49,7 @@ namespace PowerApps.Samples
             EntityReference noteRef = await service.Create("annotations", note);
             Console.WriteLine($"Created note with attached Word document.");
 
-            // Retrieve the note
+            // 检索the note
             JObject retrievedNote = await service.Retrieve(
                 entityReference: noteRef,
                 query: "?$select=documentbody,mimetype,filename");
@@ -74,12 +74,12 @@ namespace PowerApps.Samples
                 { "mimetype", Utility.GetMimeType(excelDoc)},
             };
 
-            // Update the note
+            // 更新the note
             await service.Update(entityReference: noteRef, record: annotationForUpdate);
 
             Console.WriteLine($"Updated note with attached Excel document.");
 
-            // Retrieve the note
+            // 检索the note
             JObject retrievedUpdatedNote = await service.Retrieve(noteRef, "?$select=documentbody,filename");
 
             Console.WriteLine($"\tRetrieved note with attached Excel document.");
@@ -92,7 +92,7 @@ namespace PowerApps.Samples
             Console.WriteLine($"\tSaved the Excel document to \\bin\\Debug\\net6.0\\Downloaded{retrievedUpdatedNote["filename"]}.");
 
 
-            // Set MaxUploadFileSize to the maximum value
+            // 设置MaxUploadFileSize to the maximum value
             await Utility.SetMaxUploadFileSize(service, 131072000);
 
             Console.WriteLine($"Updated MaxUploadFileSize to: {await Utility.GetMaxUploadFileSize(service)}");
@@ -143,7 +143,7 @@ namespace PowerApps.Samples
             await service.Delete(accountRef);
             Console.WriteLine("Deleted the account record.");
 
-            // Return MaxUploadFileSize to the original value
+            // 返回MaxUploadFileSize to the original value
             await Utility.SetMaxUploadFileSize(service, originalMaxUploadFileSize);
 
             Console.WriteLine($"Current MaxUploadFileSize: {await Utility.GetMaxUploadFileSize(service)}");
@@ -152,10 +152,10 @@ namespace PowerApps.Samples
         /// <summary>
         /// Uploads an note record and updates annotation.
         /// </summary>
-        /// <param name="service">The WebAPIService to use.</param>
-        /// <param name="annotation">The data to update for an existing note record.</param>
-        /// <param name="fileInfo">A reference to the file to upload.</param>
-        /// <returns>The FileSizeInBytes</returns>
+        /// <param name="service">WebAPIService to use.</param>
+        /// <param name="annotation">数据 to update for an existing note record.</param>
+        /// <param name="fileInfo">一个reference to the file to upload.</param>
+        /// <returns>FileSizeInBytes</returns>
         static async Task<CommitAnnotationBlocksUploadResponse> UploadNote(
             Service service,
             JObject annotation,
@@ -174,7 +174,7 @@ namespace PowerApps.Samples
                 annotation.Remove("documentbody");
             }
 
-            // Try to get the mimetype if not provided.
+            // 尝试to get the mimetype if not provided.
             if (string.IsNullOrEmpty(fileMimeType))
             {
                 var provider = new FileExtensionContentTypeProvider();
@@ -190,7 +190,7 @@ namespace PowerApps.Samples
                 annotation.Add("mimetype", fileMimeType);
             }
 
-            // Initialize the upload
+            // 初始化the upload
             InitializeAnnotationBlocksUploadRequest initializeRequest = new(
                 target: annotation);
 
@@ -213,7 +213,7 @@ namespace PowerApps.Samples
 
             long fileSize = fileInfo.Length;
 
-            // The number of iterations that will be required:
+            // number of iterations that will be required:
             // int blocksCount = (int)Math.Ceiling(fileSize / (float)blockSize);
 
             int blockNumber = 0;
@@ -221,7 +221,7 @@ namespace PowerApps.Samples
             // While there is unread data from the file
             while ((bytesRead = file.Read(buffer, 0, buffer.Length)) > 0)
             {
-                // The file or final block may be smaller than 4MB
+                // file or final block may be smaller than 4MB
                 if (bytesRead < buffer.Length)
                 {
                     Array.Resize(ref buffer, bytesRead);
@@ -256,8 +256,8 @@ namespace PowerApps.Samples
         /// <summary>
         /// Downloads the documentbody and filename of an note.
         /// </summary>
-        /// <param name="service">The WebAPIService to use.</param>
-        /// <param name="target">A reference to the note record that has the file.</param>
+        /// <param name="service">WebAPIService to use.</param>
+        /// <param name="target">一个reference to the note record that has the file.</param>
         /// <returns>Tuple containing bytes and filename.</returns>
         static async Task<(byte[] bytes, string fileName)> DownloadNote(
             Service service,
@@ -295,7 +295,7 @@ namespace PowerApps.Samples
                 var downloadBlockResponse =
                            await service.SendAsync<DownloadBlockResponse>(request: downLoadBlockRequest);
 
-                // Add the block returned to the list
+                // 添加the block returned to the list
                 fileBytes.AddRange(downloadBlockResponse.Data);
 
                 // Subtract the amount downloaded,

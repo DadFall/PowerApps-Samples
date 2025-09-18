@@ -6,7 +6,7 @@
     public sealed class WhoAmIRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the WhoAmIRequest
+        /// 初始化 the WhoAmIRequest
         /// </summary>
         public WhoAmIRequest()
         {

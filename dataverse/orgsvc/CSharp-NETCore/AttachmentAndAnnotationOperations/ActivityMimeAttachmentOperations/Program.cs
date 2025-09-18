@@ -17,12 +17,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
@@ -39,7 +39,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             // Files used in this sample
             FileInfo wordDoc = new("Files/WordDoc.docx");
             FileInfo excelDoc = new("Files/ExcelDoc.xlsx");
-            FileInfo pdfDoc = new("Files/25mb.pdf"); // A large file over default size
+            FileInfo pdfDoc = new("Files/25mb.pdf"); // 一个large file over default size
 
             List<FileInfo> smallFiles = new() { wordDoc, excelDoc };
             List<FileInfo> allFiles = new() { wordDoc, excelDoc, pdfDoc };
@@ -49,7 +49,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Program app = new();
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"))
                 {
@@ -57,7 +57,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 };
 
 
-            // Get current MaxUploadFileSize
+            // 获取current MaxUploadFileSize
             int originalMaxUploadFileSize = Utility.GetMaxUploadFileSize(serviceClient);
             Console.WriteLine($"Current MaxUploadFileSize: {originalMaxUploadFileSize}");
 
@@ -65,7 +65,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("Start: Create single-use attachments");
 
-            // Create email activity
+            // 创建email activity
             Entity email = new("email")
             {
                 Attributes =
@@ -134,7 +134,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 $"\n\t\tActivityMimeAttachmentId:{uploadAttachmentResponse.ActivityMimeAttachmentId} \n\t\tFileSizeInBytes: {uploadAttachmentResponse.FileSizeInBytes}");
 
             // 检索information about the attachments related to the email.
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/org-service/entity-operations-retrieve#retrieve-with-related-rows
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/org-service/entity-operations-retrieve#retrieve-with-related-rows
             RelationshipQueryCollection relationshipQueryCollection = new();
 
             // named relationship between email and activitymimeattachment
@@ -176,7 +176,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 Console.WriteLine($"\tSaved the attachment to \\bin\\Debug\\net6.0\\Downloaded{name}.");
             }
 
-            // Delete the email activity and the attachments will be deleted as well
+            // 删除the email activity and the attachments will be deleted as well
             serviceClient.Delete("email", emailid);
 
             #endregion Create single-use attachments
@@ -185,7 +185,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("\nStart: Create re-usable attachments");
 
-            // Create an email template to add the re-usable attachments to.
+            // 创建an email template to add the re-usable attachments to.
             // ActivityMimeAttachment ObjectId and ObjectTypeCode are SystemRequired.
 
             Entity template = new("template")
@@ -225,7 +225,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 }
             };
 
-            // Create the template
+            // 创建the template
             Guid templateId = serviceClient.Create(template);
 
             Console.WriteLine("Created an email template.");
@@ -246,7 +246,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     }
                 };
 
-                // Create the attachment with upload
+                // 创建the attachment with upload
                 CommitAttachmentBlocksUploadResponse uploadAttachmentResponse = UploadAttachment(
                     service: serviceClient,
                     attachment: attachment,
@@ -259,7 +259,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("Added all files as attachment to email template.");
 
-            // Create new email to re-use attachments from Template
+            // 创建new email to re-use attachments from Template
             Entity email2 = new("email")
             {
                 Attributes =
@@ -292,11 +292,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             }
 
-            // Delete the second email
+            // 删除the second email
             serviceClient.Delete("email", email2Id);
             Console.WriteLine($"Deleted the second email.");
 
-            // Verify the re-used attachments still exist
+            // 验证the re-used attachments still exist
             foreach ((string FileName, Guid ActivityMimeAttachmentId) in reusableAttachments)
             {
                 Entity attachment = serviceClient.Retrieve(
@@ -312,7 +312,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             // Clean up
 
-            // Delete the template
+            // 删除the template
             serviceClient.Delete("template", templateId); //Will delete re-usable attachments
 
 
@@ -332,7 +332,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <param name="fileInfo">一个reference to the file to upload.</param>
         /// <param name="fileMimeType">mime类型 of the file.</param>
         /// <returns>CommitAttachmentBlocksUploadResponse containing ActivityMimeAttachmentId and FileSizeInBytes.</returns>
-        /// <exception cref="ArgumentException">The attachment parameter must be an activitymimeattachment entity.</exception>
+        /// <exception cref="ArgumentException">The attachment 参数 must be an activitymimeattachment entity.</exception>
         static CommitAttachmentBlocksUploadResponse UploadAttachment(
                 IOrganizationService service,
                 Entity attachment,
@@ -419,7 +419,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     FileContinuationToken = fileContinuationToken,
                 };
 
-                // Send the request
+                // 发送the request
                 service.Execute(uploadBlockRequest);
             }
 
@@ -441,7 +441,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <param name="service">IOrganizationService 实例 to use.</param>
         /// <param name="target">一个reference to the activitymimeattachment containing the file.</param>
         /// <returns>Tuple of bytes and fileName</returns>
-        /// <exception cref="ArgumentException">"The target parameter must refer to an activitymimeattachment record."</exception>
+        /// <exception cref="ArgumentException">"The target 参数 must refer to an activitymimeattachment record."</exception>
         static (byte[] bytes, string fileName) DownloadAttachment(
             IOrganizationService service,
             EntityReference target)
@@ -486,7 +486,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     Offset = offset
                 };
 
-                // Send the request
+                // 发送the request
                 var downloadBlockResponse =
                            (DownloadBlockResponse)service.Execute(downLoadBlockRequest);
 

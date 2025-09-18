@@ -21,14 +21,14 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
                     OrganizationServiceContext orgContext =
                         new OrganizationServiceContext(service);
 
-                    // Retrieve records with Skip/Take record paging. Setting a page size
+                    // 检索records with Skip/Take record paging. Setting a page size
                     // can help you manage your Skip and Take calls, since Skip must be
                     // passed a multiple of Take's parameter value.
                     //<snippetUseLinqWithDotNetDataServicesDE2>
@@ -94,7 +94,7 @@ namespace PowerApps.Samples
                     //<End of Listing>
 
 
-                    // Filter multiple entities using LINQ.
+                    // 过滤multiple entities using LINQ.
                     //<snippetUseLinqWithDotNetDataServicesDE4>
                     var query = from c in orgContext.CreateQuery("contact")
                                 join a in orgContext.CreateQuery("account")
@@ -145,7 +145,7 @@ namespace PowerApps.Samples
                     //Account Phone: (425)555-5555
                     //<End of Listing>
 
-                    // Build a complex query with LINQ. This query includes multiple
+                    // 构建a complex query with LINQ. This query includes multiple
                     // JOINs and a complex WHERE statement.
                     //<snippetUseLinqWithDotNetDataServicesDE5>
                     var complexQuery = from c in orgContext.CreateQuery("contact")

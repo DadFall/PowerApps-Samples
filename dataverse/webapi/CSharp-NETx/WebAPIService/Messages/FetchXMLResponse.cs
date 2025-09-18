@@ -2,7 +2,7 @@
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
@@ -27,7 +27,7 @@ namespace PowerApps.Samples.Messages
         }
 
         /// <summary>
-        /// The records returned.
+        /// records returned.
         /// </summary>
         public JArray? Records => (JArray)JObject.GetValue("value");
 
@@ -37,12 +37,12 @@ namespace PowerApps.Samples.Messages
         public int? Count => (int?)JObject.GetValue("@odata.count");
 
         /// <summary>
-        /// A paging cookie value to be used for subsequent requests. Only populated if request.IncludeAnnotations is true.
+        /// 一个paging cookie value to be used for subsequent requests. Only populated if request.IncludeAnnotations is true.
         /// </summary>
         public string? FetchxmlPagingCookie => (string?)JObject.GetValue("@Microsoft.Dynamics.CRM.fetchxmlpagingcookie");
 
         /// <summary>
-        /// The total number of records matching the filter criteria, up to 5000, irrespective of the page size. Only populated if request.IncludeAnnotations is true.
+        /// total number of records matching the filter criteria, up to 5000, irrespective of the page size. Only populated if request.IncludeAnnotations is true.
         /// </summary>
         public int? TotalRecordCount => (int?)JObject.GetValue("@Microsoft.Dynamics.CRM.totalrecordcount");
 

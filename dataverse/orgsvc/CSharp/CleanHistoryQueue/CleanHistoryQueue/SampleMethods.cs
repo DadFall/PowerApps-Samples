@@ -11,7 +11,7 @@ namespace PowerApps.Samples
 {
    public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         private static Guid _queueId;
         private static Guid _phoneCallId;
         private static Guid _queueItemId;
@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -38,15 +38,15 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Create a queue instance. 
-        /// Create a phone call activity instance.
-        /// Add phone call entity instance in to queue.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建a queue instance. 
+        /// 创建a phone call activity instance.
+        /// 添加phone call entity instance in to queue.
         /// Mark phone call entity instance status as completed.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a queue instance and set its property values.
+            // 创建a queue instance and set its property values.
             var newQueue = new Queue()
             {
                 Name = "Example Queue",
@@ -57,7 +57,7 @@ namespace PowerApps.Samples
             _queueId = service.Create(newQueue);
             Console.WriteLine("Created {0}.", newQueue.Name);
 
-            // Create a phone call activity instance.
+            // 创建a phone call activity instance.
             var newPhoneCall = new PhoneCall
             {
                 Description = "Example Phone Call"
@@ -66,7 +66,7 @@ namespace PowerApps.Samples
             _phoneCallId = service.Create(newPhoneCall);
             Console.WriteLine("Created {0}.", newPhoneCall.Description);
 
-            // Create a new instance of a queueitem and initialize its 
+            // 创建a new instance of a queueitem and initialize its 
             // properties.
             var item = new QueueItem
             {
@@ -74,7 +74,7 @@ namespace PowerApps.Samples
                 ObjectId = new EntityReference(PhoneCall.EntityLogicalName, _phoneCallId)
             };
 
-            // Create the queueitem on the server, which will associate 
+            // 创建the queueitem on the server, which will associate 
             // the phone call activity with the queue.
             _queueItemId = service.Create(item);
 
@@ -95,7 +95,7 @@ namespace PowerApps.Samples
             return;
         }
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>

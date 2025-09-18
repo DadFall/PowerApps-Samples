@@ -21,10 +21,10 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Create an EntityReference to represent an open case
+                    // 创建an EntityReference to represent an open case
                     var caseReference = new EntityReference()
                     {
                         LogicalName = Incident.EntityLogicalName,
@@ -34,25 +34,25 @@ namespace PowerApps.Samples
                     var checkState =
                         new IsValidStateTransitionRequest();
 
-                    // Set the transition request to an open case
+                    // 设置the transition request to an open case
                     checkState.Entity = caseReference;
 
-                    // Check to see if a new state of "resolved" and 
+                    // 检查to see if a new state of "resolved" and 
                     // a new status of "problem solved" are valid
                     checkState.NewState = IncidentState.Resolved.ToString();
                     checkState.NewStatus = (int)incident_statuscode.ProblemSolved;
 
-                    // Execute the request
+                    // 执行the request
                     var checkStateResponse =
                         (IsValidStateTransitionResponse)service.Execute(checkState);
 
-                    // Handle the response
+                    // 处理the response
                     if (checkStateResponse.IsValid)
                     {
                         String changeAnswer = "y"; // default to "y" unless prompting for delete
                         if (prompt)
                         {
-                            // The case can be closed
+                            // case can be closed
                             Console.WriteLine("Validate State Request returned that the case " +
                                               "can be closed.");
                             Console.Write("\nDo you want to change the record state? " +
@@ -64,7 +64,7 @@ namespace PowerApps.Samples
                         if (changeAnswer.StartsWith("y") || changeAnswer.StartsWith("Y")
                             || changeAnswer == String.Empty)
                         {
-                            // Call function to change the incident to the closed state
+                            // 调用function to change the incident to the closed state
                             CloseIncident(service, caseReference);
                             // Re-open the incident and change its state
                             SetState(service, caseReference);
@@ -72,7 +72,7 @@ namespace PowerApps.Samples
                     }
                     else
                     {
-                        // The case cannot be closed
+                        // case cannot be closed
                         Console.WriteLine("Validate State Request returned that the " +
                                           "change is not valid.");
                     }

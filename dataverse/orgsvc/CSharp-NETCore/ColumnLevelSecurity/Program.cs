@@ -41,12 +41,12 @@ namespace PowerPlatform_Dataverse_CodeSamples
         static SampleSettings Settings { get; }
 
         /// <summary>
-        /// Constructor. Loads the application settings from a JSON configuration file.
+        /// Constructor. 加载 the application settings from a JSON configuration file.
         /// </summary>
         static Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS",
                 EnvironmentVariableTarget.User);
@@ -119,7 +119,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // 停止the stopwatch
             stopwatch.Stop();
 
-            // Get the elapsed time as a TimeSpan object
+            // 获取the elapsed time as a TimeSpan object
             TimeSpan ts = stopwatch.Elapsed;
 
             // Format and display the elapsed time
@@ -145,7 +145,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             if (!publisherId.HasValue)
             {
                 Console.WriteLine($"\tCreating {Settings.PublisherUniqueName} publisher...");
-                // Create a new publisher
+                // 创建a new publisher
                 Entity publisher = new("publisher")
                 {
                     ["uniquename"] = Settings.PublisherUniqueName,
@@ -349,18 +349,18 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // Grant the application user access to the sample_Example table
             // By associating them with a security role
 
-            // Check if the security role already exists
+            // 检查if the security role already exists
             Guid? securityRoleId = Helpers.GetRecordID(systemAdminService,
                 tableLogicalName: "role",
                 columnLogicalName: "name",
                 uniqueStringValue: Settings.RoleName);
 
-            // Get information about the application user
+            // 获取information about the application user
             var appUserIsResponse = (WhoAmIResponse)appUserService.Execute(new WhoAmIRequest());
             Guid appUserId = appUserIsResponse.UserId;
             Guid appUserBUId = appUserIsResponse.BusinessUnitId;
 
-            // Create the security role if it doesn't exist
+            // 创建the security role if it doesn't exist
             if (!securityRoleId.HasValue)
             {
                 Console.WriteLine($"\tCreating {Settings.RoleName} security role...");
@@ -391,7 +391,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 Console.WriteLine($"\t☑ {Settings.RoleName} exists.");
             }
 
-            // All the row-level privileges for the sample_Example table
+            // 所有the row-level privileges for the sample_Example table
             string[] privileges =
             [
                 "prvAppendTosample_Example",
@@ -422,7 +422,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // Make sure application user is associated with the security role for access to sample_example table
             Helpers.ManageRoleForAppUser(systemAdminService, securityRoleId.Value, appUserId, Settings.RoleName);
 
-            // Verify the row-level privileges that the application user has on the 
+            // 验证the row-level privileges that the application user has on the 
             // rows of data in the sample_example table.
             Helpers.VerifyAppUserRowLevelPrivileges(systemAdminService, appUserId);
 
@@ -439,7 +439,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 systemAdminService.Delete("fieldsecurityprofile", fieldsecurityProfileId.Value);
             }
 
-            // Create new field security profile
+            // 创建new field security profile
 
             Entity fieldSecurityProfile = new("fieldsecurityprofile")
             {
@@ -476,7 +476,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             #region Associate appUser to field security profile
 
-            // Check whether the app user is already associated to
+            // 检查whether the app user is already associated to
             // the field security profile, and associate them if not.
 
             Helpers.ManageFieldSecurityProfileForAppUser(
@@ -575,7 +575,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             #region Manage read access to secured column
 
-            // Get information about the application user
+            // 获取information about the application user
             var appUserIsResponse = (WhoAmIResponse)appUserService.Execute(new WhoAmIRequest());
             // Need an a reference to the user to grant access
             EntityReference appUserReference = new("systemuser", appUserIsResponse.UserId);
@@ -963,7 +963,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 // 当canreadunmasked is set, you must also include a canread value!
 
                 new("fieldpermission", emailfieldPermissionId) {
-                    ["canreadunmasked"] = new OptionSetValue(3), // All records
+                    ["canreadunmasked"] = new OptionSetValue(3), // 所有records
                     ["canread"] = new OptionSetValue(4) // Allowed
                 },
                 new("fieldpermission", governmentidfieldPermissionId) {
@@ -971,7 +971,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                     ["canread"] = new OptionSetValue(4) // Allowed
                 },
                 new("fieldpermission", dateofbirthfieldPermissionId) {
-                    ["canreadunmasked"] = new OptionSetValue(3), // All records
+                    ["canreadunmasked"] = new OptionSetValue(3), // 所有records
                     ["canread"] = new OptionSetValue(4) // Allowed
                 },
             ];

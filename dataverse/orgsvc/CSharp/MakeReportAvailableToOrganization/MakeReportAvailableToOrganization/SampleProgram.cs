@@ -15,22 +15,22 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Retrieve existing personal report.
+                    // 检索existing personal report.
                     var existingPersonalReport =
                         (Report)service.Retrieve(Report.EntityLogicalName,
                         _reportId,
                         new ColumnSet("ispersonal"));
 
-                    // Set IsPersonal property to false. 
+                    // 设置IsPersonal property to false. 
                     existingPersonalReport.IsPersonal = false;
 
                     // Make the report available to the organization.
                     service.Update(existingPersonalReport);
 
-                    // Retrieve the report and verify that the report is available to the organization
+                    // 检索the report and verify that the report is available to the organization
                     ColumnSet Cols1 = new ColumnSet("ispersonal");
                     var retrieveAvailableReport =
                         (Report)service.Retrieve(Report.EntityLogicalName,
@@ -44,7 +44,7 @@ namespace PowerApps.Samples
                     retrieveAvailableReport.IsPersonal = true;
                     service.Update(retrieveAvailableReport);
 
-                    // Retrieve the report, and verify that the report is unavailable to the organization
+                    // 检索the report, and verify that the report is unavailable to the organization
                     ColumnSet Cols2 = new ColumnSet("ispersonal");
                     var retrieveUnavailableReport =
                         (Report)service.Retrieve(Report.EntityLogicalName,

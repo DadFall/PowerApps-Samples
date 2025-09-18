@@ -16,10 +16,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             CreateRequiredRecords(service);
@@ -34,7 +34,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -47,7 +47,7 @@ namespace PowerApps.Samples
                 EMailAddress1 = "someone@example.com"
             };
 
-            // Create the contact1.
+            // 创建the contact1.
             _contactsIds.Add(service.Create(emailContact1));
             Console.WriteLine("Contact1 created.");
 
@@ -58,14 +58,14 @@ namespace PowerApps.Samples
                 EMailAddress1 = "someone@example.com"
             };
 
-            // Create the contact2.
+            // 创建the contact2.
             _contactsIds.Add(service.Create(emailContact2));
             Console.WriteLine("Contact2 created.");
 
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
@@ -92,7 +92,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete the contacts.
+                // 删除the contacts.
                 foreach (var contactId in _contactsIds)
                 {
                     service.Delete(Contact.EntityLogicalName, contactId);

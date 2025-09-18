@@ -6,7 +6,7 @@ using System.Security;
 namespace PowerApps.Samples
 {
     /// <summary>
-        /// Manages authentication and initializing samples using WebAPIService
+        /// 管理 authentication and initializing samples using WebAPIService
         /// </summary>
     public class App
     {
@@ -49,7 +49,7 @@ namespace PowerApps.Samples
         /// <summary>
         /// Returns an Access token for the app based on username and password from appsettings.json
         /// </summary>
-        /// <returns>An Access token</returns>
+        /// <returns>一个Access token</returns>
         /// <exception cref="Exception"></exception>
         internal static async Task<string> GetToken()
         {
@@ -82,11 +82,11 @@ namespace PowerApps.Samples
                     {
                         // You will get the following error if your UserPrincipalName or Password in appsettings.config is incorrect:
                         /*
-                          Microsoft.Identity.Client.MsalClientException
+ Microsoft.Identity.Client.MsalClientException
                           HResult=0x80131500
-                          Message=Only loopback redirect uri is supported, but app://58145b91-0c36-4500-8554-080854f2ac97/ was found. Configure http://localhost or http://localhost:port both during app registration and when you create the PublicClientApplication object. See https://aka.ms/msal-net-os-browser for details
+                          Message=Only loopback redirect uri is supported, 但是 app://58145b91-0c36-4500-8554-080854f2ac97/ was found. Configure http://localhost or http://localhost:port both during app registration and when you create the PublicClientApplication object. See https://aka.ms/msal-net-os-browser for details
                           Source=Microsoft.Identity.Client
-                        */
+ */
 
                         //Open browser to enter credentials when MFA required
                         result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();

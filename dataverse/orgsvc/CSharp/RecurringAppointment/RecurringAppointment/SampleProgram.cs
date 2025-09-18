@@ -12,7 +12,7 @@ namespace PowerApps.Samples
 {
    public partial class SampleProgram
     {
-        // Define the IDs as well as strings needed for this sample.
+        // 定义IDs as well as strings needed for this sample.
         public static Guid _recurringAppointmentMasterId;
         private static bool prompt = true;
 
@@ -31,7 +31,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Retrieve the individual appointment instance that falls on or after
+                    // 检索the individual appointment instance that falls on or after
                     // 10 days from today. Basically this will be the second instance in the
                     // recurring appointment series.                                          
 
@@ -63,13 +63,13 @@ namespace PowerApps.Samples
                     };
 
                     EntityCollection individualAppointments = service.RetrieveMultiple(instanceQuery);
-                    // Retrieve a recurring appointment series
+                    // 检索a recurring appointment series
                     
 
 
                     #region Reschedule an instance of recurring appointment
 
-                    // Update the scheduled start and end dates of the appointment
+                    // 更新the scheduled start and end dates of the appointment
                     // to reschedule it.
                     Appointment updateAppointment = new Appointment
                     {

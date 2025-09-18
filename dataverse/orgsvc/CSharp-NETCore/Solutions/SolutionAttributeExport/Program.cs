@@ -40,7 +40,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
@@ -57,7 +57,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 throw new ArgumentNullException(nameof(connectionString));
             }
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             Console.Write("Connecting to Dataverse environment...");
             ServiceClient serviceClient = new(connectionString);
 
@@ -79,7 +79,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 new Guid("{d21aab71-79e7-11dd-8874-00188b01e34f}"),
                 new ColumnSet(new string[] { "friendlyname" }));
 
-            // Create a new unmanaged solution
+            // 创建a new unmanaged solution
             Solution solution = new()
             {
                 UniqueName = solutionUniqueName,
@@ -89,7 +89,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 PublisherId = new EntityReference("publisher", defaultPublisher.Id)
             };
 
-            // Check whether the solution already exists
+            // 检查whether the solution already exists
             QueryExpression queryCheckForSolution = new()
             {
                 EntityName = "solution",
@@ -108,7 +108,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine("done.");
 
 
-            // Create the solution if it doesn't already exist
+            // 创建the solution if it doesn't already exist
             Entity? solutionResults = solutionQueryResults.Entities.FirstOrDefault();
 
             if (solutionResults == null)

@@ -8,9 +8,9 @@ namespace PowerApps.Samples.Messages
     public sealed class GetCollectionCountRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the GetCollectionCountRequest
+        /// 初始化 the GetCollectionCountRequest
         /// </summary>
-        /// <param name="collectionPath">The path to the collection to count</param>
+        /// <param name="collectionPath">path to the 集合 to count</param>
         public GetCollectionCountRequest(string collectionPath)
         {
             Method = HttpMethod.Get;

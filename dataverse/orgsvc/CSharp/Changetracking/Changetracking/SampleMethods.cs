@@ -20,10 +20,10 @@ namespace PowerApps.Samples
         /// <param name="service">Specifies the service to connect to.</param>
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             //Import the ChangeTrackingSample solution
@@ -44,19 +44,19 @@ namespace PowerApps.Samples
                 return;
             }
 
-            // Create 10 sample book records.
+            // 创建10 sample book records.
             CreateInitialBookRecordsForSample(service);
         }
 
 
         /// <summary>
         /// Alternate keys may not be active immediately after a solution defining them is installed.
-        /// This method polls the metadata for a specific entity
+        /// 此method polls the metadata for a specific entity
         /// to delay execution of the rest of the sample until the alternate keys are ready.
         /// </summary>
         /// <param name="service">Specifies the service to connect to.</param>
-        /// <param name="asyncJob">The system job that creates the index to support the alternate key</param>
-        /// <param name="iteration">The number of times this method has been called.</param>
+        /// <param name="asyncJob">system job that creates the index to support the alternate key</param>
+        /// <param name="iteration">number of times this method has been called.</param>
         /// 
         private static bool VerifyBookCodeKeyIsActive(IOrganizationService service, EntityReference asyncJob = null, int iteration = 0)
         {
@@ -146,7 +146,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates the inital set of book records in the sample
+        /// 创建 the inital set of book records in the sample
         /// </summary>
         /// <param name="service">Specifies the service to connect to.</param>
         private static void CreateInitialBookRecordsForSample(IOrganizationService service)
@@ -154,7 +154,7 @@ namespace PowerApps.Samples
             int recordsCreated = 0;
 
             Console.WriteLine("Creating required records......");
-            // Create 10 book records for demo.
+            // 创建10 book records for demo.
             for (int i = 0; i < 10; i++)
             {
                 Entity book = new Entity("sample_book");
@@ -181,7 +181,7 @@ namespace PowerApps.Samples
 
         }
         /// <summary>
-        /// Updates the set of records used in the sample
+        /// 更新 the set of records used in the sample
         /// </summary>
         /// <param name="service">Specifies the service to connect to.</param>
         private static void UpdateBookRecordsForSample(IOrganizationService service)
@@ -189,7 +189,7 @@ namespace PowerApps.Samples
             int recordsCreated = 0;
 
             Console.WriteLine("Adding 10 more records");
-            // Create 10 book records for demo.
+            // 创建10 book records for demo.
             for (int i = 10; i < 20; i++)
             {
                 Entity book = new Entity("sample_book");
@@ -214,7 +214,7 @@ namespace PowerApps.Samples
             }
             Console.WriteLine("{0} records created...", recordsCreated);
 
-            // Update a record.
+            // 更新a record.
             Console.WriteLine("Updating one of the initial records.");
             //Use the alternate key to reference the entity;
             Entity demoBookZero = new Entity("sample_book", "sample_bookcode", "BookCode0");

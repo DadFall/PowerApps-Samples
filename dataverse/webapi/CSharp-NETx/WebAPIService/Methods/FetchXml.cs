@@ -7,12 +7,12 @@ namespace PowerApps.Samples.Methods
     public static partial class Extensions
     {
         /// <summary>
-        /// Retrieves the results of a FetchXml query.
+        /// 检索 the results of a FetchXml query.
         /// </summary>
         /// <param name="service">服务</param>
-        /// <param name="entitySetName">The entity set name</param>
-        /// <param name="fetchXml">The fetchXml Query</param>
-        /// <param name="includeAnnotations">Whether to include annotations with the results.</param>
+        /// <param name="entitySetName">entity set 名称</param>
+        /// <param name="fetchXml">fetchXml Query</param>
+        /// <param name="includeAnnotations">Whether to include annotations with the 结果s.</param>
         /// <returns>FetchXmlResponse</returns>
         public static async Task<FetchXmlResponse> FetchXml(
             this Service service,

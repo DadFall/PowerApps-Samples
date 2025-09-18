@@ -23,7 +23,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Retrieve the queueitem with inactive phone calls from a queue            
+                    // 检索the queueitem with inactive phone calls from a queue            
                     var removeFromQueueRequest = new RemoveFromQueueRequest
                     {
                         QueueItemId = _queueItemId

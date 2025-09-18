@@ -15,7 +15,7 @@ namespace PowerApps.Samples.Messages
         }
 
         /// <summary>
-        /// The contents of the downloaded file.
+        /// contents of the downloaded file.
         /// </summary>
         public Guid JobId
         {

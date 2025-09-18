@@ -1,5 +1,5 @@
 export class Util {
-  #container; // The element to display messages in. Usually the main element in the body of the HTML page
+  #container; // element to display messages in. Usually the main element in the body of the HTML page
   // Constructor to initialize the container
   constructor(container) {
     this.#container = container;
@@ -50,14 +50,14 @@ export class Util {
       }
 
       const row = table.insertRow();
-      // Get the formatted value if available
+      // 获取the formatted value if available
 
-      // When annotation aren't shown, use the formatted value if available. Otherwise, use the value.
+      // 当annotation aren't shown, use the formatted value if available. Otherwise, use the value.
       let value = excludeAnnotations 
       ? data[`${property}@OData.Community.Display.V1.FormattedValue`] || data[property] 
       : data[property];
 
-      // Check if the value is an object and stringify it
+      // 检查if the value is an object and stringify it
       // to make it readable in the table
       if (Object.prototype.toString.call(value) === "[object Object]") {
         value = JSON.stringify(value, null, 2);
@@ -103,7 +103,7 @@ export class Util {
       columns.forEach((column) => {
         const cell = row.insertCell();
 
-        // Get the formatted value if available
+        // 获取the formatted value if available
         const value =
           item[`${column}@OData.Community.Display.V1.FormattedValue`] ||
           item[column];

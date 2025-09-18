@@ -20,7 +20,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// Generates a report for all users with given role name in the environment
+        /// 生成 a report for all users with given role name in the environment
         /// </summary>
         /// <param name="userName">user Name</param>
         /// <param name="password">password</param>

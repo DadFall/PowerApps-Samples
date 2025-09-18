@@ -62,7 +62,7 @@ namespace PowerApps.Samples
                     {
                         tracingService.Trace("System Administrator Role not found in systemuserroles");
 
-                        //The user may have the role due to an indirect association from team membership.
+                        //user may have the role due to an indirect association from team membership.
 
                         string teamMemberShipFetchXml = $@"<fetch mapping='logical' >
                           <entity name='teamroles'>

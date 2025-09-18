@@ -10,7 +10,7 @@ namespace PowerApps.Samples.Search.Types;
 public sealed class FieldStatusInfo
 {
     /// <summary>
-        /// Gets or sets index field name.
+        /// 获取或设置 index field name.
         /// </summary>
     [JsonProperty(PropertyName = "indexfieldname")]
     public string IndexFieldName { get; set; }

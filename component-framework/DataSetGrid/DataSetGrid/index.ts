@@ -1,5 +1,5 @@
 ﻿/*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -58,14 +58,14 @@ export class DataSetGrid implements ComponentFramework.StandardControl<IInputs, 
 		// Need to track container resize so that control could get the available width. The available height won't be provided even this is true
 		context.mode.trackContainerResize(true);
 
-		// Create main table container div.
+		// 创建main table container div.
 		this.mainContainer = document.createElement("div");
 
-		// Create data table container div.
+		// 创建data table container div.
 		this.gridContainer = document.createElement("div");
 		this.gridContainer.classList.add("DataSetControl_grid-container");
 
-		// Create data table container div.
+		// 创建data table container div.
 		this.loadPageButton = document.createElement("button");
 		this.loadPageButton.setAttribute("type", "button");
 		this.loadPageButton.innerText = context.resources.getString("PCF_DataSetControl_LoadMore_ButtonLabel");
@@ -89,7 +89,7 @@ export class DataSetGrid implements ComponentFramework.StandardControl<IInputs, 
 		this.toggleLoadMoreButtonWhenNeeded(context.parameters.dataSetGrid);
 
 		if (!context.parameters.dataSetGrid.loading) {
-			// Get sorted columns on View
+			// 获取sorted columns on View
 			const columnsOnView = this.getSortedColumnsOnView(context);
 
 			if (!columnsOnView || columnsOnView.length === 0) {
@@ -137,7 +137,7 @@ export class DataSetGrid implements ComponentFramework.StandardControl<IInputs, 
 			return columnItem.order >= 0;
 		});
 
-		// Sort those columns so that they will be rendered in order
+		// 排序those columns so that they will be rendered in order
 		columns.sort((a: DataSetInterfaces.Column, b: DataSetInterfaces.Column) => {
 			return a.order - b.order;
 		});
@@ -159,7 +159,7 @@ export class DataSetGrid implements ComponentFramework.StandardControl<IInputs, 
 				gridRecord.classList.add("DataSetControl_grid-item");
 				gridRecord.addEventListener("click", this.onRowClick.bind(this));
 
-				// Set the recordId on the row dom
+				// 设置the recordId on the row dom
 				gridRecord.setAttribute(RowRecordId, gridParam.records[currentRecordId].getRecordId());
 
 				columnsOnView.forEach((columnItem) => {

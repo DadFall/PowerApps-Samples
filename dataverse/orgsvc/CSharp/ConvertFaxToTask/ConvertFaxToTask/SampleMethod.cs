@@ -22,10 +22,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -38,18 +38,18 @@ namespace PowerApps.Samples
         }
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Get the current user.
+            // 获取the current user.
             WhoAmIRequest userRequest = new WhoAmIRequest();
             WhoAmIResponse userResponse = (WhoAmIResponse)service.Execute(userRequest);
             _userId = userResponse.UserId;
 
-            // Create the activity party for sending and receiving the fax.
+            // 创建the activity party for sending and receiving the fax.
             ActivityParty party = new ActivityParty
             {
                 PartyId = new EntityReference(SystemUser.EntityLogicalName, _userId)
             };
 
-            // Create the fax object.
+            // 创建the fax object.
             Fax fax = new Fax
             {
                 Subject = "Sample Fax",
@@ -61,7 +61,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

@@ -327,7 +327,7 @@ td.smallfontcell
                     // all objects for html report are avaialble. massage data a bit and dump report
                     SetProcessTriggersCategoryAndDependencies();
                     DumpHtmlReport();
-                    // If fullspec report is requested we got work on execution of those, otherwise job is done
+                    // 如果fullspec report is requested we got work on execution of those, otherwise job is done
                     nextStageToExecute = (fetchAllEntities ? DumpStage.FetchFullSpecReports : DumpStage.Completed);
                     break;
                 case DumpStage.FetchFullSpecReports:
@@ -652,7 +652,7 @@ td.smallfontcell
             string filteringattributes = (row["filteringattributes"] == null ? "(not set)" : row["filteringattributes"].Value<string>());
             htmlWriter.Write("<td class='smallfontcell'>{0}</td>", filteringattributes.Replace(",", ", "));
 
-            // Find solutionid. First look for it from the assemblyid with the SolutionComponent, if not found then directly use the solutionid.
+            // 查找solutionid. First look for it from the assemblyid with the SolutionComponent, if not found then directly use the solutionid.
             string solutionId = FindSolutionIdFromSolutionComponent(pluginRow, pluginRow["_pluginassemblyid_value"].Value<string>());
 
             if ((solutionId == null) && (pluginRow != null)) solutionId = pluginRow["solutionid"].Value<string>();

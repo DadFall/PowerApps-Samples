@@ -15,11 +15,11 @@ namespace PowerApps.Samples.Metadata.Messages
         private string _uri = string.Empty;
 
         /// <summary>
-        /// Initializes the RetrieveEntityDefinitionRequest
+        /// 初始化 the RetrieveEntityDefinitionRequest
         /// </summary>
-        /// <param name="metadataId">The Id of the table</param>
-        /// <param name="logicalName">The logical name of the table</param>
-        /// <param name="query">OData system query options to control what is returned.</param>
+        /// <param name="metadataId">Id of the table</param>
+        /// <param name="logicalName">logical 名称 of the table</param>
+        /// <param name="query">OData system query 选项 to control what is returned.</param>
         /// <exception cref="Exception"></exception>
         public RetrieveEntityDefinitionRequest(
             Guid? metadataId = null,

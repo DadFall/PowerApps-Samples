@@ -19,10 +19,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -35,19 +35,19 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a second user that we will impersonate in our sample code.
+            // 创建a second user that we will impersonate in our sample code.
             SystemUserProvider.RetrieveSalesManager(service);
             Console.WriteLine("Required records have been created.");
         }
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace PowerApps.Samples
             if (deleteRecords)
             {
 
-                // Delete the account record.
+                // 删除the account record.
                 service.Delete(Account.EntityLogicalName, _accountId);
                 Console.WriteLine("Entity records have been deleted.");
             }

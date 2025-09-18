@@ -6,11 +6,11 @@ export class FunctionsAndActions {
     * @type {dv.Client}
     * @private
     */
-   #client; // The DataverseWebAPIClient.Client instance
-   #container; // The container element to display messages
+   #client; // DataverseWebAPIClient.Client instance
+   #container; // container element to display messages
    #entityStore = []; // Store for created records to delete at the end of the sample
    #util; // Util instance for utility functions
-   #whoIAm; // The current user's information
+   #whoIAm; // current user's information
    #isSystemAdminFunctionSolutionId = null; // ID of the SystemAdminFunction solution
    #name = "Functions and actions"; // Name of the sample
 
@@ -23,10 +23,10 @@ export class FunctionsAndActions {
 
    // Public functions to set up, run, and clean up data created by the sample
    async SetUp() {
-      // Clear the container
+      // 清除the container
       this.#container.replaceChildren();
       this.#util.appendMessage(this.#name + " sample started");
-      // Get the current user's information
+      // 获取the current user's information
       try {
          this.#whoIAm = await this.#client.WhoAmI();
 
@@ -75,7 +75,7 @@ export class FunctionsAndActions {
          // Install the IsSystemAdmin Function solution
          await this.#installIsSystemAdminFunctionSolution();
 
-         // Try to retrieve the ID after installing the solution
+         // 尝试to retrieve the ID after installing the solution
          this.#isSystemAdminFunctionSolutionId =
             await this.#getIsSystemAdminFunctionSolutionId();
          if (this.#isSystemAdminFunctionSolutionId) {
@@ -104,7 +104,7 @@ export class FunctionsAndActions {
          );
       }
 
-      // Create account to share
+      // 创建account to share
       const accountToShare = {
          name: "Account to Share",
       };
@@ -149,9 +149,9 @@ export class FunctionsAndActions {
 
    async #installIsSystemAdminFunctionSolution() {
 
-      // The customizationFile is a JavaScript object that contains the solution package.
+      // customizationFile is a JavaScript object that contains the solution package.
       // It is imported from the IsSystemAdminFunction_1_0_0_0_managed.js file.
-      // The solution package is a managed solution that contains the IsSystemAdminFunction custom API.
+      // solution package is a managed solution that contains the IsSystemAdminFunction custom API.
 
       const request = new Request(
          new URL(
@@ -184,7 +184,7 @@ export class FunctionsAndActions {
    //#endregion Section 0: Install Solution in Setup
 
 
-   // Run the sample
+   // 运行the sample
    async Run() {
       try {
          this.#util.appendMessage("<h2>1: Unbound Function WhoAmI</h2>");
@@ -211,7 +211,7 @@ export class FunctionsAndActions {
          await this.#addPrivilegesRoleExample();
       } catch (error) {
          this.#util.showError(error.message);
-         // Try to clean up even if an error occurs
+         // 尝试to clean up even if an error occurs
          await this.CleanUp();
       }
    }
@@ -223,7 +223,7 @@ export class FunctionsAndActions {
    // Demonstrates calling the WhoAmI function
    async #whoAmIExample() {
       try {
-         // Invoke the WhoAmI function
+         // 调用the WhoAmI function
 
          const request = new Request(
             new URL(
@@ -264,7 +264,7 @@ export class FunctionsAndActions {
          const keys = Object.keys(object);
          const values = Object.values(object);
 
-         // Validate that all the values are strings
+         // 验证that all the values are strings
          for (const value of values) {
             if (typeof value !== "string") {
                throw new Error(
@@ -273,12 +273,12 @@ export class FunctionsAndActions {
             }
          }
 
-         // Generate aliases
+         // 生成aliases
          const aliases = keys
             .map((key, index) => `${key}=@p${index + 1}`)
             .join(",");
 
-         // Generate assigned values
+         // 生成assigned values
          const assignedValues = keys
             .map((key, index) => `@p${index + 1}='${values[index]}'`)
             .join("&");
@@ -286,7 +286,7 @@ export class FunctionsAndActions {
          return { aliases, assignedValues };
       }
 
-      // Define the address object
+      // 定义address object
       const address1 = {
          Line1: "123 Maple St.",
          City: "Seattle",
@@ -295,7 +295,7 @@ export class FunctionsAndActions {
          Country: "USA",
       };
 
-      // Call the FormatAddress function
+      // 调用the FormatAddress function
       try {
          const { aliases, assignedValues } =
             generateStringAliasesAndAssignments(address1);
@@ -373,7 +373,7 @@ export class FunctionsAndActions {
    //#region Section 3: Unbound Function InitializeFrom
 
    async #initializeFromExample() {
-      // Get the account ID for Contoso Consulting created in SetUp
+      // 获取the account ID for Contoso Consulting created in SetUp
       const contosoAccountId = this.#entityStore.find(
          (item) => item.name === "Contoso Consulting"
       ).id;
@@ -403,7 +403,7 @@ export class FunctionsAndActions {
       try {
          // const response = await this.#client.SendRequest(intializeFromRequest);
          const response = await this.#client.Send(request);
-         // Check if the response is successful
+         // 检查if the response is successful
 
          let message = [
             "The <a target='_blank' href='https://learn.",
@@ -426,7 +426,7 @@ export class FunctionsAndActions {
       }
 
       if (newaccount) {
-         // Create a new account using the initialized values
+         // 创建a new account using the initialized values
          newaccount.name = "Contoso Consulting Chicago Branch";
          newaccount.address1_city = "Chicago";
          newaccount.address1_line1 = "456 Elm St.";
@@ -436,10 +436,10 @@ export class FunctionsAndActions {
          newaccount.address1_telephone1 = "(312) 555-3456";
          newaccount.numberofemployees = 12;
 
-         // Remove the ownerid@odata.bind property from the new account object
+         // 移除the ownerid@odata.bind property from the new account object
          // if it exists. This will only occur if this column is mapped.
-         // This column should not be mapped.
-         // The calling user will be set as the owner of the new record.
+         // 此column should not be mapped.
+         // calling user will be set as the owner of the new record.
          if (newaccount["ownerid@odata.bind"]) {
             delete newaccount["ownerid@odata.bind"];
          }
@@ -463,7 +463,7 @@ export class FunctionsAndActions {
             return Object.keys(result);
          }
 
-         // Transform the object to remove @odata.bind properties
+         // 转换the object to remove @odata.bind properties
          const columns = getSelectablePropertyNames(newaccount);
 
          try {
@@ -606,13 +606,13 @@ export class FunctionsAndActions {
 
       this.#util.appendMessage(startMessage.join(""));
 
-      // Check if the IsSystemAdminFunction solution is installed
+      // 检查if the IsSystemAdminFunction solution is installed
       if (!this.#isSystemAdminFunctionSolutionId) {
          this.#util.showError("IsSystemAdminFunction solution is not installed.");
          return;
       }
 
-      // Get top 10 user records that don't start with # character
+      // 获取top 10 user records that don't start with # character
       const records = await this.#client.RetrieveMultiple(
          "systemusers",
          [
@@ -622,7 +622,7 @@ export class FunctionsAndActions {
          ].join("&")
       );
 
-      // Check if each user is a system admin
+      // 检查if each user is a system admin
       const checkPromises = records.value.map((record) =>
          this.#checkIsSystemAdmin(record)
       );
@@ -692,12 +692,12 @@ export class FunctionsAndActions {
 
       this.#util.appendMessage(startMessage);
 
-      // Get the ID for "Account to Share" account record created in SetUp
+      // 获取the ID for "Account to Share" account record created in SetUp
       const accountToShareId = this.#entityStore.find(
          (item) => item.name === "Account to Share"
       ).id;
 
-      // Get an enabled, interactive user other than current user
+      // 获取an enabled, interactive user other than current user
       let otherUser = null;
       try {
          const records = await this.#client.RetrieveMultiple(
@@ -779,7 +779,7 @@ export class FunctionsAndActions {
                });
 
             try {
-               // Send the GrantAccess request
+               // 发送the GrantAccess request
                await this.#client.Send(request);
                this.#util.appendMessage(
                   `Granted DeleteAccess rights to ${otherUser.fullname} for the account record.`
@@ -788,7 +788,7 @@ export class FunctionsAndActions {
                this.#util.showError(`Failed to grant access: ${error.message}`);
             }
 
-            // Retrieve the updated access rights
+            // 检索the updated access rights
             const updatedAccessRights = await this.#retrievePrincipalAccessRequest(
                otherUser.systemuserid,
                accountToShareId
@@ -872,7 +872,7 @@ export class FunctionsAndActions {
       ].join("");
       this.#util.appendMessage(startMessage);
 
-      // Create a security role to add privileges to
+      // 创建a security role to add privileges to
       const role = {
          "businessunitid@odata.bind": `businessunits(${this.#whoIAm.BusinessUnitId
             })`,
@@ -882,7 +882,7 @@ export class FunctionsAndActions {
       let roleId = null;
       try {
          roleId = await this.#client.Create("roles", role);
-         // To delete later
+         // 稍后删除
          this.#entityStore.push({
             entitySetName: "roles",
             id: roleId,
@@ -903,7 +903,7 @@ export class FunctionsAndActions {
             this.#util.showError(error.message);
          }
 
-         // Retrieve the prvCreateAccount and prvReadAccount privileges
+         // 检索the prvCreateAccount and prvReadAccount privileges
 
          try {
             const privileges = await this.#client.RetrieveMultiple(
@@ -936,7 +936,7 @@ export class FunctionsAndActions {
                   body: JSON.stringify({ Privileges: rolePrivileges }),
                });
 
-            // Send the request to add the privileges
+            // 发送the request to add the privileges
             try {
                await this.#client.Send(request);
 
@@ -969,7 +969,7 @@ export class FunctionsAndActions {
    }
 
    async #showRolePrivileges(roleId, name) {
-      // Get the roles currently associated with the role
+      // 获取the roles currently associated with the role
 
       try {
          const rolePrivileges = await this.#client.RetrieveMultiple(
@@ -1021,7 +1021,7 @@ export class FunctionsAndActions {
          }
       }
 
-      // Set the entity store to an empty array
+      // 设置the entity store to an empty array
       this.#entityStore = [];
       this.#util.appendMessage(this.#name + " sample completed.");
       this.#util.appendMessage("<a href='#'>Go to top</a>");

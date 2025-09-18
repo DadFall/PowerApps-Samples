@@ -31,12 +31,12 @@ namespace PowerApps.Samples.Search.Messages
         }
 
         /// <summary>
-        /// The default scope is searching across all search-configured entities and fields.
+        /// default scope is searching across all search-configured entities and fields.
         /// </summary>
         public string? Entities { get { return _entities; } set { _entities = value; SetContent(); } }
 
         /// <summary>
-        /// Search term.
+        /// 搜索term.
         /// </summary>
         public string? Search { get { return _search; } set { _search = value; SetContent(); } }
 
@@ -46,7 +46,7 @@ namespace PowerApps.Samples.Search.Messages
         public bool Fuzzy { get { return _fuzzy; } set { _fuzzy = value; SetContent(); } }
 
         /// <summary>
-        /// Filter criteria to reduce results returned.
+        /// 过滤criteria to reduce results returned.
         /// </summary>
         public string? Filter { get { return _filter; } set { _filter = value; SetContent(); } }
 

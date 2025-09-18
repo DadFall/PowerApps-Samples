@@ -3,10 +3,10 @@
     public static partial class Extensions
     {
         /// <summary>
-        /// Converts HttpResponseMessage to derived type
+        /// 转换 HttpResponseMessage to derived type
         /// </summary>
         /// <typeparam name="T">The type derived from HttpResponseMessage</typeparam>
-        /// <param name="response">The HttpResponseMessage</param>
+        /// <param name="response">HttpResponseMessage</param>
         /// <returns></returns>
         public static T As<T>(this HttpResponseMessage response) where T : HttpResponseMessage
         {

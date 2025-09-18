@@ -16,7 +16,7 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
                     // Define an anonymous type to define the possible values for
@@ -59,11 +59,11 @@ namespace PowerApps.Samples
                         LanguageCode = 1033, // US English
                         ReportTypeCode = new OptionSetValue(ReportTypeCode.ReportingServicesReport)
                     };
-                    // Create a report record named Sample Report.
+                    // 创建a report record named Sample Report.
                     _reportId = service.Create(sampleReport);
 
 
-                    // Set the report category.
+                    // 设置the report category.
                     var sampleReportCategory = new ReportCategory
                     {
                         ReportId = new EntityReference(Report.EntityLogicalName, _reportId),
@@ -80,7 +80,7 @@ namespace PowerApps.Samples
                     _reportEntityId = service.Create(reportEntity);
 
 
-                    // Set the report visibility.
+                    // 设置the report visibility.
                     var rv = new ReportVisibility
                     {
                         ReportId = new EntityReference(Report.EntityLogicalName, _reportId),

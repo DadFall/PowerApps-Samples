@@ -18,10 +18,10 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Create and Retrieve Offline Filter
+                    // 创建and Retrieve Offline Filter
                     // In your Outlook client, this will appear in the System Filters tab
                     // under File | CRM | Synchronize | Outlook Filters.
                     Console.Write("Creating offline filter");
@@ -48,7 +48,7 @@ namespace PowerApps.Samples
                     Console.WriteLine("Description: {0}", result.Description);
                     Console.WriteLine();
 
-                    // Create and Retrieve Offline Template
+                    // 创建and Retrieve Offline Template
                     // In your Outlook client, this will appear in the User Filters tab
                     // under File | CRM | Synchronize | Outlook Filters.
                     Console.Write("Creating offline template");
@@ -75,7 +75,7 @@ namespace PowerApps.Samples
                     Console.WriteLine("Description: {0}", result.Description);
                     Console.WriteLine();
                   
-                 // Call InstantiateFiltersRequest
+                 // 调用InstantiateFiltersRequest
                     Console.WriteLine("Retrieving user's ID and creating the template collection");
                     var whoAmI = new WhoAmIRequest();
                     Guid id = ((WhoAmIResponse)service.Execute(whoAmI)).UserId;
@@ -93,7 +93,7 @@ namespace PowerApps.Samples
                     var response = (InstantiateFiltersResponse)service.Execute(request);
                     Console.WriteLine();
                  
-                    // Call ResetUserFiltersRequest
+                    // 调用ResetUserFiltersRequest
                     Console.WriteLine("Resetting the user's offline templates to the defaults");
                     var resetRequest = new ResetUserFiltersRequest
                     {

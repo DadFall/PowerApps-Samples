@@ -8,11 +8,11 @@ namespace PowerApps.Samples.Messages
     public sealed class DownloadBlockRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the DownloadBlockRequest
+        /// 初始化 the DownloadBlockRequest
         /// </summary>
-        /// <param name="offset">The offset (in bytes) from the beginning of the block to the first byte of data in the block.</param>
-        /// <param name="blockLength">The size of the block in bytes.</param>
-        /// <param name="fileContinuationToken">A token that uniquely identifies a sequence of related data blocks.</param>
+        /// <param name="offset">offset (in bytes) from the beginning of the block to the first byte of 数据 in the block.</param>
+        /// <param name="blockLength">size of the block in bytes.</param>
+        /// <param name="fileContinuationToken">一个token that uniquely identifies a sequence of related 数据 blocks.</param>
         public DownloadBlockRequest(long offset, long blockLength, string fileContinuationToken)
         {
             Method = HttpMethod.Post;

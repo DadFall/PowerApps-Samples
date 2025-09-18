@@ -6,7 +6,7 @@
     public sealed class SearchStatisticsRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the searchstatisticsRequest
+        /// 初始化 the searchstatisticsRequest
         /// </summary>
         public SearchStatisticsRequest()
         {

@@ -26,27 +26,27 @@ namespace PowerApps.Samples
                     // Instaniate an account object.
                     var account = new Entity("account");
 
-                    // Set the required attributes. For account, only the name is required. 
+                    // 设置the required attributes. For account, only the name is required. 
                     // See the Entity Metadata topic in the SDK documentatio to determine 
                     // which attributes must be set for each entity.
                     account["name"] = "Fourth Coffee";
 
-                    // Create an account record named Fourth Coffee.
+                    // 创建an account record named Fourth Coffee.
                     accountId = service.Create(account);
 
                     Console.Write("{0} {1} created, ", account.LogicalName, account.Attributes["name"]);
 
-                    // Create a column set to define which attributes should be retrieved.
+                    // 创建a column set to define which attributes should be retrieved.
                     var attributes = new ColumnSet(new string[] { "name", "ownerid" });
 
-                    // Retrieve the account and its name and ownerid attributes.
+                    // 检索the account and its name and ownerid attributes.
                     account = service.Retrieve(account.LogicalName, accountId, attributes);
                     Console.Write("retrieved, ");
 
-                    // Update the postal code attribute.
+                    // 更新the postal code attribute.
                     account["address1_postalcode"] = "98052";
 
-                    // The address 2 postal code was set accidentally, so set it to null.
+                    // address 2 postal code was set accidentally, so set it to null.
                     account["address2_postalcode"] = null;
 
                     // Shows use of Money.
@@ -55,11 +55,11 @@ namespace PowerApps.Samples
                     // Shows use of boolean.
                     account["creditonhold"] = false;
 
-                    // Update the account.
+                    // 更新the account.
                     service.Update(account);
                     Console.WriteLine("and updated.");
 
-                    // Delete the account.
+                    // 删除the account.
                     bool deleteRecords = true;
 
                     if (prompt)

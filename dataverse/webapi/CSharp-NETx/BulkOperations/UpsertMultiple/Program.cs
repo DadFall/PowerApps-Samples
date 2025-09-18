@@ -30,7 +30,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 // 3. Update x/4 records by providing Primary Key (PK) which is entity.Id
                 // 4. Update x/4 records by providing Alternate Key (AK) which is entity.KeyAttribute
 
-                // Create Example table
+                // 创建Example table
                 await Utility.CreateExampleTable(service: service,
                     tableSchemaName: tableSchemaName,
                     isElastic: Settings.UseElastic);
@@ -55,7 +55,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 {
                     if (Settings.UseElastic)
                     {
-                        // Create a List of entity instances to be updated during UpsertMultiple call.
+                        // 创建a List of entity instances to be updated during UpsertMultiple call.
 
                         // To handle cases where number of records is an odd number
                         var numRecCreate = Math.Ceiling((double)(numberOfRecords / 2));
@@ -70,7 +70,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                             entityList.Add(new JObject() {
                             {"sample_name", $"sample record {i+1:0000000}"},
                             { "partitionid", partitionValue},
-                            // Each record MUST have the @odata.type specified.
+                            // 每个record MUST have the @odata.type specified.
                             { "@odata.type",$"Microsoft.Dynamics.CRM.{tableLogicalName}" }
                         });
                         }
@@ -91,7 +91,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 #pragma warning restore CS0162 // Unreachable code detected
                         }
 
-                        // Update the sample_name value. We want to Update num/2 records using Primary Key and num/2 records using Alternate Keys
+                        // 更新the sample_name value. We want to Update num/2 records using Primary Key and num/2 records using Alternate Keys
                         var j = 0;
                         foreach (JObject entity in entityList)
                         {
@@ -131,7 +131,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                             { "sample_name", $"sample record {i+1:0000000}"},
                             { tablePrimaryKeyName, Guid.NewGuid() },
                             { "partitionid", partitionValue },
-                            // Each record MUST have the @odata.type specified.
+                            // 每个record MUST have the @odata.type specified.
                             { "@odata.type",$"Microsoft.Dynamics.CRM.{tableLogicalName}" }
                         });
                         }
@@ -146,7 +146,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                             { "sample_name", $"sample record {i+1:0000000}"},
                             { "partitionid", partitionValue },
                             { "@odata.id", $"{tableLogicalName}s({tablePrimaryKeyName}={Guid.NewGuid()},partitionid='{partitionValue}')" },
-                            // Each record MUST have the @odata.type specified.
+                            // 每个record MUST have the @odata.type specified.
                             { "@odata.type",$"Microsoft.Dynamics.CRM.{tableLogicalName}" }
                         });
 
@@ -168,7 +168,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     }
                     else
                     {
-                        // Create a List of entity instances to be updated during UpsertMultiple call.
+                        // 创建a List of entity instances to be updated during UpsertMultiple call.
 
                         // To handle cases where number of records is an odd number
                         var numRecCreate = Math.Ceiling((double)(numberOfRecords / 2));
@@ -182,7 +182,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                         {
                             entityList.Add(new JObject() {
                             { "sample_name", $"sample record {i+1:0000000}"},
-                            // Each record MUST have the @odata.type specified.
+                            // 每个record MUST have the @odata.type specified.
                             { "@odata.type",$"Microsoft.Dynamics.CRM.{tableLogicalName}" }
                         });
                             if(Settings.CreateAlternateKey)
@@ -207,7 +207,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 #pragma warning restore CS0162 // Unreachable code detected
                         }
 
-                        // Update the sample_name value. We want to Update num/2 records using Primary Key and num/2 records using Alternate Keys
+                        // 更新the sample_name value. We want to Update num/2 records using Primary Key and num/2 records using Alternate Keys
                         var j = 0;
                         foreach (JObject entity in entityList)
                         {
@@ -246,7 +246,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                             entityList.Add(new JObject() {
                             {"sample_name", $"sample record {i+1:0000000}"},
                             {tablePrimaryKeyName, Guid.NewGuid() },
-                            // Each record MUST have the @odata.type specified.
+                            // 每个record MUST have the @odata.type specified.
                             {"@odata.type",$"Microsoft.Dynamics.CRM.{tableLogicalName}" }
                         });
                         }
@@ -261,7 +261,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                                 entityList.Add(new JObject() {
                             {"sample_name", $"sample record {i+1:0000000}"},
                             { "@odata.id", $"{tableLogicalName}s({tableAlternateKey}='{i+1:0000000}')" },
-                            // Each record MUST have the @odata.type specified.
+                            // 每个record MUST have the @odata.type specified.
                             {"@odata.type",$"Microsoft.Dynamics.CRM.{tableLogicalName}" }
                         });
                             }
@@ -334,11 +334,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
         private static async Task BulkDeleteCreatedRecords(Service service, string alternateKey, string retrieveQuery)
         {
             // 删除created rows asynchronously
-            // When testing plug-ins, set break point here to observe data
+            // 当testing plug-ins, set break point here to observe data
             Console.WriteLine($"\nStarting asynchronous bulk delete " +
                 $"of {numberOfRecords} upserted records...");
 
-            // Retrieve the record ids for records to be updated using PK
+            // 检索the record ids for records to be updated using PK
             var retrieveMultipleRequest2 = new RetrieveMultipleRequest(
                 queryUri: retrieveQuery);
 

@@ -8,9 +8,9 @@ namespace PowerApps.Samples.Messages
     public sealed class DeleteFileRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the DeleteFileRequest
+        /// 初始化 the DeleteFileRequest
         /// </summary>
-        /// <param name="fileId">The identifier of the stored binary file, attachment, or annotation.</param>
+        /// <param name="fileId">标识符 of the stored binary file, attachment, or annotation.</param>
         public DeleteFileRequest(Guid fileId)
         {
             Method = HttpMethod.Post;

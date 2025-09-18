@@ -11,7 +11,7 @@ namespace PowerApps.Samples
 {
      public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         private static Guid _accountId;
         private static Guid _teamId;
         private static Guid _currentUserId;
@@ -29,10 +29,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -40,7 +40,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Retrieve and display entity access information.
+        /// 检索and display entity access information.
         /// </summary>
         /// <param name="entityReference"></param>
         private static void RetrieveAndDisplayEntityAccess(CrmServiceClient service, EntityReference entityReference)
@@ -50,7 +50,7 @@ namespace PowerApps.Samples
                 Target = entityReference
             };
 
-            // The RetrieveSharedPrincipalsAndAccessResponse returns an entity reference
+            // RetrieveSharedPrincipalsAndAccessResponse returns an entity reference
             // that has a LogicalName of "user" when returning access information for a
             // team.
             var accessResponse = (RetrieveSharedPrincipalsAndAccessResponse)
@@ -95,11 +95,11 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Create any entity records that this sample requires.
+        /// 创建any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create an account named Fourth Coffee.
+            // 创建an account named Fourth Coffee.
             Account testAccount = new Account
             {
                 Name = "Fourth Coffee"
@@ -112,7 +112,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
@@ -139,7 +139,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Remove all the users from the team before deleting the team.
+                // 移除all the users from the team before deleting the team.
                 var deleteFromTeamRequest = new RemoveMembersTeamRequest
                 {
                     TeamId = _teamId,
@@ -147,7 +147,7 @@ namespace PowerApps.Samples
                 };
                 service.Execute(deleteFromTeamRequest);
 
-                // Delete records created in this sample.
+                // 删除records created in this sample.
                 service.Delete(Account.EntityLogicalName, _accountId);
                 service.Delete(Team.EntityLogicalName, _teamId);
 

@@ -16,14 +16,14 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
                    
-                    // Create a visualization
+                    // 创建a visualization
 
-                    // Set The presentation XML string.
+                    // 设置The presentation XML string.
                     string presentationXml = @"
                     <Chart Palette='BrightPastel'>
                         <Series>
@@ -68,7 +68,7 @@ namespace PowerApps.Samples
                     </Chart>
                     ";
 
-                    // Set the data XML string.
+                    // 设置the data XML string.
                     string dataXml = @"
                     <datadefinition>
                         <fetchcollection>
@@ -93,7 +93,7 @@ namespace PowerApps.Samples
                         </categorycollection>
                     </datadefinition>
                     ";
-                    // Create the visualization entity instance.
+                    // 创建the visualization entity instance.
                     var newOrgOwnedVisualization = new SavedQueryVisualization
                     {
                         Name = "Sample Visualization",
@@ -106,11 +106,11 @@ namespace PowerApps.Samples
                     _orgOwnedVisualizationId = service.Create(newOrgOwnedVisualization);
                     Console.WriteLine("Created {0}.", newOrgOwnedVisualization.Name);
 
-                    // Retrieve the visualization
+                    // 检索the visualization
                     var retrievedOrgOwnedVisualization = (SavedQueryVisualization)service.Retrieve(SavedQueryVisualization.EntityLogicalName, _orgOwnedVisualizationId, new ColumnSet(true));
                     Console.WriteLine("Retrieved the visualization.");
 
-                    // Update the retrieved visualization
+                    // 更新the retrieved visualization
                     // 1.  Update the name.
                     // 2.  Update the data description string.                    
 

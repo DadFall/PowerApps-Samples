@@ -25,12 +25,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
@@ -45,7 +45,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         {
             Program app = new();
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"));
 
@@ -59,7 +59,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             int fileColumnMaxSizeInKb;
             Guid? fileId = null;
 
-            // Create the File Column
+            // 创建the File Column
             Utility.CreateFileColumn(serviceClient, entityLogicalName, fileColumnSchemaName);
 
             // 更新the MaxSizeInKB: Comment this line to get error about file too large for column.
@@ -119,7 +119,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 File.WriteAllBytes($"downloaded-{fileName}", downloadedFile);
                 Console.WriteLine($"Downloaded the file to {Environment.CurrentDirectory}//downloaded-{fileName}.");
 
-                // Delete the file
+                // 删除the file
                 DeleteFileRequest deleteFileRequest = new()
                 {
                     FileId = fileId.Value
@@ -131,12 +131,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             }
 
-            // Delete the account record
+            // 删除the account record
             serviceClient.Delete(accountReference.LogicalName, accountReference.Id);
             Console.WriteLine("Deleted the account record.");
 
 
-            // Delete the file column
+            // 删除the file column
             Utility.DeleteFileColumn(serviceClient, entityLogicalName, fileColumnSchemaName);
 
             Console.WriteLine("\nSample complete.");
@@ -219,7 +219,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     FileContinuationToken = fileContinuationToken,
                 };
 
-                // Send the request
+                // 发送the request
                 service.Execute(uploadBlockRequest);
             }
 
@@ -295,7 +295,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     Offset = offset
                 };
 
-                // Send the request
+                // 发送the request
                 var downloadBlockResponse =
                            (DownloadBlockResponse)service.Execute(downLoadBlockRequest);
 

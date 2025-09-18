@@ -10,7 +10,7 @@
         }
 
         /// <summary>
-        /// Sets Requests to send with the change set
+        /// 设置 Requests to send with the change set
         /// </summary>
         public List<HttpRequestMessage> Requests
         {

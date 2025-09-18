@@ -83,7 +83,7 @@ namespace PowerApps.Samples
             return false;
         }
         /// <summary>
-        /// A function to manage exceptions thrown by console application samples
+        /// 一个function to manage exceptions thrown by console application samples
         /// </summary>
         /// <param name="exceptionFromSample">exception thrown</param>
         public static void HandleException(Exception exceptionFromSample) {

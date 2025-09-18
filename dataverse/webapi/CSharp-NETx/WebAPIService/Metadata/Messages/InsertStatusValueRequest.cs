@@ -10,7 +10,7 @@ namespace PowerApps.Samples.Metadata.Messages
     public sealed class InsertStatusValueRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the InsertStatusValueRequest
+        /// 初始化 the InsertStatusValueRequest
         /// </summary>
         /// <param name="parameters">Data about the option to insert.</param>
         public InsertStatusValueRequest(

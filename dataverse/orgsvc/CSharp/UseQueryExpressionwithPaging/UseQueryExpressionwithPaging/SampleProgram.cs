@@ -23,30 +23,30 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Query using the paging cookie.
-                    // Define the paging attributes.
-                    // The number of records per page to retrieve.
+                    // 查询using the paging cookie.
+                    // 定义paging attributes.
+                    // number of records per page to retrieve.
                     int queryCount = 3;
 
-                    // Initialize the page number.
+                    // 初始化the page number.
                     int pageNumber = 1;
 
-                    // Initialize the number of records.
+                    // 初始化the number of records.
                     int recordCount = 0;
 
-                    // Define the condition expression for retrieving records.
+                    // 定义condition expression for retrieving records.
 
                     var pagecondition = new ConditionExpression();
                     pagecondition.AttributeName = "parentaccountid";
                     pagecondition.Operator = ConditionOperator.Equal;
                     pagecondition.Values.Add(parentAccountId);
 
-                    // Define the order expression to retrieve the records.
+                    // 定义order expression to retrieve the records.
                     var order = new OrderExpression();
                     order.AttributeName = "name";
                     order.OrderType = OrderType.Ascending;
 
-                    // Create the query expression and add condition.
+                    // 创建the query expression and add condition.
                     var pagequery = new QueryExpression();
                     pagequery.EntityName = "account";
                     pagequery.Criteria.AddCondition(pagecondition);
@@ -58,7 +58,7 @@ namespace PowerApps.Samples
                     pagequery.PageInfo.Count = queryCount;
                     pagequery.PageInfo.PageNumber = pageNumber;
 
-                    // The current paging cookie. When retrieving the first page, 
+                    // current paging cookie. When retrieving the first page, 
                     // pagingCookie should be null.
                     pagequery.PageInfo.PagingCookie = null;
                     Console.WriteLine("Retrieving sample account records in pages...\n");
@@ -66,11 +66,11 @@ namespace PowerApps.Samples
 
                     while (true)
                     {
-                        // Retrieve the page.
+                        // 检索the page.
                         EntityCollection results = service.RetrieveMultiple(pagequery);
                         if (results.Entities != null)
                         {
-                            // Retrieve all records from the result set.
+                            // 检索all records from the result set.
                             foreach (Account acct in results.Entities)
                             {
                                 Console.WriteLine("{0}.\t{1}\t{2}", ++recordCount, acct.Name,
@@ -78,7 +78,7 @@ namespace PowerApps.Samples
                             }
                         }
 
-                        // Check for more records, if it returns true.
+                        // 检查for more records, if it returns true.
                         if (results.MoreRecords)
                         {
                             Console.WriteLine("\n****************\nPage number {0}\n****************", pagequery.PageInfo.PageNumber);
@@ -87,12 +87,12 @@ namespace PowerApps.Samples
                             // Increment the page number to retrieve the next page.
                             pagequery.PageInfo.PageNumber++;
 
-                            // Set the paging cookie to the paging cookie returned from current results.
+                            // 设置the paging cookie to the paging cookie returned from current results.
                             pagequery.PageInfo.PagingCookie = results.PagingCookie;
                         }
                         else
                         {
-                            // If no more records are in the result nodes, exit the loop.
+                            // 如果no more records are in the result nodes, exit the loop.
                             break;
                         }
                     }

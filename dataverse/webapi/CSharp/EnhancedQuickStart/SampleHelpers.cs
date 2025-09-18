@@ -19,7 +19,7 @@ namespace EnhancedQuickStart
         /// </summary>
         /// <param name="connectionString"></param>
         /// <param name="parameter"></param>
-        /// <returns>The value from the connection string that matches the parameter key value</returns>
+        /// <returns>value from the connection string that matches the parameter key value</returns>
         public static string GetParameterValueFromConnectionString(string connectionString, string parameter)
         {
             try
@@ -35,11 +35,11 @@ namespace EnhancedQuickStart
         /// <summary>
         /// Returns an HttpClient configured with an OAuthMessageHandler
         /// </summary>
-        /// <param name="connectionString">The connection string to use.</param>
-        /// <param name="clientId">The client id to use when authenticating.</param>
-        /// <param name="redirectUrl">The redirect Url to use when authenticating</param>
-        /// <param name="version">The version of Web API to use. Defaults to version 9.2 </param>
-        /// <returns>An HttpClient you can use to perform authenticated operations with the Web API</returns>
+        /// <param name="connectionString">connection 字符串 to use.</param>
+        /// <param name="clientId">client id to use when authenticating.</param>
+        /// <param name="redirectUrl">redirect Url to use when authenticating</param>
+        /// <param name="version">version of Web API to use. Defaults to version 9.2 </param>
+        /// <returns>一个HttpClient you can use to perform authenticated operations with the Web API</returns>
         public static HttpClient GetHttpClient(string connectionString, string clientId, string redirectUrl, string version = "v9.2")
         {
             string url = GetParameterValueFromConnectionString(connectionString, "Url");
@@ -66,7 +66,7 @@ namespace EnhancedQuickStart
         }
 
         /// <summary> Displays exception information to the console. </summary>
-        /// <param name="ex">The exception to output</param>
+        /// <param name="ex">exception to output</param>
         public static void DisplayException(Exception ex)
         {
             Console.WriteLine("The application terminated with an error.");

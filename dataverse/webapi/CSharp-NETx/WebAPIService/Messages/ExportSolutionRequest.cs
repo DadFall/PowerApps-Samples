@@ -11,7 +11,7 @@ namespace PowerApps.Samples.Messages
 
 
         /// <summary>
-        /// Initializes the ExportSolutionRequest
+        /// 初始化 the ExportSolutionRequest
         /// </summary>
         /// <param name="parameters"></param>
         public ExportSolutionRequest(ExportSolutionParameters parameters)

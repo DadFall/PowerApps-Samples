@@ -11,10 +11,10 @@ namespace PowerApps.Samples.Messages
 
 
         /// <summary>
-        /// Initializes the UpsertRequest
+        /// 初始化 the UpsertRequest
         /// </summary>
-        /// <param name="entityReference">A reference to a record. This should use alternate keys.</param>
-        /// <param name="record">The data to create or update.</param>
+        /// <param name="entityReference">一个reference to a record. This should use alternate keys.</param>
+        /// <param name="record">数据 to create or update.</param>
         /// <param name="upsertBehavior">Control the upsert behavior.</param>
         public UpsertRequest(
             EntityReference entityReference,

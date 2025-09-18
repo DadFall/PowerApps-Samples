@@ -10,9 +10,9 @@ namespace PowerApps.Samples.Messages
     public sealed class InitializeAnnotationBlocksUploadRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the InitializeAnnotationBlocksUploadRequest
+        /// 初始化 the InitializeAnnotationBlocksUploadRequest
         /// </summary>
-        /// <param name="target">The annotation record with an 'annotationid' value.</param>
+        /// <param name="target">annotation record with an 'annotationid' 值.</param>
         /// <exception cref="ArgumentException">The target must contain a valid 'annotationid' value.</exception>
         public InitializeAnnotationBlocksUploadRequest(JObject target)
         {

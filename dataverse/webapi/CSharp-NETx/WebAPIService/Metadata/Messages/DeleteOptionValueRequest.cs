@@ -10,9 +10,9 @@ namespace PowerApps.Samples.Metadata.Messages
     public sealed class DeleteOptionValueRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the DeleteOptionValueRequest
+        /// 初始化 the DeleteOptionValueRequest
         /// </summary>
-        /// <param name="parameters">Contains the data about the option to delete.</param>
+        /// <param name="parameters">Contains the 数据 about the option to delete.</param>
         public DeleteOptionValueRequest(
             DeleteOptionValueParameters parameters)
         {

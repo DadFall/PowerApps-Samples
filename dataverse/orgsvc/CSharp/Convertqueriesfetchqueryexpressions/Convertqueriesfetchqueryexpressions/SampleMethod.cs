@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -41,12 +41,12 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
 
-            // Create an account.
+            // 创建an account.
             var account = new Account
             {
                 Name = "Litware, Inc.",
@@ -54,7 +54,7 @@ namespace PowerApps.Samples
             };
             accountId = (service.Create(account));
 
-            // Create the two contacts.
+            // 创建the two contacts.
             var contact = new Contact()
             {
                 FirstName = "Ben",
@@ -87,7 +87,7 @@ namespace PowerApps.Samples
             };
             contactIdList.Add(service.Create(contact));
 
-            // Create two opportunities.
+            // 创建two opportunities.
             var opportunity = new Opportunity()
             {
                 Name = "Litware, Inc. Opportunity 1",
@@ -115,7 +115,7 @@ namespace PowerApps.Samples
 
         private static void DoQueryExpressionToFetchXmlConversion(CrmServiceClient service)
         {
-            // Build a query expression that we will turn into FetchXML.
+            // 构建a query expression that we will turn into FetchXML.
             var queryExpression = new QueryExpression()
             {
                 Distinct = false,
@@ -167,13 +167,13 @@ namespace PowerApps.Samples
                 }
             };
 
-            // Run the query as a query expression.
+            // 运行the query as a query expression.
             EntityCollection queryExpressionResult =
                 service.RetrieveMultiple(queryExpression);
             Console.WriteLine("Output for query as QueryExpression:");
             DisplayContactQueryResults(service,queryExpressionResult);
 
-            // Convert the query expression to FetchXML.
+            // 转换the query expression to FetchXML.
             var conversionRequest = new QueryExpressionToFetchXmlRequest
             {
                 Query = queryExpression
@@ -209,7 +209,7 @@ namespace PowerApps.Samples
 
         private static void DoFetchXmlToQueryExpressionConversion(CrmServiceClient service)
         {
-            // Create a Fetch query that we will convert into a query expression.
+            // 创建a Fetch query that we will convert into a query expression.
             var fetchXml =
                 @"<fetch mapping='logical' version='1.0'>
                     <entity name='opportunity'>
@@ -229,14 +229,14 @@ namespace PowerApps.Samples
                     </entity>
                 </fetch>";
 
-            // Run the query with the FetchXML.
+            // 运行the query with the FetchXML.
             var fetchExpression = new FetchExpression(fetchXml);
             EntityCollection fetchResult =
                 service.RetrieveMultiple(fetchExpression);
             Console.WriteLine("\nOutput for query as FetchXML:");
             DisplayOpportunityQueryResults(service,fetchResult);
 
-            // Convert the FetchXML into a query expression.
+            // 转换the FetchXML into a query expression.
             var conversionRequest = new FetchXmlToQueryExpressionRequest
             {
                 FetchXml = fetchXml
@@ -274,7 +274,7 @@ namespace PowerApps.Samples
             Console.WriteLine();
         }
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
@@ -301,7 +301,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete all records created in this sample.
+                // 删除all records created in this sample.
                 foreach (Guid contactId in contactIdList)
                 {
                     service.Delete(Contact.EntityLogicalName, contactId);

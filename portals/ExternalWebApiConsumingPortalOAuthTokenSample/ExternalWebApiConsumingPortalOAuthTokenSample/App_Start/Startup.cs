@@ -53,8 +53,8 @@ namespace ExternalWebApiConsumingPortalOAuthTokenSample.App_Start
         }
 
         /// <summary>
-        /// Handles applying the authentication challenge to the response message.
-		/// </summary>
+        /// 处理 applying the authentication challenge to the response message.
+        /// </summary>
 		/// <param name="context"></param>
 		/// <returns></returns>
 		public Task ApplyChallenge(OAuthChallengeContext context)
@@ -63,7 +63,7 @@ namespace ExternalWebApiConsumingPortalOAuthTokenSample.App_Start
         }
 
         /// <summary>
-        /// Handles processing OAuth bearer token.
+        /// 处理 processing OAuth bearer token.
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
@@ -75,7 +75,7 @@ namespace ExternalWebApiConsumingPortalOAuthTokenSample.App_Start
         }
 
         /// <summary>
-        /// Handles validating the identity produced from an OAuth bearer token.
+        /// 处理 validating the identity produced from an OAuth bearer token.
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
@@ -88,7 +88,7 @@ namespace ExternalWebApiConsumingPortalOAuthTokenSample.App_Start
 					return Task.FromResult<object>(null);
 				}
 
-				// Retrieve the JWT token in Authorization Header
+				// 检索the JWT token in Authorization Header
 				var jwt = context.Request.Headers["Authorization"].Replace("Bearer ", string.Empty);
 
 				var handler = new JwtSecurityTokenHandler();

@@ -11,7 +11,7 @@ namespace PowerApps.Samples
     public partial class SampleProgram
     {
 
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         private static Guid _userDashboardId;
         private static Guid _otherUserId;
         private static bool prompt = true;
@@ -22,10 +22,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -38,8 +38,8 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -74,19 +74,19 @@ namespace PowerApps.Samples
                 }
             };
 
-            //This query should return one and only one result.
+            //此query should return one and only one result.
             SavedQuery defaultOpportunityQuery = service.RetrieveMultiple(mySavedQuery)
                 .Entities.Select(x => (SavedQuery)x).FirstOrDefault();
 
-            // Retrieve visualizations out of the system. 
-            // This sample assumes that you have the "Top Opportunities"
+            // 检索visualizations out of the system. 
+            // 此sample assumes that you have the "Top Opportunities"
             // visualization that is installed with Microsoft Dynamics CRM.
             QueryByAttribute visualizationQuery = new QueryByAttribute
             {
                 EntityName = SavedQueryVisualization.EntityLogicalName,
                 ColumnSet = new ColumnSet("savedqueryvisualizationid"),
                 Attributes = { "name" },
-                //If you do not have this visualization, you will need to change
+                //如果you do not have this visualization, you will need to change
                 //this line.
                 Values = { "Top Opportunities" }
             };
@@ -95,7 +95,7 @@ namespace PowerApps.Samples
             SavedQueryVisualization visualization = service.RetrieveMultiple(visualizationQuery).
                 Entities.Select(x => (SavedQueryVisualization)x).FirstOrDefault();
 
-            //This is the language code for U.S. English. If you are running this code
+            //此is the language code for U.S. English. If you are running this code
             //in a different locale, you will need to modify this value.
             int languageCode = 1033;
 
@@ -197,7 +197,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine("Created {0}.", dashboard.Name);
 
-            // Create another user to whom the dashboard will be assigned.
+            // 创建another user to whom the dashboard will be assigned.
             _otherUserId = SystemUserProvider.RetrieveSalesManager(service);
 
             Console.WriteLine("Required records have been created.");
@@ -205,7 +205,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>
@@ -223,7 +223,7 @@ namespace PowerApps.Samples
 
             if (deleteRecords)
             {
-                // Delete action doesn't work on the UserForm instance if it is assigned
+                // 删除action doesn't work on the UserForm instance if it is assigned
                 // to a user other than current user.
                 // So as a workaround, we are impersonating the actual owner of 
                 // the UserForm instance to complete the delete action.

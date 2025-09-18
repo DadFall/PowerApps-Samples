@@ -1698,7 +1698,7 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-        /// Check if user is an integration user.
+        /// 检查if user is an integration user.
         /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isintegrationuser")]
 		public System.Nullable<bool> IsIntegrationUser
@@ -2178,7 +2178,7 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-        /// Check if user is a setup user.
+        /// 检查if user is a setup user.
         /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("setupuser")]
 		public System.Nullable<bool> SetupUser

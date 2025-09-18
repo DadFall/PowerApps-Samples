@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -46,21 +46,21 @@ namespace PowerApps.Samples
         {
             try
             {
-                // Query for a system user to send an email to after the bulk delete
+                // 查询for a system user to send an email to after the bulk delete
                 // operation completes.
                 var userRequest = new WhoAmIRequest();
                 var userResponse = (WhoAmIResponse)service.Execute(userRequest);
                 Guid currentUserId = userResponse.UserId;
 
-                // Create a condition for a bulk delete request.
-                // NOTE: This sample uses very specific queries for deleting records
+                // 创建a condition for a bulk delete request.
+                // 注意： This sample uses very specific queries for deleting records
                 // that have been manually exported in order to free space.
                 QueryExpression opportunitiesQuery = BuildOpportunityQuery();
 
-                // Create the bulk delete request.
+                // 创建the bulk delete request.
                 var bulkDeleteRequest = new BulkDeleteRequest();
 
-                // Set the request properties.
+                // 设置the request properties.
                 bulkDeleteRequest.JobName = "Backup Bulk Delete";
 
                 // Querying activities
@@ -78,19 +78,19 @@ namespace PowerApps.Samples
                     BuildActivityQuery(RecurringAppointmentMaster.EntityLogicalName)
                 };
 
-                // Set the start time for the bulk delete.
+                // 设置the start time for the bulk delete.
                 bulkDeleteRequest.StartDateTime = DateTime.Now;
 
-                // Set the required recurrence pattern.
+                // 设置the required recurrence pattern.
                 bulkDeleteRequest.RecurrencePattern = String.Empty;
 
-                // Set email activity properties.
+                // 设置email activity properties.
                 bulkDeleteRequest.SendEmailNotification = false;
                 bulkDeleteRequest.ToRecipients = new Guid[] { currentUserId };
                 bulkDeleteRequest.CCRecipients = new Guid[] { };
 
                 // Submit the bulk delete job.
-                // NOTE: Because this is an asynchronous operation, the response will be immediate.
+                // 注意： Because this is an asynchronous operation, the response will be immediate.
                 _bulkDeleteResponse =
                     (BulkDeleteResponse)service.Execute(bulkDeleteRequest);
                 Console.WriteLine("The bulk delete operation has been requested.");
@@ -109,24 +109,24 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method will query for the BulkDeleteOperation until it has been
+        /// 此method will query for the BulkDeleteOperation until it has been
         /// completed or until the designated time runs out.  It then checks to see if
         /// the operation was successful.
         /// </summary>
         private static void CheckSuccess(CrmServiceClient service)
         {
-            // Query for bulk delete operation and check for status.
+            // 查询for bulk delete operation and check for status.
             var bulkQuery = new QueryByAttribute(
                 BulkDeleteOperation.EntityLogicalName);
             bulkQuery.ColumnSet = new ColumnSet(true);
 
-            // NOTE: When the bulk delete operation was submitted, the GUID that was
+            // 注意： When the bulk delete operation was submitted, the GUID that was
             // returned was the asyncoperationid, not the bulkdeleteoperationid.
             bulkQuery.Attributes.Add("asyncoperationid");
             _asyncOperationId = _bulkDeleteResponse.JobId;
             bulkQuery.Values.Add(_asyncOperationId);
 
-            // With only the asyncoperationid at this point, a RetrieveMultiple is
+            // 使用only the asyncoperationid at this point, a RetrieveMultiple is
             // required to get the
             // bulk delete operation created above.
             EntityCollection entityCollection = service.RetrieveMultiple(bulkQuery);
@@ -144,20 +144,20 @@ namespace PowerApps.Samples
                     // Grab the one bulk operation that has been created.
                     createdBulkDeleteOperation = (BulkDeleteOperation)entityCollection.Entities[0];
 
-                    // Check the operation's state.
+                    // 检查the operation's state.
                     if (createdBulkDeleteOperation.StateCode.Value != BulkDeleteOperationState.Completed)
                     {
-                        // The operation has not yet completed.  Wait a second for the
+                        // operation has not yet completed.  Wait a second for the
                         // status to change.
                         System.Threading.Thread.Sleep(1000);
                         secondsTicker--;
 
-                        // Retrieve a fresh version of the bulk delete operation.
+                        // 检索a fresh version of the bulk delete operation.
                         entityCollection = service.RetrieveMultiple(bulkQuery);
                     }
                     else
                     {
-                        // Stop polling as the operation's state is now complete.
+                        // 停止polling as the operation's state is now complete.
                         secondsTicker = 0;
                     }
                 }
@@ -167,12 +167,12 @@ namespace PowerApps.Samples
                     System.Threading.Thread.Sleep(1000);
                     secondsTicker--;
 
-                    // Retrieve the entity again.
+                    // 检索the entity again.
                     entityCollection = service.RetrieveMultiple(bulkQuery);
                 }
             }
 
-            // Validate that the operation was completed.
+            // 验证that the operation was completed.
             if (createdBulkDeleteOperation != null)
             {
                 _bulkDeleteOperationId = createdBulkDeleteOperation.BulkDeleteOperationId;
@@ -196,16 +196,16 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Builds a query that matches all opportunities that are not in the open state.
+        /// 构建 a query that matches all opportunities that are not in the open state.
         /// </summary>
         private static QueryExpression BuildOpportunityQuery()
         {
-            // Create a query that will match all opportunities that do not have a state
+            // 创建a query that will match all opportunities that do not have a state
             // of open.
             var closedCondition = new ConditionExpression(
                 "statecode", ConditionOperator.NotEqual, (int)OpportunityState.Open);
 
-            // Create a filter expression for a bulk delete request.
+            // 创建a filter expression for a bulk delete request.
             var closedFilter = new FilterExpression();
             closedFilter.Conditions.Add(closedCondition);
 
@@ -214,14 +214,14 @@ namespace PowerApps.Samples
             queryExpression.EntityName = Opportunity.EntityLogicalName;
             queryExpression.Criteria = closedFilter;
 
-            // Return all records
+            // 返回all records
             queryExpression.Distinct = false;
 
             return queryExpression;
         }
 
         /// <summary>
-        /// Builds a query which will match all activities that are in the canceled or
+        /// 构建 a query which will match all activities that are in the canceled or
         /// completed state.
         /// </summary>
         private static QueryExpression BuildActivityQuery( String entityName)
@@ -244,7 +244,7 @@ namespace PowerApps.Samples
             return queryExpression;
         }
         /// <summary>
-        /// This method deletes the AsyncOperation and BulkDeleteOperation that were
+        /// 此method deletes the AsyncOperation and BulkDeleteOperation that were
         /// created in the database, if the user confirms that deleting these is
         /// desired.
         /// </summary>
@@ -270,7 +270,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete the bulk delete operation so that it won't clutter the
+                // 删除the bulk delete operation so that it won't clutter the
                 // database.
                 if (_bulkDeleteOperationId.HasValue)
                 {

@@ -23,7 +23,7 @@
 
 
         /// <summary>
-        /// The logical name of the table the column belongs to.
+        /// logical name of the table the column belongs to.
         /// </summary>
         public string EntityLogicalName
         {
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// The logical name of the key
+        /// logical name of the key
         /// </summary>
         public string LogicalName
         {
@@ -60,7 +60,7 @@
 
 
         /// <summary>
-        /// The properties of the column to return.
+        /// properties of the column to return.
         /// </summary>
         public string Query
         {
@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        /// Generates the URI based on the current values
+        /// 生成 the URI based on the current values
         /// </summary>
         private void GenerateUri()
         {

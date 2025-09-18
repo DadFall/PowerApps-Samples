@@ -20,7 +20,7 @@ namespace Microsoft.Crm.Sdk.Samples
     {
         private HttpClient httpClient;
 
-        //TODO: Change this value if your Office 365 tenant is in a different region than North America
+        //待办： Change this value if your Office 365 tenant is in a different region than North America
         private static string _serviceUrl = "https://admin.services.crm.dynamics.com";
 
         private void ConnectToAPI()
@@ -67,7 +67,7 @@ namespace Microsoft.Crm.Sdk.Samples
                 // 连接to the Online Management API. 
                 app.ConnectToAPI();
 
-                // Run your request
+                // 运行your request
                 Task.WaitAll(Task.Run(async () => await app.RetrieveInstancesAsync()));
             }
             catch (System.Exception ex) { DisplayException(ex); }

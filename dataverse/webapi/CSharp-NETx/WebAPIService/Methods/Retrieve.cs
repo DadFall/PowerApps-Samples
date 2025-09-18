@@ -6,13 +6,13 @@ namespace PowerApps.Samples.Methods
     public static partial class Extensions
     {
         /// <summary>
-        /// Retrieves a record.
+        /// 检索 a record.
         /// </summary>
         /// <param name="service">服务.</param>
-        /// <param name="entityReference">A reference to the record to retrieve</param>
-        /// <param name="query">The query string parameters</param>
-        /// <param name="includeAnnotations">Whether to include annotations with the data.</param>
-        /// <param name="eTag">The current ETag value to compare.</param>
+        /// <param name="entityReference">一个reference to the record to retrieve</param>
+        /// <param name="query">query 字符串 参数</param>
+        /// <param name="includeAnnotations">Whether to include annotations with the 数据.</param>
+        /// <param name="eTag">current ETag 值 to compare.</param>
         /// <returns></returns>
         public static async Task<JObject> Retrieve(
             this Service service, 

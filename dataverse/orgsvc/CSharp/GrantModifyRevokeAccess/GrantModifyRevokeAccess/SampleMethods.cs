@@ -25,10 +25,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -63,7 +63,7 @@ namespace PowerApps.Samples
                 Target = accountReference
             };
 
-            // The RetrieveSharedPrincipalsAndAccessResponse returns an entity reference
+            // RetrieveSharedPrincipalsAndAccessResponse returns an entity reference
             // that has a LogicalName of "user" when returning access information for a
             // "team."
             var accessResponse = (RetrieveSharedPrincipalsAndAccessResponse)
@@ -85,11 +85,11 @@ namespace PowerApps.Samples
                 entityReference.Id);
         }
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a unique identifier for this sample for preventing name conflicts.
+            // 创建a unique identifier for this sample for preventing name conflicts.
             var sampleIdentifier = Guid.NewGuid();
 
             // Retrieve/create the system users to use for the sample.
@@ -97,7 +97,7 @@ namespace PowerApps.Samples
             _systemUserIds = SystemUserProvider.RetrieveDelegates(
                 service, ref ldapPath);
 
-            // Retrieve the root business unit to use for creating the team for the
+            // 检索the root business unit to use for creating the team for the
             // sample.
             var businessUnitQuery = new QueryExpression
             {
@@ -111,12 +111,12 @@ namespace PowerApps.Samples
             var businessUnitResult = service.RetrieveMultiple(businessUnitQuery);
             var businessUnit = businessUnitResult.Entities[0].ToEntity<BusinessUnit>();
 
-            // Get the GUID of the current user.
+            // 获取the GUID of the current user.
             var who = new WhoAmIRequest();
             var whoResponse = (WhoAmIResponse)service.Execute(who);
             _currentUserId = whoResponse.UserId;
 
-            // Create a team for use in the sample.
+            // 创建a team for use in the sample.
             var team = new Team
             {
                 AdministratorId = new EntityReference(
@@ -126,7 +126,7 @@ namespace PowerApps.Samples
             };
             _teamId = service.Create(team);
 
-            // Add the second user to the newly created team.
+            // 添加the second user to the newly created team.
             var addToTeamRequest = new AddMembersTeamRequest
             {
                 TeamId = _teamId,
@@ -134,7 +134,7 @@ namespace PowerApps.Samples
             };
             service.Execute(addToTeamRequest);
 
-            // Create a account for use in the sample.
+            // 创建a account for use in the sample.
             var account = new Account
             {
                 Name = "User Access Sample Company",
@@ -142,7 +142,7 @@ namespace PowerApps.Samples
             };
             _accountId = service.Create(account);
 
-            // Create a task to associate to the account.
+            // 创建a task to associate to the account.
             var accountReference = new EntityReference(Account.EntityLogicalName, _accountId);
             var task = new Task
             {
@@ -151,7 +151,7 @@ namespace PowerApps.Samples
             };
             _taskId = service.Create(task);
 
-            // Create a letter to associate to the account.
+            // 创建a letter to associate to the account.
             var letter = new Letter
             {
                 Subject = "User Access Sample Letter",
@@ -183,7 +183,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete records created in this sample.
+                // 删除records created in this sample.
                 service.Delete(Team.EntityLogicalName, _teamId);
                 // Deleting the account will delete its associated activities.
                 service.Delete(Account.EntityLogicalName, _accountId);

@@ -8,9 +8,9 @@ namespace PowerApps.Samples.Messages
     public sealed class RetrieveTotalRecordCountRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the RetrieveTotalRecordCountRequest
+        /// 初始化 the RetrieveTotalRecordCountRequest
         /// </summary>
-        /// <param name="entityNames">The logical names of the entities to include in the query.</param>
+        /// <param name="entityNames">logical 名称s of the entities to include in the query.</param>
         public RetrieveTotalRecordCountRequest(string[] entityNames)
         {
             Method = HttpMethod.Get;

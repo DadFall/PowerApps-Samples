@@ -4,15 +4,15 @@ using System;
 namespace xMultiplePluginSamples
 {
     /// <summary>
-    /// Plugin development guide: https://learn.microsoft.com/powerapps/developer/common-data-service/plug-ins
+        /// Plugin development guide: https://learn.microsoft.com/powerapps/developer/common-data-service/plug-ins
     /// Best practices and guidance: https://learn.microsoft.com/powerapps/developer/common-data-service/best-practices/business-logic/
-    /// </summary>
+        /// </summary>
     public class CreateMultiplePreOp : PluginBase
     {
         public CreateMultiplePreOp(string unsecureConfiguration, string secureConfiguration)
             : base(typeof(CreateMultiplePreOp))
         {
-            // TODO: Implement your custom configuration handling
+            // 待办： Implement your custom configuration handling
             // https://learn.microsoft.com/powerapps/developer/common-data-service/register-plug-in#set-configuration-data
         }
 
@@ -24,14 +24,14 @@ namespace xMultiplePluginSamples
                 throw new ArgumentNullException(nameof(localPluginContext));
             }
 
-            // Update default PluginBase.cs and replace IPluginExecutionContext with IPluginExecutionContext4.
+            // 更新default PluginBase.cs and replace IPluginExecutionContext with IPluginExecutionContext4.
             IPluginExecutionContext4 context = localPluginContext.PluginExecutionContext;
 
             // Custom business logic starts here
 
             if (context.PrimaryEntityName == "sample_example" && context.MessageName == "CreateMultiple" && context.Stage == 20)
             {
-                // If the tag value is not present, there is no reason to continue.
+                // 如果the tag value is not present, there is no reason to continue.
                 if (context.SharedVariables.TryGetValue("tag", out string tagValue))
                 {
                     if (context.InputParameters.Contains("Targets") && context.InputParameters["Targets"] is EntityCollection entityCollection)

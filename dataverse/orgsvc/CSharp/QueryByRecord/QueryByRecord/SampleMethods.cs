@@ -17,10 +17,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             CreateRequiredRecords(service);
@@ -32,8 +32,8 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Create a new connectionrole instance. 
+        /// 此method creates any entity records that this sample requires.
+        /// 创建a new connectionrole instance.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -48,7 +48,7 @@ namespace PowerApps.Samples
                 Other = 5
             };
 
-            // Create a Connection Role
+            // 创建a Connection Role
             ConnectionRole setupConnectionRole = new ConnectionRole
             {
                 Name = "Example Connection Role",
@@ -59,7 +59,7 @@ namespace PowerApps.Samples
             _connectionRoleId = service.Create(setupConnectionRole);
             Console.WriteLine("Created {0}.", setupConnectionRole.Name);
 
-            // Create a related Connection Role Object Type Code record for Account
+            // 创建a related Connection Role Object Type Code record for Account
             ConnectionRoleObjectTypeCode newAccountConnectionRoleTypeCode
                 = new ConnectionRoleObjectTypeCode
                 {
@@ -73,7 +73,7 @@ namespace PowerApps.Samples
                 "Created a related Connection Role Object Type Code record for Account."
                 );
 
-            // Create a related Connection Role Object Type Code record for Contact
+            // 创建a related Connection Role Object Type Code record for Contact
             ConnectionRoleObjectTypeCode newContactConnectionRoleTypeCode
                 = new ConnectionRoleObjectTypeCode
                 {
@@ -101,7 +101,7 @@ namespace PowerApps.Samples
             _contactId = service.Create(setupContact);
             Console.WriteLine("Created {0}.", setupContact.LastName);
 
-            // Create a new connection between Account 1 and the contact record.
+            // 创建a new connection between Account 1 and the contact record.
             Connection newConnection1 = new Connection
             {
                 Record1Id = new EntityReference(Account.EntityLogicalName,
@@ -117,7 +117,7 @@ namespace PowerApps.Samples
             Console.WriteLine(
                     "Created a connection between the account 1 and the contact.");
 
-            // Create a new connection between the contact and Account 2 record
+            // 创建a new connection between the contact and Account 2 record
             Connection newConnection2 = new Connection
             {
                 Record1Id = new EntityReference(Contact.EntityLogicalName,
@@ -136,7 +136,7 @@ namespace PowerApps.Samples
             return;
         }
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>

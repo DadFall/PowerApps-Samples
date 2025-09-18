@@ -3,15 +3,15 @@
     public class OrganizationDetail
     {
         /// <summary>
-        /// The global unique identifier of the organization.
+        /// global unique identifier of the organization.
         /// </summary>
         public Guid OrganizationId { get; set; }
         /// <summary>
-        /// The friendly name of the organization.
+        /// friendly name of the organization.
         /// </summary>
         public string FriendlyName { get; set; }
         /// <summary>
-        /// The version of the organization.
+        /// version of the organization.
         /// </summary>
         public string OrganizationVersion { get; set; }
 
@@ -24,11 +24,11 @@
 
         public string TenantId { get; set; }
         /// <summary>
-        /// The organization name used in the URL for the organization web service.
+        /// organization name used in the URL for the organization web service.
         /// </summary>
         public string UrlName { get; set; }
         /// <summary>
-        /// The unique name of the organization.
+        /// unique name of the organization.
         /// </summary>
         public string UniqueName { get; set; }
         /// <summary>
@@ -36,7 +36,7 @@
         /// </summary>
         public EndpointCollection Endpoints { get; set; }
         /// <summary>
-        /// The state of the organization.
+        /// state of the organization.
         /// </summary>
         public OrganizationState State { get; set; }
     }

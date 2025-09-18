@@ -28,13 +28,13 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create the 'From:' activity party for the email
+                    // 创建the 'From:' activity party for the email
                     ActivityParty fromParty = new ActivityParty
                     {
                         PartyId = new EntityReference(SystemUser.EntityLogicalName, _userId)
                     };
 
-                    // Create the 'To:' activity party for the email
+                    // 创建the 'To:' activity party for the email
                     ActivityParty toParty = new ActivityParty
                     {
                         PartyId = new EntityReference(Contact.EntityLogicalName, _contactId)
@@ -42,7 +42,7 @@ namespace PowerApps.Samples
 
                     Console.WriteLine("Created activity parties.");
 
-                    // Create an e-mail message.
+                    // 创建an e-mail message.
                     Email email = new Email
                     {
                         To = new ActivityParty[] { toParty },
@@ -73,7 +73,7 @@ namespace PowerApps.Samples
                         throw new ArgumentException("Standard Email Templates are missing");
                     }
 
-                    // Create the request
+                    // 创建the request
                     SendEmailFromTemplateRequest emailUsingTemplateReq = new SendEmailFromTemplateRequest
                     {
                         Target = email,
@@ -81,14 +81,14 @@ namespace PowerApps.Samples
                         // Use a built-in Email Template of type "contact".
                         TemplateId = _templateId,
 
-                        // The regarding Id is required, and must be of the same type as the Email Template.
+                        // regarding Id is required, and must be of the same type as the Email Template.
                         RegardingId = _contactId,
                         RegardingType = Contact.EntityLogicalName
                     };
 
                     SendEmailFromTemplateResponse emailUsingTemplateResp = (SendEmailFromTemplateResponse)service.Execute(emailUsingTemplateReq);
 
-                    // Verify that the e-mail has been created
+                    // 验证that the e-mail has been created
                     _emailId = emailUsingTemplateResp.Id;
                     if (!_emailId.Equals(Guid.Empty))
                     {

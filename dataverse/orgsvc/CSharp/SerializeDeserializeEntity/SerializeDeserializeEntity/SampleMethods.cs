@@ -18,10 +18,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -34,18 +34,18 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
 
-           // Create a contact entity record that will be serialized into XML.
+           // 创建a contact entity record that will be serialized into XML.
             var contactCreate = new Contact();
             contactCreate.FirstName = "Thomas";
             contactCreate.LastName = "Andersen";
 
-            // Create the entity in Microsoft CRM and get its ID.
+            // 创建the entity in Microsoft CRM and get its ID.
             _contactId = service.Create(contactCreate);
 
             Console.WriteLine("The contact for the sample has been created.");
@@ -53,7 +53,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

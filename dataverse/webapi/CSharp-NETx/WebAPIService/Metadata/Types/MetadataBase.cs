@@ -12,7 +12,7 @@ namespace PowerApps.Samples.Metadata.Types
         public bool? HasChanged { get; set; }
 
         /// <summary>
-        /// A unique identifier for the metadata item.
+        /// 一个unique identifier for the metadata item.
         /// </summary>
         public Guid? MetadataId { get; set; }
     }

@@ -35,10 +35,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -51,16 +51,16 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
 
             #region Create or Retrieve the necessary system users
 
-            // Retrieve the ldapPath
+            // 检索the ldapPath
             String ldapPath = String.Empty;
-            // Retrieve the sales team - 1 sales manager and 2 sales representatives.
+            // 检索the sales team - 1 sales manager and 2 sales representatives.
             _salesManagerId =
                 SystemUserProvider.RetrieveSalesManager(service, ref ldapPath);
             _salesRepresentativeId =
@@ -69,7 +69,7 @@ namespace PowerApps.Samples
             #endregion
 
             #region Create records to support SalesOrder records
-            // Create a unit group
+            // 创建a unit group
             UoMSchedule newUnitGroup = new UoMSchedule
             {
                 Name = "Example Unit Group",
@@ -77,7 +77,7 @@ namespace PowerApps.Samples
             };
             _unitGroupId = service.Create(newUnitGroup);
 
-            // Retrieve the default unit id that was automatically created
+            // 检索the default unit id that was automatically created
             // when we created the Unit Group
             QueryExpression unitQuery = new QueryExpression
             {
@@ -102,11 +102,11 @@ namespace PowerApps.Samples
                 }
             };
 
-            // Retrieve the unit.
+            // 检索the unit.
             UoM unit = (UoM)service.RetrieveMultiple(unitQuery).Entities[0];
             _defaultUnitId = unit.UoMId.Value;
 
-            // Create a few products
+            // 创建a few products
             Product newProduct = new Product
             {
                 ProductNumber = "1",
@@ -121,14 +121,14 @@ namespace PowerApps.Samples
             newProduct.Id = _productId;
             Console.WriteLine("Created {0}", newProduct.Name);
 
-            // Create a price list
+            // 创建a price list
             PriceLevel newPriceList = new PriceLevel
             {
                 Name = "Example Price List"
             };
             _priceListId = service.Create(newPriceList);
 
-            // Create a price list item for the first product and apply volume discount
+            // 创建a price list item for the first product and apply volume discount
             ProductPriceLevel newPriceListItem = new ProductPriceLevel
             {
                 PriceLevelId =
@@ -152,7 +152,7 @@ namespace PowerApps.Samples
             Console.WriteLine("Published {0}", newProduct.Name);
 
 
-            // Create an account record for the sales order's potential customerid 
+            // 创建an account record for the sales order's potential customerid 
             Account newAccount = new Account
             {
                 Name = "Litware, Inc.",
@@ -165,7 +165,7 @@ namespace PowerApps.Samples
 
             #region Create SalesOrder record
 
-            // Create the sales order.
+            // 创建the sales order.
             SalesOrder order = new SalesOrder()
             {
                 Name = "Faux Order",
@@ -179,7 +179,7 @@ namespace PowerApps.Samples
             _orderId = service.Create(order);
             order.Id = _orderId;
 
-            // Add the product to the order with the price overriden with a
+            // 添加the product to the order with the price overriden with a
             // negative value.
             SalesOrderDetail orderDetail = new SalesOrderDetail()
             {
@@ -196,13 +196,13 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
         public static void DeleteRequiredRecords(CrmServiceClient service, bool prompt)
         {
-            // The three system users that were created by this sample will continue to 
+            // three system users that were created by this sample will continue to 
             // exist on your system because system users cannot be deleted in Microsoft
             // Dynamics CRM.  They can only be enabled or disabled.
 
@@ -227,7 +227,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete all records created in this sample.
+                // 删除all records created in this sample.
                 service.Delete("goal", _firstChildGoalId);
                 service.Delete("goal", _parentGoalId);
                 service.Delete("goalrollupquery", _rollupQueryId);

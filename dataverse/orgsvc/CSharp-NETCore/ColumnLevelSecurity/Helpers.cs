@@ -78,7 +78,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// <param name="description">Description of the column</param>
         /// <param name="solutionUniqueName">Unique 名称 of the solution</param>
         /// <returns>GUID of the created column</returns>
-        /// <exception cref="Exception">Throws exception if column creation fails</exception>
+        /// <exception cref="Exception">Throws exception 如果 column creation fails</exception>
         internal static Guid CreateSampleColumn(
             IOrganizationService service,
             string tableLogicalName,
@@ -129,7 +129,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// <param name="solutionUniqueName">unique 名称 of the solution to associate the table with.</param>
         /// <param name="customizationPrefix">prefix to use for customizing the schema 名称 of the table's primary attribute.</param>
         /// <returns>A <see cref="Guid"/> representing the unique identifier of the created table.</returns>
-        /// <exception cref="Exception">Thrown if an error occurs while creating the table. The exception message includes details about the
+        /// <exception cref="Exception">Thrown 如果 an error occurs while creating the table. The exception message includes details about the
         /// failure.</exception>
         internal static Guid CreateSampleTable(
             IOrganizationService service,
@@ -137,7 +137,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             string solutionUniqueName,
             string customizationPrefix)
         {
-            // Define the entity metadata
+            // 定义entity metadata
             EntityMetadata entityMetadata = new()
             {
                 SchemaName = schemaName,
@@ -148,7 +148,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 IsActivity = false
             };
 
-            // Define the primary attribute for the entity
+            // 定义primary attribute for the entity
             StringAttributeMetadata primaryAttribute = new()
             {
                 SchemaName = customizationPrefix + "_Name",
@@ -159,7 +159,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 Description = new Label("The primary attribute for the sample_Example table", 1033)
             };
 
-            // Create the entity request
+            // 创建the entity request
             CreateEntityRequest request = new()
             {
                 Entity = entityMetadata,
@@ -191,7 +191,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// <param name="columnLogicalName">logical 名称 of the column whose ID is to be retrieved. This 值 cannot be null or empty.</param>
         /// <returns>A <see cref="Guid"/> representing the unique identifier of the column, or <see langword="null"/> if the
         /// column does not exist.</returns>
-        /// <exception cref="Exception">Thrown if an unexpected error occurs during the operation.</exception>
+        /// <exception cref="Exception">Thrown 如果 an unexpected error occurs during the operation.</exception>
         internal static Guid? GetColumnID(IOrganizationService service, string tableLogicalName, string columnLogicalName)
         {
 
@@ -235,7 +235,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// <param name="tableLogicalName">logical 名称 of the table whose ID is to be retrieved. This 值 cannot be null or empty.</param>
         /// <returns>A <see cref="Guid"/> representing the unique identifier of the table if it exists; otherwise, <see
         /// langword="null"/>.</returns>
-        /// <exception cref="Exception">Thrown if an unexpected error occurs while retrieving the table metadata.</exception>
+        /// <exception cref="Exception">Thrown 如果 an unexpected error occurs while retrieving the table metadata.</exception>
         internal static Guid? GetTableID(IOrganizationService service, string tableLogicalName)
         {
 
@@ -315,7 +315,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
 
         /// <summary>
-        /// Manages the association of a security role with an application user in the system.
+        /// 管理 the association of a security role with an application user in the system.
         /// </summary>
         /// <remarks>This method checks whether the specified application user is already associated with
         /// the given security role. If the association does not exist, the method creates it. The operation is logged
@@ -382,7 +382,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
 
         /// <summary>
-        /// Manages the association between a field security profile and an application user.
+        /// 管理 the association between a field security profile and an application user.
         /// </summary>
         /// <remarks>This method checks whether the specified application user is already associated with
         /// the given field security profile. If the association does not exist, it creates the association.</remarks>
@@ -398,7 +398,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         {
 
 
-            // Create a query to return the related field security profile
+            // 创建a query to return the related field security profile
             var relationshipQueryCollection = new RelationshipQueryCollection();
 
             var relatedFieldSecurityProfilesQuery = new QueryExpression("fieldsecurityprofile")
@@ -463,7 +463,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// <param name="systemAdminService">The <see cref="IOrganizationService"/> instance with system administrator privileges,  used to query and
         /// verify access rights.</param>
         /// <param name="appUserId">unique 标识符 of the application user whose privileges are being verified.</param>
-        /// <exception cref="Exception">Thrown if the application user does not have all required privileges for any of the  records in the
+        /// <exception cref="Exception">Thrown 如果 the application user does not have all required privileges for any of the  records in the
         /// "sample_example" entity.</exception>
         internal static void VerifyAppUserRowLevelPrivileges(IOrganizationService systemAdminService, Guid appUserId)
         {
@@ -520,7 +520,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// "sample_dateofbirth". The results are ordered by "sample_name" in descending order.</remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to execute the query.</param>
         /// <returns>An <see cref="EntityCollection"/> containing the retrieved sample records.</returns>
-        /// <exception cref="Exception">Thrown if an error occurs while retrieving the records. The exception message includes details about the
+        /// <exception cref="Exception">Thrown 如果 an error occurs while retrieving the records. The exception message includes details about the
         /// failure.</exception>
         internal static EntityCollection GetExampleRows(IOrganizationService service)
         {
@@ -594,7 +594,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// Displays the field security profile settings in a formatted table.
         /// </summary>
         /// <remarks>The table includes columns for field names, read permissions, and update permissions.
-        /// Each row represents a specific field and its associated permissions. The output is indented for better
+        /// 每个row represents a specific field and its associated permissions. The output is indented for better
         /// readability in the console.</remarks>
         internal static void ShowFieldSecurityProfileSettings()
         {

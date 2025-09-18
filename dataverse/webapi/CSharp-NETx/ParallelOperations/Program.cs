@@ -31,7 +31,7 @@ namespace ParallelOperations
 
             Console.WriteLine("--Starting Parallel Operations sample--");
 
-            // Send a simple request to access the recommended degree of parallelism (DOP).
+            // 发送a simple request to access the recommended degree of parallelism (DOP).
             HttpResponseMessage whoAmIResponse = await service.SendAsync(new WhoAmIRequest());
             int recommendedDegreeOfParallelism = int.Parse(whoAmIResponse.Headers.GetValues("x-ms-dop-hint").FirstOrDefault());
 
@@ -49,7 +49,7 @@ namespace ParallelOperations
 
             Console.WriteLine($"Preparing to create {numberOfRecords} acccount records using Web API.");
 
-            // Add account create requests to accountsToImport
+            // 添加account create requests to accountsToImport
             while (count < numberOfRecords)
             {
                 var account = new JObject
@@ -70,11 +70,11 @@ namespace ParallelOperations
                   {
                       var createResponse = await service.SendAsync<CreateResponse>(account);
 
-                      // Add the delete request to the ConcurrentBag to delete later
+                      // 添加the delete request to the ConcurrentBag to delete later
                       accountsToDelete.Add(new DeleteRequest(createResponse.EntityReference));
                   });
 
-                // Calculate the duration to complete
+                // 计算the duration to complete
                 var secondsToCreate = (DateTime.Now - startCreate).TotalSeconds;
 
                 Console.WriteLine($"Created {accountsToImport.Count} accounts in  {Math.Round(secondsToCreate)} seconds.");
@@ -89,7 +89,7 @@ namespace ParallelOperations
                      await service.SendAsync(deleteRequest);
                  });
 
-                // Calculate the duration to complete
+                // 计算the duration to complete
                 var secondsToDelete = (DateTime.Now - startDelete).TotalSeconds;
 
                 Console.WriteLine($"Deleted {accountsToDelete.Count} accounts in {Math.Round(secondsToDelete)} seconds.");

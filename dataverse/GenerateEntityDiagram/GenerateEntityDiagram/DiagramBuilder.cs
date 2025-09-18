@@ -18,7 +18,7 @@ namespace PowerApps.Samples
 
         static DiagramBuilder()
         {
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
@@ -40,7 +40,7 @@ namespace PowerApps.Samples
 
             try
             {
-                // Create a Dataverse service client using the default connection string.
+                // 创建a Dataverse service client using the default connection string.
                 service = new ServiceClient(Configuration.GetConnectionString("default"));
 
                 if (service.IsReady)

@@ -6,12 +6,12 @@ namespace PowerApps.Samples.Methods
     public static partial class Extensions
     {
         /// <summary>
-        /// Retrieves the results of an OData query.
+        /// 检索 the results of an OData query.
         /// </summary>
-        /// <param name="service">The Service.</param>
-        /// <param name="queryUri">An absolute or relative Uri.</param>
-        /// <param name="maxPageSize">The maximum number of records to return in a page.</param>
-        /// <param name="includeAnnotations">Whether to include annotations with the results.</param>
+        /// <param name="service">Service.</param>
+        /// <param name="queryUri">一个absolute or relative Uri.</param>
+        /// <param name="maxPageSize">maximum number of records to return in a page.</param>
+        /// <param name="includeAnnotations">Whether to include annotations with the 结果s.</param>
         /// <returns></returns>
         public static async Task<RetrieveMultipleResponse> RetrieveMultiple(
             this Service service,

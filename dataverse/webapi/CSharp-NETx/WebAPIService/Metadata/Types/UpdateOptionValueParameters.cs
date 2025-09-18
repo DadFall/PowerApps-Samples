@@ -7,27 +7,27 @@ namespace PowerApps.Samples.Metadata.Types
     {
         public string? Color { get; set; }
         /// <summary>
-        /// The name of the global option set.
+        /// name of the global option set.
         /// </summary>
         public string? OptionSetName { get; set; }
         /// <summary>
-        /// The name of the attribute when updating a local option set.
+        /// name of the attribute when updating a local option set.
         /// </summary>
         public string? AttributeLogicalName { get; set; }
 
         public string? ExternalValue { get; set; }
         /// <summary>
-        /// The logical name of the entity when updating the local option set in a picklist attribute.
+        /// logical name of the entity when updating the local option set in a picklist attribute.
         /// </summary>
 
         public string? EntityLogicalName { get; set; }
         /// <summary>
-        /// The value for the option.
+        /// value for the option.
         /// </summary>
 
         public int Value { get; set; }
         /// <summary>
-        /// The label for the option.
+        /// label for the option.
         /// </summary>
 
         public Label? Label { get; set; }
@@ -44,7 +44,7 @@ namespace PowerApps.Samples.Metadata.Types
 
         public int[]? ParentValues { get; set; }
         /// <summary>
-        /// The name of the unmanaged solution that this option value should be associated with.
+        /// name of the unmanaged solution that this option value should be associated with.
         /// </summary>
 
         public string? SolutionUniqueName { get; set; }

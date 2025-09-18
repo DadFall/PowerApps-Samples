@@ -19,28 +19,28 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
 
                     var retrieveAllOptionSetsRequest = new RetrieveAllOptionSetsRequest();
 
-                    // Execute the request
+                    // 执行the request
                     var retrieveAllOptionSetsResponse = (RetrieveAllOptionSetsResponse)service.Execute(
                         retrieveAllOptionSetsRequest);
 
-                    // Create an instance of StreamWriter to write text to a file.
-                    // The using statement also closes the StreamWriter.
+                    // 创建an instance of StreamWriter to write text to a file.
+                    // using statement also closes the StreamWriter.
                     // To view this file, right click the file and choose open with Excel. 
                     // Excel will figure out the schema and display the information in columns.
 
                     String filename = String.Concat("AllOptionSetValues.xml");
                     using (var sw = new StreamWriter(filename))
                     {
-                        // Create Xml Writer.
+                        // 创建Xml Writer.
                         var metadataWriter = new XmlTextWriter(sw);
 
-                        // Start Xml File.
+                        // 开始Xml File.
                         metadataWriter.WriteStartDocument();
 
                         // Metadata Xml Node.
@@ -57,7 +57,7 @@ namespace PowerApps.Samples
                                     if ((OptionSetType)optionSetMetadataBase.OptionSetType == OptionSetType.Picklist)
                                     {
                                         OptionSetMetadata optionSetMetadata = (OptionSetMetadata)optionSetMetadataBase;
-                                        // Start OptionSet Node
+                                        // 开始OptionSet Node
                                         metadataWriter.WriteStartElement("OptionSet");
                                         metadataWriter.WriteAttributeString("OptionSetType", OptionSetType.Picklist.ToString());
                                         metadataWriter.WriteElementString("OptionSetDisplayName",
@@ -75,13 +75,13 @@ namespace PowerApps.Samples
                                         }
                                         metadataWriter.WriteEndElement();
 
-                                        // End OptionSet Node
+                                        // 结束OptionSet Node
                                         metadataWriter.WriteEndElement();
                                     }
                                     else if ((OptionSetType)optionSetMetadataBase.OptionSetType == OptionSetType.Boolean)
                                     {
                                         BooleanOptionSetMetadata optionSetMetadata = (BooleanOptionSetMetadata)optionSetMetadataBase;
-                                        // Start OptionSet Node
+                                        // 开始OptionSet Node
                                         metadataWriter.WriteStartElement("OptionSet");
                                         metadataWriter.WriteAttributeString("OptionSetType", OptionSetType.Boolean.ToString());
                                         if (optionSetMetadata.DisplayName.LocalizedLabels.Count != 0)
@@ -100,14 +100,14 @@ namespace PowerApps.Samples
                                         metadataWriter.WriteElementString("OptionDescription", optionSetMetadata.FalseOption.Label.UserLocalizedLabel.Label.ToString());
                                         metadataWriter.WriteEndElement();
 
-                                        // End OptionSet Node
+                                        // 结束OptionSet Node
                                         metadataWriter.WriteEndElement();
                                     }
                                 }
                             }
                         }
 
-                        // End Metadata Xml Node
+                        // 结束Metadata Xml Node
                         metadataWriter.WriteEndElement();
                         metadataWriter.WriteEndDocument();
 

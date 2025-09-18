@@ -6,10 +6,10 @@ using System;
 using System.Activities;
 
 /// <summary>
-/// Calculates the credit score based on the SSN and name. 
-/// </summary>
+        /// 计算 the credit score based on the SSN and name.
+        /// </summary>
 /// <remarks>
-/// This depends on a custom entity called Loan Application and customizations to Contact.
+        /// 此depends on a custom entity called Loan Application and customizations to Contact.
 /// 
 /// Loan Application requires the following properties:
 /// <list>
@@ -33,10 +33,10 @@ using System.Activities;
 ///		</item>
 /// </list>
 /// 
-/// The activity takes, as input, a EntityReference to the Loan Application and a boolean indicating whether new_creditscore should be updated to the credit score.
-/// </remarks>
-/// <exception cref=">ArgumentNullException">Thrown when LoanApplication is null</exception>
-/// <exception cref=">ArgumentException">Thrown when LoanApplication is not a EntityReference to a LoanApplication entity</exception>
+/// activity takes, as input, a EntityReference to the Loan Application and a boolean indicating whether new_creditscore should be updated to the credit score.
+        /// </remarks>
+/// <exception cref=">ArgumentNullException">当时抛出 LoanApplication 为空</exception>
+/// <exception cref=">ArgumentException">当时抛出 LoanApplication is not a EntityReference to a LoanApplication entity</exception>
 
 namespace PowerApps.Samples
 {
@@ -101,7 +101,7 @@ namespace PowerApps.Samples
             DateTime? birthdate = (DateTime?)contactEntity[ContactAttributes.Birthdate];
             int creditScore;
 
-            //This is where the logic for retrieving the credit score would be inserted
+            //此is where the logic for retrieving the credit score would be inserted
             //We are simply going to return a random number
             creditScore = (new Random()).Next(0, 1000);
 
@@ -109,7 +109,7 @@ namespace PowerApps.Samples
             this.CreditScore.Set(executionContext, creditScore);
 
             //Check to see if the credit score should be saved to the entity
-            //If the value of the property has not been set or it is set to true
+            //如果the value of the property has not been set or it is set to true
             if (null != this.UpdateEntity && this.UpdateEntity.Get(executionContext))
             {
                 //Create the entity
@@ -122,7 +122,7 @@ namespace PowerApps.Samples
             }
         }
 
-        //Define the properties
+        //定义
         [Input("Loan Application")]
         [ReferenceTarget(CustomEntity)]
         public InArgument<EntityReference> LoanApplication { get; set; }

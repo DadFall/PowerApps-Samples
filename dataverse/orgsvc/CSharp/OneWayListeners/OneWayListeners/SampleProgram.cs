@@ -27,15 +27,15 @@ namespace PowerApps.Samples
         {
             ServiceBusEnvironment.SystemConnectivity.Mode = ConnectivityMode.Http;
 
-            // The one specified when creating the azure bus
+            // one specified when creating the azure bus
             Console.Write("Enter your Azure service namespace: ");
             string serviceNamespace = Console.ReadLine();
 
-            // The shared access key policy name
+            // shared access key policy name
             Console.Write("Enter your shared access policy name: ");
             string sharedAccesKeyName = Console.ReadLine();
 
-            // The primary of they access key policy specificied above
+            // primary of they access key policy specificied above
             Console.Write("Enter your shared access policy key: ");
             string sharedAccessKey = Console.ReadLine();
 
@@ -52,24 +52,24 @@ namespace PowerApps.Samples
 
             Console.WriteLine("Service address: " + address);
 
-            // Create the credentials object for the endpoint.
+            // 创建the credentials object for the endpoint.
             TransportClientEndpointBehavior sharedAccessServiceBusCredential = new TransportClientEndpointBehavior()
             {
                 TokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider(sharedAccesKeyName, sharedAccessKey)
             };
 
-            // Create the binding object.
+            // 创建the binding object.
             WS2007HttpRelayBinding binding = new WS2007HttpRelayBinding();
             binding.Security.Mode = EndToEndSecurityMode.Transport;
 
-            // Create the service host reading the configuration.
+            // 创建the service host reading the configuration.
             ServiceHost host = new ServiceHost(typeof(RemoteService));
             host.AddServiceEndpoint(typeof(IServiceEndpointPlugin), binding, address);
 
-            // Create the ServiceRegistrySettings behavior for the endpoint.
+            // 创建the ServiceRegistrySettings behavior for the endpoint.
             IEndpointBehavior serviceRegistrySettings = new ServiceRegistrySettings(DiscoveryType.Public);
 
-            // Add the Service Bus credentials to all endpoints specified in configuration.
+            // 添加the Service Bus credentials to all endpoints specified in configuration.
             foreach (ServiceEndpoint endpoint in host.Description.Endpoints)
             {
                 endpoint.Behaviors.Add(serviceRegistrySettings);

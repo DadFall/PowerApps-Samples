@@ -7,8 +7,8 @@ namespace PowerApps.Samples.Methods
         /// <summary>
         /// Returns whether a given user has the System Administrator security role
         /// </summary>
-        /// <param name="service">The Service</param>
-        /// <param name="systemUserId">The systemuserid of the user to test.</param>
+        /// <param name="service">Service</param>
+        /// <param name="systemUserId">systemuserid of the user to test.</param>
         /// <returns></returns>
         public static async Task<bool> IsSystemAdmin(this Service service, Guid systemUserId)
         {

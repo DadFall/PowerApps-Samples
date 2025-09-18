@@ -13,7 +13,7 @@ namespace PowerPlatform.Dataverse.CodeSamples.types
         public ErrorDetail? Error { get; set; }
 
         /// <summary>
-        /// A collection of matching records.
+        /// 一个collection of matching records.
         /// </summary>
         public List<QueryResult>? Value { get; set; }
 

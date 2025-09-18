@@ -29,10 +29,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -45,7 +45,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -79,7 +79,7 @@ namespace PowerApps.Samples
             }
             catch (FaultException<Microsoft.Xrm.Sdk.OrganizationServiceFault> ex)
             {
-                // Check for ErrorCodes.ExpiredVersionStamp (0x80044352)
+                // 检查for ErrorCodes.ExpiredVersionStamp (0x80044352)
                 // Will occur when the timestamp exceeds the Organization.ExpireSubscriptionsInDays value, which is 90 by default.
                 if (ex.Detail.ErrorCode == unchecked((int)0x80044352))
                 {
@@ -210,7 +210,7 @@ namespace PowerApps.Samples
             var createEntityRequest = new CreateEntityRequest
             {
 
-                //Define the entity
+                //定义
                 Entity = new EntityMetadata
                 {
                     SchemaName = _customEntitySchemaName,
@@ -224,7 +224,7 @@ namespace PowerApps.Samples
 
                 },
 
-                // Define the primary attribute for the entity
+                // 定义primary attribute for the entity
                 PrimaryAttribute = new StringAttributeMetadata
                 {
                     SchemaName = primaryAttributeSchemaName,
@@ -311,7 +311,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>

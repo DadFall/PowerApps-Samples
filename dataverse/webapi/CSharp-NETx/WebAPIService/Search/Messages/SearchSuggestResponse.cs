@@ -4,7 +4,7 @@ using PowerApps.Samples.Search.Types;
 
 namespace PowerApps.Samples.Search.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
@@ -13,7 +13,7 @@ namespace PowerApps.Samples.Search.Messages
         /// </summary>
     public sealed class SearchSuggestResponse : HttpResponseMessage
     {
-        // Cache the async content
+        // 缓存the async content
         private string? _content;
 
         //Provides JObject for property getters

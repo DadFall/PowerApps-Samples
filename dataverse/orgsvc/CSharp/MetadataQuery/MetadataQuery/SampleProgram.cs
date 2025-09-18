@@ -30,7 +30,7 @@ namespace PowerApps.Samples
                     _userId = ((WhoAmIResponse)service.Execute(new WhoAmIRequest())).UserId;
                     _languageCode = RetrieveUserUILanguageCode(service, _userId);
               
-                    // An array SchemaName values for non-intersect, user-owned entities that should not be returned.
+                    // 一个array SchemaName values for non-intersect, user-owned entities that should not be returned.
                     String[] excludedEntities = {
 "WorkflowLog",
 "Template",
@@ -75,7 +75,7 @@ namespace PowerApps.Samples
 "List",
 "ServiceAppointment"};
 
-                    //A filter expression to limit entities returned to non-intersect, user-owned entities not found in the list of excluded entities.
+                    //一个filter expression to limit entities returned to non-intersect, user-owned entities not found in the list of excluded entities.
                     var EntityFilter = new MetadataFilterExpression(LogicalOperator.And);
                     EntityFilter.Conditions.Add(new MetadataConditionExpression("IsIntersect", MetadataConditionOperator.Equals, false));
                     EntityFilter.Conditions.Add(new MetadataConditionExpression("OwnershipType", MetadataConditionOperator.Equals, OwnershipTypes.UserOwned));
@@ -83,14 +83,14 @@ namespace PowerApps.Samples
                     var isVisibileInMobileTrue = new MetadataConditionExpression("IsVisibleInMobile", MetadataConditionOperator.Equals, true);
                     EntityFilter.Conditions.Add(isVisibileInMobileTrue);
 
-                    //A properties expression to limit the properties to be included with entities
+                    //一个properties expression to limit the properties to be included with entities
                     var EntityProperties = new MetadataPropertiesExpression()
                     {
                         AllProperties = false
                     };
                     EntityProperties.PropertyNames.AddRange(new string[] { "Attributes" });
                     
-                    //A condition expresson to return optionset attributes
+                    //一个condition expresson to return optionset attributes
                     MetadataConditionExpression[] optionsetAttributeTypes = new MetadataConditionExpression[] {
      new MetadataConditionExpression("AttributeType", MetadataConditionOperator.Equals, AttributeTypeCode.Picklist),
      new MetadataConditionExpression("AttributeType", MetadataConditionOperator.Equals, AttributeTypeCode.State),
@@ -98,20 +98,20 @@ namespace PowerApps.Samples
      new MetadataConditionExpression("AttributeType", MetadataConditionOperator.Equals, AttributeTypeCode.Boolean)
      };
 
-                    //A filter expression to apply the optionsetAttributeTypes condition expression
+                    //一个filter expression to apply the optionsetAttributeTypes condition expression
                     var AttributeFilter = new MetadataFilterExpression(LogicalOperator.Or);
                     AttributeFilter.Conditions.AddRange(optionsetAttributeTypes);
 
-                    //A Properties expression to limit the properties to be included with attributes
+                    //一个Properties expression to limit the properties to be included with attributes
                     var AttributeProperties = new MetadataPropertiesExpression() { AllProperties = false };
                     AttributeProperties.PropertyNames.Add("OptionSet");
                     AttributeProperties.PropertyNames.Add("AttributeType");
 
-                    //A label query expression to limit the labels returned to only those for the user's preferred language
+                    //一个label query expression to limit the labels returned to only those for the user's preferred language
                     var labelQuery = new LabelQueryExpression();
                     labelQuery.FilterLanguages.Add(_languageCode);
 
-                    //An entity query expression to combine the filter expressions and property expressions for the query.
+                    //一个entity query expression to combine the filter expressions and property expressions for the query.
                     var entityQueryExpression = new EntityQueryExpression()
                     {
 

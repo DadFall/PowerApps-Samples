@@ -19,9 +19,9 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
 
         /// <summary>
-        /// Creates the contoso_SensorData table used in this sample.
+        /// 创建 the contoso_SensorData table used in this sample.
         /// </summary>
-        /// <param name="service">Authenticated IOrganizationService instance.</param>
+        /// <param name="service">Authenticated IOrganizationService 实例.</param>
         internal static void CreateSensorDataEntity(IOrganizationService service)
         {
             Console.WriteLine($"Creating {SensorDataSchemaName} table...");
@@ -119,9 +119,9 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Deletes the contoso_SensorData table created for the sample
+        /// 删除 the contoso_SensorData table created for the sample
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
         internal static void DeleteSensorDataEntity(IOrganizationService service)
         {
             Console.WriteLine($"Deleting {SensorDataLogicalName} table...");

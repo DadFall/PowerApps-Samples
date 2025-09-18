@@ -37,7 +37,7 @@ namespace Desktop_app_using_login_control
             // Show the login control.   
             ctrl.ShowDialog();
 
-            // Check that a web service connection is returned and the service is ready.     
+            // 检查that a web service connection is returned and the service is ready.     
             if (ctrl.CrmConnectionMgr != null && ctrl.CrmConnectionMgr.CrmSvc != null && ctrl.CrmConnectionMgr.CrmSvc.IsReady)
             {
                 // Display the Dataverse version and connected environment name  

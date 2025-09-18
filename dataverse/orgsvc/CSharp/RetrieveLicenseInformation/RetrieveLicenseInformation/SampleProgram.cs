@@ -21,20 +21,20 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
                     #region RetrieveDeploymentLicenseTypeRequest
 
-                    // Create the request
+                    // 创建the request
                     var deploymentTypeRequest = new RetrieveDeploymentLicenseTypeRequest();
 
-                    // Execute the request
+                    // 执行the request
                     Console.WriteLine("  Fetching the license type for this deployment");
                     var deploymentTypeResponse =
                         (RetrieveDeploymentLicenseTypeResponse)service.Execute(deploymentTypeRequest);
 
-                    // Validate results
+                    // 验证results
                     if (String.IsNullOrEmpty(deploymentTypeResponse.licenseType))
                         throw new Exception("The request did not return any results");
 

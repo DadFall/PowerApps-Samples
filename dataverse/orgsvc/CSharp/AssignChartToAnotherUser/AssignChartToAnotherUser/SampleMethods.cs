@@ -22,10 +22,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -38,17 +38,17 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the visualization.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the visualization.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a sample account
+            // 创建a sample account
             Account setupAccount = new Account { Name = "Sample Account" };
             _accountId = service.Create(setupAccount);
             Console.WriteLine("Created {0}.", setupAccount.Name);
 
-            // Create some oppotunity records for the visualization
+            // 创建some oppotunity records for the visualization
             Opportunity[] setupOpportunities = new Opportunity[]
                 {
                     new Opportunity
@@ -148,9 +148,9 @@ namespace PowerApps.Samples
 
             Console.WriteLine("Created few opportunity records for {0}.", setupAccount.Name);
 
-            // Create a visualization
+            // 创建a visualization
 
-            // Set The presentation XML string.
+            // 设置The presentation XML string.
             string presentationXml = @"
                     <Chart Palette='BrightPastel'>
                         <Series>
@@ -195,7 +195,7 @@ namespace PowerApps.Samples
                     </Chart>
                     ";
 
-            // Set the data XML string.
+            // 设置the data XML string.
             string dataXml = @"
                     <datadefinition>
                         <fetchcollection>
@@ -221,7 +221,7 @@ namespace PowerApps.Samples
                     </datadefinition>
                     ";
 
-            // Create the visualization entity instance.
+            // 创建the visualization entity instance.
             var newUserOwnedVisualization = new UserQueryVisualization
             {
                 Name = "Sample User Visualization",
@@ -234,13 +234,13 @@ namespace PowerApps.Samples
 
             Console.WriteLine("Created {0}.", newUserOwnedVisualization.Name);
 
-            // Create another user to whom the visualization will be assigned.
+            // 创建another user to whom the visualization will be assigned.
             _otherUserId = SystemUserProvider.RetrieveSalesManager(service);
 
         }
 
         /// <summary>
-        /// Deletes the entity record that was created for this sample.
+        /// 删除 the entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>
@@ -258,7 +258,7 @@ namespace PowerApps.Samples
 
             if (deleteRecords)
             {
-                // Delete action doesn't work on the UserQueryVisualization instance if it is assigned
+                // 删除action doesn't work on the UserQueryVisualization instance if it is assigned
                 // to a user other than current user.
                 // So as a workaround, we are impersonating the actual owner of 
                 // the UserQueryVisualization instance to complete the delete action.

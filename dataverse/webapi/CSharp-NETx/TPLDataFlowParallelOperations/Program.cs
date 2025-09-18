@@ -5,7 +5,7 @@ using System.Threading.Tasks.Dataflow;
 
 namespace TPLDataFlowParallelOperations
 {
-    // This sample demonstrates the use of Task Parallel Library (TPL) Dataflow components
+    // 此sample demonstrates the use of Task Parallel Library (TPL) Dataflow components
     // 参见 https://learn.microsoft.com/dotnet/standard/parallel-programming/dataflow-task-parallel-library
 
     internal class Program
@@ -34,7 +34,7 @@ namespace TPLDataFlowParallelOperations
 
             #endregion Optimize Connection
 
-            // Send a simple request to access the recommended degree of parallelism (DOP).
+            // 发送a simple request to access the recommended degree of parallelism (DOP).
             HttpResponseMessage whoAmIResponse = await service.SendAsync(new WhoAmIRequest());
             int recommendedDegreeOfParallelism = int.Parse(whoAmIResponse.Headers.GetValues("x-ms-dop-hint").FirstOrDefault());
             Console.WriteLine($"The recommended degree of parallelism for this environment is {recommendedDegreeOfParallelism}.");
@@ -70,17 +70,17 @@ namespace TPLDataFlowParallelOperations
         }
 
         /// <summary>
-        /// Creates and deletes a set of account records
+        /// 创建 and deletes a set of account records
         /// </summary>
         /// <param name="service">服务</param>
-        /// <param name="accountCreateRequests">The list of create requests to execute in parallel.</param>
+        /// <param name="accountCreateRequests">列表 of create 请求s to execute in parallel.</param>
         /// <param name="executionDataflowBlockOptions">Specifies the behavior of the Dataflow Block Options</param>
         /// <returns></returns>
         static async Task<double> ProcessData(Service service,
             List<CreateRequest> accountCreateRequests,
             ExecutionDataflowBlockOptions executionDataflowBlockOptions)
         {
-            // Create a TransformBlock of CreateRequests 
+            // 创建a TransformBlock of CreateRequests 
             var createAccounts = new TransformBlock<CreateRequest, CreateResponse>(
                 async createRequest =>
                 {
@@ -89,7 +89,7 @@ namespace TPLDataFlowParallelOperations
                     executionDataflowBlockOptions
                 );
 
-            // Create an ActionBlock to process CreateResponse
+            // 创建an ActionBlock to process CreateResponse
             var deleteAccounts = new ActionBlock<CreateResponse>(
                 async createResponse =>
                 {
@@ -103,7 +103,7 @@ namespace TPLDataFlowParallelOperations
 
             var start = DateTime.Now;
 
-            // Start sending the requests
+            // 开始sending the requests
             accountCreateRequests.ForEach(a => createAccounts.SendAsync(a));
             createAccounts.Complete();
             // Wait for the Action Block to complete

@@ -5,8 +5,8 @@ export class TemplateSample {
    * @type {dv.Client}
    * @private
    */
-  #client; // The DataverseWebAPI.Client instance
-  #container; // The container element to display messages
+  #client; // DataverseWebAPI.Client instance
+  #container; // container element to display messages
   #entityStore = []; // Store for created records to delete at the end of the sample
   #whoIAm; // Store for the current user's information
   #util; // Util instance for utility functions
@@ -21,17 +21,17 @@ export class TemplateSample {
 
   // Public functions to set up, run, and clean up data created by the sample
   async SetUp() {
-    // Clear the container
+    // 清除the container
     this.#container.replaceChildren();
     this.#util.appendMessage(this.#name + " started");
-    // Get the current user's information
+    // 获取the current user's information
     try {
       this.#whoIAm = await this.#client.WhoAmI();
     } catch (error) {
       this.#util.showError(error.message);
     }
   }
-  // Run the sample
+  // 运行the sample
   async Run() {
     try {
       // Section 1: Do somethings
@@ -41,7 +41,7 @@ export class TemplateSample {
       
     } catch (error) {
       this.#util.showError(error.message);
-      // Try to clean up even if an error occurs
+      // 尝试to clean up even if an error occurs
       await this.CleanUp();
     }
   }
@@ -93,7 +93,7 @@ export class TemplateSample {
       }
     }
 
-    // Set the entity store to an empty array
+    // 设置the entity store to an empty array
     this.#entityStore = [];
     this.#util.appendMessage(this.#name + " completed.");
     this.#util.appendMessage("<a href='#'>Go to top</a>");

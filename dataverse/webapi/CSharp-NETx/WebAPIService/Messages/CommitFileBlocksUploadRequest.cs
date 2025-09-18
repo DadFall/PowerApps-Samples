@@ -8,12 +8,12 @@ namespace PowerApps.Samples.Messages
     public sealed class CommitFileBlocksUploadRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the CommitFileBlocksUploadRequest
+        /// 初始化 the CommitFileBlocksUploadRequest
         /// </summary>
-        /// <param name="fileName">A filename to associate with the binary data file.</param>
-        /// <param name="mimeType">The MIME type of the uploaded file.</param>
-        /// <param name="blockList">The IDs of the uploaded data blocks, in the correct sequence, that will result in the final File when the data blocks are combined.</param>
-        /// <param name="fileContinuationToken">A token that uniquely identifies a sequence of related data uploads.</param>
+        /// <param name="fileName">一个file名称 to associate with the binary 数据 file.</param>
+        /// <param name="mimeType">MIME 类型 of the uploaded file.</param>
+        /// <param name="blockList">IDs of the uploaded 数据 blocks, in the correct sequence, that will 结果 in the final File when the 数据 blocks are combined.</param>
+        /// <param name="fileContinuationToken">一个token that uniquely identifies a sequence of related 数据 uploads.</param>
         public CommitFileBlocksUploadRequest(
             string fileName, 
             string mimeType, 

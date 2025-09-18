@@ -55,7 +55,7 @@ namespace PowerApps.Samples
                         PatternEndDate = 3
                     };
 
-                    // Create a recurring appointment
+                    // 创建a recurring appointment
                     //RecurringAppointmentMaster newRecurringAppointment = new RecurringAppointmentMaster
                     var newRecurringAppointment = new RecurringAppointmentMaster
                     {
@@ -73,7 +73,7 @@ namespace PowerApps.Samples
                     recurringAppointmentMasterId = service.Create(newRecurringAppointment);
                     Console.WriteLine("Created {0}.", newRecurringAppointment.Subject);
 
-                    // Retrieve the newly created recurring appointment
+                    // 检索the newly created recurring appointment
                      var recurringAppointmentQuery = new QueryExpression
                     {
                         EntityName = RecurringAppointmentMaster.EntityLogicalName,
@@ -109,8 +109,8 @@ namespace PowerApps.Samples
 
                     Console.WriteLine("Retrieved the recurring appointment.");
 
-                    // Update the recurring appointment.
-                    // Update the following for the retrieved recurring appointment series:
+                    // 更新the recurring appointment.
+                    // 更新the following for the retrieved recurring appointment series:
                     // 1. Update the subject.
                     // 2. Update the number of occurences to 5.
                     // 3. Update the appointment interval to 2.

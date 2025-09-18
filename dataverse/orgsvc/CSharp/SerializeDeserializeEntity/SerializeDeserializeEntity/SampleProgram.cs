@@ -22,18 +22,18 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Create the column set object that indicates the fields to be retrieved.
+                    // 创建the column set object that indicates the fields to be retrieved.
                     var columns = new ColumnSet(
                         "contactid",
                         "firstname",
                         "lastname",
                         "jobtitle");
 
-                    // Retrieve the contact using the ID of the record that was just created.
-                    // The EntityLogicalName indicates the EntityType of the object being retrieved.
+                    // 检索the contact using the ID of the record that was just created.
+                    // EntityLogicalName indicates the EntityType of the object being retrieved.
                     var contact = (Contact)service.Retrieve(
                         Contact.EntityLogicalName, _contactId, columns);
 
@@ -42,7 +42,7 @@ namespace PowerApps.Samples
                     // Serialize the contact into XML and write it to the hard drive.
                     var earlyBoundSerializer = new DataContractSerializer(typeof(Contact));
 
-                    // Create a unique file name for the XML.
+                    // 创建a unique file name for the XML.
                     String earlyboundFile = "Contact_early_" + contact.ContactId.Value.ToString("B") + ".xml";
 
                     // Write the serialized object to a file.  The using statement will
@@ -58,7 +58,7 @@ namespace PowerApps.Samples
                         "The early-bound contact instance has been serialized to a file, {0}.",
                         earlyboundFile);
 
-                    // Convert the contact to a late-bound entity instance and serialize it to disk.
+                    // 转换the contact to a late-bound entity instance and serialize it to disk.
                     var lateboundContact = contact.ToEntity<Entity>();
                     String lateboundFile = "Contact_late_" + lateboundContact.Id.ToString("B") + ".xml";
 
@@ -80,7 +80,7 @@ namespace PowerApps.Samples
                             deserializedContact.FirstName, deserializedContact.LastName);
                     }
 
-                    // Update the contact to prove that the de-serialization worked.
+                    // 更新the contact to prove that the de-serialization worked.
                     deserializedContact.JobTitle = "Plumber";
                     service.Update(deserializedContact);
 

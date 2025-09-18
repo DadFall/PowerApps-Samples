@@ -32,13 +32,13 @@ namespace PowerApps.Samples
                         EntityName = ActivityMimeAttachment.EntityLogicalName,
                         ColumnSet = new ColumnSet("filename"),
 
-                        //Define the conditions for each attachment.
+                        //定义
                         Criteria =
                         {
                             FilterOperator = LogicalOperator.And,
                             Conditions =
                         {
-                            //The ObjectTypeCode must be specified, or else the query
+                            //ObjectTypeCode must be specified, or else the query
                             //defaults to "email" instead of "template".
                             new ConditionExpression
                             {

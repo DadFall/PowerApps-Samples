@@ -31,22 +31,22 @@ namespace PowerApps.Samples
                         RetrieveAsIfPublished = true
                     };
 
-                    // Retrieve the MetaData.
+                    // 检索the MetaData.
                     var response = (RetrieveAllEntitiesResponse)service.Execute(request);
 
 
-                    // Create an instance of StreamWriter to write text to a file.
-                    // The using statement also closes the StreamWriter.
+                    // 创建an instance of StreamWriter to write text to a file.
+                    // using statement also closes the StreamWriter.
                     // To view this file, right click the file and choose open with Excel. 
                     // Excel will figure out the schema and display the information in columns.
 
                     String filename = String.Concat("EntityInfo.xml");
                     using (var sw = new StreamWriter(filename))
                     {
-                        // Create Xml Writer.
+                        // 创建Xml Writer.
                         var metadataWriter = new XmlTextWriter(sw);
 
-                        // Start Xml File.
+                        // 开始Xml File.
                         metadataWriter.WriteStartDocument();
 
                         // Metadata Xml Node.
@@ -57,7 +57,7 @@ namespace PowerApps.Samples
                             //if (currentEntity.IsIntersect.Value == false)
                             if (true)
                             {
-                                // Start Entity Node
+                                // 开始Entity Node
                                 metadataWriter.WriteStartElement("Entity");
 
                                 // Write the Entity's Information.
@@ -118,12 +118,12 @@ namespace PowerApps.Samples
 
 
 
-                                // End Entity Node
+                                // 结束Entity Node
                                 metadataWriter.WriteEndElement();
                             }
                         }
 
-                        // End Metadata Xml Node
+                        // 结束Metadata Xml Node
                         metadataWriter.WriteEndElement();
                         metadataWriter.WriteEndDocument();
 

@@ -9,13 +9,13 @@ namespace PowerApps.Samples.Messages
     public sealed class UpdateRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the UpdateRequest
+        /// 初始化 the UpdateRequest
         /// </summary>
-        /// <param name="entityReference">A reference to the record to update.</param>
-        /// <param name="record">Contains the data to update</param>
+        /// <param name="entityReference">一个reference to the record to update.</param>
+        /// <param name="record">Contains the 数据 to update</param>
         /// <param name="preventDuplicateRecord">Whether to throw an error when a duplicate record is detected.</param>
-        /// <param name="partitionId">The partition key to use.</param>
-        /// <param name="eTag">The current ETag value to compare.</param>
+        /// <param name="partitionId">partition key to use.</param>
+        /// <param name="eTag">current ETag 值 to compare.</param>
         public UpdateRequest(
             EntityReference entityReference, 
             JObject record, 
@@ -43,7 +43,7 @@ namespace PowerApps.Samples.Messages
                     mediaType: "application/json");        
             if (preventDuplicateRecord)
             {
-                //If duplicate detection enabled for table only
+                //如果duplicate detection enabled for table only
                 Headers.Add("MSCRM.SuppressDuplicateDetection", "false");
             }
             if (eTag != null)

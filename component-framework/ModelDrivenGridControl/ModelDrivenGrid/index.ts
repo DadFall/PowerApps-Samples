@@ -127,11 +127,11 @@ export class ModelDrivenGrid implements ComponentFramework.StandardControl<IInpu
 			this.sortedRecordsIds = dataset.sortedRecordIds;
 		}
 
-		// The test harness provides width/height as strings
+		// test harness provides width/height as strings
 		const allocatedWidth = parseInt(context.mode.allocatedWidth as unknown as string);
 		let allocatedHeight = parseInt(context.mode.allocatedHeight as unknown as string);
 
-		// For MDA subgrid support when running on mobile/narrow formfactor
+		// 对于MDA subgrid support when running on mobile/narrow formfactor
 		if (!this.isFullScreen && context.parameters.SubGridHeight.raw) {
 			allocatedHeight = context.parameters.SubGridHeight.raw;
 		}

@@ -23,11 +23,11 @@ namespace PowerPlatform_Dataverse_CodeSamplesPower
         IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
@@ -48,12 +48,12 @@ namespace PowerPlatform_Dataverse_CodeSamplesPower
                     builder.AddConsole()
                            .AddConfiguration(app.Configuration.GetSection("Logging")));
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient = new ServiceClient(
                 dataverseConnectionString: app.Configuration.GetConnectionString("default"),
                 logger: loggerFactory.CreateLogger<Program>());
 
-            // Send a WhoAmI message request to the Organization service to obtain  
+            // 发送a WhoAmI message request to the Organization service to obtain  
             // information about the logged on user.
             WhoAmIResponse resp = (WhoAmIResponse)serviceClient.Execute(new WhoAmIRequest());
             Console.WriteLine("\nUser ID is {0}.", resp.UserId);

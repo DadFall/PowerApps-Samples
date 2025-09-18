@@ -18,7 +18,7 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
@@ -27,7 +27,7 @@ namespace PowerApps.Samples
                     var createrequest = new CreateEntityRequest
                     {
 
-                        //Define the entity
+                        //定义
                         Entity = new EntityMetadata
                         {
                             SchemaName = _customEntityName,
@@ -39,7 +39,7 @@ namespace PowerApps.Samples
 
                         },
 
-                        // Define the primary attribute for the entity
+                        // 定义primary attribute for the entity
                         PrimaryAttribute = new StringAttributeMetadata
                         {
                             SchemaName = "new_accountname",

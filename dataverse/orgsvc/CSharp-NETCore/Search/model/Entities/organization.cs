@@ -2582,7 +2582,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-        /// Specify the base URL to use to look for external document suggestions.
+        /// 指定base URL to use to look for external document suggestions.
         /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("externalbaseurl")]
 		public string ExternalBaseUrl

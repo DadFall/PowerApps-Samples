@@ -28,14 +28,14 @@ To run the sample:
 2. Double-click the 'dataverse\online-management-api\RetrieveInstances\SampleAppForOnlineAdminAPI.sln' file to open the solution in Visual Studio.
 3. In the **Programs.cs** file, specify a different service URL if the region is not North America. For a list of service URL values for worldwide regions, see [Service URL](get-started-online-management-api.md#service-url).
     ```csharp
-    //TODO: Change this value if your Office 365 tenant is in a different region than North America
+    //待办： Change this value if your Office 365 tenant is in a different region than North America
 
     private static string _serviceUrl = "https://admin.services.crm.dynamics.com";
     ```
 4. In the **HelperCode** > **AuthenticationHelper.cs** file, update the values of the `_clientId` and `_redirectURL` values appropriately.
 
     ```csharp
-    // TODO: Substitute your app registration values here.
+    // 待办： Substitute your app registration values here.
     // These values are obtained on registering your application with the 
     // Azure Active Directory.
     private static string _clientId = "<GUID>";    //e.g. "e5cf0024-a66a-4f16-85ce-99ba97a24bb2"

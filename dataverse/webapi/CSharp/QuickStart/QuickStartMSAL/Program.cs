@@ -14,7 +14,7 @@ namespace PowerApps.Samples
             string resource = "https://crmue.crm.dynamics.com";
 
             // Azure Active Directory app registration shared by all Power App samples.
-            // For your custom apps, you will need to register them with Azure AD yourself.
+            // 对于your custom apps, you will need to register them with Azure AD yourself.
             // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/walkthrough-register-app-azure-active-directory
             var clientId = "51f81489-12ee-4a9e-aaae-a2591f45987d";
             var redirectUri = "app://58145B91-0C36-4500-8554-080854F2AC97";
@@ -53,14 +53,14 @@ namespace PowerApps.Samples
 
             #region Web API call
 
-            // Invoke the Web API 'WhoAmI' unbound function.
+            // 调用the Web API 'WhoAmI' unbound function.
             // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/compose-http-requests-handle-errors
             // 参见 https://learn.microsoft.com/powerapps/developer/data-platform/webapi/use-web-api-functions#unbound-functions
             var response = client.GetAsync("WhoAmI").Result;
 
             if (response.IsSuccessStatusCode)
             {
-                // Parse the JSON formatted service response to obtain the user ID.  
+                // 解析the JSON formatted service response to obtain the user ID.  
                 JObject body = JObject.Parse(
                     response.Content.ReadAsStringAsync().Result);
                 Guid userId = (Guid)body["UserId"];

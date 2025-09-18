@@ -8,13 +8,13 @@ namespace PowerApps.Samples.Search.Types
     public sealed class SuggestResult
     {
         /// <summary>
-        /// Gets or sets the text.
+        /// 获取或设置 the text.
         /// </summary>
         [JsonProperty(PropertyName = "text")]
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets document.
+        /// 获取或设置 document.
         /// </summary>
         [JsonProperty(PropertyName = "document")]
         public Dictionary<string, object> Document { get; set; }

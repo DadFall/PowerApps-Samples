@@ -9,14 +9,14 @@ using Microsoft.ServiceBus;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Creates a REST endpoint listening for messages from the Windows Azure Service Bus.
-    /// </summary>
+        /// 创建 a REST endpoint listening for messages from the Windows Azure Service Bus.
+        /// </summary>
     public class RestListener
     {
         #region How-To Sample Code
 
         /// <summary>
-        /// The Execute method is called when a message is posted to the Azure Service
+        /// Execute method is called when a message is posted to the Azure Service
         /// Bus.
         /// </summary>
         [ServiceBehavior]
@@ -25,10 +25,10 @@ namespace PowerApps.Samples
             #region IRestServiceEndpointPlugin Member
 
             /// <summary>
-            /// This method is called when a message is posted to the Azure Service Bus.
-            /// </summary>
-            /// <param name="context">Data for the request.</param>
-            /// <returns>A 'Success' string.</returns>
+        /// 此method is called when a message is posted to the Azure Service Bus.
+        /// </summary>
+            /// <param name="context">Data for the 请求.</param>
+            /// <returns>一个'Success' string.</returns>
             public string Execute(RemoteExecutionContext context)
             {
                 Utility.Print(context);
@@ -50,7 +50,7 @@ namespace PowerApps.Samples
             Console.Write("Enter your Azure service namespace: ");
             string serviceNamespace = Console.ReadLine();
 
-            // The service namespace issuer name to use.  If one hasn't been setup
+            // service namespace issuer name to use.  If one hasn't been setup
             // explicitly it will be the default issuer name listed on the service
             // namespace.
             Console.Write("Enter your service namespace issuer name: ");
@@ -73,7 +73,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine("The service address is: " + address);
 
-            // Create the shared secret credentials object for the endpoint matching the 
+            // 创建the shared secret credentials object for the endpoint matching the 
             // Azure access control services issuer 
             var sharedSecretServiceBusCredential = new TransportClientEndpointBehavior()
             {
@@ -84,14 +84,14 @@ namespace PowerApps.Samples
             WebHttpRelayBinding binding = new WebHttpRelayBinding();
             binding.Security.Mode = EndToEndWebHttpSecurityMode.Transport;
 
-            // Create the service host for Azure to post messages to.
+            // 创建the service host for Azure to post messages to.
             WebServiceHost host = new WebServiceHost(typeof(RestServiceEndPoint));
             host.AddServiceEndpoint(typeof(IWebHttpServiceEndpointPlugin), binding, address);
 
-            // Create the ServiceRegistrySettings behavior for the endpoint.
+            // 创建the ServiceRegistrySettings behavior for the endpoint.
             var serviceRegistrySettings = new ServiceRegistrySettings(DiscoveryType.Public);
 
-            // Add the service bus credentials to all endpoints specified in configuration.
+            // 添加the service bus credentials to all endpoints specified in configuration.
 
             foreach (var endpoint in host.Description.Endpoints)
             {
@@ -99,7 +99,7 @@ namespace PowerApps.Samples
                 endpoint.Behaviors.Add(sharedSecretServiceBusCredential);
             }
 
-            // Begin listening for messages posted to Azure.
+            // 开始listening for messages posted to Azure.
             host.Open();
 
             Console.WriteLine(Environment.NewLine + "Listening for messages from Azure" +
@@ -121,8 +121,8 @@ namespace PowerApps.Samples
         private static class Utility
         {
             /// <summary>
-            /// Writes out the RemoteExecutionContext to the Console.
-            /// </summary>
+        /// Writes out the RemoteExecutionContext to the Console.
+        /// </summary>
             /// <param name="context"></param>
             public static void Print(RemoteExecutionContext context)
             {
@@ -170,10 +170,10 @@ namespace PowerApps.Samples
             }
 
             /// <summary>
-            /// Writes out the attributes of an entity.
-            /// </summary>
-            /// <param name="e">The entity to serialize.</param>
-            /// <returns>A human readable representation of the entity.</returns>
+        /// Writes out the attributes of an entity.
+        /// </summary>
+            /// <param name="e">entity to serialize.</param>
+            /// <returns>一个human readable representation of the entity.</returns>
             private static string SerializeEntity(Entity e)
             {
                 StringBuilder sb = new StringBuilder();
@@ -190,11 +190,11 @@ namespace PowerApps.Samples
             }
 
             /// <summary>
-            /// Flattens a collection into a delimited string.
-            /// </summary>
-            /// <param name="parameterCollection">The values must be of type Entity 
-            /// to print the values.</param>
-            /// <returns>A string representing the collection passed in.</returns>
+        /// Flattens a collection into a delimited string.
+        /// </summary>
+            /// <param name="parameterCollection">值s must be of 类型 Entity 
+            /// to print the 值s.</param>
+            /// <returns>一个string representing the collection passed in.</returns>
             private static string SerializeParameterCollection(ParameterCollection parameterCollection)
             {
                 StringBuilder sb = new StringBuilder();
@@ -214,10 +214,10 @@ namespace PowerApps.Samples
             }
 
             /// <summary>
-            /// Flattens a collection into a delimited string.
-            /// </summary>
-            /// <param name="entityImageCollection">The collection to flatten.</param>
-            /// <returns>A string representation of the collection.</returns>
+        /// Flattens a collection into a delimited string.
+        /// </summary>
+            /// <param name="entityImageCollection">集合 to flatten.</param>
+            /// <returns>一个string representation of the collection.</returns>
             private static string SerializeEntityImageCollection(EntityImageCollection entityImageCollection)
             {
                 StringBuilder sb = new StringBuilder();

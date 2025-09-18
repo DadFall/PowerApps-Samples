@@ -1,7 +1,7 @@
 ﻿namespace PowerApps.Samples.Messages
 {
 
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
@@ -11,7 +11,7 @@
     public sealed class CreateResponse : HttpResponseMessage
     {
         /// <summary>
-        /// A reference to the record created.
+        /// 一个reference to the record created.
         /// </summary>
         public EntityReference? EntityReference
         {

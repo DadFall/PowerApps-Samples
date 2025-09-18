@@ -1,15 +1,15 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve a file column value
+        /// Contains the data to retrieve a file column value
     /// 
     public sealed class DownloadFileRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the DownloadFileRequest
+        /// 初始化 the DownloadFileRequest
         /// </summary>
-        /// <param name="entityReference">A reference to the record to get the column data from.</param>
-        /// <param name="property">The name of the column.</param>
+        /// <param name="entityReference">一个reference to the record to get the column 数据 from.</param>
+        /// <param name="property">名称 of the column.</param>
         /// <param name="returnFullSizedImage">When downloading image file, whether to return the full-sized image. Otherwise the thumbnail-sized image will be returned.</param>
         public DownloadFileRequest(EntityReference entityReference, string property, bool returnFullSizedImage = false)
         {

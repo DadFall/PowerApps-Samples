@@ -40,22 +40,22 @@ namespace PowerApps.Samples.Search.Messages
 
         }
         /// <summary>
-        /// The number of search results to retrieve. The default is 50, and the maximum value is 100.
+        /// number of search results to retrieve. The default is 50, and the maximum value is 100.
         /// </summary>
         public int? Top { get { return _top; } set { _top = value; SetContent(); } }
 
         /// <summary>
-        /// Search term.
+        /// 搜索term.
         /// </summary>
         public string? Search { get { return _search; } set { _search = value; SetContent(); } }
 
         /// <summary>
-        /// The number of search results to skip.
+        /// number of search results to skip.
         /// </summary>
         public int? Skip { get { return _skip; } set { _skip = value; SetContent(); } }
 
         /// <summary>
-        /// The default scope is searching across all search-configured entities and fields.
+        /// default scope is searching across all search-configured entities and fields.
         /// </summary>
         public string? Entities { get { return _entities; } set { _entities = value; SetContent(); } }
 
@@ -67,7 +67,7 @@ namespace PowerApps.Samples.Search.Messages
 
 
         /// <summary>
-        /// Filter criteria to reduce results returned.
+        /// 过滤criteria to reduce results returned.
         /// </summary>
         public string? Filter { get { return _filter; } set { _filter = value; SetContent(); } }
 
@@ -82,7 +82,7 @@ namespace PowerApps.Samples.Search.Messages
         public string? Facets { get { return _facets; } set { _facets = value; SetContent(); } }
 
         /// <summary>
-        /// Sets the Content when values change
+        /// 设置 the Content when values change
         /// </summary>
         private void SetContent()
         {
