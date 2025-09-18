@@ -52,7 +52,7 @@ namespace PowerApps.Samples
                         DirectionCode = true
                     };
 
-                    //Create a query expression to get one of Email Template of type "contact"
+                    //创建a query expression to get one of Email Template of type "contact"
 
                     QueryExpression queryBuildInTemplates = new QueryExpression
                     {

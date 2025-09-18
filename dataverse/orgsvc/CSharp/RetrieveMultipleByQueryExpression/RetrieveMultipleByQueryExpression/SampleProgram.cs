@@ -29,7 +29,7 @@ namespace PowerApps.Samples
 
                     Console.WriteLine("Entering:RetrieveMultipleWithRelatedEntityColumns");
                     
-                    //Create multiple accounts with primary contacts  
+                    //创建multiple accounts with primary contacts  
                     var contact = new Entity("contact");
                     contact.Attributes["firstname"] = "ContactFirstName";
                     contact.Attributes["lastname"] = "ContactLastName";
@@ -46,7 +46,7 @@ namespace PowerApps.Samples
                     account["name"] = "Test Account3";
                     Guid accountId3 = service.Create(account);
 
-                    //Create a query expression specifying the link entity alias and the columns of the link entity that you want to return  
+                    //创建a query expression specifying the link entity alias and the columns of the link entity that you want to return  
                     var qe = new QueryExpression();
                     qe.EntityName = "account";
                     qe.ColumnSet = new ColumnSet();

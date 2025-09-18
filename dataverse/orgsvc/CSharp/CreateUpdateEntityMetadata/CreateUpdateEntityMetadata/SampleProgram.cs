@@ -23,7 +23,7 @@ namespace PowerApps.Samples
 
                     #region Demonstrate
 
-                    //Create a custom entity
+                    //创建a custom entity
                     var createrequest = new CreateEntityRequest
                     {
 
@@ -54,7 +54,7 @@ namespace PowerApps.Samples
                     service.Execute(createrequest);
                     Console.WriteLine("The bank account entity has been created.");
 
-                    //Add a String attribute to the custom entity
+                    //添加a String attribute to the custom entity
                     CreateAttributeRequest createBankNameAttributeRequest = new CreateAttributeRequest
                     {
                         EntityName = _customEntityName,
@@ -71,7 +71,7 @@ namespace PowerApps.Samples
 
                     service.Execute(createBankNameAttributeRequest);
 
-                    //Add a Money attribute to the custom entity
+                    //添加a Money attribute to the custom entity
                     CreateAttributeRequest createBalanceAttributeRequest = new CreateAttributeRequest
                     {
                         EntityName = _customEntityName,
@@ -88,7 +88,7 @@ namespace PowerApps.Samples
 
                     service.Execute(createBalanceAttributeRequest);
 
-                    //Add a DateTime attribute to the custom entity
+                    //添加a DateTime attribute to the custom entity
                     CreateAttributeRequest createCheckedDateRequest = new CreateAttributeRequest
                     {
                         EntityName = _customEntityName,

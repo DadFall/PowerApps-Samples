@@ -137,7 +137,7 @@ namespace PowerApps.Samples
             var closeResponse =
                 (CloseIncidentResponse)service.Execute(closeRequest);
 
-            //Check if the incident was successfully closed
+            //检查if the incident was successfully closed
             Incident incident = service.Retrieve(Incident.EntityLogicalName,
                 _caseIncidentId, new ColumnSet(allColumns: true)).ToEntity<Incident>();
 

@@ -177,7 +177,7 @@ namespace FunctionsAndActions
  */
             JObject newAccount = initializeFromResponse.Record;
 
-            //Set different properties for new record
+            //设置different properties for new record
             newAccount["name"] = "Contoso Consulting Chicago Branch";
             newAccount["address1_city"] = "Chicago";
             newAccount["address1_line1"] = "456 Elm St.";
@@ -243,7 +243,7 @@ namespace FunctionsAndActions
             }
  */
 
-            //Create the new record with default values copied from the original
+            //创建the new record with default values copied from the original
             EntityReference newAccountReference = await service.Create("accounts", newAccount);
             recordsToDelete.Add(newAccountReference); //稍后删除
 
@@ -339,14 +339,14 @@ namespace FunctionsAndActions
             await ManageIsSystemAdminFunction(service: service, recordsToDelete: recordsToDelete);
 
 
-            //Get top 10 user records that don't start with # character
+            //获取top 10 user records that don't start with # character
             RetrieveMultipleResponse retrieveMultipleUsersResponse =
                 await service.RetrieveMultiple("systemusers?" +
                 "$select=fullname&$filter=not startswith(fullname,'%23')&$top=10");
 
             Console.WriteLine("Top 10 users and whether they have System Administrator role.");
             
-            //Test each for the System Administrator role:
+            //测试each for the System Administrator role:
             retrieveMultipleUsersResponse.Records.ToList().ForEach(user => {
 
                 IsSystemAdminRequest isSystemAdminRequest = new(
@@ -401,12 +401,12 @@ namespace FunctionsAndActions
             {
                 Console.WriteLine($"Testing user: {otherUser["fullname"]}");
 
-                //Create a reference to the user;
+                //创建a reference to the user;
                 EntityReference userReference = new(
                     entitySetName: "systemusers",
                     id: (Guid)otherUser["systemuserid"]);
 
-                //Test the other user's access to the record using RetrievePrincipalAccess
+                //测试the other user's access to the record using RetrievePrincipalAccess
                 RetrievePrincipalAccessRequest retrievePrincipalAccessRequest1 = new(
                     principal: userReference,
                     target: accountToShareRef);
@@ -419,7 +419,7 @@ namespace FunctionsAndActions
                 //如果they don't already have Delete Access, grant it to them.
                 if (!retrievePrincipalAccessResponse1.AccessRights.HasFlag(AccessRights.DeleteAccess))
                 {
-                    //Create request to share the record with the user
+                    //创建request to share the record with the user
                     GrantAccessRequest grantAccessRequest = new(
                         target: accountToShareRef.AsJObject("account", "accountid"),
                         principalAccess: new PrincipalAccess()
@@ -431,7 +431,7 @@ namespace FunctionsAndActions
                     // 发送请求
                     await service.SendAsync(grantAccessRequest);
 
-                    //Test the other user's access to the record again
+                    //测试the other user's access to the record again
                     RetrievePrincipalAccessRequest retrievePrincipalAccessRequest2 = new(
                         principal: userReference,
                         target: accountToShareRef);
@@ -457,7 +457,7 @@ namespace FunctionsAndActions
             // AddPrivilegesRole 向现有角色添加一组现有权限。
             // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/addprivilegesrole?view=dataverse-latest
 
-            //Create a role
+            //创建a role
 
             JObject role = new() {
                 //Role must be associated to a business unit
@@ -496,9 +496,9 @@ namespace FunctionsAndActions
                 prvReadSharePointDocument
  */
 
-            //Add privileges to the role
+            //添加privileges to the role
 
-            //Retrieve the prvCreateAccount and prvReadAccount privileges
+            //检索the prvCreateAccount and prvReadAccount privileges
             RetrieveMultipleResponse rolequery = 
                 await service.RetrieveMultiple(
                 queryUri: "privileges" +
@@ -525,10 +525,10 @@ namespace FunctionsAndActions
                 roleId: roleReference.Id.Value,
                 privileges: rolePrivileges);
 
-            //Add new privileges prvCreateAccount and prvReadAccount
+            //添加new privileges prvCreateAccount and prvReadAccount
             await service.SendAsync(request);
 
-            //Retrieve the role privileges again
+            //检索the role privileges again
             retrievedRole = 
                 await service.Retrieve(
                     entityReference: roleReference, 

@@ -11,7 +11,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// 创建 an image column if it doesn't already exist.
         /// </summary>
-        /// <param name="service">service.</param>
+        /// <param name="service">服务.</param>
         /// <param name="entityLogicalName">logical 名称 of the table to create the image column in.</param>
         /// <param name="imageColumnSchemaName">schema 名称 of the image column.</param>
         /// <param name="maxSizeInKb">maximum size of image the column will store.</param>
@@ -73,7 +73,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// 删除 an image column
         /// </summary>
-        /// <param name="service">service.</param>
+        /// <param name="service">服务.</param>
         /// <param name="entityLogicalName">logical 名称 of the table the image column exists in.</param>
         /// <param name="imageColumnSchemaName">schema 名称 of the image column.</param>
         public static void DeleteImageColumn(
@@ -101,7 +101,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// 更新the CanStoreFullImage for a image column
         /// </summary>
-        /// <param name="service">service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityLogicalName">logical 名称 of the table that has the column.</param>
         /// <param name="imageColumnSchemaName">logical 名称 of the image column.</param>
         /// <param name="canStoreFullImage">new 值 for CanStoreFullImage</param>
@@ -140,7 +140,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// 获取 the name of the primary image column for the table
         /// </summary>
-        /// <param name="service">service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityLogicalName">logical 名称 of the table that has the column.</param>
         /// <returns>EntityMetadata.PrimaryImageAttribute value.</returns>
         public static string GetTablePrimaryImageName(
@@ -162,7 +162,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// 设置 an ImageAttribute IsPrimaryImage property to true
         /// </summary>
-        /// <param name="service">service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityLogicalName">logical 名称 of the table that has the image column.</param>
         /// <param name="imageAttributeName">logical 名称 of the image column.</param>
         public static void SetTablePrimaryImageName(

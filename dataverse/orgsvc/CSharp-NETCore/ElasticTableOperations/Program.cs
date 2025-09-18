@@ -148,7 +148,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                          "ttlinseconds",
                          "contoso_energyconsumption"),
                     Target = new EntityReference("contoso_sensordata", sensordataId),
-                    ["SessionToken"] = sessionToken //Set session token on read operation
+                    ["SessionToken"] = sessionToken //设置session token on read operation
                 };
 
                 var retrieveResponse = (RetrieveResponse)serviceClient.Execute(retrieveRequest);

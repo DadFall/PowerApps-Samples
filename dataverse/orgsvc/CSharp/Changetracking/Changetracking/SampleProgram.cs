@@ -43,7 +43,7 @@ namespace PowerApps.Samples
                     //To cache information about the inital set of book records created.
                     List<Entity> initialRecords = new List<Entity>();
 
-                    //Retrieve initial records with tracked changes
+                    //检索initial records with tracked changes
                     RetrieveEntityChangesRequest initialRequest = new RetrieveEntityChangesRequest()
                     {
                         EntityName = "sample_book",
@@ -66,14 +66,14 @@ namespace PowerApps.Samples
                     Console.WriteLine("Waiting 10 seconds until next operation..");
                     Thread.Sleep(10000);
 
-                    //Add another 10 records, 1 update, and 1 delete
+                    //添加another 10 records, 1 update, and 1 delete
                     UpdateBookRecordsForSample(service);
 
                     // Instantiate cache for changed and deleted records
                     List<Entity> updatedRecords = new List<Entity>();
                     List<EntityReference> deletedRecords = new List<EntityReference>();
 
-                    //Retrieve Changes since the initial records were created
+                    //检索Changes since the initial records were created
                     //request is identical except it now has the DataVersion value set to the DataToken of the previous request.
                     RetrieveEntityChangesRequest secondRequest = new RetrieveEntityChangesRequest()
                     {
@@ -84,7 +84,7 @@ namespace PowerApps.Samples
                         DataVersion = dataVersionToken
                     };
 
-                    //Get the results from the second request
+                    //获取the results from the second request
                     RetrieveEntityChangesResponse results = (RetrieveEntityChangesResponse)service.Execute(secondRequest);
 
                     //Separate the results by type: NewOrUpdated or RemoveOrDeleted
@@ -96,7 +96,7 @@ namespace PowerApps.Samples
                         .Where(x => x.Type == ChangeType.RemoveOrDeleted)
                         .Select(x => (x as RemovedOrDeletedItem).RemovedItem).ToArray());
 
-                    //Test results
+                    //测试results
                     Console.WriteLine("\nList of updated records:");
                     updatedRecords.ForEach(e =>
                     {

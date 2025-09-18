@@ -34,13 +34,13 @@ namespace PowerApps.Samples
                 Thread.Sleep(TimeSpan.FromSeconds(60));
             }
 
-            //Verify that the alternate key indexes are ready
+            //验证that the alternate key indexes are ready
             if (!VerifyBookCodeKeyIsActive(service))
             {
                 Console.WriteLine("There is a problem creating the index for the product code alternate key for the sample_product entity.");
                 Console.WriteLine("The sample cannot continue. Please try again.");
 
-                //Delete the ChangeTrackingSample solution
+                //删除the ChangeTrackingSample solution
                 SampleHelpers.DeleteSolution(service, "UpsertSample");
                 return;
             }
@@ -66,7 +66,7 @@ namespace PowerApps.Samples
 
             if (iteration == 0) //only the first time
             {
-                //Get whether the Entity Key index is active from the metadata
+                //获取whether the Entity Key index is active from the metadata
                 var entityQuery = new EntityQueryExpression();
                 entityQuery.Criteria = new MetadataFilterExpression(LogicalOperator.And)
                 {
@@ -92,7 +92,7 @@ namespace PowerApps.Samples
             }
             else
             {
-                //Check the status of the system job that is should indicate that the alternate key index is active.
+                //检查the status of the system job that is should indicate that the alternate key index is active.
                 AsyncOperation systemJob = (AsyncOperation)service.Retrieve(asyncJob.LogicalName, asyncJob.Id, new ColumnSet("statecode", "statuscode"));
 
                 if (systemJob.StateCode == AsyncOperationState.Completed) //Completed
@@ -101,7 +101,7 @@ namespace PowerApps.Samples
                     if (!systemJob.StatusCode.Value.Equals(30)) //Not Succeeded
                     {
 
-                        //Delete the system job and try to reactivate
+                        //删除the system job and try to reactivate
                         service.Delete(asyncJob.LogicalName, asyncJob.Id);
 
                         ReactivateEntityKeyRequest reactivateRequest = new ReactivateEntityKeyRequest()
@@ -111,7 +111,7 @@ namespace PowerApps.Samples
                         };
                         ReactivateEntityKeyResponse reactivateResponse = (ReactivateEntityKeyResponse)service.Execute(reactivateRequest);
 
-                        //Get the system job created by the reactivate request
+                        //获取the system job created by the reactivate request
                         QueryByAttribute systemJobQuery = new QueryByAttribute("asyncoperation");
                         systemJobQuery.AddAttributeValue("primaryentitytype", "sample_product");
                         systemJobQuery.AddOrder("createdon", OrderType.Descending);

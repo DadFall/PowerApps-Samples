@@ -19,10 +19,10 @@ namespace PowerApps.Samples
             string username = "yourUserName@yourOrgName.onmicrosoft.com";
             string password = "yourPassword";
 
-            //Set the Cloud if you want to search other than Commercial.
+            //设置the Cloud if you want to search other than Commercial.
             Cloud cloud = Cloud.Commercial;
 
-            //Get all environments for the selected data center.
+            //获取all environments for the selected data center.
             DiscoverOrganizationsResult orgs = await GetAllOrganizations(username, password, cloud);
 
             if (orgs.OrganizationDetailCollection.Count.Equals(0))
@@ -40,7 +40,7 @@ namespace PowerApps.Samples
             {
                 number++;
 
-                //Get the Organization URL
+                //获取the Organization URL
                 string webAppUrl = organization.Endpoints[EndpointType.WebApplication];
 
                 Console.WriteLine($"{number} Name: {organization.FriendlyName} URL: {webAppUrl}");
@@ -88,7 +88,7 @@ namespace PowerApps.Samples
         {
             try
             {
-                //Get the Cloud URL from the Description Attribute applied for the Cloud member
+                //获取the Cloud URL from the Description Attribute applied for the Cloud member
                 var type = typeof(Cloud);
                 var memInfo = type.GetMember(cloud.ToString());
                 var attributes = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
@@ -101,7 +101,7 @@ namespace PowerApps.Samples
 
                 try
                 {
-                    //Call DiscoverOnlineOrganizationsAsync
+                    //调用DiscoverOnlineOrganizationsAsync
                     DiscoverOrganizationsResult organizationsResult = await ServiceClient.DiscoverOnlineOrganizationsAsync(
                            discoveryServiceUri: new Uri($"{cloudRegionUrl}/api/discovery/v2.0/Instances"),
                            clientCredentials: creds,

@@ -22,7 +22,7 @@
     //Force Login for Anonymous users. Below line can be commented if force login is not needed.
     $.cookie("ImplicitGrantForceLogin", 1);
 
-	let clientId = "6d08757f-4f46-e911"; //Add the Client ID registered on CRM.
+	let clientId = "6d08757f-4f46-e911"; //添加the Client ID registered on CRM.
 
     auth.getAuthenticationToken = function (callbackFn) {
         callback = callbackFn;
@@ -44,7 +44,7 @@
                 // 如果the user is not logged in, redirect to login page
                 redirectToLogin();
             } else {
-                callback(null,jsonResult); //Run callback method with error message
+                callback(null,jsonResult); //运行callback method with error message
             }
         } else {
             // Pass the token to the callback function

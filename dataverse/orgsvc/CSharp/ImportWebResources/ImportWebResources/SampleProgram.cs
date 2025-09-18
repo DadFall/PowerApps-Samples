@@ -28,7 +28,7 @@ namespace PowerApps.Samples
                     //Read the descriptive data from the XML file
                     XDocument xmlDoc = XDocument.Load("../../ImportJob.xml");
 
-                    //Create a collection of anonymous type references to each of the Web Resources
+                    //创建a collection of anonymous type references to each of the Web Resources
                     var webResources = from webResource in xmlDoc.Descendants("webResource")
                                        select new
                                        {
@@ -44,7 +44,7 @@ namespace PowerApps.Samples
                     foreach (var webResource in webResources)
                     {
                         //<snippetImportWebResources2>
-                        //Set the Web Resource properties
+                        //设置the Web Resource properties
                         WebResource wr = new WebResource
                         {
                             Content = getEncodedFileContents(@"../../" + webResource.path),
@@ -60,7 +60,7 @@ namespace PowerApps.Samples
                         {
                             Target = wr
                         };
-                        //Set the SolutionUniqueName optional parameter so the Web Resources will be
+                        //设置the SolutionUniqueName optional parameter so the Web Resources will be
                         // created in the context of a specific solution.
                         cr.Parameters.Add("SolutionUniqueName", _ImportWebResourcesSolutionUniqueName);
 

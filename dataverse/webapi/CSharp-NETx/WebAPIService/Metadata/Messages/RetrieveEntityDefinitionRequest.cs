@@ -35,7 +35,7 @@ namespace PowerApps.Samples.Metadata.Messages
             {
                 throw new Exception("RetrieveEntityDefinitionRequest requires either LogicalName or MetadataId parameters.");
             }
-            //Get the key to use
+            //获取the key to use
             string key;
             if (metadataId != null)
             {

@@ -56,7 +56,7 @@ namespace PowerApps.Samples
                 Public = 0,
                 Private = 1
             };
-            //Create new queues and store their returned GUIDs in variables for later use.
+            //创建new queues and store their returned GUIDs in variables for later use.
             Queue sourceQueue = new Queue
             {
                 Name = "Source Queue",

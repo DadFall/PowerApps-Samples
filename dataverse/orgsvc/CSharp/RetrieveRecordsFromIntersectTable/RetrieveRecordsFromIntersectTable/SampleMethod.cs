@@ -71,7 +71,7 @@ namespace PowerApps.Samples
                     defaultBusinessUnit.Id)
             };
 
-            //Create a role record.
+            //创建a role record.
             roleId = service.Create(setupRole);
             Console.WriteLine("Created Role.");
 

@@ -65,7 +65,7 @@
 
                         count++;
                     });
-                    //Add to the content
+                    //添加to the content
                     ((MultipartContent)Content).Add(content);
 
                 });
@@ -81,7 +81,7 @@
             {
                 value.ForEach(request =>
                 {
-                    //Add to the content
+                    //添加to the content
                     ((MultipartContent)Content).Add(ToMessageContent(request));
 
                 });

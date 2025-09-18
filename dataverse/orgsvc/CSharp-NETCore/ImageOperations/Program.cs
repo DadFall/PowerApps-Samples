@@ -103,7 +103,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 Console.WriteLine($"\tCreated account: '{name}'");
             }
 
-            //Retrieve the accounts just created
+            //检索the accounts just created
             QueryExpression query = new("account")
             {
                 ColumnSet = new ColumnSet("name", imageColumnLogicalName, $"{imageColumnLogicalName}_url"),
@@ -219,7 +219,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Downloads a full-sized file using InitializeFileBlocksDownload and DownloadBlock messages
         /// </summary>
-        /// <param name="service">service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityReference">一个reference to the record with the file column</param>
         /// <param name="fileAttributeName">名称 of the file column</param>
         /// <returns></returns>

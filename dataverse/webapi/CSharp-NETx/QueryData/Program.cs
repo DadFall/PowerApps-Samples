@@ -249,7 +249,7 @@ namespace QueryData
             foreach (JObject contact in retrievedAccountContoso["contact_customer_accounts"].Cast<JObject>())
             {
 
-                //Add to the top of the list so these are deleted first
+                //添加to the top of the list so these are deleted first
                 recordsToDelete.Insert(0, new EntityReference("contacts", (Guid)contact["contactid"]));
             }
 

@@ -126,11 +126,11 @@ namespace PowerApps.Samples
 
                     };
 
-                    //Retrieve the metadata for the query without a ClientVersionStamp
+                    //检索the metadata for the query without a ClientVersionStamp
                     var initialRequest = getMetadataChanges(service, entityQueryExpression, null, DeletedMetadataFilters.OptionSet);
                    
 
-                    //Add option labels to the cache and display the changes
+                    //添加option labels to the cache and display the changes
                     addOptionLabelsToCache(initialRequest.EntityMetadata, false);
                     String ClientVersionStamp = initialRequest.ServerVersionStamp;
                     Console.WriteLine("{0} option labels for {1} entities added to the cache.",
@@ -141,20 +141,20 @@ namespace PowerApps.Samples
                     Console.WriteLine("");
 
 
-                    //Add new custom entity with optionset
+                    //添加new custom entity with optionset
                     Console.WriteLine("Adding a custom entity named {0} with a custom optionset attribute named : {1}",
                      _customEntitySchemaName, _customAttributeSchemaName);
                     Console.WriteLine("");
                     addCustomEntityWithOptionSet(service);
                     //Publishing isn't necessary when adding a custom entity
 
-                    //Add new option labels to the cache and display the results
+                    //添加new option labels to the cache and display the results
                     ClientVersionStamp = updateOptionLabelList(service, entityQueryExpression, ClientVersionStamp);
 
                     Console.WriteLine("ClientVersionStamp: {0}", ClientVersionStamp);
                     Console.WriteLine("");
 
-                    //Add a new option to the custom optionset in the custom entity and publish the custom entity
+                    //添加a new option to the custom optionset in the custom entity and publish the custom entity
                     Console.WriteLine("Adding an additional option to the {0} attribute options.",
                      _customAttributeSchemaName);
                     Console.WriteLine("");
@@ -164,7 +164,7 @@ namespace PowerApps.Samples
 
 
 
-                    //Add the new option label to the cache and display the results
+                    //添加the new option label to the cache and display the results
                     ClientVersionStamp = updateOptionLabelList(service, entityQueryExpression, ClientVersionStamp);
 
                     Console.WriteLine("ClientVersionStamp: {0}", ClientVersionStamp);
@@ -178,7 +178,7 @@ namespace PowerApps.Samples
                     CleanUpSample(service);
                     #endregion Clean up
 
-                    //Retrieve metadata changes to remove option labels from deleted attributes and display the results
+                    //检索metadata changes to remove option labels from deleted attributes and display the results
                     ClientVersionStamp = updateOptionLabelList(service, entityQueryExpression, ClientVersionStamp);
 
                     Console.WriteLine("ClientVersionStamp: {0}", ClientVersionStamp);

@@ -34,7 +34,7 @@ namespace TPLDataFlowParallelOperations
 
             #endregion Optimize Connection
 
-            // 发送a simple request to access the recommended degree of parallelism (DOP).
+            // 发送简单请求以访问推荐的并行度 (DOP)。
             HttpResponseMessage whoAmIResponse = await service.SendAsync(new WhoAmIRequest());
             int recommendedDegreeOfParallelism = int.Parse(whoAmIResponse.Headers.GetValues("x-ms-dop-hint").FirstOrDefault());
             Console.WriteLine($"The recommended degree of parallelism for this environment is {recommendedDegreeOfParallelism}.");
@@ -109,7 +109,7 @@ namespace TPLDataFlowParallelOperations
             // Wait for the Action Block to complete
             await deleteAccounts.Completion;
 
-            //Calculate the duration to complete
+            //计算the duration to complete
             return (DateTime.Now - start).TotalSeconds;
         }
     }

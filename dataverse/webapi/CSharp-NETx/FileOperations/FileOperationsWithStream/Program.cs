@@ -26,7 +26,7 @@ namespace PowerApps.Samples
             // 更新the MaxSizeInKB value to 100MB. Comment this line to get error about file too large for column.
             await Utility.UpdateFileColumnMaxSizeInKB(service, entityLogicalName, fileColumnSchemaName.ToLower(), 100 * 1024);
 
-            //Get the configured size of the column in KB
+            //获取the configured size of the column in KB
             fileColumnMaxSizeInKb = await Utility.GetFileColumnMaxSizeInKb(service, entityLogicalName, fileColumnSchemaName.ToLower());
 
             #region create account

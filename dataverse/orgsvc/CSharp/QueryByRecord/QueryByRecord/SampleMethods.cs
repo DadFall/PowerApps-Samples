@@ -87,7 +87,7 @@ namespace PowerApps.Samples
                 "Created a related Connection Role Object Type Code record for Contact."
                 );
 
-            //Create a few account records for use in the connections.
+            //创建a few account records for use in the connections.
             Account setupAccount1 = new Account { Name = "Example Account 1" };
             _account1Id = service.Create(setupAccount1);
             Console.WriteLine("Created {0}.", setupAccount1.Name);

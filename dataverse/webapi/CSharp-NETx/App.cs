@@ -66,7 +66,7 @@ namespace PowerApps.Samples
             else
             {
                 // These samples use username/password for simplicity, but it is not a recommended pattern.
-                // More information: 
+                // 更多信息： 
                 //https://learn.microsoft.com/azure/active-directory/develop/scenario-desktop-acquire-token?tabs=dotnet#username-and-password
 
                 if (!string.IsNullOrWhiteSpace(appSettings["Password"]) && !string.IsNullOrWhiteSpace(appSettings["UserPrincipalName"]))

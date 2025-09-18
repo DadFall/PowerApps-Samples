@@ -13,10 +13,10 @@ namespace PowerApps.Samples
     {
         protected override void Execute(CodeActivityContext executionContext)
         {
-            //Create the tracing service
+            //创建the tracing service
             ITracingService tracingService = executionContext.GetExtension<ITracingService>();
 
-            //Create the context
+            //创建the context
             IWorkflowContext context = executionContext.GetExtension<IWorkflowContext>();
             IOrganizationServiceFactory serviceFactory = executionContext.GetExtension<IOrganizationServiceFactory>();
             IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
@@ -47,12 +47,12 @@ namespace PowerApps.Samples
 
             tracingService.Trace("Executing the Query for entity {0}", query.EntityName);
 
-            //Execute using a request to test the OOB (XRM) message contracts
+            //执行using a request to test the OOB (XRM) message contracts
             RetrieveMultipleRequest request = new RetrieveMultipleRequest();
             request.Query = query;
             Collection<Entity> entityList = ((RetrieveMultipleResponse)service.Execute(request)).EntityCollection.Entities;
 
-            //Execute a request from the message assembly
+            //执行a request from the message assembly
             tracingService.Trace("Executing a WhoAmIRequest");
             service.Execute(new WhoAmIRequest());
 
@@ -73,14 +73,14 @@ namespace PowerApps.Samples
 
                 tracingService.Trace("Retrieving the entity from IOrganizationService");
 
-                //Retrieve the task using Retrieve
+                //检索the task using Retrieve
                 retrievedTask = (Task)service.Retrieve(Task.EntityLogicalName, retrievedTask.Id, new ColumnSet("subject"));
                 if (!string.Equals(newTask.Subject, retrievedTask.Subject, StringComparison.Ordinal))
                 {
                     throw new InvalidPluginExecutionException("Task's subject did not get retrieved correctly");
                 }
 
-                //Update the task
+                //更新the task
                 retrievedTask.Subject = UpdatedTaskSubject.Get<string>(executionContext);
                 service.Update(retrievedTask);
             }
@@ -103,10 +103,10 @@ namespace PowerApps.Samples
     {
         protected override void Execute(CodeActivityContext executionContext)
         {
-            //Create the tracing service
+            //创建the tracing service
             ITracingService tracingService = executionContext.GetExtension<ITracingService>();
 
-            //Create the context
+            //创建the context
             IWorkflowContext context = executionContext.GetExtension<IWorkflowContext>();
             IOrganizationServiceFactory serviceFactory = executionContext.GetExtension<IOrganizationServiceFactory>();
             IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
@@ -155,10 +155,10 @@ namespace PowerApps.Samples
     {
         protected override void Execute(CodeActivityContext executionContext)
         {
-            //Create the tracing service
+            //创建the tracing service
             ITracingService tracingService = executionContext.GetExtension<ITracingService>();
 
-            //Create the context
+            //创建the context
             IWorkflowContext context = executionContext.GetExtension<IWorkflowContext>();
             IOrganizationServiceFactory serviceFactory = executionContext.GetExtension<IOrganizationServiceFactory>();
             IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
@@ -182,7 +182,7 @@ namespace PowerApps.Samples
             tracingService.Trace("Execute the Create/Update");
             rootAccount.Id = service.Create(rootAccount);
 
-            //Create the related entities query
+            //创建the related entities query
             RelationshipQueryCollection retrieveRelatedEntities = new RelationshipQueryCollection();
             retrieveRelatedEntities[primaryContactRelationship] = new QueryExpression(Account.EntityLogicalName)
             {
@@ -190,7 +190,7 @@ namespace PowerApps.Samples
                 Criteria = new FilterExpression()
             };
 
-            //Create the request
+            //创建the request
             RetrieveResponse response = (RetrieveResponse)service.Execute(new RetrieveRequest()
             {
                 ColumnSet = new ColumnSet("firstname"),

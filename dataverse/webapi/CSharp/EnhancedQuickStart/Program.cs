@@ -11,7 +11,7 @@ namespace EnhancedQuickStart
         {
             try
             {
-                //Get configuration data from App.config connectionStrings
+                //获取configuration data from App.config connectionStrings
                 string connectionString = ConfigurationManager.ConnectionStrings["Connect"].ConnectionString;
 
                 using (HttpClient client = SampleHelpers.GetHttpClient(connectionString, SampleHelpers.clientId, SampleHelpers.redirectUrl))
@@ -21,7 +21,7 @@ namespace EnhancedQuickStart
 
                     if (response.IsSuccessStatusCode)
                     {
-                        //Get the response content and parse it.  
+                        //获取the response content and parse it.  
                         JObject body = JObject.Parse(response.Content.ReadAsStringAsync().Result);
                         Guid userId = (Guid)body["UserId"];
                         Console.WriteLine("Your UserId is {0}", userId);

@@ -76,7 +76,7 @@ namespace ImageOperations
             }
 
            
-            //Retrieve the accounts just created
+            //检索the accounts just created
             string query = $"accounts?" +
                 $"$select=name,{imageColumnLogicalName},{imageColumnLogicalName}_url&" +
                 $"$filter=Microsoft.Dynamics.CRM.In(PropertyName=@p1,PropertyValues=@p2)&" +

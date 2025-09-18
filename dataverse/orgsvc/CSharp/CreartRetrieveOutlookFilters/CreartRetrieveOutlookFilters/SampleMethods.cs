@@ -66,7 +66,7 @@ namespace PowerApps.Samples
             if (deleteRecords)
             {
 
-                //Delete all records created in this sample.
+                //删除all records created in this sample.
                 Console.WriteLine("Deleting the offline filter and offline template");
                 service.Delete(SavedQuery.EntityLogicalName, _offlineFilter);
                 service.Delete(SavedQuery.EntityLogicalName, _offlineTemplate);

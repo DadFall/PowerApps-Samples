@@ -76,7 +76,7 @@ export class ImageUploadControl implements ComponentFramework.StandardControl<II
 		this._notifyOutputChanged = notifyOutputChanged;
 		this.controlContainer = document.createElement("div");
 
-		//Create an upload button to upload the image
+		//创建an upload button to upload the image
 		this.uploadButton = document.createElement("button");
 		// 获取the localized string from localized string
 		this.uploadButton.innerHTML = context.resources.getString("PCF_ImageUploadControl_Upload_ButtonLabel");
@@ -85,7 +85,7 @@ export class ImageUploadControl implements ComponentFramework.StandardControl<II
 		// Creating the label for the control and setting the relevant values.
 		this.imgElement = document.createElement("img");
 
-		//Create a remove button to reset the image
+		//创建a remove button to reset the image
 		this.removeButton = document.createElement("button");
 		this.removeButton.classList.add(RemoveButtonClassName);
 		// 获取the localized string from localized string

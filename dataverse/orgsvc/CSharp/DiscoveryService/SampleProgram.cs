@@ -22,10 +22,10 @@ namespace PowerApps.Samples
             string username = "someone@myorg.onmicrosoft.com";
             string password = "mypassword";
 
-            //Set the Cloud if you know it, otherwise use Cloud.Unknown to search Commercial.
+            //设置the Cloud if you know it, otherwise use Cloud.Unknown to search Commercial.
             Cloud cloud = Cloud.Unknown;
 
-            //Get all environments for the selected data center.
+            //获取all environments for the selected data center.
             List<OrganizationDetail> orgs = GetAllOrganizations(username, password, cloud);
 
             if (orgs.Count.Equals(0))
@@ -44,7 +44,7 @@ namespace PowerApps.Samples
             {
                 number++;
 
-                //Get the Organization Service URL
+                //获取the Organization Service URL
                 string fullOrgServiceUrl = o.Endpoints[EndpointType.OrganizationService];
 
                 // Trim '/XRMServices/2011/Organization.svc' from the end.
@@ -63,7 +63,7 @@ namespace PowerApps.Samples
                     OrganizationDetail org = orgs[selected - 1];
                     Console.WriteLine("You selected {0}", org.FriendlyName);
 
-                    //Get the Organization Service URL for the selected environment
+                    //获取the Organization Service URL for the selected environment
                     string serviceUrl = org.Endpoints[EndpointType.OrganizationService];
 
                     //Use the selected serviceUrl with CrmServiceClient to get the UserId

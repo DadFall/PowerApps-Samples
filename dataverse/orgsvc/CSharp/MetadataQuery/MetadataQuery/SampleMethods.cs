@@ -68,7 +68,7 @@ namespace PowerApps.Samples
   
         protected static String updateOptionLabelList(CrmServiceClient service, EntityQueryExpression entityQueryExpression, String clientVersionStamp)
         {
-            //Retrieve metadata changes and add them to the cache
+            //检索metadata changes and add them to the cache
             RetrieveMetadataChangesResponse updateResponse;
             try
             {
@@ -87,7 +87,7 @@ namespace PowerApps.Samples
                     _optionLabelList.Clear();
 
                     updateResponse = getMetadataChanges(service, entityQueryExpression, null, DeletedMetadataFilters.OptionSet);
-                    //Add them to the cache and display the changes
+                    //添加them to the cache and display the changes
                     addOptionLabelsToCache(updateResponse.EntityMetadata, true);
 
                 }
@@ -243,7 +243,7 @@ namespace PowerApps.Samples
             //PublishXmlRequest publishXmlRequest = new PublishXmlRequest { ParameterXml = String.Format("<importexportxml><entities><entity>{0}</entity></entities></importexportxml>", _customEntitySchemaName.ToLower()) };
             //_service.Execute(publishXmlRequest);
 
-            //Add an optionset attribute
+            //添加an optionset attribute
 
             var createAttributeRequest = new CreateAttributeRequest
             {

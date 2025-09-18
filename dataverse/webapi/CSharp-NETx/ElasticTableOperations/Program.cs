@@ -121,7 +121,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                 This code includes the MSCRM.SessionToken header with all GET operations before the request is sent
 
-                    // Session token used by elastic tables to enable strong consistency
+                    // 弹性表使用的会话令牌以启用强一致性
                     // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#sending-the-session-token
                     if (!string.IsNullOrWhiteSpace(_sessionToken) && request.Method == HttpMethod.Get) {
                         request.Headers.Add("MSCRM.SessionToken", _sessionToken);
@@ -129,7 +129,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 
                 This code captures the current session token, if it is included, after every response is recieved.
 
-                    // Capture the current session token value
+                    // 捕获当前会话令牌值
                     // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#getting-the-session-token
                     if (response.Headers.Contains("x-ms-session-token"))
                     {

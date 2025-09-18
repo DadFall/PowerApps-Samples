@@ -637,7 +637,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             while (!isKeyInMetadata)
             {
-                //Get whether the Entity Key index is active from the metadata
+                //获取whether the Entity Key index is active from the metadata
                 var entityQuery = new EntityQueryExpression
                 {
                     Criteria = new MetadataFilterExpression(LogicalOperator.And)

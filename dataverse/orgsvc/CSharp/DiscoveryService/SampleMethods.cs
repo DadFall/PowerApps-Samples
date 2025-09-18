@@ -42,7 +42,7 @@ namespace PowerApps.Samples
                 throw new ArgumentOutOfRangeException("Cloud.Unknown cannot be used as a parameter for this method.");
             }
 
-            //Get the Cloud URL from the Description Attribute applied for the Cloud member
+            //获取the Cloud URL from the Description Attribute applied for the Cloud member
             var type = typeof(Cloud);
             var memInfo = type.GetMember(cloud.ToString());
             var attributes = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);

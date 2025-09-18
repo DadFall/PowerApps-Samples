@@ -13,7 +13,7 @@ namespace PowerApps.Samples
 {
     public class Service : IDisposable
     {
-        // 服务配置数据passed into the constructor
+        // 传递给构造函数的服务配置数据
         private readonly Config config;
 
         private static IServiceProvider _serviceProvider { get; set; }
@@ -27,7 +27,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// constructor for the service
+        /// 服务的构造函数
         /// </summary>
         /// <param name="configParam"></param>
         /// <exception cref="InvalidOperationException"></exception>
@@ -66,21 +66,21 @@ namespace PowerApps.Samples
 
 
             builder.ConfigureLogging(logging => {
-                // Removing default logging providers
-                // so that output is not sent to console.
-                // You may wish to enable logging.
-                // More information:
+                // 删除默认日志记录提供程序
+                // 以便输出不会发送到控制台。
+                // 您可能希望启用日志记录。
+                // 更多信息：
                 // https://learn.microsoft.com/dotnet/core/extensions/logging-providers
                 logging.ClearProviders();
             });
 
-            // 添加the named HttpClient configuration to the service provider.
+            // 将命名的 HttpClient 配置添加到服务提供程序。
             _serviceProvider = builder.Build().Services;
 
-            // 发送a simple request to access the recommended degree of parallelism (DOP).
+            // 发送简单请求以访问推荐的并行度 (DOP)。
             var whoAmIResponse =  SendAsync<WhoAmIResponse>(new WhoAmIRequest()).GetAwaiter().GetResult();
             _recommendedDegreeOfParallelism = int.Parse(whoAmIResponse.Headers.GetValues("x-ms-dop-hint").FirstOrDefault());
-            // 设置the users details
+            // 设置用户详细信息
             _userId = whoAmIResponse.UserId;
             _businessUnitId = whoAmIResponse.BusinessUnitId;
             _organizationId = whoAmIResponse.OrganizationId;
@@ -88,7 +88,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// HttpClient configuration set in the service constructor
+        /// 在服务构造函数中设置的 HttpClient 配置
         /// </summary>
         /// <param name="httpClient"></param>
         void ConfigureHttpClient(HttpClient httpClient)
@@ -96,7 +96,7 @@ namespace PowerApps.Samples
             httpClient.BaseAddress = BaseAddress;
             httpClient.Timeout = TimeSpan.FromSeconds(config.TimeoutInSeconds);
             httpClient.DefaultRequestHeaders.Add("User-Agent", $"WebAPIService/{Assembly.GetExecutingAssembly().GetName().Version}");
-            // 设置default headers for all requests
+            // 为所有请求设置默认标头
             // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/compose-http-requests-handle-errors#http-headers
             httpClient.DefaultRequestHeaders.Add("OData-MaxVersion", "4.0");
             httpClient.DefaultRequestHeaders.Add("OData-Version", "4.0");
@@ -106,7 +106,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Specifies the Retry policies
+        /// 指定重试策略
         /// </summary>
         /// <param name="config"></param>
         /// <returns></returns>
@@ -122,7 +122,7 @@ namespace PowerApps.Samples
                         int seconds;
                         HttpResponseHeaders headers = response.Result.Headers;
 
-                        // Use the value of the Retry-After header if it exists
+                        // 如果存在，则使用 Retry-After 标头的值
                         // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/api-limits#retry-operations
 
                         if (headers.Contains("Retry-After"))
@@ -141,7 +141,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Provides access to the IHttpClientFactory from the service provider.
+        /// 提供从服务提供程序访问 IHttpClientFactory 的方法
         /// </summary>
         /// <returns></returns>
         private static IHttpClientFactory GetHttpClientFactory()
@@ -153,28 +153,28 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// 处理 requests and returns responses. 管理 Service Protection Limit errors.
+        /// 处理请求并返回响应。管理服务保护限制错误。
         /// </summary>
-        /// <param name="request">请求 to send.</param>
-        /// <returns>response from the HttpClient</returns>
+        /// <param name="request">要发送的请求</param>
+        /// <returns>来自 HttpClient 的响应</returns>
         /// <exception cref="Exception"></exception>
         public async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request)
         {
-            // Session token used by elastic tables to enable strong consistency
+            // 弹性表使用的会话令牌以启用强一致性
             // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#sending-the-session-token
             if (!string.IsNullOrWhiteSpace(_sessionToken) && request.Method == HttpMethod.Get) {
                 request.Headers.Add("MSCRM.SessionToken", _sessionToken);
             }
 
-            // 设置the access token using the function from the Config passed to the constructor
+            // 使用传递给构造函数的 Config 中的函数设置访问令牌
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", await config.GetAccessToken());
 
-            // 获取the named HttpClient from the IHttpClientFactory
+            // 从 IHttpClientFactory 获取命名的 HttpClient
             var client = GetHttpClientFactory().CreateClient(WebAPIClientName);
 
             HttpResponseMessage response = await client.SendAsync(request);
 
-            // Capture the current session token value
+            // 捕获当前会话令牌值
             // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#getting-the-session-token
             if (response.Headers.Contains("x-ms-session-token"))
             {
@@ -183,7 +183,7 @@ namespace PowerApps.Samples
 
              //SampleGenerator.WriteHttpSample(request, response, BaseAddress, "H:\\temp\\GeneratedSamples");
 
-            // 抛出an exception if the request is not successful
+            // 如果请求不成功则抛出异常
             if (!response.IsSuccessStatusCode)
             {
                 ServiceException exception = await ParseError(response);
@@ -193,7 +193,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// 处理 requests with typed responses
+        /// 处理具有类型化响应的请求
         /// </summary>
         /// <typeparam name="T">The type derived from HttpResponseMessage</typeparam>
         /// <param name="request">请求</param>
@@ -228,7 +228,7 @@ namespace PowerApps.Samples
             }
             catch (Exception)
             {
-                // 错误may not be in correct OData Error format, so keep trying...
+                // 错误可能不是正确的 OData 错误格式，所以继续尝试...
             }
 
             if (oDataError?.Error != null)
@@ -265,7 +265,7 @@ namespace PowerApps.Samples
 
                 }
 
-                //当nothing else works
+                //当其他方法都不起作用时
                 ServiceException exception = new(response.ReasonPhrase)
                 {
                     Content = content,
@@ -278,12 +278,12 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// BaseAddress property of the WebAPI httpclient.
+        /// WebAPI HttpClient 的 BaseAddress 属性
         /// </summary>
         public Uri BaseAddress { get; }
 
         /// <summary>
-        /// recommended degree of parallelism for the connection.
+        /// 连接的推荐并行度
         /// </summary>
         public int RecommendedDegreeOfParallelism {
             get {
@@ -292,7 +292,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// UserId of the connected user
+        /// 已连接用户的 UserId
         /// </summary>
         public Guid UserId
         {
@@ -303,7 +303,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// OrganizationId of the connected user
+        /// 已连接用户的 OrganizationId
         /// </summary>
         public Guid OrganizationId
         {
@@ -314,7 +314,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// BusinessUnitId of the connected user
+        /// 已连接用户的 BusinessUnitId
         /// </summary>
         public Guid BusinessUnitId
         {

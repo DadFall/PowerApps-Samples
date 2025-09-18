@@ -12,7 +12,7 @@ namespace PowerApps.Samples
         /// <summary>
         /// Imports a solution if it is not already installed.
         /// </summary>
-        /// <param name="service">service to use to import the solution. </param>
+        /// <param name="service">服务 to use to import the solution. </param>
         /// <param name="uniqueName">unique 名称 of the solution to install.</param>
         /// <param name="pathToFile">path to the solution file.</param>
         /// <returns>如果为真则返回 true the solution was installed, otherwise false.</returns>
@@ -42,7 +42,7 @@ namespace PowerApps.Samples
         /// <summary>
         /// Prompts user to delete solution. 删除 solution if they choose.
         /// </summary>
-        /// <param name="service">service to use to delete the solution. </param>
+        /// <param name="service">服务 to use to delete the solution. </param>
         /// <param name="uniqueName">unique 名称 of the solution to delete.</param>
         /// <returns>true when the solution was deleted, otherwise false.</returns>
         public static bool DeleteSolution(ServiceClient service, string uniqueName)

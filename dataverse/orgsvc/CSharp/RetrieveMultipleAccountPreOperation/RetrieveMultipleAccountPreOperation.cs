@@ -44,7 +44,7 @@ namespace RetrieveMultipleExample
                         {
                             tracingService.Trace("Query on Account confirmed");
 
-                            //Get all filter elements
+                            //获取all filter elements
                             var filterElements = entityElement.Descendants("filter");
 
                             //Find any existing statecode conditions
@@ -56,11 +56,11 @@ namespace RetrieveMultipleExample
                             {
                                 tracingService.Trace("Removing existing statecode filter conditions.");
                             }
-                            //Remove statecode conditions
+                            //移除statecode conditions
                             stateCodeConditions.ToList().ForEach(x => x.Remove());
 
 
-                            //Add the condition you want in a new filter
+                            //添加the condition you want in a new filter
                             entityElement.Add(
                                 new XElement("filter",
                                     new XElement("condition",
@@ -86,14 +86,14 @@ namespace RetrieveMultipleExample
                             //Recursively remove any conditions referring to the statecode attribute
                             foreach (FilterExpression fe in queryExpressionQuery.Criteria.Filters)
                             {
-                                //Remove any existing criteria based on statecode attribute
+                                //移除any existing criteria based on statecode attribute
                                 RemoveAttributeConditions(fe, "statecode", tracingService);
                             }
 
                             //定义
                             var stateCodeFilter = new FilterExpression();
                             stateCodeFilter.AddCondition("statecode", ConditionOperator.NotEqual, 1);
-                            //Add it to the Criteria
+                            //添加it to the Criteria
                             queryExpressionQuery.Criteria.AddFilter(stateCodeFilter);
                         }
 

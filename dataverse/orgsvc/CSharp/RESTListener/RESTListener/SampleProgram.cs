@@ -16,7 +16,7 @@ namespace PowerApps.Samples
         #region How-To Sample Code
 
         /// <summary>
-        /// Execute method is called when a message is posted to the Azure Service
+        /// 执行method is called when a message is posted to the Azure Service
         /// Bus.
         /// </summary>
         [ServiceBehavior]

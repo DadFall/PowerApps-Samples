@@ -95,7 +95,7 @@ namespace PowerApps.Samples
                         Version = "1.0"
                     };
 
-                    //Check whether it already exists
+                    //检查whether it already exists
                     QueryExpression queryCheckForSampleSolution = new QueryExpression
                     {
                         EntityName = Solution.EntityLogicalName,
@@ -104,7 +104,7 @@ namespace PowerApps.Samples
                     };
                     queryCheckForSampleSolution.Criteria.AddCondition("uniquename", ConditionOperator.Equal, solution.UniqueName);
 
-                    //Create the solution if it does not already exist.
+                    //创建the solution if it does not already exist.
                     EntityCollection querySampleSolutionResults = service.RetrieveMultiple(queryCheckForSampleSolution);
                     Solution SampleSolutionResults = null;
                     if (querySampleSolutionResults.Entities.Count > 0)
@@ -130,7 +130,7 @@ namespace PowerApps.Samples
                     Solution SampleSolution = (Solution)service.RetrieveMultiple(querySampleSolution).Entities[0];
 
                     // 添加an existing Solution Component
-                    //Add the Account entity to the solution
+                    //添加the Account entity to the solution
                     RetrieveEntityRequest retrieveForAddAccountRequest = new RetrieveEntityRequest()
                     {
                         LogicalName = Account.EntityLogicalName
@@ -145,7 +145,7 @@ namespace PowerApps.Samples
                     service.Execute(addReq);
 
                     // 移除a Solution Component
-                    //Remove the Account entity from the solution
+                    //移除the Account entity from the solution
                     RetrieveEntityRequest retrieveForRemoveAccountRequest = new RetrieveEntityRequest()
                     {
                         LogicalName = Account.EntityLogicalName

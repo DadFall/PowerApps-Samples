@@ -79,7 +79,7 @@ namespace PowerApps.Samples
                         Console.WriteLine($"Deleting {createdAccounts.Count} accounts");
                         var startDelete = DateTime.Now;
 
-                        //Delete the list of accounts created
+                        //删除the list of accounts created
                         DeleteEntities(service, createdAccounts.ToList());
 
                         var secondsToDelete = (DateTime.Now - startDelete).TotalSeconds;

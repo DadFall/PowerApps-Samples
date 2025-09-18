@@ -26,7 +26,7 @@ namespace PowerApps.Samples
                     #endregion Set up
 
                     #region Demonstrate
-                    //Create a query to retrieve attachments.
+                    //创建a query to retrieve attachments.
                     var query = new QueryExpression
                     {
                         EntityName = ActivityMimeAttachment.EntityLogicalName,

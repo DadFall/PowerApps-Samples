@@ -29,7 +29,7 @@ namespace PowerApps.Samples
 
                 try
                 {
-                    //Get the userid 
+                    //获取the userid 
                     Guid userid = ((EntityReference)context.InputParameters["Target"]).Id;
 
                     //Query systemuserroles first

@@ -28,7 +28,7 @@ namespace PowerApps.Samples
         /// <summary>
         /// Main entry point for he business logic that the plug-in is to execute.
         /// </summary>
-        /// <param name="serviceProvider">service provider.</param>
+        /// <param name="serviceProvider">服务 provider.</param>
         /// <remarks>
         /// </remarks>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", Justification = "Execute")]

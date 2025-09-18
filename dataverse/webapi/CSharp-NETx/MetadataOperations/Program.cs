@@ -141,7 +141,7 @@ namespace MetadataOperations
                 retrievedBankAccountEntity.HasActivities = true;
                 retrievedBankAccountEntity.Description = new Label("Contains information about customer bank accounts", 1033);
 
-                //Update the table definition
+                //更新the table definition
 
                 UpdateEntityRequest updateEntityRequest = new(
                     entityLogicalName: bankAccountEntityLogicalName,
@@ -893,7 +893,7 @@ namespace MetadataOperations
 
                 recordsToDelete.Add(createGlobalOptionSetResponse.OptionSetReference);//To Delete later
 
-                //Retrieve the global Optionset
+                //检索the global Optionset
                 RetrieveGlobalOptionSetRequest retrieveGlobalPicklistOptionSetRequest = new(
                     metadataid: colorsGlobalOptionSetId,
                     type: OptionSetType.Picklist //To return type OptionSetMetadata
@@ -979,7 +979,7 @@ namespace MetadataOperations
                 Console.WriteLine($"Created Customer Relationship");
                 Console.WriteLine();
 
-                //Retrieve the customer column
+                //检索the customer column
                 RetrieveAttributeRequest retrieveAttributeRequest = new(
                     entityLogicalName: bankAccountEntityLogicalName,
                     logicalName: bankAccountOwner.SchemaName.ToLower(),
@@ -1312,7 +1312,7 @@ namespace MetadataOperations
                 ExportSolutionRequest exportSolutionRequest = new(parameters: exportSolutionParameters);
                 var exportSolutionResponse = await service.SendAsync<ExportSolutionResponse>(request: exportSolutionRequest);
 
-                //Save the file
+                //保存the file
                 File.WriteAllBytes($"{ExampleSolutionUniqueName}.zip", exportSolutionResponse.ExportSolutionFile);
                 Console.WriteLine($"Solution Exported to {Environment.CurrentDirectory}\\{ExampleSolutionUniqueName}.zip");
                 ManagedSolutionExported = true;
@@ -1384,7 +1384,7 @@ namespace MetadataOperations
 
                         Console.WriteLine($"Solution imported as a managed solution.");
 
-                        //Get the id of the managed solution:
+                        //获取the id of the managed solution:
                         RetrieveMultipleResponse solutionQuery =
                             await service.RetrieveMultiple(
                                 queryUri: $"solutions?$select=solutionid&$filter=uniquename eq '{ExampleSolutionUniqueName}'");
@@ -1396,7 +1396,7 @@ namespace MetadataOperations
                         #region delete managed solution
 
                         Console.WriteLine($"Sending request to delete the {ExampleSolutionUniqueName} solution...");
-                        //Delete the managed solution
+                        //删除the managed solution
                         await service.Delete(exampleSolutionReference);
 
                         Console.WriteLine("Managed solution deleted.");

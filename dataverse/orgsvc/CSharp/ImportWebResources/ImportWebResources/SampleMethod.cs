@@ -114,7 +114,7 @@ namespace PowerApps.Samples
             // 保存save this variable  to use when creating the Web resources in the context of this solution.
             _ImportWebResourcesSolutionUniqueName = solution.UniqueName;
 
-            //Check whether it already exists
+            //检查whether it already exists
             QueryExpression queryCheckForSampleSolution = new QueryExpression
             {
                 EntityName = Solution.EntityLogicalName,
@@ -123,7 +123,7 @@ namespace PowerApps.Samples
             };
             queryCheckForSampleSolution.Criteria.AddCondition("uniquename", ConditionOperator.Equal, solution.UniqueName);
 
-            //Create the solution if it does not already exist.
+            //创建the solution if it does not already exist.
             EntityCollection querySampleSolutionResults = service.RetrieveMultiple(queryCheckForSampleSolution);
             Solution SampleSolutionResults = null;
             if (querySampleSolutionResults.Entities.Count > 0)
@@ -167,7 +167,7 @@ namespace PowerApps.Samples
                     service.Delete(WebResource.EntityLogicalName, id);
                 }
                 Console.WriteLine("Web Resource records have been deleted.");
-                //Delete Solution
+                //删除Solution
 
                 service.Delete(Solution.EntityLogicalName, _importWebResourcesSampleSolutionId);
                 Console.WriteLine("Solution has been deleted.");

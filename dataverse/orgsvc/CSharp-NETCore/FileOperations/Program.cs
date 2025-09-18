@@ -65,7 +65,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             // 更新the MaxSizeInKB: Comment this line to get error about file too large for column.
             Utility.UpdateFileColumnMaxSizeInKB(serviceClient, entityLogicalName, fileColumnSchemaName.ToLower(), 100 * 1024);
 
-            //Get the configured size of the column in KB
+            //获取the configured size of the column in KB
             fileColumnMaxSizeInKb = Utility.GetFileColumnMaxSizeInKb(serviceClient, entityLogicalName, fileColumnSchemaName.ToLower());
 
             #region create account record
@@ -145,7 +145,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Uploads a file
         /// </summary>
-        /// <param name="service">service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityReference">一个reference to the record with the file column</param>
         /// <param name="fileAttributeName">名称 of the file column</param>
         /// <param name="fileInfo">Information about the file to upload.</param>
@@ -253,7 +253,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Downloads a file
         /// </summary>
-        /// <param name="service">service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityReference">一个reference to the record with the file column</param>
         /// <param name="fileAttributeName">名称 of the file column</param>
         /// <returns></returns>

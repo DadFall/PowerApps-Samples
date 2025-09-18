@@ -134,13 +134,13 @@ namespace PowerApps.Samples
 
                     //You can use either the Name or the MetadataId of the relationship.
 
-                    //Retrieve the One-to-many relationship using the MetadataId.
+                    //检索the One-to-many relationship using the MetadataId.
                     var retrieveOneToManyRequest = new RetrieveRelationshipRequest { MetadataId = _oneToManyRelationshipId };
                     var retrieveOneToManyResponse = (RetrieveRelationshipResponse)service.Execute(retrieveOneToManyRequest);
 
                     Console.WriteLine("Retrieved {0} One-to-many relationship by id", retrieveOneToManyResponse.RelationshipMetadata.SchemaName);
 
-                    //Retrieve the Many-to-many relationship using the Name.
+                    //检索the Many-to-many relationship using the Name.
                     var retrieveManyToManyRequest = new RetrieveRelationshipRequest { Name = _manyToManyRelationshipName };
                     var retrieveManyToManyResponse = (RetrieveRelationshipResponse)service.Execute(retrieveManyToManyRequest);
 

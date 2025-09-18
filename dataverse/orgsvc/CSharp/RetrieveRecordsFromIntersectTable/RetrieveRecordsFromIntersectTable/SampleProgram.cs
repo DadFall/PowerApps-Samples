@@ -30,7 +30,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    //Create Query Expression.
+                    //创建Query Expression.
                     var query = new QueryExpression()
                     {
                         EntityName = "role",

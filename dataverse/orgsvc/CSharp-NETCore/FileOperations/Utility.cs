@@ -9,7 +9,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// 创建 a file column.
         /// </summary>
-        /// <param name="service">service.</param>
+        /// <param name="service">服务.</param>
         /// <param name="entityLogicalName">logical 名称 of the table to create the file column in.</param>
         /// <param name="fileColumnSchemaName">schema 名称 of the file column.</param>
         public static void CreateFileColumn(IOrganizationService service, string entityLogicalName, string fileColumnSchemaName) {
@@ -41,7 +41,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// 更新the MaxSizeInKB for a file column
         /// </summary>
-        /// <param name="service">service</param>
+        /// <param name="service">服务</param>
         /// <param name="entityLogicalName">logical 名称 of the table that has the column.</param>
         /// <param name="fileColumnLogicalName">logical 名称 of the file column.</param>
         /// <param name="maxSizeInKB">new 值 for MaxSizeInKB</param>
@@ -71,7 +71,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// 检索 the MaxSizeInKb property of a file column.
         /// </summary>
-        /// <param name="service">service.</param>
+        /// <param name="service">服务.</param>
         /// <param name="entityLogicalName">logical 名称 of the table that has the column</param>
         /// <param name="fileColumnLogicalName">logical 名称 of the file column.</param>
         /// <returns></returns>

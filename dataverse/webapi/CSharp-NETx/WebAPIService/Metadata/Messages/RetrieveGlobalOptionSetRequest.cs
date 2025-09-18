@@ -29,7 +29,7 @@ namespace PowerApps.Samples.Metadata.Messages
             }
 
 
-            //Get the key to use
+            //获取the key to use
             string key;
             if (metadataid != null)
             {

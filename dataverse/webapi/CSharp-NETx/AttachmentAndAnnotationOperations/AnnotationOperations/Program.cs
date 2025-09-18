@@ -56,7 +56,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine($"\tRetrieved note with attached Word document.");
 
-            //Save the file
+            //保存the file
             File.WriteAllBytes(
                 path: $"Downloaded{retrievedNote["filename"]}",
                 bytes: Convert.FromBase64String((string)retrievedNote["documentbody"]));
@@ -84,7 +84,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine($"\tRetrieved note with attached Excel document.");
 
-            //Save the file
+            //保存the file
             File.WriteAllBytes(
                 path: $"Downloaded{retrievedUpdatedNote["filename"]}",
                 bytes: Convert.FromBase64String((string)retrievedUpdatedNote["documentbody"]));
@@ -139,7 +139,7 @@ namespace PowerApps.Samples
 
             //Clean up
 
-            //Delete account, which will delete all notes associated with it
+            //删除account, which will delete all notes associated with it
             await service.Delete(accountRef);
             Console.WriteLine("Deleted the account record.");
 

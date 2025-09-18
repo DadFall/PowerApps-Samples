@@ -47,23 +47,23 @@ namespace PowerApps.Samples
 
             List<StatusOption> validStatusOptions = new List<StatusOption>();
 
-            //Check entity Metadata
+            //检查entity Metadata
 
-            //Retrieve just one entity definition
+            //检索just one entity definition
             MetadataFilterExpression entityFilter = new MetadataFilterExpression(LogicalOperator.And);
             entityFilter.Conditions.Add(new MetadataConditionExpression("LogicalName", MetadataConditionOperator.Equals, entityLogicalName));
-            //Return the attributes and the EnforceStateTransitions property
+            //返回the attributes and the EnforceStateTransitions property
             MetadataPropertiesExpression entityProperties = new MetadataPropertiesExpression(new string[] { "Attributes", "EnforceStateTransitions" });
 
-            //Retrieve only State or Status attributes
+            //检索only State or Status attributes
             MetadataFilterExpression attributeFilter = new MetadataFilterExpression(LogicalOperator.Or);
             attributeFilter.Conditions.Add(new MetadataConditionExpression("AttributeType", MetadataConditionOperator.Equals, AttributeTypeCode.Status));
             attributeFilter.Conditions.Add(new MetadataConditionExpression("AttributeType", MetadataConditionOperator.Equals, AttributeTypeCode.State));
 
-            //Retrieve only the OptionSet property of the attributes
+            //检索only the OptionSet property of the attributes
             MetadataPropertiesExpression attributeProperties = new MetadataPropertiesExpression(new string[] { "OptionSet" });
 
-            //Set the query
+            //设置the query
             EntityQueryExpression query = new EntityQueryExpression()
             {
                 Criteria = entityFilter,
@@ -71,11 +71,11 @@ namespace PowerApps.Samples
                 AttributeQuery = new AttributeQueryExpression() { Criteria = attributeFilter, Properties = attributeProperties }
             };
 
-            //Retrieve the metadata
+            //检索the metadata
             RetrieveMetadataChangesRequest request = new RetrieveMetadataChangesRequest() { Query = query };
             RetrieveMetadataChangesResponse response = (RetrieveMetadataChangesResponse)service.Execute(request);
 
-            //Check the value of EnforceStateTransitions
+            //检查the value of EnforceStateTransitions
             Boolean? EnforceStateTransitions = response.EntityMetadata[0].EnforceStateTransitions;
 
             //Capture the state and status attributes

@@ -31,7 +31,7 @@ namespace ParallelOperations
 
             Console.WriteLine("--Starting Parallel Operations sample--");
 
-            // 发送a simple request to access the recommended degree of parallelism (DOP).
+            // 发送简单请求以访问推荐的并行度 (DOP)。
             HttpResponseMessage whoAmIResponse = await service.SendAsync(new WhoAmIRequest());
             int recommendedDegreeOfParallelism = int.Parse(whoAmIResponse.Headers.GetValues("x-ms-dop-hint").FirstOrDefault());
 

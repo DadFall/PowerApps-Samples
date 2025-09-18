@@ -55,7 +55,7 @@ export class IncrementControl implements ComponentFramework.StandardControl<IInp
 		this.label.setAttribute("type", "label");
 		this.label.addEventListener("blur", this.onInputBlur.bind(this));
 
-		//Create a button to increment the value by 1.
+		//创建a button to increment the value by 1.
 		this.button = document.createElement("button");
 
 		// 获取the localized string from localized string

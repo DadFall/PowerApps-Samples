@@ -25,7 +25,7 @@ namespace PowerApps.Samples
             string username = "yourUserName@yourOrgName.onmicrosoft.com";
             string password = "yourPassword";
 
-            //Set the Cloud if you want to search other than Commercial.
+            //设置the Cloud if you want to search other than Commercial.
             Cloud cloud = Cloud.Commercial;
 
             List<Instance> instances = await GetInstances(username, password, cloud);
@@ -45,7 +45,7 @@ namespace PowerApps.Samples
             {
                 number++;
 
-                //Get the Organization Service URL
+                //获取the Organization Service URL
                 string apiUrl = instance.ApiUrl;
                 string friendlyName = instance.FriendlyName;
 
@@ -99,7 +99,7 @@ namespace PowerApps.Samples
         {
             try
             {
-                //Get the Cloud URL from the Description Attribute applied for the Cloud enum member
+                //获取the Cloud URL from the Description Attribute applied for the Cloud enum member
                 //i.e. Commercial is "https://globaldisco.crm.dynamics.com"
                 var type = typeof(Cloud);
                 var memInfo = type.GetMember(cloud.ToString());
@@ -118,7 +118,7 @@ namespace PowerApps.Samples
 
                 if (response.IsSuccessStatusCode)
                 {
-                    //Get the response content and parse it.
+                    //获取the response content and parse it.
                     string result = await response.Content.ReadAsStringAsync();
                     JObject body = JObject.Parse(result);
                     JArray values = (JArray)body.GetValue("value");

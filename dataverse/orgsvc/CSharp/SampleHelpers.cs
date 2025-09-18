@@ -159,7 +159,7 @@ namespace PowerApps.Samples
         /// <returns>named connection string</returns>
         private static string GetConnectionStringFromAppConfig(string name)
         {
-            //Verify cds/App.config contains a valid connection string with the name.
+            //验证cds/App.config contains a valid connection string with the name.
             if (ConfigurationManager.ConnectionStrings[name] == null)
             {
                 Console.WriteLine("You can define a connection string in PowerApps-Samples/dataverse/App.config before running this sample. Switching to interactive mode...");

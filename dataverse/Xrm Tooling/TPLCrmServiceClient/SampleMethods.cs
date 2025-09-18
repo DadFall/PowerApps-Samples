@@ -64,7 +64,7 @@ namespace PowerApps.Samples
                     }
                 });
 
-            //Return the ConcurrentBag of EntityReferences
+            //返回the ConcurrentBag of EntityReferences
             return createdEntityReferences;
         }
 

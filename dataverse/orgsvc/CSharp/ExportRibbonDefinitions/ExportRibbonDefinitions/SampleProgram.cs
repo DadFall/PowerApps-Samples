@@ -21,11 +21,11 @@ namespace PowerApps.Samples
                     // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    //Create export folder for ribbon xml files if not already exist.
+                    //创建export folder for ribbon xml files if not already exist.
                     if (!Directory.Exists(exportFolder))
                         Directory.CreateDirectory(exportFolder);
 
-                    //Retrieve the Application Ribbon
+                    //检索the Application Ribbon
                     var appribReq = new RetrieveApplicationRibbonRequest();
                     var appribResp = (RetrieveApplicationRibbonResponse)service.Execute(appribReq);
 
@@ -33,7 +33,7 @@ namespace PowerApps.Samples
                     File.WriteAllBytes(applicationRibbonPath, unzipRibbon(appribResp.CompressedApplicationRibbonXml));
                     //Write the path where the file has been saved.
                     Console.WriteLine(applicationRibbonPath);
-                    //Retrieve system Entity Ribbons
+                    //检索system Entity Ribbons
                     RetrieveEntityRibbonRequest entRibReq = new RetrieveEntityRibbonRequest() { RibbonLocationFilter = RibbonLocationFilters.All };
 
                     foreach (System.String entityName in entitiesWithRibbons)
@@ -47,7 +47,7 @@ namespace PowerApps.Samples
                         Console.WriteLine(entityRibbonPath);
                     }
 
-                    //Check for custom entities
+                    //检查for custom entities
                     var raer = new RetrieveAllEntitiesRequest() { EntityFilters = EntityFilters.Entity };
 
                     var resp = (RetrieveAllEntitiesResponse)service.Execute(raer);

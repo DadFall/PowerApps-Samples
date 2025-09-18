@@ -60,7 +60,7 @@ namespace PowerApps.Samples
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            //Create the publisher that will "own" the two solutions
+            //创建the publisher that will "own" the two solutions
             Publisher publisher = new Publisher
             {
                 UniqueName = "samplepublisher",
@@ -70,7 +70,7 @@ namespace PowerApps.Samples
             };
 
             _publisherId = service.Create(publisher);
-            //Create the primary solution - note that we are not creating it 
+            //创建the primary solution - note that we are not creating it 
             //as a managed solution as that can only be done when exporting the solution.
             Solution primarySolution = new Solution
             {
@@ -313,7 +313,7 @@ namespace PowerApps.Samples
 
             return attributeInformation;
         }
-        //Retrieve the name of a global Option set
+        //检索the name of a global Option set
         public static String getGlobalOptionSetName(CrmServiceClient service, Guid id)
         {
             String name = "";

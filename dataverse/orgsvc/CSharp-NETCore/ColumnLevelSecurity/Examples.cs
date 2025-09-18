@@ -483,7 +483,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 ["principalid"] = principal,
                 // Read permission for secured field instance
                 ["readaccess"] = readAccess,
-                //Update permission for secured field instance
+                //更新permission for secured field instance
                 ["updateaccess"] = updateAccess
             };
 

@@ -46,7 +46,7 @@ namespace MetaViz
             // Use the WhoAmI function
             var response = client.GetAsync(whoamiUrl).Result;
 
-            //Get the response content and parse it.  
+            //获取the response content and parse it.  
             response.EnsureSuccessStatusCode();
             JObject body = JObject
                 .Parse(response.Content.ReadAsStringAsync().Result);

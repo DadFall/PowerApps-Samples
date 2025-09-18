@@ -182,7 +182,7 @@ namespace BasicOperations
                 { "primarycontactid@odata.bind", rafelShilloReference.Path }
             };
 
-            //Create using Methods/Create method
+            //创建using Methods/Create method
             EntityReference accountContosoReference =
                 await service.Create(
                 entitySetName: "accounts",
@@ -214,7 +214,7 @@ namespace BasicOperations
         /// </summary>
             /// 
             Console.WriteLine("\n--Section 3 started--");
-            //Create the following entries in one operation: an account, its 
+            //创建the following entries in one operation: an account, its 
             // associated primary contact, and open tasks for that contact.  These 
             // entity types have the following relationships:
             //    Accounts 
@@ -333,7 +333,7 @@ namespace BasicOperations
 
             recordsToDelete.Add(contactSusieCurtisReference);
 
-            //Retrieve the contact
+            //检索the contact
             JObject retrievedContactSusieCurtis =
                 await service.Retrieve(
                     entityReference: contactSusieCurtisReference,
@@ -419,7 +419,7 @@ namespace BasicOperations
                 { "name", "Example Security Role"}
 
             };
-            //Create the security role
+            //创建the security role
             EntityReference exampleSecurityRoleRef = await service.Create("roles", exampleSecurityRole);
 
             recordsToDelete.Add(exampleSecurityRoleRef); //稍后删除
@@ -453,7 +453,7 @@ namespace BasicOperations
 
             Console.WriteLine($"Security Role '{exampleSecurityRole["name"]}' associated with to your user account.");
 
-            //Retrieve the new security role as part via the systemuserroles_association
+            //检索the new security role as part via the systemuserroles_association
             RetrieveMultipleRequest retrieveRoleViaUserRequest = new(
                 queryUri: $"systemusers({whoIAm.UserId})/systemuserroles_association?$select=name&$filter=roleid eq {exampleSecurityRoleRef.Id}"
                 );

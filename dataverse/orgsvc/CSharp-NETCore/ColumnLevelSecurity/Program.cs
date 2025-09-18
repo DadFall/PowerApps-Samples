@@ -523,7 +523,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             #region Secure a column
 
-            //Retrieve the data as the application user to show unsecured behavior
+            //检索the data as the application user to show unsecured behavior
             Console.WriteLine("\r\n\tBefore columns are secured, the application user can see this data:");
 
             Helpers.ShowExampleRows(Helpers.GetExampleRows(appUserService));
@@ -566,7 +566,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             Console.Write(" and ☑ Date of Birth.\r\n");
 
-            //Retrieve the data as the application user to show secured behavior
+            //检索the data as the application user to show secured behavior
 
             Console.WriteLine("\r\n\tAfter columns are secured, the application user can see this data:");
             Helpers.ShowExampleRows(Helpers.GetExampleRows(appUserService));
@@ -631,7 +631,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 updateAccess: false);
 
 
-            //Retrieve the data as the application user to show secured behavior
+            //检索the data as the application user to show secured behavior
             Console.WriteLine("\r\n\tAfter granting access to selected fields, the application user can see this data:");
             Helpers.ShowExampleRows(Helpers.GetExampleRows(appUserService));
 
@@ -727,7 +727,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 columnLogicalName: "sample_telephonenumber",
                 principal: appUserReference);
 
-            //Retrieve the data as the application user to show return to original behavior.
+            //检索the data as the application user to show return to original behavior.
             Console.WriteLine("\tAfter access to selected fields is revoked, the application user can not see any data.");
 
             #endregion Remove access to fields

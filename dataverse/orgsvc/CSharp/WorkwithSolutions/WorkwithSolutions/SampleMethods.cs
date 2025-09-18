@@ -109,7 +109,7 @@ namespace PowerApps.Samples
                 _publisherCreated = true;
             }
 
-            //Create a Solution
+            //创建a Solution
             //Define a solution
             Solution solution = new Solution
             {
@@ -120,7 +120,7 @@ namespace PowerApps.Samples
                 Version = "1.0"
             };
 
-            //Check whether it already exists
+            //检查whether it already exists
             QueryExpression querySampleSolution = new QueryExpression
             {
                 EntityName = Solution.EntityLogicalName,

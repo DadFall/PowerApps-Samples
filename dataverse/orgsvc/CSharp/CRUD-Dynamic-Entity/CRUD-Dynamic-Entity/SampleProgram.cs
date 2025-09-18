@@ -32,7 +32,7 @@ namespace PowerApps.Samples
 
                         newAccount["name"] = "Fourth Coffee";
 
-                        //Set any other attribute values.
+                        //设置any other attribute values.
 
                         newAccount["address2_postalcode"] = "98074";
 
@@ -78,7 +78,7 @@ namespace PowerApps.Samples
 
                         Console.WriteLine("Updated Entity");
 
-                        //Delete the entity
+                        //删除the entity
                         service.Delete("account", accountid);
 
                         Console.WriteLine("Deleted Entity");

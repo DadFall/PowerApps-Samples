@@ -31,7 +31,7 @@ namespace PowerApps.Samples
         /// Main execute method that is required by the IPlugin interface. Uses the HttpClient 
     /// .NET class to access the target Web address.
         /// </summary>
-    /// <param name="serviceProvider">service provider from which you can obtain the
+    /// <param name="serviceProvider">服务 provider from which you can obtain the
     /// tracing service, plug-in execution context, organization service, and more.</param>
     public void Execute(IServiceProvider serviceProvider)
     {
@@ -50,7 +50,7 @@ namespace PowerApps.Samples
           using (HttpClient client = new HttpClient())
           {
             client.Timeout = TimeSpan.FromMilliseconds(15000); //15 seconds
-            client.DefaultRequestHeaders.ConnectionClose = true; //Set KeepAlive to false
+            client.DefaultRequestHeaders.ConnectionClose = true; //设置KeepAlive to false
             
 
             HttpResponseMessage response =  client.GetAsync(webAddress).Result; //Make sure it is synchonrous
