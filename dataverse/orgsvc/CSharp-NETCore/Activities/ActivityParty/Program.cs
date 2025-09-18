@@ -13,7 +13,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// Create a letter activity.
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
-        /// <param name="entityStore">Entity name and reference collection.</param>
+        /// <param name="entityStore">Entity 名称 and reference 集合.</param>
         /// <param name="fromContacts">Contains contacts that the letter is being sent from.</param>
         /// <param name="toContacts">Contains contacts that the letter is being sent to.</param>
         /// <returns></returns>
@@ -60,7 +60,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 To = toActivityPartys
             };
 
-            // Add the letter activity to the context.
+            // 添加the letter activity to the context.
             orgContext.AddObject(letter);
 
             try
@@ -97,7 +97,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         static IConfiguration Configuration { get; }
 
@@ -111,7 +111,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -129,7 +129,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // Pre-create any table rows that the Run() method requires.
             Setup(serviceClient, out entityStore);
 
-            // Execute the main logic of this program.
+            // 执行the main logic of this program.
             Run(serviceClient, entityStore);
 
             // Pause program execution before resource cleanup.
@@ -142,10 +142,10 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Executes the code being demonstrated by this program.
+        /// 执行 the code being demonstrated by this program.
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
-        /// <param name="entityStore">Entity name and reference collection.</param>
+        /// <param name="entityStore">Entity 名称 and reference 集合.</param>
         /// <returns>True if successful; otherwise false.</returns>
         static public bool Run(IOrganizationService service, 
             Dictionary<string, EntityReference> entityStore)
@@ -156,10 +156,10 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Creates any pre-existing entity records required by the Run() method.
+        /// 创建 any pre-existing entity records required by the Run() method.
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
-        /// <param name="entityStore">Entity name and reference collection.</param>
+        /// <param name="entityStore">Entity 名称 and reference 集合.</param>
         static public void Setup(IOrganizationService service, out Dictionary<string, 
             EntityReference> entityStore)
         {
@@ -227,7 +227,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// Delete any entity records (table rows) created by this program.
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
-        /// <param name="entityStore">Entity name and reference collection.</param>
+        /// <param name="entityStore">Entity 名称 and reference 集合.</param>
         static public void Cleanup(ServiceClient service,
             Dictionary<string, EntityReference> entityStore)
         {

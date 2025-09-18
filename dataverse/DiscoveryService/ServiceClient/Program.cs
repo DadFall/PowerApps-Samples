@@ -78,12 +78,12 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Gets organization data for the specified user and cloud
+        /// 获取 organization data for the specified user and cloud
         /// </summary>
-        /// <param name="username">The user's username</param>
-        /// <param name="password">The user's password</param>
-        /// <param name="cloud">The Cloud enum value that corresponds to the region.</param>
-        /// <returns>A List of OrganizationDetail records</returns>
+        /// <param name="username">user's user名称</param>
+        /// <param name="password">user's password</param>
+        /// <param name="cloud">Cloud enum 值 that corresponds to the region.</param>
+        /// <returns>一个List of OrganizationDetail records</returns>
         public static async Task<DiscoverOrganizationsResult> GetAllOrganizations(string userName, string password, Cloud cloud)
         {
             try
@@ -94,7 +94,7 @@ namespace PowerApps.Samples
                 var attributes = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
                 string cloudRegionUrl = ((DescriptionAttribute)attributes[0]).Description;
 
-                // Set up user credentials
+                // 设置up user credentials
                 var creds = new System.ServiceModel.Description.ClientCredentials();
                 creds.UserName.UserName = userName;
                 creds.UserName.Password = password;
@@ -129,9 +129,9 @@ namespace PowerApps.Samples
         /// <summary>
         /// Show the user's UserId for the selected organization
         /// </summary>
-        /// <param name="org">The selected organization</param>
-        /// <param name="username">The user's username</param>
-        /// <param name="password">The user's password</param>
+        /// <param name="org">selected organization</param>
+        /// <param name="username">user's user名称</param>
+        /// <param name="password">user's password</param>
         private static void ShowUserId(OrganizationDetail org, string username, string password)
         {
             try

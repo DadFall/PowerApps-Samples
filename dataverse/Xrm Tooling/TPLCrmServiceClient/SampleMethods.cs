@@ -26,10 +26,10 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates entities in parallel
+        /// 创建 entities in parallel
         /// </summary>
-        /// <param name="svc">The CrmServiceClient instance to use</param>
-        /// <param name="entities">A List of entities to create.</param>
+        /// <param name="svc">CrmServiceClient 实例 to use</param>
+        /// <param name="entities">一个List of entities to create.</param>
         /// <returns></returns>
         private static ConcurrentBag<EntityReference> CreateEntities(CrmServiceClient svc, List<Entity> entities)
         {
@@ -69,10 +69,10 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes a list of entity references
+        /// 删除 a list of entity references
         /// </summary>
-        /// <param name="svc">The CrmServiceClient instance to use</param>
-        /// <param name="entityReferences">A List of entity references to delete.</param>
+        /// <param name="svc">CrmServiceClient 实例 to use</param>
+        /// <param name="entityReferences">一个List of entity references to delete.</param>
         private static void DeleteEntities(CrmServiceClient svc, List<EntityReference> entityReferences)
         {
             Parallel.ForEach(entityReferences,
@@ -100,11 +100,11 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Gets web service connection information from the app.config file.
-        /// If there is more than one available, the user is prompted to select
+        /// 获取 web service connection information from the app.config file.
+        /// 如果there is more than one available, the user is prompted to select
         /// the desired connection configuration by name.
         /// </summary>
-        /// <returns>A string containing web service connection configuration information.</returns>
+        /// <returns>一个string containing web service connection configuration information.</returns>
         private static string GetServiceConfiguration()
         {
             // Get available connection strings from app.config.
@@ -135,13 +135,13 @@ namespace PowerApps.Samples
                 return null;
             }
 
-            // If one valid connection string is found, use that.
+            // 如果one valid connection string is found, use that.
             if (filteredConnectionStrings.Count == 1)
             {
                 return filteredConnectionStrings[0].Value;
             }
 
-            // If more than one valid connection string is found, let the user decide which to use.
+            // 如果more than one valid connection string is found, let the user decide which to use.
             if (filteredConnectionStrings.Count > 1)
             {
                 Console.WriteLine("The following connections are available:");

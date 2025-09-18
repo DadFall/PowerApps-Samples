@@ -35,7 +35,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
@@ -58,11 +58,11 @@ namespace PowerApps.Samples
             }
         }
         /// <summary>
-        /// Gets web service connection information from the app.config file.
-        /// If there is more than one available, the user is prompted to select
+        /// 获取 web service connection information from the app.config file.
+        /// 如果there is more than one available, the user is prompted to select
         /// the desired connection configuration by name.
         /// </summary>
-        /// <returns>A string containing web service connection configuration information.</returns>
+        /// <returns>一个string containing web service connection configuration information.</returns>
         private static String GetServiceConfiguration()
         {
             // Get available connection strings from app.config.
@@ -93,13 +93,13 @@ namespace PowerApps.Samples
                 return null;
             }
 
-            // If one valid connection string is found, use that.
+            // 如果one valid connection string is found, use that.
             if (filteredConnectionStrings.Count == 1)
             {
                 return filteredConnectionStrings[0].Value;
             }
 
-            // If more than one valid connection string is found, let the user decide which to use.
+            // 如果more than one valid connection string is found, let the user decide which to use.
             if (filteredConnectionStrings.Count > 1)
             {
                 Console.WriteLine("The following connections are available:");

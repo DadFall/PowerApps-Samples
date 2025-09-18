@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples
 {
     /// <summary>
-    /// Environment instance returned from the Discovery service.
-    /// </summary>
+        /// Environment instance returned from the Discovery service.
+        /// </summary>
     class Instance
     {
         public string? ApiUrl { get; set; }

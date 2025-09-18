@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Drop-down list for selecting the category of the account.
-	/// </summary>
+        /// Drop-down list for selecting the category of the account.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_accountcategorycode
@@ -29,8 +29,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Drop-down list for classifying an account.
-	/// </summary>
+        /// Drop-down list for classifying an account.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_accountclassificationcode
@@ -41,8 +41,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Drop-down list for selecting account ratings.
-	/// </summary>
+        /// Drop-down list for selecting account ratings.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_accountratingcode
@@ -53,8 +53,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of address for address 1, such as billing, shipping, or primary address.
-	/// </summary>
+        /// Type of address for address 1, such as billing, shipping, or primary address.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_address1_addresstypecode
@@ -74,8 +74,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Freight terms for address 1.
-	/// </summary>
+        /// Freight terms for address 1.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_address1_freighttermscode
@@ -89,8 +89,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipment for address 1.
-	/// </summary>
+        /// Method of shipment for address 1.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_address1_shippingmethodcode
@@ -119,8 +119,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of address for address 2, such as billing, shipping, or primary address.
-	/// </summary>
+        /// Type of address for address 2, such as billing, shipping, or primary address.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_address2_addresstypecode
@@ -131,8 +131,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Freight terms for address 2.
-	/// </summary>
+        /// Freight terms for address 2.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_address2_freighttermscode
@@ -143,8 +143,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipment for address 2.
-	/// </summary>
+        /// Method of shipment for address 2.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_address2_shippingmethodcode
@@ -155,8 +155,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of business associated with the account.
-	/// </summary>
+        /// Type of business associated with the account.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_businesstypecode
@@ -167,8 +167,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Size of the account.
-	/// </summary>
+        /// Size of the account.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_customersizecode
@@ -179,8 +179,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of the account.
-	/// </summary>
+        /// Type of the account.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_customertypecode
@@ -224,8 +224,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of industry with which the account is associated.
-	/// </summary>
+        /// Type of industry with which the account is associated.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_industrycode
@@ -332,8 +332,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of company ownership, such as public or private.
-	/// </summary>
+        /// Type of company ownership, such as public or private.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_ownershipcode
@@ -353,8 +353,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Payment terms for the account.
-	/// </summary>
+        /// Payment terms for the account.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_paymenttermscode
@@ -374,8 +374,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Day of the week that the account prefers for scheduling service activities.
-	/// </summary>
+        /// Day of the week that the account prefers for scheduling service activities.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_preferredappointmentdaycode
@@ -404,8 +404,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Time of day that the account prefers for scheduling service activities.
-	/// </summary>
+        /// Time of day that the account prefers for scheduling service activities.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_preferredappointmenttimecode
@@ -422,8 +422,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Preferred contact method for the account.
-	/// </summary>
+        /// Preferred contact method for the account.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_preferredcontactmethodcode
@@ -446,8 +446,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipment for the account.
-	/// </summary>
+        /// Method of shipment for the account.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_shippingmethodcode
@@ -458,8 +458,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Status of the account.
-	/// </summary>
+        /// Status of the account.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_statecode
@@ -473,8 +473,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Reason for the status of the account.
-	/// </summary>
+        /// Reason for the status of the account.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_statuscode
@@ -488,8 +488,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Territory to which the account belongs.
-	/// </summary>
+        /// Territory to which the account belongs.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum account_territorycode
@@ -500,8 +500,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Business that represents a customer or potential customer. The company that is billed in business transactions.
-	/// </summary>
+        /// Business that represents a customer or potential customer. The company that is billed in business transactions.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("account")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
@@ -509,8 +509,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public Account() : 
 				base(EntityLogicalName)
 		{
@@ -543,8 +543,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a category to indicate whether the customer account is standard or preferred.
-		/// </summary>
+        /// 选择a category to indicate whether the customer account is standard or preferred.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountcategorycode")]
 		public virtual account_accountcategorycode? AccountCategoryCode
 		{
@@ -561,8 +561,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a classification code to indicate the potential value of the customer account based on the projected return on investment, cooperation level, sales cycle length or other criteria.
-		/// </summary>
+        /// 选择a classification code to indicate the potential value of the customer account based on the projected return on investment, cooperation level, sales cycle length or other criteria.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountclassificationcode")]
 		public virtual account_accountclassificationcode? AccountClassificationCode
 		{
@@ -579,8 +579,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the account.
-		/// </summary>
+        /// Unique identifier of the account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountid")]
 		public System.Nullable<System.Guid> AccountId
 		{
@@ -618,8 +618,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type an ID number or code for the account to quickly search and identify the account in system views.
-		/// </summary>
+        /// Type an ID number or code for the account to quickly search and identify the account in system views.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountnumber")]
 		public string AccountNumber
 		{
@@ -636,8 +636,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a rating to indicate the value of the customer account.
-		/// </summary>
+        /// 选择a rating to indicate the value of the customer account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountratingcode")]
 		public virtual account_accountratingcode? AccountRatingCode
 		{
@@ -654,8 +654,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for address 1.
-		/// </summary>
+        /// Unique identifier for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addressid")]
 		public System.Nullable<System.Guid> Address1_AddressId
 		{
@@ -672,8 +672,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the primary address type.
-		/// </summary>
+        /// 选择the primary address type.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecode")]
 		public virtual account_address1_addresstypecode? Address1_AddressTypeCode
 		{
@@ -690,8 +690,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the city for the primary address.
-		/// </summary>
+        /// Type the city for the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_city")]
 		public string Address1_City
 		{
@@ -708,8 +708,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the complete primary address.
-		/// </summary>
+        /// Shows the complete primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_composite")]
 		public string Address1_Composite
 		{
@@ -720,8 +720,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the country or region for the primary address.
-		/// </summary>
+        /// Type the country or region for the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_country")]
 		public string Address1_Country
 		{
@@ -738,8 +738,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the county for the primary address.
-		/// </summary>
+        /// Type the county for the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_county")]
 		public string Address1_County
 		{
@@ -756,8 +756,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the fax number associated with the primary address.
-		/// </summary>
+        /// Type the fax number associated with the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_fax")]
 		public string Address1_Fax
 		{
@@ -774,8 +774,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the freight terms for the primary address to make sure shipping orders are processed correctly.
-		/// </summary>
+        /// 选择the freight terms for the primary address to make sure shipping orders are processed correctly.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_freighttermscode")]
 		public virtual account_address1_freighttermscode? Address1_FreightTermsCode
 		{
@@ -792,8 +792,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the latitude value for the primary address for use in mapping and other applications.
-		/// </summary>
+        /// Type the latitude value for the primary address for use in mapping and other applications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_latitude")]
 		public System.Nullable<double> Address1_Latitude
 		{
@@ -810,8 +810,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the first line of the primary address.
-		/// </summary>
+        /// Type the first line of the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line1")]
 		public string Address1_Line1
 		{
@@ -828,8 +828,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the second line of the primary address.
-		/// </summary>
+        /// Type the second line of the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line2")]
 		public string Address1_Line2
 		{
@@ -846,8 +846,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the third line of the primary address.
-		/// </summary>
+        /// Type the third line of the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line3")]
 		public string Address1_Line3
 		{
@@ -864,8 +864,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the longitude value for the primary address for use in mapping and other applications.
-		/// </summary>
+        /// Type the longitude value for the primary address for use in mapping and other applications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_longitude")]
 		public System.Nullable<double> Address1_Longitude
 		{
@@ -882,8 +882,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a descriptive name for the primary address, such as Corporate Headquarters.
-		/// </summary>
+        /// Type a descriptive name for the primary address, such as Corporate Headquarters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_name")]
 		public string Address1_Name
 		{
@@ -900,8 +900,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the ZIP Code or postal code for the primary address.
-		/// </summary>
+        /// Type the ZIP Code or postal code for the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postalcode")]
 		public string Address1_PostalCode
 		{
@@ -918,8 +918,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the post office box number of the primary address.
-		/// </summary>
+        /// Type the post office box number of the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postofficebox")]
 		public string Address1_PostOfficeBox
 		{
@@ -936,8 +936,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the name of the main contact at the account's primary address.
-		/// </summary>
+        /// Type the name of the main contact at the account's primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_primarycontactname")]
 		public string Address1_PrimaryContactName
 		{
@@ -954,8 +954,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a shipping method for deliveries sent to this address.
-		/// </summary>
+        /// 选择a shipping method for deliveries sent to this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcode")]
 		public virtual account_address1_shippingmethodcode? Address1_ShippingMethodCode
 		{
@@ -972,8 +972,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the state or province of the primary address.
-		/// </summary>
+        /// Type the state or province of the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_stateorprovince")]
 		public string Address1_StateOrProvince
 		{
@@ -990,8 +990,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the main phone number associated with the primary address.
-		/// </summary>
+        /// Type the main phone number associated with the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone1")]
 		public string Address1_Telephone1
 		{
@@ -1008,8 +1008,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a second phone number associated with the primary address.
-		/// </summary>
+        /// Type a second phone number associated with the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone2")]
 		public string Address1_Telephone2
 		{
@@ -1026,8 +1026,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a third phone number associated with the primary address.
-		/// </summary>
+        /// Type a third phone number associated with the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone3")]
 		public string Address1_Telephone3
 		{
@@ -1044,8 +1044,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the UPS zone of the primary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
-		/// </summary>
+        /// Type the UPS zone of the primary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_upszone")]
 		public string Address1_UPSZone
 		{
@@ -1062,8 +1062,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
-		/// </summary>
+        /// 选择the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_utcoffset")]
 		public System.Nullable<int> Address1_UTCOffset
 		{
@@ -1080,8 +1080,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for address 2.
-		/// </summary>
+        /// Unique identifier for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addressid")]
 		public System.Nullable<System.Guid> Address2_AddressId
 		{
@@ -1098,8 +1098,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the secondary address type.
-		/// </summary>
+        /// 选择the secondary address type.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecode")]
 		public virtual account_address2_addresstypecode? Address2_AddressTypeCode
 		{
@@ -1116,8 +1116,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the city for the secondary address.
-		/// </summary>
+        /// Type the city for the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_city")]
 		public string Address2_City
 		{
@@ -1134,8 +1134,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the complete secondary address.
-		/// </summary>
+        /// Shows the complete secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_composite")]
 		public string Address2_Composite
 		{
@@ -1146,8 +1146,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the country or region for the secondary address.
-		/// </summary>
+        /// Type the country or region for the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_country")]
 		public string Address2_Country
 		{
@@ -1164,8 +1164,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the county for the secondary address.
-		/// </summary>
+        /// Type the county for the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_county")]
 		public string Address2_County
 		{
@@ -1182,8 +1182,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the fax number associated with the secondary address.
-		/// </summary>
+        /// Type the fax number associated with the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_fax")]
 		public string Address2_Fax
 		{
@@ -1200,8 +1200,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the freight terms for the secondary address to make sure shipping orders are processed correctly.
-		/// </summary>
+        /// 选择the freight terms for the secondary address to make sure shipping orders are processed correctly.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_freighttermscode")]
 		public virtual account_address2_freighttermscode? Address2_FreightTermsCode
 		{
@@ -1218,8 +1218,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the latitude value for the secondary address for use in mapping and other applications.
-		/// </summary>
+        /// Type the latitude value for the secondary address for use in mapping and other applications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_latitude")]
 		public System.Nullable<double> Address2_Latitude
 		{
@@ -1236,8 +1236,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the first line of the secondary address.
-		/// </summary>
+        /// Type the first line of the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line1")]
 		public string Address2_Line1
 		{
@@ -1254,8 +1254,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the second line of the secondary address.
-		/// </summary>
+        /// Type the second line of the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line2")]
 		public string Address2_Line2
 		{
@@ -1272,8 +1272,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the third line of the secondary address.
-		/// </summary>
+        /// Type the third line of the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line3")]
 		public string Address2_Line3
 		{
@@ -1290,8 +1290,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the longitude value for the secondary address for use in mapping and other applications.
-		/// </summary>
+        /// Type the longitude value for the secondary address for use in mapping and other applications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_longitude")]
 		public System.Nullable<double> Address2_Longitude
 		{
@@ -1308,8 +1308,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a descriptive name for the secondary address, such as Corporate Headquarters.
-		/// </summary>
+        /// Type a descriptive name for the secondary address, such as Corporate Headquarters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_name")]
 		public string Address2_Name
 		{
@@ -1326,8 +1326,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the ZIP Code or postal code for the secondary address.
-		/// </summary>
+        /// Type the ZIP Code or postal code for the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postalcode")]
 		public string Address2_PostalCode
 		{
@@ -1344,8 +1344,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the post office box number of the secondary address.
-		/// </summary>
+        /// Type the post office box number of the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postofficebox")]
 		public string Address2_PostOfficeBox
 		{
@@ -1362,8 +1362,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the name of the main contact at the account's secondary address.
-		/// </summary>
+        /// Type the name of the main contact at the account's secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_primarycontactname")]
 		public string Address2_PrimaryContactName
 		{
@@ -1380,8 +1380,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a shipping method for deliveries sent to this address.
-		/// </summary>
+        /// 选择a shipping method for deliveries sent to this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcode")]
 		public virtual account_address2_shippingmethodcode? Address2_ShippingMethodCode
 		{
@@ -1398,8 +1398,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the state or province of the secondary address.
-		/// </summary>
+        /// Type the state or province of the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_stateorprovince")]
 		public string Address2_StateOrProvince
 		{
@@ -1416,8 +1416,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the main phone number associated with the secondary address.
-		/// </summary>
+        /// Type the main phone number associated with the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone1")]
 		public string Address2_Telephone1
 		{
@@ -1434,8 +1434,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a second phone number associated with the secondary address.
-		/// </summary>
+        /// Type a second phone number associated with the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone2")]
 		public string Address2_Telephone2
 		{
@@ -1452,8 +1452,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a third phone number associated with the secondary address.
-		/// </summary>
+        /// Type a third phone number associated with the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone3")]
 		public string Address2_Telephone3
 		{
@@ -1470,8 +1470,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the UPS zone of the secondary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
-		/// </summary>
+        /// Type the UPS zone of the secondary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_upszone")]
 		public string Address2_UPSZone
 		{
@@ -1488,8 +1488,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
-		/// </summary>
+        /// 选择the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_utcoffset")]
 		public System.Nullable<int> Address2_UTCOffset
 		{
@@ -1566,8 +1566,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For system use only.
-		/// </summary>
+        /// 对于system use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging30")]
 		public Microsoft.Xrm.Sdk.Money Aging30
 		{
@@ -1578,8 +1578,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The base currency equivalent of the aging 30 field.
-		/// </summary>
+        /// base currency equivalent of the aging 30 field.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging30_base")]
 		public Microsoft.Xrm.Sdk.Money Aging30_Base
 		{
@@ -1590,8 +1590,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For system use only.
-		/// </summary>
+        /// 对于system use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging60")]
 		public Microsoft.Xrm.Sdk.Money Aging60
 		{
@@ -1602,8 +1602,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The base currency equivalent of the aging 60 field.
-		/// </summary>
+        /// base currency equivalent of the aging 60 field.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging60_base")]
 		public Microsoft.Xrm.Sdk.Money Aging60_Base
 		{
@@ -1614,8 +1614,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For system use only.
-		/// </summary>
+        /// 对于system use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging90")]
 		public Microsoft.Xrm.Sdk.Money Aging90
 		{
@@ -1626,8 +1626,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The base currency equivalent of the aging 90 field.
-		/// </summary>
+        /// base currency equivalent of the aging 90 field.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging90_base")]
 		public Microsoft.Xrm.Sdk.Money Aging90_Base
 		{
@@ -1638,8 +1638,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the legal designation or other business type of the account for contracts or reporting purposes.
-		/// </summary>
+        /// 选择the legal designation or other business type of the account for contracts or reporting purposes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businesstypecode")]
 		public virtual account_businesstypecode? BusinessTypeCode
 		{
@@ -1656,8 +1656,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who created the record.
-		/// </summary>
+        /// Shows who created the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
@@ -1668,8 +1668,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the external party who created the record.
-		/// </summary>
+        /// Shows the external party who created the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedByExternalParty
 		{
@@ -1680,8 +1680,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
-		/// </summary>
+        /// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
@@ -1692,8 +1692,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
-		/// </summary>
+        /// Shows who created the record on behalf of another user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
@@ -1704,8 +1704,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the credit limit of the account. This is a useful reference when you address invoice and accounting issues with the customer.
-		/// </summary>
+        /// Type the credit limit of the account. This is a useful reference when you address invoice and accounting issues with the customer.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("creditlimit")]
 		public Microsoft.Xrm.Sdk.Money CreditLimit
 		{
@@ -1722,8 +1722,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the credit limit converted to the system's default base currency for reporting purposes.
-		/// </summary>
+        /// Shows the credit limit converted to the system's default base currency for reporting purposes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("creditlimit_base")]
 		public Microsoft.Xrm.Sdk.Money CreditLimit_Base
 		{
@@ -1734,8 +1734,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the credit for the account is on hold. This is a useful reference while addressing the invoice and accounting issues with the customer.
-		/// </summary>
+        /// 选择whether the credit for the account is on hold. This is a useful reference while addressing the invoice and accounting issues with the customer.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("creditonhold")]
 		public System.Nullable<bool> CreditOnHold
 		{
@@ -1752,8 +1752,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the size category or range of the account for segmentation and reporting purposes.
-		/// </summary>
+        /// 选择the size category or range of the account for segmentation and reporting purposes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customersizecode")]
 		public virtual account_customersizecode? CustomerSizeCode
 		{
@@ -1770,8 +1770,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the category that best describes the relationship between the account and your organization.
-		/// </summary>
+        /// 选择the category that best describes the relationship between the account and your organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customertypecode")]
 		public virtual account_customertypecode? CustomerTypeCode
 		{
@@ -1788,8 +1788,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type additional information to describe the account, such as an excerpt from the company's website.
-		/// </summary>
+        /// Type additional information to describe the account, such as an excerpt from the company's website.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
 		{
@@ -1806,8 +1806,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the account allows bulk email sent through campaigns. If Do Not Allow is selected, the account can be added to marketing lists, but is excluded from email.
-		/// </summary>
+        /// 选择whether the account allows bulk email sent through campaigns. If Do Not Allow is selected, the account can be added to marketing lists, but is excluded from email.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotbulkemail")]
 		public System.Nullable<bool> DoNotBulkEMail
 		{
@@ -1824,8 +1824,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the account allows bulk postal mail sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the account can be added to marketing lists, but will be excluded from the postal mail.
-		/// </summary>
+        /// 选择whether the account allows bulk postal mail sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the account can be added to marketing lists, but will be excluded from the postal mail.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotbulkpostalmail")]
 		public System.Nullable<bool> DoNotBulkPostalMail
 		{
@@ -1842,8 +1842,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the account allows direct email sent from Microsoft Dynamics 365.
-		/// </summary>
+        /// 选择whether the account allows direct email sent from Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotemail")]
 		public System.Nullable<bool> DoNotEMail
 		{
@@ -1860,8 +1860,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the account allows faxes. If Do Not Allow is selected, the account will be excluded from fax activities distributed in marketing campaigns.
-		/// </summary>
+        /// 选择whether the account allows faxes. If Do Not Allow is selected, the account will be excluded from fax activities distributed in marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotfax")]
 		public System.Nullable<bool> DoNotFax
 		{
@@ -1878,8 +1878,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the account allows phone calls. If Do Not Allow is selected, the account will be excluded from phone call activities distributed in marketing campaigns.
-		/// </summary>
+        /// 选择whether the account allows phone calls. If Do Not Allow is selected, the account will be excluded from phone call activities distributed in marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotphone")]
 		public System.Nullable<bool> DoNotPhone
 		{
@@ -1896,8 +1896,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the account allows direct mail. If Do Not Allow is selected, the account will be excluded from letter activities distributed in marketing campaigns.
-		/// </summary>
+        /// 选择whether the account allows direct mail. If Do Not Allow is selected, the account will be excluded from letter activities distributed in marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotpostalmail")]
 		public System.Nullable<bool> DoNotPostalMail
 		{
@@ -1914,8 +1914,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the account accepts marketing materials, such as brochures or catalogs.
-		/// </summary>
+        /// 选择whether the account accepts marketing materials, such as brochures or catalogs.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotsendmm")]
 		public System.Nullable<bool> DoNotSendMM
 		{
@@ -1932,8 +1932,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the primary email address for the account.
-		/// </summary>
+        /// Type the primary email address for the account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress1")]
 		public string EMailAddress1
 		{
@@ -1950,8 +1950,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the secondary email address for the account.
-		/// </summary>
+        /// Type the secondary email address for the account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress2")]
 		public string EMailAddress2
 		{
@@ -1968,8 +1968,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type an alternate email address for the account.
-		/// </summary>
+        /// Type an alternate email address for the account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress3")]
 		public string EMailAddress3
 		{
@@ -1986,8 +1986,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the default image for the record.
-		/// </summary>
+        /// Shows the default image for the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage")]
 		public byte[] EntityImage
 		{
@@ -2022,8 +2022,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimageid")]
 		public System.Nullable<System.Guid> EntityImageId
 		{
@@ -2034,8 +2034,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
-		/// </summary>
+        /// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
 		public System.Nullable<decimal> ExchangeRate
 		{
@@ -2046,8 +2046,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the fax number for the account.
-		/// </summary>
+        /// Type the fax number for the account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fax")]
 		public string Fax
 		{
@@ -2064,8 +2064,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether to allow following email activity like opens, attachment views and link clicks for emails sent to the account.
-		/// </summary>
+        /// Information about whether to allow following email activity like opens, attachment views and link clicks for emails sent to the account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("followemail")]
 		public System.Nullable<bool> FollowEmail
 		{
@@ -2082,8 +2082,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the URL for the account's FTP site to enable users to access data and share documents.
-		/// </summary>
+        /// Type the URL for the account's FTP site to enable users to access data and share documents.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ftpsiteurl")]
 		public string FtpSiteURL
 		{
@@ -2100,8 +2100,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the data import or data migration that created this record.
-		/// </summary>
+        /// Unique identifier of the data import or data migration that created this record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
 		public System.Nullable<int> ImportSequenceNumber
 		{
@@ -2118,8 +2118,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the account's primary industry for use in marketing segmentation and demographic analysis.
-		/// </summary>
+        /// 选择the account's primary industry for use in marketing segmentation and demographic analysis.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("industrycode")]
 		public virtual account_industrycode? IndustryCode
 		{
@@ -2136,8 +2136,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Contains the date and time stamp of the last on hold time.
-		/// </summary>
+        /// Contains the date and time stamp of the last on hold time.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastonholdtime")]
 		public System.Nullable<System.DateTime> LastOnHoldTime
 		{
@@ -2154,8 +2154,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date when the account was last included in a marketing campaign or quick campaign.
-		/// </summary>
+        /// Shows the date when the account was last included in a marketing campaign or quick campaign.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastusedincampaign")]
 		public System.Nullable<System.DateTime> LastUsedInCampaign
 		{
@@ -2172,8 +2172,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the market capitalization of the account to identify the company's equity, used as an indicator in financial performance analysis.
-		/// </summary>
+        /// Type the market capitalization of the account to identify the company's equity, used as an indicator in financial performance analysis.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("marketcap")]
 		public Microsoft.Xrm.Sdk.Money MarketCap
 		{
@@ -2190,8 +2190,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the market capitalization converted to the system's default base currency.
-		/// </summary>
+        /// Shows the market capitalization converted to the system's default base currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("marketcap_base")]
 		public Microsoft.Xrm.Sdk.Money MarketCap_Base
 		{
@@ -2202,8 +2202,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Whether is only for marketing
-		/// </summary>
+        /// Whether is only for marketing
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("marketingonly")]
 		public System.Nullable<bool> MarketingOnly
 		{
@@ -2220,8 +2220,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the master account that the account was merged with.
-		/// </summary>
+        /// Shows the master account that the account was merged with.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("masterid")]
 		public Microsoft.Xrm.Sdk.EntityReference MasterId
 		{
@@ -2232,8 +2232,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows whether the account has been merged with another account.
-		/// </summary>
+        /// Shows whether the account has been merged with another account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("merged")]
 		public System.Nullable<bool> Merged
 		{
@@ -2244,8 +2244,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record.
-		/// </summary>
+        /// Shows who last updated the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
@@ -2256,8 +2256,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the external party who modified the record.
-		/// </summary>
+        /// Shows the external party who modified the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedByExternalParty
 		{
@@ -2268,8 +2268,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
-		/// </summary>
+        /// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
@@ -2280,8 +2280,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
-		/// </summary>
+        /// Shows who created the record on behalf of another user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
@@ -2292,8 +2292,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for Account associated with Account.
-		/// </summary>
+        /// Unique identifier for Account associated with Account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_managingpartnerid")]
 		public Microsoft.Xrm.Sdk.EntityReference msa_managingpartnerid
 		{
@@ -2310,8 +2310,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the company or business name.
-		/// </summary>
+        /// Type the company or business name.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
 		public string Name
 		{
@@ -2328,8 +2328,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the number of employees that work at the account for use in marketing segmentation and demographic analysis.
-		/// </summary>
+        /// Type the number of employees that work at the account for use in marketing segmentation and demographic analysis.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("numberofemployees")]
 		public System.Nullable<int> NumberOfEmployees
 		{
@@ -2346,8 +2346,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows how long, in minutes, that the record was on hold.
-		/// </summary>
+        /// Shows how long, in minutes, that the record was on hold.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("onholdtime")]
 		public System.Nullable<int> OnHoldTime
 		{
@@ -2358,8 +2358,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time that the record was migrated.
-		/// </summary>
+        /// Date and time that the record was migrated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
 		public System.Nullable<System.DateTime> OverriddenCreatedOn
 		{
@@ -2376,8 +2376,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
-		/// </summary>
+        /// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
 		{
@@ -2394,8 +2394,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the account's ownership structure, such as public or private.
-		/// </summary>
+        /// 选择the account's ownership structure, such as public or private.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownershipcode")]
 		public virtual account_ownershipcode? OwnershipCode
 		{
@@ -2412,8 +2412,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the business unit that the record owner belongs to.
-		/// </summary>
+        /// Shows the business unit that the record owner belongs to.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
 		{
@@ -2424,8 +2424,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team who owns the account.
-		/// </summary>
+        /// Unique identifier of the team who owns the account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
 		{
@@ -2436,8 +2436,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who owns the account.
-		/// </summary>
+        /// Unique identifier of the user who owns the account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningUser
 		{
@@ -2448,8 +2448,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the parent account associated with this account to show parent and child businesses in reporting and analytics.
-		/// </summary>
+        /// Choose the parent account associated with this account to show parent and child businesses in reporting and analytics.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentaccountid")]
 		public Microsoft.Xrm.Sdk.EntityReference ParentAccountId
 		{
@@ -2466,8 +2466,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For system use only. Legacy Microsoft Dynamics CRM 3.0 workflow data.
-		/// </summary>
+        /// 对于system use only. Legacy Microsoft Dynamics CRM 3.0 workflow data.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("participatesinworkflow")]
 		public System.Nullable<bool> ParticipatesInWorkflow
 		{
@@ -2484,8 +2484,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the payment terms to indicate when the customer needs to pay the total amount.
-		/// </summary>
+        /// 选择the payment terms to indicate when the customer needs to pay the total amount.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("paymenttermscode")]
 		public virtual account_paymenttermscode? PaymentTermsCode
 		{
@@ -2502,8 +2502,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the preferred day of the week for service appointments.
-		/// </summary>
+        /// 选择the preferred day of the week for service appointments.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredappointmentdaycode")]
 		public virtual account_preferredappointmentdaycode? PreferredAppointmentDayCode
 		{
@@ -2520,8 +2520,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the preferred time of day for service appointments.
-		/// </summary>
+        /// 选择the preferred time of day for service appointments.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredappointmenttimecode")]
 		public virtual account_preferredappointmenttimecode? PreferredAppointmentTimeCode
 		{
@@ -2538,8 +2538,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the preferred method of contact.
-		/// </summary>
+        /// 选择the preferred method of contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredcontactmethodcode")]
 		public virtual account_preferredcontactmethodcode? PreferredContactMethodCode
 		{
@@ -2556,8 +2556,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the preferred service representative for reference when you schedule service activities for the account.
-		/// </summary>
+        /// Choose the preferred service representative for reference when you schedule service activities for the account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredsystemuserid")]
 		public Microsoft.Xrm.Sdk.EntityReference PreferredSystemUserId
 		{
@@ -2574,8 +2574,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the primary contact for the account to provide quick access to contact details.
-		/// </summary>
+        /// Choose the primary contact for the account to provide quick access to contact details.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("primarycontactid")]
 		public Microsoft.Xrm.Sdk.EntityReference PrimaryContactId
 		{
@@ -2592,8 +2592,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Primary Satori ID for Account
-		/// </summary>
+        /// Primary Satori ID for Account
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("primarysatoriid")]
 		public string PrimarySatoriId
 		{
@@ -2610,8 +2610,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Primary Twitter ID for Account
-		/// </summary>
+        /// Primary Twitter ID for Account
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("primarytwitterid")]
 		public string PrimaryTwitterId
 		{
@@ -2628,8 +2628,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the ID of the process.
-		/// </summary>
+        /// Shows the ID of the process.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("processid")]
 		public System.Nullable<System.Guid> ProcessId
 		{
@@ -2646,8 +2646,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the annual revenue for the account, used as an indicator in financial performance analysis.
-		/// </summary>
+        /// Type the annual revenue for the account, used as an indicator in financial performance analysis.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("revenue")]
 		public Microsoft.Xrm.Sdk.Money Revenue
 		{
@@ -2664,8 +2664,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the annual revenue converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area.
-		/// </summary>
+        /// Shows the annual revenue converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("revenue_base")]
 		public Microsoft.Xrm.Sdk.Money Revenue_Base
 		{
@@ -2676,8 +2676,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the number of shares available to the public for the account. This number is used as an indicator in financial performance analysis.
-		/// </summary>
+        /// Type the number of shares available to the public for the account. This number is used as an indicator in financial performance analysis.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sharesoutstanding")]
 		public System.Nullable<int> SharesOutstanding
 		{
@@ -2694,8 +2694,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a shipping method for deliveries sent to the account's address to designate the preferred carrier or other delivery option.
-		/// </summary>
+        /// 选择a shipping method for deliveries sent to the account's address to designate the preferred carrier or other delivery option.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("shippingmethodcode")]
 		public virtual account_shippingmethodcode? ShippingMethodCode
 		{
@@ -2712,8 +2712,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the Standard Industrial Classification (SIC) code that indicates the account's primary industry of business, for use in marketing segmentation and demographic analysis.
-		/// </summary>
+        /// Type the Standard Industrial Classification (SIC) code that indicates the account's primary industry of business, for use in marketing segmentation and demographic analysis.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sic")]
 		public string SIC
 		{
@@ -2730,8 +2730,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the service level agreement (SLA) that you want to apply to the Account record.
-		/// </summary>
+        /// Choose the service level agreement (SLA) that you want to apply to the Account record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAId
 		{
@@ -2748,8 +2748,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Last SLA that was applied to this case. This field is for internal use only.
-		/// </summary>
+        /// Last SLA that was applied to this case. This field is for internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
 		{
@@ -2760,8 +2760,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the ID of the stage.
-		/// </summary>
+        /// Shows the ID of the stage.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
 		{
@@ -2778,8 +2778,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows whether the account is active or inactive. Inactive accounts are read-only and can't be edited unless they are reactivated.
-		/// </summary>
+        /// Shows whether the account is active or inactive. Inactive accounts are read-only and can't be edited unless they are reactivated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
 		public virtual account_statecode? StateCode
 		{
@@ -2796,8 +2796,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the account's status.
-		/// </summary>
+        /// 选择the account's status.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
 		public virtual account_statuscode? StatusCode
 		{
@@ -2814,8 +2814,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the stock exchange at which the account is listed to track their stock and financial performance of the company.
-		/// </summary>
+        /// Type the stock exchange at which the account is listed to track their stock and financial performance of the company.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stockexchange")]
 		public string StockExchange
 		{
@@ -2832,8 +2832,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the main phone number for this account.
-		/// </summary>
+        /// Type the main phone number for this account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("telephone1")]
 		public string Telephone1
 		{
@@ -2850,8 +2850,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a second phone number for this account.
-		/// </summary>
+        /// Type a second phone number for this account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("telephone2")]
 		public string Telephone2
 		{
@@ -2868,8 +2868,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a third phone number for this account.
-		/// </summary>
+        /// Type a third phone number for this account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("telephone3")]
 		public string Telephone3
 		{
@@ -2886,8 +2886,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a region or territory for the account for use in segmentation and analysis.
-		/// </summary>
+        /// 选择a region or territory for the account for use in segmentation and analysis.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("territorycode")]
 		public virtual account_territorycode? TerritoryCode
 		{
@@ -2904,8 +2904,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the stock exchange symbol for the account to track financial performance of the company. You can click the code entered in this field to access the latest trading information from MSN Money.
-		/// </summary>
+        /// Type the stock exchange symbol for the account to track financial performance of the company. You can click the code entered in this field to access the latest trading information from MSN Money.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("tickersymbol")]
 		public string TickerSymbol
 		{
@@ -2922,8 +2922,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Total time spent for emails (read and write) and meetings by me in relation to account record.
-		/// </summary>
+        /// Total time spent for emails (read and write) and meetings by me in relation to account record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timespentbymeonemailandmeetings")]
 		public string TimeSpentByMeOnEmailAndMeetings
 		{
@@ -2934,8 +2934,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
 		public System.Nullable<int> TimeZoneRuleVersionNumber
 		{
@@ -2952,8 +2952,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the local currency for the record to make sure budgets are reported in the correct currency.
-		/// </summary>
+        /// Choose the local currency for the record to make sure budgets are reported in the correct currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
 		{
@@ -2970,8 +2970,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("traversedpath")]
 		public string TraversedPath
 		{
@@ -2988,8 +2988,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Time zone code that was in use when the record was created.
-		/// </summary>
+        /// Time zone code that was in use when the record was created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
 		public System.Nullable<int> UTCConversionTimeZoneCode
 		{
@@ -3006,8 +3006,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Version number of the account.
-		/// </summary>
+        /// Version number of the account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
@@ -3018,8 +3018,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the account's website URL to get quick details about the company profile.
-		/// </summary>
+        /// Type the account's website URL to get quick details about the company profile.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("websiteurl")]
 		public string WebSiteURL
 		{
@@ -3036,8 +3036,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the phonetic spelling of the company name, if specified in Japanese, to make sure the name is pronounced correctly in phone calls and other communications.
-		/// </summary>
+        /// Type the phonetic spelling of the company name, if specified in Japanese, to make sure the name is pronounced correctly in phone calls and other communications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yominame")]
 		public string YomiName
 		{
@@ -3054,8 +3054,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N account_activity_parties
-		/// </summary>
+        /// 1:N account_activity_parties
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_activity_parties")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.ActivityParty> account_activity_parties
 		{
@@ -3072,8 +3072,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N Account_Letters
-		/// </summary>
+        /// 1:N Account_Letters
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Account_Letters")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Letter> Account_Letters
 		{
@@ -3090,8 +3090,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N account_master_account
-		/// </summary>
+        /// 1:N account_master_account
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> Referencedaccount_master_account
 		{
@@ -3108,8 +3108,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N account_parent_account
-		/// </summary>
+        /// 1:N account_parent_account
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> Referencedaccount_parent_account
 		{
@@ -3126,8 +3126,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N contact_customer_accounts
-		/// </summary>
+        /// 1:N contact_customer_accounts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_accounts")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> contact_customer_accounts
 		{
@@ -3144,8 +3144,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N msa_account_managingpartner
-		/// </summary>
+        /// 1:N msa_account_managingpartner
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> Referencedmsa_account_managingpartner
 		{
@@ -3162,8 +3162,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N msa_contact_managingpartner
-		/// </summary>
+        /// 1:N msa_contact_managingpartner
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_contact_managingpartner")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> msa_contact_managingpartner
 		{
@@ -3180,8 +3180,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 account_master_account
-		/// </summary>
+        /// N:1 account_master_account
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("masterid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.Account Referencingaccount_master_account
@@ -3193,8 +3193,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 account_parent_account
-		/// </summary>
+        /// N:1 account_parent_account
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentaccountid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.Account Referencingaccount_parent_account
@@ -3212,8 +3212,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 account_primary_contact
-		/// </summary>
+        /// N:1 account_primary_contact
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("primarycontactid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_primary_contact")]
 		public MyApp.DataModel.Contact account_primary_contact
@@ -3231,8 +3231,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_accounts
-		/// </summary>
+        /// N:1 business_unit_accounts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_accounts")]
 		public MyApp.DataModel.BusinessUnit business_unit_accounts
@@ -3244,8 +3244,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_accountbase_createdby
-		/// </summary>
+        /// N:1 lk_accountbase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_createdby")]
 		public MyApp.DataModel.SystemUser lk_accountbase_createdby
@@ -3257,8 +3257,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_accountbase_createdonbehalfby
-		/// </summary>
+        /// N:1 lk_accountbase_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_createdonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_accountbase_createdonbehalfby
@@ -3270,8 +3270,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_accountbase_modifiedby
-		/// </summary>
+        /// N:1 lk_accountbase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_modifiedby")]
 		public MyApp.DataModel.SystemUser lk_accountbase_modifiedby
@@ -3283,8 +3283,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_accountbase_modifiedonbehalfby
-		/// </summary>
+        /// N:1 lk_accountbase_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_modifiedonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_accountbase_modifiedonbehalfby
@@ -3296,8 +3296,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 msa_account_managingpartner
-		/// </summary>
+        /// N:1 msa_account_managingpartner
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_managingpartnerid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.Account Referencingmsa_account_managingpartner
@@ -3315,8 +3315,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 system_user_accounts
-		/// </summary>
+        /// N:1 system_user_accounts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredsystemuserid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_accounts")]
 		public MyApp.DataModel.SystemUser system_user_accounts
@@ -3334,8 +3334,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 team_accounts
-		/// </summary>
+        /// N:1 team_accounts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_accounts")]
 		public MyApp.DataModel.Team team_accounts
@@ -3347,8 +3347,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 user_accounts
-		/// </summary>
+        /// N:1 user_accounts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_accounts")]
 		public MyApp.DataModel.SystemUser user_accounts

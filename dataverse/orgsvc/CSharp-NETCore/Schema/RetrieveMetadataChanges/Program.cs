@@ -11,9 +11,9 @@ using Microsoft.PowerPlatform.Dataverse.Client;
 namespace PowerPlatform.Dataverse.CodeSamples
 {
     /// <summary>
-    /// Demonstrates use of the RetrieveMetadataChanges message to create and maintain a cache
+        /// Demonstrates use of the RetrieveMetadataChanges message to create and maintain a cache
     /// of Dataverse schema data.
-    /// </summary>
+        /// </summary>
     /// <remarks>Set the appropriate Url and Username values for your test
     /// environment in the appsettings.json file before running this program.
     /// You will be prompted in the default browser to enter a password.</remarks>
@@ -24,7 +24,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     {
 
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
@@ -40,7 +40,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -57,7 +57,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             // A simple list of column definitions to represent the cache
             List<AttributeMetadata> cachedAttributes = new();
             string clientVersionStamp = string.Empty;
-            // The name of a column to create when demonstrating changes
+            // name of a column to create when demonstrating changes
             string choiceColumnSchemaName = "sample_ChoiceColumnForSample";
             // Language code value from usersettingscollection.
             int? userLanguagePreference = RetrieveUserUILanguageCode(serviceClient);
@@ -98,7 +98,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 }
             };
 
-            // Return only user language if they have a preference
+            // 返回only user language if they have a preference
             if (userLanguagePreference.HasValue)
             {
                 query.LabelQuery = new LabelQueryExpression
@@ -119,19 +119,19 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine($"Columns in initial response:{initialResponse.EntityMetadata.FirstOrDefault().Attributes.Count()}");
 
-            // Initialize the cache
+            // 初始化the cache
             cachedAttributes = initialResponse.EntityMetadata.FirstOrDefault().Attributes.ToList();
 
             Console.WriteLine($"Columns added to cache.");
 
-            // Set the client version
+            // 设置the client version
             clientVersionStamp = initialResponse.ServerVersionStamp;
 
             #endregion Initialize cache
 
             #region Add Choice column
             Console.WriteLine($"\nAdding a new choice column named {choiceColumnSchemaName}...");
-            // Add a new Choice column
+            // 添加a new Choice column
             PicklistAttributeMetadata choiceColumn = new(choiceColumnSchemaName)
             {
                 DisplayName = new Label("Choice column for sample", 1033),
@@ -171,7 +171,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             RetrieveMetadataChangesRequest secondRequest = new()
             {
                 Query = query, //Same query as before
-                // This time passing client version stamp value from previous request
+                // 此time passing client version stamp value from previous request
                 ClientVersionStamp = clientVersionStamp,
                 DeletedMetadataFilters = DeletedMetadataFilters.Attribute
             };
@@ -193,7 +193,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 if (ex.Detail.ErrorCode == unchecked((int)0x80044352))
                 {
                     // TODO
-                    // Add code to re-initialize cache
+                    // 添加code to re-initialize cache
                     throw new NotImplementedException("TODO: Manage case where cache must be re-initialized.");
 
                 }
@@ -206,7 +206,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             // There should be only one representing the choice column just added
             Console.WriteLine($"\nColumns in second response:{secondResponse.EntityMetadata.FirstOrDefault().Attributes.Length}");
 
-            // Update cache to add new items.
+            // 更新cache to add new items.
             secondResponse.EntityMetadata.FirstOrDefault().Attributes.ToList().ForEach(att =>
             {
                 if (!cachedAttributes.Contains(att))
@@ -246,7 +246,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             RetrieveMetadataChangesRequest thirdRequest = new()
             {
                 Query = query,
-                // This time passing client version stamp value from previous request
+                // 此time passing client version stamp value from previous request
                 ClientVersionStamp = clientVersionStamp,
                 DeletedMetadataFilters = DeletedMetadataFilters.Attribute
             };
@@ -268,7 +268,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 if (ex.Detail.ErrorCode == unchecked((int)0x80044352))
                 {
                     // TODO
-                    // Add code to re-initialize cache
+                    // 添加code to re-initialize cache
                     throw new NotImplementedException("TODO: Manage case where cache must be re-initialized.");
 
                 }
@@ -278,7 +278,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 }
             }
 
-            // Remove deleted choice column from the cache
+            // 移除deleted choice column from the cache
 
             // Confirm that the id of the column created and deleted exists in the 
             // DeletedMetadata:
@@ -288,7 +288,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine($"\nThe deleted column {(existsInDeletedMetadata ? "exists" : "does not exist")} in the DeletedMetadata.");
 
-            // Remove it from the cache
+            // 移除it from the cache
             thirdResponse.DeletedMetadata[DeletedMetadataFilters.Attribute]
                 .ToList()
                 .ForEach(id =>
@@ -298,7 +298,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine($"Deleted column removed from cache.");
 
             // List the current cached options again.
-            // The deleted choice column is no longer cached.
+            // deleted choice column is no longer cached.
             Console.WriteLine($"\nThe current {cachedAttributes.Count} cached choice columns:");
             cachedAttributes
                 .ForEach(att =>
@@ -314,7 +314,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Retrieves user's UI language preference
+        /// 检索 user's UI language preference
         /// </summary>
         /// <param name="service"></param>
         /// <returns></returns>

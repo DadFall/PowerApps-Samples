@@ -8,8 +8,8 @@ using System.ServiceModel;
 namespace PowerPlatform.Dataverse.CodeSamples
 {
     /// <summary>
-    /// Demonstrates working with data in image columns.
-    /// </summary>
+        /// Demonstrates working with data in image columns.
+        /// </summary>
     /// <remarks>Set the appropriate Url and Username values for your test
     /// environment in the appsettings.json file before running this program.
     /// You will be prompted in the default browser to enter a password.</remarks>
@@ -19,7 +19,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
@@ -34,7 +34,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -55,14 +55,14 @@ namespace PowerPlatform.Dataverse.CodeSamples
             // Capture this so it can be set back at the end of the sample.
             string originalAccountPrimaryImageAttributeName = Utility.GetTablePrimaryImageName(service, entityLogicalName);
             List<Guid> accountsWithImagesIds = new();
-            // The names of the image files in the Images folder
+            // names of the image files in the Images folder
             List<string> fileNames = new() { "144x144.png", "144x400.png", "400x144.png", "400x500.png", "60x80.png" };
 
 
             // Create the Image Column with CanStoreFullImage = false.
             Utility.CreateImageColumn(service, entityLogicalName, imageColumnSchemaName);
 
-            // Update the image column to set it as the primary image
+            // 更新the image column to set it as the primary image
             // Only primary image columns can be set during Create
             Utility.SetTablePrimaryImageName(service, entityLogicalName, imageColumnLogicalName);
 
@@ -178,14 +178,14 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
 
             // Verify that the images are deleted:
-            // Retrieve the accounts again using the same query as before:
+            // 检索the accounts again using the same query as before:
             EntityCollection accountsWithOutImages = service.RetrieveMultiple(query);
 
             foreach (Entity account in accountsWithOutImages.Entities)
             {
                 if (account.Attributes.Contains(imageColumnLogicalName))
                 {
-                    // This should not occur
+                    // 此should not occur
                     Console.WriteLine($"Error: {account["accountid"]} {imageColumnLogicalName} has an image value.");
                 }
             }
@@ -199,7 +199,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine("Deleted the records created for this sample.");
 
 
-            // Set the account primaryImage back to the original value
+            // 设置the account primaryImage back to the original value
             Utility.SetTablePrimaryImageName(
                 service, 
                 entityLogicalName, 
@@ -219,9 +219,9 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Downloads a full-sized file using InitializeFileBlocksDownload and DownloadBlock messages
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="entityReference">A reference to the record with the file column</param>
-        /// <param name="fileAttributeName">The name of the file column</param>
+        /// <param name="service">service</param>
+        /// <param name="entityReference">一个reference to the record with the file column</param>
+        /// <param name="fileAttributeName">名称 of the file column</param>
         /// <returns></returns>
         private static byte[] DownloadFile(
                     IOrganizationService service,
@@ -265,7 +265,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 var downloadBlockResponse =
                            (DownloadBlockResponse)service.Execute(downLoadBlockRequest);
 
-                // Add the block returned to the list
+                // 添加the block returned to the list
                 fileBytes.AddRange(downloadBlockResponse.Data);
 
                 // Subtract the amount downloaded,

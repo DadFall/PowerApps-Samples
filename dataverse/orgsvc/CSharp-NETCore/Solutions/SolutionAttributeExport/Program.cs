@@ -14,7 +14,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     internal class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         private IConfiguration Configuration { get; }
 
@@ -44,7 +44,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// </summary>
         Program()
         {
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -73,7 +73,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         private Solution CreateUnmanagedSolution(ServiceClient serviceClient, string solutionUniqueName, string solutionFriendlyName, string solutionDescription)
         {
 
-            // Retrieve the Default Publisher which has a constant GUID value.
+            // 检索the Default Publisher which has a constant GUID value.
             var defaultPublisher = serviceClient.Retrieve(
                 "publisher",
                 new Guid("{d21aab71-79e7-11dd-8874-00188b01e34f}"),
@@ -127,7 +127,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
         private void FindCustomFieldsAndAddToUnmanagedSolution(ServiceClient serviceClient, string publisherPrefix, string attributeSuffix, string solutionUniqueName)
         {
-            // Retrieve all the fields/attributes in the system.
+            // 检索all the fields/attributes in the system.
             Console.Write("Attempting to retrieve all the entity metadata...");
             RetrieveAllEntitiesResponse entitiesResponse =
                 (RetrieveAllEntitiesResponse)serviceClient.Execute(
@@ -153,8 +153,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 }
             };
 
-            // For all the entities that start with the given publisher prefix, find all the attributes that end with the given suffix.
-            // Add each one to the solution.
+            // 对于all the entities that start with the given publisher prefix, find all the attributes that end with the given suffix.
+            // 添加each one to the solution.
             entitiesResponse.EntityMetadata.Where(e => e.LogicalName.StartsWith(publisherPrefix)).ToList().ForEach(
                 e => e.Attributes.Where(a => a.LogicalName.EndsWith(attributeSuffix)).ToList().ForEach(
                     a => {

@@ -12,15 +12,15 @@ namespace PowerPlatform_Dataverse_CodeSamples
     {
 
         /// <summary>
-        /// Creates sample string columns in a specified table within a Microsoft Dataverse environment.
+        /// 创建 sample string columns in a specified table within a Microsoft Dataverse environment.
         /// </summary>
         /// <remarks>This method checks whether each column already exists in the specified table. If a
         /// column exists, it logs a message indicating that the column is already present. If a column does not exist,
         /// it creates the column using the provided settings and associates it with the specified solution.</remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to interact with the Dataverse environment.</param>
-        /// <param name="tableLogicalName">The logical name of the table where the columns will be created. This value cannot be null or empty.</param>
-        /// <param name="solutionUniqueName">The unique name of the solution to associate the created columns with. This value cannot be null or empty.</param>
-        /// <param name="customizationPrefix">The customization prefix to use for the schema names of the columns. This value cannot be null or empty.</param>
+        /// <param name="tableLogicalName">logical 名称 of the table where the columns will be created. This 值 cannot be null or empty.</param>
+        /// <param name="solutionUniqueName">unique 名称 of the solution to associate the created columns with. This 值 cannot be null or empty.</param>
+        /// <param name="customizationPrefix">customization prefix to use for the schema 名称s of the columns. This 值 cannot be null or empty.</param>
         /// <param name="columnSettings">An array of <see cref="ColumnSettings"/> objects that define the configuration for each column to be
         /// created. Each object specifies the column's name, display name, and description.</param>
         internal static void CreateSampleColumns(
@@ -69,14 +69,14 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
 
         /// <summary>
-        /// Creates a sample column in the specified table.
+        /// 创建 a sample column in the specified table.
         /// </summary>
         /// <param name="service">The authenticated <see cref="IOrganizationService"/> instance used to execute the request.</param>
-        /// <param name="tableLogicalName">Logical name of the table</param>
-        /// <param name="schemaName">Schema name for the column</param>
-        /// <param name="displayName">Display name for the column</param>
+        /// <param name="tableLogicalName">Logical 名称 of the table</param>
+        /// <param name="schemaName">Schema 名称 for the column</param>
+        /// <param name="displayName">Display 名称 for the column</param>
         /// <param name="description">Description of the column</param>
-        /// <param name="solutionUniqueName">Unique name of the solution</param>
+        /// <param name="solutionUniqueName">Unique 名称 of the solution</param>
         /// <returns>GUID of the created column</returns>
         /// <exception cref="Exception">Throws exception if column creation fails</exception>
         internal static Guid CreateSampleColumn(
@@ -119,15 +119,15 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Creates a custom table in Dataverse with the specified schema name, solution, and customization prefix.
+        /// 创建 a custom table in Dataverse with the specified schema name, solution, and customization prefix.
         /// </summary>
         /// <remarks>This method creates a user-owned table with a primary attribute named using the
         /// provided customization prefix. The table is associated with the specified solution and includes metadata
         /// such as display names and descriptions.</remarks>
         /// <param name="service">The authenticated <see cref="IOrganizationService"/> instance used to execute the request.</param>
-        /// <param name="schemaName">The schema name of the table to be created. This must be unique within the Dataverse environment.</param>
-        /// <param name="solutionUniqueName">The unique name of the solution to associate the table with.</param>
-        /// <param name="customizationPrefix">The prefix to use for customizing the schema name of the table's primary attribute.</param>
+        /// <param name="schemaName">schema 名称 of the table to be created. This must be unique within the Dataverse environment.</param>
+        /// <param name="solutionUniqueName">unique 名称 of the solution to associate the table with.</param>
+        /// <param name="customizationPrefix">prefix to use for customizing the schema 名称 of the table's primary attribute.</param>
         /// <returns>A <see cref="Guid"/> representing the unique identifier of the created table.</returns>
         /// <exception cref="Exception">Thrown if an error occurs while creating the table. The exception message includes details about the
         /// failure.</exception>
@@ -180,15 +180,15 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
 
         /// <summary>
-        /// Retrieves the unique identifier (ID) of a column in a specified Dataverse table.
+        /// 检索 the unique identifier (ID) of a column in a specified Dataverse table.
         /// </summary>
         /// <remarks>This method uses the Dataverse service to retrieve metadata about a column in a
         /// table. If the column does not exist, the method returns <see langword="null"/>. Ensure that the <paramref
         /// name="tableLogicalName"/> and <paramref name="columnLogicalName"/> parameters are valid and correspond to
         /// existing entities in Dataverse.</remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to execute the request.</param>
-        /// <param name="tableLogicalName">The logical name of the table containing the column. This value cannot be null or empty.</param>
-        /// <param name="columnLogicalName">The logical name of the column whose ID is to be retrieved. This value cannot be null or empty.</param>
+        /// <param name="tableLogicalName">logical 名称 of the table containing the column. This 值 cannot be null or empty.</param>
+        /// <param name="columnLogicalName">logical 名称 of the column whose ID is to be retrieved. This 值 cannot be null or empty.</param>
         /// <returns>A <see cref="Guid"/> representing the unique identifier of the column, or <see langword="null"/> if the
         /// column does not exist.</returns>
         /// <exception cref="Exception">Thrown if an unexpected error occurs during the operation.</exception>
@@ -212,7 +212,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
                 if (ex.Detail.ErrorCode.Equals(-2147220969))
                 {
-                    // The column doesn't exist
+                    // column doesn't exist
                     return null;
                 }
                 throw new Exception($"Unexpected Dataverse error retrieving data about sample table {columnLogicalName} column: {ex.Message}", ex);
@@ -226,13 +226,13 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Retrieves the unique identifier (ID) of a table in Dataverse based on its logical name.
+        /// 检索 the unique identifier (ID) of a table in Dataverse based on its logical name.
         /// </summary>
         /// <remarks>This method uses the Dataverse <see cref="RetrieveEntityRequest"/> to fetch metadata
         /// about the specified table. If the table does not exist, the method returns <see langword="null"/>. If an
         /// unexpected error occurs, an exception is thrown.</remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to execute the request.</param>
-        /// <param name="tableLogicalName">The logical name of the table whose ID is to be retrieved. This value cannot be null or empty.</param>
+        /// <param name="tableLogicalName">logical 名称 of the table whose ID is to be retrieved. This 值 cannot be null or empty.</param>
         /// <returns>A <see cref="Guid"/> representing the unique identifier of the table if it exists; otherwise, <see
         /// langword="null"/>.</returns>
         /// <exception cref="Exception">Thrown if an unexpected error occurs while retrieving the table metadata.</exception>
@@ -256,7 +256,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
                 if (ex.Detail.ErrorCode.Equals(-2147220969))
                 {
-                    // The table doesn't exist
+                    // table doesn't exist
                     return null;
                 }
                 throw new Exception($"Unexpected Dataverse error retrieving data about sample table: {ex.Message}", ex);
@@ -270,15 +270,15 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Retrieves the unique identifier (ID) of a record in a specified table based on a column value.
+        /// 检索 the unique identifier (ID) of a record in a specified table based on a column value.
         /// </summary>
         /// <remarks>This method performs a query using the specified table and column to locate a record
         /// with a matching value. If multiple records match the criteria, only the ID of the first record is
         /// returned.</remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to interact with the data source.</param>
-        /// <param name="tableLogicalName">The logical name of the table (entity) to query. This value cannot be null or empty.</param>
-        /// <param name="columnLogicalName">The logical name of the column to filter by. This value cannot be null or empty.</param>
-        /// <param name="uniqueStringValue">The unique string value to match against the specified column. This value cannot be null or empty.</param>
+        /// <param name="tableLogicalName">logical 名称 of the table (entity) to query. This 值 cannot be null or empty.</param>
+        /// <param name="columnLogicalName">logical 名称 of the column to filter by. This 值 cannot be null or empty.</param>
+        /// <param name="uniqueStringValue">unique 字符串 值 to match against the specified column. This 值 cannot be null or empty.</param>
         /// <returns>A <see cref="Guid"/> representing the ID of the first matching record, or <see langword="null"/> if no
         /// matching record is found.</returns>
         internal static Guid? GetRecordID(
@@ -322,9 +322,9 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// to the console.</remarks>
         /// <param name="systemAdminService">The <see cref="IOrganizationService"/> instance with administrative privileges used to execute the
         /// operation.</param>
-        /// <param name="securityRoleId">The unique identifier of the security role to be managed.</param>
-        /// <param name="appUserId">The unique identifier of the application user to associate with the security role.</param>
-        /// <param name="roleName">The name of the security role, used for logging purposes.</param>
+        /// <param name="securityRoleId">unique 标识符 of the security role to be managed.</param>
+        /// <param name="appUserId">unique 标识符 of the application user to associate with the security role.</param>
+        /// <param name="roleName">名称 of the security role, used for logging purposes.</param>
         internal static void ManageRoleForAppUser(IOrganizationService systemAdminService,
             Guid securityRoleId,
             Guid appUserId,
@@ -355,7 +355,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             var relatedRoles = retrieveResponse.Entity.RelatedEntities[new Relationship("systemuserroles_association")];
             if (relatedRoles.Entities.Count > 0)
             {
-                // The application user already has the role
+                // application user already has the role
                 Console.WriteLine($"\t☑ Application user already has {roleName}.");
             }
             else
@@ -388,9 +388,9 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// the given field security profile. If the association does not exist, it creates the association.</remarks>
         /// <param name="systemAdminService">The <see cref="IOrganizationService"/> instance with system administrator privileges, used to execute the
         /// operation.</param>
-        /// <param name="fieldSecurityProfileId">The unique identifier of the field security profile to associate with the application user.</param>
-        /// <param name="appUserId">The unique identifier of the application user to associate with the field security profile.</param>
-        /// <param name="fieldSecurityProfileName">The name of the field security profile, used for logging purposes.</param>
+        /// <param name="fieldSecurityProfileId">unique 标识符 of the field security profile to associate with the application user.</param>
+        /// <param name="appUserId">unique 标识符 of the application user to associate with the field security profile.</param>
+        /// <param name="fieldSecurityProfileName">名称 of the field security profile, used for logging purposes.</param>
         internal static void ManageFieldSecurityProfileForAppUser(IOrganizationService systemAdminService,
                 Guid fieldSecurityProfileId,
                 Guid appUserId,
@@ -426,12 +426,12 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 Target = new EntityReference("systemuser", appUserId),
                 RelatedEntitiesQuery = relationshipQueryCollection
             };
-            // Retrieve the application user with related field security profile
+            // 检索the application user with related field security profile
             RetrieveResponse retrieveResponse = (RetrieveResponse)systemAdminService.Execute(retrieveRequest);
             var relatedFieldSecurityProfiles = retrieveResponse.Entity.RelatedEntities[new Relationship("systemuserprofiles_association")];
             if (relatedFieldSecurityProfiles.Entities.Count > 0)
             {
-                // The application user is already associated.
+                // application user is already associated.
                 Console.WriteLine($"\t☑ Application user is already associated with the {fieldSecurityProfileName}.");
             }
             else
@@ -462,7 +462,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// "sample_example" entity. If the user lacks any of these privileges,  an exception is thrown.</remarks>
         /// <param name="systemAdminService">The <see cref="IOrganizationService"/> instance with system administrator privileges,  used to query and
         /// verify access rights.</param>
-        /// <param name="appUserId">The unique identifier of the application user whose privileges are being verified.</param>
+        /// <param name="appUserId">unique 标识符 of the application user whose privileges are being verified.</param>
         /// <exception cref="Exception">Thrown if the application user does not have all required privileges for any of the  records in the
         /// "sample_example" entity.</exception>
         internal static void VerifyAppUserRowLevelPrivileges(IOrganizationService systemAdminService, Guid appUserId)
@@ -513,7 +513,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Retrieves a collection of sample records from the organization service.
+        /// 检索 a collection of sample records from the organization service.
         /// </summary>
         /// <remarks>This method queries the "sample_example" entity and retrieves specific columns,
         /// including "sample_name", "sample_email", "sample_governmentid", "sample_telephonenumber", and
@@ -558,7 +558,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// <remarks>This method formats the data into a table with predefined column headers and outputs
         /// it to the console. The table does not include a row count and is indented for improved
         /// readability.</remarks>
-        /// <param name="results">A collection of entities containing attributes such as name, email, government ID, telephone number,  and
+        /// <param name="results">一个集合 of entities containing attributes such as 名称, email, government ID, telephone number,  and
         /// date of birth. Each entity is expected to have these attributes with corresponding keys.</param>
         internal static void ShowExampleRows(EntityCollection results)
         {
@@ -650,7 +650,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// <summary>
         /// Waits synchronously for a specified number of seconds, displaying a countdown in the console to indicate cache update progress.
         /// </summary>
-        /// <param name="waitSeconds">The number of seconds to wait. Defaults to 30 seconds.</param>
+        /// <param name="waitSeconds">number of seconds to wait. Defaults to 30 seconds.</param>
         internal static void WaitForCacheUpdate(int waitSeconds = 30)
         {
             Console.WriteLine("");
@@ -666,8 +666,8 @@ namespace PowerPlatform_Dataverse_CodeSamples
     }
 
     /// <summary>
-    /// Represents the settings for a column, including its name, display name, and description.
-    /// </summary>
+        /// 表示 the settings for a column, including its name, display name, and description.
+        /// </summary>
     /// <remarks>This struct is used to define metadata for a column, such as its internal name, the name
     /// displayed to users, and a description providing additional context or information about the column.</remarks>
     internal struct ColumnSettings

@@ -6,9 +6,9 @@ using Microsoft.PowerPlatform.Dataverse.Client;
 namespace PowerPlatform_Dataverse_CodeSamples
 {
     /// <summary>
-    /// Demonstrates connecting to the Dataverse Organization service and 
+        /// Demonstrates connecting to the Dataverse Organization service and 
     /// executing a message request.
-    /// </summary>
+        /// </summary>
     /// <remarks>Set the appropriate Url and Username values for your test
     /// environment in the appsettings.json file before running this program.</remarks>
     /// <see cref="https://learn.microsoft.com/power-apps/developer/data-platform/xrm-tooling/use-connection-strings-xrm-tooling-connect#connection-string-parameters"/>
@@ -17,7 +17,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
@@ -32,7 +32,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();

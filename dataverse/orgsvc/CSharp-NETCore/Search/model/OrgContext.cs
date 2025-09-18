@@ -15,22 +15,22 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	
 	
 	/// <summary>
-	/// Represents a source of entities bound to a Dataverse service. It tracks and manages changes made to the retrieved entities.
-	/// </summary>
+        /// 表示 a source of entities bound to a Dataverse service. It tracks and manages changes made to the retrieved entities.
+        /// </summary>
 	public partial class OrgContext : Microsoft.Xrm.Sdk.Client.OrganizationServiceContext
 	{
 		
 		/// <summary>
-		/// Constructor.
-		/// </summary>
+        /// Constructor.
+        /// </summary>
 		public OrgContext(Microsoft.Xrm.Sdk.IOrganizationService service) : 
 				base(service)
 		{
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="PowerPlatform.Dataverse.CodeSamples.Organization"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="PowerPlatform.Dataverse.CodeSamples.Organization"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<PowerPlatform.Dataverse.CodeSamples.Organization> OrganizationSet
 		{
 			get

@@ -34,7 +34,7 @@ namespace PowerApps.Samples
                         new ColumnSet(new string[] { "firstname", "lastname" }));
                     Console.WriteLine("Logged on user is {0} {1}.", systemUser.FirstName, systemUser.LastName);
 
-                    // Retrieve the version of Microsoft Dynamics CRM.
+                    // 检索the version of Microsoft Dynamics CRM.
                     RetrieveVersionRequest versionRequest = new RetrieveVersionRequest();
                     RetrieveVersionResponse versionResponse =
                         (RetrieveVersionResponse)service.Execute(versionRequest);
@@ -52,17 +52,17 @@ namespace PowerApps.Samples
 
                     Console.Write("{0} {1} created, ", account.LogicalName, account.Name);
 
-                    // Retrieve the several attributes from the new account.
+                    // 检索the several attributes from the new account.
                     ColumnSet cols = new ColumnSet(
                         new String[] { "name", "address1_postalcode", "lastusedincampaign" });
 
                     Account retrievedAccount = (Account)service.Retrieve("account", _accountId, cols);
                     Console.Write("retrieved, ");
 
-                    // Update the postal code attribute.
+                    // 更新the postal code attribute.
                     retrievedAccount.Address1_PostalCode = "98052";
 
-                    // The address 2 postal code was set accidentally, so set it to null.
+                    // address 2 postal code was set accidentally, so set it to null.
                     retrievedAccount.Address2_PostalCode = null;
 
                     // Shows use of a Money value.
@@ -71,7 +71,7 @@ namespace PowerApps.Samples
                     // Shows use of a Boolean value.
                     retrievedAccount.CreditOnHold = false;
 
-                    // Update the account record.
+                    // 更新the account record.
                     service.Update(retrievedAccount);
                     Console.WriteLine("and updated.");
 

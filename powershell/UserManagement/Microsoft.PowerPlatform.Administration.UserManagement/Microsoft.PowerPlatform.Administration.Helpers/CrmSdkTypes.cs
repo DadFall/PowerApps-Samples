@@ -49,7 +49,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// For internal use only
+        /// 对于internal use only
         /// </summary>
         [Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("roleid")]
         public System.Nullable<System.Guid> RoleId
@@ -61,7 +61,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// For internal use only
+        /// 对于internal use only
         /// </summary>
         [Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemuserid")]
         public System.Nullable<System.Guid> SystemUserId
@@ -73,7 +73,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// For internal use only.
+        /// 对于internal use only.
         /// </summary>
         [Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemuserroleid")]
         public System.Nullable<System.Guid> SystemUserRoleId
@@ -433,7 +433,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// For internal use only.
+        /// 对于internal use only.
         /// </summary>
         [Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("roleidunique")]
         public System.Nullable<System.Guid> RoleIdUnique

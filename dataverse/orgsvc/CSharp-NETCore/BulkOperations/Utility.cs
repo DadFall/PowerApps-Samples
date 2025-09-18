@@ -15,8 +15,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Detects whether a table with the specified schema name exists.
         /// </summary>
-        /// <param name="service">The IOrganizationService</param>
-        /// <param name="tableSchemaName">The schema name of the table to check.</param>
+        /// <param name="service">IOrganizationService</param>
+        /// <param name="tableSchemaName">schema 名称 of the table to check.</param>
         /// <returns></returns>
         private static bool TableExists(IOrganizationService service, string tableSchemaName)
         {
@@ -57,10 +57,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Asynchronously deletes a group of records for a specified table by id.
         /// </summary>
-        /// <param name="service">The IOrganizationService</param>
-        /// <param name="tableLogicalName">The logical name of the table.</param>
-        /// <param name="iDs">The id values of the records to create.</param>
-        /// <param name="jobName">A name for the system job to delete the records.</param>
+        /// <param name="service">IOrganizationService</param>
+        /// <param name="tableLogicalName">logical 名称 of the table.</param>
+        /// <param name="iDs">id 值s of the records to create.</param>
+        /// <param name="jobName">一个名称 for the system job to delete the records.</param>
         /// <returns></returns>
         public static string BulkDeleteRecordsByIds(
             IOrganizationService service,
@@ -116,7 +116,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     id: bulkDeleteResponse.JobId,
                     columnSet: new ColumnSet("statecode", "statuscode"));
 
-                // When it is completed
+                // 当it is completed
                 if (job.GetAttributeValue<OptionSetValue>("statecode").Value == 3)
                 {
 
@@ -136,7 +136,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 count++;
             }
 
-            // If the test limit is exceeded
+            // 如果the test limit is exceeded
             deleteAsync.Stop();
             Console.WriteLine(string.Format(message, iDs.Length, Math.Round(deleteAsync.Elapsed.TotalSeconds)));
             return "TestLimitExceeded";
@@ -144,9 +144,9 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
 
         /// <summary>
-        /// Deletes all the records for the sample_example table.
+        /// 删除 all the records for the sample_example table.
         /// </summary>
-        /// <param name="service">The IOrganizationService</param>
+        /// <param name="service">IOrganizationService</param>
         /// <returns>Status message</returns>
         public static string BulkDeleteAllSampleExampleRecords(
             IOrganizationService service)
@@ -186,7 +186,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     id: bulkDeleteResponse.JobId,
                     columnSet: new ColumnSet("statecode", "statuscode"));
 
-                // When it is completed
+                // 当it is completed
                 if (job.GetAttributeValue<OptionSetValue>("statecode").Value == 3)
                 {
 
@@ -206,16 +206,16 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 count++;
             }
 
-            // If the test limit is exceeded
+            // 如果the test limit is exceeded
             deleteAsync.Stop();
             Console.WriteLine(string.Format(message, Math.Round(deleteAsync.Elapsed.TotalSeconds)));
             return "TestLimitExceeded";
         }
 
         /// <summary>
-        /// Deletes all the records for the specified table.
+        /// 删除 all the records for the specified table.
         /// </summary>
-        /// <param name="service">The IOrganizationService</param>
+        /// <param name="service">IOrganizationService</param>
         /// <returns>Status message</returns>
         public static string BulkDeleteRecordsByEntityName(
             IOrganizationService service, string tableLogicalName)
@@ -256,7 +256,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     id: bulkDeleteResponse.JobId,
                     columnSet: new ColumnSet("statecode", "statuscode"));
 
-                // When it is completed
+                // 当it is completed
                 if (job.GetAttributeValue<OptionSetValue>("statecode").Value == 3)
                 {
 
@@ -276,7 +276,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 count++;
             }
 
-            // If the test limit is exceeded
+            // 如果the test limit is exceeded
             deleteAsync.Stop();
             Console.WriteLine(string.Format(message, Math.Round(deleteAsync.Elapsed.TotalSeconds)));
             return "TestLimitExceeded";
@@ -285,9 +285,9 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Detect whether a specified message is supported for the specified table.
         /// </summary>
-        /// <param name="service">The IOrganizationService instance.</param>
-        /// <param name="entityLogicalName">The logical name of the table.</param>
-        /// <param name="messageName">The name of the message.</param>
+        /// <param name="service">IOrganizationService 实例.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table.</param>
+        /// <param name="messageName">名称 of the message.</param>
         /// <returns></returns>
         public static bool IsMessageAvailable(
             IOrganizationService service,
@@ -332,10 +332,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Creates the table used by projects in this solution.
+        /// 创建 the table used by projects in this solution.
         /// </summary>
-        /// <param name="serviceClient">The ServiceClient instance.</param>
-        /// <param name="tableSchemaName">The SchemaName of the table to create.</param>
+        /// <param name="serviceClient">ServiceClient 实例.</param>
+        /// <param name="tableSchemaName">SchemaName of the table to create.</param>
         public static async void CreateExampleTable(ServiceClient serviceClient, 
             string tableSchemaName, 
             bool isElastic = false,
@@ -583,10 +583,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Deletes the table used by projects in this solution.
+        /// 删除 the table used by projects in this solution.
         /// </summary>
-        /// <param name="service">The IOrganizationService instance.</param>
-        /// <param name="tableSchemaName">The SchemaName of the table to delete.</param>
+        /// <param name="service">IOrganizationService 实例.</param>
+        /// <param name="tableSchemaName">SchemaName of the table to delete.</param>
         public static void DeleteExampleTable(IOrganizationService service, string tableSchemaName)
         {
             if (Settings.DeleteTable)
@@ -622,12 +622,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
         /// <summary>
         /// Alternate keys may not be active immediately after a solution defining them is installed.
-        /// This method polls the metadata for a specific entity
+        /// 此method polls the metadata for a specific entity
         /// to delay execution of the rest of the sample until the alternate keys are ready.
         /// </summary>
         /// <param name="service">Specifies the service to connect to.</param>
-        /// <param name="asyncJob">The system job that creates the index to support the alternate key</param>
-        /// <param name="iteration">The number of times this method has been called.</param>
+        /// <param name="asyncJob">system job that creates the index to support the alternate key</param>
+        /// <param name="iteration">number of times this method has been called.</param>
         /// 
         internal static bool VerifyAlternateKeyIsActive(IOrganizationService service, string tableLogicalName)
         {
@@ -678,13 +678,13 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
 
         /// <summary>
-        /// Creates a number of records for the UpsertMultiple example
+        /// 创建 a number of records for the UpsertMultiple example
         /// </summary>
-        /// <param name="numberOfRecords">The number of records to create</param>
-        /// <param name="tableLogicalName">The logical name of the table</param>
+        /// <param name="numberOfRecords">number of records to create</param>
+        /// <param name="tableLogicalName">logical 名称 of the table</param>
         /// <param name="service">Specifies the service to connect to.</param>
-        /// <param name="entities">The container of the records created.</param>
-        /// <returns>The IDs of the created records</returns>
+        /// <param name="entities">container of the records created.</param>
+        /// <returns>IDs of the created records</returns>
         public static Guid[] CreateRecordsUtility(int numberOfRecords, 
             string tableLogicalName, 
             IOrganizationService service, 
@@ -731,7 +731,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             {
                 Targets = entities,
             };
-            // Add Shared Variable with request to detect in a plug-in.
+            // 添加Shared Variable with request to detect in a plug-in.
             createMultipleRequest["tag"] = "CreateUpdateMultiple";
 
             if (Settings.BypassCustomPluginExecution)

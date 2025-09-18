@@ -17,8 +17,8 @@ using PowerApps.Samples.LoginUX;
 namespace Desktop_app_using_login_control
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+        /// Interaction logic for MainWindow.xaml
+        /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()

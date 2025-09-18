@@ -10,7 +10,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
@@ -26,7 +26,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -76,7 +76,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             entityList.ForEach(entity =>
             {
                 CreateRequest createRequest = new() { Target = entity };
-                // Add Shared Variable with request to detect in a plug-in.
+                // 添加Shared Variable with request to detect in a plug-in.
                 createRequest["tag"] = "SimpleLoop";
 
                 if (Settings.BypassCustomPluginExecution)
@@ -99,7 +99,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine($"\nPreparing {numberOfRecords} records to update..");
 
 
-            // Update the sample_name value:
+            // 更新the sample_name value:
             foreach (Entity entity in entityList)
             {
                 entity["sample_name"] += " Updated";
@@ -112,7 +112,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             entityList.ForEach(entity =>
             {
                 UpdateRequest updateRequest = new() { Target = entity };
-                // Add Shared Variable with request to detect in a plug-in.
+                // 添加Shared Variable with request to detect in a plug-in.
                 updateRequest["tag"] = "SimpleLoop";
 
                 if (Settings.BypassCustomPluginExecution)

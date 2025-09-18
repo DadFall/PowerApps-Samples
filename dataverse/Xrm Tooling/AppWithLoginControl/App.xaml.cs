@@ -9,8 +9,8 @@ using System.Windows;
 namespace Desktop_app_using_login_control
 {
     /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+        /// Interaction logic for App.xaml
+        /// </summary>
     public partial class App : Application
     {
     }

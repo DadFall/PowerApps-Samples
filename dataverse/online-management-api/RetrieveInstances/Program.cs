@@ -64,7 +64,7 @@ namespace Microsoft.Crm.Sdk.Samples
             RetrieveInstances app = new RetrieveInstances();
             try
             {
-                // Connect to the Online Management API. 
+                // 连接to the Online Management API. 
                 app.ConnectToAPI();
 
                 // Run your request

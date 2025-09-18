@@ -21,7 +21,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// Creates crm service client using user credentials
+        /// 创建 crm service client using user credentials
         /// </summary>
         /// <param name="userPrincipalName">userPrincipalName</param>
         /// <param name="password">password</param>
@@ -39,7 +39,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         /// </summary>
         /// <param name="userPrincipalName">userPrincipalName</param>
         /// <param name="password">password</param>
-        /// <param name="instanceUrl">instanceUrl</param>
+        /// <param name="instanceUrl">实例Url</param>
         /// <returns>Crm service client object</returns>
         public CrmServiceClient GetCrmServiceClient(string userPrincipalName, string password, string instanceUrl)
         {

@@ -8,8 +8,8 @@ using System.Text;
 namespace PowerPlatform.Dataverse.CodeSamples
 {
     /// <summary>
-    /// Demonstrates working with data in file columns.
-    /// </summary>
+        /// Demonstrates working with data in file columns.
+        /// </summary>
     /// <remarks>Set the appropriate Url and Username values for your test
     /// environment in the appsettings.json file before running this program.
     /// You will be prompted in the default browser to enter a password.</remarks>
@@ -19,7 +19,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
@@ -35,7 +35,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -62,7 +62,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             // Create the File Column
             Utility.CreateFileColumn(serviceClient, entityLogicalName, fileColumnSchemaName);
 
-            // Update the MaxSizeInKB: Comment this line to get error about file too large for column.
+            // 更新the MaxSizeInKB: Comment this line to get error about file too large for column.
             Utility.UpdateFileColumnMaxSizeInKB(serviceClient, entityLogicalName, fileColumnSchemaName.ToLower(), 100 * 1024);
 
             //Get the configured size of the column in KB
@@ -145,12 +145,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Uploads a file
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="entityReference">A reference to the record with the file column</param>
-        /// <param name="fileAttributeName">The name of the file column</param>
+        /// <param name="service">service</param>
+        /// <param name="entityReference">一个reference to the record with the file column</param>
+        /// <param name="fileAttributeName">名称 of the file column</param>
         /// <param name="fileInfo">Information about the file to upload.</param>
-        /// <param name="fileMimeType">The mime type of the file, if known.</param>
-        /// <param name="fileColumnMaxSizeInKb">The size limit of the column, if known.</param>
+        /// <param name="fileMimeType">mime 类型 of the file, if known.</param>
+        /// <param name="fileColumnMaxSizeInKb">size limit of the column, if known.</param>
         /// <returns></returns>
         static Guid UploadFile(
                 IOrganizationService service,
@@ -161,7 +161,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 int? fileColumnMaxSizeInKb = null)
         {
 
-            // Initialize the upload
+            // 初始化the upload
             InitializeFileBlocksUploadRequest initializeFileBlocksUploadRequest = new()
             {
                 Target = entityReference,
@@ -191,14 +191,14 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
 
 
-            // The number of iterations that will be required:
+            // number of iterations that will be required:
             // int blocksCount = (int)Math.Ceiling(fileSize / (float)blockSize);
             int blockNumber = 0;
 
             // While there is unread data from the file
             while ((bytesRead = uploadFileStream.Read(buffer, 0, buffer.Length)) > 0)
             {
-                // The file or final block may be smaller than 4MB
+                // file or final block may be smaller than 4MB
                 if (bytesRead < buffer.Length)
                 {
                     Array.Resize(ref buffer, bytesRead);
@@ -223,7 +223,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 service.Execute(uploadBlockRequest);
             }
 
-            // Try to get the mimetype if not provided.
+            // 尝试to get the mimetype if not provided.
             if (string.IsNullOrEmpty(fileMimeType))
             {
                 var provider = new FileExtensionContentTypeProvider();
@@ -253,9 +253,9 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Downloads a file
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="entityReference">A reference to the record with the file column</param>
-        /// <param name="fileAttributeName">The name of the file column</param>
+        /// <param name="service">service</param>
+        /// <param name="entityReference">一个reference to the record with the file column</param>
+        /// <param name="fileAttributeName">名称 of the file column</param>
         /// <returns></returns>
         private static byte[] DownloadFile(
                     IOrganizationService service,
@@ -299,7 +299,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 var downloadBlockResponse =
                            (DownloadBlockResponse)service.Execute(downLoadBlockRequest);
 
-                // Add the block returned to the list
+                // 添加the block returned to the list
                 fileBytes.AddRange(downloadBlockResponse.Data);
 
                 // Subtract the amount downloaded,

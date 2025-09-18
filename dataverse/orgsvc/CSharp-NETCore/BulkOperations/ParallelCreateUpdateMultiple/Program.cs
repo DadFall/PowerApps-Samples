@@ -10,7 +10,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
@@ -26,7 +26,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -58,7 +58,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"))
                 {
-                    // Disable affinity cookie for these operations.
+                    // 禁用affinity cookie for these operations.
                     EnableAffinityCookie = false,
                     // Avoids issues when working with tables created and deleted recently.
                     UseWebApi = false
@@ -111,7 +111,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                         }
                     };
 
-                    // Add Shared Variable with request to detect in a plug-in.
+                    // 添加Shared Variable with request to detect in a plug-in.
                     createMultipleRequest["tag"] = "ParallelCreateUpdateMultiple";
 
                     if (Settings.BypassCustomPluginExecution)
@@ -125,7 +125,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                          request: createMultipleRequest,
                          cancellationToken: token);
 
-                    // Set the id values for the entities
+                    // 设置the id values for the entities
                     for (int i = 0; i < entities.Length; i++)
                     {
                         entities[i].Id = response.Ids[i];
@@ -139,7 +139,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine($"\nPreparing {numberOfRecords} records to update..");
 
-            // Update the sample_name value:
+            // 更新the sample_name value:
             foreach (Entity entity in entityList)
             {
                 entity["sample_name"] += " Updated";
@@ -162,7 +162,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                           }
                       };
 
-                      // Add Shared Variable with request to detect in a plug-in.
+                      // 添加Shared Variable with request to detect in a plug-in.
                       updateMultipleRequest["tag"] = "ParallelCreateUpdateMultiple";
 
                       if (Settings.BypassCustomPluginExecution)

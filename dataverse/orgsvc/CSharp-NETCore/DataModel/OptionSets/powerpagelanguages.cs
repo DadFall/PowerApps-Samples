@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Power Pages Languages
-	/// </summary>
+        /// Power Pages Languages
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum powerpagelanguages

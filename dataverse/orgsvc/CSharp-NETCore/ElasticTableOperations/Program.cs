@@ -14,7 +14,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
@@ -30,7 +30,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -87,7 +87,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 // Capture session token on write operation
                 sessionToken = createResponse.Results["x-ms-session-token"].ToString();
 
-                // Update the record
+                // 更新the record
 
                 // Json Data to store in contoso_energyconsumption
                 EnergyConsumption energyConsumption = new()
@@ -137,7 +137,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 Console.WriteLine($"Upserted the record with id: {sensordataId}");
                 Console.WriteLine($"Record created with upsert?:{upsertResponse.RecordCreated}");
 
-                // Retrieve the record
+                // 检索the record
                 RetrieveRequest retrieveRequest = new()
                 {
                     ColumnSet = new ColumnSet(
@@ -178,7 +178,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 #region With partitionid
                 Console.WriteLine("=== Start Region 2: Examples with partitionid === \n");
 
-                // When a partitionid is used the partitionid is required
+                // 当a partitionid is used the partitionid is required
                 // To uniquely identify each record.
 
                 // using deviceId as the partitionid for these samples.
@@ -378,12 +378,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Creates a contoso_SensorData record setting the partitionid.
+        /// 创建 a contoso_SensorData record setting the partitionid.
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="deviceId">The value used for the partitionid.</param>
-        /// <param name="sessionToken">The current session token.</param>
-        /// <returns>The ID of the record created.</returns>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="deviceId">值 used for the partitionid.</param>
+        /// <param name="sessionToken">current session token.</param>
+        /// <returns>ID of the record created.</returns>
         private static Guid CreateRecord(
             IOrganizationService service,
             string deviceId,
@@ -416,12 +416,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Updates a record without using alternate key
+        /// 更新 a record without using alternate key
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="contosoSensorDataId">The unique identifier of the record to update.</param>
-        /// <param name="deviceId">The partitionid value</param>
-        /// <param name="sessionToken">The current session token</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="contosoSensorDataId">unique 标识符 of the record to update.</param>
+        /// <param name="deviceId">partitionid 值</param>
+        /// <param name="sessionToken">current session token</param>
         private static void UpdateRecord(
             IOrganizationService service,
             Guid contosoSensorDataId,
@@ -433,7 +433,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 Attributes =
                 {
                     // Setting partitionid attribute
-                    { "partitionid", deviceId }, // This cannot change the value
+                    { "partitionid", deviceId }, // 此cannot change the value
                     { "contoso_value", 60 },
                     { "contoso_timestamp", DateTime.UtcNow },
                 }
@@ -455,12 +455,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Updates record using alternate key
+        /// 更新 record using alternate key
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="contosoSensorDataId">The unique identifier of the record to update.</param>
-        /// <param name="deviceId">The partitionid value</param>
-        /// <param name="sessionToken">The current session token</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="contosoSensorDataId">unique 标识符 of the record to update.</param>
+        /// <param name="deviceId">partitionid 值</param>
+        /// <param name="sessionToken">current session token</param>
         private static void UpdateRecordWithAlternateKey(
             IOrganizationService service,
             Guid contosoSensorDataId,
@@ -495,13 +495,13 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Retrieves a record without using alternate key
+        /// 检索 a record without using alternate key
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="contosoSensorDataId">The unique identifier of the record to update.</param>
-        /// <param name="deviceId">The partitionid value</param>
-        /// <param name="sessionToken">The current session token</param>
-        /// <returns>The specified contoso_SensorData record</returns>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="contosoSensorDataId">unique 标识符 of the record to update.</param>
+        /// <param name="deviceId">partitionid 值</param>
+        /// <param name="sessionToken">current session token</param>
+        /// <returns>specified contoso_SensorData record</returns>
         private static Entity RetrieveRecord(
             IOrganizationService service,
             Guid contosoSensorDataId,
@@ -523,13 +523,13 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Retrieves a record using alternate key
+        /// 检索 a record using alternate key
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="contosoSensorDataId">The unique identifier of the record to update.</param>
-        /// <param name="deviceId">The partitionid value</param>
-        /// <param name="sessionToken">The current session token</param>
-        /// <returns>The specified contoso_SensorData record</returns>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="contosoSensorDataId">unique 标识符 of the record to update.</param>
+        /// <param name="deviceId">partitionid 值</param>
+        /// <param name="sessionToken">current session token</param>
+        /// <returns>specified contoso_SensorData record</returns>
         private static Entity RetrieveRecordWithAlternateKey(
             IOrganizationService service,
             Guid contosoSensorDataId,
@@ -559,10 +559,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Upserts a record without alternate key
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="contosoSensorDataId">The unique identifier of the record to update.</param>
-        /// <param name="deviceId">The partitionid value</param>
-        /// <param name="sessionToken">The current session token</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="contosoSensorDataId">unique 标识符 of the record to update.</param>
+        /// <param name="deviceId">partitionid 值</param>
+        /// <param name="sessionToken">current session token</param>
         /// <returns>Whether a new record was created or not.</returns>
         private static bool UpsertRecord(
             IOrganizationService service,
@@ -572,15 +572,15 @@ namespace PowerPlatform.Dataverse.CodeSamples
         {
             Entity entity = new("contoso_sensordata", contosoSensorDataId)
             {
-                // For Upsert it is required to set all the attribute values
-                // If matching record is found, all data is replaced.
+                // 对于Upsert it is required to set all the attribute values
+                // 如果matching record is found, all data is replaced.
                 Attributes =
                 {
                     { "contoso_deviceid", deviceId },
                     { "contoso_sensortype".ToLower(), "Humidity" },
                     { "contoso_value", 60 },
                     { "contoso_timestamp", DateTime.UtcNow },
-                    { "partitionid", deviceId }, // This cannot change the value
+                    { "partitionid", deviceId }, // 此cannot change the value
                     { "ttlinseconds", 86400 }
                 }
             };
@@ -602,12 +602,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Deletes a record using partitionId
+        /// 删除 a record using partitionId
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="contosoSensorDataId">The unique identifier of the record to update.</param>
-        /// <param name="deviceId">The partitionid value</param>
-        /// <param name="sessionToken">The current session token</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="contosoSensorDataId">unique 标识符 of the record to update.</param>
+        /// <param name="deviceId">partitionid 值</param>
+        /// <param name="sessionToken">current session token</param>
         private static void DeleteRecord(
             IOrganizationService service,
             Guid contosoSensorDataId,
@@ -628,12 +628,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Deletes a record using alternate key.
+        /// 删除 a record using alternate key.
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="contosoSensorDataId">The unique identifier of the record to update.</param>
-        /// <param name="deviceId">The partitionid value</param>
-        /// <param name="sessionToken">The current session token</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="contosoSensorDataId">unique 标识符 of the record to update.</param>
+        /// <param name="deviceId">partitionid 值</param>
+        /// <param name="sessionToken">current session token</param>
         private static void DeleteRecordWithAlternateKey(
             IOrganizationService service,
             Guid contosoSensorDataId,
@@ -661,12 +661,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
 
         /// <summary>
-        /// Creates multiple contoso_SensorData records in batches.
+        /// 创建 multiple contoso_SensorData records in batches.
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="deviceId">The partitionid value</param>
-        /// <param name="numberOfRecords">The total number of records to create.</param>
-        /// <param name="batchSize">The number of records to create per request.</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="deviceId">partitionid 值</param>
+        /// <param name="numberOfRecords">total number of records to create.</param>
+        /// <param name="batchSize">number of records to create per 请求.</param>
         /// <returns></returns>
         private static List<Guid> CreateMultipleRecords(
             IOrganizationService service,
@@ -726,11 +726,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Creates multiple records
+        /// 创建 multiple records
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="entities">A List of entities to create.</param>
-        /// <returns>The ID values of the created records.</returns>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="entities">一个List of entities to create.</param>
+        /// <returns>ID values of the created records.</returns>
         private static Guid[] CreateMultiple(
             IOrganizationService service,
             List<Entity> entities)
@@ -750,12 +750,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Updates multiple contoso_SensorData records in batches.
+        /// 更新 multiple contoso_SensorData records in batches.
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="deviceId">The value used for the partitionid.</param>
-        /// <param name="recordIds">The IDs of the records to update</param>
-        /// <param name="batchSize">The size of the batch to use.</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="deviceId">值 used for the partitionid.</param>
+        /// <param name="recordIds">IDs of the records to update</param>
+        /// <param name="batchSize">size of the batch to use.</param>
         private static void UpdateMultipleRecords(
             IOrganizationService service,
             string deviceId,
@@ -814,10 +814,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Updates a group of records
+        /// 更新 a group of records
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="entities">A List of contoso_sensordata Entities to update.</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="entities">一个List of contoso_sensor数据 Entities to update.</param>
         private static void UpdateMultiple(
             IOrganizationService service,
             List<Entity> entities)
@@ -837,13 +837,13 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Executes a CosmosDB SQL query
+        /// 执行 a CosmosDB SQL query
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="query">The CosmosDB SQL query to run</param>
-        /// <param name="deviceId">The partitionid value</param>
-        /// <param name="pageSize">The pages size for the number of results to return.</param>
-        /// <param name="pagingCookie">A paging cookied to retrieve multiple pages of results.</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="query">CosmosDB SQL query to run</param>
+        /// <param name="deviceId">partitionid 值</param>
+        /// <param name="pageSize">pages size for the number of 结果s to return.</param>
+        /// <param name="pagingCookie">一个paging cookied to retrieve multiple pages of 结果s.</param>
         /// <returns>ExecuteCosmosSqlQueryResponse</returns>
         private static ExecuteCosmosSqlQueryResponse ExecuteCosmosSqlQuery(
             IOrganizationService service,
@@ -875,7 +875,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             resultEntity.TryGetAttributeValue("HasMore", out bool hasMore);
             resultEntity.TryGetAttributeValue("Result", out string result);
 
-            // Return the response with a custom ExecuteCosmosSqlQueryResponse class
+            // 返回the response with a custom ExecuteCosmosSqlQueryResponse class
             // ExecuteCosmosSqlQueryResponse is not in the SDK.
             return new ExecuteCosmosSqlQueryResponse
             {
@@ -888,12 +888,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
 
         /// <summary>
-        /// Deletes multiple records in batches
+        /// 删除 multiple records in batches
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="deviceId">The partitionid value</param>
-        /// <param name="recordIds">The IDs of the records to delete.</param>
-        /// <param name="batchSize">The number of records to delete in each batch.</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="deviceId">partitionid 值</param>
+        /// <param name="recordIds">IDs of the records to delete.</param>
+        /// <param name="batchSize">number of records to delete in each batch.</param>
         private static void DeleteMultipleRecords(
             IOrganizationService service,
             string deviceId,
@@ -934,10 +934,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Deletes a group of records
+        /// 删除 a group of records
         /// </summary>
-        /// <param name="service">An authenticated client that implemnents the IOrganizationService interface.</param>
-        /// <param name="entityReferences">A list of EntityReferences for records to delte.</param>
+        /// <param name="service">一个authenticated client that implemnents the IOrganizationService interface.</param>
+        /// <param name="entityReferences">一个列表 of EntityReferences for records to delte.</param>
         private static void DeleteMultiple(
             IOrganizationService service,
             List<EntityReference> entityReferences)

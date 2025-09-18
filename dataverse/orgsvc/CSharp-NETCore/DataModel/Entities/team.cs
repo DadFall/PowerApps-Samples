@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Information about team membership type.
-	/// </summary>
+        /// Information about team membership type.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum team_membershiptype
@@ -35,8 +35,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Information about team type.
-	/// </summary>
+        /// Information about team type.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum team_type
@@ -56,8 +56,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Collection of system users that routinely collaborate. Teams can be used to simplify record sharing and provide team members with common access to organization data when team members belong to different Business Units.
-	/// </summary>
+        /// Collection of system users that routinely collaborate. Teams can be used to simplify record sharing and provide team members with common access to organization data when team members belong to different Business Units.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("team")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
@@ -65,8 +65,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public Team() : 
 				base(EntityLogicalName)
 		{
@@ -99,8 +99,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user primary responsible for the team.
-		/// </summary>
+        /// Unique identifier of the user primary responsible for the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("administratorid")]
 		public Microsoft.Xrm.Sdk.EntityReference AdministratorId
 		{
@@ -117,8 +117,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The object Id for a group.
-		/// </summary>
+        /// object Id for a group.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("azureactivedirectoryobjectid")]
 		public System.Nullable<System.Guid> AzureActiveDirectoryObjectId
 		{
@@ -135,8 +135,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business unit with which the team is associated.
-		/// </summary>
+        /// Unique identifier of the business unit with which the team is associated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
 		public Microsoft.Xrm.Sdk.EntityReference BusinessUnitId
 		{
@@ -153,8 +153,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the team.
-		/// </summary>
+        /// Unique identifier of the user who created the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
@@ -165,8 +165,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time when the team was created.
-		/// </summary>
+        /// Date and time when the team was created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
@@ -177,8 +177,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the team.
-		/// </summary>
+        /// Unique identifier of the delegate user who created the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
@@ -189,8 +189,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The delegated authorization context for the team.
-		/// </summary>
+        /// delegated authorization context for the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("delegatedauthorizationid")]
 		public Microsoft.Xrm.Sdk.EntityReference DelegatedAuthorizationId
 		{
@@ -207,8 +207,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Description of the team.
-		/// </summary>
+        /// Description of the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
 		{
@@ -225,8 +225,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Email address for the team.
-		/// </summary>
+        /// Email address for the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress")]
 		public string EMailAddress
 		{
@@ -243,8 +243,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Exchange rate for the currency associated with the team with respect to the base currency.
-		/// </summary>
+        /// Exchange rate for the currency associated with the team with respect to the base currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
 		public System.Nullable<decimal> ExchangeRate
 		{
@@ -255,8 +255,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the data import or data migration that created this record.
-		/// </summary>
+        /// Unique identifier of the data import or data migration that created this record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
 		public System.Nullable<int> ImportSequenceNumber
 		{
@@ -273,8 +273,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether the team is a default business unit team.
-		/// </summary>
+        /// Information about whether the team is a default business unit team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdefault")]
 		public System.Nullable<bool> IsDefault
 		{
@@ -309,8 +309,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the team.
-		/// </summary>
+        /// Unique identifier of the user who last modified the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
@@ -321,8 +321,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time when the team was last modified.
-		/// </summary>
+        /// Date and time when the team was last modified.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
@@ -333,8 +333,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the team.
-		/// </summary>
+        /// Unique identifier of the delegate user who last modified the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
@@ -345,8 +345,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Name of the team.
-		/// </summary>
+        /// Name of the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
 		public string Name
 		{
@@ -363,8 +363,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the organization associated with the team.
-		/// </summary>
+        /// Unique identifier of the organization associated with the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
 		public System.Nullable<System.Guid> OrganizationId
 		{
@@ -375,8 +375,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time that the record was migrated.
-		/// </summary>
+        /// Date and time that the record was migrated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
 		public System.Nullable<System.DateTime> OverriddenCreatedOn
 		{
@@ -393,8 +393,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the ID of the process.
-		/// </summary>
+        /// Shows the ID of the process.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("processid")]
 		public System.Nullable<System.Guid> ProcessId
 		{
@@ -411,8 +411,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the default queue for the team.
-		/// </summary>
+        /// Unique identifier of the default queue for the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("queueid")]
 		public Microsoft.Xrm.Sdk.EntityReference QueueId
 		{
@@ -429,8 +429,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the record that the team relates to.
-		/// </summary>
+        /// Choose the record that the team relates to.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
 		public Microsoft.Xrm.Sdk.EntityReference RegardingObjectId
 		{
@@ -447,8 +447,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sharelinkqualifier")]
 		public string ShareLinkQualifier
 		{
@@ -459,8 +459,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the ID of the stage.
-		/// </summary>
+        /// Shows the ID of the stage.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
 		{
@@ -477,8 +477,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the team will be managed by the system.
-		/// </summary>
+        /// 选择whether the team will be managed by the system.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemmanaged")]
 		public System.Nullable<bool> SystemManaged
 		{
@@ -489,8 +489,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for the team.
-		/// </summary>
+        /// Unique identifier for the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("teamid")]
 		public System.Nullable<System.Guid> TeamId
 		{
@@ -528,8 +528,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the team template that is associated with the team.
-		/// </summary>
+        /// Shows the team template that is associated with the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("teamtemplateid")]
 		public Microsoft.Xrm.Sdk.EntityReference TeamTemplateId
 		{
@@ -546,8 +546,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the team type.
-		/// </summary>
+        /// 选择the team type.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("teamtype")]
 		public virtual team_type? TeamType
 		{
@@ -564,8 +564,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the currency associated with the team.
-		/// </summary>
+        /// Unique identifier of the currency associated with the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
 		{
@@ -582,8 +582,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("traversedpath")]
 		public string TraversedPath
 		{
@@ -600,8 +600,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Version number of the team.
-		/// </summary>
+        /// Version number of the team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
@@ -612,8 +612,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Pronunciation of the full name of the team, written in phonetic hiragana or katakana characters.
-		/// </summary>
+        /// Pronunciation of the full name of the team, written in phonetic hiragana or katakana characters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yominame")]
 		public string YomiName
 		{
@@ -630,8 +630,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N team_accounts
-		/// </summary>
+        /// 1:N team_accounts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_accounts")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> team_accounts
 		{
@@ -648,8 +648,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N team_contacts
-		/// </summary>
+        /// 1:N team_contacts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_contacts")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> team_contacts
 		{
@@ -666,8 +666,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N team_letter
-		/// </summary>
+        /// 1:N team_letter
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_letter")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Letter> team_letter
 		{
@@ -684,8 +684,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N team_userqueryvisualizations
-		/// </summary>
+        /// 1:N team_userqueryvisualizations
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_userqueryvisualizations")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.UserQueryVisualization> team_userqueryvisualizations
 		{
@@ -702,8 +702,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:N teammembership_association
-		/// </summary>
+        /// N:N teammembership_association
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("teammembership_association")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.SystemUser> teammembership_association
 		{
@@ -720,8 +720,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:N teamroles_association
-		/// </summary>
+        /// N:N teamroles_association
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("teamroles_association")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Role> teamroles_association
 		{
@@ -738,8 +738,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_teams
-		/// </summary>
+        /// N:1 business_unit_teams
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_teams")]
 		public MyApp.DataModel.BusinessUnit business_unit_teams
@@ -757,8 +757,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_team_createdonbehalfby
-		/// </summary>
+        /// N:1 lk_team_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_team_createdonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_team_createdonbehalfby
@@ -770,8 +770,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_team_modifiedonbehalfby
-		/// </summary>
+        /// N:1 lk_team_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_team_modifiedonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_team_modifiedonbehalfby
@@ -783,8 +783,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_teambase_administratorid
-		/// </summary>
+        /// N:1 lk_teambase_administratorid
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("administratorid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_administratorid")]
 		public MyApp.DataModel.SystemUser lk_teambase_administratorid
@@ -802,8 +802,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_teambase_createdby
-		/// </summary>
+        /// N:1 lk_teambase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_createdby")]
 		public MyApp.DataModel.SystemUser lk_teambase_createdby
@@ -815,8 +815,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_teambase_modifiedby
-		/// </summary>
+        /// N:1 lk_teambase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_modifiedby")]
 		public MyApp.DataModel.SystemUser lk_teambase_modifiedby

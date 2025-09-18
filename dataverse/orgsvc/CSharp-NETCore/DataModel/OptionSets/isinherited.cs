@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// The role is inherited
-	/// </summary>
+        /// role is inherited
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum isinherited

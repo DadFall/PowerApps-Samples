@@ -12,7 +12,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
@@ -27,7 +27,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -103,7 +103,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("Created two e-mail attachments with small files for the e-mail activity.");
 
-            // Set MaxUploadFileSize to the maximum value
+            // 设置MaxUploadFileSize to the maximum value
             Utility.SetMaxUploadFileSize(serviceClient, 131072000);
 
             Console.WriteLine($"Updated MaxUploadFileSize to: {Utility.GetMaxUploadFileSize(serviceClient)}");
@@ -133,11 +133,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine($"\tUploaded {pdfDoc.Name} as attachment. " +
                 $"\n\t\tActivityMimeAttachmentId:{uploadAttachmentResponse.ActivityMimeAttachmentId} \n\t\tFileSizeInBytes: {uploadAttachmentResponse.FileSizeInBytes}");
 
-            // Retrieve information about the attachments related to the email.
+            // 检索information about the attachments related to the email.
             // See https://learn.microsoft.com/power-apps/developer/data-platform/org-service/entity-operations-retrieve#retrieve-with-related-rows
             RelationshipQueryCollection relationshipQueryCollection = new();
 
-            // The named relationship between email and activitymimeattachment
+            // named relationship between email and activitymimeattachment
             Relationship email_attachments = new("email_activity_mime_attachment");
             // Details about what to retrieve
             QueryExpression relatedAttachments = new("activitymimeattachment")
@@ -230,7 +230,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("Created an email template.");
 
-            // Add all files (large and small) as attachments to the template in the same way.
+            // 添加all files (large and small) as attachments to the template in the same way.
             allFiles.ForEach(file =>
             {
                 Entity attachment = new("activitymimeattachment")
@@ -318,19 +318,19 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             #endregion Create re-usable attachments
 
-            // Return MaxUploadFileSize to the original value
+            // 返回MaxUploadFileSize to the original value
             Utility.SetMaxUploadFileSize(serviceClient, originalMaxUploadFileSize);
 
             Console.WriteLine($"Current MaxUploadFileSize: {Utility.GetMaxUploadFileSize(serviceClient)}");
         }
 
         /// <summary>
-        /// Creates an activitymimeattachment with file.
+        /// 创建 an activitymimeattachment with file.
         /// </summary>
-        /// <param name="service">The IOrganizationService instance to use.</param>
-        /// <param name="attachment">The activitymimeattachment data to create.</param>
-        /// <param name="fileInfo">A reference to the file to upload.</param>
-        /// <param name="fileMimeType">The mimetype of the file.</param>
+        /// <param name="service">IOrganizationService 实例 to use.</param>
+        /// <param name="attachment">activitymimeattachment 数据 to create.</param>
+        /// <param name="fileInfo">一个reference to the file to upload.</param>
+        /// <param name="fileMimeType">mime类型 of the file.</param>
         /// <returns>CommitAttachmentBlocksUploadResponse containing ActivityMimeAttachmentId and FileSizeInBytes.</returns>
         /// <exception cref="ArgumentException">The attachment parameter must be an activitymimeattachment entity.</exception>
         static CommitAttachmentBlocksUploadResponse UploadAttachment(
@@ -353,7 +353,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 attachment.Attributes.Remove("body");
             }
 
-            // Try to get the mimetype if not provided.
+            // 尝试to get the mimetype if not provided.
             if (string.IsNullOrEmpty(fileMimeType))
             {
                 var provider = new FileExtensionContentTypeProvider();
@@ -369,7 +369,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 attachment["mimetype"] = fileMimeType;
             }
 
-            // Initialize the upload
+            // 初始化the upload
             InitializeAttachmentBlocksUploadRequest initializeRequest = new()
             {
                 Target = attachment
@@ -392,14 +392,14 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             long fileSize = fileInfo.Length;
 
-            // The number of iterations that will be required:
+            // number of iterations that will be required:
             // int blocksCount = (int)Math.Ceiling(fileSize / (float)blockSize);
             int blockNumber = 0;
 
             // While there is unread data from the file
             while ((bytesRead = uploadFileStream.Read(buffer, 0, buffer.Length)) > 0)
             {
-                // The file or final block may be smaller than 4MB
+                // file or final block may be smaller than 4MB
                 if (bytesRead < buffer.Length)
                 {
                     Array.Resize(ref buffer, bytesRead);
@@ -438,8 +438,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Downloads the file for an activitymimeattachment.
         /// </summary>
-        /// <param name="service">The IOrganizationService instance to use.</param>
-        /// <param name="target">A reference to the activitymimeattachment containing the file.</param>
+        /// <param name="service">IOrganizationService 实例 to use.</param>
+        /// <param name="target">一个reference to the activitymimeattachment containing the file.</param>
         /// <returns>Tuple of bytes and fileName</returns>
         /// <exception cref="ArgumentException">"The target parameter must refer to an activitymimeattachment record."</exception>
         static (byte[] bytes, string fileName) DownloadAttachment(
@@ -490,7 +490,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 var downloadBlockResponse =
                            (DownloadBlockResponse)service.Execute(downLoadBlockRequest);
 
-                // Add the block returned to the list
+                // 添加the block returned to the list
                 fileBytes.AddRange(downloadBlockResponse.Data);
 
                 // Subtract the amount downloaded,

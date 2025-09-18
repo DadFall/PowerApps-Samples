@@ -28,8 +28,8 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         /// <param name="securePassword">作为安全字符串的密码</param>
         /// <param name="roleName">角色名称</param>
         /// <param name="environmentUrl">实例 URL</param>
-        /// <param name="geo">geo to retrieve instances from</param>
-        /// <param name="processAllEnvironments">get reports from all instances or only a few</param>
+        /// <param name="geo">geo to retrieve 实例s from</param>
+        /// <param name="processAllEnvironments">get reports from all 实例s or only a few</param>
         /// <param name="logFileLocation">location to write logs to</param>
         public void GetUsersWithRoleAssignment(string userName, string password, string roleName, string environmentUrl, string geo, bool processAllEnvironments, string logFileLocation)
         {
@@ -64,7 +64,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// Remove role assignments from list of users in one or more environments
+        /// 移除role assignments from list of users in one or more environments
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="password"></param>
@@ -103,7 +103,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// Add role assignments from list of users in one or more environments
+        /// 添加role assignments from list of users in one or more environments
         /// </summary>  
         /// <param name="userName"></param>
         /// <param name="securePassword"></param>

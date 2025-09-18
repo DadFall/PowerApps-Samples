@@ -11,8 +11,8 @@ using System.Text;
 namespace PowerPlatform_Dataverse_CodeSamples
 {
     /// <summary>
-    /// Configuration class for sample settings
-    /// </summary>
+        /// Configuration class for sample settings
+        /// </summary>
     public class SampleSettings
     {
         public string CustomizationPrefix { get; set; } = string.Empty;
@@ -52,12 +52,12 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 EnvironmentVariableTarget.User);
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
 
-            // Load sample settings from configuration
+            // 加载sample settings from configuration
             Settings = new SampleSettings();
             Configuration.GetSection("SampleSettings").Bind(Settings);
 
@@ -67,7 +67,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
         static void Main(string[] args)
         {
-            // Start the stopwatch to measure duration of sample
+            // 开始the stopwatch to measure duration of sample
             Stopwatch stopwatch = Stopwatch.StartNew();
 
             // Collection of references to records to delete when the sample completes.
@@ -81,7 +81,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             try
             {
-                // Initialize both users
+                // 初始化both users
                 ApplicationUserClient =
                  new(Configuration.GetConnectionString("applicationuser"));
 
@@ -99,8 +99,8 @@ namespace PowerPlatform_Dataverse_CodeSamples
             Console.WriteLine("\r\nColumn-level security sample started...");
 
             // Force strong consistency for this sample.
-            // This sample applies changes to configurations that can change the output
-            // When APIs are used immediately after. This setting is usually not required.
+            // 此sample applies changes to configurations that can change the output
+            // 当APIs are used immediately after. This setting is usually not required.
             SystemAdministratorClient.ForceServerMetadataCacheConsistency = true;
             ApplicationUserClient.ForceServerMetadataCacheConsistency = true;
 
@@ -116,7 +116,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             Console.WriteLine("\r\nColumn-level security sample completed.");
 
-            // Stop the stopwatch
+            // 停止the stopwatch
             stopwatch.Stop();
 
             // Get the elapsed time as a TimeSpan object
@@ -159,7 +159,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 {
                     publisherId = systemAdminService.Create(publisher);
 
-                    // Add the publisher to the entity store for later deletion
+                    // 添加the publisher to the entity store for later deletion
                     entityStore.Add(
                         Settings.PublisherUniqueName,
                         new EntityReference("publisher", publisherId.Value));
@@ -276,7 +276,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             #endregion Create columns
 
             #region Remove any existing sample data
-            // Remove any rows that exist in the sample_example table.
+            // 移除any rows that exist in the sample_example table.
             QueryExpression query = new(Settings.TableLogicalName)
             {
                 ColumnSet = new ColumnSet("sample_exampleid")
@@ -295,7 +295,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             #endregion Remove any existing sample data
 
             #region Add sample data
-            // Add three rows of sample data to the sample_example table
+            // 添加three rows of sample data to the sample_example table
 
             Dictionary<string, string>[] records =
             [
@@ -580,7 +580,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // Need an a reference to the user to grant access
             EntityReference appUserReference = new("systemuser", appUserIsResponse.UserId);
 
-            // Retrieve the three records
+            // 检索the three records
 
             QueryExpression query = new(Settings.TableLogicalName)
             {
@@ -639,7 +639,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             #region Manage write access to secured column
             Console.WriteLine("\tDemonstrate error when attempting update without update access:");
-            // Try to update email column without update access:
+            // 尝试to update email column without update access:
             Console.WriteLine("\tTry to update the Email column for the Jayden Phillips record");
 
             Entity jp = new(Settings.TableLogicalName, jaydenPhillips.Id)
@@ -649,7 +649,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             try
             {
-                // This fails
+                // 此fails
                 appUserService.Update(jp);
             }
             catch (FaultException<OrganizationServiceFault> ex)
@@ -691,7 +691,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             try
             {
-                // This succeeds
+                // 此succeeds
                 appUserService.Update(jp);
                 Console.WriteLine("\t☑ Successfully updated record.");
             }
@@ -785,7 +785,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                     {
                         Target = fp
                     };
-                    // Add to the solution
+                    // 添加to the solution
                     request["SolutionUniqueName"] = Settings.SolutionUniqueName;
 
                     var createResponse = (CreateResponse)systemAdminService.Execute(request);
@@ -831,7 +831,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             try
             {
-                // This fails by design
+                // 此fails by design
                 appUserService.Update(jp);
             }
             catch (FaultException<OrganizationServiceFault> ex)
@@ -869,7 +869,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             var attributeMaskingRuleList = new List<Entity>();
 
-            // Retrieve ID values for existing masking rules
+            // 检索ID values for existing masking rules
 
             // Email_HideName
             Guid? email_HideNameMaskingRuleId = Helpers.GetRecordID(
@@ -960,7 +960,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             List<Entity> fieldPermissionUpdateList =
             [
                 // Allthough these records were created with canread values
-                // When canreadunmasked is set, you must also include a canread value!
+                // 当canreadunmasked is set, you must also include a canread value!
 
                 new("fieldpermission", emailfieldPermissionId) {
                     ["canreadunmasked"] = new OptionSetValue(3), // All records
@@ -1013,7 +1013,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             Console.WriteLine("\tThe unmasked values for Email and Date of Birth can be retrieved for all records");
 
-            // This GetUnmaskedExampleRows example uses 'UnMaskedData' as an optional parameter
+            // 此GetUnmaskedExampleRows example uses 'UnMaskedData' as an optional parameter
             // https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters
             Helpers.ShowExampleRows(Examples.GetUnmaskedExampleRows(appUserService));
 
@@ -1072,7 +1072,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             Console.WriteLine($"\t☑ Exported unmanaged solution to this file:");
             Console.WriteLine($"\t\\bin\\Debug\\net8.0\\{filename}\r\n");
 
-            // Save solution
+            // 保存solution
             using (var fs = File.Create(filePath))
             {
                 fs.Write(
@@ -1103,7 +1103,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             Console.WriteLine($"\t☑ Exported managed solution to this file:");
             Console.WriteLine($"\t\\bin\\Debug\\net8.0\\{filename}\r\n");
 
-            // Save solution
+            // 保存solution
             using (var fs = File.Create(filePath))
             {
                 fs.Write(

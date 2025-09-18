@@ -23,7 +23,7 @@ namespace PowerApps.Samples
             string path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -45,7 +45,7 @@ namespace PowerApps.Samples
 
                 if (service.IsReady)
                 {
-                    // Load Visio and create a new document.
+                    // 加载Visio and create a new document.
                     application = new VisioApi.Application();
                     application.Visible = false; // Not showing the UI increases rendering speed  
                     builder.VersionName = application.Version;
@@ -53,7 +53,7 @@ namespace PowerApps.Samples
                     builder._application = application;
                     builder._document = document;
 
-                    // Load the metadata.
+                    // 加载the metadata.
                     Console.WriteLine("Loading Metadata...");
                     RetrieveAllEntitiesRequest request = new RetrieveAllEntitiesRequest()
                     {
@@ -92,7 +92,7 @@ namespace PowerApps.Samples
                         filename = String.Concat(args[0], ".vsd");
                     }
 
-                    // Save the diagram in the current directory using the name of the first
+                    // 保存the diagram in the current directory using the name of the first
                     // entity argument or "AllEntities" if none were given. Close the Visio application. 
                     document.SaveAs(Directory.GetCurrentDirectory() + "\\" + filename);
                     application.Quit();

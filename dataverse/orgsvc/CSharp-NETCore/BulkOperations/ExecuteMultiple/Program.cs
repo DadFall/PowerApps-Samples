@@ -10,7 +10,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
@@ -26,7 +26,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -38,7 +38,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             int numberOfRecords = Settings.NumberOfRecords; //100 by default
             string tableSchemaName = "sample_Example";
             string tableLogicalName = tableSchemaName.ToLower(); //sample_example
-            // The maximum number of requests for ExecuteMultiple is 1000.
+            // maximum number of requests for ExecuteMultiple is 1000.
             int chunkSize = Settings.UseElastic ? Settings.ElasticBatchSize : Settings.StandardBatchSize;
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -79,7 +79,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             foreach (Entity enity in entityList)
             {
                 CreateRequest createRequest = new() { Target = enity };
-                // Add Shared Variable with request to detect in a plug-in.
+                // 添加Shared Variable with request to detect in a plug-in.
                 createRequest["tag"] = "ExecuteMultiple";
 
                 if (Settings.BypassCustomPluginExecution)
@@ -93,7 +93,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
 
 
-            // The limit per ExecuteMultipleRequest is 1000, so creating multiple 
+            // limit per ExecuteMultipleRequest is 1000, so creating multiple 
             // ExecuteMultipleRequests when the total is greater than the configured chunkSize.
             List<ExecuteMultipleRequest> executeMultipleCreateRequests = new();
 
@@ -124,7 +124,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine($"Sending {executeMultipleCreateRequests.Count} " +
                 $"ExecuteMultipleRequest{(executeMultipleCreateRequests.Count > 1 ? "s" : string.Empty)} to create...");
 
-            // For each set of 1000 or less.
+            // 对于each set of 1000 or less.
             executeMultipleCreateRequests.ForEach(emr =>
             {
                 Console.WriteLine($" Sending ExecuteMultipleRequest {createCount}...");
@@ -140,7 +140,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             List<CreateResponse> createResponses = new();
 
-            // For each set of 1000 or less.
+            // 对于each set of 1000 or less.
             executeMultipleResponses.ForEach(emr =>
             {
                 foreach (ExecuteMultipleResponseItem item in emr.Responses)
@@ -160,7 +160,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             foreach (Entity entity in entityList)
             {
                 UpdateRequest updateRequest = new() { Target = entity };
-                // Add Shared Variable with request to detect in a plug-in.
+                // 添加Shared Variable with request to detect in a plug-in.
                 updateRequest["tag"] = "ExecuteMultiple";
 
                 if (Settings.BypassCustomPluginExecution)
@@ -173,7 +173,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 updateRequestsList.Add(updateRequest);
             }
 
-            // The limit per ExecuteMultipleRequest is 1000, so creating multiple 
+            // limit per ExecuteMultipleRequest is 1000, so creating multiple 
             // ExecuteMultipleRequests when the total is greater than the configured chunkSize.
             List<ExecuteMultipleRequest> executeMultipleUpdateRequests = new();
 
@@ -202,7 +202,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine($"Sending {executeMultipleUpdateRequests.Count} " +
                 $"ExecuteMultipleRequest{(executeMultipleUpdateRequests.Count > 1 ? "s" : string.Empty)} to update...");
 
-            // For each set of 1000 or less.
+            // 对于each set of 1000 or less.
             executeMultipleUpdateRequests.ForEach(emr =>
             {
                 Console.WriteLine($" Sending ExecuteMultipleRequest {updateCount}...");

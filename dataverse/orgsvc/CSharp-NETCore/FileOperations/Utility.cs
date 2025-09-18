@@ -7,11 +7,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
     public class Utility
     {
         /// <summary>
-        /// Creates a file column.
+        /// 创建 a file column.
         /// </summary>
-        /// <param name="service">The service.</param>
-        /// <param name="entityLogicalName">The logical name of the table to create the file column in.</param>
-        /// <param name="fileColumnSchemaName">The schema name of the file column.</param>
+        /// <param name="service">service.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table to create the file column in.</param>
+        /// <param name="fileColumnSchemaName">schema 名称 of the file column.</param>
         public static void CreateFileColumn(IOrganizationService service, string entityLogicalName, string fileColumnSchemaName) {
 
             Console.WriteLine($"Creating file column named '{fileColumnSchemaName}' on the {entityLogicalName} table ...");
@@ -39,12 +39,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Update the MaxSizeInKB for a file column
+        /// 更新the MaxSizeInKB for a file column
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="entityLogicalName">The logical name of the table that has the column.</param>
-        /// <param name="fileColumnLogicalName">The logical name of the file column.</param>
-        /// <param name="maxSizeInKB">The new value for MaxSizeInKB</param>
+        /// <param name="service">service</param>
+        /// <param name="entityLogicalName">logical 名称 of the table that has the column.</param>
+        /// <param name="fileColumnLogicalName">logical 名称 of the file column.</param>
+        /// <param name="maxSizeInKB">new 值 for MaxSizeInKB</param>
         public static void UpdateFileColumnMaxSizeInKB(IOrganizationService service, string entityLogicalName, string fileColumnLogicalName, int maxSizeInKB) {
 
             RetrieveAttributeRequest retrieveAttributeRequest = new() { 
@@ -69,11 +69,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
 
         /// <summary>
-        /// Retrieves the MaxSizeInKb property of a file column.
+        /// 检索 the MaxSizeInKb property of a file column.
         /// </summary>
-        /// <param name="service">The service.</param>
-        /// <param name="entityLogicalName">The logical name of the table that has the column</param>
-        /// <param name="fileColumnLogicalName">The logical name of the file column.</param>
+        /// <param name="service">service.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table that has the column</param>
+        /// <param name="fileColumnLogicalName">logical 名称 of the file column.</param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
         public static int GetFileColumnMaxSizeInKb(IOrganizationService service, string entityLogicalName, string fileColumnLogicalName) {

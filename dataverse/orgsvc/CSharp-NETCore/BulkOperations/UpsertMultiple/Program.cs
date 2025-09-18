@@ -12,7 +12,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
@@ -28,7 +28,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -77,14 +77,14 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 }
                 else
                 {
-                    // For UpsertMultiple, we will try to set the batch to contain records
+                    // 对于UpsertMultiple, we will try to set the batch to contain records
                     // where half of them will be created and half will be updated by UpsertMultiple
                     int nCreate = numberOfRecords / 2;
                     EntityCollection entities = new();
 
                     var createdRecordIds = Utility.CreateRecordsUtility(nCreate, tableLogicalName, serviceClient, out entities);
 
-                    // Retrieve the records which were created in the CreateRecordsUtility.
+                    // 检索the records which were created in the CreateRecordsUtility.
                     var retrieveMultipleRequest = new RetrieveMultipleRequest();
                     var query = new QueryExpression
                     {
@@ -218,7 +218,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     {
                         Targets = entities
                     };
-                    // Add Shared Variable with request to detect in a plug-in.
+                    // 添加Shared Variable with request to detect in a plug-in.
                     request["tag"] = "UpsertMultiple";
 
                     if (Settings.BypassCustomPluginExecution)
@@ -300,7 +300,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     else
                     {
                         // Delete created rows asynchronously
-                        // When testing plug-ins, set break point here to observe data
+                        // 当testing plug-ins, set break point here to observe data
                         Console.WriteLine($"\nStarting asynchronous bulk delete " +
                             $"of {entities.Entities.Count} created records...");
 

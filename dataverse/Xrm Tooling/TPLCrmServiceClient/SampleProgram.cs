@@ -50,7 +50,7 @@ namespace PowerApps.Samples
 
 
 
-                    // Generate a list of account entities to create.
+                    // 生成a list of account entities to create.
 
                     var accountsToImport = new List<Entity>();
                     var count = 0;
@@ -88,7 +88,7 @@ namespace PowerApps.Samples
                     }
                     catch (AggregateException)
                     {
-                        // Handle exceptions
+                        // 处理exceptions
                     }
 
                     Console.WriteLine("Done.");

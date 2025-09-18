@@ -9,7 +9,7 @@ import { ConditionalOperationsSample } from "../samples/ConditionalOperationsSam
 import { FunctionsAndActions } from "../samples/FunctionsAndActions.js";
 import { BatchSample } from "../samples/BatchSample.js";
 
-// Load the environment variables from the .env file
+// 从 .env 文件加载环境变量
 const config = {
   baseUrl: process.env.BASE_URL,
   clientId: process.env.CLIENT_ID,
@@ -17,7 +17,7 @@ const config = {
   redirectUri: process.env.REDIRECT_URI,
 };
 
-// Microsoft Authentication Library (MSAL) configuration
+// Microsoft 身份验证库 (MSAL) 配置
 const msalConfig = {
   auth: {
     clientId: config.clientId,

@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Permission to perform an action in Microsoft CRM. The platform checks for the privilege and rejects the attempt if the user does not hold the privilege.
-	/// </summary>
+        /// Permission to perform an action in Microsoft CRM. The platform checks for the privilege and rejects the attempt if the user does not hold the privilege.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("privilege")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
@@ -23,8 +23,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public Privilege() : 
 				base(EntityLogicalName)
 		{
@@ -57,8 +57,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Rights a user has to an instance of an entity.
-		/// </summary>
+        /// Rights a user has to an instance of an entity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accessright")]
 		public System.Nullable<int> AccessRight
 		{
@@ -75,8 +75,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information that specifies whether the privilege applies to the user, the user's team, or objects shared by the user.
-		/// </summary>
+        /// Information that specifies whether the privilege applies to the user, the user's team, or objects shared by the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbebasic")]
 		public System.Nullable<bool> CanBeBasic
 		{
@@ -93,8 +93,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information that specifies whether the privilege applies to child business units of the business unit associated with the user.
-		/// </summary>
+        /// Information that specifies whether the privilege applies to child business units of the business unit associated with the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbedeep")]
 		public System.Nullable<bool> CanBeDeep
 		{
@@ -111,8 +111,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information that specifies whether the privilege applies to the local reference of an external party.
-		/// </summary>
+        /// Information that specifies whether the privilege applies to the local reference of an external party.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbeentityreference")]
 		public System.Nullable<bool> CanBeEntityReference
 		{
@@ -129,8 +129,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information that specifies whether the privilege applies to the entire organization.
-		/// </summary>
+        /// Information that specifies whether the privilege applies to the entire organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbeglobal")]
 		public System.Nullable<bool> CanBeGlobal
 		{
@@ -147,8 +147,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information that specifies whether the privilege applies to the user's business unit.
-		/// </summary>
+        /// Information that specifies whether the privilege applies to the user's business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbelocal")]
 		public System.Nullable<bool> CanBeLocal
 		{
@@ -165,8 +165,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information that specifies whether the privilege applies to parent reference of the external party.
-		/// </summary>
+        /// Information that specifies whether the privilege applies to parent reference of the external party.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbeparententityreference")]
 		public System.Nullable<bool> CanBeParentEntityReference
 		{
@@ -183,8 +183,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information that specifies whether the privilege applies to the record filters.
-		/// </summary>
+        /// Information that specifies whether the privilege applies to the record filters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canberecordfilter")]
 		public System.Nullable<bool> CanBeRecordFilter
 		{
@@ -201,8 +201,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
 		public virtual componentstate? ComponentState
 		{
@@ -213,8 +213,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Version in which the component is introduced.
-		/// </summary>
+        /// Version in which the component is introduced.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("introducedversion")]
 		public string IntroducedVersion
 		{
@@ -231,8 +231,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information that specifies whether this component can be customized.
-		/// </summary>
+        /// Information that specifies whether this component can be customized.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscustomizable")]
 		public Microsoft.Xrm.Sdk.BooleanManagedProperty IsCustomizable
 		{
@@ -249,8 +249,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information that specifies whether this component is managed.
-		/// </summary>
+        /// Information that specifies whether this component is managed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismanaged")]
 		public System.Nullable<bool> IsManaged
 		{
@@ -261,8 +261,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Name of the privilege.
-		/// </summary>
+        /// Name of the privilege.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
 		public string Name
 		{
@@ -279,8 +279,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overwritetime")]
 		public System.Nullable<System.DateTime> OverwriteTime
 		{
@@ -291,8 +291,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the privilege.
-		/// </summary>
+        /// Unique identifier of the privilege.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("privilegeid")]
 		public System.Nullable<System.Guid> PrivilegeId
 		{
@@ -330,8 +330,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the Privilege used when synchronizing customizations for the Microsoft Dynamics CRM client for Outlook
-		/// </summary>
+        /// Unique identifier of the Privilege used when synchronizing customizations for the Microsoft Dynamics CRM client for Outlook
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("privilegerowid")]
 		public System.Nullable<System.Guid> PrivilegeRowId
 		{
@@ -348,8 +348,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the associated solution.
-		/// </summary>
+        /// Unique identifier of the associated solution.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("solutionid")]
 		public System.Nullable<System.Guid> SolutionId
 		{
@@ -369,8 +369,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:N roleprivileges_association
-		/// </summary>
+        /// N:N roleprivileges_association
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("roleprivileges_association")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Role> roleprivileges_association
 		{

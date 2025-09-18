@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Grouping of security privileges. Users are assigned roles that authorize their access to the Microsoft CRM system.
-	/// </summary>
+        /// Grouping of security privileges. Users are assigned roles that authorize their access to the Microsoft CRM system.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("role")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
@@ -23,8 +23,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public Role() : 
 				base(EntityLogicalName)
 		{
@@ -57,8 +57,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Application Id of user who created the role
-		/// </summary>
+        /// Application Id of user who created the role
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("applicationid")]
 		public System.Nullable<System.Guid> ApplicationId
 		{
@@ -69,8 +69,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Personas/Licenses the security role applies to
-		/// </summary>
+        /// Personas/Licenses the security role applies to
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("appliesto")]
 		public string AppliesTo
 		{
@@ -87,8 +87,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business unit with which the role is associated.
-		/// </summary>
+        /// Unique identifier of the business unit with which the role is associated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
 		public Microsoft.Xrm.Sdk.EntityReference BusinessUnitId
 		{
@@ -105,8 +105,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Tells whether the role can be deleted.
-		/// </summary>
+        /// Tells whether the role can be deleted.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbedeleted")]
 		public Microsoft.Xrm.Sdk.BooleanManagedProperty CanBeDeleted
 		{
@@ -123,8 +123,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
 		public virtual componentstate? ComponentState
 		{
@@ -135,8 +135,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the role.
-		/// </summary>
+        /// Unique identifier of the user who created the role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
@@ -147,8 +147,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time when the role was created.
-		/// </summary>
+        /// Date and time when the role was created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
@@ -159,8 +159,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the role.
-		/// </summary>
+        /// Unique identifier of the delegate user who created the role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
@@ -171,8 +171,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Description of the security role
-		/// </summary>
+        /// Description of the security role
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
 		{
@@ -189,8 +189,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the data import or data migration that created this record.
-		/// </summary>
+        /// Unique identifier of the data import or data migration that created this record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
 		public System.Nullable<int> ImportSequenceNumber
 		{
@@ -207,8 +207,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Value indicating whether security role is auto-assigned based on user license
-		/// </summary>
+        /// Value indicating whether security role is auto-assigned based on user license
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isautoassigned")]
 		public virtual securityrole_isautoassigned? IsAutoAssigned
 		{
@@ -225,8 +225,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information that specifies whether this component can be customized.
-		/// </summary>
+        /// Information that specifies whether this component can be customized.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscustomizable")]
 		public Microsoft.Xrm.Sdk.BooleanManagedProperty IsCustomizable
 		{
@@ -243,8 +243,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Role is inherited by users from team membership, if role associated with team.
-		/// </summary>
+        /// Role is inherited by users from team membership, if role associated with team.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isinherited")]
 		public virtual isinherited? IsInherited
 		{
@@ -261,8 +261,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Indicates whether the solution component is part of a managed solution.
-		/// </summary>
+        /// Indicates whether the solution component is part of a managed solution.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismanaged")]
 		public System.Nullable<bool> IsManaged
 		{
@@ -273,8 +273,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Is this role generated by the system
-		/// </summary>
+        /// Is this role generated by the system
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("issytemgenerated")]
 		public System.Nullable<bool> IsSystemGenerated
 		{
@@ -285,8 +285,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the role.
-		/// </summary>
+        /// Unique identifier of the user who last modified the role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
@@ -297,8 +297,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time when the role was last modified.
-		/// </summary>
+        /// Date and time when the role was last modified.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
@@ -309,8 +309,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the role.
-		/// </summary>
+        /// Unique identifier of the delegate user who last modified the role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
@@ -321,8 +321,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Name of the role.
-		/// </summary>
+        /// Name of the role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
 		public string Name
 		{
@@ -339,8 +339,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the organization associated with the role.
-		/// </summary>
+        /// Unique identifier of the organization associated with the role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
 		public System.Nullable<System.Guid> OrganizationId
 		{
@@ -351,8 +351,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time that the record was migrated.
-		/// </summary>
+        /// Date and time that the record was migrated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
 		public System.Nullable<System.DateTime> OverriddenCreatedOn
 		{
@@ -369,8 +369,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overwritetime")]
 		public System.Nullable<System.DateTime> OverwriteTime
 		{
@@ -381,8 +381,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the parent role.
-		/// </summary>
+        /// Unique identifier of the parent role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentroleid")]
 		public Microsoft.Xrm.Sdk.EntityReference ParentRoleId
 		{
@@ -393,8 +393,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the parent root role.
-		/// </summary>
+        /// Unique identifier of the parent root role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentrootroleid")]
 		public Microsoft.Xrm.Sdk.EntityReference ParentRootRoleId
 		{
@@ -405,8 +405,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the role.
-		/// </summary>
+        /// Unique identifier of the role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("roleid")]
 		public System.Nullable<System.Guid> RoleId
 		{
@@ -444,8 +444,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("roleidunique")]
 		public System.Nullable<System.Guid> RoleIdUnique
 		{
@@ -456,8 +456,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the role template that is associated with the role.
-		/// </summary>
+        /// Unique identifier of the role template that is associated with the role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("roletemplateid")]
 		public Microsoft.Xrm.Sdk.EntityReference RoleTemplateId
 		{
@@ -468,8 +468,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the associated solution.
-		/// </summary>
+        /// Unique identifier of the associated solution.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("solutionid")]
 		public System.Nullable<System.Guid> SolutionId
 		{
@@ -480,8 +480,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Summary of Core Table Permissions of the Role
-		/// </summary>
+        /// Summary of Core Table Permissions of the Role
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("summaryofcoretablepermissions")]
 		public string SummaryofCoreTablePermissions
 		{
@@ -498,8 +498,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Version number of the role.
-		/// </summary>
+        /// Version number of the role.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
@@ -510,8 +510,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N role_parent_role
-		/// </summary>
+        /// 1:N role_parent_role
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("role_parent_role", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Role> Referencedrole_parent_role
 		{
@@ -528,8 +528,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N role_parent_root_role
-		/// </summary>
+        /// 1:N role_parent_root_role
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("role_parent_root_role", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Role> Referencedrole_parent_root_role
 		{
@@ -546,8 +546,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:N roleprivileges_association
-		/// </summary>
+        /// N:N roleprivileges_association
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("roleprivileges_association")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Privilege> roleprivileges_association
 		{
@@ -564,8 +564,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:N systemuserroles_association
-		/// </summary>
+        /// N:N systemuserroles_association
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("systemuserroles_association")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.SystemUser> systemuserroles_association
 		{
@@ -582,8 +582,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:N teamroles_association
-		/// </summary>
+        /// N:N teamroles_association
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("teamroles_association")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Team> teamroles_association
 		{
@@ -600,8 +600,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_roles
-		/// </summary>
+        /// N:1 business_unit_roles
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_roles")]
 		public MyApp.DataModel.BusinessUnit business_unit_roles
@@ -619,8 +619,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_role_createdonbehalfby
-		/// </summary>
+        /// N:1 lk_role_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_role_createdonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_role_createdonbehalfby
@@ -632,8 +632,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_role_modifiedonbehalfby
-		/// </summary>
+        /// N:1 lk_role_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_role_modifiedonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_role_modifiedonbehalfby
@@ -645,8 +645,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_rolebase_createdby
-		/// </summary>
+        /// N:1 lk_rolebase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_rolebase_createdby")]
 		public MyApp.DataModel.SystemUser lk_rolebase_createdby
@@ -658,8 +658,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_rolebase_modifiedby
-		/// </summary>
+        /// N:1 lk_rolebase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_rolebase_modifiedby")]
 		public MyApp.DataModel.SystemUser lk_rolebase_modifiedby
@@ -671,8 +671,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 role_parent_role
-		/// </summary>
+        /// N:1 role_parent_role
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentroleid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("role_parent_role", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.Role Referencingrole_parent_role
@@ -684,8 +684,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 role_parent_root_role
-		/// </summary>
+        /// N:1 role_parent_root_role
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentrootroleid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("role_parent_root_role", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.Role Referencingrole_parent_root_role
