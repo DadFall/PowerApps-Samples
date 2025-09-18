@@ -57,7 +57,7 @@ namespace PowerApps.Samples
                         }
                     };
 
-                    //Write out the filename of each attachment retrieved.
+                    //写入out the filename of each attachment retrieved.
                     foreach (ActivityMimeAttachment attachment in service.RetrieveMultiple(query).Entities)
                     {
                         Console.WriteLine("Retrieved attachment {0}", attachment.FileName);

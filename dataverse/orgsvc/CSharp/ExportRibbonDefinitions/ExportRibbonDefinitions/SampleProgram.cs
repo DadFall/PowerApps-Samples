@@ -31,7 +31,7 @@ namespace PowerApps.Samples
 
                     System.String applicationRibbonPath = Path.GetFullPath(exportFolder + "\\applicationRibbon.xml");
                     File.WriteAllBytes(applicationRibbonPath, unzipRibbon(appribResp.CompressedApplicationRibbonXml));
-                    //Write the path where the file has been saved.
+                    //写入the path where the file has been saved.
                     Console.WriteLine(applicationRibbonPath);
                     //检索system Entity Ribbons
                     RetrieveEntityRibbonRequest entRibReq = new RetrieveEntityRibbonRequest() { RibbonLocationFilter = RibbonLocationFilters.All };
@@ -43,7 +43,7 @@ namespace PowerApps.Samples
 
                         System.String entityRibbonPath = Path.GetFullPath(exportFolder + "\\" + entityName + "Ribbon.xml");
                         File.WriteAllBytes(entityRibbonPath, unzipRibbon(entRibResp.CompressedEntityXml));
-                        //Write the path where the file has been saved.
+                        //写入the path where the file has been saved.
                         Console.WriteLine(entityRibbonPath);
                     }
 
@@ -61,7 +61,7 @@ namespace PowerApps.Samples
 
                             System.String entityRibbonPath = Path.GetFullPath(exportFolder + "\\" + em.LogicalName + "Ribbon.xml");
                             File.WriteAllBytes(entityRibbonPath, unzipRibbon(entRibResp.CompressedEntityXml));
-                            //Write the path where the file has been saved.
+                            //写入the path where the file has been saved.
                             Console.WriteLine(entityRibbonPath);
                         }
                     }

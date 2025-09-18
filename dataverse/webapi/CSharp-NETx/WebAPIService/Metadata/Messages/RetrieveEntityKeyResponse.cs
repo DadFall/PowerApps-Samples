@@ -10,7 +10,7 @@ namespace PowerApps.Samples.Metadata.Messages
     /// <summary>
         /// Contains the response from the RetrieveEntityKeyRequest
         /// </summary>
-    /// <typeparam name="T">The type of response.</typeparam>
+    /// <typeparam name="T">type of response.</typeparam>
     public sealed class RetrieveEntityKeyResponse : HttpResponseMessage
     {
         /// <summary>

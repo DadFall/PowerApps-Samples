@@ -63,7 +63,7 @@ namespace PowerApps.Samples
                         }
                     }
 
-                    // Move a record from a source queue to a destination queue
+                    // 移动a record from a source queue to a destination queue
                     // by using the AddToQueue request message.
                     AddToQueueRequest routeRequest = new AddToQueueRequest
                     {

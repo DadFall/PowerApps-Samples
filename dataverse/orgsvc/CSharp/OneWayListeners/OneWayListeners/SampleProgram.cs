@@ -76,13 +76,13 @@ namespace PowerApps.Samples
                 endpoint.Behaviors.Add(sharedAccessServiceBusCredential);
             }
 
-            // Open the service.
+            // 打开the service.
             host.Open();
 
             Console.WriteLine("Press [Enter] to exit");
             Console.ReadLine();
 
-            // Close the service.
+            // 关闭the service.
             Console.Write("Closing the service host...");
             host.Close();
             Console.WriteLine(" done.");

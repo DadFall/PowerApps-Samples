@@ -310,7 +310,7 @@ namespace PowerApps.Samples
             };
             _writeInProductId = service.Create(writeInProduct);
 
-            // Close the opportunities as 'Won'
+            // 关闭the opportunities as 'Won'
             WinOpportunityRequest winRequest = new WinOpportunityRequest()
             {
                 OpportunityClose = new OpportunityClose()

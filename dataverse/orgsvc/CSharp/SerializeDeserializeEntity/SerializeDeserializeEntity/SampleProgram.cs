@@ -45,12 +45,12 @@ namespace PowerApps.Samples
                     // 创建a unique file name for the XML.
                     String earlyboundFile = "Contact_early_" + contact.ContactId.Value.ToString("B") + ".xml";
 
-                    // Write the serialized object to a file.  The using statement will
+                    // 写入the serialized object to a file.  The using statement will
                     // ensure that the FileStream is disposed of correctly.  The FileMode
                     // will ensure that the file is overwritten if it already exists.
                     using (var file = new FileStream(earlyboundFile, FileMode.Create))
                     {
-                        // Write the XML to disk.
+                        // 写入the XML to disk.
                         earlyBoundSerializer.WriteObject(file, contact);
                     }
 
@@ -63,7 +63,7 @@ namespace PowerApps.Samples
                     String lateboundFile = "Contact_late_" + lateboundContact.Id.ToString("B") + ".xml";
 
                     var lateBoundSerializer = new DataContractSerializer(typeof(Entity));
-                    // Write the serialized object to a file.
+                    // 写入the serialized object to a file.
                     using (var file = new FileStream(lateboundFile, FileMode.Create))
                     {
                         lateBoundSerializer.WriteObject(file, lateboundContact);

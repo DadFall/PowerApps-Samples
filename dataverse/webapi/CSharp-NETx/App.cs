@@ -88,7 +88,7 @@ namespace PowerApps.Samples
                           Source=Microsoft.Identity.Client
  */
 
-                        //Open browser to enter credentials when MFA required
+                        //打开browser to enter credentials when MFA required
                         result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();
 
                     }

@@ -58,7 +58,7 @@ namespace PowerApps.Samples
                                 // 开始Entity Node
                                 metadataWriter.WriteStartElement("Entity");
 
-                                // Write the Entity's Information.
+                                // 写入the Entity's Information.
                                 metadataWriter.WriteElementString("EntitySchemaName", currentEntity.SchemaName);
                                 metadataWriter.WriteElementString("OTC", currentEntity.ObjectTypeCode.ToString());
 
@@ -93,7 +93,7 @@ namespace PowerApps.Samples
                         metadataWriter.WriteEndElement();
                         metadataWriter.WriteEndDocument();
 
-                        // Close xml writer.
+                        // 关闭xml writer.
                         metadataWriter.Close();
                     }
 

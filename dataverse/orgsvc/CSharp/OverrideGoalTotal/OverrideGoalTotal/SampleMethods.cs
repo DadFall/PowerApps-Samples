@@ -114,7 +114,7 @@ namespace PowerApps.Samples
             };
             service.Create(phoneCall);
 
-            // Close the second phone call.
+            // 关闭the second phone call.
             SetStateRequest closePhoneCall = new SetStateRequest()
             {
                 EntityMoniker = phoneCall.ToEntityReference(),

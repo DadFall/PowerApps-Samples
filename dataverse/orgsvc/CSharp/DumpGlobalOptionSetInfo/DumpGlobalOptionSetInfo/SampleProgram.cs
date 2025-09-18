@@ -111,7 +111,7 @@ namespace PowerApps.Samples
                         metadataWriter.WriteEndElement();
                         metadataWriter.WriteEndDocument();
 
-                        // Close xml writer.
+                        // 关闭xml writer.
                         metadataWriter.Close();
                     }
 

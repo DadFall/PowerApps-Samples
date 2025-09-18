@@ -481,7 +481,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 ["objectid"] = record,
                 //Unique identifier of the principal to which secured field is shared
                 ["principalid"] = principal,
-                // Read permission for secured field instance
+                // 读取permission for secured field instance
                 ["readaccess"] = readAccess,
                 //更新permission for secured field instance
                 ["updateaccess"] = updateAccess

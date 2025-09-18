@@ -10,7 +10,7 @@ namespace PowerApps.Samples.Metadata.Messages
     /// <summary>
         /// Contains the response from the RetrieveRelationshipRequest
         /// </summary>
-    /// <typeparam name="T">The type of RelationshipMetadata. Either ManyToManyRelationshipMetadata or OneToManyRelationshipMetadata</typeparam>
+    /// <typeparam name="T">type of RelationshipMetadata. Either ManyToManyRelationshipMetadata or OneToManyRelationshipMetadata</typeparam>
     public sealed class RetrieveRelationshipResponse<T> : HttpResponseMessage where T : RelationshipMetadataBase
     {
         public T RelationshipMetadata => JsonConvert.DeserializeObject<T>(Content.ReadAsStringAsync().GetAwaiter().GetResult());

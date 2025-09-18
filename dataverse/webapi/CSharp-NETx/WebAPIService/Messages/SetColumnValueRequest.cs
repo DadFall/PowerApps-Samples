@@ -6,7 +6,7 @@ namespace PowerApps.Samples.Messages
     /// <summary>
         /// Contains the data to set a column value
         /// </summary>
-    /// <typeparam name="T">The type of the column value to set</typeparam>
+    /// <typeparam name="T">type of the column value to set</typeparam>
     public sealed class SetColumnValueRequest<T> : HttpRequestMessage
     {
         /// <summary>

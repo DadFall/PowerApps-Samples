@@ -44,7 +44,7 @@ namespace PowerApps.Samples
         /// <param name="detail"></param>
         private static void DisplayAuditDetails(CrmServiceClient service, AuditDetail detail)
         {
-            // Write out some of the change history information in the audit record. 
+            // 写入out some of the change history information in the audit record. 
             var record = (Audit)detail.AuditRecord;
 
             Console.WriteLine($"\nAudit record created on: {record.CreatedOn.Value.ToLocalTime()}");

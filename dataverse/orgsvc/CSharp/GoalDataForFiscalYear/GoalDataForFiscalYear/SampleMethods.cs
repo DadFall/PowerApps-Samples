@@ -113,7 +113,7 @@ namespace GoalDataForFiscalYear
             };
             service.Create(phoneCall);
 
-            // Close the first phone call.
+            // 关闭the first phone call.
             SetStateRequest closePhoneCall = new SetStateRequest()
             {
                 EntityMoniker = phoneCall.ToEntityReference(),
@@ -134,7 +134,7 @@ namespace GoalDataForFiscalYear
             };
             service.Create(phoneCall);
 
-            // Close the second phone call.
+            // 关闭the second phone call.
             closePhoneCall = new SetStateRequest()
             {
                 EntityMoniker = phoneCall.ToEntityReference(),

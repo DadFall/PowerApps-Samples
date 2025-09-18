@@ -153,7 +153,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                 var retrieveResponse = (RetrieveResponse)serviceClient.Execute(retrieveRequest);
                 Entity retrievedRecord = retrieveResponse.Entity;
-                // Write out the properties retrieved
+                // 写入out the properties retrieved
                 Console.WriteLine($"Retrieved the record with id: {sensordataId}");
                 Console.WriteLine("Data:");
                 Console.WriteLine($"\tcontoso_sensordataid: {retrievedRecord["contoso_sensordataid"]}");

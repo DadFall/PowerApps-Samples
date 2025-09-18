@@ -230,7 +230,7 @@ namespace PowerApps.Samples
             // 创建Import File.
             var importFile = new ImportFile()
             {
-                Content = BulkImportHelper.ReadCsvFile("import accounts.csv"), // Read contents from disk.
+                Content = BulkImportHelper.ReadCsvFile("import accounts.csv"), // 读取contents from disk.
                 Name = "Account record import",
                 IsFirstRowHeader = true,
                 ImportMapId = new EntityReference(ImportMap.EntityLogicalName, importMapId),

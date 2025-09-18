@@ -57,7 +57,7 @@ namespace PowerApps.Samples
                                 // 开始Entity Node
                                 metadataWriter.WriteStartElement("Entity");
 
-                                // Write the Entity's Information.
+                                // 写入the Entity's Information.
                                 metadataWriter.WriteElementString("EntitySchemaName", currentEntity.SchemaName);
                                 if (currentEntity.IsCustomizable.Value == true)
                                     metadataWriter.WriteElementString("IsCustomizable", "yes");
@@ -73,7 +73,7 @@ namespace PowerApps.Samples
                                 #region Attributes
 
 
-                                // Write Entity's Attributes.
+                                // 写入Entity's Attributes.
                                 metadataWriter.WriteStartElement("Attributes");
 
                                 foreach (AttributeMetadata currentAttribute in currentEntity.Attributes)
@@ -85,9 +85,9 @@ namespace PowerApps.Samples
                                         // 开始Attribute Node
                                         metadataWriter.WriteStartElement("Attribute");
 
-                                        // Write Attribute's information.
+                                        // 写入Attribute's information.
                                         metadataWriter.WriteElementString("LogicalName", currentAttribute.LogicalName);
-                                        // Write the Description if it is set.
+                                        // 写入the Description if it is set.
                                         if (currentAttribute.Description.UserLocalizedLabel != null)
                                         {
                                             metadataWriter.WriteElementString("Description", currentAttribute.Description.UserLocalizedLabel.Label.ToString());
@@ -153,7 +153,7 @@ namespace PowerApps.Samples
                         metadataWriter.WriteEndElement();
                         metadataWriter.WriteEndDocument();
 
-                        // Close xml writer.
+                        // 关闭xml writer.
                         metadataWriter.Close();
                     }
 

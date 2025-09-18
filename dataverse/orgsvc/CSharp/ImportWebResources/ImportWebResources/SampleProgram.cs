@@ -25,7 +25,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    //Read the descriptive data from the XML file
+                    //读取the descriptive data from the XML file
                     XDocument xmlDoc = XDocument.Load("../../ImportJob.xml");
 
                     //创建a collection of anonymous type references to each of the Web Resources

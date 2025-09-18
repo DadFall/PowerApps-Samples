@@ -10,7 +10,7 @@ namespace PowerApps.Samples.Metadata.Messages
     /// <summary>
         /// Contains the response from the RetrieveGlobalOptionSetRequest
         /// </summary>
-    /// <typeparam name="T">The type of optionset: either OptionSetMetadata or BooleanOptionSetMetadata.</typeparam>
+    /// <typeparam name="T">type of optionset: either OptionSetMetadata or BooleanOptionSetMetadata.</typeparam>
     public sealed class RetrieveGlobalOptionSetResponse<T> : HttpResponseMessage where T : OptionSetMetadataBase
     {
         public T OptionSetMetadata => JsonConvert.DeserializeObject<T>(Content.ReadAsStringAsync().GetAwaiter().GetResult());

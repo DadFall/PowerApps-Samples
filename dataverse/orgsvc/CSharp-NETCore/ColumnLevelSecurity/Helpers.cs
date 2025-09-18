@@ -611,7 +611,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             permissionsTable.Rows.Add(["Telephone Number", "Allowed", "Allowed"]);
             permissionsTable.Rows.Add(["Date of Birth", "Allowed", "Not Allowed"]);
 
-            // Write intented table:
+            // 写入intented table:
             var tableOutput = permissionsTable.ToString();
             var indentedTableOutput = "\t" + tableOutput.Replace("\n", "\n\t");
             Console.WriteLine(indentedTableOutput);
@@ -641,7 +641,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             permissionsTable.Rows.Add(["Telephone Number", "Allowed", "Not Allowed", "Allowed"]);
             permissionsTable.Rows.Add(["Date of Birth", "Allowed", "All records", "Not Allowed"]);
 
-            // Write intented table:
+            // 写入intented table:
             var tableOutput = permissionsTable.ToString();
             var indentedTableOutput = "\t" + tableOutput.Replace("\n", "\n\t");
             Console.WriteLine(indentedTableOutput);

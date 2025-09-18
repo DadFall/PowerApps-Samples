@@ -195,7 +195,7 @@ namespace PowerApps.Samples
         /// <summary>
         /// 处理具有类型化响应的请求
         /// </summary>
-        /// <typeparam name="T">The type derived from HttpResponseMessage</typeparam>
+        /// <typeparam name="T">从 HttpResponseMessage 派生的类型</typeparam>
         /// <param name="request">请求</param>
         /// <returns></returns>
         public async Task<T> SendAsync<T>(HttpRequestMessage request) where T : HttpResponseMessage
@@ -326,7 +326,7 @@ namespace PowerApps.Samples
 
         ~Service() => Dispose(false);
 
-        // Public implementation of Dispose pattern callable by consumers.
+        // 供使用者调用的 Dispose 模式的公共实现。
         public void Dispose()
         {
             Dispose(true);
@@ -334,7 +334,7 @@ namespace PowerApps.Samples
             GC.SuppressFinalize(this);
         }
 
-        // Protected implementation of Dispose pattern.
+        // Dispose 模式的受保护实现。
         protected virtual void Dispose(bool disposing)
         {
             if (!_disposedValue)

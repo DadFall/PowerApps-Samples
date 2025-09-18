@@ -248,7 +248,7 @@ namespace PowerApps.Samples
 
                     #region Close the goal
 
-                    // Close the goal.
+                    // 关闭the goal.
                     SetStateRequest closeGoal = new SetStateRequest()
                     {
                         EntityMoniker = goal.ToEntityReference(),
