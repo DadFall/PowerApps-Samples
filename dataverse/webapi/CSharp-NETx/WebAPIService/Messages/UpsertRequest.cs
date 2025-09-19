@@ -4,17 +4,17 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to upsert a record.
-    /// </summary>
+        /// Contains the data to upsert a record.
+        /// </summary>
     public sealed class UpsertRequest : HttpRequestMessage
     {
 
 
         /// <summary>
-        /// Initializes the UpsertRequest
+        /// 初始化 the UpsertRequest
         /// </summary>
-        /// <param name="entityReference">A reference to a record. This should use alternate keys.</param>
-        /// <param name="record">The data to create or update.</param>
+        /// <param name="entityReference">一个reference to a record. This should use alternate keys.</param>
+        /// <param name="record">数据 to create or update.</param>
         /// <param name="upsertBehavior">Control the upsert behavior.</param>
         public UpsertRequest(
             EntityReference entityReference,
@@ -40,8 +40,8 @@ namespace PowerApps.Samples.Messages
     }
 
     /// <summary>
-    /// Specifies the behavior for an Upsert operation.
-    /// </summary>
+        /// Specifies the behavior for an Upsert operation.
+        /// </summary>
     public enum UpsertBehavior
     {
         CreateOrUpdate = 0,

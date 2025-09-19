@@ -4,16 +4,16 @@ using PowerApps.Samples.Metadata.Types;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Contains metadata operation functions for the FileOperations samples.
-    /// </summary>
+        /// Contains metadata operation functions for the FileOperations samples.
+        /// </summary>
     public class Utility
     {
         /// <summary>
-        /// Creates a custom file column on the designated table with the specified schema name.
+        /// 创建 a custom file column on the designated table with the specified schema name.
         /// </summary>
-        /// <param name="service">The service to use.</param>
-        /// <param name="entityLogicalName">The logical name of the table to create the file column in.</param>
-        /// <param name="fileColumnSchemaName">The schema name of the file column.</param>
+        /// <param name="service">服务 to use.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table to create the file column in.</param>
+        /// <param name="fileColumnSchemaName">schema 名称 of the file column.</param>
         /// <returns></returns>
         public static async Task CreateFileColumn(Service service, string entityLogicalName, string fileColumnSchemaName)
         {
@@ -42,15 +42,15 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Update the MaxSizeInKB for a file column
+        /// 更新the MaxSizeInKB for a file column
         /// </summary>
-        /// <param name="entityLogicalName">The logical name of the table that has the column.</param>
-        /// <param name="fileColumnLogicalName">The logical name of the file column.</param>
-        /// <param name="maxSizeInKB">The new value for MaxSizeInKB</param>
+        /// <param name="entityLogicalName">logical 名称 of the table that has the column.</param>
+        /// <param name="fileColumnLogicalName">logical 名称 of the file column.</param>
+        /// <param name="maxSizeInKB">new 值 for MaxSizeInKB</param>
         /// <returns></returns>
         public static async Task UpdateFileColumnMaxSizeInKB(Service service, string entityLogicalName, string fileColumnLogicalName, int maxSizeInKB)
         {
-            // Retrieve the full column definition
+            // 检索the full column definition
             RetrieveAttributeRequest retrieveAttributeRequest = new(
                 entityLogicalName: entityLogicalName,
                 logicalName: fileColumnLogicalName,
@@ -61,27 +61,27 @@ namespace PowerApps.Samples
 
             FileAttributeMetadata fileColumn = retrieveAttributeResponse.AttributeMetadata;
 
-            // Update the MaxSizeInKB value
+            // 更新the MaxSizeInKB value
             fileColumn.MaxSizeInKB = maxSizeInKB;
 
-            // Create the request
+            // 创建request
             UpdateAttributeRequest updateAttributeRequest = new(
                 entityLogicalName: entityLogicalName,
                 attributeLogicalName: fileColumnLogicalName,
                 attributeMetadata: fileColumn);
 
-            // Send the update request
+            // 发送the update request
             await service.SendAsync(updateAttributeRequest);
 
         }
 
 
         /// <summary>
-        /// Retrieves the MaxSizeInKb property of a file column.
+        /// 检索 the MaxSizeInKb property of a file column.
         /// </summary>
-        /// <param name="service">The service.</param>
-        /// <param name="entityLogicalName">The logical name of the table that has the column</param>
-        /// <param name="fileColumnLogicalName">The logical name of the file column.</param>
+        /// <param name="service">服务.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table that has the column</param>
+        /// <param name="fileColumnLogicalName">logical 名称 of the file column.</param>
         /// <returns></returns>
         public static async Task<int> GetFileColumnMaxSizeInKb(Service service, string entityLogicalName, string fileColumnLogicalName)
         {
@@ -106,11 +106,11 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes a custom file column on the table 
+        /// 删除 a custom file column on the table
         /// </summary>
-        /// <param name="service">The service to use</param>
-        /// <param name="entityLogicalName">The logical name of the table with the file column.</param>
-        /// <param name="fileColumnLogicalName">The logical name of the file column.</param>
+        /// <param name="service">服务 to use</param>
+        /// <param name="entityLogicalName">logical 名称 of the table with the file column.</param>
+        /// <param name="fileColumnLogicalName">logical 名称 of the file column.</param>
         /// <returns></returns>
         public static async Task DeleteFileColumn(Service service, string entityLogicalName, string fileColumnLogicalName)
         {

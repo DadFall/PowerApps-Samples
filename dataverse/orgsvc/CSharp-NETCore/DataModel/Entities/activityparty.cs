@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Type of instance of a recurring series.
-	/// </summary>
+        /// Type of instance of a recurring series.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum activityparty_instancetypecode
@@ -38,8 +38,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Role of the person in the activity, such as sender, to, cc, bcc, required, optional, organizer, regarding, or owner.
-	/// </summary>
+        /// Role of the person in the activity, such as sender, to, cc, bcc, required, optional, organizer, regarding, or owner.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum activityparty_participationtypemask
@@ -86,8 +86,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Person or group associated with an activity. An activity can have multiple activity parties.
-	/// </summary>
+        /// Person or group associated with an activity. An activity can have multiple activity parties.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("activityparty")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
@@ -95,8 +95,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public ActivityParty() : 
 				base(EntityLogicalName)
 		{
@@ -129,8 +129,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the activity associated with the activity party. (A "party" is any person who is associated with an activity.)
-		/// </summary>
+        /// Unique identifier of the activity associated with the activity party. (A "party" is any person who is associated with an activity.)
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
 		public Microsoft.Xrm.Sdk.EntityReference ActivityId
 		{
@@ -147,8 +147,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the activity party.
-		/// </summary>
+        /// Unique identifier of the activity party.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activitypartyid")]
 		public System.Nullable<System.Guid> ActivityPartyId
 		{
@@ -186,8 +186,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Email address to which an email is delivered, and which is associated with the target entity.
-		/// </summary>
+        /// Email address to which an email is delivered, and which is associated with the target entity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addressused")]
 		public string AddressUsed
 		{
@@ -204,8 +204,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Email address column number from associated party.
-		/// </summary>
+        /// Email address column number from associated party.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addressusedemailcolumnnumber")]
 		public System.Nullable<int> AddressUsedEmailColumnNumber
 		{
@@ -216,8 +216,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether to allow sending email to the activity party.
-		/// </summary>
+        /// Information about whether to allow sending email to the activity party.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotemail")]
 		public System.Nullable<bool> DoNotEmail
 		{
@@ -228,8 +228,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether to allow sending faxes to the activity party.
-		/// </summary>
+        /// Information about whether to allow sending faxes to the activity party.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotfax")]
 		public System.Nullable<bool> DoNotFax
 		{
@@ -240,8 +240,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether to allow phone calls to the lead.
-		/// </summary>
+        /// Information about whether to allow phone calls to the lead.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotphone")]
 		public System.Nullable<bool> DoNotPhone
 		{
@@ -252,8 +252,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether to allow sending postal mail to the lead.
-		/// </summary>
+        /// Information about whether to allow sending postal mail to the lead.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotpostalmail")]
 		public System.Nullable<bool> DoNotPostalMail
 		{
@@ -264,8 +264,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Amount of effort used by the resource in a service appointment activity.
-		/// </summary>
+        /// Amount of effort used by the resource in a service appointment activity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("effort")]
 		public System.Nullable<double> Effort
 		{
@@ -282,8 +282,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangeentryid")]
 		public string ExchangeEntryId
 		{
@@ -300,8 +300,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The external id used when the party does not have an email address.
-		/// </summary>
+        /// external id used when the party does not have an email address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("externalid")]
 		public string ExternalId
 		{
@@ -318,8 +318,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The external id type used when the party does not have an email address.
-		/// </summary>
+        /// external id type used when the party does not have an email address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("externalidtype")]
 		public string ExternalIdType
 		{
@@ -336,8 +336,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type of instance of a recurring series.
-		/// </summary>
+        /// Type of instance of a recurring series.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("instancetypecode")]
 		public virtual activityparty_instancetypecode? InstanceTypeCode
 		{
@@ -348,8 +348,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether the underlying entity record is deleted.
-		/// </summary>
+        /// Information about whether the underlying entity record is deleted.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ispartydeleted")]
 		public System.Nullable<bool> IsPartyDeleted
 		{
@@ -360,8 +360,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user or team who owns the activity_party.
-		/// </summary>
+        /// Unique identifier of the user or team who owns the activity_party.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
 		{
@@ -372,8 +372,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Role of the person in the activity, such as sender, to, cc, bcc, required, optional, organizer, regarding, or owner.
-		/// </summary>
+        /// Role of the person in the activity, such as sender, to, cc, bcc, required, optional, organizer, regarding, or owner.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("participationtypemask")]
 		public virtual activityparty_participationtypemask? ParticipationTypeMask
 		{
@@ -390,8 +390,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the party associated with the activity.
-		/// </summary>
+        /// Unique identifier of the party associated with the activity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
 		public Microsoft.Xrm.Sdk.EntityReference PartyId
 		{
@@ -408,8 +408,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Scheduled end time of the activity.
-		/// </summary>
+        /// Scheduled end time of the activity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduledend")]
 		public System.Nullable<System.DateTime> ScheduledEnd
 		{
@@ -420,8 +420,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Scheduled start time of the activity.
-		/// </summary>
+        /// Scheduled start time of the activity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduledstart")]
 		public System.Nullable<System.DateTime> ScheduledStart
 		{
@@ -432,8 +432,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The name of the party to be used when the party is not resolved to an entity.
-		/// </summary>
+        /// name of the party to be used when the party is not resolved to an entity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("unresolvedpartyname")]
 		public string UnresolvedPartyName
 		{
@@ -459,8 +459,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 account_activity_parties
-		/// </summary>
+        /// N:1 account_activity_parties
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_activity_parties")]
 		public MyApp.DataModel.Account account_activity_parties
@@ -478,8 +478,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 contact_activity_parties
-		/// </summary>
+        /// N:1 contact_activity_parties
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_activity_parties")]
 		public MyApp.DataModel.Contact contact_activity_parties
@@ -497,8 +497,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 letter_activity_parties
-		/// </summary>
+        /// N:1 letter_activity_parties
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("letter_activity_parties")]
 		public MyApp.DataModel.Letter letter_activity_parties
@@ -516,8 +516,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 system_user_activity_parties
-		/// </summary>
+        /// N:1 system_user_activity_parties
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_activity_parties")]
 		public MyApp.DataModel.SystemUser system_user_activity_parties

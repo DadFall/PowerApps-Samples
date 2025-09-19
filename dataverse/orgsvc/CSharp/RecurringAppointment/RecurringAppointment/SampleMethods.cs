@@ -17,10 +17,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             CreateRequiredRecords(service);
@@ -32,8 +32,8 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Create a new recurring appointment.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建a new recurring appointment.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -68,7 +68,7 @@ namespace PowerApps.Samples
                 PatternEndDate = 3,
             };
 
-            // Create a new recurring appointment
+            // 创建a new recurring appointment
             RecurringAppointmentMaster newRecurringAppointment =
                 new RecurringAppointmentMaster
                 {
@@ -93,7 +93,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user to delete 
         /// the records created in this sample.</param>
         /// </summary>

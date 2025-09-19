@@ -4,16 +4,16 @@ using Newtonsoft.Json.Linq;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to commits the uploaded data blocks to the annotation store.
-    /// </summary>
+        /// Contains the data to commits the uploaded data blocks to the annotation store.
+        /// </summary>
     public sealed class CommitAnnotationBlocksUploadRequest : HttpRequestMessage
     {
         /// <summary>
         /// Commits the uploaded data blocks to the annotation store.
         /// </summary>
-        /// <param name="target">The target entity.</param>
-        /// <param name="blockList">The IDs of the uploaded data blocks, in the correct sequence, that will result in the final annotation when the data blocks are combined.</param>
-        /// <param name="fileContinuationToken">A token that uniquely identifies a sequence of related data uploads.</param>
+        /// <param name="target">target entity.</param>
+        /// <param name="blockList">IDs of the uploaded 数据 blocks, in the correct sequence, that will 结果 in the final annotation when the 数据 blocks are combined.</param>
+        /// <param name="fileContinuationToken">一个token that uniquely identifies a sequence of related 数据 uploads.</param>
         public CommitAnnotationBlocksUploadRequest(
             JObject target, 
             List<string> blockList, 

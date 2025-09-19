@@ -3,9 +3,9 @@ using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;
 
 /// <summary>
-/// Confidential client authentication followed by a web service request.
+        /// Confidential client authentication followed by a web service request.
 /// Use of a client secret in the app registration for authentication.
-/// </summary>
+        /// </summary>
 /// <remarks>You must create an Entra ID app registration for this sample to work.</remarks>
 /// <see cref="https://learn.microsoft.com/power-apps/developer/data-platform/walkthrough-register-app-azure-active-directory"/>
 class Program

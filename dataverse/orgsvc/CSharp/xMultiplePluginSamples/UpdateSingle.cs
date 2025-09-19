@@ -4,15 +4,15 @@ using System;
 namespace xMultiplePluginSamples
 {
     /// <summary>
-    /// Plugin development guide: https://learn.microsoft.com/powerapps/developer/common-data-service/plug-ins
+        /// Plugin development guide: https://learn.microsoft.com/powerapps/developer/common-data-service/plug-ins
     /// Best practices and guidance: https://learn.microsoft.com/powerapps/developer/common-data-service/best-practices/business-logic/
-    /// </summary>
+        /// </summary>
     public class UpdateSingle : PluginBase
     {
         public UpdateSingle(string unsecureConfiguration, string secureConfiguration)
             : base(typeof(UpdateSingle))
         {
-            // TODO: Implement your custom configuration handling
+            // 待办： Implement your custom configuration handling
             // https://learn.microsoft.com/powerapps/developer/common-data-service/register-plug-in#set-configuration-data
         }
 
@@ -24,19 +24,19 @@ namespace xMultiplePluginSamples
                 throw new ArgumentNullException(nameof(localPluginContext));
             }
 
-            // Update default PluginBase.cs and replace IPluginExecutionContext with IPluginExecutionContext4.
+            // 更新default PluginBase.cs and replace IPluginExecutionContext with IPluginExecutionContext4.
             IPluginExecutionContext4 context = localPluginContext.PluginExecutionContext;
 
             // Custom business logic starts here
 
-            // Verify correct registration 
+            // 验证correct registration 
             if (context.PrimaryEntityName == "sample_example" && context.MessageName == "Update" && context.Stage == 20)
             {
-                // Verify input parameters
+                // 验证input parameters
                 if (context.InputParameters.Contains("Target") && context.InputParameters["Target"] is Entity entity)
                 {
 
-                    // Verify expected entity image from step registration
+                    // 验证expected entity image from step registration
                     if (context.PreEntityImages.TryGetValue("example_preimage", out Entity preImage))
                     {
 
@@ -46,21 +46,21 @@ namespace xMultiplePluginSamples
 
                         if (entityContainsSampleName && entityImageContainsSampleName && entityImageContainsSampleDescription)
                         {
-                            // Verify that the entity 'sample_name' values are different
+                            // 验证that the entity 'sample_name' values are different
                             if (entity["sample_name"] != preImage["sample_name"])
                             {
                                 string newName = (string)entity["sample_name"];
                                 string oldName = (string)preImage["sample_name"];
                                 string message = $"\\r\\n - 'sample_name' changed from '{oldName}' to '{newName}'.";
 
-                                // If the 'sample_description' is included in the update, do not overwrite it, just append to it.
+                                // 如果the 'sample_description' is included in the update, do not overwrite it, just append to it.
                                 if (entity.Contains("sample_description"))
                                 {
 
                                     entity["sample_description"] = entity["sample_description"] += message;
 
                                 }
-                                else // The sample description is not included in the update, overwrite with current value + addition.
+                                else // sample description is not included in the update, overwrite with current value + addition.
                                 {
                                     entity["sample_description"] = preImage["sample_description"] += message;
                                 }

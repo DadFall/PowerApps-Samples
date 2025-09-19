@@ -4,18 +4,18 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to initialize upload of an file column
-    /// </summary>
+        /// Contains the data to initialize upload of an file column
+        /// </summary>
     public sealed class InitializeFileBlocksUploadRequest : HttpRequestMessage
     {
         /// <summary>
         /// Intitializes the InitializeFileBlocksUploadRequest
         /// </summary>
-        /// <param name="entityLogicalName">The logical name of the table.</param>
-        /// <param name="primaryKeyLogicalName">The logical name of the primary key of the table.</param>
-        /// <param name="entityId">The id of the table row.</param>
-        /// <param name="fileAttributeName">The logical name of the file column.</param>
-        /// <param name="fileName">A filename to associate with the binary data file.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table.</param>
+        /// <param name="primaryKeyLogicalName">logical 名称 of the primary key of the table.</param>
+        /// <param name="entityId">id of the table row.</param>
+        /// <param name="fileAttributeName">logical 名称 of the file column.</param>
+        /// <param name="fileName">一个file名称 to associate with the binary 数据 file.</param>
         public InitializeFileBlocksUploadRequest(string entityLogicalName,
             string primaryKeyLogicalName,
             Guid entityId,

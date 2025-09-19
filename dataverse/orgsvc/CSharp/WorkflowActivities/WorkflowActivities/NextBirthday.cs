@@ -8,13 +8,13 @@ using System.Activities;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Activity will return the next upcoming birthday that has just passed
+        /// Activity will return the next upcoming birthday that has just passed
     /// 
-    /// If this year's birthday has not yet occurred, it will return this year's birthday
+    /// 如果this year's birthday has not yet occurred, it will return this year's birthday
     /// Otherwise, it will return the birthday for next year
     /// 
-    /// A workflow can timeout when on this date
-    /// </summary>
+    /// 一个workflow can timeout when on this date
+        /// </summary>
     [Persist]
     public sealed class UpdateNextBirthday : CodeActivity
     {
@@ -22,19 +22,19 @@ namespace PowerApps.Samples
         {
             IWorkflowContext context = executionContext.GetExtension<IWorkflowContext>();
 
-            //Create an Organization Service
+            //创建an Organization Service
             IOrganizationServiceFactory serviceFactory = executionContext.GetExtension<IOrganizationServiceFactory>();
             IOrganizationService service = serviceFactory.CreateOrganizationService(context.InitiatingUserId);
 
-            //Retrieve the contact id
+            //检索the contact id
             Guid contactId = this.Contact.Get(executionContext).Id;
 
-            //Create the request
+            //创建the request
             RetrieveRequest request = new RetrieveRequest();
             request.ColumnSet = new ColumnSet(new string[] { "birthdate" });
             request.Target = new EntityReference(EntityName.Contact, contactId);
 
-            //Retrieve the entity to determine what the birthdate is set at
+            //检索the entity to determine what the birthdate is set at
             Entity entity = (Entity)((RetrieveResponse)service.Execute(request)).Entity;
 
             //Extract the date out of the entity
@@ -48,16 +48,16 @@ namespace PowerApps.Samples
                 birthdate = null;
             }
 
-            //Check to see if the current birthday is set. We don't want the activity to fail if the birthdate is not set
+            //检查to see if the current birthday is set. We don't want the activity to fail if the birthdate is not set
             if (birthdate == null)
             {
                 return;
             }
 
-            //Calculate the next birthdate. Encapsulated in a methdo so that the method can be used in the test case for verification purposes
+            //计算the next birthdate. Encapsulated in a methdo so that the method can be used in the test case for verification purposes
             DateTime nextBirthdate = CalculateNextBirthday(birthdate.Value);
 
-            //Update the next birthday field on the entity
+            //更新the next birthday field on the entity
             Entity updateEntity = new Entity(EntityName.Contact);
             updateEntity.Id = contactId;
             updateEntity["new_nextbirthday"] = nextBirthdate;
@@ -65,7 +65,7 @@ namespace PowerApps.Samples
             service.Update(updateEntity);
         }
 
-        //Define the properties
+        //定义
         [RequiredArgument]
         [Input("Update Next Birthdate for")]
         [ReferenceTarget("contact")]
@@ -75,14 +75,14 @@ namespace PowerApps.Samples
         {
             DateTime nextBirthday = new DateTime(birthdate.Year, birthdate.Month, birthdate.Day);
 
-            //Check to see if this birthday occurred on a leap year
+            //检查to see if this birthday occurred on a leap year
             bool leapYearAdjust = false;
             if (nextBirthday.Month == 2 && nextBirthday.Day == 29)
             {
                 //Sanity check, was that year a leap year
                 if (DateTime.IsLeapYear(nextBirthday.Year))
                 {
-                    //Check to see if the current year is a leap year
+                    //检查to see if the current year is a leap year
                     if (!DateTime.IsLeapYear(DateTime.Now.Year))
                     {
                         //Push the date to March 1st so that the date arithmetic will function correctly
@@ -96,10 +96,10 @@ namespace PowerApps.Samples
                 }
             }
 
-            //Calculate the year difference
+            //计算the year difference
             nextBirthday = nextBirthday.AddYears(DateTime.Now.Year - nextBirthday.Year);
 
-            //Check to see if the date was adjusted
+            //检查to see if the date was adjusted
             if (leapYearAdjust && DateTime.IsLeapYear(nextBirthday.Year))
             {
                 nextBirthday = nextBirthday.AddDays(-1);

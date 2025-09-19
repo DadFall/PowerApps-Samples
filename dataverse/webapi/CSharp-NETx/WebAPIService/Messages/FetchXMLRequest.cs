@@ -5,17 +5,17 @@ using Newtonsoft.Json.Linq;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to execute a query using FetchXml
-    /// </summary>
+        /// Contains the data to execute a query using FetchXml
+        /// </summary>
     public sealed class FetchXmlRequest : HttpRequestMessage
     {
 
         /// <summary>
-        /// Initializes the FetchXmlRequest
+        /// 初始化 the FetchXmlRequest
         /// </summary>
-        /// <param name="entitySetName">The name of the entity set.</param>
-        /// <param name="fetchXml">The document containing the fetchXml</param>
-        /// <param name="includeAnnotations">Whether annotations should be included in the response.</param>
+        /// <param name="entitySetName">名称 of the entity set.</param>
+        /// <param name="fetchXml">document containing the fetchXml</param>
+        /// <param name="includeAnnotations">Whether annotations should be included in the 响应.</param>
         public FetchXmlRequest(string entitySetName, XDocument fetchXml, bool includeAnnotations = false)
         {
             Method = HttpMethod.Get;

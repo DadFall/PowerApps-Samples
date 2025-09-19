@@ -7,7 +7,7 @@ namespace PowerApps.Samples
 {
     public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         public static Guid _appointmentId = Guid.Empty;
         private static bool prompt = true;
         [STAThread] // Added to support UX
@@ -25,17 +25,17 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Get the current user information
+                    // 获取the current user information
                     var userRequest = new WhoAmIRequest();
                     var userResponse = (WhoAmIResponse)service.Execute(userRequest);
 
-                    // Create the ActivityParty instance.
+                    // 创建the ActivityParty instance.
                     var party = new ActivityParty
                     {
                         PartyId = new EntityReference(SystemUser.EntityLogicalName, userResponse.UserId)
                     };
 
-                    // Create the appointment instance.
+                    // 创建the appointment instance.
                     var appointment = new Appointment
                     {
                         Subject = "Test Appointment",
@@ -55,7 +55,7 @@ namespace PowerApps.Samples
                     var booked = (BookResponse)service.Execute(book);
                     _appointmentId = booked.ValidationResult.ActivityId;
 
-                    // Verify that the appointment has been scheduled.
+                    // 验证that the appointment has been scheduled.
                     if (_appointmentId != Guid.Empty)
                     {
                         Console.WriteLine("Succesfully booked {0}.", appointment.Subject);

@@ -22,7 +22,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create a connection between the account and the contact.
+                    // 创建a connection between the account and the contact.
                     // Assign a connection role to a record.
                     var newConnection = new Connection
                     {

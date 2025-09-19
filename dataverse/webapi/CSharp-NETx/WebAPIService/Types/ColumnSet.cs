@@ -10,6 +10,6 @@
 
         public List<string> Columns { get; set; }
 
-        //TODO: Add AttributeExpressions when needed
+        //待办： Add AttributeExpressions when needed
     }
 }

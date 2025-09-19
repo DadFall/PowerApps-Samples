@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve schema data and changes over time.
-    /// </summary>
+        /// Contains the data to retrieve schema data and changes over time.
+        /// </summary>
     public sealed class RetrieveMetadataChangesRequest : HttpRequestMessage
     {
         private string _uri = string.Empty;
@@ -27,7 +27,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// The query criteria for retrieving metadata changes.
+        /// query criteria for retrieving metadata changes.
         /// </summary>
         public EntityQueryExpression? Query
         {
@@ -47,7 +47,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// The enumeration that filters the deleted metadata to be retrieved.
+        /// enumeration that filters the deleted metadata to be retrieved.
         /// </summary>
         public DeletedMetadataFilters? DeletedMetadataFilters
         {
@@ -81,7 +81,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// The unique identifier of the app module.
+        /// unique identifier of the app module.
         /// </summary>
         public Guid? AppModuleId
         {
@@ -98,7 +98,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// For internal use only
+        /// 对于internal use only
         /// </summary>
         public bool? RetrieveAllSettings
         {

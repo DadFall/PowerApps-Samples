@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -17,7 +17,7 @@ export class IFrameControl implements ComponentFramework.StandardControl<IInputs
 	private _bingMapIFrame: HTMLElement;
 
 	// Reference to the control container HTMLDivElement
-	// This element contains all elements of our custom control example
+	// 此element contains all elements of our custom control example
 	private _container: HTMLDivElement;
 
 	// Flag if control view has been rendered
@@ -79,10 +79,10 @@ export class IFrameControl implements ComponentFramework.StandardControl<IInputs
 		const bingMapUrlPrefix = "https://www.bing.com/maps/embed?h=400&w=300&cp=";
 		const bingMapUrlPostfix = "&lvl=12&typ=d&sty=o&src=SHELL&FORM=MBEDV8";
 
-		// Build the entire URL with the user provided latitude and longitude
+		// 构建the entire URL with the user provided latitude and longitude
 		const iFrameSrc = `${bingMapUrlPrefix + latitude}~${longitude}${bingMapUrlPostfix}`;
 
-		// Update the IFrame to point to the updated URL
+		// 更新the IFrame to point to the updated URL
 		this._bingMapIFrame.setAttribute("src", iFrameSrc);
 	}
 

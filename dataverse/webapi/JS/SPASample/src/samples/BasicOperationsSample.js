@@ -5,8 +5,8 @@ export class BasicOperationsSample {
    * @type {dv.Client}
    * @private
    */
-  #client; // The DataverseWebAPIClient.Client instance
-  #container; // The container element to display messages
+  #client; // DataverseWebAPIClient.Client instance
+  #container; // container element to display messages
   #entityStore = []; // Store for created records to delete at the end of the sample
   #whoIAm; // Store for the current user's information
   #util; // Util instance for utility functions
@@ -21,17 +21,17 @@ export class BasicOperationsSample {
 
   // Public functions to set up, run, and clean up data created by the sample
   async SetUp() {
-    // Clear the container
+    // 清除the container
     this.#container.replaceChildren();
     this.#util.appendMessage(this.#name + " sample started");
-    // Get the current user's information
+    // 获取the current user's information
     try {
       this.#whoIAm = await this.#client.WhoAmI();
     } catch (error) {
       this.#util.showError(error.message);
     }
   }
-  // Run the sample
+  // 运行the sample
   async Run() {
     try {
       // Section 1: Basic create and update operations
@@ -70,7 +70,7 @@ export class BasicOperationsSample {
       await this.#disassociateRoleFromUser(roleId);
     } catch (error) {
       this.#util.showError(error.message);
-      // Try to clean up even if an error occurs
+      // 尝试to clean up even if an error occurs
       await this.CleanUp();
     }
   }
@@ -87,7 +87,7 @@ export class BasicOperationsSample {
       this.#util.appendMessage(
         `Created contact: ${contact.firstname} ${contact.lastname}`
       );
-      // To delete later
+      // 稍后删除
       this.#entityStore.push({
         name: `${contact.firstname} ${contact.lastname}`,
         entityName: "contact",
@@ -407,7 +407,7 @@ export class BasicOperationsSample {
       this.#util.appendMessage(
         `Created the ${role.name} security role with id: ${roleId}`
       );
-      // To delete later
+      // 稍后删除
       this.#entityStore.push({
         name: role.name,
         entityName: "role",
@@ -503,7 +503,7 @@ export class BasicOperationsSample {
       }
     }
 
-    // Set the entity store to an empty array
+    // 设置the entity store to an empty array
     this.#entityStore = [];
     this.#util.appendMessage(this.#name + " sample completed.");
     this.#util.appendMessage("<a href='#'>Go to top</a>");

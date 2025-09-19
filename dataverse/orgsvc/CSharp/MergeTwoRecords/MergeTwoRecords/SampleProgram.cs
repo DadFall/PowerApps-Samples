@@ -17,11 +17,11 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
-                    // Create the target for the request.
+                    // 创建the target for the request.
                     var target = new EntityReference();
 
                     // Id is the GUID of the account that is being merged into.
@@ -29,7 +29,7 @@ namespace PowerApps.Samples
                     target.Id = _account1Id;
                     target.LogicalName = Account.EntityLogicalName;
 
-                    // Create the request.
+                    // 创建the request.
                     var merge = new MergeRequest();
                     // SubordinateId is the GUID of the account merging.
                     merge.SubordinateId = _account2Id;
@@ -39,15 +39,15 @@ namespace PowerApps.Samples
                     Console.WriteLine("\nMerging account2 into account1 and adding " +
                         "\"test\" as Address 1 Line 1");
 
-                    // Create another account to hold new data to merge into the entity.
-                    // If you use the subordinate account object, its data will be merged.
+                    // 创建another account to hold new data to merge into the entity.
+                    // 如果you use the subordinate account object, its data will be merged.
                     var updateContent = new Account();
                     updateContent.Address1_Line1 = "test";
 
-                    // Set the content you want updated on the merged account
+                    // 设置the content you want updated on the merged account
                     merge.UpdateContent = updateContent;
 
-                    // Execute the request.
+                    // 执行the request.
                     var merged = (MergeResponse)service.Execute(merge);
 
                     var mergeeAccount =

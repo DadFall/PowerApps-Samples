@@ -24,13 +24,13 @@ namespace PowerApps.Samples
             int fileColumnMaxSizeInKb;
             Guid? fileId = null;
 
-            // Create the File Column with 10MB limit
+            // 创建File Column with 10MB limit
             await Utility.CreateFileColumn(service,entityLogicalName,fileColumnSchemaName);
 
-            // Update the MaxSizeInKB value: Comment this line to get error about file too large for column.
+            // 更新the MaxSizeInKB value: Comment this line to get error about file too large for column.
              await Utility.UpdateFileColumnMaxSizeInKB(service, entityLogicalName, fileColumnSchemaName.ToLower(), 100 * 1024);
 
-            // Retrieve the MaxSizeInKb value.
+            // 检索the MaxSizeInKb value.
             fileColumnMaxSizeInKb = await Utility.GetFileColumnMaxSizeInKb(service, entityLogicalName, fileColumnSchemaName.ToLower());
 
             #region create account record
@@ -95,11 +95,11 @@ namespace PowerApps.Samples
 
 
 
-            // Delete the account record
+            // 删除the account record
             await service.Delete(createdAccountRef);
             Console.WriteLine("Deleted the account record.");
 
-            // Delete the file column
+            // 删除the file column
             await Utility.DeleteFileColumn(service,entityLogicalName,fileColumnSchemaName.ToLower());
 
         }
@@ -107,13 +107,13 @@ namespace PowerApps.Samples
         /// <summary>
         /// Uploads a file using Web API Actions
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="entityLogicalName">The logical name of the table</param>
-        /// <param name="primaryKeyLogicalName">The logical name of the primary key for the table</param>
-        /// <param name="entityId">The Id of the record.</param>
-        /// <param name="filePropertyName">The name of the file column property.</param>
+        /// <param name="service">服务</param>
+        /// <param name="entityLogicalName">logical 名称 of the table</param>
+        /// <param name="primaryKeyLogicalName">logical 名称 of the primary key for the table</param>
+        /// <param name="entityId">Id of the record.</param>
+        /// <param name="filePropertyName">名称 of the file column property.</param>
         /// <param name="fileInfo">Information about the file to upload.</param>
-        /// <param name="fileMimeType">The mime type of the file, if known.</param>
+        /// <param name="fileMimeType">mime 类型 of the file, if known.</param>
         /// <returns></returns>
         private static async Task<Guid> UploadFile(Service service, 
                 string entityLogicalName,
@@ -124,7 +124,7 @@ namespace PowerApps.Samples
                 string? fileMimeType = null,
                 int? fileColumnMaxSizeInKb = null) 
         {
-            // Initialize the upload
+            // 初始化the upload
             InitializeFileBlocksUploadRequest initializeFileBlocksUploadRequest = new(
                 entityLogicalName: entityLogicalName,
                 primaryKeyLogicalName: primaryKeyLogicalName,
@@ -154,7 +154,7 @@ namespace PowerApps.Samples
             }
 
 
-            // The number of iterations that will be required:
+            // number of iterations that will be required:
             // int blocksCount = (int)Math.Ceiling(fileSize / (float)blockSize);
 
             int blockNumber = 0;
@@ -162,7 +162,7 @@ namespace PowerApps.Samples
             // While there is unread data from the file
             while ((bytesRead = file.Read(buffer, 0, buffer.Length)) > 0)
             {
-                // The file or final block may be smaller than 4MB
+                // file or final block may be smaller than 4MB
                 if (bytesRead < buffer.Length)
                 {
                     Array.Resize(ref buffer, bytesRead);
@@ -181,11 +181,11 @@ namespace PowerApps.Samples
                     blockData: buffer,
                     fileContinuationToken: fileContinuationToken);
 
-                // Send the request
+                // 发送请求
                 await service.SendAsync(uploadBlockRequest);
             }
 
-            // Try to get the mimetype if not provided.
+            // 尝试to get the mimetype if not provided.
             if (string.IsNullOrEmpty(fileMimeType))
             {
                 var provider = new FileExtensionContentTypeProvider();
@@ -214,11 +214,11 @@ namespace PowerApps.Samples
         /// <summary>
         /// Downloads a file using Web API Actions
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="entityLogicalName">The logical name of the table</param>
-        /// <param name="primaryKeyLogicalName">The logical name of the primary key for the table</param>
-        /// <param name="entityId">The Id of the record.</param>
-        /// <param name="filePropertyName">The name of the file column property.</param>
+        /// <param name="service">服务</param>
+        /// <param name="entityLogicalName">logical 名称 of the table</param>
+        /// <param name="primaryKeyLogicalName">logical 名称 of the primary key for the table</param>
+        /// <param name="entityId">Id of the record.</param>
+        /// <param name="filePropertyName">名称 of the file column property.</param>
         /// <returns></returns>
         private static async Task<byte[]> DownloadFile(Service service,
                 string entityLogicalName,
@@ -257,11 +257,11 @@ namespace PowerApps.Samples
                     blockLength: blockSizeDownload,
                     fileContinuationToken: fileContinuationToken);
 
-                // Send the request
+                // 发送请求
                 DownloadBlockResponse downloadBlockResponse =
                            await service.SendAsync<DownloadBlockResponse>(downLoadBlockRequest);
 
-                // Add the block returned to the list
+                // 添加the block returned to the list
                 bytes.AddRange(downloadBlockResponse.Data);
 
                 // Subtract the amount downloaded,

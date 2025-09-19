@@ -2,16 +2,16 @@
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the FormatAddressRequest
-    /// </summary>
+        /// Contains the response from the FormatAddressRequest
+        /// </summary>
     public sealed class FormatAddressResponse : HttpResponseMessage
     {
-        // Cache the async content
+        // 缓存the async content
         private string? _content;
 
         //Provides JObject for property getters
@@ -26,7 +26,7 @@ namespace PowerApps.Samples.Messages
         }
 
         /// <summary>
-        /// Gets the formatted address
+        /// 获取 the formatted address
         /// </summary>
         public string Address => (string)_jObject.GetValue(nameof(Address));
     }

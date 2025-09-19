@@ -15,25 +15,25 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
                     
                     Console.WriteLine();
                     Console.WriteLine(" Initializing new Account from the initial Account");
 
-                    // Create the request object
+                    // 创建the request object
                     var initialize = new InitializeFromRequest
                     {
 
-                        // Set the properties of the request object
+                        // 设置the properties of the request object
                         TargetEntityName = Account.EntityLogicalName.ToString(),
 
-                        // Create the EntityMoniker
+                        // 创建the EntityMoniker
                         EntityMoniker = _initialAccount.ToEntityReference()
                     };
 
-                    // Execute the request
+                    // 执行the request
                     InitializeFromResponse initialized =
                         (InitializeFromResponse)service.Execute(initialize);
 
@@ -44,13 +44,13 @@ namespace PowerApps.Samples
                 
                     Console.WriteLine("  Initializing an Opportunity from the initial Lead");
 
-                    // Create the request object
+                    // 创建the request object
                     initialize.TargetEntityName = Opportunity.EntityLogicalName.ToString();
 
-                    // Create the EntityMoniker
+                    // 创建the EntityMoniker
                     initialize.EntityMoniker = _initialLead.ToEntityReference();
 
-                    // Execute the request
+                    // 执行the request
                     initialized =
                         (InitializeFromResponse)service.Execute(initialize);
 

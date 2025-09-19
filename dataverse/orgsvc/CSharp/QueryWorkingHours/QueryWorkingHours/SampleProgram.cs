@@ -21,11 +21,11 @@ namespace PowerApps.Samples
                     SetUpSample(service);
                     #endregion Set up
 
-                    // Get the current user's information.
+                    // 获取the current user's information.
                     WhoAmIRequest userRequest = new WhoAmIRequest();
                     WhoAmIResponse userResponse = (WhoAmIResponse)service.Execute(userRequest);
 
-                    // Retrieve the working hours of the current user.                                              
+                    // 检索the working hours of the current user.                                              
                     QueryScheduleRequest scheduleRequest = new QueryScheduleRequest
                     {
                         ResourceId = userResponse.UserId,
@@ -35,7 +35,7 @@ namespace PowerApps.Samples
                     };
                     QueryScheduleResponse scheduleResponse = (QueryScheduleResponse)service.Execute(scheduleRequest);
 
-                    // Verify if some data is returned for the availability of the current user
+                    // 验证if some data is returned for the availability of the current user
                     if (scheduleResponse.TimeInfos.Length > 0)
                     {
                         Console.WriteLine("Successfully queried the working hours of the current user.");

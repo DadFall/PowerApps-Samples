@@ -3,7 +3,7 @@
     public class EndpointCollection
     {
         /// <summary>
-        /// The number of elements in the collection.
+        /// number of elements in the collection.
         /// </summary>
         public int Count { get; set; }
         /// <summary>

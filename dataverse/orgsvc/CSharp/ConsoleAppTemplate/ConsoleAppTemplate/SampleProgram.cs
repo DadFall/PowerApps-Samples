@@ -22,17 +22,17 @@ namespace PowerApps.Samples
                         #region Sample Code
                         //////////////////////////////////////////////
                         #region SetUp
-                        //Add any data required to support the core sample.
+                        //添加any data required to support the core sample.
                         SetUpSample(service);
                         #endregion SetUp
                         #region Demonstrate
-                        //Add sample code here
+                        //添加sample code here
 
                         Console.WriteLine("Your UserID: {0}", ((WhoAmIResponse)service.Execute(new WhoAmIRequest())).UserId);
 
                         #endregion Demonstrate
                         #region CleanUp
-                        //Remove any data created within the sample
+                        //移除any data created within the sample
                         CleanUpSample(service);
                         #endregion CleanUp
                         //////////////////////////////////////////////

@@ -464,7 +464,7 @@ namespace PowerApps.Samples
                     // *****************************************************************************************************************
                     //                FetchXML      byyrqtr2   Aggregate 17           
                     // *****************************************************************************************************************
-                    // Specify the result order for the previous sample.  Order by year, then quarter.
+                    // 指定result order for the previous sample.  Order by year, then quarter.
                     string byyrqtr2 = @" 
                     <fetch distinct='false' mapping='logical' aggregate='true'> 
                         <entity name='opportunity'> 

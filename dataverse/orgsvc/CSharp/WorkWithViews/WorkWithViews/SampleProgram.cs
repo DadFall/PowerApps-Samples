@@ -22,7 +22,7 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
                     System.String layoutXml =
@@ -64,7 +64,7 @@ namespace PowerApps.Samples
                     _customViewId = service.Create(sq);
                     Console.WriteLine("A new view with the name {0} was created.", sq.Name);
                     
-                    // Retrieve Views
+                    // 检索Views
                     
                     var mySavedQuery = new QueryExpression
                     {

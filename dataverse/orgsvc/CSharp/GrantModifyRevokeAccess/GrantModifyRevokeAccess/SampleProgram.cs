@@ -23,7 +23,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Retrieve and display the access that the calling user has to the
+                    // 检索and display the access that the calling user has to the
                     // created lead.
                     var accountReference = new EntityReference(Account.EntityLogicalName, _accountId);
                     var currentUserReference = new EntityReference(
@@ -31,7 +31,7 @@ namespace PowerApps.Samples
                     RetrieveAndDisplayPrincipalAccess(service, accountReference, currentUserReference,
                         "Current User");
 
-                    // Retrieve and display the access that the first user has to the
+                    // 检索and display the access that the first user has to the
                     // created lead.
                     var systemUser1Ref = new EntityReference(SystemUser.EntityLogicalName,
                         _systemUserIds[0]);
@@ -54,7 +54,7 @@ namespace PowerApps.Samples
                     service.Execute(grantAccessRequest1);
 
 
-                    // Retrieve and display access information for the lead.
+                    // 检索and display access information for the lead.
                     RetrieveAndDisplayPrincipalAccess(service, accountReference, systemUser1Ref,
                         "System User 1");
                     RetrieveAndDisplayAccountAccess(service,accountReference);
@@ -79,7 +79,7 @@ namespace PowerApps.Samples
                         _systemUserIds[1]);
 
 
-                    // Retrieve and display access information for the lead and system user 2.
+                    // 检索and display access information for the lead and system user 2.
                     RetrieveAndDisplayPrincipalAccess(service, accountReference, systemUser2Ref,
                         "System User 2");
                     RetrieveAndDisplayAccountAccess(service,accountReference);
@@ -100,7 +100,7 @@ namespace PowerApps.Samples
                         GetEntityReferenceString(service, systemUser1Ref));
                     service.Execute(modifyUser1AccessReq);
 
-                    // Retrieve and display access information for the lead.
+                    // 检索and display access information for the lead.
                     RetrieveAndDisplayAccountAccess(service, accountReference);
 
 
@@ -115,7 +115,7 @@ namespace PowerApps.Samples
                         GetEntityReferenceString(service, systemUser2Ref));
                     service.Execute(revokeUser2AccessReq);
 
-                    // Retrieve and display access information for the lead.
+                    // 检索and display access information for the lead.
                     RetrieveAndDisplayPrincipalAccess(service, accountReference, systemUser2Ref,
                         "System User 2");
 

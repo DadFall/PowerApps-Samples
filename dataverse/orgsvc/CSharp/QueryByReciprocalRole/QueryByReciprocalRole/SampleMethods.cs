@@ -11,7 +11,7 @@ namespace PowerApps.Samples
 {
    public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         public static Guid _primaryConnectionRoleId;
         public static Guid _reciprocalConnectionRoleId;
         private static bool prompt = true;
@@ -22,10 +22,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -37,9 +37,9 @@ namespace PowerApps.Samples
             DeleteRequiredRecords(service, prompt);
         }
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Create a primary connection role instance. 
-        /// Create a reciprocal connection role instance.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建a primary connection role instance. 
+        /// 创建a reciprocal connection role instance.
         /// Associate the connection roles.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
@@ -55,8 +55,8 @@ namespace PowerApps.Samples
                 Other = 5
             };
 
-            // Create the Connection Roles. 
-            // Create the primary connection Role instance.
+            // 创建the Connection Roles. 
+            // 创建the primary connection Role instance.
             ConnectionRole setupPrimaryConnectionRole = new ConnectionRole
             {
                 Name = "Example Primary Connection Role",
@@ -66,7 +66,7 @@ namespace PowerApps.Samples
             _primaryConnectionRoleId = service.Create(setupPrimaryConnectionRole);
             Console.WriteLine("Created {0}.", setupPrimaryConnectionRole.Name);
 
-            // Create a related Connection Role Object Type Code record for Account
+            // 创建a related Connection Role Object Type Code record for Account
             // on the primary role.
             ConnectionRoleObjectTypeCode accountPrimaryConnectionRoleTypeCode
                 = new ConnectionRoleObjectTypeCode
@@ -80,7 +80,7 @@ namespace PowerApps.Samples
             Console.WriteLine(@"Created a related Connection Role Object Type Code 
                                 record for Account on the primary role.");
 
-            // Create another Connection Role.
+            // 创建another Connection Role.
             ConnectionRole setupReciprocalConnectionRole = new ConnectionRole
             {
                 Name = "Example Reciprocal Connection Role",
@@ -90,7 +90,7 @@ namespace PowerApps.Samples
             _reciprocalConnectionRoleId = service.Create(setupReciprocalConnectionRole);
             Console.WriteLine("Created {0}.", setupReciprocalConnectionRole.Name);
 
-            // Create a related Connection Role Object Type Code record for Account
+            // 创建a related Connection Role Object Type Code record for Account
             // on the related role.
             ConnectionRoleObjectTypeCode accountReciprocalConnectionRoleTypeCode
                 = new ConnectionRoleObjectTypeCode
@@ -115,7 +115,7 @@ namespace PowerApps.Samples
                         new EntityReference(ConnectionRole.EntityLogicalName,
                         _reciprocalConnectionRoleId)
                     },
-                    // The name of the relationship connection role association 
+                    // name of the relationship connection role association 
                     // relationship in MS CRM
                     Relationship = new Relationship()
                     {
@@ -129,7 +129,7 @@ namespace PowerApps.Samples
             return;
         }
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>

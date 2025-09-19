@@ -5,17 +5,17 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data that is needed to set localized labels for a limited set of entity attributes.
-    /// </summary>
+        /// Contains the data that is needed to set localized labels for a limited set of entity attributes.
+        /// </summary>
     public sealed class SetLocLabelsRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the SetLocLabelsRequest
+        /// 初始化 the SetLocLabelsRequest
         /// </summary>
         /// <param name="entityMoniker">Reference to the item</param>
         /// <param name="attributeName">Name of the property</param>
-        /// <param name="labels">The labels to set.</param>
-        /// <param name="solutionUniqueName">The name of the solution.</param>
+        /// <param name="labels">labels to set.</param>
+        /// <param name="solutionUniqueName">名称 of the solution.</param>
         public SetLocLabelsRequest(JObject entityMoniker, string attributeName, LocalizedLabel[] labels, string? solutionUniqueName = null)
         {
             Method = HttpMethod.Post;

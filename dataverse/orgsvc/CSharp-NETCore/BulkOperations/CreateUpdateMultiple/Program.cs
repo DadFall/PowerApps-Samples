@@ -11,23 +11,23 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -42,7 +42,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                                                                     
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"))
                 {
@@ -51,7 +51,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             try
             {
-                // Create sample_Example table for this sample
+                // 创建sample_Example table for this sample
                 Utility.CreateExampleTable(
                     serviceClient: serviceClient,
                     tableSchemaName: tableSchemaName, 
@@ -68,7 +68,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 }
                 else
                 {
-                    // Create a List of entity instances.
+                    // 创建a List of entity instances.
                     Console.WriteLine($"\nPreparing {numberOfRecords} records to create..");
                     List<Entity> entityList = new();
                     // Populate the list with the number of records to test.
@@ -82,7 +82,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                         }
                         });
                     }
-                    // Create an EntityCollection populated with the list of entities.
+                    // 创建an EntityCollection populated with the list of entities.
                     EntityCollection entities = new(entityList)
                     {
                         EntityName = tableLogicalName
@@ -94,7 +94,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     {
                         Targets = entities,
                     };
-                    // Add Shared Variable with request to detect in a plug-in.
+                    // 添加Shared Variable with request to detect in a plug-in.
                     createMultipleRequest["tag"] = "CreateUpdateMultiple";
 
                     if (Settings.BypassCustomPluginExecution)
@@ -106,7 +106,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                     Console.WriteLine($"Sending CreateMultipleRequest...");
                     Stopwatch createStopwatch = Stopwatch.StartNew();
-                    // Send the request
+                    // 发送the request
                     CreateMultipleResponse createMultipleResponse =
                         (CreateMultipleResponse)serviceClient.Execute(createMultipleRequest);
                     createStopwatch.Stop();
@@ -121,7 +121,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                         entities.Entities[i].Id = createMultipleResponse.Ids[i];
                     }
 
-                    // Update the sample_name value:
+                    // 更新the sample_name value:
                     foreach (Entity entity in entities.Entities)
                     {
                         entity["sample_name"] += " Updated";
@@ -132,7 +132,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     {
                         Targets = entities
                     };
-                    // Add Shared Variable with request to detect in a plug-in.
+                    // 添加Shared Variable with request to detect in a plug-in.
                     updateMultipleRequest["tag"] = "CreateUpdateMultiple";
 
                     if (Settings.BypassCustomPluginExecution)
@@ -144,7 +144,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                     Console.WriteLine($"Sending UpdateMultipleRequest...");
                     Stopwatch updateStopwatch = Stopwatch.StartNew();
-                    // Send the request
+                    // 发送the request
                     serviceClient.Execute(updateMultipleRequest);
                     updateStopwatch.Stop();
                     Console.WriteLine($"\tUpdated {entities.Entities.Count} records " +
@@ -153,7 +153,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     if (Settings.UseElastic) {
 
                         Console.WriteLine($"\nPreparing {numberOfRecords} records to delete..");
-                        // Delete created rows with DeleteMultiple
+                        // 删除created rows with DeleteMultiple
                         EntityReferenceCollection targets = new();
                         foreach (Entity entity in entities.Entities)
                         {
@@ -177,8 +177,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     }
                     else
                     {
-                        // Delete created rows asynchronously
-                        // When testing plug-ins, set break point here to observe data
+                        // 删除created rows asynchronously
+                        // 当testing plug-ins, set break point here to observe data
                         Console.WriteLine($"\nStarting asynchronous bulk delete " +
                             $"of {createMultipleResponse.Ids.Length} created records...");
 
@@ -194,7 +194,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                 }
 
-                // Delete sample_example table
+                // 删除sample_example table
                 Utility.DeleteExampleTable(
                     service: serviceClient,
                     tableSchemaName: tableSchemaName);

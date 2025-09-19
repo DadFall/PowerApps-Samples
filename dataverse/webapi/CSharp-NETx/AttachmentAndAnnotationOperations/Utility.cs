@@ -9,10 +9,10 @@ namespace PowerApps.Samples
     public class Utility
     {
         /// <summary>
-        /// Gets the mimetype for a file.
+        /// 获取 the mimetype for a file.
         /// </summary>
-        /// <param name="file">A reference to the file.</param>
-        /// <returns>The mimetype</returns>
+        /// <param name="file">一个reference to the file.</param>
+        /// <returns>mimetype</returns>
         public static string GetMimeType(FileInfo file)
         {
             var provider = new FileExtensionContentTypeProvider();
@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Gets the MaxUploadFileSize in bytes.
+        /// 获取 the MaxUploadFileSize in bytes.
         /// </summary>
-        /// <param name="service">The WebAPIService to use.</param>
-        /// <returns>The current system configured MaxUploadFileSize.</returns>
+        /// <param name="service">WebAPIService to use.</param>
+        /// <returns>current system configured MaxUploadFileSize.</returns>
         public static async Task<int> GetMaxUploadFileSize(Service service)
         {
             RetrieveMultipleResponse results =
@@ -36,12 +36,12 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Set the current system configured MaxUploadFileSize
+        /// 设置the current system configured MaxUploadFileSize
         /// </summary>
-        /// <param name="service">The WebAPIService to use.</param>
-        /// <param name="maxUploadFileSizeInBytes">The value to set.</param>
+        /// <param name="service">WebAPIService to use.</param>
+        /// <param name="maxUploadFileSizeInBytes">值 to set.</param>
         /// <returns>Task</returns>
-        /// <exception cref="ArgumentOutOfRangeException">The maxUploadFileSizeInBytes parameter must be less than 131072000 bytes and greater than 0 bytes.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">The maxUploadFileSizeInBytes 参数 must be less than 131072000 bytes and greater than 0 bytes.</exception>
         public static async Task SetMaxUploadFileSize(Service service, int maxUploadFileSizeInBytes)
         {
             if (maxUploadFileSizeInBytes > 131072000 || maxUploadFileSizeInBytes < 1)

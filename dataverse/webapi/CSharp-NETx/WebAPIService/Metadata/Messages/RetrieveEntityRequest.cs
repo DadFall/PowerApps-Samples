@@ -4,11 +4,11 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve the ComplexEntityMetadata for a table definition.
-    /// </summary>
+        /// Contains the data to retrieve the ComplexEntityMetadata for a table definition.
+        /// </summary>
     public sealed class RetrieveEntityRequest : HttpRequestMessage
     {
-        // This uses the RetrieveEntity Function
+        // 此uses the RetrieveEntity Function
         // https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/retrieveentity
         // It returns a ComplexEntityMetadata ComplexType rather than EntityMetadata EntityType
         // Not including LogicalName parameter because it cannot be used without MetadataId
@@ -22,11 +22,11 @@ namespace PowerApps.Samples.Metadata.Messages
         private string _uri = string.Empty;
 
         /// <summary>
-        /// Initializes the RetrieveEntityRequest
+        /// 初始化 the RetrieveEntityRequest
         /// </summary>
-        /// <param name="metadataId">The Id of the table definition.</param>
-        /// <param name="entityFilters">Filter to control how much data for each entity is retrieved.</param>
-        /// <param name="retrieveAsIfPublished">Whether to retrieve the metadata that has not been published.</param>
+        /// <param name="metadataId">Id of the table definition.</param>
+        /// <param name="entityFilters">Filter to control how much 数据 for each entity is retrieved.</param>
+        /// <param name="retrieveAsIfPublished">Whether to retrieve the meta数据 that has not been published.</param>
         public RetrieveEntityRequest(
             Guid metadataId,
             EntityFilters entityFilters = EntityFilters.Entity,
@@ -45,7 +45,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// Filter to control how much data for each entity is retrieved.
+        /// 过滤to control how much data for each entity is retrieved.
         /// </summary>
         public EntityFilters EntityFilters
         {
@@ -63,7 +63,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// The Id of the table definition.
+        /// Id of the table definition.
         /// </summary>
         public Guid MetadataId
         {

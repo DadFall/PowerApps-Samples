@@ -23,13 +23,13 @@ namespace PowerApps.Samples
                     SetUpSample(service);
                     #endregion Set up
                     #region Demonstrate
-                    // Retrieve an account.
+                    // 检索an account.
                     var account = service.Retrieve("account", accountId, new ColumnSet("name", "creditlimit"));
                     Console.WriteLine("\tThe row version of the created account is {0}", account.RowVersion);
 
                     if (account != null)
                     {
-                        // Create an in-memory account object from the retrieved account.
+                        // 创建an in-memory account object from the retrieved account.
                         var updatedAccount = new Entity()
                         {
                             LogicalName = account.LogicalName,
@@ -37,10 +37,10 @@ namespace PowerApps.Samples
                             RowVersion = account.RowVersion
                         };
 
-                        // Update just the credit limit.
+                        // 更新just the credit limit.
                         updatedAccount["creditlimit"] = new Money(1000000);
 
-                        // Set the request's concurrency behavour to check for a row version match.
+                        // 设置the request's concurrency behavour to check for a row version match.
                         var accountUpdate = new UpdateRequest()
                         {
                             Target = updatedAccount,

@@ -5,13 +5,13 @@ namespace PowerApps.Samples.Methods
     public static partial class Extensions
     {
         /// <summary>
-        /// Deletes a record.
+        /// 删除 a record.
         /// </summary>
-        /// <param name="service">The Service</param>
-        /// <param name="entityReference">A reference to the record to delete.</param>
-        /// <param name="partitionId">The partition key to use.</param>
+        /// <param name="service">Service</param>
+        /// <param name="entityReference">一个reference to the record to delete.</param>
+        /// <param name="partitionId">partition key to use.</param>
         /// <param name="strongConsistency">Whether strong consistency should be applied.</param>
-        /// <param name="eTag">The current ETag value to compare.</param>
+        /// <param name="eTag">current ETag 值 to compare.</param>
         /// <returns></returns>
         public static async Task Delete(
             this Service service,

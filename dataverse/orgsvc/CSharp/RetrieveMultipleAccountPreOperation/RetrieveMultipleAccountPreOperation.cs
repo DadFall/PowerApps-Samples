@@ -20,7 +20,7 @@ namespace RetrieveMultipleExample
             IPluginExecutionContext context = (IPluginExecutionContext)
                 serviceProvider.GetService(typeof(IPluginExecutionContext));
 
-            // The InputParameters collection contains all the data passed in the message request.  
+            // InputParameters collection contains all the data passed in the message request.  
             if (context.InputParameters.Contains("Query"))
             {
                 try
@@ -35,7 +35,7 @@ namespace RetrieveMultipleExample
                         tracingService.Trace("Found FetchExpression Query");
 
                         XDocument fetchXmlDoc = XDocument.Parse(fetchExpressionQuery.Query);
-                        //The required entity element
+                        //required entity element
                         var entityElement = fetchXmlDoc.Descendants("entity").FirstOrDefault();
                         var entityName = entityElement.Attributes("name").FirstOrDefault().Value;
 
@@ -44,7 +44,7 @@ namespace RetrieveMultipleExample
                         {
                             tracingService.Trace("Query on Account confirmed");
 
-                            //Get all filter elements
+                            //获取all filter elements
                             var filterElements = entityElement.Descendants("filter");
 
                             //Find any existing statecode conditions
@@ -56,11 +56,11 @@ namespace RetrieveMultipleExample
                             {
                                 tracingService.Trace("Removing existing statecode filter conditions.");
                             }
-                            //Remove statecode conditions
+                            //移除statecode conditions
                             stateCodeConditions.ToList().ForEach(x => x.Remove());
 
 
-                            //Add the condition you want in a new filter
+                            //添加the condition you want in a new filter
                             entityElement.Add(
                                 new XElement("filter",
                                     new XElement("condition",
@@ -86,14 +86,14 @@ namespace RetrieveMultipleExample
                             //Recursively remove any conditions referring to the statecode attribute
                             foreach (FilterExpression fe in queryExpressionQuery.Criteria.Filters)
                             {
-                                //Remove any existing criteria based on statecode attribute
+                                //移除any existing criteria based on statecode attribute
                                 RemoveAttributeConditions(fe, "statecode", tracingService);
                             }
 
-                            //Define the filter
+                            //定义
                             var stateCodeFilter = new FilterExpression();
                             stateCodeFilter.AddCondition("statecode", ConditionOperator.NotEqual, 1);
-                            //Add it to the Criteria
+                            //添加it to the Criteria
                             queryExpressionQuery.Criteria.AddFilter(stateCodeFilter);
                         }
 
@@ -122,9 +122,9 @@ namespace RetrieveMultipleExample
         /// <summary>
         /// Removes any conditions using a specific named attribute
         /// </summary>
-        /// <param name="filter">The filter that may have a condition using the attribute</param>
-        /// <param name="attributeName">The name of the attribute that should not be used in a condition</param>
-        /// <param name="tracingService">The tracing service to use</param>
+        /// <param name="filter">filter that may have a condition using the attribute</param>
+        /// <param name="attributeName">名称 of the attribute that should not be used in a condition</param>
+        /// <param name="tracingService">tracing service to use</param>
         private void RemoveAttributeConditions(FilterExpression filter, string attributeName, ITracingService tracingService)
         {
 

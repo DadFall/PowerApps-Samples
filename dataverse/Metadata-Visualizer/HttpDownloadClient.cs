@@ -12,7 +12,7 @@ namespace MetaViz
 
     internal class HttpDownloadClient
     {
-        // The URL to the CDS environment you want to connect with
+        // URL to the CDS environment you want to connect with
         // i.e. https://yourOrg.crm.dynamics.com/
         private string baseUrl;
 
@@ -46,7 +46,7 @@ namespace MetaViz
             // Use the WhoAmI function
             var response = client.GetAsync(whoamiUrl).Result;
 
-            //Get the response content and parse it.  
+            //获取the response content and parse it.  
             response.EnsureSuccessStatusCode();
             JObject body = JObject
                 .Parse(response.Content.ReadAsStringAsync().Result);

@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -17,7 +17,7 @@ export class FormattingAPIControl implements ComponentFramework.StandardControl<
 	private _notifyOutputChanged: () => void;
 
 	// Reference to the control container HTMLDivElement
-	// This element contains all elements of our custom control example
+	// 此element contains all elements of our custom control example
 	private _container: HTMLDivElement;
 
 	// Reference to ComponentFramework Context object
@@ -106,11 +106,11 @@ export class FormattingAPIControl implements ComponentFramework.StandardControl<
 	 * The right column of the table shows the result of that method name or property
 	 */
 	private createHTMLTableElement(): HTMLTableElement {
-		// Create HTML Table Element
+		// 创建HTML Table Element
 		const tableElement: HTMLTableElement = document.createElement("table");
 		tableElement.setAttribute("class", "FormattingControlSampleHtmlTable_HtmlTable");
 
-		// Create header row for table
+		// 创建header row for table
 		let key = "Example Method";
 		let value = "Result";
 		tableElement.appendChild(this.createHTMLTableRowElement(key, value, true));

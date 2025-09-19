@@ -34,7 +34,7 @@ namespace PowerApps.Samples
                         Other = 5
                     };
 
-                    // Create a Connection Role.
+                    // 创建a Connection Role.
                     ConnectionRole setupConnectionRole = new ConnectionRole
                     {
                         Name = "Example Connection Role",
@@ -46,7 +46,7 @@ namespace PowerApps.Samples
 
                     Console.WriteLine("Created {0}.", setupConnectionRole.Name);
 
-                    // Query for all Connection Roles.
+                    // 查询for all Connection Roles.
                     QueryExpression allQuery = new QueryExpression
                     {
                         EntityName = ConnectionRole.EntityLogicalName,
@@ -64,7 +64,7 @@ namespace PowerApps.Samples
                                 LinkCriteria = new FilterExpression
                                 {
                                     FilterOperator = LogicalOperator.And,
-                                    // Set a condition to only get connection roles  
+                                    // 设置a condition to only get connection roles  
                                     // related to all entities (object type code = 0).
                                     Conditions =
                                     {
@@ -88,7 +88,7 @@ namespace PowerApps.Samples
                     Console.WriteLine("Retrieved {0} unassociated connectionrole instance(s).",
                         results.Entities.Count);
 
-                    // Query to find roles which apply only to accounts.
+                    // 查询to find roles which apply only to accounts.
                     QueryExpression accountQuery = new QueryExpression
                     {
                         EntityName = ConnectionRole.EntityLogicalName,
@@ -106,7 +106,7 @@ namespace PowerApps.Samples
                                 LinkCriteria = new FilterExpression
                                 {
                                     FilterOperator = LogicalOperator.And,
-                                    // Set a condition to only get connection roles  
+                                    // 设置a condition to only get connection roles  
                                     // related to accounts (object type code = 1).
                                     Conditions =
                                     {
@@ -127,7 +127,7 @@ namespace PowerApps.Samples
                     Console.WriteLine("Retrieved {0} account-only connectionrole instance(s).",
                         results.Entities.Count);
 
-                    // Create a related Connection Role Object Type Code record for 
+                    // 创建a related Connection Role Object Type Code record for 
                     // Account.
                     ConnectionRoleObjectTypeCode setupAccountConnectionRoleTypeCode
                         = new ConnectionRoleObjectTypeCode
@@ -143,31 +143,31 @@ namespace PowerApps.Samples
                     Console.Write("Created a related Connection Role Object Type Code");
                     Console.Write(" record for Account.");
 
-                    // Run the query to find unassociated connectionroles again.
+                    // 运行the query to find unassociated connectionroles again.
                     results = service.RetrieveMultiple(allQuery);
 
                     Console.WriteLine(@"Retrieved {0} unassociated connectionrole instance(s).",
                         results.Entities.Count);
 
-                    // Run the account-only query again.
+                    // 运行the account-only query again.
                     results = service.RetrieveMultiple(accountQuery);
 
                     Console.WriteLine("Retrieved {0} account-only connectionrole instance(s).",
                         results.Entities.Count);
 
-                    // Remove the link from account entity.
+                    // 移除the link from account entity.
                     service.Delete(ConnectionRoleObjectTypeCode.EntityLogicalName,
                         setupAccountConnectionRoleTypeCode.Id);
 
                     Console.WriteLine("Removed link from connectionrole to account entity.");
 
-                    // Run the query to find unassociated connectionroles again.
+                    // 运行the query to find unassociated connectionroles again.
                     results = service.RetrieveMultiple(allQuery);
 
                     Console.WriteLine("Retrieved {0} unassociated connectionrole instance(s).",
                         results.Entities.Count);
 
-                    // Run the account-only query again.
+                    // 运行the account-only query again.
                     results = service.RetrieveMultiple(accountQuery);
 
                     Console.WriteLine("Retrieved {0} account-only connectionrole instance(s).",

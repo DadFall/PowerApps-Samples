@@ -2,13 +2,13 @@
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the ExportSolutionRequest
-    /// </summary>
+        /// Contains the data from the ExportSolutionRequest
+        /// </summary>
     public sealed class ExportSolutionResponse : HttpResponseMessage
     {
 
@@ -22,7 +22,7 @@ namespace PowerApps.Samples.Messages
         }
 
         /// <summary>
-        /// The contents of the downloaded file.
+        /// contents of the downloaded file.
         /// </summary>
         public byte[] ExportSolutionFile
         {

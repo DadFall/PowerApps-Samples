@@ -31,10 +31,10 @@ namespace GoalDataForFiscalYear
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -47,16 +47,16 @@ namespace GoalDataForFiscalYear
         }
 
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
 
             #region Create or Retrieve the necessary system users
 
-            // Retrieve the ldapPath
+            // 检索the ldapPath
             String ldapPath = String.Empty;
-            // Retrieve the sales team - 1 sales manager and 2 sales representatives.
+            // 检索the sales team - 1 sales manager and 2 sales representatives.
             _salesManagerId =
                 SystemUserProvider.RetrieveSalesManager(service, ref ldapPath);
             _salesRepresentativeIds =
@@ -74,11 +74,11 @@ namespace GoalDataForFiscalYear
             _accountId = (service.Create(account));
             account.Id = _accountId;
 
-            // Create Guids for PhoneCalls
+            // 创建Guids for PhoneCalls
             _phoneCallId = Guid.NewGuid();
             _phoneCall2Id = Guid.NewGuid();
 
-            // Create ActivityPartys for the phone calls' "From" field.
+            // 创建ActivityPartys for the phone calls' "From" field.
             ActivityParty activityParty = new ActivityParty()
             {
                 PartyId = account.ToEntityReference(),
@@ -101,7 +101,7 @@ namespace GoalDataForFiscalYear
                 ParticipationTypeMask = new OptionSetValue(9)
             };
 
-            // Create an open phone call.
+            // 创建an open phone call.
             PhoneCall phoneCall = new PhoneCall()
             {
                 Id = _phoneCallId,
@@ -113,7 +113,7 @@ namespace GoalDataForFiscalYear
             };
             service.Create(phoneCall);
 
-            // Close the first phone call.
+            // 关闭the first phone call.
             SetStateRequest closePhoneCall = new SetStateRequest()
             {
                 EntityMoniker = phoneCall.ToEntityReference(),
@@ -122,7 +122,7 @@ namespace GoalDataForFiscalYear
             };
             service.Execute(closePhoneCall);
 
-            // Create a second phone call. 
+            // 创建a second phone call. 
             phoneCall = new PhoneCall()
             {
                 Id = _phoneCall2Id,
@@ -134,7 +134,7 @@ namespace GoalDataForFiscalYear
             };
             service.Create(phoneCall);
 
-            // Close the second phone call.
+            // 关闭the second phone call.
             closePhoneCall = new SetStateRequest()
             {
                 EntityMoniker = phoneCall.ToEntityReference(),
@@ -148,13 +148,13 @@ namespace GoalDataForFiscalYear
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
         public static void DeleteRequiredRecords(CrmServiceClient service, bool prompt)
         {
-            // The three system users that were created by this sample will continue to 
+            // three system users that were created by this sample will continue to 
             // exist on your system because system users cannot be deleted in Microsoft
             // Dynamics CRM.  They can only be enabled or disabled.
 
@@ -179,7 +179,7 @@ namespace GoalDataForFiscalYear
 
             if (toBeDeleted)
             {
-                // Delete all records created in this sample.
+                // 删除all records created in this sample.
                 service.Delete("goal", _firstChildGoalId);
                 service.Delete("goal", _secondChildGoalId);
                 service.Delete("goal", _parentGoalId);

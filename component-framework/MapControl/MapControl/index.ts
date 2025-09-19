@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -23,7 +23,7 @@ export class MapControl implements ComponentFramework.StandardControl<IInputs, I
 	private _context: ComponentFramework.Context<IInputs>;
 
 	// API Key used to activate and embed the maps automatically
-	// NOTE: You can follow the documentation at https://developers.google.com/maps/documentation/embed/get-api-key to generate your own API Key
+	// 注意： You can follow the documentation at https://developers.google.com/maps/documentation/embed/get-api-key to generate your own API Key
 	private MAPS_API_KEY = "<Replace your Key here>";
 
 	/**

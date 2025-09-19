@@ -5,17 +5,17 @@ using PowerApps.Samples.Types;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to add privileges to a role
-    /// </summary>
+        /// Contains the data to add privileges to a role
+        /// </summary>
     public sealed class AddPrivilegesRoleRequest : HttpRequestMessage
     {
        
         private JObject _content;
 
         /// <summary>
-        /// Initializes the AddPrivilegesRoleRequest
+        /// 初始化 the AddPrivilegesRoleRequest
         /// </summary>
-        /// <param name="roleId">The Id of the role to add the privileges to.</param>
+        /// <param name="roleId">Id of the role to add the privileges to.</param>
         public AddPrivilegesRoleRequest(Guid roleId, List<RolePrivilege> privileges)
         {
             Method = HttpMethod.Post;

@@ -14,17 +14,17 @@ namespace PowerApps.Samples.Metadata.Types
         public AttributeTypeDisplayName AttributeTypeName { get; } = new AttributeTypeDisplayName(AttributeTypeDisplayNameValues.MemoType);
 
         /// <summary>
-        /// The format options for the memo attribute.
+        /// format options for the memo attribute.
         /// </summary>
         public StringFormat Format { get; set; }
 
         /// <summary>
-        /// The input method editor (IME) mode for the attribute.
+        /// input method editor (IME) mode for the attribute.
         /// </summary>
         public ImeMode ImeMode { get; set; }
 
         /// <summary>
-        /// The maximum length for the attribute.
+        /// maximum length for the attribute.
         /// </summary>
         public int MaxLength { get; set; }
 

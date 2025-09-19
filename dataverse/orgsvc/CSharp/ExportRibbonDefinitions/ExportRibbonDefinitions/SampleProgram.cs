@@ -18,22 +18,22 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    //Create export folder for ribbon xml files if not already exist.
+                    //创建export folder for ribbon xml files if not already exist.
                     if (!Directory.Exists(exportFolder))
                         Directory.CreateDirectory(exportFolder);
 
-                    //Retrieve the Application Ribbon
+                    //检索the Application Ribbon
                     var appribReq = new RetrieveApplicationRibbonRequest();
                     var appribResp = (RetrieveApplicationRibbonResponse)service.Execute(appribReq);
 
                     System.String applicationRibbonPath = Path.GetFullPath(exportFolder + "\\applicationRibbon.xml");
                     File.WriteAllBytes(applicationRibbonPath, unzipRibbon(appribResp.CompressedApplicationRibbonXml));
-                    //Write the path where the file has been saved.
+                    //写入the path where the file has been saved.
                     Console.WriteLine(applicationRibbonPath);
-                    //Retrieve system Entity Ribbons
+                    //检索system Entity Ribbons
                     RetrieveEntityRibbonRequest entRibReq = new RetrieveEntityRibbonRequest() { RibbonLocationFilter = RibbonLocationFilters.All };
 
                     foreach (System.String entityName in entitiesWithRibbons)
@@ -43,11 +43,11 @@ namespace PowerApps.Samples
 
                         System.String entityRibbonPath = Path.GetFullPath(exportFolder + "\\" + entityName + "Ribbon.xml");
                         File.WriteAllBytes(entityRibbonPath, unzipRibbon(entRibResp.CompressedEntityXml));
-                        //Write the path where the file has been saved.
+                        //写入the path where the file has been saved.
                         Console.WriteLine(entityRibbonPath);
                     }
 
-                    //Check for custom entities
+                    //检查for custom entities
                     var raer = new RetrieveAllEntitiesRequest() { EntityFilters = EntityFilters.Entity };
 
                     var resp = (RetrieveAllEntitiesResponse)service.Execute(raer);
@@ -61,7 +61,7 @@ namespace PowerApps.Samples
 
                             System.String entityRibbonPath = Path.GetFullPath(exportFolder + "\\" + em.LogicalName + "Ribbon.xml");
                             File.WriteAllBytes(entityRibbonPath, unzipRibbon(entRibResp.CompressedEntityXml));
-                            //Write the path where the file has been saved.
+                            //写入the path where the file has been saved.
                             Console.WriteLine(entityRibbonPath);
                         }
                     }

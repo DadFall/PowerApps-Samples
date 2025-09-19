@@ -7,27 +7,27 @@ namespace PowerApps.Samples.Metadata.Types
     public class EntityKeyMetadata : MetadataBase
     {
         /// <summary>
-        /// The asynchronous job.
+        /// asynchronous job.
         /// </summary>
         public Guid? AsyncJob { get; set; }
 
         /// <summary>
-        /// A label containing the display name for the key.
+        /// 一个label containing the display name for the key.
         /// </summary>
         public Label DisplayName { get; set; }
 
         /// <summary>
-        /// The entity key index status.
+        /// entity key index status.
         /// </summary>
         public EntityKeyIndexStatus EntityKeyIndexStatus { get; set; }
 
         /// <summary>
-        /// The entity logical name.
+        /// entity logical name.
         /// </summary>
         public string EntityLogicalName { get; set; }
 
         /// <summary>
-        /// A string identifying the solution version that the solution component was added in.
+        /// 一个string identifying the solution version that the solution component was added in.
         /// </summary>
         public string IntroducedVersion { get; set; }
 
@@ -42,17 +42,17 @@ namespace PowerApps.Samples.Metadata.Types
         public bool IsManaged { get; set; }
 
         /// <summary>
-        /// The key attributes.
+        /// key attributes.
         /// </summary>
         public string[] KeyAttributes { get; set; }
 
         /// <summary>
-        /// The logical name.
+        /// logical name.
         /// </summary>
         public string LogicalName { get; set; }
 
         /// <summary>
-        /// The schema name.
+        /// schema name.
         /// </summary>
         public string SchemaName { get; set; }
     }

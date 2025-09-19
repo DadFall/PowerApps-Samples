@@ -43,7 +43,7 @@ $.extend($.fn, {
 			return validator;
 		}
 
-		// Add novalidate tag if HTML5.
+		// 添加novalidate tag if HTML5.
 		this.attr( "novalidate", "novalidate" );
 
 		validator = new $.validator( options, this[0] );
@@ -862,7 +862,7 @@ $.extend($.validator, {
 			// support for <input required> in both html5 and older browsers
 			if ( method === "required" ) {
 				value = $element.get(0).getAttribute(method);
-				// Some browsers return an empty string for the required attribute
+				// 一些browsers return an empty string for the required attribute
 				// and non-HTML5 browsers might have required="" markup
 				if ( value === "" ) {
 					value = true;

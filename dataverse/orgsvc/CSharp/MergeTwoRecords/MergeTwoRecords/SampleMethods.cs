@@ -16,10 +16,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("9.0.0.0")))
             {
-                //The environment version is lower than version 9.0.0.0
+                //environment version is lower than version 9.0.0.0
                 return;
             }
 
@@ -32,12 +32,12 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create the first account, which will be merged into
+            // 创建the first account, which will be merged into
             Account account1 = new Account();
             account1.Name = "Fourth Coffee";
             account1.Description = "Coffee House";
@@ -47,7 +47,7 @@ namespace PowerApps.Samples
             Console.WriteLine("  Name: {0}", account1.Name);
             Console.WriteLine("  Description: {0}", account1.Description);
 
-            // Create the second account, which will be merged from
+            // 创建the second account, which will be merged from
             Account account2 = new Account();
 
             account2.Name = "Fourth Coffee";
@@ -61,7 +61,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

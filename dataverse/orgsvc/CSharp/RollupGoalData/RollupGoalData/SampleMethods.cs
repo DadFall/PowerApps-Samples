@@ -43,10 +43,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -58,23 +58,23 @@ namespace PowerApps.Samples
             DeleteRequiredRecords(service, prompt);
         }
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
 
             #region Create or Retrieve the necessary system users
 
-            // Retrieve the ldapPath
+            // 检索the ldapPath
             String ldapPath = String.Empty;
-            // Retrieve the sales team - 1 sales manager and 2 sales representatives.
+            // 检索the sales team - 1 sales manager and 2 sales representatives.
             _salesManagerId = SystemUserProvider.RetrieveSalesManager(service, ref ldapPath);
             _salesRepresentativeIds = SystemUserProvider.RetrieveSalespersons(service, ref ldapPath);
 
             #endregion
 
             #region Create records to support Opportunity records
-            // Create a unit group
+            // 创建a unit group
             UoMSchedule newUnitGroup = new UoMSchedule
             {
                 Name = "Example Unit Group",
@@ -82,7 +82,7 @@ namespace PowerApps.Samples
             };
             _unitGroupId = service.Create(newUnitGroup);
 
-            // Retrieve the default unit id that was automatically created
+            // 检索the default unit id that was automatically created
             // when we created the Unit Group
             QueryExpression unitQuery = new QueryExpression
             {
@@ -107,11 +107,11 @@ namespace PowerApps.Samples
                 }
             };
 
-            // Retrieve the unit.
+            // 检索the unit.
             UoM unit = (UoM)service.RetrieveMultiple(unitQuery).Entities[0];
             _defaultUnitId = unit.UoMId.Value;
 
-            // Create a few products
+            // 创建a few products
             Product newProduct1 = new Product
             {
                 ProductNumber = "1",
@@ -139,7 +139,7 @@ namespace PowerApps.Samples
             _product2Id = service.Create(newProduct2);
             Console.WriteLine("Created {0}", newProduct2.Name);
 
-            // Create a new discount list
+            // 创建a new discount list
             DiscountType newDiscountType = new DiscountType
             {
                 Name = "Example Discount List",
@@ -147,7 +147,7 @@ namespace PowerApps.Samples
             };
             _discountTypeId = service.Create(newDiscountType);
 
-            // Create a new discount
+            // 创建a new discount
             Discount newDiscount = new Discount
             {
                 DiscountTypeId = new EntityReference(DiscountType.EntityLogicalName,
@@ -158,14 +158,14 @@ namespace PowerApps.Samples
             };
             _discountId = service.Create(newDiscount);
 
-            // Create a price list
+            // 创建a price list
             PriceLevel newPriceList = new PriceLevel
             {
                 Name = "Example Price List"
             };
             _priceListId = service.Create(newPriceList);
 
-            // Create a price list item for the first product and apply volume discount
+            // 创建a price list item for the first product and apply volume discount
             ProductPriceLevel newPriceListItem1 = new ProductPriceLevel
             {
                 PriceLevelId = new EntityReference(PriceLevel.EntityLogicalName, _priceListId),
@@ -177,7 +177,7 @@ namespace PowerApps.Samples
             };
             _priceListItem1Id = service.Create(newPriceListItem1);
 
-            // Create a price list item for the second product
+            // 创建a price list item for the second product
             ProductPriceLevel newPriceListItem2 = new ProductPriceLevel
             {
                 PriceLevelId = new EntityReference(PriceLevel.EntityLogicalName, _priceListId),
@@ -206,7 +206,7 @@ namespace PowerApps.Samples
             service.Execute(publishRequest2);
             Console.WriteLine("Published {0} and {1}", newProduct1.Name, newProduct2.Name);
 
-            // Create an account record for the opportunity's potential customerid 
+            // 创建an account record for the opportunity's potential customerid 
             Account newAccount = new Account
             {
                 Name = "Litware, Inc.",
@@ -224,7 +224,7 @@ namespace PowerApps.Samples
             #endregion Create records to support Opportunity records
 
             #region Create Opportunity records
-            // Create a new opportunity with user specified estimated revenue
+            // 创建a new opportunity with user specified estimated revenue
             Opportunity newOpportunity = new Opportunity
             {
                 Name = "Example Opportunity",
@@ -267,7 +267,7 @@ namespace PowerApps.Samples
             };
             _opportunityIds.Add(service.Create(secondOpportunity));
 
-            // Create a catalog product
+            // 创建a catalog product
             OpportunityProduct catalogProduct = new OpportunityProduct
             {
                 OpportunityId = new EntityReference(Opportunity.EntityLogicalName,
@@ -280,7 +280,7 @@ namespace PowerApps.Samples
             };
             _catalogProductId = service.Create(catalogProduct);
 
-            // Create another catalog product and override the list price
+            // 创建another catalog product and override the list price
             OpportunityProduct catalogProductPriceOverride = new OpportunityProduct
             {
                 OpportunityId = new EntityReference(Opportunity.EntityLogicalName,
@@ -310,7 +310,7 @@ namespace PowerApps.Samples
             };
             _writeInProductId = service.Create(writeInProduct);
 
-            // Close the opportunities as 'Won'
+            // 关闭the opportunities as 'Won'
             WinOpportunityRequest winRequest = new WinOpportunityRequest()
             {
                 OpportunityClose = new OpportunityClose()
@@ -347,13 +347,13 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
         public static void DeleteRequiredRecords(CrmServiceClient service,bool prompt)
         {
-            // The three system users that were created by this sample will continue to 
+            // three system users that were created by this sample will continue to 
             // exist on your system because system users cannot be deleted in Microsoft
             // Dynamics CRM.  They can only be enabled or disabled.
 
@@ -378,7 +378,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete all records created in this sample.
+                // 删除all records created in this sample.
                 service.Delete("goal", _firstChildGoalId);
                 service.Delete("goal", _secondChildGoalId);
                 service.Delete("goal", _parentGoalId);

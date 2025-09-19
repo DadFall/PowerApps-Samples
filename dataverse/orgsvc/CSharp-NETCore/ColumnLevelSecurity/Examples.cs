@@ -13,7 +13,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
     {
         // <snippetGetSecuredColumns>
         /// <summary>
-        /// Generates a CSV file containing the names of secured columns for all tables 
+        /// 生成 a CSV file containing the names of secured columns for all tables 
         /// in the organization.
         /// </summary>
         /// <remarks>This method queries the organization's metadata to identify columns 
@@ -25,9 +25,9 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// permissions to access the specified directory. </para></remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to 
         /// retrieve metadata from the organization.</param>
-        /// <param name="filepath">The directory path where the CSV file will be saved. 
+        /// <param name="filepath">directory path where the CSV file will be saved. 
         /// Must be a valid and accessible file path.</param>
-        /// <param name="filename">The name of the CSV file to be created. Defaults to 
+        /// <param name="filename">名称 of the CSV file to be created. Defaults to 
         /// "SecuredColumns.csv" if not specified.</param>
         static internal void GetSecuredColumns(IOrganizationService service,
             string filepath, string filename = "SecuredColumns.csv")
@@ -65,14 +65,14 @@ namespace PowerPlatform_Dataverse_CodeSamples
             var response = (RetrieveMetadataChangesResponse)service.Execute(request);
 
 
-            // Create a StringBuilder to hold the CSV data
+            // 创建a StringBuilder to hold the CSV data
             StringBuilder csvContent = new();
 
             string[] columns = {
                 "Table",
                 "Column" };
 
-            // Add headers
+            // 添加headers
             csvContent.AppendLine(string.Join(",", columns));
 
             foreach (var table in response.EntityMetadata)
@@ -84,7 +84,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                         column.SchemaName
                     };
 
-                    // Add values
+                    // 添加values
                     csvContent.AppendLine(string.Join(",", values));
                 }
             }
@@ -105,9 +105,9 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// create, update, or read operations, and other relevant metadata.</remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to 
         /// retrieve metadata from the organization.</param>
-        /// <param name="filepath">The directory path where the CSV file will be saved. This 
+        /// <param name="filepath">directory path where the CSV file will be saved. This 
         /// must be a valid, writable directory.</param>
-        /// <param name="filename">The name of the CSV file to create. Defaults to 
+        /// <param name="filename">名称 of the CSV file to create. Defaults to 
         /// "ColumnSecurityInfo.csv" if not specified.</param>
         static internal void DumpColumnSecurityInfo(IOrganizationService service,
             string filepath, string filename = "ColumnSecurityInfo.csv")
@@ -158,7 +158,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             var response = (RetrieveMetadataChangesResponse)service.Execute(request);
 
 
-            // Create a StringBuilder to hold the CSV data
+            // 创建a StringBuilder to hold the CSV data
             StringBuilder csvContent = new();
 
             string[] columns = {
@@ -170,7 +170,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 "CanBeSecuredForUpdate",
                 "CanBeSecuredForRead" };
 
-            // Add headers
+            // 添加headers
             csvContent.AppendLine(string.Join(",", columns));
 
             foreach (var table in response.EntityMetadata)
@@ -187,7 +187,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                         column.CanBeSecuredForRead.ToString() ?? "False"
                     };
 
-                    // Add values
+                    // 添加values
                     csvContent.AppendLine(string.Join(",", values));
                 }
             }
@@ -199,9 +199,9 @@ namespace PowerPlatform_Dataverse_CodeSamples
        // </snippetDumpColumnSecurityInfo>
        // <snippetGetSecuredColumnList>
        /// <summary>
-       /// Retrieves a list of secured columns managed by the specified field security 
+        /// 检索 a list of secured columns managed by the specified field security 
        /// profile.
-       /// </summary>
+        /// </summary>
        /// <remarks>This method queries the Dataverse field permission table to identify 
        /// columns that are secured by the field security profile with ID 
        /// <c>572329c1-a042-4e22-be47-367c6374ea45</c>. The returned list contains fully 
@@ -209,10 +209,10 @@ namespace PowerPlatform_Dataverse_CodeSamples
        /// alphabetically.</remarks>
        /// <param name="service">The <see cref="IOrganizationService"/> instance used to 
        /// interact with the Dataverse service.</param>
-       /// <returns>A sorted list of strings representing the fully qualified names of 
+       /// <returns>一个sorted list of strings representing the fully qualified names of 
        /// secured columns.</returns>
-       /// <exception cref="Exception">Thrown if the calling user does not have read 
-       /// access to the field permission table or if an error occurs while retrieving 
+       /// <exception cref="Exception">Thrown 如果 the calling user does not have read 
+       /// access to the field permission table or 如果 an error occurs while retrieving 
        /// field permissions.</exception>
         static internal List<string> GetSecuredColumnList(IOrganizationService service)
         {
@@ -272,7 +272,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         // </snippetGetSecuredColumnList>
         // <snippetSetColumnIsSecured>
         /// <summary>
-        /// Updates the security status of a column in a Dataverse table.
+        /// 更新 the security status of a column in a Dataverse table.
         /// </summary>
         /// <remarks>This method retrieves the current definition of the specified column 
         /// and updates its security status only if the provided value differs from the 
@@ -280,15 +280,15 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// no update request is sent.</remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to 
         /// interact with the Dataverse service.</param>
-        /// <param name="tableLogicalName">The logical name of the table containing the 
+        /// <param name="tableLogicalName">logical 名称 of the table containing the 
         /// column to be updated. Cannot be null or empty.</param>
-        /// <param name="columnLogicalName">The logical name of the column whose security 
+        /// <param name="columnLogicalName">logical 名称 of the column whose security 
         /// status is to be updated. Cannot be null or empty.</param>
         /// <param name="value">A <see langword="true"/> value indicates that the column 
         /// should be secured; otherwise, <see langword="false"/>.</param>
-        /// <param name="solutionUniqueName">The unique name of the solution in which the 
+        /// <param name="solutionUniqueName">unique 名称 of the solution in which the 
         /// column update should be applied. Cannot be null or empty.</param>
-        /// <exception cref="Exception">Thrown if an error occurs while retrieving or 
+        /// <exception cref="Exception">Thrown 如果 an error occurs while retrieving or 
         /// updating the column definition.</exception>
         static internal void SetColumnIsSecured(
             IOrganizationService service,
@@ -298,7 +298,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             string solutionUniqueName)
         {
 
-            // Update request requires the entire column definition,
+            // 更新request requires the entire column definition,
             // So retrieving that first
 
             RetrieveAttributeRequest retrieveRequest = new()
@@ -322,7 +322,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             if (!columnDefinition.IsSecured.HasValue || columnDefinition.IsSecured.Value != value)
             {
-                // Set the IsSecured property to value
+                // 设置the IsSecured property to value
                 columnDefinition.IsSecured = value;
 
                 UpdateAttributeRequest updateRequest = new()
@@ -350,23 +350,23 @@ namespace PowerPlatform_Dataverse_CodeSamples
         // </snippetSetColumnIsSecured>
         // <snippetRetrieveColumnId>
         /// <summary>
-        /// Retrieves the unique identifier (MetadataId) of a column in a specified 
+        /// 检索 the unique identifier (MetadataId) of a column in a specified 
         /// Dataverse table.
         /// </summary>
         /// <remarks>
-        /// This method queries the organization's metadata to locate the specified column 
+        /// 此method queries the organization's metadata to locate the specified column 
         /// within the given table and returns its MetadataId. If the table or column is 
         /// not found, an exception is thrown.
         /// </remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to 
         /// retrieve metadata from the organization.</param>
-        /// <param name="tableLogicalName">The logical name of the table containing the 
+        /// <param name="tableLogicalName">logical 名称 of the table containing the 
         /// column. Must not be null or empty.</param>
-        /// <param name="columnLogicalName">The logical name of the column whose MetadataId 
+        /// <param name="columnLogicalName">logical 名称 of the column whose Meta数据Id 
         /// is to be retrieved. Must not be null or empty.</param>
         /// <returns>The <see cref="Guid"/> representing the MetadataId of the specified 
         /// column.</returns>
-        /// <exception cref="Exception">Thrown if the table or column is not found in the 
+        /// <exception cref="Exception">Thrown 如果 the table or column is 未找到 in the 
         /// metadata.</exception>
         private static Guid RetrieveColumnId(
             IOrganizationService service,
@@ -442,20 +442,20 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// </summary>
         /// <remarks>This method allows you to share read and/or update permissions for a 
         /// secured column in a Dataverse table with a specific principal (user or team). 
-        /// The column must be configured as a secured field in Dataverse.</remarks>
+        /// column must be configured as a secured field in Dataverse.</remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to 
         /// interact with Dataverse.</param>
-        /// <param name="record">A reference to the record (entity instance) containing the 
+        /// <param name="record">一个reference to the record (entity 实例) containing the 
         /// secured column.</param>
-        /// <param name="columnLogicalName">The logical name of the secured column to grant 
+        /// <param name="columnLogicalName">logical 名称 of the secured column to grant 
         /// access to.</param>
-        /// <param name="principal">A reference to the principal (user or team) to whom 
+        /// <param name="principal">一个reference to the principal (user or team) to whom 
         /// access is being granted.</param>
         /// <param name="readAccess"><see langword="true"/> to grant read access to the 
         /// secured column; otherwise, <see langword="false"/>.</param>
         /// <param name="updateAccess"><see langword="true"/> to grant update access to the 
         /// secured column; otherwise, <see langword="false"/>.</param>
-        /// <exception cref="Exception">Thrown if the column has already been shared or if 
+        /// <exception cref="Exception">Thrown 如果 the column has already been shared or 如果 
         /// an error occurs during the operation.</exception>
         static internal void GrantColumnAccess(
             IOrganizationService service,
@@ -465,7 +465,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             bool readAccess,
             bool updateAccess)
         {
-            // This information should come from cached metadata,
+            // 此information should come from cached metadata,
             // but for this sample it is retrieved each time.
             Guid columnId = RetrieveColumnId(
                 service: service,
@@ -481,9 +481,9 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 ["objectid"] = record,
                 //Unique identifier of the principal to which secured field is shared
                 ["principalid"] = principal,
-                // Read permission for secured field instance
+                // 读取permission for secured field instance
                 ["readaccess"] = readAccess,
-                //Update permission for secured field instance
+                //更新permission for secured field instance
                 ["updateaccess"] = updateAccess
             };
 
@@ -519,7 +519,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// interact with the organization service.</param>
         /// <param name="record">An <see cref="EntityReference"/> representing the record 
         /// containing the secure column.</param>
-        /// <param name="columnLogicalName">The logical name of the secure column whose 
+        /// <param name="columnLogicalName">logical 名称 of the secure column whose 
         /// access permissions are being modified.</param>
         /// <param name="principal">An <see cref="EntityReference"/> representing the 
         /// principal (user or team) for whom access permissions are being 
@@ -530,8 +530,8 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// <param name="updateAccess">A <see langword="bool"/> indicating whether update 
         /// access to the secure column should be granted (<see langword="true"/>) or 
         /// revoked (<see langword="false"/>).</param>
-        /// <exception cref="Exception">Thrown if no matching 
-        /// PrincipalObjectAttributeAccess record is found for the specified column, 
+        /// <exception cref="Exception">Thrown 如果 no matching 
+        /// PrincipalObjectAttributeAccess record is found for the spec如果ied column, 
         /// record, and principal.</exception>
         static internal void ModifyColumnAccess(
             IOrganizationService service,
@@ -542,14 +542,14 @@ namespace PowerPlatform_Dataverse_CodeSamples
             bool updateAccess)
         {
 
-            // This information should come from cached metadata,
+            // 此information should come from cached metadata,
             // but for this sample it is retrieved each time.
             Guid columnId = RetrieveColumnId(
                 service: service,
                 tableLogicalName: record.LogicalName,
                 columnLogicalName: columnLogicalName);
 
-            // Retrieve the record
+            // 检索the record
             QueryExpression query = new("principalobjectattributeaccess")
             {
                 ColumnSet = new ColumnSet(
@@ -592,9 +592,9 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             if (queryResults.Entities.Count == 1)
             {
-                // Update the record that granted access to the secure column
+                // 更新the record that granted access to the secure column
                 Entity retrievedPOAARecord = queryResults.Entities[0];
-                // Get the current values and only update if different
+                // 获取the current values and only update if different
                 bool currentRead = retrievedPOAARecord.GetAttributeValue<bool>("readaccess");
                 bool currentUpdate = retrievedPOAARecord.GetAttributeValue<bool>("updateaccess");
 
@@ -612,7 +612,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 // Don't update if nothing there is nothing to change
                 if (POAAForUpdate.Attributes.Count > 0)
                 {
-                    // Update the principalobjectattributeaccess record
+                    // 更新the principalobjectattributeaccess record
                     service.Update(POAAForUpdate);
                 }
             }
@@ -633,13 +633,13 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// interact with the Dataverse service.</param>
         /// <param name="record">An <see cref="EntityReference"/> representing the record 
         /// containing the secure column.</param>
-        /// <param name="columnLogicalName">The logical name of the secure column for which 
+        /// <param name="columnLogicalName">logical 名称 of the secure column for which 
         /// access is being revoked.</param>
         /// <param name="principal">An <see cref="EntityReference"/> representing the 
         /// principal (user or team) whose access to the secure column is being 
         /// revoked.</param>
-        /// <exception cref="Exception">Thrown if no matching 
-        /// PrincipalObjectAttributeAccess record is found for the specified column, 
+        /// <exception cref="Exception">Thrown 如果 no matching 
+        /// PrincipalObjectAttributeAccess record is found for the spec如果ied column, 
         /// record, and principal.</exception>
         internal static void RevokeColumnAccess(IOrganizationService service,
             EntityReference record,
@@ -647,7 +647,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             EntityReference principal)
         {
 
-            // This information should come from cached metadata,
+            // 此information should come from cached metadata,
             // but for this sample it is retrieved each time.
             Guid columnId = RetrieveColumnId(
                 service: service,
@@ -694,7 +694,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             if (queryResults.Entities.Count == 1)
             {
-                // Delete the record that granted access to the secure column
+                // 删除the record that granted access to the secure column
                 service.Delete("principalobjectattributeaccess", queryResults.Entities[0].Id);
             }
             else
@@ -705,7 +705,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         // </snippetRevokeColumnAccess>
         // <snippetGetUnmaskedExampleRows>
         /// <summary>
-        /// Retrieves a collection of example entities with unmasked data.
+        /// 检索 a collection of example entities with unmasked data.
         /// </summary>
         /// <remarks>This method queries the "sample_example" entity and retrieves specific 
         /// columns, including sensitive data such as government ID and date of birth. The 
@@ -717,7 +717,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to 
         /// execute the query.</param>
         /// <returns>An <see cref="EntityCollection"/> containing the retrieved entities. 
-        /// The collection includes unmasked data for the specified columns.</returns>
+        /// collection includes unmasked data for the specified columns.</returns>
         internal static EntityCollection GetUnmaskedExampleRows(IOrganizationService service)
         {
             QueryExpression query = new("sample_example")
@@ -741,7 +741,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             RetrieveMultipleRequest request = new()
             {
                 Query = query,
-                // This example uses 'UnMaskedData' as an optional parameter
+                // 此example uses 'UnMaskedData' as an optional parameter
                 // https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters
                 ["UnMaskedData"] = true
             };
@@ -761,14 +761,14 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// and the role must be valid.</remarks>
         /// <param name="service">The <see cref="IOrganizationService"/> instance used to 
         /// interact with the organization service.</param>
-        /// <param name="roleId">The unique identifier of the role to which the privileges 
+        /// <param name="roleId">unique 标识符 of the role to which the privileges 
         /// will be added.</param>
         /// <param name="depth">The <see cref="PrivilegeDepth"/> level that specifies the 
         /// scope of the privileges being added.</param>
-        /// <param name="privilegeNames">An array of privilege names to be added to the 
-        /// role. Each name must correspond to an existing privilege in the 
+        /// <param name="privilegeNames">一个数组 of privilege 名称s to be added to the 
+        /// role. Each 名称 must correspond to an existing privilege in the 
         /// organization.</param>
-        /// <exception cref="Exception">Thrown if an unexpected error occurs while adding 
+        /// <exception cref="Exception">Thrown 如果 an unexpected error occurs while adding 
         /// privileges to the role.</exception>
         internal static void AddPrivilegesToRole(IOrganizationService service,
             Guid roleId,
@@ -776,10 +776,10 @@ namespace PowerPlatform_Dataverse_CodeSamples
             string[] privilegeNames)
         {
 
-            // The ID of the role without the privileges
+            // ID of the role without the privileges
             Guid RoleId = roleId;
 
-            // Retrieve the privileges
+            // 检索the privileges
             var query = new QueryExpression
             {
                 EntityName = "privilege",
@@ -812,7 +812,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             try
             {
-                // Send the request
+                // 发送the request
                 service.Execute(request);
             }
             catch (Exception ex)

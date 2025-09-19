@@ -5,15 +5,15 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to create a table
-    /// </summary>
+        /// Contains the data to create a table
+        /// </summary>
     public sealed class CreateEntityKeyRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the CreateEntityKeyRequest
+        /// 初始化 the CreateEntityKeyRequest
         /// </summary>
-        /// <param name="entityKeyMetadata">The data that defines the entity key</param>
-        /// <param name="tableLogicalName">The LogicalName of the table.</param>
+        /// <param name="entityKeyMetadata">数据 that defines the entity key</param>
+        /// <param name="tableLogicalName">LogicalName of the table.</param>
         public CreateEntityKeyRequest(EntityKeyMetadata entityKeyMetadata, string tableLogicalName, bool useStrongConsistency = false)
         {
             Method = HttpMethod.Post;

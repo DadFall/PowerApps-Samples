@@ -20,10 +20,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -36,14 +36,14 @@ namespace PowerApps.Samples
 
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create an account
+            // 创建an account
             Account account = new Account
             {
                 Name = "Fourth Coffee"
             };
             _accountId = service.Create(account);
 
-            // Create an opportunity
+            // 创建an opportunity
             Opportunity newOpportunity = new Opportunity
             {
                 Name = "Opportunity 1",
@@ -79,7 +79,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete all records created in this sample.
+                // 删除all records created in this sample.
                 service.Delete(Account.EntityLogicalName, _accountId);
 
                 Console.WriteLine("Entity record(s) have been deleted.");

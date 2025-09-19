@@ -1,5 +1,5 @@
-﻿// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
+﻿// 版权所有 (c) 微软公司。
+// 根据 MIT 许可证授权。
 
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
@@ -21,7 +21,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
             _logger = logger;
         }
 
-        // Define the fetch attributes.
+        // 定义the fetch attributes.
         int fetchRecordCountPerPage = 5000;
         int fetchPageNumber = 1;
         string fetchPagingCookie = null;
@@ -84,7 +84,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
                     LogRoleAssignment(reportFilePath, entity);
                 }
 
-                // Check for morerecords
+                // 检查for morerecords
                 if (result.MoreRecords)
                 {
                     _logger.LogGeneric(string.Format("\n Environment : {0} - fetching roles page {1}\n*****", service.ConnectedOrgFriendlyName, fetchPageNumber));

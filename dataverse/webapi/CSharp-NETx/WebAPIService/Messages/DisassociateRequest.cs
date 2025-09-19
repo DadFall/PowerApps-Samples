@@ -1,16 +1,16 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to disassociate a record
-    /// </summary>
+        /// Contains the data to disassociate a record
+        /// </summary>
     public sealed class DisassociateRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the DisassociateRequest
+        /// 初始化 the DisassociateRequest
         /// </summary>
-        /// <param name="entityWithCollection">A record with a collection.</param>
-        /// <param name="collectionName">The name of the collection.</param>
-        /// <param name="entityToRemove">The record to remove.</param>
+        /// <param name="entityWithCollection">一个record with a 集合.</param>
+        /// <param name="collectionName">名称 of the 集合.</param>
+        /// <param name="entityToRemove">record to remove.</param>
         public DisassociateRequest(
             EntityReference entityWithCollection,
             string collectionName,

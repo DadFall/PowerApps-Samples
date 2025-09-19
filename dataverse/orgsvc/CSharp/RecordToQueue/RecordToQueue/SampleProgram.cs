@@ -35,7 +35,7 @@ namespace PowerApps.Samples
 
 
 
-                    // Get known private queues for the user 
+                    // 获取known private queues for the user 
                     // by using RetrieveUserQueuesRequest message.
                     RetrieveUserQueuesRequest retrieveUserQueuesRequest = new RetrieveUserQueuesRequest
                     {
@@ -63,7 +63,7 @@ namespace PowerApps.Samples
                         }
                     }
 
-                    // Move a record from a source queue to a destination queue
+                    // 移动a record from a source queue to a destination queue
                     // by using the AddToQueue request message.
                     AddToQueueRequest routeRequest = new AddToQueueRequest
                     {
@@ -72,7 +72,7 @@ namespace PowerApps.Samples
                         DestinationQueueId = destinationQueueId
                     };
 
-                    // Execute the Request
+                    // 执行the Request
                     service.Execute(routeRequest);
 
                     Console.WriteLine(@"The letter record has been moved to a new queue.");

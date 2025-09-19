@@ -134,7 +134,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// The unique name of this solution
+        /// unique name of this solution
         /// </summary>
         [Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uniquename")]
         public string UniqueName

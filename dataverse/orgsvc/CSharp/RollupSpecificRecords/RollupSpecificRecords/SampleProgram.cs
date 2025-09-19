@@ -28,7 +28,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create QueryExpression
+                    // 创建QueryExpression
                     QueryExpression query = new QueryExpression()
                     {
                         EntityName = Opportunity.EntityLogicalName,
@@ -52,7 +52,7 @@ namespace PowerApps.Samples
                     #endregion Create QueryExpression
 
                     #region Create RollupRequest
-                    // Create RollupRequest
+                    // 创建RollupRequest
                     RollupRequest rollupRequest = new RollupRequest();
                     rollupRequest.Query = query;
                     rollupRequest.Target = new EntityReference("account", _accountId);
@@ -61,7 +61,7 @@ namespace PowerApps.Samples
                     #endregion Create RollupRequest
 
                     #region Execute RollupRequest
-                    // Execute RollupRequest
+                    // 执行RollupRequest
                     RollupResponse rollupResponse = (RollupResponse)service.Execute(rollupRequest);
                     Console.WriteLine("Executed RollupRequest.");
                     #endregion Execute RollupRequest

@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Search.Types
 {
     /// <summary>
-    /// Contains data about a matching record found from the query API
-    /// </summary>
+        /// Contains data about a matching record found from the query API
+        /// </summary>
     public class QueryResult
     {
         // Gets or sets the identifier of the record

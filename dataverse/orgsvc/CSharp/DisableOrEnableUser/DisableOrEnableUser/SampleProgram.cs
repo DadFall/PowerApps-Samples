@@ -19,11 +19,11 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
-                   // Retrieve a user.
+                   // 检索a user.
                     SystemUser user = service.Retrieve(SystemUser.EntityLogicalName,
                         _userId, new ColumnSet(new String [] {"systemuserid", "firstname", "lastname"})).ToEntity<SystemUser>();
 

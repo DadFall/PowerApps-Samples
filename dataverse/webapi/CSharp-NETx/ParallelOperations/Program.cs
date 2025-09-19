@@ -31,7 +31,7 @@ namespace ParallelOperations
 
             Console.WriteLine("--Starting Parallel Operations sample--");
 
-            // Send a simple request to access the recommended degree of parallelism (DOP).
+            // 发送简单请求以访问推荐的并行度 (DOP)。
             HttpResponseMessage whoAmIResponse = await service.SendAsync(new WhoAmIRequest());
             int recommendedDegreeOfParallelism = int.Parse(whoAmIResponse.Headers.GetValues("x-ms-dop-hint").FirstOrDefault());
 
@@ -49,7 +49,7 @@ namespace ParallelOperations
 
             Console.WriteLine($"Preparing to create {numberOfRecords} acccount records using Web API.");
 
-            // Add account create requests to accountsToImport
+            // 添加account create requests to accountsToImport
             while (count < numberOfRecords)
             {
                 var account = new JObject
@@ -65,16 +65,16 @@ namespace ParallelOperations
                 Console.WriteLine($"Creating {accountsToImport.Count} accounts");
                 var startCreate = DateTime.Now;
 
-                // Send the requests in parallel
+                // 发送请求s in parallel
                 await Parallel.ForEachAsync(accountsToImport, parallelOptions, async (account, token) =>
                   {
                       var createResponse = await service.SendAsync<CreateResponse>(account);
 
-                      // Add the delete request to the ConcurrentBag to delete later
+                      // 添加the delete request to the ConcurrentBag to delete later
                       accountsToDelete.Add(new DeleteRequest(createResponse.EntityReference));
                   });
 
-                // Calculate the duration to complete
+                // 计算the duration to complete
                 var secondsToCreate = (DateTime.Now - startCreate).TotalSeconds;
 
                 Console.WriteLine($"Created {accountsToImport.Count} accounts in  {Math.Round(secondsToCreate)} seconds.");
@@ -83,13 +83,13 @@ namespace ParallelOperations
                 Console.WriteLine($"Deleting {accountsToDelete.Count} accounts");
                 var startDelete = DateTime.Now;
 
-                // Delete the accounts in parallel
+                // 删除the accounts in parallel
                 await Parallel.ForEachAsync(accountsToDelete, parallelOptions, async (deleteRequest, token) =>
                  {
                      await service.SendAsync(deleteRequest);
                  });
 
-                // Calculate the duration to complete
+                // 计算the duration to complete
                 var secondsToDelete = (DateTime.Now - startDelete).TotalSeconds;
 
                 Console.WriteLine($"Deleted {accountsToDelete.Count} accounts in {Math.Round(secondsToDelete)} seconds.");

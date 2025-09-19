@@ -16,10 +16,10 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Set up the CRM Service.  
+                    // 设置up the CRM Service.  
                     var outlookService = new CrmOutlookService();
 
                     // Determine if the Outlook client is running
@@ -27,7 +27,7 @@ namespace PowerApps.Samples
                     {
                         if (outlookService.IsCrmDesktopClient)
                         {
-                            // The desktop client cannot go offline
+                            // desktop client cannot go offline
                             Console.WriteLine("CRM Client Desktop URL: " +
                                 outlookService.ServerUri.AbsoluteUri);
                             Console.WriteLine("CRM Client state: " +
@@ -44,7 +44,7 @@ namespace PowerApps.Samples
                                     outlookService.State.ToString());
 
                                 // Take client online
-                                // NOTE: GoOnline() will automatically Sync up with CRM
+                                // 注意： GoOnline() will automatically Sync up with CRM
                                 // database, no need to call Sync() manually
                                 Console.WriteLine("Going Online...");
                                 outlookService.GoOnline();
@@ -60,9 +60,9 @@ namespace PowerApps.Samples
                                     outlookService.State.ToString());
 
                                 // Take client offline 
-                                // NOTE: GoOffline triggers a synchronization of the
+                                // 注意： GoOffline triggers a synchronization of the
                                 // offline database with the online server.
-                                // If a sync is not required, you can use SetOffline().
+                                // 如果a sync is not required, you can use SetOffline().
                                 Console.WriteLine("Going Offline...");
                                 outlookService.GoOffline();
 

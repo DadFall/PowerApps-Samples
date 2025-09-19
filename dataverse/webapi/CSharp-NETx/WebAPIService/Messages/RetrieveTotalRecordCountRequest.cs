@@ -3,14 +3,14 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to returns data on the total number of records for specific entities. The data retrieved will be from a snapshot within last 24 hours.
-    /// </summary>
+        /// Contains the data to returns data on the total number of records for specific entities. The data retrieved will be from a snapshot within last 24 hours.
+        /// </summary>
     public sealed class RetrieveTotalRecordCountRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the RetrieveTotalRecordCountRequest
+        /// 初始化 the RetrieveTotalRecordCountRequest
         /// </summary>
-        /// <param name="entityNames">The logical names of the entities to include in the query.</param>
+        /// <param name="entityNames">logical 名称s of the entities to include in the query.</param>
         public RetrieveTotalRecordCountRequest(string[] entityNames)
         {
             Method = HttpMethod.Get;

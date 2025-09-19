@@ -27,7 +27,7 @@ namespace PowerApps.Samples
                     SetUpSample(service);
                     #endregion Set up
                     #region Demonstrate
-                    // Create the revenue metric, setting the Amount Data Type to 'Money'
+                    // 创建the revenue metric, setting the Amount Data Type to 'Money'
                     // and the Metric Type to 'Amount'.
                     Metric sampleMetric = new Metric()
                     {
@@ -39,7 +39,7 @@ namespace PowerApps.Samples
 
                     Console.Write("Created revenue metric, ");
 
-                    // Create first RollupField which targets the estimated values.
+                    // 创建first RollupField which targets the estimated values.
                     RollupField inProgress = new RollupField()
                     {
                         SourceEntity = Opportunity.EntityLogicalName,
@@ -54,7 +54,7 @@ namespace PowerApps.Samples
 
                     Console.Write("created in-progress RollupField, ");
 
-                    // Create second RollupField which targets the actual values.
+                    // 创建second RollupField which targets the actual values.
                     RollupField actual = new RollupField()
                     {
                         SourceEntity = Opportunity.EntityLogicalName,
@@ -69,12 +69,12 @@ namespace PowerApps.Samples
 
                     Console.Write("created actual revenue RollupField, ");
 
-                    // Create the goal rollup queries.
+                    // 创建the goal rollup queries.
                     // Note: Formatting the FetchXml onto multiple lines in the following 
                     // rollup queries causes the lenth property to be greater than 1,000
                     // chars and will cause an exception.
 
-                    // The first query locates opportunities in the first sales 
+                    // first query locates opportunities in the first sales 
                     // representative's area (zip code: 60661).
                     GoalRollupQuery goalRollupQuery = new GoalRollupQuery()
                     {
@@ -86,7 +86,7 @@ namespace PowerApps.Samples
 
                     Console.Write("created first rollup query for zip code 60661, ");
 
-                    // The second query locates opportunities in the second sales 
+                    // second query locates opportunities in the second sales 
                     // representative's area (zip code: 99999).
                     goalRollupQuery = new GoalRollupQuery()
                     {
@@ -99,7 +99,7 @@ namespace PowerApps.Samples
                     Console.WriteLine("created second rollup query for zip code 99999.");
                     Console.WriteLine();
 
-                    // Create three goals: one parent goal and two child goals.
+                    // 创建three goals: one parent goal and two child goals.
                     Goal parentGoal = new Goal()
                     {
                         Title = "Parent Goal Example",
@@ -224,7 +224,7 @@ namespace PowerApps.Samples
                     Console.WriteLine("Goal End Date: {0}", secondChildGoal.GoalEndDate);
                     Console.WriteLine();
 
-                    // Calculate roll-up of goals.
+                    // 计算roll-up of goals.
                     RecalculateRequest recalculateRequest = new RecalculateRequest()
                     {
                         Target = new EntityReference(Goal.EntityLogicalName, _parentGoalId)
@@ -233,7 +233,7 @@ namespace PowerApps.Samples
 
                     Console.WriteLine("Calculated roll-up of goals.");
 
-                    // Retrieve and report 3 different computed values for the goals
+                    // 检索and report 3 different computed values for the goals
                     // - Percentage
                     // - ComputedTargetAsOfTodayPercentageAchieved
                     // - ComputedTargetAsOfTodayMoney

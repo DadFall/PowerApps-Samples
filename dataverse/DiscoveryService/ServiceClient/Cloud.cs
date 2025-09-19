@@ -3,8 +3,8 @@
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// An enum for the known Clouds
-    /// </summary>
+        /// 一个enum for the known Clouds
+        /// </summary>
     public enum Cloud
     {
         [Description("https://globaldisco.crm.dynamics.com")]

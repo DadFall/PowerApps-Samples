@@ -24,7 +24,7 @@ export class FluentThemingAPIControl implements ComponentFramework.ReactControl<
 		_state: ComponentFramework.Dictionary,
 		_container: HTMLDivElement
 	): void {
-		// Add control initialization code
+		// 添加control initialization code
 	}
 
 	/**
@@ -50,6 +50,6 @@ export class FluentThemingAPIControl implements ComponentFramework.ReactControl<
 	 * i.e. cancelling any pending remote calls, removing listeners, etc.
 	 */
 	public destroy(): void {
-		// Add code to cleanup control if necessary
+		// 添加code to cleanup control if necessary
 	}
 }

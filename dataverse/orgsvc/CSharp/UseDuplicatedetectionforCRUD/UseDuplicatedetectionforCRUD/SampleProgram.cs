@@ -27,14 +27,14 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create and account record with the named Proseware, Inc. and already existing Account Number.
+                    // 创建and account record with the named Proseware, Inc. and already existing Account Number.
                     var account = new Account
                     {
                         Name = "Proseware, Inc.",
                         AccountNumber = "ACC005"
                     };
 
-                    // Create operation by suppressing duplicate detection
+                    // 创建operation by suppressing duplicate detection
                     var reqCreate = new CreateRequest();
                     reqCreate.Target = account;
                     reqCreate.Parameters.Add("SuppressDuplicateDetection", true); // Change to false to activate the duplicate detection.
@@ -43,22 +43,22 @@ namespace PowerApps.Samples
                     Console.Write("Account: {0} {1} created with SuppressDuplicateDetection to true, ",
                         account.Name, account.AccountNumber);
 
-                    // Retrieve the account containing with its few attributes.
+                    // 检索the account containing with its few attributes.
                     ColumnSet cols = new ColumnSet(
                         new String[] { "name", "accountnumber" });
 
                     var retrievedAccount = (Account)service.Retrieve("account", dupAccountId, cols);
                     Console.Write("retrieved, ");
 
-                    // Update the existing account with new account number.
+                    // 更新the existing account with new account number.
                     retrievedAccount.AccountNumber = "ACC006";
 
-                    // Update operation – update record, if a duplicate is not found.
+                    // 更新operation – update record, if a duplicate is not found.
                     UpdateRequest reqUpdate = new UpdateRequest();
                     reqUpdate.Target = retrievedAccount;
                     reqUpdate["SuppressDuplicateDetection"] = false; // Duplicate detection is activated.
 
-                    // Update the account record.
+                    // 更新the account record.
                     var updateResponse = (UpdateResponse)service.Execute(reqUpdate);
                     Console.WriteLine("and updated.");
                     #region Clean up

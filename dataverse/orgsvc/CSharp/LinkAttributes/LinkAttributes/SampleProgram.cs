@@ -24,7 +24,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create a custom string attribute for the appointment instance
+                    // 创建a custom string attribute for the appointment instance
                     StringAttributeMetadata customAppointmentInstanceAttribute = new StringAttributeMetadata
                     {
                         LogicalName = "new_customAppInstanceAttribute",
@@ -44,7 +44,7 @@ namespace PowerApps.Samples
                     CreateAttributeResponse instanceAttributeResponse = (CreateAttributeResponse)service.Execute(instanceAttributeRequest);
                     _instanceAttributeID = instanceAttributeResponse.AttributeId;
 
-                    // Create a custom string attribute for the recurring appointment master (series)
+                    // 创建a custom string attribute for the recurring appointment master (series)
                     StringAttributeMetadata customAppointmentSeriesAttribute = new StringAttributeMetadata
                     {
                         LogicalName = "new_customAppSeriesAttribute",

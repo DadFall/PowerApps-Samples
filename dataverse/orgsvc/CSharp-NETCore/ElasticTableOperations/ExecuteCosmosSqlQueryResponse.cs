@@ -3,8 +3,8 @@
 namespace PowerPlatform.Dataverse.CodeSamples
 {
     /// <summary>
-    /// Provides access to the attributes of the entity returned by ExecuteCosmosSqlQueryRequest
-    /// </summary>
+        /// Provides access to the attributes of the entity returned by ExecuteCosmosSqlQueryRequest
+        /// </summary>
     public class ExecuteCosmosSqlQueryResponse : Entity
     {
         [AttributeLogicalName("PagingCookie")]

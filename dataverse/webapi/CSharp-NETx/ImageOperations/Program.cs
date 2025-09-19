@@ -20,19 +20,19 @@ namespace ImageOperations
             // Capture this so it can be set back at the end of the sample.
             string originalAccountPrimaryImageAttributeName = await Utility.GetTablePrimaryImageName(service, entityLogicalName);
             List<Guid> accountsWithImagesIds = new();
-            // The names of the image files in the Images folder
+            // names of the image files in the Images folder
             List<string> fileNames = new() { "144x144.png", "144x400.png", "400x144.png", "400x500.png", "60x80.png" };
 
-            // Create the Image Column with CanStoreFullImage = false.
+            // 创建Image Column with CanStoreFullImage = false.
             await Utility.CreateImageColumn(service, entityLogicalName, imageColumnSchemaName);
 
-            // Update the image column to set it as the primary image
+            // 更新the image column to set it as the primary image
             // Only primary image columns can be set during Create
             await Utility.SetTablePrimaryImageName(service, entityLogicalName, imageColumnLogicalName);
 
             Console.WriteLine("Create 5 records while CanStoreFullImage is false.");
 
-            // Create account records with each size image
+            // 创建account records with each size image
             foreach (string fileName in fileNames)
             {
                 string name = $"CanStoreFullImage false {fileName}";
@@ -57,7 +57,7 @@ namespace ImageOperations
 
             Console.WriteLine("Create 5 records while CanStoreFullImage is true.");
 
-            // Create account records with each size image
+            // 创建account records with each size image
             foreach (string fileName in fileNames)
             {
                 string name = $"CanStoreFullImage true {fileName}";
@@ -76,7 +76,7 @@ namespace ImageOperations
             }
 
            
-            //Retrieve the accounts just created
+            //检索the accounts just created
             string query = $"accounts?" +
                 $"$select=name,{imageColumnLogicalName},{imageColumnLogicalName}_url&" +
                 $"$filter=Microsoft.Dynamics.CRM.In(PropertyName=@p1,PropertyValues=@p2)&" +
@@ -122,7 +122,7 @@ namespace ImageOperations
                     if (errorCode == "0x80040217")
                     {
                         // ObjectDoesNotExist error
-                        // No FileAttachment records found for imagedescriptorId: <guid> for image attribute: sample_imagecolumn of account record with id <guid>
+                        // 没有FileAttachment records found for imagedescriptorId: <guid> for image attribute: sample_imagecolumn of account record with id <guid>
                         // These 5 images were created while CanStoreFullImage was false
                         Console.WriteLine($"\tDownload failed: {se.Message}");
                     }
@@ -203,7 +203,7 @@ namespace ImageOperations
                 }
             }
 
-            // Delete Image data using three different methods:
+            // 删除Image data using three different methods:
             Console.WriteLine("Deleting the image data from the columns using 3 different methods:");
             int chunkNumber = 0;
             foreach (var accountGroup in accountsWithImagesResponse.Records.Chunk(3)) {
@@ -214,7 +214,7 @@ namespace ImageOperations
                     EntityReference accountReference = new("accounts", accountId);
                     string name = (string)account["name"];
 
-                    if(chunkNumber == 0) // Delete image by setting the property to null with PATCH
+                    if(chunkNumber == 0) // 删除image by setting the property to null with PATCH
                     {
                         JObject deleteImageAccount = new() {
                                 { "accountid", accountId},
@@ -224,12 +224,12 @@ namespace ImageOperations
                         await service.Update(accountReference, deleteImageAccount);
                         Console.WriteLine($"\t{name} {imageColumnLogicalName} deleted with PATCH");
                     }
-                    if (chunkNumber == 1) // Delete image by setting the property to null with PUT
+                    if (chunkNumber == 1) // 删除image by setting the property to null with PUT
                     {
                         await service.SetColumnValue<byte[]>(accountReference, imageColumnLogicalName, null);
                         Console.WriteLine($"\t{name} {imageColumnLogicalName} deleted with PUT");
                     }
-                    if (chunkNumber > 1) // Delete image by sending DELETE to property resource
+                    if (chunkNumber > 1) // 删除image by sending DELETE to property resource
                     {
                         await service.DeleteColumnValue(accountReference, imageColumnLogicalName);
                         Console.WriteLine($"\t{name} {imageColumnLogicalName} deleted with DELETE");
@@ -241,34 +241,34 @@ namespace ImageOperations
 
             }
 
-            // Verify that the images are deleted:
-            // Retrieve the accounts again using the same query as before:
+            // 验证that the images are deleted:
+            // 检索the accounts again using the same query as before:
             RetrieveMultipleResponse accountsWithOutImagesResponse = await service.RetrieveMultiple(queryUri: query);
 
             foreach (JObject account in accountsWithOutImagesResponse.Records.Cast<JObject>())
             {
                 if (!string.IsNullOrEmpty(account[imageColumnLogicalName].ToString()))
                 {
-                    // This should not occur
+                    // 此should not occur
                     Console.WriteLine($"Error: {account["accountid"]} {imageColumnLogicalName} has an image value.");
                 }
             }
 
 
-            // Delete the records that were created by this sample
+            // 删除the records that were created by this sample
             foreach (Guid id in accountsWithImagesIds)
             {
                 await service.Delete(new EntityReference("accounts", id));
             }
             Console.WriteLine("Deleted the account records created for this sample.");
 
-            // Set the account primaryImage back to the original value
+            // 设置the account primaryImage back to the original value
             await Utility.SetTablePrimaryImageName(
                 service, 
                 entityLogicalName, 
                 originalAccountPrimaryImageAttributeName);
 
-            // Delete the Image Column
+            // 删除the Image Column
             await Utility.DeleteImageColumn(
                 service, 
                 entityLogicalName, 
@@ -281,12 +281,12 @@ namespace ImageOperations
         /// <summary>
         /// Downloads an image using Web API InitializeFileBlocksDownload and DownloadBlock Actions
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="entityLogicalName">The logical name of the table</param>
-        /// <param name="primaryKeyLogicalName">The logical name of the primary key for the table</param>
-        /// <param name="entityId">The Id of the record.</param>
-        /// <param name="imagePropertyName">The name of the image column property.</param>
-        /// <returns>The requested Image</returns>
+        /// <param name="service">服务</param>
+        /// <param name="entityLogicalName">logical 名称 of the table</param>
+        /// <param name="primaryKeyLogicalName">logical 名称 of the primary key for the table</param>
+        /// <param name="entityId">Id of the record.</param>
+        /// <param name="imagePropertyName">名称 of the image column property.</param>
+        /// <returns>requested Image</returns>
         private static async Task<byte[]> DownloadImageWithActions(Service service,
                 string entityLogicalName,
                 string primaryKeyLogicalName,
@@ -324,11 +324,11 @@ namespace ImageOperations
                     blockLength: blockSizeDownload,
                     fileContinuationToken: fileContinuationToken);
 
-                // Send the request
+                // 发送请求
                 DownloadBlockResponse downloadBlockResponse =
                            await service.SendAsync<DownloadBlockResponse>(downLoadBlockRequest);
 
-                // Add the block returned to the list
+                // 添加the block returned to the list
                 bytes.AddRange(downloadBlockResponse.Data);
 
                 // Subtract the amount downloaded,
@@ -344,12 +344,12 @@ namespace ImageOperations
         /// <summary>
         /// Downloads an image in chunks using Web API
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="entitySetName">The entity set name of the table</param>
-        /// <param name="entityId">The Id of the record.</param>
-        /// <param name="imagePropertyName">The name of the image column property.</param>
+        /// <param name="service">服务</param>
+        /// <param name="entitySetName">entity set 名称 of the table</param>
+        /// <param name="entityId">Id of the record.</param>
+        /// <param name="imagePropertyName">名称 of the image column property.</param>
         /// <param name="returnFullSizeImage">Whether to return the full-sized image. Otherwise the thumbnail-sized image will be retrieved.</param>
-        /// <returns>The requested Image</returns>
+        /// <returns>requested Image</returns>
         private static async Task<byte[]> DownloadImageWithChunks(Service service,
                 string entitySetName,
                 Guid entityId,
@@ -398,12 +398,12 @@ namespace ImageOperations
         /// <summary>
         /// Downloads an image in one request using Web API
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="entitySetName">The entity set name of the table</param>
-        /// <param name="entityId">The Id of the record.</param>
-        /// <param name="imagePropertyName">The name of the image column property.</param>
+        /// <param name="service">服务</param>
+        /// <param name="entitySetName">entity set 名称 of the table</param>
+        /// <param name="entityId">Id of the record.</param>
+        /// <param name="imagePropertyName">名称 of the image column property.</param>
         /// <param name="returnFullSizeImage">Whether to return the full-sized image. Otherwise the thumbnail-sized image will be retrieved.</param>
-        /// <returns>The requested Image</returns>
+        /// <returns>requested Image</returns>
         private static async Task<byte[]> DownloadImageWithStream(Service service,
                 string entitySetName,
                 Guid entityId,

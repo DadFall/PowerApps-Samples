@@ -104,7 +104,7 @@
         if ($form.data(key)) {
             return;
         }
-        // Set a flag that indicates we're currently resetting the form.
+        // 设置a flag that indicates we're currently resetting the form.
         $form.data(key, true);
         try {
             $form.data("validator").resetForm();
@@ -119,7 +119,7 @@
             .addClass("field-validation-valid")
             .removeClass("field-validation-error")
             .removeData("unobtrusiveContainer")
-            .find(">*")  // If we were using valmsg-replace, get the underlying error
+            .find(">*")  // 如果we were using valmsg-replace, get the underlying error
                 .removeData("unobtrusiveContainer");
     }
 
@@ -175,12 +175,12 @@
 
         parseElement: function (element, skipAttach) {
             /// <summary>
-            /// Parses a single HTML element for unobtrusive validation attributes.
-            /// </summary>
+        /// 解析 a single HTML element for unobtrusive validation attributes.
+        /// </summary>
             /// <param name="element" domElement="true">The HTML element to be parsed.</param>
             /// <param name="skipAttach" type="Boolean">[Optional] true to skip attaching the
             /// validation to the form. If parsing just this single element, you should specify true.
-            /// If parsing several elements, you should specify false, and manually attach the validation
+            /// 如果parsing several elements, you should specify false, and manually attach the validation
             /// to the form when you are finished. The default is false.</param>
             var $element = $(element),
                 form = $element.parents("form")[0],
@@ -226,10 +226,10 @@
 
         parse: function (selector) {
             /// <summary>
-            /// Parses all the HTML elements in the specified selector. It looks for input elements decorated
+        /// 解析 all the HTML elements in the specified selector. It looks for input elements decorated
             /// with the [data-val=true] attribute value and enables validation according to the data-val-*
             /// attribute values.
-            /// </summary>
+        /// </summary>
             /// <param name="selector" type="String">Any valid jQuery selector.</param>
 
             // $forms includes all forms in selector's DOM hierarchy (parent, children and self) that have at least one
@@ -326,7 +326,7 @@
         /// <param name="adapterName" type="String">The name of the adapter to be added. This matches the name used
         /// in the data-val-nnnn HTML attribute(where nnnn is the adapter name).</param>
         /// <param name="attribute" type="String">[Optional] The name of the HTML attribute that contains the value.
-        /// The default is "val".</param>
+        /// default is "val".</param>
         /// <param name="ruleName" type="String" optional="true">[Optional] The name of the jQuery Validate rule. If not provided, the value
         /// of adapterName will be used instead.</param>
         /// <returns type="jQuery.validator.unobtrusive.adapters" />
@@ -398,7 +398,7 @@
             var paramName = appendModelPrefix(fieldName, prefix);
             value.data[paramName] = function () {
                 var field = $(options.form).find(":input").filter("[name='" + escapeAttributeValue(paramName) + "']");
-                // For checkboxes and radio buttons, only pick up values from checked fields.
+                // 对于checkboxes and radio buttons, only pick up values from checked fields.
                 if (field.is(":checkbox")) {
                     return field.filter(":checked").val() || field.filter(":hidden").val() || '';
                 }

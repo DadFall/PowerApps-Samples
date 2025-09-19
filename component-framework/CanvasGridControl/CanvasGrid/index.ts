@@ -124,7 +124,7 @@ export class CanvasGrid implements ComponentFramework.StandardControl<IInputs, I
 			this.sortedRecordsIds = dataset.sortedRecordIds;
 		}
 
-		// The test harness provides width/height as strings
+		// test harness provides width/height as strings
 		const allocatedWidth = parseInt(context.mode.allocatedWidth as unknown as string);
 		const allocatedHeight = parseInt(context.mode.allocatedHeight as unknown as string);
 

@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -39,23 +39,23 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a customer for a new incident
+            // 创建a customer for a new incident
             var caseCustomer = new Contact();
 
-            // Set the contact properties
+            // 设置the contact properties
             caseCustomer.FirstName = "Christen";
             caseCustomer.LastName = "Anderson";
 
-            // Create the contact in CRM
+            // 创建the contact in CRM
             _caseCustomerId = service.Create(caseCustomer);
             NotifyEntityCreated(Contact.EntityLogicalName, _caseCustomerId);
 
-            // Retrieve the default subject for a new incident\case
+            // 检索the default subject for a new incident\case
             var query = new QueryExpression()
             {
                 EntityName = Subject.EntityLogicalName,
@@ -69,10 +69,10 @@ namespace PowerApps.Samples
             Entity defaultSubject = subjectRecords[0];
             NotifyEntityRetrieved(Subject.EntityLogicalName, defaultSubject.Id);
 
-            // Create a new incident
+            // 创建a new incident
             Incident newCase = new Incident();
 
-            // Set the incident properties
+            // 设置the incident properties
             newCase.SubjectId = new EntityReference();
             newCase.SubjectId.LogicalName = Subject.EntityLogicalName;
             newCase.SubjectId.Id = defaultSubject.Id;
@@ -87,7 +87,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>
@@ -116,7 +116,7 @@ namespace PowerApps.Samples
         {
             // First close the Incident
 
-            // Create resolution for the closing incident
+            // 创建resolution for the closing incident
             var resolution = new IncidentResolution
             {
                 Subject = "Case Closed",
@@ -124,20 +124,20 @@ namespace PowerApps.Samples
 
             resolution.IncidentId = caseReference;
 
-            // Create the request to close the incident, and set its resolution to the 
+            // 创建the request to close the incident, and set its resolution to the 
             // resolution created above
             var closeRequest = new CloseIncidentRequest();
             closeRequest.IncidentResolution = resolution;
 
-            // Set the requested new status for the closed Incident
+            // 设置the requested new status for the closed Incident
             closeRequest.Status =
                 new OptionSetValue((int)incident_statuscode.ProblemSolved);
 
-            // Execute the close request
+            // 执行the close request
             var closeResponse =
                 (CloseIncidentResponse)service.Execute(closeRequest);
 
-            //Check if the incident was successfully closed
+            //检查if the incident was successfully closed
             Incident incident = service.Retrieve(Incident.EntityLogicalName,
                 _caseIncidentId, new ColumnSet(allColumns: true)).ToEntity<Incident>();
 
@@ -161,7 +161,7 @@ namespace PowerApps.Samples
             state["statuscode"] = new OptionSetValue((int)incident_statuscode.WaitingforDetails);
             service.Update(state);
 
-            // Check if the state was successfully set
+            // 检查if the state was successfully set
             Incident incident = service.Retrieve(Incident.EntityLogicalName,
                 _caseIncidentId, new ColumnSet(allColumns: true)).ToEntity<Incident>();
 

@@ -3,15 +3,15 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to revoke the shared access granted to a security principal (user, team, or organization) for the specified record.
-    /// </summary>
+        /// Contains the data to revoke the shared access granted to a security principal (user, team, or organization) for the specified record.
+        /// </summary>
     public sealed class RevokeAccessRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the RevokeAccessRequest
+        /// 初始化 the RevokeAccessRequest
         /// </summary>
-        /// <param name="target">The record to revoke access for.</param>
-        /// <param name="principalAccess">The security principal (user, team, or organization) to revoke access to the shared record.</param>
+        /// <param name="target">record to revoke access for.</param>
+        /// <param name="principalAccess">security principal (user, team, or organization) to revoke access to the shared record.</param>
         public RevokeAccessRequest(JObject target, JObject principal)
         {
             Method = HttpMethod.Post;

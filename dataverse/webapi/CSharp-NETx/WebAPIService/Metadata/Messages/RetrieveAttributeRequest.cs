@@ -3,8 +3,8 @@
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve a column definition
-    /// </summary>
+        /// Contains the data to retrieve a column definition
+        /// </summary>
     public sealed class RetrieveAttributeRequest : HttpRequestMessage
     {
         private string _entityLogicalName;
@@ -14,12 +14,12 @@ namespace PowerApps.Samples.Metadata.Messages
         private string _uri = string.Empty;
 
         /// <summary>
-        /// Initializes the RetrieveAttributeRequest
+        /// 初始化 the RetrieveAttributeRequest
         /// </summary>
-        /// <param name="entityLogicalName">The logical name of the table the column belongs to.</param>
-        /// <param name="logicalName">The logical name of the column.</param>
-        /// <param name="type">The type of column.</param>
-        /// <param name="query">The properties of the column to return.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table the column belongs to.</param>
+        /// <param name="logicalName">logical 名称 of the column.</param>
+        /// <param name="type">类型 of column.</param>
+        /// <param name="query">properties of the column to return.</param>
         public RetrieveAttributeRequest(
             string entityLogicalName,
             string logicalName,
@@ -40,7 +40,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// The logical name of the table the column belongs to.
+        /// logical name of the table the column belongs to.
         /// </summary>
         public string EntityLogicalName
         {
@@ -58,7 +58,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// The logical name of the column
+        /// logical name of the column
         /// </summary>
         public string LogicalName
         {
@@ -76,7 +76,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// The type of the column.
+        /// type of the column.
         /// </summary>
         public AttributeType Type
         {
@@ -94,7 +94,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// The properties of the column to return.
+        /// properties of the column to return.
         /// </summary>
         public string Query
         {
@@ -112,7 +112,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// Generates the URI based on the current values
+        /// 生成 the URI based on the current values
         /// </summary>
         private void GenerateUri()
         {

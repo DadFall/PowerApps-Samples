@@ -28,27 +28,27 @@ namespace PowerApps.Samples
                     // which attributes must be set for each entity.
                     var account = new Account { Name = "Fourth Coffee" };
 
-                    // Create an account record named Fourth Coffee.
+                    // 创建an account record named Fourth Coffee.
                     accountId = service.Create(account);
                     Console.Write("{0} {1} created, ", account.LogicalName, account.Name);
 
-                    // Retrieve the account containing several of its attributes.
+                    // 检索the account containing several of its attributes.
                     var cols = new ColumnSet(
                         new String[] { "name", "address1_postalcode", "lastusedincampaign", "versionnumber" });
 
                     Account retrievedAccount = (Account)service.Retrieve("account", accountId, cols);
                     Console.Write("retrieved ");
 
-                    // Retrieve version number of the account. Shows BigInt attribute usage.
+                    // 检索version number of the account. Shows BigInt attribute usage.
                     long? versionNumber = retrievedAccount.VersionNumber;
 
                     if (versionNumber != null)
                         Console.WriteLine("version # {0}, ", versionNumber);
 
-                    // Update the postal code attribute.
+                    // 更新the postal code attribute.
                     retrievedAccount.Address1_PostalCode = "98052";
 
-                    // The address 2 postal code was set accidentally, so set it to null.
+                    // address 2 postal code was set accidentally, so set it to null.
                     retrievedAccount.Address2_PostalCode = null;
 
                     // Shows usage of option set (picklist) enumerations defined in OptionSets.cs.
@@ -68,7 +68,7 @@ namespace PowerApps.Samples
                     // Shows use of Memo attribute.
                     retrievedAccount.Description = "Account for Fourth Coffee.";
 
-                    // Update the account record.
+                    // 更新the account record.
                     service.Update(retrievedAccount);
                     Console.WriteLine("and updated.");
 

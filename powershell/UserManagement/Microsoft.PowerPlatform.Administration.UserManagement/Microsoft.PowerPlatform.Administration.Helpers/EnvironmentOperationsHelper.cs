@@ -1,5 +1,5 @@
-﻿// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
+﻿// 版权所有 (c) 微软公司。
+// 根据 MIT 许可证授权。
 
 using Microsoft.Xrm.Sdk.Discovery;
 using Microsoft.Xrm.Tooling.Connector;
@@ -20,12 +20,12 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// Generates a report for all users with given role name in the environment
+        /// 生成 a report for all users with given role name in the environment
         /// </summary>
         /// <param name="userName">user Name</param>
         /// <param name="password">password</param>
         /// <param name="environmentUrl">environment Url</param>
-        /// <param name="organizationDetail">organization details retrieved from global discovery </param>
+        /// <param name="organizationDetail">organization 详细信息 retrieved from global discovery </param>
         /// <param name="roleName">role Name</param>
         public void GetAllUsersWithRoleAssignmentFromEnvironment(string userName, string password, string environmentUrl, OrganizationDetail organizationDetail, string roleName)
         {
@@ -94,7 +94,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         /// <param name="password">password</param>
         /// <param name="roleName">role Name</param>
         /// <param name="environmentUrl">environment Url</param>
-        /// <param name="userPrincipalNames">list of userPrincipalNames</param>
+        /// <param name="userPrincipalNames">列表 of userPrincipalNames</param>
         public void RemoveRolesFromUsersInEnvironment(string userName, string password, string roleName, string environmentUrl, IList<string> userPrincipalNames)
         {
             try
@@ -143,7 +143,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// Add given role to users in environment.
+        /// 添加given role to users in environment.
         /// </summary>
         /// <param name="userName">user Name</param>
         /// <param name="password">password</param>
@@ -197,7 +197,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// Add given role to users in environment.
+        /// 添加given role to users in environment.
         /// </summary>
         /// <param name="userName">user Name</param>
         /// <param name="password">password</param>
@@ -270,7 +270,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         /// <param name="userName">user Name</param>
         /// <param name="password">password</param>
         /// <param name="environmentUrl">environment Url</param>
-        /// <param name="sourceUserPrincipalNames">source user principal names.</param>
+        /// <param name="sourceUserPrincipalNames">source user principal 名称s.</param>
         /// <param name="targetUserPrincipalNames">target user upns.</param>
         /// <param name="userPrincipalNames">user Principal Names.</param>
         public void BulkAssignUserRecordsInEnvironment(string userName, string password, OrganizationDetail organizationDetail, IList<string> userPrincipalNames)
@@ -282,8 +282,8 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
     }
 
     /// <summary>
-    /// Cloud information for Discovery service.
-    /// </summary>
+        /// Cloud information for Discovery service.
+        /// </summary>
     public enum Cloud
     {
         Unknown,

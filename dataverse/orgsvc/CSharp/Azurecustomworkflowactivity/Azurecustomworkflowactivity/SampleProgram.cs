@@ -5,14 +5,14 @@ using System.Activities;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// This class posts the CDS execution context to the Azure Service Bus.
-    /// </summary>
+        /// 此class posts the CDS execution context to the Azure Service Bus.
+        /// </summary>
     public class AzureAwareWorkflowActivity : CodeActivity
     {
         /// <summary>
-        /// This method is called when the workflow executes.
+        /// 此method is called when the workflow executes.
         /// </summary>
-        /// <param name="executionContext">The data for the event triggering
+        /// <param name="executionContext">数据 for the event triggering
         /// the workflow.</param>
         protected override void Execute(CodeActivityContext executionContext)
         {

@@ -10,23 +10,23 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -38,26 +38,26 @@ namespace PowerPlatform.Dataverse.CodeSamples
             int numberOfRecords = Settings.NumberOfRecords; //100 by default
             string tableSchemaName = "sample_Example";
             string tableLogicalName = tableSchemaName.ToLower(); //sample_example
-            // The maximum number of requests for ExecuteMultiple is 1000.
+            // maximum number of requests for ExecuteMultiple is 1000.
             int chunkSize = Settings.UseElastic ? Settings.ElasticBatchSize : Settings.StandardBatchSize;
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"))
                 {
                     UseWebApi = false
                 };
 
-            // Create sample_Example table for this sample
+            // 创建sample_Example table for this sample
             Utility.CreateExampleTable(
                 serviceClient: serviceClient,
                 tableSchemaName: tableSchemaName,
                 isElastic: Settings.UseElastic);
 
 
-            // Create a List of entity instances
+            // 创建a List of entity instances
             Console.WriteLine($"\nPreparing {numberOfRecords} records to create...");
             List<Entity> entityList = new();
             // Populate the list with the number of records to test
@@ -79,7 +79,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             foreach (Entity enity in entityList)
             {
                 CreateRequest createRequest = new() { Target = enity };
-                // Add Shared Variable with request to detect in a plug-in.
+                // 添加Shared Variable with request to detect in a plug-in.
                 createRequest["tag"] = "ExecuteMultiple";
 
                 if (Settings.BypassCustomPluginExecution)
@@ -93,7 +93,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
 
 
-            // The limit per ExecuteMultipleRequest is 1000, so creating multiple 
+            // limit per ExecuteMultipleRequest is 1000, so creating multiple 
             // ExecuteMultipleRequests when the total is greater than the configured chunkSize.
             List<ExecuteMultipleRequest> executeMultipleCreateRequests = new();
 
@@ -124,7 +124,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine($"Sending {executeMultipleCreateRequests.Count} " +
                 $"ExecuteMultipleRequest{(executeMultipleCreateRequests.Count > 1 ? "s" : string.Empty)} to create...");
 
-            // For each set of 1000 or less.
+            // 对于each set of 1000 or less.
             executeMultipleCreateRequests.ForEach(emr =>
             {
                 Console.WriteLine($" Sending ExecuteMultipleRequest {createCount}...");
@@ -140,7 +140,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             List<CreateResponse> createResponses = new();
 
-            // For each set of 1000 or less.
+            // 对于each set of 1000 or less.
             executeMultipleResponses.ForEach(emr =>
             {
                 foreach (ExecuteMultipleResponseItem item in emr.Responses)
@@ -160,7 +160,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             foreach (Entity entity in entityList)
             {
                 UpdateRequest updateRequest = new() { Target = entity };
-                // Add Shared Variable with request to detect in a plug-in.
+                // 添加Shared Variable with request to detect in a plug-in.
                 updateRequest["tag"] = "ExecuteMultiple";
 
                 if (Settings.BypassCustomPluginExecution)
@@ -173,7 +173,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 updateRequestsList.Add(updateRequest);
             }
 
-            // The limit per ExecuteMultipleRequest is 1000, so creating multiple 
+            // limit per ExecuteMultipleRequest is 1000, so creating multiple 
             // ExecuteMultipleRequests when the total is greater than the configured chunkSize.
             List<ExecuteMultipleRequest> executeMultipleUpdateRequests = new();
 
@@ -202,7 +202,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine($"Sending {executeMultipleUpdateRequests.Count} " +
                 $"ExecuteMultipleRequest{(executeMultipleUpdateRequests.Count > 1 ? "s" : string.Empty)} to update...");
 
-            // For each set of 1000 or less.
+            // 对于each set of 1000 or less.
             executeMultipleUpdateRequests.ForEach(emr =>
             {
                 Console.WriteLine($" Sending ExecuteMultipleRequest {updateCount}...");
@@ -219,7 +219,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             {
 
                 Console.WriteLine($"\nPreparing {numberOfRecords} records to delete..");
-                // Delete created rows with DeleteMultiple
+                // 删除created rows with DeleteMultiple
                 EntityReferenceCollection targets = new();
                 foreach (Entity entity in entityList)
                 {
@@ -244,7 +244,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             }
             else
             {
-                // Delete created rows asynchronously
+                // 删除created rows asynchronously
                 Console.WriteLine($"\nStarting asynchronous bulk delete " +
                     $"of {entityList.Count} created records...");
 
@@ -264,7 +264,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 Console.WriteLine($"\tBulk Delete status: {deleteJobStatus}");
             }
 
-            // Delete sample_example table
+            // 删除sample_example table
             Utility.DeleteExampleTable(
                 service: serviceClient,
                 tableSchemaName: tableSchemaName);

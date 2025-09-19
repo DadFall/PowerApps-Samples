@@ -22,13 +22,13 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region  Demonstrate
 
-                    // The custom prefix would typically be passed in as an argument or
+                    // custom prefix would typically be passed in as an argument or
                     // determined by the publisher of the custom solution.
                     String prefix = "new_";
 
                     String customEntityName = prefix + "sampleentity";
 
-                    // Create the custom activity entity.
+                    // 创建the custom activity entity.
                     CreateEntityRequest request = new CreateEntityRequest
                     {
                         HasNotes = true,
@@ -56,7 +56,7 @@ namespace PowerApps.Samples
 
                     //Entity must be published
 
-                    // Add few attributes to the custom activity entity.
+                    // 添加few attributes to the custom activity entity.
                     CreateAttributeRequest fontFamilyAttributeRequest =
                         new CreateAttributeRequest
                         {

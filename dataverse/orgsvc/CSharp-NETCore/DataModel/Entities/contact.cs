@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Account role of the contact.
-	/// </summary>
+        /// Account role of the contact.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_accountrolecode
@@ -32,8 +32,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of address for address 1, such as billing, shipping, or primary address.
-	/// </summary>
+        /// Type of address for address 1, such as billing, shipping, or primary address.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_address1_addresstypecode
@@ -53,8 +53,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Freight terms for address 1.
-	/// </summary>
+        /// Freight terms for address 1.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_address1_freighttermscode
@@ -68,8 +68,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipment for address 1.
-	/// </summary>
+        /// Method of shipment for address 1.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_address1_shippingmethodcode
@@ -98,8 +98,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of address for address 2, such as billing, shipping, or primary address.
-	/// </summary>
+        /// Type of address for address 2, such as billing, shipping, or primary address.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_address2_addresstypecode
@@ -110,8 +110,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Freight terms for address 2.
-	/// </summary>
+        /// Freight terms for address 2.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_address2_freighttermscode
@@ -122,8 +122,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipment for address 2.
-	/// </summary>
+        /// Method of shipment for address 2.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_address2_shippingmethodcode
@@ -134,8 +134,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of address for address 3, such as billing, shipping, or primary address.
-	/// </summary>
+        /// Type of address for address 3, such as billing, shipping, or primary address.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_address3_addresstypecode
@@ -146,8 +146,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Freight terms for address 3.
-	/// </summary>
+        /// Freight terms for address 3.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_address3_freighttermscode
@@ -158,8 +158,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipment for address 3.
-	/// </summary>
+        /// Method of shipment for address 3.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_address3_shippingmethodcode
@@ -170,8 +170,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Size of the contact's business.
-	/// </summary>
+        /// Size of the contact's business.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_customersizecode
@@ -182,8 +182,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of business associated with the contact.
-	/// </summary>
+        /// Type of business associated with the contact.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_customertypecode
@@ -194,8 +194,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Formal education level that the contact has attained.
-	/// </summary>
+        /// Formal education level that the contact has attained.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_educationcode
@@ -206,8 +206,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Marital status of the contact.
-	/// </summary>
+        /// Marital status of the contact.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_familystatuscode
@@ -227,8 +227,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Gender of the contact.
-	/// </summary>
+        /// Gender of the contact.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_gendercode
@@ -242,8 +242,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Information about whether the contact has children.
-	/// </summary>
+        /// Information about whether the contact has children.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_haschildrencode
@@ -254,8 +254,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Source of the lead of the contact.
-	/// </summary>
+        /// Source of the lead of the contact.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_leadsourcecode
@@ -266,8 +266,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Payment terms for the contact.
-	/// </summary>
+        /// Payment terms for the contact.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_paymenttermscode
@@ -287,8 +287,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Day of the week that the contact prefers for scheduling service activities.
-	/// </summary>
+        /// Day of the week that the contact prefers for scheduling service activities.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_preferredappointmentdaycode
@@ -317,8 +317,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Time of day that the contact prefers for scheduling service activities.
-	/// </summary>
+        /// Time of day that the contact prefers for scheduling service activities.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_preferredappointmenttimecode
@@ -335,8 +335,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Preferred contact method for the contact.
-	/// </summary>
+        /// Preferred contact method for the contact.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_preferredcontactmethodcode
@@ -359,8 +359,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipping for the contact.
-	/// </summary>
+        /// Method of shipping for the contact.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_shippingmethodcode
@@ -371,8 +371,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Status of the contact.
-	/// </summary>
+        /// Status of the contact.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_statecode
@@ -386,8 +386,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Reason for the status of the contact.
-	/// </summary>
+        /// Reason for the status of the contact.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_statuscode
@@ -401,8 +401,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Unique identifier of the territory to which the contact is assigned.
-	/// </summary>
+        /// Unique identifier of the territory to which the contact is assigned.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum contact_territorycode
@@ -413,8 +413,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Person with whom a business unit has a relationship, such as customer, supplier, and colleague.
-	/// </summary>
+        /// Person with whom a business unit has a relationship, such as customer, supplier, and colleague.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contact")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
@@ -422,8 +422,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public Contact() : 
 				base(EntityLogicalName)
 		{
@@ -456,8 +456,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the account with which the contact is associated.
-		/// </summary>
+        /// Unique identifier of the account with which the contact is associated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountid")]
 		public Microsoft.Xrm.Sdk.EntityReference AccountId
 		{
@@ -468,8 +468,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the contact's role within the company or sales process, such as decision maker, employee, or influencer.
-		/// </summary>
+        /// 选择the contact's role within the company or sales process, such as decision maker, employee, or influencer.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountrolecode")]
 		public virtual contact_accountrolecode? AccountRoleCode
 		{
@@ -486,8 +486,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for address 1.
-		/// </summary>
+        /// Unique identifier for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addressid")]
 		public System.Nullable<System.Guid> Address1_AddressId
 		{
@@ -504,8 +504,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the primary address type.
-		/// </summary>
+        /// 选择the primary address type.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecode")]
 		public virtual contact_address1_addresstypecode? Address1_AddressTypeCode
 		{
@@ -522,8 +522,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the city for the primary address.
-		/// </summary>
+        /// Type the city for the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_city")]
 		public string Address1_City
 		{
@@ -540,8 +540,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the complete primary address.
-		/// </summary>
+        /// Shows the complete primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_composite")]
 		public string Address1_Composite
 		{
@@ -552,8 +552,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the country or region for the primary address.
-		/// </summary>
+        /// Type the country or region for the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_country")]
 		public string Address1_Country
 		{
@@ -570,8 +570,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the county for the primary address.
-		/// </summary>
+        /// Type the county for the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_county")]
 		public string Address1_County
 		{
@@ -588,8 +588,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the fax number associated with the primary address.
-		/// </summary>
+        /// Type the fax number associated with the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_fax")]
 		public string Address1_Fax
 		{
@@ -606,8 +606,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the freight terms for the primary address to make sure shipping orders are processed correctly.
-		/// </summary>
+        /// 选择the freight terms for the primary address to make sure shipping orders are processed correctly.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_freighttermscode")]
 		public virtual contact_address1_freighttermscode? Address1_FreightTermsCode
 		{
@@ -624,8 +624,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the latitude value for the primary address for use in mapping and other applications.
-		/// </summary>
+        /// Type the latitude value for the primary address for use in mapping and other applications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_latitude")]
 		public System.Nullable<double> Address1_Latitude
 		{
@@ -642,8 +642,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the first line of the primary address.
-		/// </summary>
+        /// Type the first line of the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line1")]
 		public string Address1_Line1
 		{
@@ -660,8 +660,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the second line of the primary address.
-		/// </summary>
+        /// Type the second line of the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line2")]
 		public string Address1_Line2
 		{
@@ -678,8 +678,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the third line of the primary address.
-		/// </summary>
+        /// Type the third line of the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line3")]
 		public string Address1_Line3
 		{
@@ -696,8 +696,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the longitude value for the primary address for use in mapping and other applications.
-		/// </summary>
+        /// Type the longitude value for the primary address for use in mapping and other applications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_longitude")]
 		public System.Nullable<double> Address1_Longitude
 		{
@@ -714,8 +714,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a descriptive name for the primary address, such as Corporate Headquarters.
-		/// </summary>
+        /// Type a descriptive name for the primary address, such as Corporate Headquarters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_name")]
 		public string Address1_Name
 		{
@@ -732,8 +732,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the ZIP Code or postal code for the primary address.
-		/// </summary>
+        /// Type the ZIP Code or postal code for the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postalcode")]
 		public string Address1_PostalCode
 		{
@@ -750,8 +750,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the post office box number of the primary address.
-		/// </summary>
+        /// Type the post office box number of the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postofficebox")]
 		public string Address1_PostOfficeBox
 		{
@@ -768,8 +768,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the name of the main contact at the account's primary address.
-		/// </summary>
+        /// Type the name of the main contact at the account's primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_primarycontactname")]
 		public string Address1_PrimaryContactName
 		{
@@ -786,8 +786,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a shipping method for deliveries sent to this address.
-		/// </summary>
+        /// 选择a shipping method for deliveries sent to this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcode")]
 		public virtual contact_address1_shippingmethodcode? Address1_ShippingMethodCode
 		{
@@ -804,8 +804,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the state or province of the primary address.
-		/// </summary>
+        /// Type the state or province of the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_stateorprovince")]
 		public string Address1_StateOrProvince
 		{
@@ -822,8 +822,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the main phone number associated with the primary address.
-		/// </summary>
+        /// Type the main phone number associated with the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone1")]
 		public string Address1_Telephone1
 		{
@@ -840,8 +840,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a second phone number associated with the primary address.
-		/// </summary>
+        /// Type a second phone number associated with the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone2")]
 		public string Address1_Telephone2
 		{
@@ -858,8 +858,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a third phone number associated with the primary address.
-		/// </summary>
+        /// Type a third phone number associated with the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone3")]
 		public string Address1_Telephone3
 		{
@@ -876,8 +876,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the UPS zone of the primary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
-		/// </summary>
+        /// Type the UPS zone of the primary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_upszone")]
 		public string Address1_UPSZone
 		{
@@ -894,8 +894,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
-		/// </summary>
+        /// 选择the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_utcoffset")]
 		public System.Nullable<int> Address1_UTCOffset
 		{
@@ -912,8 +912,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for address 2.
-		/// </summary>
+        /// Unique identifier for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addressid")]
 		public System.Nullable<System.Guid> Address2_AddressId
 		{
@@ -930,8 +930,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the secondary address type.
-		/// </summary>
+        /// 选择the secondary address type.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecode")]
 		public virtual contact_address2_addresstypecode? Address2_AddressTypeCode
 		{
@@ -948,8 +948,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the city for the secondary address.
-		/// </summary>
+        /// Type the city for the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_city")]
 		public string Address2_City
 		{
@@ -966,8 +966,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the complete secondary address.
-		/// </summary>
+        /// Shows the complete secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_composite")]
 		public string Address2_Composite
 		{
@@ -978,8 +978,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the country or region for the secondary address.
-		/// </summary>
+        /// Type the country or region for the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_country")]
 		public string Address2_Country
 		{
@@ -996,8 +996,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the county for the secondary address.
-		/// </summary>
+        /// Type the county for the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_county")]
 		public string Address2_County
 		{
@@ -1014,8 +1014,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the fax number associated with the secondary address.
-		/// </summary>
+        /// Type the fax number associated with the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_fax")]
 		public string Address2_Fax
 		{
@@ -1032,8 +1032,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the freight terms for the secondary address to make sure shipping orders are processed correctly.
-		/// </summary>
+        /// 选择the freight terms for the secondary address to make sure shipping orders are processed correctly.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_freighttermscode")]
 		public virtual contact_address2_freighttermscode? Address2_FreightTermsCode
 		{
@@ -1050,8 +1050,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the latitude value for the secondary address for use in mapping and other applications.
-		/// </summary>
+        /// Type the latitude value for the secondary address for use in mapping and other applications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_latitude")]
 		public System.Nullable<double> Address2_Latitude
 		{
@@ -1068,8 +1068,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the first line of the secondary address.
-		/// </summary>
+        /// Type the first line of the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line1")]
 		public string Address2_Line1
 		{
@@ -1086,8 +1086,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the second line of the secondary address.
-		/// </summary>
+        /// Type the second line of the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line2")]
 		public string Address2_Line2
 		{
@@ -1104,8 +1104,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the third line of the secondary address.
-		/// </summary>
+        /// Type the third line of the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line3")]
 		public string Address2_Line3
 		{
@@ -1122,8 +1122,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the longitude value for the secondary address for use in mapping and other applications.
-		/// </summary>
+        /// Type the longitude value for the secondary address for use in mapping and other applications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_longitude")]
 		public System.Nullable<double> Address2_Longitude
 		{
@@ -1140,8 +1140,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a descriptive name for the secondary address, such as Corporate Headquarters.
-		/// </summary>
+        /// Type a descriptive name for the secondary address, such as Corporate Headquarters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_name")]
 		public string Address2_Name
 		{
@@ -1158,8 +1158,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the ZIP Code or postal code for the secondary address.
-		/// </summary>
+        /// Type the ZIP Code or postal code for the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postalcode")]
 		public string Address2_PostalCode
 		{
@@ -1176,8 +1176,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the post office box number of the secondary address.
-		/// </summary>
+        /// Type the post office box number of the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postofficebox")]
 		public string Address2_PostOfficeBox
 		{
@@ -1194,8 +1194,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the name of the main contact at the account's secondary address.
-		/// </summary>
+        /// Type the name of the main contact at the account's secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_primarycontactname")]
 		public string Address2_PrimaryContactName
 		{
@@ -1212,8 +1212,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a shipping method for deliveries sent to this address.
-		/// </summary>
+        /// 选择a shipping method for deliveries sent to this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcode")]
 		public virtual contact_address2_shippingmethodcode? Address2_ShippingMethodCode
 		{
@@ -1230,8 +1230,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the state or province of the secondary address.
-		/// </summary>
+        /// Type the state or province of the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_stateorprovince")]
 		public string Address2_StateOrProvince
 		{
@@ -1248,8 +1248,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the main phone number associated with the secondary address.
-		/// </summary>
+        /// Type the main phone number associated with the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone1")]
 		public string Address2_Telephone1
 		{
@@ -1266,8 +1266,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a second phone number associated with the secondary address.
-		/// </summary>
+        /// Type a second phone number associated with the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone2")]
 		public string Address2_Telephone2
 		{
@@ -1284,8 +1284,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a third phone number associated with the secondary address.
-		/// </summary>
+        /// Type a third phone number associated with the secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone3")]
 		public string Address2_Telephone3
 		{
@@ -1302,8 +1302,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the UPS zone of the secondary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
-		/// </summary>
+        /// Type the UPS zone of the secondary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_upszone")]
 		public string Address2_UPSZone
 		{
@@ -1320,8 +1320,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
-		/// </summary>
+        /// 选择the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_utcoffset")]
 		public System.Nullable<int> Address2_UTCOffset
 		{
@@ -1338,8 +1338,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for address 3.
-		/// </summary>
+        /// Unique identifier for address 3.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_addressid")]
 		public System.Nullable<System.Guid> Address3_AddressId
 		{
@@ -1356,8 +1356,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the third address type.
-		/// </summary>
+        /// 选择the third address type.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_addresstypecode")]
 		public virtual contact_address3_addresstypecode? Address3_AddressTypeCode
 		{
@@ -1374,8 +1374,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the city for the 3rd address.
-		/// </summary>
+        /// Type the city for the 3rd address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_city")]
 		public string Address3_City
 		{
@@ -1392,8 +1392,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the complete third address.
-		/// </summary>
+        /// Shows the complete third address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_composite")]
 		public string Address3_Composite
 		{
@@ -1404,8 +1404,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// the country or region for the 3rd address.
-		/// </summary>
+        /// the country or region for the 3rd address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_country")]
 		public string Address3_Country
 		{
@@ -1422,8 +1422,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the county for the third address.
-		/// </summary>
+        /// Type the county for the third address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_county")]
 		public string Address3_County
 		{
@@ -1440,8 +1440,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the fax number associated with the third address.
-		/// </summary>
+        /// Type the fax number associated with the third address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_fax")]
 		public string Address3_Fax
 		{
@@ -1458,8 +1458,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the freight terms for the third address to make sure shipping orders are processed correctly.
-		/// </summary>
+        /// 选择the freight terms for the third address to make sure shipping orders are processed correctly.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_freighttermscode")]
 		public virtual contact_address3_freighttermscode? Address3_FreightTermsCode
 		{
@@ -1476,8 +1476,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the latitude value for the third address for use in mapping and other applications.
-		/// </summary>
+        /// Type the latitude value for the third address for use in mapping and other applications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_latitude")]
 		public System.Nullable<double> Address3_Latitude
 		{
@@ -1494,8 +1494,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// the first line of the 3rd address.
-		/// </summary>
+        /// the first line of the 3rd address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_line1")]
 		public string Address3_Line1
 		{
@@ -1512,8 +1512,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// the second line of the 3rd address.
-		/// </summary>
+        /// the second line of the 3rd address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_line2")]
 		public string Address3_Line2
 		{
@@ -1530,8 +1530,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// the third line of the 3rd address.
-		/// </summary>
+        /// the third line of the 3rd address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_line3")]
 		public string Address3_Line3
 		{
@@ -1548,8 +1548,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the longitude value for the third address for use in mapping and other applications.
-		/// </summary>
+        /// Type the longitude value for the third address for use in mapping and other applications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_longitude")]
 		public System.Nullable<double> Address3_Longitude
 		{
@@ -1566,8 +1566,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a descriptive name for the third address, such as Corporate Headquarters.
-		/// </summary>
+        /// Type a descriptive name for the third address, such as Corporate Headquarters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_name")]
 		public string Address3_Name
 		{
@@ -1584,8 +1584,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// the ZIP Code or postal code for the 3rd address.
-		/// </summary>
+        /// the ZIP Code or postal code for the 3rd address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_postalcode")]
 		public string Address3_PostalCode
 		{
@@ -1602,8 +1602,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// the post office box number of the 3rd address.
-		/// </summary>
+        /// the post office box number of the 3rd address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_postofficebox")]
 		public string Address3_PostOfficeBox
 		{
@@ -1620,8 +1620,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the name of the main contact at the account's third address.
-		/// </summary>
+        /// Type the name of the main contact at the account's third address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_primarycontactname")]
 		public string Address3_PrimaryContactName
 		{
@@ -1638,8 +1638,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a shipping method for deliveries sent to this address.
-		/// </summary>
+        /// 选择a shipping method for deliveries sent to this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_shippingmethodcode")]
 		public virtual contact_address3_shippingmethodcode? Address3_ShippingMethodCode
 		{
@@ -1656,8 +1656,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// the state or province of the third address.
-		/// </summary>
+        /// the state or province of the third address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_stateorprovince")]
 		public string Address3_StateOrProvince
 		{
@@ -1674,8 +1674,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the main phone number associated with the third address.
-		/// </summary>
+        /// Type the main phone number associated with the third address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_telephone1")]
 		public string Address3_Telephone1
 		{
@@ -1692,8 +1692,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a second phone number associated with the third address.
-		/// </summary>
+        /// Type a second phone number associated with the third address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_telephone2")]
 		public string Address3_Telephone2
 		{
@@ -1710,8 +1710,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a third phone number associated with the primary address.
-		/// </summary>
+        /// Type a third phone number associated with the primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_telephone3")]
 		public string Address3_Telephone3
 		{
@@ -1728,8 +1728,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the UPS zone of the third address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
-		/// </summary>
+        /// Type the UPS zone of the third address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_upszone")]
 		public string Address3_UPSZone
 		{
@@ -1746,8 +1746,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
-		/// </summary>
+        /// 选择the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_utcoffset")]
 		public System.Nullable<int> Address3_UTCOffset
 		{
@@ -1809,8 +1809,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the current count of failed password attempts for the contact.
-		/// </summary>
+        /// Shows the current count of failed password attempts for the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_accessfailedcount")]
 		public System.Nullable<int> adx_identity_accessfailedcount
 		{
@@ -1827,8 +1827,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Determines if the email is confirmed by the contact.
-		/// </summary>
+        /// Determines if the email is confirmed by the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_emailaddress1confirmed")]
 		public System.Nullable<bool> adx_identity_emailaddress1confirmed
 		{
@@ -1845,8 +1845,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Indicates the last date and time the user successfully signed in to a portal.
-		/// </summary>
+        /// Indicates the last date and time the user successfully signed in to a portal.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_lastsuccessfullogin")]
 		public System.Nullable<System.DateTime> adx_identity_lastsuccessfullogin
 		{
@@ -1863,8 +1863,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Indicates that the contact can no longer sign in to the portal using the local account.
-		/// </summary>
+        /// Indicates that the contact can no longer sign in to the portal using the local account.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_locallogindisabled")]
 		public System.Nullable<bool> adx_identity_locallogindisabled
 		{
@@ -1881,8 +1881,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Determines if this contact will track failed access attempts and become locked after too many failed attempts. To prevent the contact from becoming locked, you can disable this setting.
-		/// </summary>
+        /// Determines if this contact will track failed access attempts and become locked after too many failed attempts. To prevent the contact from becoming locked, you can disable this setting.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_lockoutenabled")]
 		public System.Nullable<bool> adx_identity_lockoutenabled
 		{
@@ -1899,8 +1899,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the moment in time when the locked contact becomes unlocked again.
-		/// </summary>
+        /// Shows the moment in time when the locked contact becomes unlocked again.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_lockoutenddate")]
 		public System.Nullable<System.DateTime> adx_identity_lockoutenddate
 		{
@@ -1917,8 +1917,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Determines if web authentication is enabled for the contact.
-		/// </summary>
+        /// Determines if web authentication is enabled for the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_logonenabled")]
 		public System.Nullable<bool> adx_identity_logonenabled
 		{
@@ -1935,8 +1935,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Determines if the phone number is confirmed by the contact.
-		/// </summary>
+        /// Determines if the phone number is confirmed by the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_mobilephoneconfirmed")]
 		public System.Nullable<bool> adx_identity_mobilephoneconfirmed
 		{
@@ -1983,8 +1983,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// A token used to manage the web authentication session.
-		/// </summary>
+        /// 一个token used to manage the web authentication session.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_securitystamp")]
 		public string adx_identity_securitystamp
 		{
@@ -2001,8 +2001,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Determines if two-factor authentication is enabled for the contact.
-		/// </summary>
+        /// Determines if two-factor authentication is enabled for the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_twofactorenabled")]
 		public System.Nullable<bool> adx_identity_twofactorenabled
 		{
@@ -2019,8 +2019,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the user identity for local web authentication.
-		/// </summary>
+        /// Shows the user identity for local web authentication.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_username")]
 		public string adx_identity_username
 		{
@@ -2082,8 +2082,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// User’s preferred portal LCID
-		/// </summary>
+        /// User’s preferred portal LCID
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_preferredlcid")]
 		public System.Nullable<int> adx_preferredlcid
 		{
@@ -2220,8 +2220,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For system use only.
-		/// </summary>
+        /// 对于system use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging30")]
 		public Microsoft.Xrm.Sdk.Money Aging30
 		{
@@ -2232,8 +2232,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the Aging 30 field converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area.
-		/// </summary>
+        /// Shows the Aging 30 field converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging30_base")]
 		public Microsoft.Xrm.Sdk.Money Aging30_Base
 		{
@@ -2244,8 +2244,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For system use only.
-		/// </summary>
+        /// 对于system use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging60")]
 		public Microsoft.Xrm.Sdk.Money Aging60
 		{
@@ -2256,8 +2256,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the Aging 60 field converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area.
-		/// </summary>
+        /// Shows the Aging 60 field converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging60_base")]
 		public Microsoft.Xrm.Sdk.Money Aging60_Base
 		{
@@ -2268,8 +2268,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For system use only.
-		/// </summary>
+        /// 对于system use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging90")]
 		public Microsoft.Xrm.Sdk.Money Aging90
 		{
@@ -2280,8 +2280,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the Aging 90 field converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area.
-		/// </summary>
+        /// Shows the Aging 90 field converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aging90_base")]
 		public Microsoft.Xrm.Sdk.Money Aging90_Base
 		{
@@ -2292,8 +2292,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the date of the contact's wedding or service anniversary for use in customer gift programs or other communications.
-		/// </summary>
+        /// Enter the date of the contact's wedding or service anniversary for use in customer gift programs or other communications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("anniversary")]
 		public System.Nullable<System.DateTime> Anniversary
 		{
@@ -2310,8 +2310,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the contact's annual income for use in profiling and financial analysis.
-		/// </summary>
+        /// Type the contact's annual income for use in profiling and financial analysis.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("annualincome")]
 		public Microsoft.Xrm.Sdk.Money AnnualIncome
 		{
@@ -2328,8 +2328,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the Annual Income field converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area.
-		/// </summary>
+        /// Shows the Annual Income field converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("annualincome_base")]
 		public Microsoft.Xrm.Sdk.Money AnnualIncome_Base
 		{
@@ -2340,8 +2340,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the name of the contact's assistant.
-		/// </summary>
+        /// Type the name of the contact's assistant.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("assistantname")]
 		public string AssistantName
 		{
@@ -2358,8 +2358,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the phone number for the contact's assistant.
-		/// </summary>
+        /// Type the phone number for the contact's assistant.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("assistantphone")]
 		public string AssistantPhone
 		{
@@ -2376,8 +2376,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the contact's birthday for use in customer gift programs or other communications.
-		/// </summary>
+        /// Enter the contact's birthday for use in customer gift programs or other communications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("birthdate")]
 		public System.Nullable<System.DateTime> BirthDate
 		{
@@ -2394,8 +2394,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a second business phone number for this contact.
-		/// </summary>
+        /// Type a second business phone number for this contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("business2")]
 		public string Business2
 		{
@@ -2412,8 +2412,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a callback phone number for this contact.
-		/// </summary>
+        /// Type a callback phone number for this contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("callback")]
 		public string Callback
 		{
@@ -2430,8 +2430,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the names of the contact's children for reference in communications and client programs.
-		/// </summary>
+        /// Type the names of the contact's children for reference in communications and client programs.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("childrensnames")]
 		public string ChildrensNames
 		{
@@ -2448,8 +2448,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the company phone of the contact.
-		/// </summary>
+        /// Type the company phone of the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("company")]
 		public string Company
 		{
@@ -2466,8 +2466,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the contact.
-		/// </summary>
+        /// Unique identifier of the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contactid")]
 		public System.Nullable<System.Guid> ContactId
 		{
@@ -2505,8 +2505,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who created the record.
-		/// </summary>
+        /// Shows who created the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
@@ -2517,8 +2517,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the external party who created the record.
-		/// </summary>
+        /// Shows the external party who created the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedByExternalParty
 		{
@@ -2529,8 +2529,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
-		/// </summary>
+        /// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
@@ -2541,8 +2541,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
-		/// </summary>
+        /// Shows who created the record on behalf of another user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
@@ -2553,8 +2553,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the credit limit of the contact for reference when you address invoice and accounting issues with the customer.
-		/// </summary>
+        /// Type the credit limit of the contact for reference when you address invoice and accounting issues with the customer.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("creditlimit")]
 		public Microsoft.Xrm.Sdk.Money CreditLimit
 		{
@@ -2571,8 +2571,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the Credit Limit field converted to the system's default base currency for reporting purposes. The calculations use the exchange rate specified in the Currencies area.
-		/// </summary>
+        /// Shows the Credit Limit field converted to the system's default base currency for reporting purposes. The calculations use the exchange rate specified in the Currencies area.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("creditlimit_base")]
 		public Microsoft.Xrm.Sdk.Money CreditLimit_Base
 		{
@@ -2583,8 +2583,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the contact is on a credit hold, for reference when addressing invoice and accounting issues.
-		/// </summary>
+        /// 选择whether the contact is on a credit hold, for reference when addressing invoice and accounting issues.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("creditonhold")]
 		public System.Nullable<bool> CreditOnHold
 		{
@@ -2601,8 +2601,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the size of the contact's company for segmentation and reporting purposes.
-		/// </summary>
+        /// 选择the size of the contact's company for segmentation and reporting purposes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customersizecode")]
 		public virtual contact_customersizecode? CustomerSizeCode
 		{
@@ -2619,8 +2619,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the category that best describes the relationship between the contact and your organization.
-		/// </summary>
+        /// 选择the category that best describes the relationship between the contact and your organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customertypecode")]
 		public virtual contact_customertypecode? CustomerTypeCode
 		{
@@ -2637,8 +2637,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the department or business unit where the contact works in the parent company or business.
-		/// </summary>
+        /// Type the department or business unit where the contact works in the parent company or business.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("department")]
 		public string Department
 		{
@@ -2655,8 +2655,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type additional information to describe the contact, such as an excerpt from the company's website.
-		/// </summary>
+        /// Type additional information to describe the contact, such as an excerpt from the company's website.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
 		{
@@ -2673,8 +2673,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the contact accepts bulk email sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the contact can be added to marketing lists, but will be excluded from the email.
-		/// </summary>
+        /// 选择whether the contact accepts bulk email sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the contact can be added to marketing lists, but will be excluded from the email.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotbulkemail")]
 		public System.Nullable<bool> DoNotBulkEMail
 		{
@@ -2691,8 +2691,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the contact accepts bulk postal mail sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the contact can be added to marketing lists, but will be excluded from the letters.
-		/// </summary>
+        /// 选择whether the contact accepts bulk postal mail sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the contact can be added to marketing lists, but will be excluded from the letters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotbulkpostalmail")]
 		public System.Nullable<bool> DoNotBulkPostalMail
 		{
@@ -2709,8 +2709,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the contact allows direct email sent from Microsoft Dynamics 365. If Do Not Allow is selected, Microsoft Dynamics 365 will not send the email.
-		/// </summary>
+        /// 选择whether the contact allows direct email sent from Microsoft Dynamics 365. If Do Not Allow is selected, Microsoft Dynamics 365 will not send the email.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotemail")]
 		public System.Nullable<bool> DoNotEMail
 		{
@@ -2727,8 +2727,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the contact allows faxes. If Do Not Allow is selected, the contact will be excluded from any fax activities distributed in marketing campaigns.
-		/// </summary>
+        /// 选择whether the contact allows faxes. If Do Not Allow is selected, the contact will be excluded from any fax activities distributed in marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotfax")]
 		public System.Nullable<bool> DoNotFax
 		{
@@ -2745,8 +2745,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the contact accepts phone calls. If Do Not Allow is selected, the contact will be excluded from any phone call activities distributed in marketing campaigns.
-		/// </summary>
+        /// 选择whether the contact accepts phone calls. If Do Not Allow is selected, the contact will be excluded from any phone call activities distributed in marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotphone")]
 		public System.Nullable<bool> DoNotPhone
 		{
@@ -2763,8 +2763,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the contact allows direct mail. If Do Not Allow is selected, the contact will be excluded from letter activities distributed in marketing campaigns.
-		/// </summary>
+        /// 选择whether the contact allows direct mail. If Do Not Allow is selected, the contact will be excluded from letter activities distributed in marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotpostalmail")]
 		public System.Nullable<bool> DoNotPostalMail
 		{
@@ -2781,8 +2781,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the contact accepts marketing materials, such as brochures or catalogs. Contacts that opt out can be excluded from marketing initiatives.
-		/// </summary>
+        /// 选择whether the contact accepts marketing materials, such as brochures or catalogs. Contacts that opt out can be excluded from marketing initiatives.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotsendmm")]
 		public System.Nullable<bool> DoNotSendMM
 		{
@@ -2799,8 +2799,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the contact's highest level of education for use in segmentation and analysis.
-		/// </summary>
+        /// 选择the contact's highest level of education for use in segmentation and analysis.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("educationcode")]
 		public virtual contact_educationcode? EducationCode
 		{
@@ -2817,8 +2817,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the primary email address for the contact.
-		/// </summary>
+        /// Type the primary email address for the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress1")]
 		public string EMailAddress1
 		{
@@ -2835,8 +2835,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the secondary email address for the contact.
-		/// </summary>
+        /// Type the secondary email address for the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress2")]
 		public string EMailAddress2
 		{
@@ -2853,8 +2853,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type an alternate email address for the contact.
-		/// </summary>
+        /// Type an alternate email address for the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress3")]
 		public string EMailAddress3
 		{
@@ -2871,8 +2871,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the employee ID or number for the contact for reference in orders, service cases, or other communications with the contact's organization.
-		/// </summary>
+        /// Type the employee ID or number for the contact for reference in orders, service cases, or other communications with the contact's organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("employeeid")]
 		public string EmployeeId
 		{
@@ -2889,8 +2889,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the default image for the record.
-		/// </summary>
+        /// Shows the default image for the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage")]
 		public byte[] EntityImage
 		{
@@ -2925,8 +2925,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimageid")]
 		public System.Nullable<System.Guid> EntityImageId
 		{
@@ -2937,8 +2937,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
-		/// </summary>
+        /// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
 		public System.Nullable<decimal> ExchangeRate
 		{
@@ -2949,8 +2949,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Identifier for an external user.
-		/// </summary>
+        /// Identifier for an external user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("externaluseridentifier")]
 		public string ExternalUserIdentifier
 		{
@@ -2967,8 +2967,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the marital status of the contact for reference in follow-up phone calls and other communications.
-		/// </summary>
+        /// 选择the marital status of the contact for reference in follow-up phone calls and other communications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("familystatuscode")]
 		public virtual contact_familystatuscode? FamilyStatusCode
 		{
@@ -2985,8 +2985,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the fax number for the contact.
-		/// </summary>
+        /// Type the fax number for the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fax")]
 		public string Fax
 		{
@@ -3003,8 +3003,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the contact's first name to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.
-		/// </summary>
+        /// Type the contact's first name to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("firstname")]
 		public string FirstName
 		{
@@ -3021,8 +3021,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether to allow following email activity like opens, attachment views and link clicks for emails sent to the contact.
-		/// </summary>
+        /// Information about whether to allow following email activity like opens, attachment views and link clicks for emails sent to the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("followemail")]
 		public System.Nullable<bool> FollowEmail
 		{
@@ -3039,8 +3039,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the URL for the contact's FTP site to enable users to access data and share documents.
-		/// </summary>
+        /// Type the URL for the contact's FTP site to enable users to access data and share documents.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ftpsiteurl")]
 		public string FtpSiteUrl
 		{
@@ -3057,8 +3057,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Combines and shows the contact's first and last names so that the full name can be displayed in views and reports.
-		/// </summary>
+        /// Combines and shows the contact's first and last names so that the full name can be displayed in views and reports.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fullname")]
 		public string FullName
 		{
@@ -3069,8 +3069,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the contact's gender to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.
-		/// </summary>
+        /// 选择the contact's gender to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("gendercode")]
 		public virtual contact_gendercode? GenderCode
 		{
@@ -3087,8 +3087,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the passport number or other government ID for the contact for use in documents or reports.
-		/// </summary>
+        /// Type the passport number or other government ID for the contact for use in documents or reports.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("governmentid")]
 		public string GovernmentId
 		{
@@ -3105,8 +3105,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the contact has any children for reference in follow-up phone calls and other communications.
-		/// </summary>
+        /// 选择whether the contact has any children for reference in follow-up phone calls and other communications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("haschildrencode")]
 		public virtual contact_haschildrencode? HasChildrenCode
 		{
@@ -3123,8 +3123,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a second home phone number for this contact.
-		/// </summary>
+        /// Type a second home phone number for this contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("home2")]
 		public string Home2
 		{
@@ -3141,8 +3141,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the data import or data migration that created this record.
-		/// </summary>
+        /// Unique identifier of the data import or data migration that created this record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
 		public System.Nullable<int> ImportSequenceNumber
 		{
@@ -3159,8 +3159,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the contact exists in a separate accounting or other system, such as Microsoft Dynamics GP or another ERP database, for use in integration processes.
-		/// </summary>
+        /// 选择whether the contact exists in a separate accounting or other system, such as Microsoft Dynamics GP or another ERP database, for use in integration processes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isbackofficecustomer")]
 		public System.Nullable<bool> IsBackofficeCustomer
 		{
@@ -3177,8 +3177,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the job title of the contact to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.
-		/// </summary>
+        /// Type the job title of the contact to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("jobtitle")]
 		public string JobTitle
 		{
@@ -3195,8 +3195,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the contact's last name to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.
-		/// </summary>
+        /// Type the contact's last name to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastname")]
 		public string LastName
 		{
@@ -3213,8 +3213,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Contains the date and time stamp of the last on hold time.
-		/// </summary>
+        /// Contains the date and time stamp of the last on hold time.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastonholdtime")]
 		public System.Nullable<System.DateTime> LastOnHoldTime
 		{
@@ -3231,8 +3231,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date when the contact was last included in a marketing campaign or quick campaign.
-		/// </summary>
+        /// Shows the date when the contact was last included in a marketing campaign or quick campaign.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastusedincampaign")]
 		public System.Nullable<System.DateTime> LastUsedInCampaign
 		{
@@ -3249,8 +3249,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the primary marketing source that directed the contact to your organization.
-		/// </summary>
+        /// 选择the primary marketing source that directed the contact to your organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("leadsourcecode")]
 		public virtual contact_leadsourcecode? LeadSourceCode
 		{
@@ -3267,8 +3267,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the name of the contact's manager for use in escalating issues or other follow-up communications with the contact.
-		/// </summary>
+        /// Type the name of the contact's manager for use in escalating issues or other follow-up communications with the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("managername")]
 		public string ManagerName
 		{
@@ -3285,8 +3285,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the phone number for the contact's manager.
-		/// </summary>
+        /// Type the phone number for the contact's manager.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("managerphone")]
 		public string ManagerPhone
 		{
@@ -3303,8 +3303,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Whether is only for marketing
-		/// </summary>
+        /// Whether is only for marketing
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("marketingonly")]
 		public System.Nullable<bool> MarketingOnly
 		{
@@ -3321,8 +3321,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the master contact for merge.
-		/// </summary>
+        /// Unique identifier of the master contact for merge.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("masterid")]
 		public Microsoft.Xrm.Sdk.EntityReference MasterId
 		{
@@ -3333,8 +3333,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows whether the account has been merged with a master contact.
-		/// </summary>
+        /// Shows whether the account has been merged with a master contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("merged")]
 		public System.Nullable<bool> Merged
 		{
@@ -3345,8 +3345,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the contact's middle name or initial to make sure the contact is addressed correctly.
-		/// </summary>
+        /// Type the contact's middle name or initial to make sure the contact is addressed correctly.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("middlename")]
 		public string MiddleName
 		{
@@ -3363,8 +3363,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the mobile phone number for the contact.
-		/// </summary>
+        /// Type the mobile phone number for the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mobilephone")]
 		public string MobilePhone
 		{
@@ -3381,8 +3381,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record.
-		/// </summary>
+        /// Shows who last updated the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
@@ -3393,8 +3393,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the external party who modified the record.
-		/// </summary>
+        /// Shows the external party who modified the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedByExternalParty
 		{
@@ -3405,8 +3405,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
-		/// </summary>
+        /// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
@@ -3417,8 +3417,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record on behalf of another user.
-		/// </summary>
+        /// Shows who last updated the record on behalf of another user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
@@ -3429,8 +3429,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for Account associated with Contact.
-		/// </summary>
+        /// Unique identifier for Account associated with Contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_managingpartnerid")]
 		public Microsoft.Xrm.Sdk.EntityReference msa_managingpartnerid
 		{
@@ -3447,8 +3447,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Indicates that the contact has opted out of web tracking.
-		/// </summary>
+        /// Indicates that the contact has opted out of web tracking.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_disablewebtracking")]
 		public System.Nullable<bool> msdyn_disablewebtracking
 		{
@@ -3465,8 +3465,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Indicates that the contact is considered a minor in their jurisdiction.
-		/// </summary>
+        /// Indicates that the contact is considered a minor in their jurisdiction.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_isminor")]
 		public System.Nullable<bool> msdyn_isminor
 		{
@@ -3483,8 +3483,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Indicates that the contact is considered a minor in their jurisdiction and has parental consent.
-		/// </summary>
+        /// Indicates that the contact is considered a minor in their jurisdiction and has parental consent.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_isminorwithparentalconsent")]
 		public System.Nullable<bool> msdyn_isminorwithparentalconsent
 		{
@@ -3501,8 +3501,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Indicates the date and time that the person agreed to the portal terms and conditions.
-		/// </summary>
+        /// Indicates the date and time that the person agreed to the portal terms and conditions.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_portaltermsagreementdate")]
 		public System.Nullable<System.DateTime> msdyn_portaltermsagreementdate
 		{
@@ -3519,8 +3519,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// User’s preferred portal language
-		/// </summary>
+        /// User’s preferred portal language
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mspp_userpreferredlcid")]
 		public virtual powerpagelanguages? mspp_userpreferredlcid
 		{
@@ -3537,8 +3537,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the contact's nickname.
-		/// </summary>
+        /// Type the contact's nickname.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("nickname")]
 		public string NickName
 		{
@@ -3555,8 +3555,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the number of children the contact has for reference in follow-up phone calls and other communications.
-		/// </summary>
+        /// Type the number of children the contact has for reference in follow-up phone calls and other communications.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("numberofchildren")]
 		public System.Nullable<int> NumberOfChildren
 		{
@@ -3573,8 +3573,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows how long, in minutes, that the record was on hold.
-		/// </summary>
+        /// Shows how long, in minutes, that the record was on hold.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("onholdtime")]
 		public System.Nullable<int> OnHoldTime
 		{
@@ -3585,8 +3585,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time that the record was migrated.
-		/// </summary>
+        /// Date and time that the record was migrated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
 		public System.Nullable<System.DateTime> OverriddenCreatedOn
 		{
@@ -3603,8 +3603,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
-		/// </summary>
+        /// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
 		{
@@ -3621,8 +3621,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business unit that owns the contact.
-		/// </summary>
+        /// Unique identifier of the business unit that owns the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
 		{
@@ -3633,8 +3633,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team who owns the contact.
-		/// </summary>
+        /// Unique identifier of the team who owns the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
 		{
@@ -3645,8 +3645,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who owns the contact.
-		/// </summary>
+        /// Unique identifier of the user who owns the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningUser
 		{
@@ -3657,8 +3657,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the pager number for the contact.
-		/// </summary>
+        /// Type the pager number for the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pager")]
 		public string Pager
 		{
@@ -3675,8 +3675,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the parent contact.
-		/// </summary>
+        /// Unique identifier of the parent contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentcontactid")]
 		public Microsoft.Xrm.Sdk.EntityReference ParentContactId
 		{
@@ -3687,8 +3687,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the parent account or parent contact for the contact to provide a quick link to additional details, such as financial information, activities, and opportunities.
-		/// </summary>
+        /// 选择the parent account or parent contact for the contact to provide a quick link to additional details, such as financial information, activities, and opportunities.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentcustomerid")]
 		public Microsoft.Xrm.Sdk.EntityReference ParentCustomerId
 		{
@@ -3705,8 +3705,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows whether the contact participates in workflow rules.
-		/// </summary>
+        /// Shows whether the contact participates in workflow rules.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("participatesinworkflow")]
 		public System.Nullable<bool> ParticipatesInWorkflow
 		{
@@ -3723,8 +3723,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the payment terms to indicate when the customer needs to pay the total amount.
-		/// </summary>
+        /// 选择the payment terms to indicate when the customer needs to pay the total amount.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("paymenttermscode")]
 		public virtual contact_paymenttermscode? PaymentTermsCode
 		{
@@ -3741,8 +3741,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the preferred day of the week for service appointments.
-		/// </summary>
+        /// 选择the preferred day of the week for service appointments.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredappointmentdaycode")]
 		public virtual contact_preferredappointmentdaycode? PreferredAppointmentDayCode
 		{
@@ -3759,8 +3759,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the preferred time of day for service appointments.
-		/// </summary>
+        /// 选择the preferred time of day for service appointments.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredappointmenttimecode")]
 		public virtual contact_preferredappointmenttimecode? PreferredAppointmentTimeCode
 		{
@@ -3777,8 +3777,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the preferred method of contact.
-		/// </summary>
+        /// 选择the preferred method of contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredcontactmethodcode")]
 		public virtual contact_preferredcontactmethodcode? PreferredContactMethodCode
 		{
@@ -3795,8 +3795,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the regular or preferred customer service representative for reference when scheduling service activities for the contact.
-		/// </summary>
+        /// Choose the regular or preferred customer service representative for reference when scheduling service activities for the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredsystemuserid")]
 		public Microsoft.Xrm.Sdk.EntityReference PreferredSystemUserId
 		{
@@ -3813,8 +3813,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the ID of the process.
-		/// </summary>
+        /// Shows the ID of the process.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("processid")]
 		public System.Nullable<System.Guid> ProcessId
 		{
@@ -3831,8 +3831,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the salutation of the contact to make sure the contact is addressed correctly in sales calls, email messages, and marketing campaigns.
-		/// </summary>
+        /// Type the salutation of the contact to make sure the contact is addressed correctly in sales calls, email messages, and marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("salutation")]
 		public string Salutation
 		{
@@ -3849,8 +3849,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a shipping method for deliveries sent to this address.
-		/// </summary>
+        /// 选择a shipping method for deliveries sent to this address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("shippingmethodcode")]
 		public virtual contact_shippingmethodcode? ShippingMethodCode
 		{
@@ -3867,8 +3867,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the service level agreement (SLA) that you want to apply to the Contact record.
-		/// </summary>
+        /// Choose the service level agreement (SLA) that you want to apply to the Contact record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAId
 		{
@@ -3885,8 +3885,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Last SLA that was applied to this case. This field is for internal use only.
-		/// </summary>
+        /// Last SLA that was applied to this case. This field is for internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
 		{
@@ -3897,8 +3897,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the name of the contact's spouse or partner for reference during calls, events, or other communications with the contact.
-		/// </summary>
+        /// Type the name of the contact's spouse or partner for reference during calls, events, or other communications with the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("spousesname")]
 		public string SpousesName
 		{
@@ -3915,8 +3915,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the ID of the stage.
-		/// </summary>
+        /// Shows the ID of the stage.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
 		{
@@ -3933,8 +3933,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows whether the contact is active or inactive. Inactive contacts are read-only and can't be edited unless they are reactivated.
-		/// </summary>
+        /// Shows whether the contact is active or inactive. Inactive contacts are read-only and can't be edited unless they are reactivated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
 		public virtual contact_statecode? StateCode
 		{
@@ -3951,8 +3951,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the contact's status.
-		/// </summary>
+        /// 选择the contact's status.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
 		public virtual contact_statuscode? StatusCode
 		{
@@ -3969,8 +3969,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subscriptionid")]
 		public System.Nullable<System.Guid> SubscriptionId
 		{
@@ -3987,8 +3987,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the suffix used in the contact's name, such as Jr. or Sr. to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.
-		/// </summary>
+        /// Type the suffix used in the contact's name, such as Jr. or Sr. to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("suffix")]
 		public string Suffix
 		{
@@ -4005,8 +4005,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the main phone number for this contact.
-		/// </summary>
+        /// Type the main phone number for this contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("telephone1")]
 		public string Telephone1
 		{
@@ -4023,8 +4023,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a second phone number for this contact.
-		/// </summary>
+        /// Type a second phone number for this contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("telephone2")]
 		public string Telephone2
 		{
@@ -4041,8 +4041,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a third phone number for this contact.
-		/// </summary>
+        /// Type a third phone number for this contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("telephone3")]
 		public string Telephone3
 		{
@@ -4059,8 +4059,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select a region or territory for the contact for use in segmentation and analysis.
-		/// </summary>
+        /// 选择a region or territory for the contact for use in segmentation and analysis.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("territorycode")]
 		public virtual contact_territorycode? TerritoryCode
 		{
@@ -4077,8 +4077,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Total time spent for emails (read and write) and meetings by me in relation to the contact record.
-		/// </summary>
+        /// Total time spent for emails (read and write) and meetings by me in relation to the contact record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timespentbymeonemailandmeetings")]
 		public string TimeSpentByMeOnEmailAndMeetings
 		{
@@ -4089,8 +4089,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
 		public System.Nullable<int> TimeZoneRuleVersionNumber
 		{
@@ -4107,8 +4107,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the local currency for the record to make sure budgets are reported in the correct currency.
-		/// </summary>
+        /// Choose the local currency for the record to make sure budgets are reported in the correct currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
 		{
@@ -4125,8 +4125,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("traversedpath")]
 		public string TraversedPath
 		{
@@ -4143,8 +4143,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Time zone code that was in use when the record was created.
-		/// </summary>
+        /// Time zone code that was in use when the record was created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
 		public System.Nullable<int> UTCConversionTimeZoneCode
 		{
@@ -4161,8 +4161,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Version number of the contact.
-		/// </summary>
+        /// Version number of the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
@@ -4173,8 +4173,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the contact's professional or personal website or blog URL.
-		/// </summary>
+        /// Type the contact's professional or personal website or blog URL.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("websiteurl")]
 		public string WebSiteUrl
 		{
@@ -4191,8 +4191,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the phonetic spelling of the contact's first name, if the name is specified in Japanese, to make sure the name is pronounced correctly in phone calls with the contact.
-		/// </summary>
+        /// Type the phonetic spelling of the contact's first name, if the name is specified in Japanese, to make sure the name is pronounced correctly in phone calls with the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yomifirstname")]
 		public string YomiFirstName
 		{
@@ -4209,8 +4209,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the combined Yomi first and last names of the contact so that the full phonetic name can be displayed in views and reports.
-		/// </summary>
+        /// Shows the combined Yomi first and last names of the contact so that the full phonetic name can be displayed in views and reports.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yomifullname")]
 		public string YomiFullName
 		{
@@ -4221,8 +4221,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the phonetic spelling of the contact's last name, if the name is specified in Japanese, to make sure the name is pronounced correctly in phone calls with the contact.
-		/// </summary>
+        /// Type the phonetic spelling of the contact's last name, if the name is specified in Japanese, to make sure the name is pronounced correctly in phone calls with the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yomilastname")]
 		public string YomiLastName
 		{
@@ -4239,8 +4239,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the phonetic spelling of the contact's middle name, if the name is specified in Japanese, to make sure the name is pronounced correctly in phone calls with the contact.
-		/// </summary>
+        /// Type the phonetic spelling of the contact's middle name, if the name is specified in Japanese, to make sure the name is pronounced correctly in phone calls with the contact.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yomimiddlename")]
 		public string YomiMiddleName
 		{
@@ -4257,8 +4257,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N account_primary_contact
-		/// </summary>
+        /// 1:N account_primary_contact
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_primary_contact")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> account_primary_contact
 		{
@@ -4275,8 +4275,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N contact_activity_parties
-		/// </summary>
+        /// 1:N contact_activity_parties
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_activity_parties")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.ActivityParty> contact_activity_parties
 		{
@@ -4293,8 +4293,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N contact_customer_contacts
-		/// </summary>
+        /// 1:N contact_customer_contacts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> Referencedcontact_customer_contacts
 		{
@@ -4311,8 +4311,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N Contact_Letters
-		/// </summary>
+        /// 1:N Contact_Letters
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contact_Letters")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Letter> Contact_Letters
 		{
@@ -4329,8 +4329,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N contact_master_contact
-		/// </summary>
+        /// 1:N contact_master_contact
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> Referencedcontact_master_contact
 		{
@@ -4347,8 +4347,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_contacts
-		/// </summary>
+        /// N:1 business_unit_contacts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_contacts")]
 		public MyApp.DataModel.BusinessUnit business_unit_contacts
@@ -4360,8 +4360,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 contact_customer_accounts
-		/// </summary>
+        /// N:1 contact_customer_accounts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentcustomerid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_accounts")]
 		public MyApp.DataModel.Account contact_customer_accounts
@@ -4379,8 +4379,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 contact_customer_contacts
-		/// </summary>
+        /// N:1 contact_customer_contacts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentcustomerid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.Contact Referencingcontact_customer_contacts
@@ -4398,8 +4398,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 contact_master_contact
-		/// </summary>
+        /// N:1 contact_master_contact
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("masterid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.Contact Referencingcontact_master_contact
@@ -4411,8 +4411,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 contact_owning_user
-		/// </summary>
+        /// N:1 contact_owning_user
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_owning_user")]
 		public MyApp.DataModel.SystemUser contact_owning_user
@@ -4424,8 +4424,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_contact_createdonbehalfby
-		/// </summary>
+        /// N:1 lk_contact_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contact_createdonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_contact_createdonbehalfby
@@ -4437,8 +4437,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_contact_modifiedonbehalfby
-		/// </summary>
+        /// N:1 lk_contact_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contact_modifiedonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_contact_modifiedonbehalfby
@@ -4450,8 +4450,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_contactbase_createdby
-		/// </summary>
+        /// N:1 lk_contactbase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contactbase_createdby")]
 		public MyApp.DataModel.SystemUser lk_contactbase_createdby
@@ -4463,8 +4463,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_contactbase_modifiedby
-		/// </summary>
+        /// N:1 lk_contactbase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contactbase_modifiedby")]
 		public MyApp.DataModel.SystemUser lk_contactbase_modifiedby
@@ -4476,8 +4476,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 msa_contact_managingpartner
-		/// </summary>
+        /// N:1 msa_contact_managingpartner
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_managingpartnerid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_contact_managingpartner")]
 		public MyApp.DataModel.Account msa_contact_managingpartner
@@ -4495,8 +4495,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 system_user_contacts
-		/// </summary>
+        /// N:1 system_user_contacts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredsystemuserid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_contacts")]
 		public MyApp.DataModel.SystemUser system_user_contacts
@@ -4514,8 +4514,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 team_contacts
-		/// </summary>
+        /// N:1 team_contacts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_contacts")]
 		public MyApp.DataModel.Team team_contacts

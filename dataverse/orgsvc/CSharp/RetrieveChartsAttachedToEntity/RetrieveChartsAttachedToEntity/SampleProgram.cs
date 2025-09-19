@@ -20,13 +20,13 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
                     // TODO Add demonstration code here
                     #endregion Demonstrate
-                    // Create a query for retrieving all organization-owned visualizations 
+                    // 创建a query for retrieving all organization-owned visualizations 
                     // that are attached to the account entity.
                     QueryExpression mySavedQuery = new QueryExpression
                     {
@@ -46,7 +46,7 @@ namespace PowerApps.Samples
                         }
                     };
 
-                    // Retrieve a collection of organization-owned visualizations that are attached to the account entity.
+                    // 检索a collection of organization-owned visualizations that are attached to the account entity.
                     DataCollection<Entity> results = service.RetrieveMultiple(mySavedQuery).Entities;
 
                     // Display the names of the retrieved organization-owned visualizations.

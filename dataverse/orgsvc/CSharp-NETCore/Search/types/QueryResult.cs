@@ -1,32 +1,32 @@
 ﻿namespace PowerApps.Samples.Search.Types
 {
     /// <summary>
-    /// Contains data about a matching record found from the query API.
-    /// </summary>
+        /// Contains data about a matching record found from the query API.
+        /// </summary>
     public sealed class QueryResult
     {
         /// <summary>
-        /// Gets or sets the identifier of the record
+        /// 获取或设置 the identifier of the record
         /// </summary>
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the logical name of the table
+        /// 获取或设置 the logical name of the table
         /// </summary>
         public string EntityName { get; set; }
 
         /// <summary>
-        /// Gets or sets the object type code
+        /// 获取或设置 the object type code
         /// </summary>
         public int ObjectTypeCode { get; set; }
 
         /// <summary>
-        /// Gets or sets the record attributes
+        /// 获取或设置 the record attributes
         /// </summary>
         public Dictionary<string, object> Attributes { get; set; }
 
         /// <summary>
-        /// Gets or sets the highlights
+        /// 获取或设置 the highlights
         /// </summary>
         public Dictionary<string, string[]> Highlights { get; set; }
 

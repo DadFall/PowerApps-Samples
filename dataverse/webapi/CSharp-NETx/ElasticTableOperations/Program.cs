@@ -40,7 +40,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             {
                 #region Create Elastic table
                 Console.WriteLine("=== Start Region 0: Creating contoso_SensorData table === \n");
-                // Define the table and columns
+                // 定义the table and columns
                 var sensorDataTable = new EntityMetadata
                 {
                     SchemaName = TABLE_SCHEMA_NAME,
@@ -49,7 +49,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     DisplayCollectionName = new Label("Sensor Data", 1033),
                     Description = new Label("Stores IoT data emitted from devices", 1033),
                     OwnershipType = OwnershipTypes.UserOwned,
-                    TableType = "Elastic", //This makes it an elastic table.
+                    TableType = "Elastic", //此makes it an elastic table.
                     IsActivity = false,
                     CanCreateCharts = new BooleanManagedProperty(false),
                     HasActivities = false,
@@ -110,8 +110,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 #endregion Create Elastic table
 
                 /*
-                
-                Unlike the ElasticTableOperations sample for the SDK for .NET, this sample only includes examples that set
+ Unlike the ElasticTableOperations sample for the SDK for .NET, this sample only includes examples that set
                 the partitionid. If you are not using an partioning strategy, code using WebAPIServiceClient
                 is the same as with standard tables. This is because WebAPIServiceClient manages the sessionToken for you,
                 demonstrating how this can be managed in your .NET code.
@@ -122,22 +121,21 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
                 This code includes the MSCRM.SessionToken header with all GET operations before the request is sent
 
-                    // Session token used by elastic tables to enable strong consistency
-                    // See https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#sending-the-session-token
+                    // 弹性表使用的会话令牌以启用强一致性
+                    // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#sending-the-session-token
                     if (!string.IsNullOrWhiteSpace(_sessionToken) && request.Method == HttpMethod.Get) {
                         request.Headers.Add("MSCRM.SessionToken", _sessionToken);
                     }
                 
                 This code captures the current session token, if it is included, after every response is recieved.
 
-                    // Capture the current session token value
-                    // See https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#getting-the-session-token
+                    // 捕获当前会话令牌值
+                    // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/use-elastic-tables?tabs=webapi#getting-the-session-token
                     if (response.Headers.Contains("x-ms-session-token"))
                     {
                         _sessionToken = response.Headers.GetValues("x-ms-session-token")?.FirstOrDefault()?.ToString();
                     }
-
-                */
+ */
 
 
                 #region Create Record
@@ -156,7 +154,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                             {"ttlinseconds", 86400 } // 86400  seconds in a day
                         };
 
-                // This sensorDataRef entity reference refers to the created record using using alternate key style:
+                // 此sensorDataRef entity reference refers to the created record using using alternate key style:
                 // /contoso_sensordatas(contoso_sensordataid=7fae9aa4-12f8-ed11-8849-000d3a993550,partitionid='Device-ABC-1234')
                 EntityReference sensorDataRef = await service.Create(
                     entitySetName: "contoso_sensordatas",
@@ -189,7 +187,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                             {"contoso_value", 80 }
                         };
 
-                // Without partitionId parameter
+                // 不使用partitionId parameter
                 await service.Update(
                     entityReference: sensorDataRef, //Alternate key only
                     record: sensorDataObjUpdate2);
@@ -205,14 +203,14 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 JObject retrievedSensorDataRecord = await service.Retrieve(
                     entityReference: sensorDataRef,
                     query: "?$select=contoso_value",
-                    partitionId: deviceId); //With partitionid
+                    partitionId: deviceId); //使用partitionid
 
                 Console.WriteLine($"Retrieved sensor data record using partitionId:\n");
 
                 Console.WriteLine($"{retrievedSensorDataRecord}\n");
 
                 retrievedSensorDataRecord = await service.Retrieve(
-                    entityReference: sensorDataRef, //With alternate key only
+                    entityReference: sensorDataRef, //使用alternate key only
                     query: "?$select=contoso_value");
 
                 Console.WriteLine($"Retrieved sensor data record using alternate key style:\n");
@@ -227,8 +225,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 JObject sensorDataObjForUpsert = new()
                         {
 
-                // For Upsert it is required to set all the attribute values
-                // If matching record is found, all data is replaced.
+                // 对于Upsert it is required to set all the attribute values
+                // 如果matching record is found, all data is replaced.
 
                             {"contoso_deviceid", deviceId },
                             {"contoso_sensortype", "Humidity" },
@@ -239,7 +237,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                         };
 
                 // It isn't possible to set the partitionId parameter for upsert.
-                // The value must be included in the body.
+                // value must be included in the body.
                 EntityReference upsertReference = await service.Upsert(
                     entityReference: sensorDataRef,
                     record: sensorDataObjForUpsert,

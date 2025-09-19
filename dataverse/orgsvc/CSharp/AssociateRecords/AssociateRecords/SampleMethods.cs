@@ -6,7 +6,7 @@ namespace PowerApps.Samples
     public partial class SampleProgram
     {
 
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         public static Guid _contactId;
         public static Guid _account1Id;
         public static Guid _account2Id;
@@ -19,10 +19,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("9.0.0.0")))
             {
-                //The environment version is lower than version 9.0.0.0
+                //environment version is lower than version 9.0.0.0
                 return;
             }
 
@@ -35,8 +35,8 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -77,7 +77,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

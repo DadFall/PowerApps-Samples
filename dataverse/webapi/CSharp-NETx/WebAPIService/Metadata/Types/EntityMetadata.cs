@@ -48,7 +48,7 @@ namespace PowerApps.Samples.Metadata.Types
         /// </summary>
         public BooleanManagedProperty CanChangeHierarchicalRelationship { get; set; }
         /// <summary>
-        /// For internal use only.
+        /// 对于internal use only.
         /// </summary>
         public BooleanManagedProperty CanChangeTrackingBeEnabled { get; set; }
 
@@ -69,7 +69,7 @@ namespace PowerApps.Samples.Metadata.Types
         /// </summary>
         public BooleanManagedProperty CanCreateViews { get; set; }
         /// <summary>
-        /// For internal use only.
+        /// 对于internal use only.
         /// </summary>
         public BooleanManagedProperty CanEnableSyncToExternalSearchIndex { get; set; }
         /// <summary>
@@ -87,7 +87,7 @@ namespace PowerApps.Samples.Metadata.Types
 
         public bool? ChangeTrackingEnabled { get; set; }
         /// <summary>
-        /// The collection schema name of the entity.
+        /// collection schema name of the entity.
         /// </summary>
         [JsonProperty]
         public string CollectionSchemaName { get; private set; }
@@ -110,17 +110,17 @@ namespace PowerApps.Samples.Metadata.Types
 
         public int? DaysSinceRecordLastModified { get; set; }
         /// <summary>
-        /// The label containing the description for the entity.
+        /// label containing the description for the entity.
         /// </summary>
 
         public Label Description { get; set; }
         /// <summary>
-        /// A label containing the plural display name for the entity.
+        /// 一个label containing the plural display name for the entity.
         /// </summary>
 
         public Label DisplayCollectionName { get; set; }
         /// <summary>
-        /// A label containing the display name for the entity.
+        /// 一个label containing the display name for the entity.
         /// </summary>
 
         public Label DisplayName { get; set; }
@@ -130,12 +130,12 @@ namespace PowerApps.Samples.Metadata.Types
         [JsonProperty]
         public bool? EnforceStateTransitions { get; private set; }
         /// <summary>
-        /// The hexadecimal code to represent the color to be used for this entity in the application.
+        /// hexadecimal code to represent the color to be used for this entity in the application.
         /// </summary>
 
         public string EntityColor { get; set; }
         /// <summary>
-        /// The URL of the resource to display help content for this entity
+        /// URL of the resource to display help content for this entity
         /// </summary>
 
         public string EntityHelpUrl { get; set; }
@@ -145,7 +145,7 @@ namespace PowerApps.Samples.Metadata.Types
 
         public bool? EntityHelpUrlEnabled { get; set; }
         /// <summary>
-        /// The name of the Web API entity set for this entity.
+        /// name of the Web API entity set for this entity.
         /// </summary>
         public string EntitySetName { get; set; }
         /// <summary>
@@ -173,27 +173,27 @@ namespace PowerApps.Samples.Metadata.Types
 
         public bool? HasNotes { get; set; }
         /// <summary>
-        /// The name of the image web resource for the large icon for the entity.
+        /// name of the image web resource for the large icon for the entity.
         /// </summary>
 
         public string IconLargeName { get; set; }
         /// <summary>
-        /// The name of the image web resource for the medium icon for the entity.
+        /// name of the image web resource for the medium icon for the entity.
         /// </summary>
 
         public string IconMediumName { get; set; }
         /// <summary>
-        /// The name of the image web resource for the small icon for the entity.
+        /// name of the image web resource for the small icon for the entity.
         /// </summary>
 
         public string IconSmallName { get; set; }
         /// <summary>
-        /// The name of the image web resource for the small icon for the entity.
+        /// name of the image web resource for the small icon for the entity.
         /// </summary>
 
         public string IconVectorName { get; set; }
         /// <summary>
-        /// A string identifying the solution version that the solution component was added in.
+        /// 一个string identifying the solution version that the solution component was added in.
         /// </summary>
         [JsonProperty]
         public string IntroducedVersion { get; private set; }
@@ -274,7 +274,7 @@ namespace PowerApps.Samples.Metadata.Types
 
         public bool? IsEnabledForExternalChannels { get; set; }
         /// <summary>
-        /// For internal use only.
+        /// 对于internal use only.
         /// </summary>
 
         public bool? IsEnabledForTrace { get; set; }
@@ -335,7 +335,7 @@ namespace PowerApps.Samples.Metadata.Types
         [JsonProperty]
         public bool? IsOptimisticConcurrencyEnabled { get; private set; }
         /// <summary>
-        /// For internal use only.
+        /// 对于internal use only.
         /// </summary>
         [JsonProperty]
         public bool? IsPrivate { get; private set; }
@@ -345,7 +345,7 @@ namespace PowerApps.Samples.Metadata.Types
 
         public bool? IsQuickCreateEnabled { get; set; }
         /// <summary>
-        /// For internal use only.
+        /// 对于internal use only.
         /// </summary>
 
         public bool? IsReadingPaneEnabled { get; set; }
@@ -390,11 +390,11 @@ namespace PowerApps.Samples.Metadata.Types
         /// </summary>
         public BooleanManagedProperty IsVisibleInMobileClient { get; set; }
         /// <summary>
-        /// The logical collection name.
+        /// logical collection name.
         /// </summary>
         public string LogicalCollectionName { get; set; }
         /// <summary>
-        /// The logical name for the entity.
+        /// logical name for the entity.
         /// </summary>
 
         public string LogicalName { get; set; }
@@ -410,48 +410,48 @@ namespace PowerApps.Samples.Metadata.Types
 
 
         /// <summary>
-        /// The entity type code.
+        /// entity type code.
         /// </summary>
         [JsonProperty]
         public int? ObjectTypeCode { get; private set; }
 
         /// <summary>
-        /// The ownership type for the entity.
+        /// ownership type for the entity.
         /// </summary>
         public OwnershipTypes OwnershipType { get; set; }
 
         /// <summary>
-        /// The name of the attribute that is the primary id for the entity.
+        /// name of the attribute that is the primary id for the entity.
         /// </summary>
         [JsonProperty]
         public string PrimaryIdAttribute { get; private set; }
         /// <summary>
-        /// The name of the primary image attribute for an entity.
+        /// name of the primary image attribute for an entity.
         /// </summary>
         [JsonProperty]
         public string PrimaryImageAttribute { get; private set; }
         /// <summary>
-        /// The name of the primary attribute for an entity.
+        /// name of the primary attribute for an entity.
         /// </summary>
         [JsonProperty]
         public string PrimaryNameAttribute { get; set; }
         /// <summary>
-        /// The privilege metadata for the entity.
+        /// privilege metadata for the entity.
         /// </summary>
         [JsonProperty]
         public List<SecurityPrivilegeMetadata>? Privileges { get; private set; } 
         /// <summary>
-        /// The name of the entity that is recurring.
+        /// name of the entity that is recurring.
         /// </summary>
         [JsonProperty]
         public string RecurrenceBaseEntityLogicalName { get; private set; }
         /// <summary>
-        /// The name of the report view for the entity.
+        /// name of the report view for the entity.
         /// </summary>
         [JsonProperty]
         public string ReportViewName { get; private set; }
         /// <summary>
-        /// The schema name for the entity.
+        /// schema name for the entity.
         /// </summary>
 
         public string SchemaName { get; set; }

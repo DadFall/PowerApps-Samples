@@ -30,7 +30,7 @@ namespace PowerApps.Samples
                     _userId = ((WhoAmIResponse)service.Execute(new WhoAmIRequest())).UserId;
                     _languageCode = RetrieveUserUILanguageCode(service, _userId);
               
-                    // An array SchemaName values for non-intersect, user-owned entities that should not be returned.
+                    // 一个array SchemaName values for non-intersect, user-owned entities that should not be returned.
                     String[] excludedEntities = {
 "WorkflowLog",
 "Template",
@@ -75,7 +75,7 @@ namespace PowerApps.Samples
 "List",
 "ServiceAppointment"};
 
-                    //A filter expression to limit entities returned to non-intersect, user-owned entities not found in the list of excluded entities.
+                    //一个filter expression to limit entities returned to non-intersect, user-owned entities not found in the list of excluded entities.
                     var EntityFilter = new MetadataFilterExpression(LogicalOperator.And);
                     EntityFilter.Conditions.Add(new MetadataConditionExpression("IsIntersect", MetadataConditionOperator.Equals, false));
                     EntityFilter.Conditions.Add(new MetadataConditionExpression("OwnershipType", MetadataConditionOperator.Equals, OwnershipTypes.UserOwned));
@@ -83,14 +83,14 @@ namespace PowerApps.Samples
                     var isVisibileInMobileTrue = new MetadataConditionExpression("IsVisibleInMobile", MetadataConditionOperator.Equals, true);
                     EntityFilter.Conditions.Add(isVisibileInMobileTrue);
 
-                    //A properties expression to limit the properties to be included with entities
+                    //一个properties expression to limit the properties to be included with entities
                     var EntityProperties = new MetadataPropertiesExpression()
                     {
                         AllProperties = false
                     };
                     EntityProperties.PropertyNames.AddRange(new string[] { "Attributes" });
                     
-                    //A condition expresson to return optionset attributes
+                    //一个condition expresson to return optionset attributes
                     MetadataConditionExpression[] optionsetAttributeTypes = new MetadataConditionExpression[] {
      new MetadataConditionExpression("AttributeType", MetadataConditionOperator.Equals, AttributeTypeCode.Picklist),
      new MetadataConditionExpression("AttributeType", MetadataConditionOperator.Equals, AttributeTypeCode.State),
@@ -98,20 +98,20 @@ namespace PowerApps.Samples
      new MetadataConditionExpression("AttributeType", MetadataConditionOperator.Equals, AttributeTypeCode.Boolean)
      };
 
-                    //A filter expression to apply the optionsetAttributeTypes condition expression
+                    //一个filter expression to apply the optionsetAttributeTypes condition expression
                     var AttributeFilter = new MetadataFilterExpression(LogicalOperator.Or);
                     AttributeFilter.Conditions.AddRange(optionsetAttributeTypes);
 
-                    //A Properties expression to limit the properties to be included with attributes
+                    //一个Properties expression to limit the properties to be included with attributes
                     var AttributeProperties = new MetadataPropertiesExpression() { AllProperties = false };
                     AttributeProperties.PropertyNames.Add("OptionSet");
                     AttributeProperties.PropertyNames.Add("AttributeType");
 
-                    //A label query expression to limit the labels returned to only those for the user's preferred language
+                    //一个label query expression to limit the labels returned to only those for the user's preferred language
                     var labelQuery = new LabelQueryExpression();
                     labelQuery.FilterLanguages.Add(_languageCode);
 
-                    //An entity query expression to combine the filter expressions and property expressions for the query.
+                    //一个entity query expression to combine the filter expressions and property expressions for the query.
                     var entityQueryExpression = new EntityQueryExpression()
                     {
 
@@ -126,11 +126,11 @@ namespace PowerApps.Samples
 
                     };
 
-                    //Retrieve the metadata for the query without a ClientVersionStamp
+                    //检索the metadata for the query without a ClientVersionStamp
                     var initialRequest = getMetadataChanges(service, entityQueryExpression, null, DeletedMetadataFilters.OptionSet);
                    
 
-                    //Add option labels to the cache and display the changes
+                    //添加option labels to the cache and display the changes
                     addOptionLabelsToCache(initialRequest.EntityMetadata, false);
                     String ClientVersionStamp = initialRequest.ServerVersionStamp;
                     Console.WriteLine("{0} option labels for {1} entities added to the cache.",
@@ -141,20 +141,20 @@ namespace PowerApps.Samples
                     Console.WriteLine("");
 
 
-                    //Add new custom entity with optionset
+                    //添加new custom entity with optionset
                     Console.WriteLine("Adding a custom entity named {0} with a custom optionset attribute named : {1}",
                      _customEntitySchemaName, _customAttributeSchemaName);
                     Console.WriteLine("");
                     addCustomEntityWithOptionSet(service);
                     //Publishing isn't necessary when adding a custom entity
 
-                    //Add new option labels to the cache and display the results
+                    //添加new option labels to the cache and display the results
                     ClientVersionStamp = updateOptionLabelList(service, entityQueryExpression, ClientVersionStamp);
 
                     Console.WriteLine("ClientVersionStamp: {0}", ClientVersionStamp);
                     Console.WriteLine("");
 
-                    //Add a new option to the custom optionset in the custom entity and publish the custom entity
+                    //添加a new option to the custom optionset in the custom entity and publish the custom entity
                     Console.WriteLine("Adding an additional option to the {0} attribute options.",
                      _customAttributeSchemaName);
                     Console.WriteLine("");
@@ -164,7 +164,7 @@ namespace PowerApps.Samples
 
 
 
-                    //Add the new option label to the cache and display the results
+                    //添加the new option label to the cache and display the results
                     ClientVersionStamp = updateOptionLabelList(service, entityQueryExpression, ClientVersionStamp);
 
                     Console.WriteLine("ClientVersionStamp: {0}", ClientVersionStamp);
@@ -178,7 +178,7 @@ namespace PowerApps.Samples
                     CleanUpSample(service);
                     #endregion Clean up
 
-                    //Retrieve metadata changes to remove option labels from deleted attributes and display the results
+                    //检索metadata changes to remove option labels from deleted attributes and display the results
                     ClientVersionStamp = updateOptionLabelList(service, entityQueryExpression, ClientVersionStamp);
 
                     Console.WriteLine("ClientVersionStamp: {0}", ClientVersionStamp);

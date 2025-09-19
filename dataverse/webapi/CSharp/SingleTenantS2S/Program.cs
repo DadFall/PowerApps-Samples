@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Provides the D365 web service and Azure app registration information read
+        /// Provides the D365 web service and Azure app registration information read
     /// from the App.config file in this project.
-    /// </summary>
+        /// </summary>
     /// <remarks>You must provide your own values for the app settings in the App.config
     /// file before running this sample.</remarks>
     class WebApiConfiguration
@@ -36,10 +36,10 @@ namespace PowerApps.Samples
     }
 
     /// <summary>
-    /// Single tenant service-to-service (S2S) sample. This sample makes use of an
+        /// Single tenant service-to-service (S2S) sample. This sample makes use of an
     /// app registration in Azure to access a D365 server using Web API calls without 
     /// requiring a user's logon credentials.
-    /// </summary>
+        /// </summary>
     class SingleTenantS2S
     {
         static void Main(string[] args)
@@ -47,7 +47,7 @@ namespace PowerApps.Samples
             // Obtain the app registration and service configuration values from the App.config file.
             var webConfig = new WebApiConfiguration();
 
-            // Send a Web API message request for the top 3 account names.
+            // 发送a Web API message request for the top 3 account names.
             var response = SendMessageAsync(webConfig, HttpMethod.Get,
                 webConfig.ServiceRoot + "accounts?$select=name&$top=3").Result;
 
@@ -66,20 +66,20 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Send a message via HTTP.
+        /// 发送a message via HTTP.
         /// </summary>
-        /// <param name="webConfig">A Web API configuration.</param>
-        /// <param name="httpMethod">The HTTP method to use with the message.</param>
-        /// <param name="messageUri">The URI of the Web API endpoint plus ODATA parameters.</param>
-        /// <param name="body">The message body; otherwise, null.</param>
+        /// <param name="webConfig">一个Web API 配置.</param>
+        /// <param name="httpMethod">HTTP method to use with the message.</param>
+        /// <param name="messageUri">URI of the Web API endpoint plus ODAT一个参数.</param>
+        /// <param name="body">message body; otherwise, null.</param>
         /// <returns></returns>
         public static async Task<HttpResponseMessage> SendMessageAsync(WebApiConfiguration webConfig,
             HttpMethod httpMethod, string messageUri, string body = null)
         {
-            // Get the access token that is required for authentication.
+            // 获取the access token that is required for authentication.
             var accessToken = await GetAccessToken(webConfig);
 
-            // Create an HTTP message with the required Web API headers populated.
+            // 创建an HTTP message with the required Web API headers populated.
             var client = new HttpClient();
             var message = new HttpRequestMessage(httpMethod, messageUri);
 
@@ -88,18 +88,18 @@ namespace PowerApps.Samples
             message.Headers.Add("Prefer", "odata.include-annotations=*");
             message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-            // Add any body content specified in the passed parameter.   
+            // 添加any body content specified in the passed parameter.   
             if (body != null)
                 message.Content = new StringContent(body, UnicodeEncoding.UTF8, "application/json");
 
-            // Send the message to the Web API. 
+            // 发送the message to the Web API. 
             return await client.SendAsync(message);
         }
 
         /// <summary>
-        /// Get the authentication access token.
+        /// 获取the authentication access token.
         /// </summary>
-        /// <param name="webConfig">The Web API configuration.</param>
+        /// <param name="webConfig">Web API 配置.</param>
         /// <returns>Authentication access token</returns>
         public static async Task<string> GetAccessToken(WebApiConfiguration webConfig)
         {

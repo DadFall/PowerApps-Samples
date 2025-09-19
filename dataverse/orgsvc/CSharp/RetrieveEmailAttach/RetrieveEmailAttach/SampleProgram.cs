@@ -26,19 +26,19 @@ namespace PowerApps.Samples
                     #endregion Set up
 
                     #region Demonstrate
-                    //Create a query to retrieve attachments.
+                    //创建a query to retrieve attachments.
                     var query = new QueryExpression
                     {
                         EntityName = ActivityMimeAttachment.EntityLogicalName,
                         ColumnSet = new ColumnSet("filename"),
 
-                        //Define the conditions for each attachment.
+                        //定义
                         Criteria =
                         {
                             FilterOperator = LogicalOperator.And,
                             Conditions =
                         {
-                            //The ObjectTypeCode must be specified, or else the query
+                            //ObjectTypeCode must be specified, or else the query
                             //defaults to "email" instead of "template".
                             new ConditionExpression
                             {
@@ -57,7 +57,7 @@ namespace PowerApps.Samples
                         }
                     };
 
-                    //Write out the filename of each attachment retrieved.
+                    //写入out the filename of each attachment retrieved.
                     foreach (ActivityMimeAttachment attachment in service.RetrieveMultiple(query).Entities)
                     {
                         Console.WriteLine("Retrieved attachment {0}", attachment.FileName);

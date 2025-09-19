@@ -10,7 +10,7 @@ namespace PowerApps.Samples
 {
    public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         private static Guid _emailId;
         private static Guid _contactId;
         private static Guid _userId;
@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -38,11 +38,11 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.        
+        /// 此method creates any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a contact to send an email to (To: field)
+            // 创建a contact to send an email to (To: field)
             Contact emailContact = new Contact
             {
                 FirstName = "David",
@@ -53,7 +53,7 @@ namespace PowerApps.Samples
             _contactId = service.Create(emailContact);
             Console.WriteLine("Created a sample contact.");
 
-            // Get a system user to send the email (From: field)
+            // 获取a system user to send the email (From: field)
             WhoAmIRequest systemUserRequest = new WhoAmIRequest();
             WhoAmIResponse systemUserResponse = (WhoAmIResponse)service.Execute(systemUserRequest);
             _userId = systemUserResponse.UserId;
@@ -61,7 +61,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

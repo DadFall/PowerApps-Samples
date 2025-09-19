@@ -18,16 +18,16 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
 
-                    //Create a custom entity
+                    //创建a custom entity
                     var createrequest = new CreateEntityRequest
                     {
 
-                        //Define the entity
+                        //定义
                         Entity = new EntityMetadata
                         {
                             SchemaName = _customEntityName,
@@ -39,7 +39,7 @@ namespace PowerApps.Samples
 
                         },
 
-                        // Define the primary attribute for the entity
+                        // 定义primary attribute for the entity
                         PrimaryAttribute = new StringAttributeMetadata
                         {
                             SchemaName = "new_accountname",
@@ -54,7 +54,7 @@ namespace PowerApps.Samples
                     service.Execute(createrequest);
                     Console.WriteLine("The bank account entity has been created.");
 
-                    //Add a String attribute to the custom entity
+                    //添加a String attribute to the custom entity
                     CreateAttributeRequest createBankNameAttributeRequest = new CreateAttributeRequest
                     {
                         EntityName = _customEntityName,
@@ -71,7 +71,7 @@ namespace PowerApps.Samples
 
                     service.Execute(createBankNameAttributeRequest);
 
-                    //Add a Money attribute to the custom entity
+                    //添加a Money attribute to the custom entity
                     CreateAttributeRequest createBalanceAttributeRequest = new CreateAttributeRequest
                     {
                         EntityName = _customEntityName,
@@ -88,7 +88,7 @@ namespace PowerApps.Samples
 
                     service.Execute(createBalanceAttributeRequest);
 
-                    //Add a DateTime attribute to the custom entity
+                    //添加a DateTime attribute to the custom entity
                     CreateAttributeRequest createCheckedDateRequest = new CreateAttributeRequest
                     {
                         EntityName = _customEntityName,

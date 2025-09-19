@@ -12,7 +12,7 @@ namespace PowerApps.Samples
 {
    public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         private static Guid _contactId;
         private static Guid _appointmentId;
         private static bool prompt = true;
@@ -30,7 +30,7 @@ namespace PowerApps.Samples
                     SetUpSample(service);
                     #endregion Set up
                     #region Demonstrate 
-                    // Retrieve the appointment to be validated
+                    // 检索the appointment to be validated
                     ColumnSet cols = new ColumnSet("scheduledstart", "scheduledend", "statecode", "statuscode");
                     Appointment retrievedAppointment = (Appointment)service.Retrieve(Appointment.EntityLogicalName,
                                                                _appointmentId, cols);
@@ -45,7 +45,7 @@ namespace PowerApps.Samples
 
                     ValidateResponse validateResp = (ValidateResponse)service.Execute(validatedReq);
 
-                    // Verify success
+                    // 验证success
                     if ((validateResp.Result != null) && (validateResp.Result.Length > 0))
                     {
                         Console.WriteLine("Validated the appointment.");

@@ -2,13 +2,13 @@
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the InitializeChunkedFileUploadRequest
-    /// </summary>
+        /// Contains the data from the InitializeChunkedFileUploadRequest
+        /// </summary>
     public sealed class InitializeChunkedFileUploadResponse : HttpResponseMessage
     {
         public Uri Url => Headers.Location;

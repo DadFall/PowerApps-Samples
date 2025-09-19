@@ -9,7 +9,7 @@ import { ConditionalOperationsSample } from "../samples/ConditionalOperationsSam
 import { FunctionsAndActions } from "../samples/FunctionsAndActions.js";
 import { BatchSample } from "../samples/BatchSample.js";
 
-// Load the environment variables from the .env file
+// 从 .env 文件加载环境变量
 const config = {
   baseUrl: process.env.BASE_URL,
   clientId: process.env.CLIENT_ID,
@@ -17,7 +17,7 @@ const config = {
   redirectUri: process.env.REDIRECT_URI,
 };
 
-// Microsoft Authentication Library (MSAL) configuration
+// Microsoft 身份验证库 (MSAL) 配置
 const msalConfig = {
   auth: {
     clientId: config.clientId,
@@ -26,15 +26,15 @@ const msalConfig = {
     postLogoutRedirectUri: config.redirectUri,
   },
   cache: {
-    cacheLocation: "sessionStorage", // This configures where your cache will be stored
+    cacheLocation: "sessionStorage", // 此configures where your cache will be stored
     storeAuthStateInCookie: true,
   },
 };
 
-// Create an instance of MSAL
+// 创建an instance of MSAL
 const msalInstance = new PublicClientApplication(msalConfig);
 
-// Set DataverseWebAPI.Client value when user logs in
+// 设置DataverseWebAPI.Client value when user logs in
 let client = null;
 
 // body/main element where messages are displayed
@@ -96,7 +96,7 @@ async function logOut() {
     console.error("Error logging out: ", error);
   }
 
-  // Clear the client instance
+  // 清除the client instance
   client = null;
 }
 // </logOut>
@@ -134,13 +134,13 @@ async function getToken() {
 // <runSample>
 // Runs all samples in a consistent way
 async function runSample(sample) {
-  // Disable the buttons to prevent multiple clicks
+  // 禁用the buttons to prevent multiple clicks
   document.getElementsByTagName("nav")[0].classList.add("disabled");
 
-  // Disable the logout button while the sample is running
+  // 禁用the logout button while the sample is running
   logoutButton.classList.add("disabled");
 
-  // Run the sample
+  // 运行the sample
   await sample.SetUp();
   await sample.Run();
   await sample.CleanUp();
@@ -190,28 +190,28 @@ if (location.href.startsWith(baseUrl) === false) {
 
 //#region Add Event Listeners
 
-// Add event listener to the login button
+// 添加event listener to the login button
 document.getElementById("loginButton").onclick = logIn;
 
-// Add event listener to the logout button
+// 添加event listener to the logout button
 document.getElementById("logoutButton").onclick = logOut;
 
-// Add event listener to the template button
+// 添加event listener to the template button
 document.getElementById("templateButton").onclick = async function () {
   runSample(new TemplateSample(client, container));
 };
 
-// Add event listener to the basic operations button
+// 添加event listener to the basic operations button
 document.getElementById("basicOperationsButton").onclick = async function () {
   runSample(new BasicOperationsSample(client, container));
 };
 
-// Add event listener to the query data button
+// 添加event listener to the query data button
 document.getElementById("queryDataButton").onclick = async function () {
   runSample(new QueryDataSample(client, container));
 };
 
-// Add event listener to the conditional operations button
+// 添加event listener to the conditional operations button
 document.getElementById("conditionalOperationsButton").onclick =
   async function () {
     runSample(new ConditionalOperationsSample(client, container));
@@ -222,7 +222,7 @@ document.getElementById("functionsAndActionsButton").onclick =
     runSample(new FunctionsAndActions(client, container));
   };
 
-// Add event listener to the batch button
+// 添加event listener to the batch button
 document.getElementById("batchButton").onclick = async function () {
   runSample(new BatchSample(client, container));
 };

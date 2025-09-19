@@ -5,10 +5,10 @@ namespace PowerApps.Samples
     public class EntityReference
     {
         /// <summary>
-        /// Creates an EntityReference with EntitySetName and Guid Id
+        /// 创建 an EntityReference with EntitySetName and Guid Id
         /// </summary>
-        /// <param name="entitySetName">The entity set name</param>
-        /// <param name="id">The Guid Id value.</param>
+        /// <param name="entitySetName">entity set 名称</param>
+        /// <param name="id">Guid Id 值.</param>
         /// <exception cref="Exception"></exception>
         public EntityReference(string entitySetName, Guid? id)
         {
@@ -22,9 +22,9 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates an entity reference from a URI
+        /// 创建 an entity reference from a URI
         /// </summary>
-        /// <param name="uri">An absolute or relative URI to a record.</param>
+        /// <param name="uri">一个absolute or relative URI to a record.</param>
         /// <exception cref="ArgumentException"></exception>
         public EntityReference(string uri)
         {
@@ -63,10 +63,10 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates an EntityReference with alternate keys
+        /// 创建 an EntityReference with alternate keys
         /// </summary>
-        /// <param name="setName">The entity set name</param>
-        /// <param name="keyAttributes">The key attributes to use.</param>
+        /// <param name="setName">entity set 名称</param>
+        /// <param name="keyAttributes">key attributes to use.</param>
         public EntityReference(string setName, Dictionary<string, string>? keyAttributes)
         {
             KeyAttributes = keyAttributes;
@@ -74,7 +74,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// The primary key value
+        /// primary key value
         /// </summary>
         public Guid? Id { get; set; }
         /// <summary>
@@ -82,11 +82,11 @@ namespace PowerApps.Samples
         /// </summary>
         public Dictionary<string, string>? KeyAttributes { get; set; }
         /// <summary>
-        /// The EntitySet name
+        /// EntitySet name
         /// </summary>
         public string SetName { get; set; }
         /// <summary>
-        /// The calculated relative Uri to the record.
+        /// calculated relative Uri to the record.
         /// </summary>
         public string Path
         {

@@ -25,7 +25,7 @@ namespace PowerApps.Samples
                     SetUpSample(service);
                     #endregion Set up
                     #region Demonstrate
-                    // Remove worker from queue item to release queued object
+                    // 移除worker from queue item to release queued object
                     // from worker's queue using ReleaseToQueueRequest
 
                     ReleaseToQueueRequest releaseToQueueRequest = new ReleaseToQueueRequest

@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Priority code of the letter.
-	/// </summary>
+        /// Priority code of the letter.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum letter_prioritycode
@@ -32,8 +32,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Status of the letter activity.
-	/// </summary>
+        /// Status of the letter activity.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum letter_statecode
@@ -50,8 +50,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Reason for the status of the letter activity.
-	/// </summary>
+        /// Reason for the status of the letter activity.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum letter_statuscode
@@ -74,8 +74,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Activity that tracks the delivery of a letter. The activity can contain the electronic copy of the letter.
-	/// </summary>
+        /// Activity that tracks the delivery of a letter. The activity can contain the electronic copy of the letter.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("letter")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
@@ -83,8 +83,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public Letter() : 
 				base(EntityLogicalName)
 		{
@@ -117,8 +117,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the letter activity.
-		/// </summary>
+        /// Unique identifier of the letter activity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
 		public System.Nullable<System.Guid> ActivityId
 		{
@@ -156,8 +156,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the type of activity.
-		/// </summary>
+        /// Shows the type of activity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activitytypecode")]
 		public string ActivityTypeCode
 		{
@@ -168,8 +168,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the number of minutes spent creating and sending the letter. The duration is used in reporting.
-		/// </summary>
+        /// Type the number of minutes spent creating and sending the letter. The duration is used in reporting.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualdurationminutes")]
 		public System.Nullable<int> ActualDurationMinutes
 		{
@@ -186,8 +186,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the actual end date and time of the letter. By default, it displays the date and time when the activity was completed or canceled, but can be edited to capture the actual time to create and send the letter.
-		/// </summary>
+        /// Enter the actual end date and time of the letter. By default, it displays the date and time when the activity was completed or canceled, but can be edited to capture the actual time to create and send the letter.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualend")]
 		public System.Nullable<System.DateTime> ActualEnd
 		{
@@ -204,8 +204,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the actual start date and time for the letter. By default, it displays the date and time when the activity was created, but can be edited to capture the actual time to create and send the letter.
-		/// </summary>
+        /// Enter the actual start date and time for the letter. By default, it displays the date and time when the activity was created, but can be edited to capture the actual time to create and send the letter.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualstart")]
 		public System.Nullable<System.DateTime> ActualStart
 		{
@@ -222,8 +222,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the complete recipient address for the letter to ensure timely delivery.
-		/// </summary>
+        /// Type the complete recipient address for the letter to ensure timely delivery.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address")]
 		public string Address
 		{
@@ -240,8 +240,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the recipients that are included in the letter distribution, but are not displayed to other recipients.
-		/// </summary>
+        /// Enter the recipients that are included in the letter distribution, but are not displayed to other recipients.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("bcc")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.ActivityParty> Bcc
 		{
@@ -274,8 +274,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a category to identify the letter type, such as sales offer or past due notice, to tie the letter to a business group or function.
-		/// </summary>
+        /// Type a category to identify the letter type, such as sales offer or past due notice, to tie the letter to a business group or function.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("category")]
 		public string Category
 		{
@@ -292,8 +292,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the recipients that should be copied on the letter.
-		/// </summary>
+        /// Enter the recipients that should be copied on the letter.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("cc")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.ActivityParty> Cc
 		{
@@ -326,8 +326,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who created the record.
-		/// </summary>
+        /// Shows who created the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
@@ -338,8 +338,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
-		/// </summary>
+        /// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
@@ -350,8 +350,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
-		/// </summary>
+        /// Shows who created the record on behalf of another user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
@@ -362,8 +362,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type the letter body or additional information to describe the letter, such as the primary message or the products and services described.
-		/// </summary>
+        /// Type the letter body or additional information to describe the letter, such as the primary message or the products and services described.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
 		{
@@ -380,8 +380,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the direction of the letter as incoming or outbound.
-		/// </summary>
+        /// 选择the direction of the letter as incoming or outbound.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("directioncode")]
 		public System.Nullable<bool> DirectionCode
 		{
@@ -398,8 +398,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
-		/// </summary>
+        /// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
 		public System.Nullable<decimal> ExchangeRate
 		{
@@ -410,8 +410,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the account, contact, lead, or user who sent the letter.
-		/// </summary>
+        /// Enter the account, contact, lead, or user who sent the letter.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("from")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.ActivityParty> From
 		{
@@ -444,8 +444,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the data import or data migration that created this record.
-		/// </summary>
+        /// Unique identifier of the data import or data migration that created this record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
 		public System.Nullable<int> ImportSequenceNumber
 		{
@@ -462,8 +462,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows whether the letter activity was billed as part of resolving a case.
-		/// </summary>
+        /// Shows whether the letter activity was billed as part of resolving a case.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isbilled")]
 		public System.Nullable<bool> IsBilled
 		{
@@ -480,8 +480,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows whether the activity is a regular activity type or event type.
-		/// </summary>
+        /// Shows whether the activity is a regular activity type or event type.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isregularactivity")]
 		public System.Nullable<bool> IsRegularActivity
 		{
@@ -492,8 +492,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows whether the letter activity was created by a workflow rule.
-		/// </summary>
+        /// Shows whether the letter activity was created by a workflow rule.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isworkflowcreated")]
 		public System.Nullable<bool> IsWorkflowCreated
 		{
@@ -510,8 +510,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Contains the date and time stamp of the last on hold time.
-		/// </summary>
+        /// Contains the date and time stamp of the last on hold time.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastonholdtime")]
 		public System.Nullable<System.DateTime> LastOnHoldTime
 		{
@@ -528,8 +528,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record.
-		/// </summary>
+        /// Shows who last updated the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
@@ -540,8 +540,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
-		/// </summary>
+        /// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
@@ -552,8 +552,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record on behalf of another user.
-		/// </summary>
+        /// Shows who last updated the record on behalf of another user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
@@ -564,8 +564,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows how long, in minutes, that the record was on hold.
-		/// </summary>
+        /// Shows how long, in minutes, that the record was on hold.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("onholdtime")]
 		public System.Nullable<int> OnHoldTime
 		{
@@ -576,8 +576,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time that the record was migrated.
-		/// </summary>
+        /// Date and time that the record was migrated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
 		public System.Nullable<System.DateTime> OverriddenCreatedOn
 		{
@@ -594,8 +594,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
-		/// </summary>
+        /// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
 		{
@@ -612,8 +612,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business unit that owns the letter activity.
-		/// </summary>
+        /// Unique identifier of the business unit that owns the letter activity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
 		{
@@ -624,8 +624,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team that owns the letter activity.
-		/// </summary>
+        /// Unique identifier of the team that owns the letter activity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
 		{
@@ -636,8 +636,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user that owns the letter activity.
-		/// </summary>
+        /// Unique identifier of the user that owns the letter activity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningUser
 		{
@@ -648,8 +648,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the priority so that preferred customers or critical issues are handled quickly.
-		/// </summary>
+        /// 选择the priority so that preferred customers or critical issues are handled quickly.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
 		public virtual letter_prioritycode? PriorityCode
 		{
@@ -666,8 +666,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the ID of the process.
-		/// </summary>
+        /// Shows the ID of the process.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("processid")]
 		public System.Nullable<System.Guid> ProcessId
 		{
@@ -684,8 +684,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the record that the letter relates to.
-		/// </summary>
+        /// Choose the record that the letter relates to.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
 		public Microsoft.Xrm.Sdk.EntityReference RegardingObjectId
 		{
@@ -702,8 +702,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Scheduled duration of the letter activity, specified in minutes.
-		/// </summary>
+        /// Scheduled duration of the letter activity, specified in minutes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduleddurationminutes")]
 		public System.Nullable<int> ScheduledDurationMinutes
 		{
@@ -714,8 +714,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the expected due date and time.
-		/// </summary>
+        /// Enter the expected due date and time.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduledend")]
 		public System.Nullable<System.DateTime> ScheduledEnd
 		{
@@ -732,8 +732,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the expected due date and time.
-		/// </summary>
+        /// Enter the expected due date and time.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduledstart")]
 		public System.Nullable<System.DateTime> ScheduledStart
 		{
@@ -750,8 +750,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the service level agreement (SLA) that you want to apply to the Letter record.
-		/// </summary>
+        /// Choose the service level agreement (SLA) that you want to apply to the Letter record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAId
 		{
@@ -768,8 +768,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Last SLA that was applied to this Letter. This field is for internal use only.
-		/// </summary>
+        /// Last SLA that was applied to this Letter. This field is for internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
 		{
@@ -780,8 +780,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date and time by which the activities are sorted.
-		/// </summary>
+        /// Shows the date and time by which the activities are sorted.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sortdate")]
 		public System.Nullable<System.DateTime> SortDate
 		{
@@ -798,8 +798,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the ID of the stage.
-		/// </summary>
+        /// Shows the ID of the stage.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
 		{
@@ -816,8 +816,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows whether the letter is open, completed, or canceled. Completed and canceled letters are read-only and can't be edited.
-		/// </summary>
+        /// Shows whether the letter is open, completed, or canceled. Completed and canceled letters are read-only and can't be edited.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
 		public virtual letter_statecode? StateCode
 		{
@@ -834,8 +834,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the letter's status.
-		/// </summary>
+        /// 选择the letter's status.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
 		public virtual letter_statuscode? StatusCode
 		{
@@ -852,8 +852,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a subcategory to identify the letter type and relate the activity to a specific product, sales region, business group, or other function.
-		/// </summary>
+        /// Type a subcategory to identify the letter type and relate the activity to a specific product, sales region, business group, or other function.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subcategory")]
 		public string Subcategory
 		{
@@ -870,8 +870,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a short description about the objective or primary topic of the letter.
-		/// </summary>
+        /// Type a short description about the objective or primary topic of the letter.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subject")]
 		public string Subject
 		{
@@ -888,8 +888,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subscriptionid")]
 		public System.Nullable<System.Guid> SubscriptionId
 		{
@@ -906,8 +906,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
 		public System.Nullable<int> TimeZoneRuleVersionNumber
 		{
@@ -924,8 +924,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the account, contact, lead, or user recipients for the letter.
-		/// </summary>
+        /// Enter the account, contact, lead, or user recipients for the letter.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("to")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.ActivityParty> To
 		{
@@ -958,8 +958,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Choose the local currency for the record to make sure budgets are reported in the correct currency.
-		/// </summary>
+        /// Choose the local currency for the record to make sure budgets are reported in the correct currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
 		{
@@ -976,8 +976,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("traversedpath")]
 		public string TraversedPath
 		{
@@ -994,8 +994,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Time zone code that was in use when the record was created.
-		/// </summary>
+        /// Time zone code that was in use when the record was created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
 		public System.Nullable<int> UTCConversionTimeZoneCode
 		{
@@ -1012,8 +1012,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Version number of the letter.
-		/// </summary>
+        /// Version number of the letter.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
@@ -1024,8 +1024,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N letter_activity_parties
-		/// </summary>
+        /// 1:N letter_activity_parties
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("letter_activity_parties")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.ActivityParty> letter_activity_parties
 		{
@@ -1042,8 +1042,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 Account_Letters
-		/// </summary>
+        /// N:1 Account_Letters
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Account_Letters")]
 		public MyApp.DataModel.Account Account_Letters
@@ -1061,8 +1061,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_letter_activities
-		/// </summary>
+        /// N:1 business_unit_letter_activities
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_letter_activities")]
 		public MyApp.DataModel.BusinessUnit business_unit_letter_activities
@@ -1074,8 +1074,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 Contact_Letters
-		/// </summary>
+        /// N:1 Contact_Letters
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contact_Letters")]
 		public MyApp.DataModel.Contact Contact_Letters
@@ -1093,8 +1093,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_letter_createdby
-		/// </summary>
+        /// N:1 lk_letter_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_letter_createdby")]
 		public MyApp.DataModel.SystemUser lk_letter_createdby
@@ -1106,8 +1106,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_letter_createdonbehalfby
-		/// </summary>
+        /// N:1 lk_letter_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_letter_createdonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_letter_createdonbehalfby
@@ -1119,8 +1119,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_letter_modifiedby
-		/// </summary>
+        /// N:1 lk_letter_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_letter_modifiedby")]
 		public MyApp.DataModel.SystemUser lk_letter_modifiedby
@@ -1132,8 +1132,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_letter_modifiedonbehalfby
-		/// </summary>
+        /// N:1 lk_letter_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_letter_modifiedonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_letter_modifiedonbehalfby
@@ -1145,8 +1145,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 team_letter
-		/// </summary>
+        /// N:1 team_letter
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_letter")]
 		public MyApp.DataModel.Team team_letter
@@ -1158,8 +1158,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 user_letter
-		/// </summary>
+        /// N:1 user_letter
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_letter")]
 		public MyApp.DataModel.SystemUser user_letter

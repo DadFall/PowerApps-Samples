@@ -4,14 +4,14 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to initialize upload of an attachment
-    /// </summary>
+        /// Contains the data to initialize upload of an attachment
+        /// </summary>
     public sealed class InitializeAttachmentBlocksUploadRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the InitializeAttachmentBlocksUploadRequest
+        /// 初始化 the InitializeAttachmentBlocksUploadRequest
         /// </summary>
-        /// <param name="target">The activitymimeattachment record with an 'activitymimeattachmentid' value.</param>
+        /// <param name="target">activitymimeattachment record with an 'activitymimeattachmentid' 值.</param>
         public InitializeAttachmentBlocksUploadRequest(JObject target)
         {
             // @odata.type is required. Add it if it isn't there.

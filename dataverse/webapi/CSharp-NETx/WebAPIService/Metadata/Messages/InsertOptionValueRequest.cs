@@ -5,12 +5,12 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to insert an option
-    /// </summary>
+        /// Contains the data to insert an option
+        /// </summary>
     public sealed class InsertOptionValueRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the InsertOptionValueRequest
+        /// 初始化 the InsertOptionValueRequest
         /// </summary>
         /// <param name="parameters">Data about the option to insert.</param>
         public InsertOptionValueRequest(

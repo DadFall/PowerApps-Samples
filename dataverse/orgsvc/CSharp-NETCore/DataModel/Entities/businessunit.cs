@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Type of address for address 1, such as billing, shipping, or primary address.
-	/// </summary>
+        /// Type of address for address 1, such as billing, shipping, or primary address.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum businessunit_address1_addresstypecode
@@ -26,8 +26,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipment for address 1.
-	/// </summary>
+        /// Method of shipment for address 1.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum businessunit_address1_shippingmethodcode
@@ -38,8 +38,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of address for address 2, such as billing, shipping, or primary address.
-	/// </summary>
+        /// Type of address for address 2, such as billing, shipping, or primary address.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum businessunit_address2_addresstypecode
@@ -50,8 +50,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipment for address 2.
-	/// </summary>
+        /// Method of shipment for address 2.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum businessunit_address2_shippingmethodcode
@@ -62,8 +62,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Business, division, or department in the Microsoft Dynamics 365 database.
-	/// </summary>
+        /// Business, division, or department in the Microsoft Dynamics 365 database.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("businessunit")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
@@ -71,8 +71,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public BusinessUnit() : 
 				base(EntityLogicalName)
 		{
@@ -105,8 +105,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for address 1.
-		/// </summary>
+        /// Unique identifier for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addressid")]
 		public System.Nullable<System.Guid> Address1_AddressId
 		{
@@ -123,8 +123,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type of address for address 1, such as billing, shipping, or primary address.
-		/// </summary>
+        /// Type of address for address 1, such as billing, shipping, or primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecode")]
 		public virtual businessunit_address1_addresstypecode? Address1_AddressTypeCode
 		{
@@ -141,8 +141,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// City name for address 1.
-		/// </summary>
+        /// City name for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_city")]
 		public string Address1_City
 		{
@@ -159,8 +159,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Country/region name for address 1.
-		/// </summary>
+        /// Country/region name for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_country")]
 		public string Address1_Country
 		{
@@ -177,8 +177,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// County name for address 1.
-		/// </summary>
+        /// County name for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_county")]
 		public string Address1_County
 		{
@@ -195,8 +195,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Fax number for address 1.
-		/// </summary>
+        /// Fax number for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_fax")]
 		public string Address1_Fax
 		{
@@ -213,8 +213,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Latitude for address 1.
-		/// </summary>
+        /// Latitude for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_latitude")]
 		public System.Nullable<double> Address1_Latitude
 		{
@@ -231,8 +231,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// First line for entering address 1 information.
-		/// </summary>
+        /// First line for entering address 1 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line1")]
 		public string Address1_Line1
 		{
@@ -249,8 +249,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Second line for entering address 1 information.
-		/// </summary>
+        /// Second line for entering address 1 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line2")]
 		public string Address1_Line2
 		{
@@ -267,8 +267,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Third line for entering address 1 information.
-		/// </summary>
+        /// Third line for entering address 1 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line3")]
 		public string Address1_Line3
 		{
@@ -285,8 +285,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Longitude for address 1.
-		/// </summary>
+        /// Longitude for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_longitude")]
 		public System.Nullable<double> Address1_Longitude
 		{
@@ -303,8 +303,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Name to enter for address 1.
-		/// </summary>
+        /// Name to enter for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_name")]
 		public string Address1_Name
 		{
@@ -321,8 +321,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// ZIP Code or postal code for address 1.
-		/// </summary>
+        /// ZIP Code or postal code for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postalcode")]
 		public string Address1_PostalCode
 		{
@@ -339,8 +339,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Post office box number for address 1.
-		/// </summary>
+        /// Post office box number for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postofficebox")]
 		public string Address1_PostOfficeBox
 		{
@@ -357,8 +357,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Method of shipment for address 1.
-		/// </summary>
+        /// Method of shipment for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcode")]
 		public virtual businessunit_address1_shippingmethodcode? Address1_ShippingMethodCode
 		{
@@ -375,8 +375,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// State or province for address 1.
-		/// </summary>
+        /// State or province for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_stateorprovince")]
 		public string Address1_StateOrProvince
 		{
@@ -393,8 +393,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// First telephone number associated with address 1.
-		/// </summary>
+        /// First telephone number associated with address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone1")]
 		public string Address1_Telephone1
 		{
@@ -411,8 +411,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Second telephone number associated with address 1.
-		/// </summary>
+        /// Second telephone number associated with address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone2")]
 		public string Address1_Telephone2
 		{
@@ -429,8 +429,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Third telephone number associated with address 1.
-		/// </summary>
+        /// Third telephone number associated with address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone3")]
 		public string Address1_Telephone3
 		{
@@ -447,8 +447,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// United Parcel Service (UPS) zone for address 1.
-		/// </summary>
+        /// United Parcel Service (UPS) zone for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_upszone")]
 		public string Address1_UPSZone
 		{
@@ -465,8 +465,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// UTC offset for address 1. This is the difference between local time and standard Coordinated Universal Time.
-		/// </summary>
+        /// UTC offset for address 1. This is the difference between local time and standard Coordinated Universal Time.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_utcoffset")]
 		public System.Nullable<int> Address1_UTCOffset
 		{
@@ -483,8 +483,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for address 2.
-		/// </summary>
+        /// Unique identifier for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addressid")]
 		public System.Nullable<System.Guid> Address2_AddressId
 		{
@@ -501,8 +501,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type of address for address 2, such as billing, shipping, or primary address.
-		/// </summary>
+        /// Type of address for address 2, such as billing, shipping, or primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecode")]
 		public virtual businessunit_address2_addresstypecode? Address2_AddressTypeCode
 		{
@@ -519,8 +519,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// City name for address 2.
-		/// </summary>
+        /// City name for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_city")]
 		public string Address2_City
 		{
@@ -537,8 +537,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Country/region name for address 2.
-		/// </summary>
+        /// Country/region name for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_country")]
 		public string Address2_Country
 		{
@@ -555,8 +555,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// County name for address 2.
-		/// </summary>
+        /// County name for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_county")]
 		public string Address2_County
 		{
@@ -573,8 +573,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Fax number for address 2.
-		/// </summary>
+        /// Fax number for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_fax")]
 		public string Address2_Fax
 		{
@@ -591,8 +591,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Latitude for address 2.
-		/// </summary>
+        /// Latitude for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_latitude")]
 		public System.Nullable<double> Address2_Latitude
 		{
@@ -609,8 +609,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// First line for entering address 2 information.
-		/// </summary>
+        /// First line for entering address 2 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line1")]
 		public string Address2_Line1
 		{
@@ -627,8 +627,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Second line for entering address 2 information.
-		/// </summary>
+        /// Second line for entering address 2 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line2")]
 		public string Address2_Line2
 		{
@@ -645,8 +645,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Third line for entering address 2 information.
-		/// </summary>
+        /// Third line for entering address 2 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line3")]
 		public string Address2_Line3
 		{
@@ -663,8 +663,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Longitude for address 2.
-		/// </summary>
+        /// Longitude for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_longitude")]
 		public System.Nullable<double> Address2_Longitude
 		{
@@ -681,8 +681,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Name to enter for address 2.
-		/// </summary>
+        /// Name to enter for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_name")]
 		public string Address2_Name
 		{
@@ -699,8 +699,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// ZIP Code or postal code for address 2.
-		/// </summary>
+        /// ZIP Code or postal code for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postalcode")]
 		public string Address2_PostalCode
 		{
@@ -717,8 +717,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Post office box number for address 2.
-		/// </summary>
+        /// Post office box number for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postofficebox")]
 		public string Address2_PostOfficeBox
 		{
@@ -735,8 +735,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Method of shipment for address 2.
-		/// </summary>
+        /// Method of shipment for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcode")]
 		public virtual businessunit_address2_shippingmethodcode? Address2_ShippingMethodCode
 		{
@@ -753,8 +753,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// State or province for address 2.
-		/// </summary>
+        /// State or province for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_stateorprovince")]
 		public string Address2_StateOrProvince
 		{
@@ -771,8 +771,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// First telephone number associated with address 2.
-		/// </summary>
+        /// First telephone number associated with address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone1")]
 		public string Address2_Telephone1
 		{
@@ -789,8 +789,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Second telephone number associated with address 2.
-		/// </summary>
+        /// Second telephone number associated with address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone2")]
 		public string Address2_Telephone2
 		{
@@ -807,8 +807,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Third telephone number associated with address 2.
-		/// </summary>
+        /// Third telephone number associated with address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone3")]
 		public string Address2_Telephone3
 		{
@@ -825,8 +825,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// United Parcel Service (UPS) zone for address 2.
-		/// </summary>
+        /// United Parcel Service (UPS) zone for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_upszone")]
 		public string Address2_UPSZone
 		{
@@ -843,8 +843,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// UTC offset for address 2. This is the difference between local time and standard Coordinated Universal Time.
-		/// </summary>
+        /// UTC offset for address 2. This is the difference between local time and standard Coordinated Universal Time.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_utcoffset")]
 		public System.Nullable<int> Address2_UTCOffset
 		{
@@ -861,8 +861,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business unit.
-		/// </summary>
+        /// Unique identifier of the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
 		public System.Nullable<System.Guid> BusinessUnitId
 		{
@@ -900,8 +900,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Fiscal calendar associated with the business unit.
-		/// </summary>
+        /// Fiscal calendar associated with the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("calendarid")]
 		public Microsoft.Xrm.Sdk.EntityReference CalendarId
 		{
@@ -918,8 +918,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Name of the business unit cost center.
-		/// </summary>
+        /// Name of the business unit cost center.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("costcenter")]
 		public string CostCenter
 		{
@@ -936,8 +936,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the business unit.
-		/// </summary>
+        /// Unique identifier of the user who created the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
@@ -948,8 +948,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time when the business unit was created.
-		/// </summary>
+        /// Date and time when the business unit was created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
@@ -960,8 +960,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the businessunit.
-		/// </summary>
+        /// Unique identifier of the delegate user who created the businessunit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
@@ -972,8 +972,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Credit limit for the business unit.
-		/// </summary>
+        /// Credit limit for the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("creditlimit")]
 		public System.Nullable<double> CreditLimit
 		{
@@ -990,8 +990,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Description of the business unit.
-		/// </summary>
+        /// Description of the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
 		{
@@ -1008,8 +1008,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Reason for disabling the business unit.
-		/// </summary>
+        /// Reason for disabling the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("disabledreason")]
 		public string DisabledReason
 		{
@@ -1020,8 +1020,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Name of the division to which the business unit belongs.
-		/// </summary>
+        /// Name of the division to which the business unit belongs.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("divisionname")]
 		public string DivisionName
 		{
@@ -1038,8 +1038,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Email address for the business unit.
-		/// </summary>
+        /// Email address for the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress")]
 		public string EMailAddress
 		{
@@ -1056,8 +1056,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Exchange rate for the currency associated with the businessunit with respect to the base currency.
-		/// </summary>
+        /// Exchange rate for the currency associated with the businessunit with respect to the base currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
 		public System.Nullable<decimal> ExchangeRate
 		{
@@ -1068,8 +1068,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Alternative name under which the business unit can be filed.
-		/// </summary>
+        /// Alternative name under which the business unit can be filed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fileasname")]
 		public string FileAsName
 		{
@@ -1086,8 +1086,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// FTP site URL for the business unit.
-		/// </summary>
+        /// FTP site URL for the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ftpsiteurl")]
 		public string FtpSiteUrl
 		{
@@ -1104,8 +1104,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the data import or data migration that created this record.
-		/// </summary>
+        /// Unique identifier of the data import or data migration that created this record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
 		public System.Nullable<int> ImportSequenceNumber
 		{
@@ -1122,8 +1122,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Inheritance mask for the business unit.
-		/// </summary>
+        /// Inheritance mask for the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("inheritancemask")]
 		public System.Nullable<int> InheritanceMask
 		{
@@ -1140,8 +1140,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether the business unit is enabled or disabled.
-		/// </summary>
+        /// Information about whether the business unit is enabled or disabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdisabled")]
 		public System.Nullable<bool> IsDisabled
 		{
@@ -1158,8 +1158,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the business unit.
-		/// </summary>
+        /// Unique identifier of the user who last modified the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
@@ -1170,8 +1170,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time when the business unit was last modified.
-		/// </summary>
+        /// Date and time when the business unit was last modified.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
@@ -1182,8 +1182,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the businessunit.
-		/// </summary>
+        /// Unique identifier of the delegate user who last modified the businessunit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
@@ -1194,8 +1194,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Name of the business unit.
-		/// </summary>
+        /// Name of the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
 		public string Name
 		{
@@ -1212,8 +1212,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the organization associated with the business unit.
-		/// </summary>
+        /// Unique identifier of the organization associated with the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
 		public Microsoft.Xrm.Sdk.EntityReference OrganizationId
 		{
@@ -1224,8 +1224,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time that the record was migrated.
-		/// </summary>
+        /// Date and time that the record was migrated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
 		public System.Nullable<System.DateTime> OverriddenCreatedOn
 		{
@@ -1242,8 +1242,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for the parent business unit.
-		/// </summary>
+        /// Unique identifier for the parent business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentbusinessunitid")]
 		public Microsoft.Xrm.Sdk.EntityReference ParentBusinessUnitId
 		{
@@ -1260,8 +1260,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Picture or diagram of the business unit.
-		/// </summary>
+        /// Picture or diagram of the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("picture")]
 		public string Picture
 		{
@@ -1278,8 +1278,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Stock exchange on which the business is listed.
-		/// </summary>
+        /// Stock exchange on which the business is listed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stockexchange")]
 		public string StockExchange
 		{
@@ -1296,8 +1296,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Stock exchange ticker symbol for the business unit.
-		/// </summary>
+        /// Stock exchange ticker symbol for the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("tickersymbol")]
 		public string TickerSymbol
 		{
@@ -1314,8 +1314,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the currency associated with the businessunit.
-		/// </summary>
+        /// Unique identifier of the currency associated with the businessunit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
 		{
@@ -1332,8 +1332,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// UTC offset for the business unit. This is the difference between local time and standard Coordinated Universal Time.
-		/// </summary>
+        /// UTC offset for the business unit. This is the difference between local time and standard Coordinated Universal Time.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcoffset")]
 		public System.Nullable<int> UTCOffset
 		{
@@ -1350,8 +1350,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Version number of the business unit.
-		/// </summary>
+        /// Version number of the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
@@ -1362,8 +1362,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Website URL for the business unit.
-		/// </summary>
+        /// Website URL for the business unit.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("websiteurl")]
 		public string WebSiteUrl
 		{
@@ -1380,8 +1380,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether workflow or sales process rules have been suspended.
-		/// </summary>
+        /// Information about whether workflow or sales process rules have been suspended.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("workflowsuspended")]
 		public System.Nullable<bool> WorkflowSuspended
 		{
@@ -1398,8 +1398,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_accounts
-		/// </summary>
+        /// 1:N business_unit_accounts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_accounts")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> business_unit_accounts
 		{
@@ -1416,8 +1416,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_contacts
-		/// </summary>
+        /// 1:N business_unit_contacts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_contacts")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> business_unit_contacts
 		{
@@ -1434,8 +1434,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_letter_activities
-		/// </summary>
+        /// 1:N business_unit_letter_activities
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_letter_activities")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Letter> business_unit_letter_activities
 		{
@@ -1452,8 +1452,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_parent_business_unit
-		/// </summary>
+        /// 1:N business_unit_parent_business_unit
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.BusinessUnit> Referencedbusiness_unit_parent_business_unit
 		{
@@ -1470,8 +1470,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_roles
-		/// </summary>
+        /// 1:N business_unit_roles
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_roles")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Role> business_unit_roles
 		{
@@ -1488,8 +1488,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_system_users
-		/// </summary>
+        /// 1:N business_unit_system_users
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_system_users")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.SystemUser> business_unit_system_users
 		{
@@ -1506,8 +1506,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_teams
-		/// </summary>
+        /// 1:N business_unit_teams
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_teams")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Team> business_unit_teams
 		{
@@ -1524,8 +1524,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_userqueryvisualizations
-		/// </summary>
+        /// 1:N business_unit_userqueryvisualizations
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_userqueryvisualizations")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.UserQueryVisualization> business_unit_userqueryvisualizations
 		{
@@ -1542,8 +1542,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_parent_business_unit
-		/// </summary>
+        /// N:1 business_unit_parent_business_unit
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentbusinessunitid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.BusinessUnit Referencingbusiness_unit_parent_business_unit
@@ -1561,8 +1561,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_businessunit_createdonbehalfby
-		/// </summary>
+        /// N:1 lk_businessunit_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunit_createdonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_businessunit_createdonbehalfby
@@ -1574,8 +1574,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_businessunit_modifiedonbehalfby
-		/// </summary>
+        /// N:1 lk_businessunit_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunit_modifiedonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_businessunit_modifiedonbehalfby
@@ -1587,8 +1587,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_businessunitbase_createdby
-		/// </summary>
+        /// N:1 lk_businessunitbase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunitbase_createdby")]
 		public MyApp.DataModel.SystemUser lk_businessunitbase_createdby
@@ -1600,8 +1600,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_businessunitbase_modifiedby
-		/// </summary>
+        /// N:1 lk_businessunitbase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunitbase_modifiedby")]
 		public MyApp.DataModel.SystemUser lk_businessunitbase_modifiedby

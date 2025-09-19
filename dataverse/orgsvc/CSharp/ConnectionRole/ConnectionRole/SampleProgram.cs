@@ -35,7 +35,7 @@ namespace PowerApps.Samples
                         Other = 5
                     };
 
-                    // Create a Connection Role for account and contact
+                    // 创建a Connection Role for account and contact
                     var newConnectionRole = new ConnectionRole
                     {
                         Name = "Example Connection Role",
@@ -45,7 +45,7 @@ namespace PowerApps.Samples
                     _connectionRoleId = service.Create(newConnectionRole);
                     Console.WriteLine("Created {0}.", newConnectionRole.Name);
 
-                    // Create a related Connection Role Object Type Code record for Account
+                    // 创建a related Connection Role Object Type Code record for Account
                     var newAccountConnectionRoleTypeCode
                         = new ConnectionRoleObjectTypeCode
                         {
@@ -58,7 +58,7 @@ namespace PowerApps.Samples
                     Console.WriteLine(
                         "Created a related Connection Role Object Type Code record for Account.");
 
-                    // Create a related Connection Role Object Type Code record for Contact
+                    // 创建a related Connection Role Object Type Code record for Contact
                     var newContactConnectionRoleTypeCode
                         = new ConnectionRoleObjectTypeCode
                         {

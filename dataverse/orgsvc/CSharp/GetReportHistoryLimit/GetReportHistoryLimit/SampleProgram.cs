@@ -17,18 +17,18 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Query for an an existing report: Account Overview. This is a default report in Microsoft Dynamics CRM.				    
+                    // 查询for an an existing report: Account Overview. This is a default report in Microsoft Dynamics CRM.				    
                     QueryByAttribute reportQuery = new QueryByAttribute(Report.EntityLogicalName);
                     reportQuery.AddAttributeValue("name", "Account Overview");
                     reportQuery.ColumnSet = new ColumnSet("reportid");
 
-                    // Get the report.
+                    // 获取the report.
                     EntityCollection retrieveReports = service.RetrieveMultiple(reportQuery);
 
-                    // Convert retrieved Entity to a report
+                    // 转换retrieved Entity to a report
                     Report retrievedReport = (Report)retrieveReports.Entities[0];
                     Console.WriteLine("Retrieved the 'Account Overview' report.");
 

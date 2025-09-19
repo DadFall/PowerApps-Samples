@@ -1,5 +1,5 @@
-﻿// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
+﻿// 版权所有 (c) 微软公司。
+// 根据 MIT 许可证授权。
 
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.Xrm.Sdk;
@@ -22,14 +22,14 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         private Logger _logger;
 
         /// <summary>
-        /// Gets all users that have role 'role Name' from a specific instance, all instances across specified geo or all geos
+        /// 从特定实例、指定地理位置的所有实例或所有地理位置获取具有角色"角色名称"的所有用户
         /// </summary>
-        /// <param name="userName">name of calling user</param>
-        /// <param name="securePassword">password as a secure string</param>
-        /// <param name="roleName">role name</param>
-        /// <param name="environmentUrl">instance url</param>
-        /// <param name="geo">geo to retrieve instances from</param>
-        /// <param name="processAllEnvironments">get reports from all instances or only a few</param>
+        /// <param name="userName">调用用户的名称</param>
+        /// <param name="securePassword">作为安全字符串的密码</param>
+        /// <param name="roleName">角色名称</param>
+        /// <param name="environmentUrl">实例 URL</param>
+        /// <param name="geo">geo to retrieve 实例s from</param>
+        /// <param name="processAllEnvironments">get reports from all 实例s or only a few</param>
         /// <param name="logFileLocation">location to write logs to</param>
         public void GetUsersWithRoleAssignment(string userName, string password, string roleName, string environmentUrl, string geo, bool processAllEnvironments, string logFileLocation)
         {
@@ -64,7 +64,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// Remove role assignments from list of users in one or more environments
+        /// 移除role assignments from list of users in one or more environments
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="password"></param>
@@ -103,7 +103,7 @@ namespace Microsoft.PowerPlatform.Administration.Helpers
         }
 
         /// <summary>
-        /// Add role assignments from list of users in one or more environments
+        /// 添加role assignments from list of users in one or more environments
         /// </summary>  
         /// <param name="userName"></param>
         /// <param name="securePassword"></param>

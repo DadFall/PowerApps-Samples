@@ -48,7 +48,7 @@ if (fetchExpressionQuery != null)
     tracingService.Trace("Found FetchExpression Query");
 
     XDocument fetchXmlDoc = XDocument.Parse(fetchExpressionQuery.Query);
-    //The required element
+    //required element
     var entityElement = fetchXmlDoc.Descendants("entity").FirstOrDefault();
     var entityName = entityElement.Attributes("name").FirstOrDefault().Value;
 
@@ -113,7 +113,7 @@ if (queryExpressionQuery != null)
             RemoveAttributeConditions(fe, "statecode", tracingService);
         }
 
-        //Define the filter
+        //定义
         var stateCodeFilter = new FilterExpression();
         stateCodeFilter.AddCondition("statecode", ConditionOperator.NotEqual, 1);
         //Add it to the Criteria
@@ -129,11 +129,11 @@ A recursive method that removes any conditions for a specific named column
 
 ```csharp
 /// <summary>
-/// Removes any conditions using a specific named column
-/// </summary>
-/// <param name="filter">The filter that may have a condition using the column</param>
-/// <param name="attributeName">The name of the column that should not be used in a condition</param>
-/// <param name="tracingService">The tracing service to use</param>
+        /// Removes any conditions using a specific named column
+        /// </summary>
+/// <param name="filter">filter that may have a condition using the column</param>
+/// <param name="attributeName">名称 of the column that should not be used in a condition</param>
+/// <param name="tracingService">tracing service to use</param>
 private void RemoveAttributeConditions(FilterExpression filter, string attributeName, ITracingService tracingService)
 {
 

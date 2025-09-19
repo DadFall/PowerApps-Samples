@@ -22,10 +22,10 @@ namespace PowerApps.Samples
         /// <param name="service">Specifies the service to connect to.</param>
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             CreateRequiredRecords(service);
@@ -37,11 +37,11 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Retrieve the default business unit needed to create the team.
+            // 检索the default business unit needed to create the team.
             var queryDefaultBusinessUnit = new QueryExpression
             {
                 EntityName = BusinessUnit.EntityLogicalName,
@@ -49,14 +49,14 @@ namespace PowerApps.Samples
                 Criteria = new FilterExpression()
             };
 
-            // Execute the request.
+            // 执行the request.
             queryDefaultBusinessUnit.Criteria.AddCondition("parentbusinessunitid",
                 ConditionOperator.Null);
 
             var defaultBusinessUnit = (BusinessUnit)service.RetrieveMultiple(
                 queryDefaultBusinessUnit).Entities[0];
 
-            // Get the GUID of the current user.
+            // 获取the GUID of the current user.
             var who = new WhoAmIRequest();
             var whoResp = (WhoAmIResponse)service.Execute(who);
             userId = whoResp.UserId;
@@ -71,7 +71,7 @@ namespace PowerApps.Samples
                     defaultBusinessUnit.Id)
             };
 
-            //Create a role record.
+            //创建a role record.
             roleId = service.Create(setupRole);
             Console.WriteLine("Created Role.");
 
@@ -86,12 +86,12 @@ namespace PowerApps.Samples
                 Relationship = new Relationship("systemuserroles_association")
             };
 
-            // Execute the request.
+            // 执行the request.
             service.Execute(associate);
         }
 
         /// <summary>
-        /// Deletes any entity records and files that were created for this sample.
+        /// 删除 any entity records and files that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>

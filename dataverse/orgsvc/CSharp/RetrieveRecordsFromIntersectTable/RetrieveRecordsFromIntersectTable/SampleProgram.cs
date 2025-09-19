@@ -30,7 +30,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    //Create Query Expression.
+                    //创建Query Expression.
                     var query = new QueryExpression()
                     {
                         EntityName = "role",
@@ -85,7 +85,7 @@ namespace PowerApps.Samples
                     linkFetch.Append("</entity>");
                     linkFetch.Append("</fetch>");
 
-                    // Build fetch request and obtain results.
+                    // 构建fetch request and obtain results.
                     var efr = new RetrieveMultipleRequest()
                     {
                         Query = new FetchExpression(linkFetch.ToString())
@@ -104,7 +104,7 @@ namespace PowerApps.Samples
                     // Obtain the Organization Context.
                     OrganizationServiceContext context = new OrganizationServiceContext(service);
 
-                    // Create Linq Query.
+                    // 创建Linq Query.
                     var roles = (from r in context.CreateQuery<Role>()
                                  join s in context.CreateQuery<SystemUserRoles>() on r.RoleId equals s.RoleId
                                  where s.SystemUserId == userId

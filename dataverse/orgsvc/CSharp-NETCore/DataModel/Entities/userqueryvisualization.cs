@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Indicates the library used to render the visualization.
-	/// </summary>
+        /// Indicates the library used to render the visualization.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum userqueryvisualization_charttype
@@ -29,8 +29,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Chart attached to an entity.
-	/// </summary>
+        /// Chart attached to an entity.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("userqueryvisualization")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
@@ -38,8 +38,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public UserQueryVisualization() : 
 				base(EntityLogicalName)
 		{
@@ -72,8 +72,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Indicates the library used to render the visualization.
-		/// </summary>
+        /// Indicates the library used to render the visualization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("charttype")]
 		public virtual userqueryvisualization_charttype? ChartType
 		{
@@ -90,8 +90,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who created the record.
-		/// </summary>
+        /// Shows who created the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
@@ -102,8 +102,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
-		/// </summary>
+        /// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
@@ -114,8 +114,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
-		/// </summary>
+        /// Shows who created the record on behalf of another user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
@@ -126,8 +126,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the fields that are used to display data in a chart, stored in XML format.
-		/// </summary>
+        /// Shows the fields that are used to display data in a chart, stored in XML format.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("datadescription")]
 		public string DataDescription
 		{
@@ -144,8 +144,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type additional information to describe the chart, such as the filter criteria or intended audience.
-		/// </summary>
+        /// Type additional information to describe the chart, such as the filter criteria or intended audience.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
 		{
@@ -162,8 +162,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select whether the chart is the default chart for the view that it is associated with.
-		/// </summary>
+        /// 选择whether the chart is the default chart for the view that it is associated with.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdefault")]
 		public System.Nullable<bool> IsDefault
 		{
@@ -180,8 +180,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record.
-		/// </summary>
+        /// Shows who last updated the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
@@ -192,8 +192,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
-		/// </summary>
+        /// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
@@ -204,8 +204,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
-		/// </summary>
+        /// Shows who created the record on behalf of another user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
@@ -216,8 +216,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a descriptive name for the chart.
-		/// </summary>
+        /// Type a descriptive name for the chart.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
 		public string Name
 		{
@@ -234,8 +234,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
-		/// </summary>
+        /// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
 		{
@@ -252,8 +252,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the business unit that the record owner belongs to.
-		/// </summary>
+        /// Shows the business unit that the record owner belongs to.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
 		{
@@ -264,8 +264,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team who owns the user chart.
-		/// </summary>
+        /// Unique identifier of the team who owns the user chart.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
 		{
@@ -276,8 +276,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team who owns the user chart.
-		/// </summary>
+        /// Unique identifier of the team who owns the user chart.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningUser
 		{
@@ -288,8 +288,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Contains the chart's formatting details and presentation properties, stored in XML format.
-		/// </summary>
+        /// Contains the chart's formatting details and presentation properties, stored in XML format.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("presentationdescription")]
 		public string PresentationDescription
 		{
@@ -306,8 +306,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type of entity which the user chart is attached.
-		/// </summary>
+        /// Type of entity which the user chart is attached.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("primaryentitytypecode")]
 		public string PrimaryEntityTypeCode
 		{
@@ -324,8 +324,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user chart.
-		/// </summary>
+        /// Unique identifier of the user chart.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("userqueryvisualizationid")]
 		public System.Nullable<System.Guid> UserQueryVisualizationId
 		{
@@ -363,8 +363,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Version number of the user chart.
-		/// </summary>
+        /// Version number of the user chart.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
@@ -375,8 +375,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the web resource that will be displayed in the chart to the user.
-		/// </summary>
+        /// Shows the web resource that will be displayed in the chart to the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("webresourceid")]
 		public Microsoft.Xrm.Sdk.EntityReference WebResourceId
 		{
@@ -393,8 +393,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_userqueryvisualizations
-		/// </summary>
+        /// N:1 business_unit_userqueryvisualizations
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_userqueryvisualizations")]
 		public MyApp.DataModel.BusinessUnit business_unit_userqueryvisualizations
@@ -406,8 +406,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_userqueryvisualization_createdby
-		/// </summary>
+        /// N:1 lk_userqueryvisualization_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userqueryvisualization_createdby")]
 		public MyApp.DataModel.SystemUser lk_userqueryvisualization_createdby
@@ -419,8 +419,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_userqueryvisualization_modifiedby
-		/// </summary>
+        /// N:1 lk_userqueryvisualization_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userqueryvisualization_modifiedby")]
 		public MyApp.DataModel.SystemUser lk_userqueryvisualization_modifiedby
@@ -432,8 +432,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_userqueryvisualizationbase_createdonbehalfby
-		/// </summary>
+        /// N:1 lk_userqueryvisualizationbase_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userqueryvisualizationbase_createdonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_userqueryvisualizationbase_createdonbehalfby
@@ -445,8 +445,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_userqueryvisualizationbase_modifiedonbehalfby
-		/// </summary>
+        /// N:1 lk_userqueryvisualizationbase_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userqueryvisualizationbase_modifiedonbehalfby")]
 		public MyApp.DataModel.SystemUser lk_userqueryvisualizationbase_modifiedonbehalfby
@@ -458,8 +458,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 team_userqueryvisualizations
-		/// </summary>
+        /// N:1 team_userqueryvisualizations
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_userqueryvisualizations")]
 		public MyApp.DataModel.Team team_userqueryvisualizations
@@ -471,8 +471,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 user_userqueryvisualizations
-		/// </summary>
+        /// N:1 user_userqueryvisualizations
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_userqueryvisualizations")]
 		public MyApp.DataModel.SystemUser user_userqueryvisualizations

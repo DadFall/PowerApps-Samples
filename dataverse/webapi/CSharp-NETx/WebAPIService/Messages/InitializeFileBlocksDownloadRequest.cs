@@ -4,8 +4,8 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to initialize download of an file column value
-    /// </summary>
+        /// Contains the data to initialize download of an file column value
+        /// </summary>
     public sealed class InitializeFileBlocksDownloadRequest : HttpRequestMessage
     {
 

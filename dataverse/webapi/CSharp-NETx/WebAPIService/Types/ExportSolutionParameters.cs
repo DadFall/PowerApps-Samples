@@ -6,7 +6,7 @@ namespace PowerApps.Samples.Types
     public class ExportSolutionParameters
     {
         /// <summary>
-        /// The unique name of the solution.
+        /// unique name of the solution.
         /// </summary>
         public string SolutionName { get; set; }
         /// <summary>

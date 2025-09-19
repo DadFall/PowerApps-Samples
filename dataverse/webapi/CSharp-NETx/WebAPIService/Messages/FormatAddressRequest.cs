@@ -1,18 +1,18 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to perform the FormatAddress function
-    /// </summary>
+        /// Contains the data to perform the FormatAddress function
+        /// </summary>
     public sealed class FormatAddressRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the FormatAddressRequest
+        /// 初始化 the FormatAddressRequest
         /// </summary>
-        /// <param name="line1">The first line of the address.</param>
-        /// <param name="city">The city of the address.</param>
-        /// <param name="stateOrProvince">The state or province of the address.</param>
-        /// <param name="postalCode">The postal code of the address.</param>
-        /// <param name="country">The postal code of the address.</param>
+        /// <param name="line1">first line of the address.</param>
+        /// <param name="city">city of the address.</param>
+        /// <param name="stateOrProvince">state or province of the address.</param>
+        /// <param name="postalCode">postal code of the address.</param>
+        /// <param name="country">postal code of the address.</param>
         public FormatAddressRequest(
             string line1, 
             string city, 

@@ -11,8 +11,8 @@ using System.ServiceModel;
 namespace PowerPlatform.Dataverse.CodeSamples
 {
     /// <summary>
-    /// Demonstrates working with Dataverse search APIs.
-    /// </summary>
+        /// Demonstrates working with Dataverse search APIs.
+        /// </summary>
     /// <remarks>Set the appropriate Url and Username values for your test
     /// environment in the appsettings.json file before running this program.
     /// You will be prompted in the default browser to enter a password.</remarks>
@@ -23,23 +23,23 @@ namespace PowerPlatform.Dataverse.CodeSamples
     {
 
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -49,7 +49,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         {
             Program app = new();
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"));            
 
@@ -94,8 +94,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Demonstrate query API
         /// </summary>
-        /// <param name="service">The authenticated IOrganizationService instance to use.</param>
-        /// <param name="searchTerm">The term to search for</param>
+        /// <param name="service">authenticated IOrganizationService 实例 to use.</param>
+        /// <param name="searchTerm">term to search for</param>
         /// <returns></returns>
         static void OutputSearchQuery(IOrganizationService service, string searchTerm)
         {
@@ -165,8 +165,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Demonstrate suggest API
         /// </summary>
-        /// <param name="service">The authenticated IOrganizationService instance to use.</param>
-        /// <param name="searchTerm">The term to use</param>
+        /// <param name="service">authenticated IOrganizationService 实例 to use.</param>
+        /// <param name="searchTerm">term to use</param>
         /// <returns></returns>
         static void OutputSearchSuggest(IOrganizationService service, string searchTerm)
         {
@@ -201,8 +201,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Demonstrate autocomplete API
         /// </summary>
-        /// <param name="service">The authenticated IOrganizationService instance to use.</param>
-        /// <param name="searchTerm">The term to use</param>
+        /// <param name="service">authenticated IOrganizationService 实例 to use.</param>
+        /// <param name="searchTerm">term to use</param>
         /// <returns></returns>
         static void OutputAutoComplete(IOrganizationService service, string searchTerm)
         {
@@ -238,7 +238,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Demonstrate status API
         /// </summary>
-        /// <param name="service">The authenticated IOrganizationService instance to use.</param>
+        /// <param name="service">authenticated IOrganizationService 实例 to use.</param>
         /// <returns></returns>
         static void OutputSearchStatus(IOrganizationService service)
         {
@@ -285,7 +285,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Demonstrate statistics API
         /// </summary>
-        /// <param name="service">The authenticated IOrganizationService instance to use.</param>
+        /// <param name="service">authenticated IOrganizationService 实例 to use.</param>
         /// <returns></returns>
         static void OutputSearchStatistics(IOrganizationService service)
         {
@@ -308,7 +308,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Enables search for the environment
         /// </summary>
-        /// <param name="service">The authenticated IOrganizationService instance to use.</param>
+        /// <param name="service">authenticated IOrganizationService 实例 to use.</param>
         /// <returns></returns>
         static void EnableSearch(IOrganizationService service)
         {
@@ -327,8 +327,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Returns the search status
         /// </summary>
-        /// <param name="service">The authenticated IOrganizationService instance to use.</param>
-        /// <returns>The SearchStatus</returns>
+        /// <param name="service">authenticated IOrganizationService 实例 to use.</param>
+        /// <returns>SearchStatus</returns>
         static SearchStatus CheckSearchStatus(IOrganizationService service)
         {
             var searchStatusResponse = (searchstatusResponse)service.Execute(new searchstatusRequest());

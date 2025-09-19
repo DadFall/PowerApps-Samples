@@ -14,7 +14,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
     internal class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         private IConfiguration Configuration { get; }
 
@@ -40,11 +40,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -57,7 +57,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 throw new ArgumentNullException(nameof(connectionString));
             }
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             Console.Write("Connecting to Dataverse environment...");
             ServiceClient serviceClient = new(connectionString);
 
@@ -73,13 +73,13 @@ namespace PowerPlatform.Dataverse.CodeSamples
         private Solution CreateUnmanagedSolution(ServiceClient serviceClient, string solutionUniqueName, string solutionFriendlyName, string solutionDescription)
         {
 
-            // Retrieve the Default Publisher which has a constant GUID value.
+            // 检索the Default Publisher which has a constant GUID value.
             var defaultPublisher = serviceClient.Retrieve(
                 "publisher",
                 new Guid("{d21aab71-79e7-11dd-8874-00188b01e34f}"),
                 new ColumnSet(new string[] { "friendlyname" }));
 
-            // Create a new unmanaged solution
+            // 创建a new unmanaged solution
             Solution solution = new()
             {
                 UniqueName = solutionUniqueName,
@@ -89,7 +89,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 PublisherId = new EntityReference("publisher", defaultPublisher.Id)
             };
 
-            // Check whether the solution already exists
+            // 检查whether the solution already exists
             QueryExpression queryCheckForSolution = new()
             {
                 EntityName = "solution",
@@ -108,7 +108,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine("done.");
 
 
-            // Create the solution if it doesn't already exist
+            // 创建the solution if it doesn't already exist
             Entity? solutionResults = solutionQueryResults.Entities.FirstOrDefault();
 
             if (solutionResults == null)
@@ -127,7 +127,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
         private void FindCustomFieldsAndAddToUnmanagedSolution(ServiceClient serviceClient, string publisherPrefix, string attributeSuffix, string solutionUniqueName)
         {
-            // Retrieve all the fields/attributes in the system.
+            // 检索all the fields/attributes in the system.
             Console.Write("Attempting to retrieve all the entity metadata...");
             RetrieveAllEntitiesResponse entitiesResponse =
                 (RetrieveAllEntitiesResponse)serviceClient.Execute(
@@ -153,8 +153,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 }
             };
 
-            // For all the entities that start with the given publisher prefix, find all the attributes that end with the given suffix.
-            // Add each one to the solution.
+            // 对于all the entities that start with the given publisher prefix, find all the attributes that end with the given suffix.
+            // 添加each one to the solution.
             entitiesResponse.EntityMetadata.Where(e => e.LogicalName.StartsWith(publisherPrefix)).ToList().ForEach(
                 e => e.Attributes.Where(a => a.LogicalName.EndsWith(attributeSuffix)).ToList().ForEach(
                     a => {

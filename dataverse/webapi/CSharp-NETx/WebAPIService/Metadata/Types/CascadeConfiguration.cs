@@ -7,27 +7,27 @@ namespace PowerApps.Samples.Metadata.Types
     public class CascadeConfiguration
     {
         /// <summary>
-        /// The referenced entity record owner is changed.
+        /// referenced entity record owner is changed.
         /// </summary>
         public CascadeType Assign { get; set; }
 
         /// <summary>
-        /// The referenced entity record is deleted.
+        /// referenced entity record is deleted.
         /// </summary>
         public CascadeType Delete { get; set; }
 
         /// <summary>
-        /// The record is merged with another record.
+        /// record is merged with another record.
         /// </summary> 
         public CascadeType Merge { get; set; }
 
         /// <summary>
-        /// The referencing attribute in a parental relationship changes
+        /// referencing attribute in a parental relationship changes
         /// </summary> 
         public CascadeType Reparent { get; set; }
 
         /// <summary>
-        /// The referenced entity record is shared with another user.
+        /// referenced entity record is shared with another user.
         /// </summary>
         public CascadeType Share { get; set; }
 

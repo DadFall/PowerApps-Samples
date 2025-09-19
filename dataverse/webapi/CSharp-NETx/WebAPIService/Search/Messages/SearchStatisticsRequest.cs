@@ -1,12 +1,12 @@
 ﻿namespace PowerApps.Samples.Search.Messages
 {
     /// <summary>
-    /// Contains the data to perform the searchstatistics function
-    /// </summary>
+        /// Contains the data to perform the searchstatistics function
+        /// </summary>
     public sealed class SearchStatisticsRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the searchstatisticsRequest
+        /// 初始化 the searchstatisticsRequest
         /// </summary>
         public SearchStatisticsRequest()
         {

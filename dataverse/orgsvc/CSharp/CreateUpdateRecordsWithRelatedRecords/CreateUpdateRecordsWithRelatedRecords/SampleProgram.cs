@@ -15,19 +15,19 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    //Define the account for which we will add letters                
+                    //定义
                     var accountToCreate = new Account
                     {
                         Name = "Example Account"
                     };
 
-                    //Define the IDs of the related letters we will create
+                    //定义
                     _letterIds = new[] { Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
 
-                    //This acts as a container for each letter we create. Note that we haven't
+                    //此acts as a container for each letter we create. Note that we haven't
                     //define the relationship between the letter and account yet.
                     var relatedLettersToCreate = new EntityCollection
                     {
@@ -73,7 +73,7 @@ namespace PowerApps.Samples
 
                     accountToUpdate.RelatedEntities.Add(letterRelationship, relatedLettersToUpdate);
 
-                    //This will update the account as well as all of the related letters
+                    //此will update the account as well as all of the related letters
                     service.Update(accountToUpdate);
                     Console.WriteLine("An account and {0} letters were updated.", _letterIds.Length);
                     #endregion Demonstrate

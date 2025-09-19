@@ -94,7 +94,7 @@ namespace PowerApps.Samples.Metadata.Messages
         }
 
         /// <summary>
-        /// Generates the URI based on the current values
+        /// 生成 the URI based on the current values
         /// </summary>
         private void GenerateUri()
         {

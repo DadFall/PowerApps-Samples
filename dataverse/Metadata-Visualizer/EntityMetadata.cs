@@ -18,7 +18,7 @@ namespace MetaViz
         {
             get
             {
-                // If intersect entity ManyToManyRelationships has more information
+                // 如果intersect entity ManyToManyRelationships has more information
                 // otherwise use attributes metadata Url
                 return (isIntersect ? manyToManyRelationshipsPath : $"{entityDefinitionsPath}/Attributes");
             }
@@ -115,7 +115,7 @@ namespace MetaViz
             string Entity1IntersectAttribute = rootAttributes["Entity1IntersectAttribute"].Value<string>();
             string Entity2IntersectAttribute = rootAttributes["Entity2IntersectAttribute"].Value<string>();
             specWriter.WriteLine(hashCodeHeader + $"IntersectEntity {Entity1LogicalName}.{Entity1IntersectAttribute} <=> {Entity2LogicalName}.{Entity2IntersectAttribute}");
-            //Many to Many
+            //许多
             //Instead of creating 2 lookup 1-n among entity 1, 2 and intersect entities create an n-n relations
             erInformationForThisEntity.ERRelations.Add(new ERRelation(Entity1LogicalName, Entity2LogicalName, entityLogicalName, true));
         }

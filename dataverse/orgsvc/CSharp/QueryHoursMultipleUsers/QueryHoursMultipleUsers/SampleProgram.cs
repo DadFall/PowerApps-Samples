@@ -21,7 +21,7 @@ namespace PowerApps.Samples
                     SetUpSample(service);
                     #endregion Set up
 
-                    // Retrieve the working hours of the current and the other user.   
+                    // 检索the working hours of the current and the other user.   
                     
                     QueryMultipleSchedulesRequest scheduleRequest = new QueryMultipleSchedulesRequest();
                     scheduleRequest.ResourceIds = new Guid[2];
@@ -33,7 +33,7 @@ namespace PowerApps.Samples
 
                     QueryMultipleSchedulesResponse scheduleResponse = (QueryMultipleSchedulesResponse)service.Execute(scheduleRequest);
 
-                    // Verify if some data is returned for the availability of the users
+                    // 验证if some data is returned for the availability of the users
                     if (scheduleResponse.TimeInfos.Length > 0)
                     {
                         Console.WriteLine("Successfully queried the working hours of multiple users.");

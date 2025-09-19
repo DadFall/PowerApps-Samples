@@ -1,11 +1,11 @@
-/* 
-    Portals - Implicit Grant Sample
+/*
+ Portals - Implicit Grant Sample
     
     Authorize Endpoint
 
     Description:
 		* Authorize Endpoint returns the ID token as a fragment in the Redirected URL.
-		* This sample also covers state validation supported in Implicit Grant.
+		* 此示例 also covers state validation supported in Implicit Grant.
 		* There are two parts in Authorize Endpoint Sample.
 		* Part 1: Redirect to Authorize Endpoint
 			* Save state as a cookie.
@@ -14,7 +14,7 @@
 			* Fetch the parameters in url fragment.
 			* State validation
 			* Return the token.
-*/
+ */
 
 //Part 1 - Call Authorize Endpoint to Get Token
 
@@ -23,7 +23,7 @@
 
 <script>
 
-//Remove this line to avoid State validation
+//移除this line to avoid State validation
 $.cookie("useStateValidation",1); 
 
 function callAuthorizeEndpoint(){
@@ -41,7 +41,7 @@ function callAuthorizeEndpoint(){
 	//Authorize Endpoint
 	var redirectLocation = `/_services/auth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}`;
 
-	//Save state in a cookie if State validation is enabled
+	//保存state in a cookie if State validation is enabled
 	if(useStateValidation){
 		$.cookie(appStateKey, JSON.stringify(sampleAppState));
 		redirectLocation = redirectLocation + `&state=${appStateKey}`;
@@ -58,7 +58,7 @@ function callAuthorizeEndpoint(){
 
 // Note: For Authorize Endpoint, the below javascript is executed on the redirected page with token in url fragment
 
-//Convert URL Fragment to Result Object
+//转换URL Fragment to Result Object
 function getResultInUrlFragment(hash){
     if(hash){
         var result = {};
@@ -74,7 +74,7 @@ function getResultInUrlFragment(hash){
     }
 }
 
-//Validate State parameter
+//验证State parameter
 //Returns true for valid state and false otherwise
 function validateState(stateInUrlFragment){
 	if(!stateInUrlFragment){
@@ -95,7 +95,7 @@ var appState = null;
 //Fetch the parameters in Url fragment
 var authorizeEndpointResult = getResultInUrlFragment(window.location.hash);
 
-//Validate State
+//验证State
 if(useStateValidation){
 	if(!validateState(authorizeEndpointResult.state)){
 		authorizeEndpointResult = null;

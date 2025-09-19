@@ -4,14 +4,14 @@ using PowerApps.Samples.Types;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to export a solution
-    /// </summary>
+        /// Contains the data to export a solution
+        /// </summary>
     public sealed class ExportSolutionRequest : HttpRequestMessage
     {
 
 
         /// <summary>
-        /// Initializes the ExportSolutionRequest
+        /// 初始化 the ExportSolutionRequest
         /// </summary>
         /// <param name="parameters"></param>
         public ExportSolutionRequest(ExportSolutionParameters parameters)

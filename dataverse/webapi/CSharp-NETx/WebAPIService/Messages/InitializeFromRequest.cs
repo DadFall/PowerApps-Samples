@@ -3,17 +3,17 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to perform the FormatAddress function
-    /// </summary>
+        /// Contains the data to perform the FormatAddress function
+        /// </summary>
     public sealed class InitializeFromRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the InitializeFromRequest
+        /// 初始化 the InitializeFromRequest
         /// </summary>
-        /// <param name="entityMoniker">The record that is the source for initializing.</param>
-        /// <param name="targetEntityName">	The logical name of the target entity.</param>
-        /// <param name="targetFieldType">The attributes are to be initialized in the initialized instance.</param>
-        /// <param name="skipParentalRelationshipMapping">Does not include value for parental lookup.</param>
+        /// <param name="entityMoniker">record that is the source for initializing.</param>
+        /// <param name="targetEntityName">	logical 名称 of the target entity.</param>
+        /// <param name="targetFieldType">attributes are to be initialized in the initialized 实例.</param>
+        /// <param name="skipParentalRelationshipMapping">Does not include 值 for parental lookup.</param>
         public InitializeFromRequest(
             EntityReference entityMoniker,
             string targetEntityName,

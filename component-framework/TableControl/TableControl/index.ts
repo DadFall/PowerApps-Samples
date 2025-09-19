@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -30,7 +30,7 @@ export class TableControl implements ComponentFramework.StandardControl<IInputs,
 	private _lookupObjectsResultDiv: HTMLDivElement;
 
 	// Reference to the control container HTMLDivElement
-	// This element contains all elements of our custom control example
+	// 此element contains all elements of our custom control example
 	private _container: HTMLDivElement;
 
 	// Reference to ComponentFramework Context object
@@ -40,11 +40,11 @@ export class TableControl implements ComponentFramework.StandardControl<IInputs,
 	private _controlViewRendered: boolean;
 
 	// Label displayed in lookup result div
-	// NOTE: See localization sample control for information on how to localize strings into multiple languages
+	// 注意： See localization sample control for information on how to localize strings into multiple languages
 	private LOOKUP_OBJECRESULT_DIV_STRING = "Item selected by lookupObjects method:";
 
 	// Prefix for label displayed
-	// NOTE: See localization sample control for information on how to localize strings into multiple languages
+	// 注意： See localization sample control for information on how to localize strings into multiple languages
 	private BUTTON_LABEL_CLICK_STRING = "Click to invoke:";
 
 	// Name of entity to use for metadata retrieve example (this entity needs to exist in your org)
@@ -131,7 +131,7 @@ export class TableControl implements ComponentFramework.StandardControl<IInputs,
 	 * @param event : OnClick Event
 	 */
 	private onLookupObjectsButtonClick(event: Event): Promise<void> {
-		// Get the entity name for the button
+		// 获取the entity name for the button
 		const entityName: string | null = (event.target as Element)?.getAttribute("entityName");
 
 		const lookUpOptions: ComponentFramework.UtilityApi.LookupOptions = {
@@ -163,7 +163,7 @@ export class TableControl implements ComponentFramework.StandardControl<IInputs,
 				return;
 			},
 			(error) => {
-				// Error handling code here
+				// 错误handling code here
 			}
 		);
 	}
@@ -200,11 +200,11 @@ export class TableControl implements ComponentFramework.StandardControl<IInputs,
 	 * The right column of the table shows the result of that method name or property
 	 */
 	private createHTMLTableElement(): HTMLTableElement {
-		// Create HTML Table Element
+		// 创建HTML Table Element
 		const tableElement: HTMLTableElement = document.createElement("table");
 		tableElement.setAttribute("class", "SampleControlHtmlTable_HtmlTable");
 
-		// Create header row for table
+		// 创建header row for table
 		let key = "Example Method";
 		let value = "Result";
 		tableElement.appendChild(this.createHTMLTableRowElement(key, value, true));
@@ -228,13 +228,13 @@ export class TableControl implements ComponentFramework.StandardControl<IInputs,
 		tableElement.appendChild(this.createHTMLTableRowElement(key, value, false));
 
 		// Example of isRTL property
-		// Update your language to an RTL language (for example: Hebrew) to see this value change
+		// 更新your language to an RTL language (for example: Hebrew) to see this value change
 		key = "User Language isRTL";
 		value = String(this._context.userSettings.isRTL);
 		tableElement.appendChild(this.createHTMLTableRowElement(key, value, false));
 
 		// Example of numberFormattingInfo and formatCurrency
-		// Retrieve the currencyDecimalDigits and currencySymbol from the numberFormattingInfo object to retrieve the
+		// 检索the currencyDecimalDigits and currencySymbol from the numberFormattingInfo object to retrieve the
 		// preferences set in the current users 'User Settings'
 		// Pass these values as parameters into the formatting.formatCurrency utility method to format the number per the users preferences
 		key = "formatting formatCurrency";
@@ -253,16 +253,16 @@ export class TableControl implements ComponentFramework.StandardControl<IInputs,
 		tableElement.appendChild(this.createHTMLTableRowElement(key, value, false));
 
 		// Example of getEntityMetadata
-		// Retrieve the Entity Metadata for the entityName parameter. In the callback method, retrieve the primaryNameAttribute, logicalName,
+		// 检索the Entity Metadata for the entityName parameter. In the callback method, retrieve the primaryNameAttribute, logicalName,
 		// and isCustomEntity attributes and inject the results into the Example HTML Table
 		const metadataPromise = this._context.utils.getEntityMetadata(this.ENTITY_LOGICAL_NAME_FOR_METADATA_EXAMPLE).then(
 			(entityMetadata) => {
-				// Generate the HTML Elements used for the lookup control example
+				// 生成the HTML Elements used for the lookup control example
 				this.GenerateLookupObjectElements(this.ENTITY_LOGICAL_NAME_FOR_METADATA_EXAMPLE);
 				return;
 			},
 			(error) => {
-				// Error handling code here
+				// 错误handling code here
 			}
 		);
 

@@ -56,8 +56,8 @@ namespace Search
         /// <summary>
         /// Demonstrate query API
         /// </summary>
-        /// <param name="service">The authenticated WebAPIService client to use.</param>
-        /// <param name="searchTerm">The term to search for</param>
+        /// <param name="service">authenticated WebAPIService client to use.</param>
+        /// <param name="searchTerm">term to search for</param>
         /// <returns></returns>
          static async Task OutputSearchQuery(Service service, string searchTerm)
         {
@@ -126,8 +126,8 @@ namespace Search
         /// <summary>
         /// Demonstrate suggest API
         /// </summary>
-        /// <param name="service">The authenticated WebAPIService client to use.</param>
-        /// <param name="searchTerm">The term to use</param>
+        /// <param name="service">authenticated WebAPIService client to use.</param>
+        /// <param name="searchTerm">term to use</param>
         /// <returns></returns>
         static async Task OutputSearchSuggest(Service service, string searchTerm)
         {
@@ -160,8 +160,8 @@ namespace Search
         /// <summary>
         /// Demonstrate autocomplete API
         /// </summary>
-        /// <param name="service">The authenticated WebAPIService client to use.</param>
-        /// <param name="searchTerm">The term to use</param>
+        /// <param name="service">authenticated WebAPIService client to use.</param>
+        /// <param name="searchTerm">term to use</param>
         /// <returns></returns>
         static async Task OutputAutoComplete(Service service, string searchTerm)
         {
@@ -197,7 +197,7 @@ namespace Search
         /// <summary>
         /// Demonstrate status API
         /// </summary>
-        /// <param name="service">The authenticated WebAPIService client to use.</param>
+        /// <param name="service">authenticated WebAPIService client to use.</param>
         /// <returns></returns>
         static async Task OutputSearchStatus(Service service)
         {
@@ -240,7 +240,7 @@ namespace Search
         /// <summary>
         /// Demonstrate statistics API
         /// </summary>
-        /// <param name="service">The authenticated WebAPIService client to use.</param>
+        /// <param name="service">authenticated WebAPIService client to use.</param>
         /// <returns></returns>
         static async Task OutputSearchStatistics(Service service)
         {
@@ -258,7 +258,7 @@ namespace Search
         /// <summary>
         /// Enables search for the environment
         /// </summary>
-        /// <param name="service">The authenticated WebAPIService client to use.</param>
+        /// <param name="service">authenticated WebAPIService client to use.</param>
         /// <returns></returns>
         static async Task EnableSearch(Service service)
         {
@@ -275,8 +275,8 @@ namespace Search
         /// <summary>
         /// Returns the search status
         /// </summary>
-        /// <param name="service">The authenticated WebAPIService client to use.</param>
-        /// <returns>The SearchStatus</returns>
+        /// <param name="service">authenticated WebAPIService client to use.</param>
+        /// <returns>SearchStatus</returns>
         static async Task<SearchStatus> CheckSearchStatus(Service service)
         {
             var response = await service.SendAsync<SearchStatusResponse>(new SearchStatusRequest());

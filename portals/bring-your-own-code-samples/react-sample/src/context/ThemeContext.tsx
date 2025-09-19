@@ -24,13 +24,13 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  // Check if user has a saved preference in localStorage
+  // 检查if user has a saved preference in localStorage
   const [mode, setMode] = useState<ThemeMode>(() => {
     const savedMode = localStorage.getItem('themeMode');
     return (savedMode as ThemeMode) || 'light';
   });
 
-  // Update localStorage when theme changes
+  // 更新localStorage when theme changes
   useEffect(() => {
     localStorage.setItem('themeMode', mode);
     // Apply theme class to body for additional styling hooks
@@ -43,7 +43,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
   };
 
-  // Create theme based on current mode
+  // 创建theme based on current mode
   const theme = createTheme({
     palette: {
       mode,

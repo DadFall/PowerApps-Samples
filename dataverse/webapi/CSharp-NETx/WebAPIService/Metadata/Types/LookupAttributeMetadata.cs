@@ -16,7 +16,7 @@ namespace PowerApps.Samples.Metadata.Types
         public AttributeTypeDisplayName AttributeTypeName { get; } = new AttributeTypeDisplayName(AttributeTypeDisplayNameValues.LookupType);
 
         /// <summary>
-        /// The target entity types for the lookup.
+        /// target entity types for the lookup.
         /// </summary>
         public List<string> Targets { get; set; }
 

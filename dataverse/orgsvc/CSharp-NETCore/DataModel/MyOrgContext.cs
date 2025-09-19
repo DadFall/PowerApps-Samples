@@ -16,23 +16,23 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Represents a source of entities bound to a Dataverse service. It tracks and manages changes made to the retrieved entities.
-	/// </summary>
+        /// 表示 a source of entities bound to a Dataverse service. It tracks and manages changes made to the retrieved entities.
+        /// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public partial class MyOrgContext : Microsoft.Xrm.Sdk.Client.OrganizationServiceContext
 	{
 		
 		/// <summary>
-		/// Constructor.
-		/// </summary>
+        /// Constructor.
+        /// </summary>
 		public MyOrgContext(Microsoft.Xrm.Sdk.IOrganizationService service) : 
 				base(service)
 		{
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="MyApp.DataModel.Account"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="MyApp.DataModel.Account"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<MyApp.DataModel.Account> AccountSet
 		{
 			get
@@ -42,8 +42,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="MyApp.DataModel.ActivityParty"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="MyApp.DataModel.ActivityParty"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<MyApp.DataModel.ActivityParty> ActivityPartySet
 		{
 			get
@@ -53,8 +53,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="MyApp.DataModel.BusinessUnit"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="MyApp.DataModel.BusinessUnit"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<MyApp.DataModel.BusinessUnit> BusinessUnitSet
 		{
 			get
@@ -64,8 +64,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="MyApp.DataModel.Contact"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="MyApp.DataModel.Contact"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<MyApp.DataModel.Contact> ContactSet
 		{
 			get
@@ -75,8 +75,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="MyApp.DataModel.Letter"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="MyApp.DataModel.Letter"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<MyApp.DataModel.Letter> LetterSet
 		{
 			get
@@ -86,8 +86,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="MyApp.DataModel.Privilege"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="MyApp.DataModel.Privilege"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<MyApp.DataModel.Privilege> PrivilegeSet
 		{
 			get
@@ -97,8 +97,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="MyApp.DataModel.Role"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="MyApp.DataModel.Role"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<MyApp.DataModel.Role> RoleSet
 		{
 			get
@@ -108,8 +108,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="MyApp.DataModel.SystemUser"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="MyApp.DataModel.SystemUser"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<MyApp.DataModel.SystemUser> SystemUserSet
 		{
 			get
@@ -119,8 +119,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="MyApp.DataModel.Team"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="MyApp.DataModel.Team"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<MyApp.DataModel.Team> TeamSet
 		{
 			get
@@ -130,8 +130,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="MyApp.DataModel.UserQueryVisualization"/> entities.
-		/// </summary>
+        /// 获取 a binding to the set of all <see cref="MyApp.DataModel.UserQueryVisualization"/> entities.
+        /// </summary>
 		public System.Linq.IQueryable<MyApp.DataModel.UserQueryVisualization> UserQueryVisualizationSet
 		{
 			get

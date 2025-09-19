@@ -18,12 +18,12 @@ namespace PowerApps.Samples
 
         static DiagramBuilder()
         {
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -40,12 +40,12 @@ namespace PowerApps.Samples
 
             try
             {
-                // Create a Dataverse service client using the default connection string.
+                // 创建a Dataverse service client using the default connection string.
                 service = new ServiceClient(Configuration.GetConnectionString("default"));
 
                 if (service.IsReady)
                 {
-                    // Load Visio and create a new document.
+                    // 加载Visio and create a new document.
                     application = new VisioApi.Application();
                     application.Visible = false; // Not showing the UI increases rendering speed  
                     builder.VersionName = application.Version;
@@ -53,7 +53,7 @@ namespace PowerApps.Samples
                     builder._application = application;
                     builder._document = document;
 
-                    // Load the metadata.
+                    // 加载the metadata.
                     Console.WriteLine("Loading Metadata...");
                     RetrieveAllEntitiesRequest request = new RetrieveAllEntitiesRequest()
                     {
@@ -92,7 +92,7 @@ namespace PowerApps.Samples
                         filename = String.Concat(args[0], ".vsd");
                     }
 
-                    // Save the diagram in the current directory using the name of the first
+                    // 保存the diagram in the current directory using the name of the first
                     // entity argument or "AllEntities" if none were given. Close the Visio application. 
                     document.SaveAs(Directory.GetCurrentDirectory() + "\\" + filename);
                     application.Quit();

@@ -3,13 +3,13 @@
 namespace PowerApps.Samples.Messages
 {
 
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the CreateMultipleRequest
-    /// </summary>
+        /// Contains the response from the CreateMultipleRequest
+        /// </summary>
     public class CreateMultipleResponse : HttpResponseMessage
     {
 
@@ -23,7 +23,7 @@ namespace PowerApps.Samples.Messages
         }
 
         /// <summary>
-        /// The ID values of the created records
+        /// ID values of the created records
         /// </summary>
         public Guid[] Ids => _jObject[nameof(Ids)].ToObject<Guid[]>();
     }

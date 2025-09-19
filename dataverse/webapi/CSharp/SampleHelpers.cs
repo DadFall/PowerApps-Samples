@@ -74,7 +74,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary> Displays exception information to the console. </summary>
-        /// <param name="ex">The exception to output</param>
+        /// <param name="ex">exception to output</param>
         public static void DisplayException(Exception ex)
         {
             Console.WriteLine("The application terminated with an error.");

@@ -24,7 +24,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create three e-mail attachments
+                    // 创建three e-mail attachments
                     for (int i = 0; i < 3; i++)
                     {
                         ActivityMimeAttachment _sampleAttachment = new ActivityMimeAttachment
@@ -42,7 +42,7 @@ namespace PowerApps.Samples
 
                     Console.WriteLine("Created three e-mail attachments for the e-mail activity.");
 
-                    // Retrieve an attachment including its id, subject, filename and body.
+                    // 检索an attachment including its id, subject, filename and body.
                     ActivityMimeAttachment _singleAttachment =
                         (ActivityMimeAttachment)service.Retrieve(
                                                     ActivityMimeAttachment.EntityLogicalName,
@@ -54,13 +54,13 @@ namespace PowerApps.Samples
 
                     Console.WriteLine("Retrieved an email attachment, {0}.", _singleAttachment.FileName);
 
-                    // Update attachment
+                    // 更新attachment
                     _singleAttachment.FileName = "ExampleAttachmentUpdated.txt";
                     service.Update(_singleAttachment);
 
                     Console.WriteLine("Updated the retrieved e-mail attachment to {0}.", _singleAttachment.FileName);
 
-                    // Retrieve all attachments associated with the email activity.
+                    // 检索all attachments associated with the email activity.
                     QueryExpression _attachmentQuery = new QueryExpression
                     {
                         EntityName = ActivityMimeAttachment.EntityLogicalName,

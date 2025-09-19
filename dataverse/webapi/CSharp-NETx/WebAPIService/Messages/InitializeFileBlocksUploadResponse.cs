@@ -2,17 +2,17 @@
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the InitializeFileBlocksUploadRequest
-    /// </summary>
+        /// Contains the data from the InitializeFileBlocksUploadRequest
+        /// </summary>
     public sealed class InitializeFileBlocksUploadResponse : HttpResponseMessage
     {
 
-        // Cache the async content
+        // 缓存the async content
         private string? _content;
 
         // Provides JObject for property getters
@@ -27,7 +27,7 @@ namespace PowerApps.Samples.Messages
         }
 
         /// <summary>
-        /// A token that uniquely identifies a sequence of related data uploads.
+        /// 一个token that uniquely identifies a sequence of related data uploads.
         /// </summary>
         public string FileContinuationToken => (string)JObject.GetValue(nameof(FileContinuationToken));
 

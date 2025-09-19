@@ -21,10 +21,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             //Import the ChangeTrackingSample solution
@@ -34,13 +34,13 @@ namespace PowerApps.Samples
                 Thread.Sleep(TimeSpan.FromSeconds(60));
             }
 
-            //Verify that the alternate key indexes are ready
+            //验证that the alternate key indexes are ready
             if (!VerifyBookCodeKeyIsActive(service))
             {
                 Console.WriteLine("There is a problem creating the index for the product code alternate key for the sample_product entity.");
                 Console.WriteLine("The sample cannot continue. Please try again.");
 
-                //Delete the ChangeTrackingSample solution
+                //删除the ChangeTrackingSample solution
                 SampleHelpers.DeleteSolution(service, "UpsertSample");
                 return;
             }
@@ -48,12 +48,12 @@ namespace PowerApps.Samples
 
         /// <summary>
         /// Alternate keys may not be active immediately after a solution defining them is installed.
-        /// This method polls the metadata for a specific entity
+        /// 此method polls the metadata for a specific entity
         /// to delay execution of the rest of the sample until the alternate keys are ready.
         /// </summary>
         /// <param name="service">Specifies the service to connect to.</param>
-        /// <param name="asyncJob">The system job that creates the index to support the alternate key</param>
-        /// <param name="iteration">The number of times this method has been called.</param>
+        /// <param name="asyncJob">system job that creates the index to support the alternate key</param>
+        /// <param name="iteration">number of times this method has been called.</param>
         /// 
         private static bool VerifyBookCodeKeyIsActive(CrmServiceClient service, EntityReference asyncJob = null, int iteration = 0)
         {
@@ -66,7 +66,7 @@ namespace PowerApps.Samples
 
             if (iteration == 0) //only the first time
             {
-                //Get whether the Entity Key index is active from the metadata
+                //获取whether the Entity Key index is active from the metadata
                 var entityQuery = new EntityQueryExpression();
                 entityQuery.Criteria = new MetadataFilterExpression(LogicalOperator.And)
                 {
@@ -92,7 +92,7 @@ namespace PowerApps.Samples
             }
             else
             {
-                //Check the status of the system job that is should indicate that the alternate key index is active.
+                //检查the status of the system job that is should indicate that the alternate key index is active.
                 AsyncOperation systemJob = (AsyncOperation)service.Retrieve(asyncJob.LogicalName, asyncJob.Id, new ColumnSet("statecode", "statuscode"));
 
                 if (systemJob.StateCode == AsyncOperationState.Completed) //Completed
@@ -101,7 +101,7 @@ namespace PowerApps.Samples
                     if (!systemJob.StatusCode.Value.Equals(30)) //Not Succeeded
                     {
 
-                        //Delete the system job and try to reactivate
+                        //删除the system job and try to reactivate
                         service.Delete(asyncJob.LogicalName, asyncJob.Id);
 
                         ReactivateEntityKeyRequest reactivateRequest = new ReactivateEntityKeyRequest()
@@ -111,7 +111,7 @@ namespace PowerApps.Samples
                         };
                         ReactivateEntityKeyResponse reactivateResponse = (ReactivateEntityKeyResponse)service.Execute(reactivateRequest);
 
-                        //Get the system job created by the reactivate request
+                        //获取the system job created by the reactivate request
                         QueryByAttribute systemJobQuery = new QueryByAttribute("asyncoperation");
                         systemJobQuery.AddAttributeValue("primaryentitytype", "sample_product");
                         systemJobQuery.AddOrder("createdon", OrderType.Descending);
@@ -170,7 +170,7 @@ namespace PowerApps.Samples
 
                 try
                 {
-                    // Execute UpsertRequest and obtain UpsertResponse. 
+                    // 执行UpsertRequest and obtain UpsertResponse. 
                     var response = (UpsertResponse)service.Execute(request);
                     if (response.RecordCreated)
                         Console.WriteLine("New record {0} is created!", productName);
@@ -178,7 +178,7 @@ namespace PowerApps.Samples
                         Console.WriteLine("Existing record {0} is updated!", productName);
                 }
 
-                // Catch any service fault exceptions that Microsoft Dynamics CRM throws.
+                // 捕获any service fault exceptions that Microsoft Dynamics CRM throws.
                 catch (FaultException<Microsoft.Xrm.Sdk.OrganizationServiceFault>)
                 {
                     throw;

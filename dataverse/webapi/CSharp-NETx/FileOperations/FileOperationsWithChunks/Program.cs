@@ -20,10 +20,10 @@ namespace PowerApps.Samples
             int fileColumnMaxSizeInKb;
             bool fileUploaded = false;
 
-            // Create the File Column with 10MB limit
+            // 创建File Column with 10MB limit
             await Utility.CreateFileColumn(service, entityLogicalName, fileColumnSchemaName);
 
-            // Update the MaxSizeInKB value: Comment this line to get error about file too large for column.
+            // 更新the MaxSizeInKB value: Comment this line to get error about file too large for column.
             await Utility.UpdateFileColumnMaxSizeInKB(service, entityLogicalName, fileColumnSchemaName.ToLower(), 100 * 1024);
 
             fileColumnMaxSizeInKb = await Utility.GetFileColumnMaxSizeInKb(service, entityLogicalName, fileColumnSchemaName.ToLower());
@@ -93,11 +93,11 @@ namespace PowerApps.Samples
 
 
 
-            // Delete the account record.
+            // 删除the account record.
             await service.Delete(createdAccountRef);
             Console.WriteLine("Deleted the account record.");
 
-            // Delete the file column
+            // 删除the file column
             await Utility.DeleteFileColumn(service, entityLogicalName, fileColumnSchemaName.ToLower());
 
         }
@@ -106,11 +106,11 @@ namespace PowerApps.Samples
         /// <summary>
         /// Uploads a file in chunks
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="filePropertyName">The logical name of the file column</param>
+        /// <param name="service">服务</param>
+        /// <param name="filePropertyName">logical 名称 of the file column</param>
         /// <param name="fileInfo">Information about the file to upload.</param>
-        /// <param name="entityReference">A reference to the record that has the file.</param>
-        /// <param name="fileColumnMaxSizeInKb">The size limit of the column, if known.</param>
+        /// <param name="entityReference">一个reference to the record that has the file.</param>
+        /// <param name="fileColumnMaxSizeInKb">size limit of the column, if known.</param>
         /// <returns></returns>
         private static async Task<bool> UploadFile(
             Service service,
@@ -154,9 +154,9 @@ namespace PowerApps.Samples
         /// <summary>
         /// Downloads a file in chunks
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="filePropertyName">The name of the column property.</param>
-        /// <param name="entityReference">A reference to the record that has the file.</param>
+        /// <param name="service">服务</param>
+        /// <param name="filePropertyName">名称 of the column property.</param>
+        /// <param name="entityReference">一个reference to the record that has the file.</param>
         /// <returns></returns>
         private static async Task<byte[]> DownloadFile(
             Service service,

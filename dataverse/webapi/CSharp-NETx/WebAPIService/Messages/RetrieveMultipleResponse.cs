@@ -2,13 +2,13 @@
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the RetrieveMultipleRequest
-    /// </summary>
+        /// Contains the response from the RetrieveMultipleRequest
+        /// </summary>
     public sealed class RetrieveMultipleResponse : HttpResponseMessage
     {        
         //cache the async content
@@ -26,7 +26,7 @@ namespace PowerApps.Samples.Messages
         }
 
         /// <summary>
-        /// The records returned.
+        /// records returned.
         /// </summary>
         public JArray? Records => (JArray)JObject.GetValue("value");
 
@@ -36,7 +36,7 @@ namespace PowerApps.Samples.Messages
         public int? Count => (int?)JObject.GetValue("@odata.count");
 
         /// <summary>
-        /// The total number of records matching the filter criteria, up to 5000, irrespective of the page size. Only populated if request.IncludeAnnotations is true.
+        /// total number of records matching the filter criteria, up to 5000, irrespective of the page size. Only populated if request.IncludeAnnotations is true.
         /// </summary>
         public int? TotalRecordCount => (int?)JObject.GetValue("@Microsoft.Dynamics.CRM.totalrecordcount");
 
@@ -46,7 +46,7 @@ namespace PowerApps.Samples.Messages
         public bool TotalRecordCountExceeded => JObject.GetValue("@Microsoft.Dynamics.CRM.totalrecordcountlimitexceeded")?.ToString() == "True";
 
         /// <summary>
-        /// A link to the next page of records, if any.
+        /// 一个link to the next page of records, if any.
         /// </summary>
         public string NextLink => JObject.GetValue("@odata.nextLink")?.ToString();
 

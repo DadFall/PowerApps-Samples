@@ -4,16 +4,16 @@ using PowerApps.Samples.Types;
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from RetrievePrincipalAccessRequest
-    /// </summary>
+        /// Contains the response from RetrievePrincipalAccessRequest
+        /// </summary>
     public sealed class RetrievePrincipalAccessResponse : HttpResponseMessage
     {
-        // Cache the async content
+        // 缓存the async content
         private string? _content;
 
         //Provides JObject for property getters

@@ -15,20 +15,20 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
                     // Associate the accounts to the contact record.
 
-                    // Create a collection of the entities that will be 
+                    // 创建a collection of the entities that will be 
                     // associated to the contact.
                     var relatedEntities = new EntityReferenceCollection();
                     relatedEntities.Add(new EntityReference(Account.EntityLogicalName, _account1Id));
                     relatedEntities.Add(new EntityReference(Account.EntityLogicalName, _account2Id));
                     relatedEntities.Add(new EntityReference(Account.EntityLogicalName, _account3Id));
 
-                    // Create an object that defines the relationship between the contact and account.
+                    // 创建an object that defines the relationship between the contact and account.
                     var relationship = new Relationship("account_primary_contact");
 
 

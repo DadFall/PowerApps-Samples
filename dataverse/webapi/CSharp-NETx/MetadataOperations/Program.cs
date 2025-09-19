@@ -36,7 +36,7 @@ namespace MetadataOperations
                 Console.WriteLine("Starting Section 0: Create Publisher and Solution");
                 Console.WriteLine();
 
-                // Create a publisher
+                // 创建a publisher
                 JObject examplepublisher = new() {
                     {"friendlyname","Example Publisher" },
                     {"uniquename","examplepublisher" },
@@ -53,7 +53,7 @@ namespace MetadataOperations
 
                 recordsToDelete.Add(examplePublisherReference);
 
-                // Create a solution related to the publisher
+                // 创建a solution related to the publisher
                 JObject exampleSolution = new() {
                     {"friendlyname","Example Solution" },
                     {"uniquename",ExampleSolutionUniqueName },
@@ -120,11 +120,11 @@ namespace MetadataOperations
 
                 Console.WriteLine($"Created {bankAccountEntitySchemaName} table.");
 
-                // Delete the entity first, so Insert at top of list
+                // 删除the entity first, so Insert at top of list
                 recordsToDelete.Insert(0, createEntityResponse.TableReference);
 
-                // Retrieve the entire entity definition with no filter or $expanded navigation properties
-                // This data is used to update the entity definition later in the sample
+                // 检索the entire entity definition with no filter or $expanded navigation properties
+                // 此data is used to update the entity definition later in the sample
                 RetrieveEntityDefinitionRequest retrieveEntityDefinitionRequest =
                     new(logicalName: bankAccountEntityLogicalName);
                 var retrieveEntityDefinitionResponse =
@@ -141,7 +141,7 @@ namespace MetadataOperations
                 retrievedBankAccountEntity.HasActivities = true;
                 retrievedBankAccountEntity.Description = new Label("Contains information about customer bank accounts", 1033);
 
-                //Update the table definition
+                //更新the table definition
 
                 UpdateEntityRequest updateEntityRequest = new(
                     entityLogicalName: bankAccountEntityLogicalName,
@@ -150,7 +150,7 @@ namespace MetadataOperations
 
                 Console.WriteLine($"Sending request to update the {bankAccountEntitySchemaName} table...");
 
-                // This operation has no response
+                // 此operation has no response
                 await service.SendAsync(updateEntityRequest);
                 Console.WriteLine("Updated the Bank Account table");
                 Console.WriteLine();
@@ -260,13 +260,13 @@ namespace MetadataOperations
                     MergeLabels = true
                 };
 
-                // Update the Boolean Option labels
+                // 更新the Boolean Option labels
                 await service.SendAsync(new UpdateOptionValueRequest(trueOptionParameters));
                 await service.SendAsync(new UpdateOptionValueRequest(falseOptionParameters));
                 Console.WriteLine("Updated option labels");
                 Console.WriteLine();
 
-                // Retrieve the Boolean column to check the updated option sets
+                // 检索the Boolean column to check the updated option sets
 
                 RetrieveAttributeRequest retrieveBooleanAttributeRequest2 = new(
                   entityLogicalName: bankAccountEntityLogicalName,
@@ -315,7 +315,7 @@ namespace MetadataOperations
                     solutionUniqueName: ExampleSolutionUniqueName
                     );
 
-                // Create the Date Column
+                // 创建Date Column
                 var createDateColumnResponse =
                     await service.SendAsync<CreateAttributeResponse>(createDateColumnRequest);
                 Console.WriteLine($"Created DateTime column with id:{createDateColumnResponse.AttributeId}");
@@ -329,7 +329,7 @@ namespace MetadataOperations
                    type: AttributeType.DateTimeAttributeMetadata,
                    query: dateTimeQuery);
 
-                // Retrieve the created Date column
+                // 检索the created Date column
                 var retrieveDateAttributeResponse = await service
                     .SendAsync<RetrieveAttributeResponse<DateTimeAttributeMetadata>>(retrieveDateAttributeRequest);
 
@@ -360,7 +360,7 @@ namespace MetadataOperations
                     solutionUniqueName: ExampleSolutionUniqueName
                     );
 
-                // Create the Decimal column
+                // 创建Decimal column
                 var createDecimalColumnResponse =
                     await service.SendAsync<CreateAttributeResponse>(createDecimalColumnRequest);
                 Console.WriteLine($"Created Decimal column with id:{createDecimalColumnResponse.AttributeId}");
@@ -374,7 +374,7 @@ namespace MetadataOperations
                    type: AttributeType.DecimalAttributeMetadata,
                    query: decimalQuery);
 
-                // Retrieve the Decimal Column
+                // 检索the Decimal Column
                 var retrieveDecimalAttributeResponse = await service
                     .SendAsync<RetrieveAttributeResponse<DecimalAttributeMetadata>>(retrieveDecimalAttributeRequest);
 
@@ -408,7 +408,7 @@ namespace MetadataOperations
                     solutionUniqueName: ExampleSolutionUniqueName
                     );
 
-                // Create Integer Column
+                // 创建Integer Column
                 var createIntegerColumnResponse =
                     await service.SendAsync<CreateAttributeResponse>(createIntegerColumnRequest);
                 Console.WriteLine($"Created Integer column with id:{createIntegerColumnResponse.AttributeId}");
@@ -422,7 +422,7 @@ namespace MetadataOperations
                    type: AttributeType.IntegerAttributeMetadata,
                    query: integerQuery);
 
-                // Retrieve Integer column
+                // 检索Integer column
                 var retrieveIntegerAttributeResponse = await service
                     .SendAsync<RetrieveAttributeResponse<IntegerAttributeMetadata>>(retrieveIntegerAttributeRequest);
 
@@ -455,7 +455,7 @@ namespace MetadataOperations
                     solutionUniqueName: ExampleSolutionUniqueName
                     );
 
-                // Create Memo Column
+                // 创建Memo Column
                 var createMemoColumnResponse =
                     await service.SendAsync<CreateAttributeResponse>(createMemoColumnRequest);
                 Console.WriteLine($"Created Memo column with id:{createMemoColumnResponse.AttributeId}");
@@ -469,7 +469,7 @@ namespace MetadataOperations
                    type: AttributeType.MemoAttributeMetadata,
                    query: memoQuery);
 
-                // Retrieve Memo Column
+                // 检索Memo Column
                 var retrieveMemoAttributeResponse = await service
                     .SendAsync<RetrieveAttributeResponse<MemoAttributeMetadata>>(retrieveMemoAttributeRequest);
 
@@ -504,7 +504,7 @@ namespace MetadataOperations
                     solutionUniqueName: ExampleSolutionUniqueName
                     );
 
-                // Create money column
+                // 创建money column
                 var createMoneyColumnResponse =
                     await service.SendAsync<CreateAttributeResponse>(createMoneyColumnRequest);
                 Console.WriteLine($"Created Money column with id:{createMoneyColumnResponse.AttributeId}");
@@ -518,7 +518,7 @@ namespace MetadataOperations
                    type: AttributeType.MoneyAttributeMetadata,
                    query: moneyQuery);
 
-                // Retrieve money column
+                // 检索money column
                 var retrieveMoneyAttributeResponse = await service
                     .SendAsync<RetrieveAttributeResponse<MoneyAttributeMetadata>>(retrieveMoneyAttributeRequest);
 
@@ -580,7 +580,7 @@ namespace MetadataOperations
                     solutionUniqueName: ExampleSolutionUniqueName
                     );
 
-                // Create Choice column
+                // 创建Choice column
                 var createChoiceColumnResponse =
                     await service.SendAsync<CreateAttributeResponse>(createChoiceColumnRequest);
                 Console.WriteLine($"Created Choice column with id:{createChoiceColumnResponse.AttributeId}");
@@ -594,7 +594,7 @@ namespace MetadataOperations
                    type: AttributeType.PicklistAttributeMetadata,
                    query: choiceQuery);
 
-                // Retrieve Choice column
+                // 检索Choice column
                 var retrieveChoiceAttributeResponse = await service
                     .SendAsync<RetrieveAttributeResponse<PicklistAttributeMetadata>>(retrieveChoiceAttributeRequest);
 
@@ -626,7 +626,7 @@ namespace MetadataOperations
                    type: AttributeType.PicklistAttributeMetadata,
                    query: choiceQuery);
 
-                // Retrieve the options again
+                // 检索the options again
                 var retrieveChoiceAttributeOptionsResponse = await service
                     .SendAsync<RetrieveAttributeResponse<PicklistAttributeMetadata>>(retrieveChoiceAttributeOptionsRequest);
 
@@ -664,14 +664,14 @@ namespace MetadataOperations
                 await service.SendAsync(new OrderOptionRequest(parameters: orderOptionParameters));
                 Console.WriteLine("Options re-ordered.");
 
-                // Retrieve the re-ordered options 
+                // 检索the re-ordered options 
                 RetrieveAttributeRequest retrieveOptionsRequest = new(
                    entityLogicalName: bankAccountEntityLogicalName,
                    logicalName: choiceColumn.SchemaName.ToLower(),
                    type: AttributeType.PicklistAttributeMetadata,
                    query: choiceQuery);
 
-                // Retrieve the options again
+                // 检索the options again
                 var retrieveOptionsResponse = await service
                     .SendAsync<RetrieveAttributeResponse<PicklistAttributeMetadata>>(retrieveOptionsRequest);
 
@@ -699,7 +699,7 @@ namespace MetadataOperations
                     Value = int.Parse($"{PublisherCustomizationOptionValuePrefix}0004"),
                 };
 
-                // Delete an option
+                // 删除an option
                 await service.SendAsync(new DeleteOptionValueRequest(parameters: deleteOptionParameters));
                 Console.WriteLine("Local OptionSet option value deleted.");
                 Console.WriteLine();
@@ -748,7 +748,7 @@ namespace MetadataOperations
                     solutionUniqueName: ExampleSolutionUniqueName
                     );
 
-                // Send the request to create the multi-select choice column
+                // 发送请求 to create the multi-select choice column
                 var createMultiSelectChoiceColumnResponse =
                     await service.SendAsync<CreateAttributeResponse>(createMultiSelectChoiceColumnRequest);
                 Console.WriteLine($"Created MultiSelect Choice column with id:{createMultiSelectChoiceColumnResponse.AttributeId}");
@@ -761,7 +761,7 @@ namespace MetadataOperations
                    type: AttributeType.MultiSelectPicklistAttributeMetadata,
                    query: choiceQuery);
 
-                // Retrieve the column
+                // 检索the column
                 var retrieveMultiSelectOptionsResponse = await service
                     .SendAsync<RetrieveAttributeResponse<MultiSelectPicklistAttributeMetadata>>(retrieveMultiSelectOptionsRequest);
 
@@ -794,7 +794,7 @@ namespace MetadataOperations
                     solutionUniqueName: ExampleSolutionUniqueName
                     );
 
-                // Create BigInt Column
+                // 创建BigInt Column
                 var createBigIntColumnResponse =
                     await service.SendAsync<CreateAttributeResponse>(createBigIntColumnRequest);
                 Console.WriteLine($"Created BigInt column with id:{createBigIntColumnResponse.AttributeId}");
@@ -808,7 +808,7 @@ namespace MetadataOperations
                    type: AttributeType.BigIntAttributeMetadata,
                    query: BigIntQuery);
 
-                // Retrieve BigInt column
+                // 检索BigInt column
                 var retrieveBigIntAttributeResponse = await service
                     .SendAsync<RetrieveAttributeResponse<BigIntAttributeMetadata>>(retrieveBigIntAttributeRequest);
 
@@ -831,7 +831,7 @@ namespace MetadataOperations
                     SolutionUniqueName = ExampleSolutionUniqueName
                 };
 
-                // Create a new status option
+                // 创建a new status option
                 var insertStatusValueResponse = await service
                       .SendAsync<InsertStatusValueResponse>(
                           new InsertStatusValueRequest(
@@ -883,7 +883,7 @@ namespace MetadataOperations
                     optionSet: colorsGlobalOptionSet,
                     solutionUniqueName: ExampleSolutionUniqueName);
 
-                // Send the request to create the Global Option Set
+                // 发送请求 to create the Global Option Set
                 var createGlobalOptionSetResponse =
                      await service.SendAsync<CreateGlobalOptionSetResponse>(createGlobalOptionSetRequest);
 
@@ -893,7 +893,7 @@ namespace MetadataOperations
 
                 recordsToDelete.Add(createGlobalOptionSetResponse.OptionSetReference);//To Delete later
 
-                //Retrieve the global Optionset
+                //检索the global Optionset
                 RetrieveGlobalOptionSetRequest retrieveGlobalPicklistOptionSetRequest = new(
                     metadataid: colorsGlobalOptionSetId,
                     type: OptionSetType.Picklist //To return type OptionSetMetadata
@@ -910,7 +910,7 @@ namespace MetadataOperations
                 });
                 Console.WriteLine();
 
-                // Add the Colors column to the Bank Account table
+                // 添加the Colors column to the Bank Account table
                 PicklistAttributeMetadata bankAccountColorsAttributeMetadata = new()
                 {
                     SchemaName = $"{ExamplePublisherCustomizationPrefix}_Colors",
@@ -927,7 +927,7 @@ namespace MetadataOperations
                     attributeMetadata: bankAccountColorsAttributeMetadata,
                     solutionUniqueName: ExampleSolutionUniqueName);
 
-                // Send the request to create the Choice column using a global option set
+                // 发送请求 to create the Choice column using a global option set
                 var addGlobalPicklistColumnResponse =
                     await service.SendAsync<CreateAttributeResponse>(addGlobalPicklistColumnRequest);
                 Console.WriteLine($"Created Choice column with id:{addGlobalPicklistColumnResponse.AttributeId} using colors global optionset.");
@@ -940,7 +940,7 @@ namespace MetadataOperations
                 Console.WriteLine("Starting Section 4:  Create Customer Relationship");
                 Console.WriteLine();
 
-                // Define a Lookup Attribute
+                // 定义a Lookup Attribute
                 ComplexLookupAttributeMetadata bankAccountOwner = new()
                 {
                     Description = new Label("The owner of the bank account", 1033),
@@ -952,7 +952,7 @@ namespace MetadataOperations
 
                 };
 
-                // Define the relationships for the lookup
+                // 定义the relationships for the lookup
                 List<ComplexOneToManyRelationshipMetadata> oneToManyRelationships = new() {
                     new ComplexOneToManyRelationshipMetadata ()
                     {
@@ -973,13 +973,13 @@ namespace MetadataOperations
                     oneToManyRelationships: oneToManyRelationships,
                     solutionUniqueName: ExampleSolutionUniqueName);
 
-                // Send the request to create the customer column
+                // 发送请求 to create the customer column
                 var customerRelationshipsResponse =
                     await service.SendAsync<CreateCustomerRelationshipsResponse>(customerRelationshipsRequest);
                 Console.WriteLine($"Created Customer Relationship");
                 Console.WriteLine();
 
-                //Retrieve the customer column
+                //检索the customer column
                 RetrieveAttributeRequest retrieveAttributeRequest = new(
                     entityLogicalName: bankAccountEntityLogicalName,
                     logicalName: bankAccountOwner.SchemaName.ToLower(),
@@ -1016,7 +1016,7 @@ namespace MetadataOperations
                 #endregion Section 4: Create Customer Relationship
 
                 #region Section 5: Create and retrieve a one-to-many relationship
-                // This creates a lookup column on the contact table to associate a contact to a bank account.
+                // 此creates a lookup column on the contact table to associate a contact to a bank account.
 
                 Console.WriteLine("Starting Section 5: Create and retrieve a one-to-many relationship");
                 Console.WriteLine();
@@ -1097,13 +1097,13 @@ namespace MetadataOperations
                     relationship: oneToManyRelationshipMetadata,
                     solutionUniqueName: ExampleSolutionUniqueName);
 
-                // Send the request to create the new one-to-many relationship
+                // 发送请求 to create the new one-to-many relationship
                 var createOneToManyResponse =
                     await service.SendAsync<CreateRelationshipResponse>(createOneToManyRequest);
 
                 Console.WriteLine($"Created one-to-many relationship: {createOneToManyResponse.RelationshipReference.Path}");
 
-                // Insert at top to be deleted first. Otherwise will block deletion of the bank account table
+                // 插入at top to be deleted first. Otherwise will block deletion of the bank account table
                 // because it creates a lookup on the contact table
                 recordsToDelete.Insert(0, createOneToManyResponse.RelationshipReference);
 
@@ -1115,7 +1115,7 @@ namespace MetadataOperations
                     type: RelationshipType.OneToManyRelationship,
                     metadataId: createOneToManyResponse.RelationshipReference.Id);
 
-                // Retrieve the relationship
+                // 检索the relationship
                 var retrieveOneToManyRelationshipResponse =
                     await service.SendAsync<RetrieveRelationshipResponse<OneToManyRelationshipMetadata>>(retrieveOneToManyRelationshipRequest);
 
@@ -1126,7 +1126,7 @@ namespace MetadataOperations
                 #endregion Section 5: Create and retrieve a one-to-many relationship
 
                 #region Section 6: Create and retrieve a many-to-one relationship
-                // This is a One-to-Many relationship that creates a Lookup column on the Bank Account table
+                // 此is a One-to-Many relationship that creates a Lookup column on the Bank Account table
 
                 #region Create 1:N relationship
 
@@ -1170,13 +1170,13 @@ namespace MetadataOperations
                     relationship: manyToOneRelationshipMetadata,
                     solutionUniqueName: ExampleSolutionUniqueName);
 
-                // Send the request to create the many-to-one relationship
+                // 发送请求 to create the many-to-one relationship
                 var createManyToOneResponse =
                     await service.SendAsync<CreateRelationshipResponse>(createManyToOneRequest);
 
                 Console.WriteLine($"Created many-to-one relationship: {createManyToOneResponse.RelationshipReference.Path}");
 
-                // This relationship will be deleted at the end of the sample with the bank account table
+                // 此relationship will be deleted at the end of the sample with the bank account table
 
                 #endregion Create 1:N relationship
 
@@ -1186,7 +1186,7 @@ namespace MetadataOperations
                     type: RelationshipType.OneToManyRelationship,
                     metadataId: createManyToOneResponse.RelationshipReference.Id);
 
-                // Send the request to Retrieve the relationship
+                // 发送请求 to Retrieve the relationship
                 var retrieveManyToOneRelationshipResponse =
                     await service.SendAsync<RetrieveRelationshipResponse<OneToManyRelationshipMetadata>>(retrieveManyToOneRelationshipRequest);
 
@@ -1211,7 +1211,7 @@ namespace MetadataOperations
                 Console.WriteLine("The contact table " +
                     $"{(canContactManyToManyResponse.CanManyToMany ? "can" : "can not")} " +
                     "participate in many-to-many relationships.");
-                // The contact table can participate in many-to-many relationships.
+                // contact table can participate in many-to-many relationships.
 
                 CanManyToManyRequest canBankAccountManyToManyRequest = new(
                     entityName: bankAccountEntityLogicalName);
@@ -1222,7 +1222,7 @@ namespace MetadataOperations
                 Console.WriteLine($"The {bankAccountEntitySchemaName} table " +
                     $"{(canBankAccountManyToManyResponse.CanManyToMany ? "can" : "can not")} " +
                     "participate in many-to-many relationships.");
-                // The sample_BankAccount table can participate in many-to-many relationships.
+                // sample_BankAccount table can participate in many-to-many relationships.
 
                 #endregion Validate N:N relationship eligibility
 
@@ -1272,7 +1272,7 @@ namespace MetadataOperations
                     relationship: manyToManyRelationship,
                     solutionUniqueName: ExampleSolutionUniqueName);
 
-                // Send the request to create the Many-to-Many relationship
+                // 发送请求 to create the Many-to-Many relationship
                 var createManyToManyResponse =
                     await service.SendAsync<CreateRelationshipResponse>(request: createManyToManyRequest);
 
@@ -1288,7 +1288,7 @@ namespace MetadataOperations
                     type: RelationshipType.ManyToManyRelationship,
                     metadataId: createManyToManyResponse.RelationshipReference.Id);
 
-                // Send the request to retrieve the many-to-many relationship
+                // 发送请求 to retrieve the many-to-many relationship
                 var retrieveManyToManyResponse =
                     await service.SendAsync<RetrieveRelationshipResponse<ManyToManyRelationshipMetadata>>(
                         request: retrieveManyToManyRequest);
@@ -1312,7 +1312,7 @@ namespace MetadataOperations
                 ExportSolutionRequest exportSolutionRequest = new(parameters: exportSolutionParameters);
                 var exportSolutionResponse = await service.SendAsync<ExportSolutionResponse>(request: exportSolutionRequest);
 
-                //Save the file
+                //保存the file
                 File.WriteAllBytes($"{ExampleSolutionUniqueName}.zip", exportSolutionResponse.ExportSolutionFile);
                 Console.WriteLine($"Solution Exported to {Environment.CurrentDirectory}\\{ExampleSolutionUniqueName}.zip");
                 ManagedSolutionExported = true;
@@ -1332,7 +1332,7 @@ namespace MetadataOperations
                 #region Section 9: Delete sample records  
                 Console.WriteLine("Starting Section 9: Delete sample records");
                 Console.WriteLine();
-                // Delete all the created sample records.
+                // 删除all the created sample records.
 
                 if (!deleteCreatedRecords)
                 {
@@ -1384,7 +1384,7 @@ namespace MetadataOperations
 
                         Console.WriteLine($"Solution imported as a managed solution.");
 
-                        //Get the id of the managed solution:
+                        //获取the id of the managed solution:
                         RetrieveMultipleResponse solutionQuery =
                             await service.RetrieveMultiple(
                                 queryUri: $"solutions?$select=solutionid&$filter=uniquename eq '{ExampleSolutionUniqueName}'");
@@ -1396,7 +1396,7 @@ namespace MetadataOperations
                         #region delete managed solution
 
                         Console.WriteLine($"Sending request to delete the {ExampleSolutionUniqueName} solution...");
-                        //Delete the managed solution
+                        //删除the managed solution
                         await service.Delete(exampleSolutionReference);
 
                         Console.WriteLine("Managed solution deleted.");

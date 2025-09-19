@@ -25,7 +25,7 @@ namespace PowerApps.Samples
             string username = "yourUserName@yourOrgName.onmicrosoft.com";
             string password = "yourPassword";
 
-            //Set the Cloud if you want to search other than Commercial.
+            //设置the Cloud if you want to search other than Commercial.
             Cloud cloud = Cloud.Commercial;
 
             List<Instance> instances = await GetInstances(username, password, cloud);
@@ -45,7 +45,7 @@ namespace PowerApps.Samples
             {
                 number++;
 
-                //Get the Organization Service URL
+                //获取the Organization Service URL
                 string apiUrl = instance.ApiUrl;
                 string friendlyName = instance.FriendlyName;
 
@@ -88,18 +88,18 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Gets the instance data for the specified user and cloud.
+        /// 获取 the instance data for the specified user and cloud.
         /// </summary>
-        /// <param name="username">The user's username</param>
-        /// <param name="password">The user's password</param>
-        /// <param name="cloud">The Cloud enum value that corresponds to the region.</param>
+        /// <param name="username">user's user名称</param>
+        /// <param name="password">user's password</param>
+        /// <param name="cloud">Cloud enum 值 that corresponds to the region.</param>
         /// <returns>List of all the instances</returns>
         /// <exception cref="Exception"></exception>
         static async Task<List<Instance>> GetInstances(string username, string password, Cloud cloud)
         {
             try
             {
-                //Get the Cloud URL from the Description Attribute applied for the Cloud enum member
+                //获取the Cloud URL from the Description Attribute applied for the Cloud enum member
                 //i.e. Commercial is "https://globaldisco.crm.dynamics.com"
                 var type = typeof(Cloud);
                 var memInfo = type.GetMember(cloud.ToString());
@@ -118,7 +118,7 @@ namespace PowerApps.Samples
 
                 if (response.IsSuccessStatusCode)
                 {
-                    //Get the response content and parse it.
+                    //获取the response content and parse it.
                     string result = await response.Content.ReadAsStringAsync();
                     JObject body = JObject.Parse(result);
                     JArray values = (JArray)body.GetValue("value");
@@ -143,12 +143,12 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Gets an access token using MSAL app.
+        /// 获取 an access token using MSAL app.
         /// </summary>
-        /// <param name="baseUrl">The Resource to authenticate to</param>
-        /// <param name="username">The user's username</param>
-        /// <param name="password">The user's password</param>
-        /// <returns>An AccessToken</returns>
+        /// <param name="baseUrl">Resource to authenticate to</param>
+        /// <param name="username">user's user名称</param>
+        /// <param name="password">user's password</param>
+        /// <returns>一个AccessToken</returns>
         /// <exception cref="Exception"></exception>
         internal static async Task<string> GetToken(string baseUrl, string username, string password)
         {
@@ -176,7 +176,7 @@ namespace PowerApps.Samples
                     catch (MsalUiRequiredException)
                     {
 
-                        // When MFA is required
+                        // 当MFA is required
                         result = await app.AcquireTokenInteractive(scopes)
                                     .ExecuteAsync();
 
@@ -206,9 +206,9 @@ namespace PowerApps.Samples
         /// <summary>
         /// Shows the user's UserId for selected instance.
         /// </summary>
-        /// <param name="instance">A selected instance</param>
-        /// <param name="username">The user's username</param>
-        /// <param name="password">The user's password</param>
+        /// <param name="instance">一个selected 实例</param>
+        /// <param name="username">user's user名称</param>
+        /// <param name="password">user's password</param>
         /// <returns></returns>
         private static async Task ShowUserId(Instance instance, string username, string password)
         {

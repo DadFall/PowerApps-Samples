@@ -6,9 +6,9 @@ using Microsoft.PowerPlatform.Dataverse.Client;
 namespace PowerPlatform_Dataverse_CodeSamplesPower
 {
     /// <summary>
-    /// Demonstrates connecting to the Dataverse Organization service and executing
+        /// Demonstrates connecting to the Dataverse Organization service and executing
     /// several common message requests such as Create, Update, Retrieve, and Delete.
-    /// </summary>
+        /// </summary>
     /// <remarks>Set the appropriate Url and Username values for your test
     /// environment in the appsettings.json file before running this program.
     /// You will be prompted in the default browser to enter a password.</remarks>
@@ -18,21 +18,21 @@ namespace PowerPlatform_Dataverse_CodeSamplesPower
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -42,18 +42,18 @@ namespace PowerPlatform_Dataverse_CodeSamplesPower
         {
             Program app = new();
 
-            // Add a logger using the 'Logging' configuration section in the
+            // 添加a logger using the 'Logging' configuration section in the
             // appsettings.json file, and send the logs to the console.
             ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
                     builder.AddConsole()
                            .AddConfiguration(app.Configuration.GetSection("Logging")));
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient = new ServiceClient(
                 dataverseConnectionString: app.Configuration.GetConnectionString("default"),
                 logger: loggerFactory.CreateLogger<Program>());
 
-            // Send a WhoAmI message request to the Organization service to obtain  
+            // 发送a WhoAmI message request to the Organization service to obtain  
             // information about the logged on user.
             WhoAmIResponse resp = (WhoAmIResponse)serviceClient.Execute(new WhoAmIRequest());
             Console.WriteLine("\nUser ID is {0}.", resp.UserId);

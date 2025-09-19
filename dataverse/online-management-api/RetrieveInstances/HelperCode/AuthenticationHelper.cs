@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Crm.Sdk.Samples.HelperCode
 {
     /// <summary>
-    /// Manages authentication to the Online Management API service.
+        /// 管理 authentication to the Online Management API service.
     /// Uses Microsoft Azure Active Directory Authentication Library (ADAL) 
-    /// to handle the OAuth 2.0 protocol. 
-    /// </summary>
+    /// to handle the OAuth 2.0 protocol.
+        /// </summary>
     public class Authentication
     {
         private HttpMessageHandler _clientHandler = null;
@@ -22,7 +22,7 @@ namespace Microsoft.Crm.Sdk.Samples.HelperCode
         // and then used later for acquiring access token
         private static string _resource = null;        
 
-        // TODO: Substitute your app registration values here.
+        // 待办： Substitute your app registration values here.
         // These values are obtained on registering your application with the 
         // Azure Active Directory.
         private static string _clientId = "<GUID>";     //e.g. "e5cf0024-a66a-4f16-85ce-99ba97a24bb2"
@@ -38,7 +38,7 @@ namespace Microsoft.Crm.Sdk.Samples.HelperCode
         /// Custom constructor that allows adding an authority determined asynchronously before 
         /// instantiating the Authentication class.
         /// </summary>                
-        /// <param name="authority">The URL of the authority.</param>
+        /// <param name="authority">URL of the authority.</param>
         public Authentication(string authority)
             : base()
         {
@@ -49,7 +49,7 @@ namespace Microsoft.Crm.Sdk.Samples.HelperCode
 
         #region Properties
         /// <summary>
-        /// The authentication context.
+        /// authentication context.
         /// </summary>
         public AuthenticationContext Context
         {
@@ -61,7 +61,7 @@ namespace Microsoft.Crm.Sdk.Samples.HelperCode
         }
 
         /// <summary>
-        /// The HTTP client message handler.
+        /// HTTP client message handler.
         /// </summary>
         public HttpMessageHandler ClientHandler
         {
@@ -74,7 +74,7 @@ namespace Microsoft.Crm.Sdk.Samples.HelperCode
 
 
         /// <summary>
-        /// The URL of the authority to be used for authentication.
+        /// URL of the authority to be used for authentication.
         /// </summary>
         public string Authority
         {
@@ -98,8 +98,8 @@ namespace Microsoft.Crm.Sdk.Samples.HelperCode
         /// <summary>
         /// Discover the authentication authority asynchronously.
         /// </summary>
-        /// <param name="serviceUrl">The specified endpoint address</param>
-        /// <returns>The URL of the authentication authority on the specified endpoint address, or an empty string
+        /// <param name="serviceUrl">specified endpoint address</param>
+        /// <returns>URL of the authentication authority on the specified endpoint address, or an empty string
         /// if the authority cannot be discovered.</returns>
         public static async Task<string> DiscoverAuthority(string _serviceUrl)
         {
@@ -123,7 +123,7 @@ namespace Microsoft.Crm.Sdk.Samples.HelperCode
         /// <summary>
         /// Returns the authentication result for the configured authentication context.
         /// </summary>
-        /// <returns>The refreshed access token.</returns>
+        /// <returns>refreshed access token.</returns>
         /// <remarks>Refresh the access token before every service call to avoid having to manage token expiration.</remarks>
         public AuthenticationResult AcquireToken()
         {
@@ -132,7 +132,7 @@ namespace Microsoft.Crm.Sdk.Samples.HelperCode
         }
 
         /// <summary>
-        /// Sets the client message handler.
+        /// 设置 the client message handler.
         /// </summary>
         private void SetClientHandler()
         {
@@ -162,7 +162,7 @@ namespace Microsoft.Crm.Sdk.Samples.HelperCode
                 // avoids having to check the expiration date/time of the token. This operation is quick.
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _auth.AcquireToken().AccessToken);
 
-                // Set the "Accept-Language" header
+                // 设置the "Accept-Language" header
                 request.Headers.Add("Accept-Language", "en-US");
 
                 return base.SendAsync(request, cancellationToken);

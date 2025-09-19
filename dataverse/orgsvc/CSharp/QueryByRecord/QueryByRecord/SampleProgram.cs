@@ -7,7 +7,7 @@ namespace PowerApps.Samples
 {
     public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         public static Guid _connectionRoleId;
         public static Guid _account1Id;
         public static Guid _account2Id;
@@ -32,7 +32,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // This query retrieves all connections this contact is part of.
+                    // 此query retrieves all connections this contact is part of.
                     QueryExpression query = new QueryExpression
                     {
                         EntityName = Connection.EntityLogicalName,
@@ -59,7 +59,7 @@ namespace PowerApps.Samples
                     EntityCollection results = service.RetrieveMultiple(query);
                     
 
-                    // TODO: Here you could do a variety of tasks with the 
+                    // 待办： Here you could do a variety of tasks with the 
                     // connections retrieved, such as listing the connected entities,
                     // finding reciprocal connections, etc.
 

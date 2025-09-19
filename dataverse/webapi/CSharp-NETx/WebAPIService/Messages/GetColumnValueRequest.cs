@@ -1,15 +1,15 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve a column value
-    /// </summary>
+        /// Contains the data to retrieve a column value
+        /// </summary>
     public sealed class GetColumnValueRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the GetColumnValueRequest
+        /// 初始化 the GetColumnValueRequest
         /// </summary>
-        /// <param name="entityReference">A reference to the record to get the column data from.</param>
-        /// <param name="property">The name of the column.</param>
+        /// <param name="entityReference">一个reference to the record to get the column 数据 from.</param>
+        /// <param name="property">名称 of the column.</param>
         public GetColumnValueRequest(EntityReference entityReference, string property)
         {
             Method = HttpMethod.Get;

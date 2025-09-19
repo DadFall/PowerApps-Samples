@@ -3,15 +3,15 @@
     public class Config
     {
         /// <summary>
-        /// A function provided by the client application to  return access token.
+        /// 一个function provided by the client application to  return access token.
         /// </summary>
         public Func<Task<string>>? GetAccessToken { get; set; }
         /// <summary>
-        /// The Url of the environment: https://org.api.crm.dynamics.com
+        /// Url of the environment: https://org.api.crm.dynamics.com
         /// </summary>
         public string? Url { get; set; }
         /// <summary>
-        /// The systemuserid value to apply for impersonation;
+        /// systemuserid value to apply for impersonation;
         /// </summary>
         public Guid CallerObjectId { get; set; }
         /// <summary>
@@ -23,7 +23,7 @@
         /// </summary>
         public byte MaxRetries { get; set; } = 3;
         /// <summary>
-        /// The version of the service to use
+        /// version of the service to use
         /// </summary>
         public string Version { get; set; } = "9.2";
         /// <summary>

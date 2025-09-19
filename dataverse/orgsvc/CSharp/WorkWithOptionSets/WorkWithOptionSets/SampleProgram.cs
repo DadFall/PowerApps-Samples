@@ -23,13 +23,13 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Define the request object and pass to the service.
+                    // 定义request object and pass to the service.
                     var createOptionSetRequest = new CreateOptionSetRequest
                     {
-                        // Create a global option set (OptionSetMetadata).
+                        // 创建a global option set (OptionSetMetadata).
                         OptionSet = new OptionSetMetadata
                         {
                             Name = _globalOptionSetName,
@@ -46,7 +46,7 @@ namespace PowerApps.Samples
                         }
                     };
 
-                    // Execute the request.
+                    // 执行the request.
                     CreateOptionSetResponse optionsResp =
                         (CreateOptionSetResponse)service.Execute(createOptionSetRequest);
 
@@ -60,7 +60,7 @@ namespace PowerApps.Samples
 
                     #region How to create a picklist linked to the global option set
                     //<snippetWorkwithGlobalOptionSets3>
-                    // Create a Picklist linked to the option set.
+                    // 创建a Picklist linked to the option set.
                     // Specify which entity will own the picklist, and create it.
                     var createRequest = new CreateAttributeRequest
                     {
@@ -122,7 +122,7 @@ namespace PowerApps.Samples
                             Label = new Label("New Picklist Label", _languageCode)
                         };
 
-                    // Execute the request and store the newly inserted option value 
+                    // 执行the request and store the newly inserted option value 
                     // for cleanup, used in the later part of this sample.
                     _insertedOptionValue = ((InsertOptionValueResponse)service.Execute(
                         insertOptionValueRequest)).NewOptionValue;
@@ -146,7 +146,7 @@ namespace PowerApps.Samples
                             Name = _globalOptionSetName
                         };
 
-                    // Execute the request.
+                    // 执行the request.
                     RetrieveOptionSetResponse retrieveOptionSetResponse =
                         (RetrieveOptionSetResponse)service.Execute(
                         retrieveOptionSetRequest);
@@ -158,7 +158,7 @@ namespace PowerApps.Samples
                     OptionSetMetadata retrievedOptionSetMetadata =
                         (OptionSetMetadata)retrieveOptionSetResponse.OptionSetMetadata;
 
-                    // Get the current options list for the retrieved attribute.
+                    // 获取the current options list for the retrieved attribute.
                     OptionMetadata[] optionList =
                         retrievedOptionSetMetadata.Options.ToArray();
                     //</snippetWorkwithGlobalOptionSets6>
@@ -173,7 +173,7 @@ namespace PowerApps.Samples
                         new UpdateOptionValueRequest
                         {
                             OptionSetName = _globalOptionSetName,
-                            // Update the second option value.
+                            // 更新the second option value.
                             Value = optionList[1].Value.Value,
                             Label = new Label("Updated Option 1", _languageCode)
                         };
@@ -195,26 +195,26 @@ namespace PowerApps.Samples
                     // Change the order of the original option's list.
                     // Use the OrderBy (OrderByDescending) linq function to sort options in  
                     // ascending (descending) order according to label text.
-                    // For ascending order use this:
+                    // 对于ascending order use this:
                     var updateOptionList =
                         optionList.OrderBy(x => x.Label.LocalizedLabels[0].Label).ToList();
 
-                    // For descending order use this:
+                    // 对于descending order use this:
                     // var updateOptionList =
                     //      optionList.OrderByDescending(
                     //      x => x.Label.LocalizedLabels[0].Label).ToList();
 
-                    // Create the request.
+                    // 创建the request.
                     OrderOptionRequest orderOptionRequest = new OrderOptionRequest
                     {
-                        // Set the properties for the request.
+                        // 设置the properties for the request.
                         OptionSetName = _globalOptionSetName,
-                        // Set the changed order using Select linq function 
+                        // 设置the changed order using Select linq function 
                         // to get only values in an array from the changed option list.
                         Values = updateOptionList.Select(x => x.Value.Value).ToArray()
                     };
 
-                    // Execute the request
+                    // 执行the request
                     service.Execute(orderOptionRequest);
 
                     //Publish the OptionSet
@@ -227,11 +227,11 @@ namespace PowerApps.Samples
                     #region How to retrieve all global option sets
                     //<snippetWorkwithGlobalOptionSets9>
                     // Use RetrieveAllOptionSetsRequest to retrieve all global option sets.
-                    // Create the request.
+                    // 创建the request.
                     RetrieveAllOptionSetsRequest retrieveAllOptionSetsRequest =
                         new RetrieveAllOptionSetsRequest();
 
-                    // Execute the request
+                    // 执行the request
                     RetrieveAllOptionSetsResponse retrieveAllOptionSetsResponse =
                         (RetrieveAllOptionSetsResponse)service.Execute(
                         retrieveAllOptionSetsRequest);

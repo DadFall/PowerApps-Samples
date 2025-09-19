@@ -23,14 +23,14 @@ namespace PowerApps.Samples
 
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
 
                     #region Send request
 
-                    // Create an ExecuteWorkflow request.
+                    // 创建an ExecuteWorkflow request.
                     ExecuteWorkflowRequest request = new ExecuteWorkflowRequest()
                     {
                         WorkflowId = _workflowId,
@@ -38,7 +38,7 @@ namespace PowerApps.Samples
                     };
                     Console.Write("Created an ExecuteWorkflow request, ");
 
-                    // Execute the workflow.
+                    // 执行the workflow.
                     ExecuteWorkflowResponse response =
                         (ExecuteWorkflowResponse)service.Execute(request);
                     Console.WriteLine("and sent the request to service.");
@@ -80,7 +80,7 @@ namespace PowerApps.Samples
                         }
                     }
 
-                    // Retrieve the task that was created by the workflow.
+                    // 检索the task that was created by the workflow.
                     cols = new ColumnSet("activityid");
                     QueryByAttribute retrieveActivityQuery = new QueryByAttribute();
                     retrieveActivityQuery.EntityName = PhoneCall.EntityLogicalName;
@@ -144,10 +144,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("9.0.0.0")))
             {
-                //The environment version is lower than version 9.0.0.0
+                //environment version is lower than version 9.0.0.0
                 return;
             }
 
@@ -160,12 +160,12 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a Lead record on which we will execute the Workflow.
+            // 创建a Lead record on which we will execute the Workflow.
             Lead lead = new Lead()
             {
                 FirstName = "Diogo",
@@ -202,7 +202,7 @@ namespace PowerApps.Samples
                 Global = 4
             };
 
-            // Create the Workflow that we will execute.
+            // 创建the Workflow that we will execute.
             Workflow workflow = new Workflow()
             {
                 Name = "Sample Workflow", // friendly name of the record
@@ -362,7 +362,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

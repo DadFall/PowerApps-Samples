@@ -5,14 +5,14 @@ using System.Text;
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to initialize download of an attachment.
-    /// </summary>
+        /// Contains the data to initialize download of an attachment.
+        /// </summary>
     public sealed class InitializeAttachmentBlocksDownloadRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the InitializeAttachmentBlocksDownloadRequest
+        /// 初始化 the InitializeAttachmentBlocksDownloadRequest
         /// </summary>
-        /// <param name="target">A reference to the attachment to download.</param>
+        /// <param name="target">一个reference to the attachment to download.</param>
         public InitializeAttachmentBlocksDownloadRequest(EntityReference target)
         {
             Method = HttpMethod.Post;

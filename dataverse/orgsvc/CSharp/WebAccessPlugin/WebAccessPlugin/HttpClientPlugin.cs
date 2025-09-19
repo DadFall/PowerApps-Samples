@@ -10,10 +10,10 @@ namespace PowerApps.Samples
     private string webAddress;
 
     /// <summary>
-    /// The plug-in constructor.
-    /// </summary>
-    /// <param name="config">The Web address to access. An empty or null string
-    /// defaults to accessing www.bing.com. The Web address can use the HTTP or
+        /// plug-in constructor.
+        /// </summary>
+    /// <param name="config">Web address to access. 一个empty or null 字符串
+    /// defaults to accessing www.bing.com. Web address can use the HTTP or
     /// HTTPS protocol.</param>
     public HttpClientPlugin(string config)
     {
@@ -28,10 +28,10 @@ namespace PowerApps.Samples
     }
 
     /// <summary>
-    /// Main execute method that is required by the IPlugin interface. Uses the HttpClient 
+        /// Main execute method that is required by the IPlugin interface. Uses the HttpClient 
     /// .NET class to access the target Web address.
-    /// </summary>
-    /// <param name="serviceProvider">The service provider from which you can obtain the
+        /// </summary>
+    /// <param name="serviceProvider">服务 provider from which you can obtain the
     /// tracing service, plug-in execution context, organization service, and more.</param>
     public void Execute(IServiceProvider serviceProvider)
     {
@@ -50,7 +50,7 @@ namespace PowerApps.Samples
           using (HttpClient client = new HttpClient())
           {
             client.Timeout = TimeSpan.FromMilliseconds(15000); //15 seconds
-            client.DefaultRequestHeaders.ConnectionClose = true; //Set KeepAlive to false
+            client.DefaultRequestHeaders.ConnectionClose = true; //设置KeepAlive to false
             
 
             HttpResponseMessage response =  client.GetAsync(webAddress).Result; //Make sure it is synchonrous

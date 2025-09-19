@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -23,7 +23,7 @@ export class ControlStateAPI implements ComponentFramework.StandardControl<IInpu
 	private _controlViewRendered: boolean;
 
 	// Reference to the control container HTMLDivElement
-	// This element contains all elements of our custom control example
+	// 此element contains all elements of our custom control example
 	private _container: HTMLDivElement;
 
 	// Div element to show the current selected color
@@ -32,10 +32,10 @@ export class ControlStateAPI implements ComponentFramework.StandardControl<IInpu
 	// Control context object
 	private _context: ComponentFramework.Context<IInputs>;
 
-	// The color selected from the previous navigation
+	// color selected from the previous navigation
 	private _persistedSelectedColor: string;
 
-	// The label selected from the previous navigation
+	// label selected from the previous navigation
 	private _persistedSelectedLabel: string;
 
 	// Data type used to store the various information as part of the state object.
@@ -74,13 +74,13 @@ export class ControlStateAPI implements ComponentFramework.StandardControl<IInpu
 		this._container.classList.add("ControlState_Container");
 		container.appendChild(this._container);
 
-		// Check if state was persisted from the last time the control was loaded.
+		// 检查if state was persisted from the last time the control was loaded.
 		if (state) {
-			// If you are storing a collection of key value pairs as part of the state object, maintain a local copy of it so that it can be used to
+			// 如果you are storing a collection of key value pairs as part of the state object, maintain a local copy of it so that it can be used to
 			// add, update or remove keys during the control life cycle.
 			this._stateDictionary = state;
 
-			// Retrieve persisted state and set values into variables so state can be used during control rendering.
+			// 检索persisted state and set values into variables so state can be used during control rendering.
 			this._persistedSelectedColor = state[PERSISTED_SELECTED_COLOR_KEY_NAME] as string;
 			this._persistedSelectedLabel = state[PERSISTED_SELECTED_LABEL_KEY_NAME] as string;
 		}
@@ -196,11 +196,11 @@ export class ControlStateAPI implements ComponentFramework.StandardControl<IInpu
 		const eventTarget: Element = event.target as Element;
 
 		if (eventTarget) {
-			// Get the label and the selected color attributes from the div element that was clicked
+			// 获取the label and the selected color attributes from the div element that was clicked
 			const label: string = eventTarget.attributes.getNamedItem("value")?.value ?? "";
 			const selectedColor: string = eventTarget?.attributes.getNamedItem("buttonColor")?.value ?? "";
 
-			// Update the selected color div element with the results
+			// 更新the selected color div element with the results
 			this.updateSelectedColorElement(selectedColorElement, label, selectedColor);
 
 			// store the label and selected color into the local state dictionary that will be passed onto the framework.

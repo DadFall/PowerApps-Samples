@@ -26,7 +26,7 @@ namespace QueryData
             Console.WriteLine("\n--Section 0 started--");
             Console.WriteLine("\nCreating records to query...");
 
-            //All the queries in this sample use this data:
+            //所有
             var accountContoso = new JObject {
                 { "name", "Contoso, Ltd. (sample)" },
                 { "Account_Tasks", new JArray{
@@ -232,7 +232,7 @@ namespace QueryData
 
             EntityReference accountContosoRef = await service.Create("accounts", accountContoso);
 
-            recordsToDelete.Add(accountContosoRef); //To delete later
+            recordsToDelete.Add(accountContosoRef); //稍后删除
 
             JObject retrievedAccountContoso = await service.Retrieve(
                 entityReference: accountContosoRef,
@@ -244,16 +244,16 @@ namespace QueryData
                 entitySetName: "contacts",
                 id: (Guid)retrievedAccountContoso["primarycontactid"]["contactid"]);
 
-            recordsToDelete.Add(contactYvonneRef); //To delete later
+            recordsToDelete.Add(contactYvonneRef); //稍后删除
 
             foreach (JObject contact in retrievedAccountContoso["contact_customer_accounts"].Cast<JObject>())
             {
 
-                //Add to the top of the list so these are deleted first
+                //添加to the top of the list so these are deleted first
                 recordsToDelete.Insert(0, new EntityReference("contacts", (Guid)contact["contactid"]));
             }
 
-            //The related tasks will be deleted automatically when the owning record is deleted.
+            //related tasks will be deleted automatically when the owning record is deleted.
             Console.WriteLine("Account 'Contoso, Ltd. (sample)' created with 1 primary " +
                     "contact and 8 associated contacts.");
 
@@ -264,7 +264,7 @@ namespace QueryData
             Console.WriteLine("\n--Section 1 started--");
 
             // Basic query: Query using $select against a contact entity to get the properties you want.
-            // For performance best practice, always use $select, otherwise all properties are returned
+            // 对于performance best practice, always use $select, otherwise all properties are returned
             // Including annotations provides access to formatted values with the
             // @OData.Community.Display.V1.FormattedValue annotation
             Console.WriteLine("-- Basic Query --");
@@ -286,17 +286,17 @@ namespace QueryData
             #region Section 2 Using query functions
             Console.WriteLine("\n--Section 2 started--");
 
-            // Filter criteria:
+            // 过滤criteria:
             // Applying filters to get targeted data.
             // 1) Using standard query functions (e.g.: contains, endswith, startswith)
             // 2) Using Dataverse query functions (e.g.: LastXhours, Last7Days, Today, Between, In, ...)
             // 3) Using filter operators and logical operators (e.g.: eq, ne, gt, and, or, etc…)
             // 4) Set precedence using parenthesis (e.g.: ((criteria1) and (criteria2)) or (criteria3)
-            // For more info, see:
+            // 对于more info, see:
             // https://learn.microsoft.com/power-apps/developer/data-platform/webapi/query-data-web-api#filter-results
 
             Console.WriteLine("-- Filter Criteria --");
-            // Filter 1: Using standard query functions to filter results. This operation
+            // 过滤1: Using standard query functions to filter results. This operation
             // will query for all contacts with fullname containing the string "(sample)".
 
             RetrieveMultipleResponse containsSampleinFullNameCollection =
@@ -310,7 +310,7 @@ namespace QueryData
                 message: "Contacts filtered by fullname containing '(sample)':",
                 collection: containsSampleinFullNameCollection.Records);
 
-            // Filter 2: Using Dataverse query functions to filter results. In this operation, we will query
+            // 过滤2: Using Dataverse query functions to filter results. In this operation, we will query
             // for all contacts that were created in the last hour. For complete list of Dataverse query
             // functions, see: https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/queryfunctions
 
@@ -327,7 +327,7 @@ namespace QueryData
                 "Contacts that were created within the last 1hr:",
                 createdInLastHourCollection.Records);
 
-            // Filter 3: Using operators. Building on the previous operation, this will further limit
+            // 过滤3: Using operators. Building on the previous operation, this will further limit
             // the results by the contact's income. For more info on standard filter operators,
             // https://learn.microsoft.com/power-apps/developer/data-platform/webapi/query-data-web-api#filter-results
 
@@ -343,7 +343,7 @@ namespace QueryData
                message: "Contacts with '(sample)' in name and income above $55,000:",
                collection: highIncomeContacts.Records);
 
-            // Filter 4: Set precedence using parentheses. Continue building on the previous
+            // 过滤4: Set precedence using parentheses. Continue building on the previous
             // operation, this will further limit results by job title. Parentheses and the order of
             // filter statements can impact results returned.
 
@@ -413,7 +413,7 @@ namespace QueryData
 
             // To limit records returned, use the $top query option.  Specifying a limit number for $top
             // returns at most that number of results per request. Extra results are ignored.
-            // For more information, see:
+            // 对于more information, see:
             // https://learn.microsoft.com/power-apps/developer/data-platform/webapi/query-data-web-api#use-top-query-option
             Console.WriteLine("\n-- Top Results --");
 
@@ -481,7 +481,7 @@ namespace QueryData
 
             Console.WriteLine("\n--Section 6 started--");
 
-            // The $expand option retrieves related information.
+            // $expand option retrieves related information.
             // To retrieve information on associated entities in the same request, use the $expand
             // query option on navigation properties.
             //   1) Expand using single-valued navigation properties (e.g.: via the 'primarycontactid')
@@ -567,7 +567,7 @@ namespace QueryData
 
             // 5) Nested expands
 
-            // The following query applies nested expands to single-valued navigation properties
+            // following query applies nested expands to single-valued navigation properties
             // starting with Task entities related to contacts created for this sample.
             RetrieveMultipleResponse contosoTasks =
                 await service.RetrieveMultiple(queryUri: $"tasks?" +
@@ -584,7 +584,7 @@ namespace QueryData
 
             // 6) Nested $expand having both single-valued and collection-valued navigation properties
 
-            // The following query applies nested expands to single-valued and collection-valued navigation properties.
+            // following query applies nested expands to single-valued and collection-valued navigation properties.
             // Accounts entity is related to AccountTasks and Contacts entities. Contacts entity is further expanded on OwningUser navigation property.
 
             RetrieveMultipleResponse accounts =
@@ -604,7 +604,7 @@ namespace QueryData
 
             Console.WriteLine("\n--Section 7 started--");
 
-            // Get aggregated salary information about Contacts working for Contoso
+            // 获取aggregated salary information about Contacts working for Contoso
 
             Console.WriteLine("\nAggregated Annual Income information for Contoso contacts:");
 
@@ -646,7 +646,7 @@ namespace QueryData
                   "</entity>" +
                 "</fetch>";
 
-            // The FetchXml method uses the FetchXmlResponse class and sends the request 
+            // FetchXml method uses the FetchXmlResponse class and sends the request 
             // as with BatchRequest so that the URL containing the FetchXml is sent 
             // in the body of the request rather than the URI.
             // Use this pattern to mitigate URL length limits for GET requests.
@@ -667,10 +667,10 @@ namespace QueryData
 
             XDocument fetchXmlQueryDoc = XDocument.Parse(fetchXmlQuery);
 
-            // Add attribute to set the page size
+            // 添加attribute to set the page size
             fetchXmlQueryDoc.Root.Add(new XAttribute("count", "4"));
 
-            // Add attribute to set the page
+            // 添加attribute to set the page
             fetchXmlQueryDoc.Root.Add(new XAttribute("page", "2"));
 
             // Use FetchXmlRequest this time. Uses GET rather than POST
@@ -696,16 +696,16 @@ namespace QueryData
             int page = 1;
 
             // Using the same FetchXml
-            // Add attribute to set the paging cookie
+            // 添加attribute to set the paging cookie
             fetchXmlQueryDoc.Root.Add(new XAttribute("paging-cookie", ""));
 
-            // Reset the page
+            // 重置the page
             fetchXmlQueryDoc.Root.Attribute("page").Value = page.ToString();
 
-            // Reset the count
+            // 重置the count
             fetchXmlQueryDoc.Root.Attribute("count").Value = "3";
 
-            // Send first request
+            // 发送first request
             FetchXmlResponse cookiePagedContacts = await service.FetchXml(
                 entitySetName: "contacts",
                 fetchXml: fetchXmlQueryDoc,
@@ -732,10 +732,10 @@ namespace QueryData
                 // Double URL decode the pagingCookie string value
                 string decodedPagingCookie = HttpUtility.UrlDecode(HttpUtility.UrlDecode(pagingCookie));
 
-                // Set the paging cookie value in the FetchXML paging-cookie attribute
+                // 设置the paging cookie value in the FetchXML paging-cookie attribute
                 fetchXmlQueryDoc.Root.Attribute("paging-cookie").Value = decodedPagingCookie;
 
-                // Send the request
+                // 发送请求
                 cookiePagedContacts = await service.FetchXml(
                 entitySetName: "contacts",
                 fetchXml: fetchXmlQueryDoc,
@@ -760,20 +760,20 @@ namespace QueryData
             // Use predefined queries of the following two types:
             //   1) Saved query (system view)
             //   2) User query (saved view)
-            // For more info, see:
+            // 对于more info, see:
             // https://learn.microsoft.com/power-apps/developer/data-platform/webapi/retrieve-and-execute-predefined-queries#predefined-queries
 
             // 1) Saved Query - retrieve "Active Accounts", run it, then display the results.
             Console.WriteLine("\n-- Saved Query -- ");
 
-            // Get the 'Active Accounts' Saved Query Id
+            // 获取the 'Active Accounts' Saved Query Id
             RetrieveMultipleResponse activeAccountsSavedQueryIdResponse =
                 await service.RetrieveMultiple(
                     queryUri: "savedqueries?$select=name,savedqueryid" +
                     "&$filter=name eq 'Active Accounts'");
             var activeAccountsSavedQueryId = (Guid)activeAccountsSavedQueryIdResponse.Records.FirstOrDefault()["savedqueryid"];
 
-            // Get 3 accounts using the saved query
+            // 获取3 accounts using the saved query
             RetrieveMultipleResponse activeAccounts =
                 await service.RetrieveMultiple(
                     queryUri: $"accounts?savedQuery={activeAccountsSavedQueryId}",
@@ -786,7 +786,7 @@ namespace QueryData
                 properties: new string[] { "name", "_primarycontactid_value", "telephone1" });
 
             // 2) Create a user query, then retrieve and execute it to display its results.
-            // For more info, see:
+            // 对于more info, see:
             // https://learn.microsoft.com/power-apps/developer/data-platform/saved-queries
             Console.WriteLine("\n-- User Query -- ");
 
@@ -816,7 +816,7 @@ namespace QueryData
             EntityReference myUserQueryRef = await service.Create(
                 entitySetName: "userqueries",
                 record: userQuery);
-            recordsToDelete.Add(myUserQueryRef); //To delete later
+            recordsToDelete.Add(myUserQueryRef); //稍后删除
 
             // Use the query to return results:
             RetrieveMultipleResponse myUserQueryResults =
@@ -832,7 +832,7 @@ namespace QueryData
             #region Section 10: Delete sample records
 
             Console.WriteLine("\n--Section 10 started--");
-            // Delete all the created sample records.  Note that explicit deletion is not required  
+            // 删除all the created sample records.  Note that explicit deletion is not required  
             // for contact tasks because these are automatically cascade-deleted with owner.  
 
             if (!deleteCreatedRecords)
@@ -875,8 +875,8 @@ namespace QueryData
         /// <summary>
         /// Helper method to show results returned by a query
         /// </summary>
-        /// <param name="message">The text to display</param>
-        /// <param name="collection">The collection of records to display</param>
+        /// <param name="message">text to display</param>
+        /// <param name="collection">集合 of records to display</param>
         private static void WriteContactResultsTable(string message, JToken collection)
         {
             //Display column widths for contact results table
@@ -902,8 +902,8 @@ namespace QueryData
         }
 
         /// <summary> Displays formatted entity collections to the console. </summary>
-        /// <param name="label">Descriptive text output before collection contents </param>
-        /// <param name="collection"> JObject containing array of entities to output by property </param>
+        /// <param name="label">Descriptive text output before 集合 contents </param>
+        /// <param name="collection"> JObject containing 数组 of entities to output by property </param>
         /// <param name="properties"> Array of properties within each entity to output. </param>
         private static void DisplayFormattedEntities(string label, JArray entities, string[] properties)
         {
@@ -944,7 +944,7 @@ namespace QueryData
         /// <summary>
         /// Helper method to display expanded values from task records
         /// </summary>
-        /// <param name="collection">The collection of task records.</param>
+        /// <param name="collection">集合 of task records.</param>
         private static void DisplayExpandedValuesFromTask(JToken collection)
         {
 
@@ -976,7 +976,7 @@ namespace QueryData
         /// <summary>
         /// Helper method to display expanded values from account records
         /// </summary>
-        /// <param name="collection">The collection of account records.</param>
+        /// <param name="collection">集合 of account records.</param>
         private static void DisplayExpandedValuesFromAccount(JToken collection)
         {
 

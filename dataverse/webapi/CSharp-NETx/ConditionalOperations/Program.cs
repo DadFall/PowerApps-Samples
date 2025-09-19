@@ -25,14 +25,14 @@ namespace ConditionalOperations
 
             Console.WriteLine("\n--Section 0 started--");
 
-            // Create an account record
+            // 创建an account record
             var account1 = new JObject {
                         { "name", "Contoso Ltd" },
                         { "telephone1", "555-0000" }, //Phone number value increments with each update attempt
                         { "revenue", 5000000},
                         { "description", "Parent company of Contoso Pharmaceuticals, etc."} };
 
-            // Create and retrieve the record
+            // 创建and retrieve the record
             JObject retrievedaccount1 = await service.CreateRetrieve(
                 entitySetName: "accounts",
                 record: account1,
@@ -42,7 +42,7 @@ namespace ConditionalOperations
                     entitySetName: "accounts",
                     id: (Guid)retrievedaccount1["accountid"]);
 
-            recordsToDelete.Add(account1Ref); //To delete later
+            recordsToDelete.Add(account1Ref); //稍后删除
 
 
             // Store the ETag value from the retrieved record
@@ -69,7 +69,7 @@ namespace ConditionalOperations
                     query: queryOptions,
                     eTag: initialAcctETagVal);
 
-                // This should throw an exception:
+                // 此should throw an exception:
                 var retrieveAccount1Response =
                     await service.SendAsync<RetrieveResponse>(retrieveAccount1Request);
 
@@ -119,7 +119,7 @@ namespace ConditionalOperations
                 else { throw e; }
             }
 
-            // Save the updated ETag value
+            // 保存the updated ETag value
             var updatedAcctETagVal = retrievedaccount1["@odata.etag"].ToString();
 
             // Show the updated record
@@ -134,7 +134,7 @@ namespace ConditionalOperations
             Console.WriteLine("\n** Optimistic concurrency demonstration **");
 
             // Attempt to delete original account (if matches original ETag value).
-            // If you replace "initialAcctETagVal" with "updatedAcctETagVal", the delete will
+            // 如果you replace "initialAcctETagVal" with "updatedAcctETagVal", the delete will
             // succeed. However, we want the delete to fail for now to demonstrate use of the ETag.
             Console.WriteLine("Attempting to delete the account using the original ETag value");
 
@@ -145,7 +145,7 @@ namespace ConditionalOperations
                     entityReference: account1Ref,
                     eTag: initialAcctETagVal);
 
-                // This should throw an exception:
+                // 此should throw an exception:
                 var deleteAccount1Response =
                     await service.SendAsync(deleteAccount1Request);
 
@@ -176,7 +176,7 @@ namespace ConditionalOperations
                     record: accountUpdate,
                     eTag: initialAcctETagVal);
 
-                // This should throw an exception:
+                // 此should throw an exception:
                 await service.SendAsync(updateAccount1Request);
 
                 // Not expected; this code should not execute.
@@ -216,7 +216,7 @@ namespace ConditionalOperations
                 else { throw e; }
             }
 
-            // Retrieve and output current account state.
+            // 检索and output current account state.
             retrievedaccount1 = await service.Retrieve(
                 entityReference: account1Ref,
                 query: queryOptions);
@@ -230,7 +230,7 @@ namespace ConditionalOperations
 
             Console.WriteLine("\n--Section 3 started--");
 
-            // Delete all the created sample records.  
+            // 删除all the created sample records.  
 
             if (!deleteCreatedRecords)
             {

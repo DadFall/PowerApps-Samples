@@ -19,10 +19,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -35,7 +35,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
@@ -58,17 +58,17 @@ namespace PowerApps.Samples
             }
         }
         /// <summary>
-        /// Gets web service connection information from the app.config file.
-        /// If there is more than one available, the user is prompted to select
+        /// 获取 web service connection information from the app.config file.
+        /// 如果there is more than one available, the user is prompted to select
         /// the desired connection configuration by name.
         /// </summary>
-        /// <returns>A string containing web service connection configuration information.</returns>
+        /// <returns>一个string containing web service connection configuration information.</returns>
         private static String GetServiceConfiguration()
         {
-            // Get available connection strings from app.config.
+            // 获取available connection strings from app.config.
             int count = ConfigurationManager.ConnectionStrings.Count;
 
-            // Create a filter list of connection strings so that we have a list of valid
+            // 创建a filter list of connection strings so that we have a list of valid
             // connection strings for Microsoft Dynamics CRM only.
             List<KeyValuePair<String, String>> filteredConnectionStrings =
                 new List<KeyValuePair<String, String>>();
@@ -82,7 +82,7 @@ namespace PowerApps.Samples
                             ConfigurationManager.ConnectionStrings[a].ConnectionString));
             }
 
-            // No valid connections strings found. Write out and error message.
+            // 没有valid connections strings found. Write out and error message.
             if (filteredConnectionStrings.Count == 0)
             {
                 Console.WriteLine("An app.config file containing at least one valid Microsoft Dynamics CRM " +
@@ -93,13 +93,13 @@ namespace PowerApps.Samples
                 return null;
             }
 
-            // If one valid connection string is found, use that.
+            // 如果one valid connection string is found, use that.
             if (filteredConnectionStrings.Count == 1)
             {
                 return filteredConnectionStrings[0].Value;
             }
 
-            // If more than one valid connection string is found, let the user decide which to use.
+            // 如果more than one valid connection string is found, let the user decide which to use.
             if (filteredConnectionStrings.Count > 1)
             {
                 Console.WriteLine("The following connections are available:");

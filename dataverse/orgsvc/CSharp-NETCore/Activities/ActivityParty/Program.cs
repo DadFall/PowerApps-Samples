@@ -10,10 +10,10 @@ namespace PowerPlatform_Dataverse_CodeSamples
     internal class Program
     {
         /// <summary>
-        /// Create a letter activity.
+        /// 创建a letter activity.
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
-        /// <param name="entityStore">Entity name and reference collection.</param>
+        /// <param name="entityStore">Entity 名称 and reference 集合.</param>
         /// <param name="fromContacts">Contains contacts that the letter is being sent from.</param>
         /// <param name="toContacts">Contains contacts that the letter is being sent to.</param>
         /// <returns></returns>
@@ -25,7 +25,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // Use the OrganizationServiceContext to track and execute the entity operations.
             var orgContext = new OrganizationServiceContext(service);
 
-            // Create an activity party for each From: contact.
+            // 创建an activity party for each From: contact.
             var fromActivityPartys = new ActivityParty[fromContacts.Count];
 
             foreach (var contact in fromContacts)
@@ -37,7 +37,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 fromActivityPartys.Append(activityParty);
             }
 
-            // Create an activity party for each To: contact.
+            // 创建an activity party for each To: contact.
             var toActivityPartys = new ActivityParty[toContacts.Count];
             
             foreach (var contact in toContacts)
@@ -49,7 +49,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 toActivityPartys.Append(activityParty);
             }
 
-            // Create a letter activity.
+            // 创建a letter activity.
             var letter = new Letter
             {
                 RegardingObjectId = toContacts[0],
@@ -60,7 +60,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 To = toActivityPartys
             };
 
-            // Add the letter activity to the context.
+            // 添加the letter activity to the context.
             orgContext.AddObject(letter);
 
             try
@@ -69,7 +69,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 SaveChangesResultCollection results =
                     orgContext.SaveChanges(SaveChangesOptions.None);
 
-                // Check for success and handle failure.
+                // 检查for success and handle failure.
                 if (results.Count > 0 && results[0].Error == null)
                 {
                     CreateResponse response = (CreateResponse)results[0].Response;
@@ -97,21 +97,21 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         static IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Constructor. Loads the application settings from a JSON configuration file.
+        /// Constructor. 加载 the application settings from a JSON configuration file.
         /// </summary>
         static Program()
         {
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -122,14 +122,14 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // Entity name and reference collection.
             Dictionary<string,EntityReference> entityStore;
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(Configuration.GetConnectionString("default"));
 
             // Pre-create any table rows that the Run() method requires.
             Setup(serviceClient, out entityStore);
 
-            // Execute the main logic of this program.
+            // 执行the main logic of this program.
             Run(serviceClient, entityStore);
 
             // Pause program execution before resource cleanup.
@@ -142,10 +142,10 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Executes the code being demonstrated by this program.
+        /// 执行 the code being demonstrated by this program.
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
-        /// <param name="entityStore">Entity name and reference collection.</param>
+        /// <param name="entityStore">Entity 名称 and reference 集合.</param>
         /// <returns>True if successful; otherwise false.</returns>
         static public bool Run(IOrganizationService service, 
             Dictionary<string, EntityReference> entityStore)
@@ -156,17 +156,17 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Creates any pre-existing entity records required by the Run() method.
+        /// 创建 any pre-existing entity records required by the Run() method.
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
-        /// <param name="entityStore">Entity name and reference collection.</param>
+        /// <param name="entityStore">Entity 名称 and reference 集合.</param>
         static public void Setup(IOrganizationService service, out Dictionary<string, 
             EntityReference> entityStore)
         {
             // Used to track any entities created by this program.
             entityStore = new Dictionary<string, EntityReference>();
 
-            // Create three contacts to be used for the letter.
+            // 创建three contacts to be used for the letter.
             var contact1 = new Entity("contact")    
             {
                 ["firstname"] = "Mary Kay",
@@ -224,10 +224,10 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Delete any entity records (table rows) created by this program.
+        /// 删除any entity records (table rows) created by this program.
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
-        /// <param name="entityStore">Entity name and reference collection.</param>
+        /// <param name="entityStore">Entity 名称 and reference 集合.</param>
         static public void Cleanup(ServiceClient service,
             Dictionary<string, EntityReference> entityStore)
         {
@@ -250,7 +250,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             var keysToDelete = new List<string>(entityStore.Keys);
             keysToDelete.Reverse();
 
-            // Delete in Dataverse each entity in the entity store.
+            // 删除in Dataverse each entity in the entity store.
             foreach (var key in keysToDelete)
             {
                 var entref = entityStore[key];

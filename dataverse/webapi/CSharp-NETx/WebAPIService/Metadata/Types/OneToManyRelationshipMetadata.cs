@@ -9,12 +9,12 @@ namespace PowerApps.Samples.Metadata.Types
         public string ODataType { get; } = "Microsoft.Dynamics.CRM.OneToManyRelationshipMetadata";
 
         /// <summary>
-        /// The associated menu configuration.
+        /// associated menu configuration.
         /// </summary>
         public AssociatedMenuConfiguration AssociatedMenuConfiguration { get; set; }
 
         /// <summary>
-        /// The cascading behaviors for the entity relationship.
+        /// cascading behaviors for the entity relationship.
         /// </summary>
         public CascadeConfiguration CascadeConfiguration { get; set; }
 
@@ -24,32 +24,32 @@ namespace PowerApps.Samples.Metadata.Types
         public bool IsHierarchical { get; set; }
 
         /// <summary>
-        /// The name of primary attribute for the referenced entity.
+        /// name of primary attribute for the referenced entity.
         /// </summary>
         public string ReferencedAttribute { get; set; }
 
         /// <summary>
-        /// The name of the referenced entity.
+        /// name of the referenced entity.
         /// </summary>
         public string ReferencedEntity { get; set; }
 
         /// <summary>
-        /// The collection-valued navigation property used by this relationship.
+        /// collection-valued navigation property used by this relationship.
         /// </summary>
         public string ReferencedEntityNavigationPropertyName { get; set; }
 
         /// <summary>
-        /// The name of the referencing attribute.
+        /// name of the referencing attribute.
         /// </summary>
         public string ReferencingAttribute { get; set; }
 
         /// <summary>
-        /// The name of the referencing entity.
+        /// name of the referencing entity.
         /// </summary>
         public string ReferencingEntity { get; set; }
 
         /// <summary>
-        /// The single-valued navigation property used by this relationship.
+        /// single-valued navigation property used by this relationship.
         /// </summary>
         public string ReferencingEntityNavigationPropertyName { get; set; }
 

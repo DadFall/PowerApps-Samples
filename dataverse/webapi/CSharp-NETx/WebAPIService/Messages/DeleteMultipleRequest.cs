@@ -6,12 +6,12 @@ namespace PowerApps.Samples.Messages
     public class DeleteMultipleRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the DeleteMultipleRequest
+        /// 初始化 the DeleteMultipleRequest
         /// </summary>
-        /// <param name="entitySetName">The entity set name for the table.</param>
+        /// <param name="entitySetName">entity set 名称 for the table.</param>
         /// <param name="targets">JObject containing reference to the records to delete.</param>
-        /// <param name="entityLogicalName">The logical name for the table. Required when using setType.</param>
-        /// <param name="setType">Option to set the @odata.type if the property not set on the targets.</param>
+        /// <param name="entityLogicalName">logical 名称 for the table. Required when using setType.</param>
+        /// <param name="setType">Option to set the @o数据.类型 if the property not set on the targets.</param>
         public DeleteMultipleRequest(string entitySetName, List<JObject> targets, string? entityLogicalName = null, bool setType = false)
         {
             // Provides an option to set the required @odata.type property

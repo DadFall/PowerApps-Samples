@@ -18,34 +18,34 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
                     var request = new RetrieveAllEntitiesRequest()
                     {
                         EntityFilters = EntityFilters.Privileges,
-                        // When RetrieveAsIfPublished property is set to false, retrieves only the currently published changes. Defaulted setting is to false.
-                        // When RetrieveAsIfPublished property is set to true, retrieves the changes that are published and those changes that have not been published.
+                        // 当RetrieveAsIfPublished property is set to false, retrieves only the currently published changes. Defaulted setting is to false.
+                        // 当RetrieveAsIfPublished property is set to true, retrieves the changes that are published and those changes that have not been published.
                         RetrieveAsIfPublished = false
                     };
 
-                    // Retrieve the MetaData.
+                    // 检索the MetaData.
                     var response = (RetrieveAllEntitiesResponse)service.Execute(request);
 
 
-                    // Create an instance of StreamWriter to write text to a file.
-                    // The using statement also closes the StreamWriter.
+                    // 创建an instance of StreamWriter to write text to a file.
+                    // using statement also closes the StreamWriter.
                     // To view this file, right click the file and choose open with Excel. 
                     // Excel will figure out the schema and display the information in columns.
 
                     String filename = String.Concat("EntityPrivileges.xml");
                     using (var sw = new StreamWriter(filename))
                     {
-                        // Create Xml Writer.
+                        // 创建Xml Writer.
                         var metadataWriter = new XmlTextWriter(sw);
 
-                        // Start Xml File.
+                        // 开始Xml File.
                         metadataWriter.WriteStartDocument();
 
                         // Metadata Xml Node.
@@ -55,10 +55,10 @@ namespace PowerApps.Samples
                         {
                             if (currentEntity.IsIntersect.Value == false)
                             {
-                                // Start Entity Node
+                                // 开始Entity Node
                                 metadataWriter.WriteStartElement("Entity");
 
-                                // Write the Entity's Information.
+                                // 写入the Entity's Information.
                                 metadataWriter.WriteElementString("EntitySchemaName", currentEntity.SchemaName);
                                 metadataWriter.WriteElementString("OTC", currentEntity.ObjectTypeCode.ToString());
 
@@ -84,16 +84,16 @@ namespace PowerApps.Samples
                                 metadataWriter.WriteEndElement();
 
 
-                                // End Entity Node
+                                // 结束Entity Node
                                 metadataWriter.WriteEndElement();
                             }
                         }
 
-                        // End Metadata Xml Node
+                        // 结束Metadata Xml Node
                         metadataWriter.WriteEndElement();
                         metadataWriter.WriteEndDocument();
 
-                        // Close xml writer.
+                        // 关闭xml writer.
                         metadataWriter.Close();
                     }
 

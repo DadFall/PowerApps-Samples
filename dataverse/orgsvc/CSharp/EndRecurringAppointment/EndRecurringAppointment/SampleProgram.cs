@@ -22,7 +22,7 @@ namespace PowerApps.Samples
                     SetUpSample(service);
                     #endregion Set up
 
-                    // Retrieve a recurring appointment series
+                    // 检索a recurring appointment series
                     RecurringAppointmentMaster retrievedRecurringAppointmentSeries = (RecurringAppointmentMaster)service.Retrieve(RecurringAppointmentMaster.EntityLogicalName, _recurringAppointmentMasterId, new ColumnSet(true));
 
                     // Use the DeleteOpenInstances message to end the series to the

@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -43,11 +43,11 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Creates the import mapping record. 
+        /// 创建 the import mapping record.
         /// </summary>
         private static void CreateImportMapping(CrmServiceClient service)
         {
-            // Create the import map and populate a column
+            // 创建the import map and populate a column
             ImportMap importMap = new ImportMap()
             {
                 Name = "Original Import Mapping" + DateTime.Now.Ticks.ToString(),
@@ -63,14 +63,14 @@ namespace PowerApps.Samples
             Console.WriteLine(String.Concat("Import map created: ", _importMapId.Value));
 
             #region Column One Mappings
-            // Create a column mapping for a 'text' type field
+            // 创建a column mapping for a 'text' type field
             ColumnMapping colMapping1 = new ColumnMapping()
             {
-                // Set source properties
+                // 设置source properties
                 SourceAttributeName = "name",
                 SourceEntityName = "Account_1",
 
-                // Set target properties
+                // 设置target properties
                 TargetAttributeName = "name",
                 TargetEntityName = Account.EntityLogicalName,
 
@@ -83,7 +83,7 @@ namespace PowerApps.Samples
                     new OptionSetValue((int)ColumnMappingProcessCode.Process)
             };
 
-            // Create the mapping
+            // 创建the mapping
             Guid colMappingId1 = service.Create(colMapping1);
 
             Console.WriteLine(String.Concat("Column mapping added SourceAttributeName: name",
@@ -99,7 +99,7 @@ namespace PowerApps.Samples
             if (!_importMapId.HasValue)
                 return;
 
-            // Retrieve the xml for the mapping 
+            // 检索the xml for the mapping 
             var exportRequest = new ExportMappingsImportMapRequest
             {
                 ImportMapId = _importMapId.Value,
@@ -116,17 +116,17 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Parse the XML to change the name attribute
+        /// 解析the XML to change the name attribute
         /// </summary>
         private static void ChangeMappingName(CrmServiceClient service)
         {
             if (string.IsNullOrWhiteSpace(_mappingXml))
                 return;
 
-            // Load into XElement
+            // 加载into XElement
             var xElement = XElement.Parse(_mappingXml);
 
-            // Get the Name attribute
+            // 获取the Name attribute
             var nameAttribute = xElement.Attribute("Name");
 
             // Swap the name out
@@ -142,14 +142,14 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Create a mapping from Xml
+        /// 创建a mapping from Xml
         /// </summary>
         private static void ImportMappingsByXml(CrmServiceClient service)
         {
             if (string.IsNullOrWhiteSpace(_mappingXml))
                 return;
 
-            // Create the import mapping from the XML
+            // 创建the import mapping from the XML
             var request = new ImportMappingsImportMapRequest
             {
                 MappingsXml = _mappingXml,
@@ -168,7 +168,7 @@ namespace PowerApps.Samples
             Console.WriteLine(String.Concat("\nNew import mapping created: ",
                 _newImportMapId.Value));
 
-            // Retrieve the value for validation
+            // 检索the value for validation
             var exportRequest = new ExportMappingsImportMapRequest
             {
                 ImportMapId = _newImportMapId.Value,
@@ -185,7 +185,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes the records created by this sample
+        /// 删除 the records created by this sample
         /// </summary>
         /// <param name="prompt"></param>
         private static void DeleteRequiredRecords(CrmServiceClient service, bool prompt)

@@ -11,8 +11,8 @@ using System.Text;
 namespace PowerPlatform_Dataverse_CodeSamples
 {
     /// <summary>
-    /// Configuration class for sample settings
-    /// </summary>
+        /// Configuration class for sample settings
+        /// </summary>
     public class SampleSettings
     {
         public string CustomizationPrefix { get; set; } = string.Empty;
@@ -41,23 +41,23 @@ namespace PowerPlatform_Dataverse_CodeSamples
         static SampleSettings Settings { get; }
 
         /// <summary>
-        /// Constructor. Loads the application settings from a JSON configuration file.
+        /// Constructor. 加载 the application settings from a JSON configuration file.
         /// </summary>
         static Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS",
                 EnvironmentVariableTarget.User);
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
 
-            // Load sample settings from configuration
+            // 加载sample settings from configuration
             Settings = new SampleSettings();
             Configuration.GetSection("SampleSettings").Bind(Settings);
 
@@ -67,7 +67,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
         static void Main(string[] args)
         {
-            // Start the stopwatch to measure duration of sample
+            // 开始the stopwatch to measure duration of sample
             Stopwatch stopwatch = Stopwatch.StartNew();
 
             // Collection of references to records to delete when the sample completes.
@@ -81,7 +81,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             try
             {
-                // Initialize both users
+                // 初始化both users
                 ApplicationUserClient =
                  new(Configuration.GetConnectionString("applicationuser"));
 
@@ -99,8 +99,8 @@ namespace PowerPlatform_Dataverse_CodeSamples
             Console.WriteLine("\r\nColumn-level security sample started...");
 
             // Force strong consistency for this sample.
-            // This sample applies changes to configurations that can change the output
-            // When APIs are used immediately after. This setting is usually not required.
+            // 此sample applies changes to configurations that can change the output
+            // 当APIs are used immediately after. This setting is usually not required.
             SystemAdministratorClient.ForceServerMetadataCacheConsistency = true;
             ApplicationUserClient.ForceServerMetadataCacheConsistency = true;
 
@@ -116,10 +116,10 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             Console.WriteLine("\r\nColumn-level security sample completed.");
 
-            // Stop the stopwatch
+            // 停止the stopwatch
             stopwatch.Stop();
 
-            // Get the elapsed time as a TimeSpan object
+            // 获取the elapsed time as a TimeSpan object
             TimeSpan ts = stopwatch.Elapsed;
 
             // Format and display the elapsed time
@@ -145,7 +145,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             if (!publisherId.HasValue)
             {
                 Console.WriteLine($"\tCreating {Settings.PublisherUniqueName} publisher...");
-                // Create a new publisher
+                // 创建a new publisher
                 Entity publisher = new("publisher")
                 {
                     ["uniquename"] = Settings.PublisherUniqueName,
@@ -159,7 +159,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 {
                     publisherId = systemAdminService.Create(publisher);
 
-                    // Add the publisher to the entity store for later deletion
+                    // 添加the publisher to the entity store for later deletion
                     entityStore.Add(
                         Settings.PublisherUniqueName,
                         new EntityReference("publisher", publisherId.Value));
@@ -276,7 +276,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             #endregion Create columns
 
             #region Remove any existing sample data
-            // Remove any rows that exist in the sample_example table.
+            // 移除any rows that exist in the sample_example table.
             QueryExpression query = new(Settings.TableLogicalName)
             {
                 ColumnSet = new ColumnSet("sample_exampleid")
@@ -295,7 +295,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             #endregion Remove any existing sample data
 
             #region Add sample data
-            // Add three rows of sample data to the sample_example table
+            // 添加three rows of sample data to the sample_example table
 
             Dictionary<string, string>[] records =
             [
@@ -349,18 +349,18 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // Grant the application user access to the sample_Example table
             // By associating them with a security role
 
-            // Check if the security role already exists
+            // 检查if the security role already exists
             Guid? securityRoleId = Helpers.GetRecordID(systemAdminService,
                 tableLogicalName: "role",
                 columnLogicalName: "name",
                 uniqueStringValue: Settings.RoleName);
 
-            // Get information about the application user
+            // 获取information about the application user
             var appUserIsResponse = (WhoAmIResponse)appUserService.Execute(new WhoAmIRequest());
             Guid appUserId = appUserIsResponse.UserId;
             Guid appUserBUId = appUserIsResponse.BusinessUnitId;
 
-            // Create the security role if it doesn't exist
+            // 创建the security role if it doesn't exist
             if (!securityRoleId.HasValue)
             {
                 Console.WriteLine($"\tCreating {Settings.RoleName} security role...");
@@ -391,7 +391,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 Console.WriteLine($"\t☑ {Settings.RoleName} exists.");
             }
 
-            // All the row-level privileges for the sample_Example table
+            // 所有the row-level privileges for the sample_Example table
             string[] privileges =
             [
                 "prvAppendTosample_Example",
@@ -422,7 +422,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // Make sure application user is associated with the security role for access to sample_example table
             Helpers.ManageRoleForAppUser(systemAdminService, securityRoleId.Value, appUserId, Settings.RoleName);
 
-            // Verify the row-level privileges that the application user has on the 
+            // 验证the row-level privileges that the application user has on the 
             // rows of data in the sample_example table.
             Helpers.VerifyAppUserRowLevelPrivileges(systemAdminService, appUserId);
 
@@ -439,7 +439,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 systemAdminService.Delete("fieldsecurityprofile", fieldsecurityProfileId.Value);
             }
 
-            // Create new field security profile
+            // 创建new field security profile
 
             Entity fieldSecurityProfile = new("fieldsecurityprofile")
             {
@@ -476,7 +476,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             #region Associate appUser to field security profile
 
-            // Check whether the app user is already associated to
+            // 检查whether the app user is already associated to
             // the field security profile, and associate them if not.
 
             Helpers.ManageFieldSecurityProfileForAppUser(
@@ -523,7 +523,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             #region Secure a column
 
-            //Retrieve the data as the application user to show unsecured behavior
+            //检索the data as the application user to show unsecured behavior
             Console.WriteLine("\r\n\tBefore columns are secured, the application user can see this data:");
 
             Helpers.ShowExampleRows(Helpers.GetExampleRows(appUserService));
@@ -566,7 +566,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             Console.Write(" and ☑ Date of Birth.\r\n");
 
-            //Retrieve the data as the application user to show secured behavior
+            //检索the data as the application user to show secured behavior
 
             Console.WriteLine("\r\n\tAfter columns are secured, the application user can see this data:");
             Helpers.ShowExampleRows(Helpers.GetExampleRows(appUserService));
@@ -575,12 +575,12 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             #region Manage read access to secured column
 
-            // Get information about the application user
+            // 获取information about the application user
             var appUserIsResponse = (WhoAmIResponse)appUserService.Execute(new WhoAmIRequest());
             // Need an a reference to the user to grant access
             EntityReference appUserReference = new("systemuser", appUserIsResponse.UserId);
 
-            // Retrieve the three records
+            // 检索the three records
 
             QueryExpression query = new(Settings.TableLogicalName)
             {
@@ -631,7 +631,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 updateAccess: false);
 
 
-            //Retrieve the data as the application user to show secured behavior
+            //检索the data as the application user to show secured behavior
             Console.WriteLine("\r\n\tAfter granting access to selected fields, the application user can see this data:");
             Helpers.ShowExampleRows(Helpers.GetExampleRows(appUserService));
 
@@ -639,7 +639,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             #region Manage write access to secured column
             Console.WriteLine("\tDemonstrate error when attempting update without update access:");
-            // Try to update email column without update access:
+            // 尝试to update email column without update access:
             Console.WriteLine("\tTry to update the Email column for the Jayden Phillips record");
 
             Entity jp = new(Settings.TableLogicalName, jaydenPhillips.Id)
@@ -649,7 +649,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             try
             {
-                // This fails
+                // 此fails
                 appUserService.Update(jp);
             }
             catch (FaultException<OrganizationServiceFault> ex)
@@ -691,7 +691,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             try
             {
-                // This succeeds
+                // 此succeeds
                 appUserService.Update(jp);
                 Console.WriteLine("\t☑ Successfully updated record.");
             }
@@ -727,7 +727,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                 columnLogicalName: "sample_telephonenumber",
                 principal: appUserReference);
 
-            //Retrieve the data as the application user to show return to original behavior.
+            //检索the data as the application user to show return to original behavior.
             Console.WriteLine("\tAfter access to selected fields is revoked, the application user can not see any data.");
 
             #endregion Remove access to fields
@@ -785,7 +785,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                     {
                         Target = fp
                     };
-                    // Add to the solution
+                    // 添加to the solution
                     request["SolutionUniqueName"] = Settings.SolutionUniqueName;
 
                     var createResponse = (CreateResponse)systemAdminService.Execute(request);
@@ -831,7 +831,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             try
             {
-                // This fails by design
+                // 此fails by design
                 appUserService.Update(jp);
             }
             catch (FaultException<OrganizationServiceFault> ex)
@@ -869,7 +869,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             var attributeMaskingRuleList = new List<Entity>();
 
-            // Retrieve ID values for existing masking rules
+            // 检索ID values for existing masking rules
 
             // Email_HideName
             Guid? email_HideNameMaskingRuleId = Helpers.GetRecordID(
@@ -960,10 +960,10 @@ namespace PowerPlatform_Dataverse_CodeSamples
             List<Entity> fieldPermissionUpdateList =
             [
                 // Allthough these records were created with canread values
-                // When canreadunmasked is set, you must also include a canread value!
+                // 当canreadunmasked is set, you must also include a canread value!
 
                 new("fieldpermission", emailfieldPermissionId) {
-                    ["canreadunmasked"] = new OptionSetValue(3), // All records
+                    ["canreadunmasked"] = new OptionSetValue(3), // 所有records
                     ["canread"] = new OptionSetValue(4) // Allowed
                 },
                 new("fieldpermission", governmentidfieldPermissionId) {
@@ -971,7 +971,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
                     ["canread"] = new OptionSetValue(4) // Allowed
                 },
                 new("fieldpermission", dateofbirthfieldPermissionId) {
-                    ["canreadunmasked"] = new OptionSetValue(3), // All records
+                    ["canreadunmasked"] = new OptionSetValue(3), // 所有records
                     ["canread"] = new OptionSetValue(4) // Allowed
                 },
             ];
@@ -1013,7 +1013,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             Console.WriteLine("\tThe unmasked values for Email and Date of Birth can be retrieved for all records");
 
-            // This GetUnmaskedExampleRows example uses 'UnMaskedData' as an optional parameter
+            // 此GetUnmaskedExampleRows example uses 'UnMaskedData' as an optional parameter
             // https://learn.microsoft.com/power-apps/developer/data-platform/optional-parameters
             Helpers.ShowExampleRows(Examples.GetUnmaskedExampleRows(appUserService));
 
@@ -1072,7 +1072,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             Console.WriteLine($"\t☑ Exported unmanaged solution to this file:");
             Console.WriteLine($"\t\\bin\\Debug\\net8.0\\{filename}\r\n");
 
-            // Save solution
+            // 保存solution
             using (var fs = File.Create(filePath))
             {
                 fs.Write(
@@ -1103,7 +1103,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
             Console.WriteLine($"\t☑ Exported managed solution to this file:");
             Console.WriteLine($"\t\\bin\\Debug\\net8.0\\{filename}\r\n");
 
-            // Save solution
+            // 保存solution
             using (var fs = File.Create(filePath))
             {
                 fs.Write(

@@ -20,7 +20,7 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
                     // Define some anonymous types to define the range 
@@ -34,7 +34,7 @@ namespace PowerApps.Samples
                         Other = 5
                     };
 
-                    // Update the connectionrole instance.
+                    // 更新the connectionrole instance.
                     ConnectionRole connectionRole = new ConnectionRole
                     {
                         ConnectionRoleId = _connectionRoleId,

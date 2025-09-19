@@ -16,21 +16,21 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Create an ExecuteTransactionRequest object.
+                    // 创建an ExecuteTransactionRequest object.
                     var requestToCreateRecords = new ExecuteTransactionRequest()
                     {
-                        // Create an empty organization request collection.
+                        // 创建an empty organization request collection.
                         Requests = new OrganizationRequestCollection(),
                         ReturnResponses = true
                     };
 
-                    // Create several (local, in memory) entities in a collection. 
+                    // 创建several (local, in memory) entities in a collection. 
                     EntityCollection input = GetCollectionOfEntitiesToCreate();
 
-                    // Add a CreateRequest for each entity to the request collection.
+                    // 添加a CreateRequest for each entity to the request collection.
                     foreach (var entity in input.Entities)
                     {
                         CreateRequest createRequest = new CreateRequest { Target = entity };
@@ -59,7 +59,7 @@ namespace PowerApps.Samples
                         Requests = new OrganizationRequestCollection()
                     };
 
-                    // Update the entities that were previously created.
+                    // 更新the entities that were previously created.
                     EntityCollection update = GetCollectionOfEntitiesToUpdate();
 
                     foreach (var entity in update.Entities)

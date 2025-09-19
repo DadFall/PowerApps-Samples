@@ -4,10 +4,10 @@ using System;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// A custom plug-in that can post the execution context of the current message to the Windows
+        /// 一个custom plug-in that can post the execution context of the current message to the Windows
     /// Azure Service Bus. The plug-in also demonstrates tracing which assist with
     /// debugging for plug-ins that are registered in the sandbox.
-    /// </summary>
+        /// </summary>
     /// <remarks>This sample requires that a service endpoint be created first, and its ID passed
     /// to the plug-in constructor through the unsecure configuration parameter when the plug-in
     /// step is registered.</remarks>
@@ -28,7 +28,7 @@ namespace PowerApps.Samples
 
         public void Execute(IServiceProvider serviceProvider)
         {
-            // Retrieve the execution context.
+            // 检索the execution context.
             IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
 
             // Extract the tracing service.

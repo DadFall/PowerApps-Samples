@@ -4,24 +4,24 @@ using PowerApps.Samples.Search.Types;
 namespace PowerPlatform.Dataverse.CodeSamples.types
 {
     /// <summary>
-    /// Decribes the searchstatusResponse.response.value property 
-    /// </summary>
+        /// Decribes the searchstatusResponse.response.value property
+        /// </summary>
     class SearchStatusResult
     {
         /// <summary>
-        /// The current search status
+        /// current search status
         /// </summary>
         [JsonProperty("status")]
         public SearchStatus Status { get; set; }
 
         /// <summary>
-        /// The current lockbox status
+        /// current lockbox status
         /// </summary>
         [JsonProperty("lockboxstatus")]
         public LockboxStatus LockboxStatus { get; set; }
 
         /// <summary>
-        /// The current customer managed key status
+        /// current customer managed key status
         /// </summary>
         [JsonProperty("cmkstatus")]
         public CMKStatus CMKStatus { get; set; }

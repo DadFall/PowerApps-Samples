@@ -28,7 +28,7 @@ namespace PowerApps.Samples
 
                     Console.WriteLine("Enabling auditing on the organization and account entities.");
 
-                    // Enable auditing on the organization.
+                    // 启用auditing on the organization.
                     // First, get the organization's ID from the system user record.
                     Guid orgId = ((WhoAmIResponse)service.Execute(new WhoAmIRequest())).OrganizationId;
 
@@ -36,24 +36,24 @@ namespace PowerApps.Samples
                     var retrivedOrg = service.Retrieve(Organization.EntityLogicalName, orgId,
                         new ColumnSet(new string[] {"isauditenabled" })) as Organization;
 
-                    // Cache the value to set it back later
+                    // 缓存the value to set it back later
                     organizationAuditingFlag = retrivedOrg.IsAuditEnabled.Value;
 
-                    // Enable auditing on the organization.
+                    // 启用auditing on the organization.
                     Organization orgToUpdate = new Organization {
                         Id = orgId,
                         IsAuditEnabled = true
                     };
                     service.Update(orgToUpdate);
 
-                    // Enable auditing on account entities.
+                    // 启用auditing on account entities.
                     accountAuditingFlag = EnableEntityAuditing(service, Account.EntityLogicalName, true);
 
                     #endregion Enable Auditing for an Account
                     #region Retrieve the Record Change History
                     Console.WriteLine("Retrieving the account change history.\n");
 
-                    // Retrieve the audit history for the account and display it.
+                    // 检索the audit history for the account and display it.
                     var changeRequest = new RetrieveRecordChangeHistoryRequest { 
                         Target = new EntityReference(Account.EntityLogicalName, _newAccountId)
                     };                    
@@ -72,7 +72,7 @@ namespace PowerApps.Samples
 
                     #region Retrieve the Attribute Change History
 
-                    // Update the Telephone1 attribute in the Account entity record.
+                    // 更新the Telephone1 attribute in the Account entity record.
                     var accountToUpdate = new Account {
                         AccountId = _newAccountId,
                         Telephone1 = "123-555-5555"
@@ -81,7 +81,7 @@ namespace PowerApps.Samples
                     service.Update(accountToUpdate);
                     Console.WriteLine("Updated the Telephone1 field in the Account entity.");
 
-                    // Retrieve the attribute change history.
+                    // 检索the attribute change history.
                     Console.WriteLine("Retrieving the attribute change history for Telephone1.");
                     var attributeChangeHistoryRequest = new RetrieveAttributeChangeHistoryRequest
                     {
@@ -101,14 +101,14 @@ namespace PowerApps.Samples
                         DisplayAuditDetails(service,detail);
                     }
 
-                    // Save an Audit record ID for later use.
+                    // 保存an Audit record ID for later use.
                     Guid auditSampleId = details.AuditDetails.First().AuditRecord.Id;
                     #endregion Retrieve the Attribute Change History
 
                     #region Retrieve the Audit Details
                     Console.WriteLine("Retrieving audit details for an audit record.");
 
-                    // Retrieve the audit details and display them.
+                    // 检索the audit details and display them.
                     var auditDetailsRequest = new RetrieveAuditDetailsRequest
                     {
                         AuditId = auditSampleId
@@ -122,7 +122,7 @@ namespace PowerApps.Samples
                     #endregion Retrieve the Audit Details
 
                     #region Revert Auditing
-                    // Set the organization and account auditing flags back to the old values
+                    // 设置the organization and account auditing flags back to the old values
 
                     orgToUpdate.IsAuditEnabled = organizationAuditingFlag;
                     service.Update(orgToUpdate);

@@ -5,8 +5,8 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to create a global OptionSet (Choice)
-    /// </summary>
+        /// Contains the data to create a global OptionSet (Choice)
+        /// </summary>
     public sealed class CreateGlobalOptionSetRequest : HttpRequestMessage
     {
 

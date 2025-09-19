@@ -6,22 +6,22 @@ namespace PowerApps.Samples.Metadata.Types
     public class AssociatedMenuConfiguration
     {
         /// <summary>
-        /// The behavior of the associated menu for an entity relationship.
+        /// behavior of the associated menu for an entity relationship.
         /// </summary>
         public AssociatedMenuBehavior Behavior { get; set; }
 
         /// <summary>
-        /// The structure that contains extra data.
+        /// structure that contains extra data.
         /// </summary>
         public AssociatedMenuGroup Group { get; set; }
 
         /// <summary>
-        /// The label for the associated menu.
+        /// label for the associated menu.
         /// </summary>
         public Label Label { get; set; }
 
         /// <summary>
-        /// The order for the associated menu.
+        /// order for the associated menu.
         /// </summary>
         public int? Order { get; set; }
 

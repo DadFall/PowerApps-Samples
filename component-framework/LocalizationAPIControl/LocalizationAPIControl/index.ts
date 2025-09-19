@@ -1,5 +1,5 @@
 ﻿/*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -26,7 +26,7 @@ export class LocalizationAPIControl implements ComponentFramework.StandardContro
 	private button: HTMLButtonElement;
 
 	// Reference to the control container HTMLDivElement
-	// This element contains all elements of our custom control example
+	// 此element contains all elements of our custom control example
 	private _container: HTMLDivElement;
 
 	/**
@@ -55,10 +55,10 @@ export class LocalizationAPIControl implements ComponentFramework.StandardContro
 		this.label.setAttribute("type", "label");
 		this.label.addEventListener("blur", this.onInputBlur.bind(this));
 
-		//Create a button to increment the value by 1.
+		//创建a button to increment the value by 1.
 		this.button = document.createElement("button");
 
-		// Get the localized string from localized string
+		// 获取the localized string from localized string
 		this.button.innerHTML = context.resources.getString("PCF_LocalizationSample_ButtonLabel");
 
 		this.button.classList.add("LocalizationSample_Button_Style");
@@ -97,7 +97,7 @@ export class LocalizationAPIControl implements ComponentFramework.StandardContro
 	 * @param context The entire property bag available to control via Context Object; It contains values as set up by the customizer mapped to names defined in the manifest, as well as utility functions
 	 */
 	public updateView(context: ComponentFramework.Context<IInputs>): void {
-		// This method would rerender the control with the updated values after we call NotifyOutputChanged
+		// 此method would rerender the control with the updated values after we call NotifyOutputChanged
 		//set the value of the field control to the raw value from the configured field
 		this._value = context.parameters.value.raw!;
 		this.label.value = this._value != null ? this._value.toString() : "";

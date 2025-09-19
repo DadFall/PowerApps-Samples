@@ -19,17 +19,17 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
-                    // Create the ServiceContext object that will generate
+                    // 创建the ServiceContext object that will generate
                     // the IQueryable collections for LINQ calls.
                     ServiceContext svcContext =
                         new ServiceContext(service);
 
                     #region SQL Query Translated to LINQ
-                    // Build the following SQL query using QueryExpression:
+                    // 构建the following SQL query using QueryExpression:
                     //
                     //		SELECT contact.fullname, contact.address1_telephone1
                     //		FROM contact

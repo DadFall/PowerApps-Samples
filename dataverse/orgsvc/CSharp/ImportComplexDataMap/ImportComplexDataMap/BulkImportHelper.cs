@@ -62,7 +62,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Check for importlog records
+        /// 检查for importlog records
         /// </summary>
         /// <param name="service"></param>
         /// <param name="importFileId"></param>

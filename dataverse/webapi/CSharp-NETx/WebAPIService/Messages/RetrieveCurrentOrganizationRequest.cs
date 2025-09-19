@@ -3,15 +3,15 @@
 namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to Retrieve information about the current organization.
-    /// </summary>
+        /// Contains the data to Retrieve information about the current organization.
+        /// </summary>
     public sealed class RetrieveCurrentOrganizationRequest : HttpRequestMessage
     {
 
         /// <summary>
-        /// Initializes the RetrieveCurrentOrganizationRequest
+        /// 初始化 the RetrieveCurrentOrganizationRequest
         /// </summary>
-        /// <param name="AccessType">The access type of the organization’s service endpoint.</param>
+        /// <param name="AccessType">access 类型 of the organization’s service endpoint.</param>
         public RetrieveCurrentOrganizationRequest(EndpointAccessType accessType)
         {
             Method = HttpMethod.Get;

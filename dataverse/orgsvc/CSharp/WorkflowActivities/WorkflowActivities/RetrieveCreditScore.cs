@@ -6,10 +6,10 @@ using System;
 using System.Activities;
 
 /// <summary>
-/// Calculates the credit score based on the SSN and name. 
-/// </summary>
+        /// 计算 the credit score based on the SSN and name.
+        /// </summary>
 /// <remarks>
-/// This depends on a custom entity called Loan Application and customizations to Contact.
+        /// 此depends on a custom entity called Loan Application and customizations to Contact.
 /// 
 /// Loan Application requires the following properties:
 /// <list>
@@ -33,10 +33,10 @@ using System.Activities;
 ///		</item>
 /// </list>
 /// 
-/// The activity takes, as input, a EntityReference to the Loan Application and a boolean indicating whether new_creditscore should be updated to the credit score.
-/// </remarks>
-/// <exception cref=">ArgumentNullException">Thrown when LoanApplication is null</exception>
-/// <exception cref=">ArgumentException">Thrown when LoanApplication is not a EntityReference to a LoanApplication entity</exception>
+/// activity takes, as input, a EntityReference to the Loan Application and a boolean indicating whether new_creditscore should be updated to the credit score.
+        /// </remarks>
+/// <exception cref=">ArgumentNullException">当时抛出 LoanApplication 为空</exception>
+/// <exception cref=">ArgumentException">当时抛出 LoanApplication is not a EntityReference to a LoanApplication entity</exception>
 
 namespace PowerApps.Samples
 {
@@ -46,7 +46,7 @@ namespace PowerApps.Samples
 
         protected override void Execute(CodeActivityContext executionContext)
         {
-            //Check to see if the EntityReference has been set
+            //检查to see if the EntityReference has been set
             EntityReference loanApplication = this.LoanApplication.Get(executionContext);
             if (loanApplication == null)
             {
@@ -58,71 +58,71 @@ namespace PowerApps.Samples
                     new ArgumentException("Loan Application must be of type Loan Application", "Loan Application"));
             }
 
-            //Retrieve the Organization Service so that we can retrieve the loan application
+            //检索the Organization Service so that we can retrieve the loan application
             IWorkflowContext context = executionContext.GetExtension<IWorkflowContext>();
             IOrganizationServiceFactory serviceFactory = executionContext.GetExtension<IOrganizationServiceFactory>();
             IOrganizationService service = serviceFactory.CreateOrganizationService(context.InitiatingUserId);
 
-            //Retrieve the Loan Application Entity
+            //检索the Loan Application Entity
             Entity loanEntity;
             {
-                //Create a request
+                //创建a request
                 RetrieveRequest retrieveRequest = new RetrieveRequest();
                 retrieveRequest.ColumnSet = new ColumnSet(new string[] { "new_loanapplicationid", "new_loanapplicantid" });
                 retrieveRequest.Target = loanApplication;
 
-                //Execute the request
+                //执行the request
                 RetrieveResponse retrieveResponse = (RetrieveResponse)service.Execute(retrieveRequest);
 
-                //Retrieve the Loan Application Entity
+                //检索the Loan Application Entity
                 loanEntity = retrieveResponse.Entity as Entity;
             }
 
-            //Retrieve the Contact Entity
+            //检索the Contact Entity
             Entity contactEntity;
             {
-                //Create a request
+                //创建a request
                 EntityReference loanApplicantId = (EntityReference)loanEntity["new_loanapplicantid"];
 
                 RetrieveRequest retrieveRequest = new RetrieveRequest();
                 retrieveRequest.ColumnSet = new ColumnSet(new string[] { "fullname", "new_ssn", "birthdate" });
                 retrieveRequest.Target = loanApplicantId;
 
-                //Execute the request
+                //执行the request
                 RetrieveResponse retrieveResponse = (RetrieveResponse)service.Execute(retrieveRequest);
 
-                //Retrieve the Loan Application Entity
+                //检索the Loan Application Entity
                 contactEntity = retrieveResponse.Entity as Entity;
             }
 
-            //Retrieve the needed properties
+            //检索the needed properties
             string ssn = (string)contactEntity["new_ssn"];
             string name = (string)contactEntity[ContactAttributes.FullName];
             DateTime? birthdate = (DateTime?)contactEntity[ContactAttributes.Birthdate];
             int creditScore;
 
-            //This is where the logic for retrieving the credit score would be inserted
+            //此is where the logic for retrieving the credit score would be inserted
             //We are simply going to return a random number
             creditScore = (new Random()).Next(0, 1000);
 
-            //Set the credit score property
+            //设置the credit score property
             this.CreditScore.Set(executionContext, creditScore);
 
-            //Check to see if the credit score should be saved to the entity
-            //If the value of the property has not been set or it is set to true
+            //检查to see if the credit score should be saved to the entity
+            //如果the value of the property has not been set or it is set to true
             if (null != this.UpdateEntity && this.UpdateEntity.Get(executionContext))
             {
-                //Create the entity
+                //创建the entity
                 Entity updateEntity = new Entity(loanApplication.LogicalName);
                 updateEntity["new_loanapplicationid"] = loanEntity["new_loanapplicationid"];
                 updateEntity["new_creditscore"] = this.CreditScore.Get(executionContext);
 
-                //Update the entity
+                //更新the entity
                 service.Update(updateEntity);
             }
         }
 
-        //Define the properties
+        //定义
         [Input("Loan Application")]
         [ReferenceTarget(CustomEntity)]
         public InArgument<EntityReference> LoanApplication { get; set; }

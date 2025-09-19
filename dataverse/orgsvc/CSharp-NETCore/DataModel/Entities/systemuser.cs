@@ -14,8 +14,8 @@ namespace MyApp.DataModel
 	
 	
 	/// <summary>
-	/// Type of user.
-	/// </summary>
+        /// Type of user.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_accessmode
@@ -41,8 +41,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of address for address 1, such as billing, shipping, or primary address.
-	/// </summary>
+        /// Type of address for address 1, such as billing, shipping, or primary address.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_address1_addresstypecode
@@ -53,8 +53,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipment for address 1.
-	/// </summary>
+        /// Method of shipment for address 1.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_address1_shippingmethodcode
@@ -65,8 +65,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Type of address for address 2, such as billing, shipping, or primary address.
-	/// </summary>
+        /// Type of address for address 2, such as billing, shipping, or primary address.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_address2_addresstypecode
@@ -77,8 +77,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Method of shipment for address 2.
-	/// </summary>
+        /// Method of shipment for address 2.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_address2_shippingmethodcode
@@ -89,8 +89,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Azure state of user.
-	/// </summary>
+        /// Azure state of user.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_azurestate
@@ -107,8 +107,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// License type of user. This is used only in the on-premises version of the product. Online licenses are managed through Microsoft 365 Office Portal.
-	/// </summary>
+        /// License type of user. This is used only in the on-premises version of the product. Online licenses are managed through Microsoft 365 Office Portal.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_caltype
@@ -155,8 +155,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// User delete state.
-	/// </summary>
+        /// User delete state.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_deletestate
@@ -170,8 +170,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Indicates the approval options for server-side synchronization or Email Router access.
-	/// </summary>
+        /// Indicates the approval options for server-side synchronization or Email Router access.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_emailrouteraccessapproval
@@ -191,8 +191,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Incoming email delivery method for the user.
-	/// </summary>
+        /// Incoming email delivery method for the user.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_incomingemaildeliverymethod
@@ -212,8 +212,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// User invitation status.
-	/// </summary>
+        /// User invitation status.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_invitestatuscode
@@ -242,8 +242,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Outgoing email delivery method for the user.
-	/// </summary>
+        /// Outgoing email delivery method for the user.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_outgoingemaildeliverymethod
@@ -260,8 +260,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Preferred address for the user.
-	/// </summary>
+        /// Preferred address for the user.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_preferredaddresscode
@@ -275,8 +275,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Preferred email address for the user.
-	/// </summary>
+        /// Preferred email address for the user.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_preferredemailcode
@@ -287,8 +287,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Preferred phone number for the user.
-	/// </summary>
+        /// Preferred phone number for the user.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_preferredphonecode
@@ -308,8 +308,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// The type of user
-	/// </summary>
+        /// type of user
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
 	public enum systemuser_systemmanagedusertype
@@ -323,8 +323,8 @@ namespace MyApp.DataModel
 	}
 	
 	/// <summary>
-	/// Person with access to the Microsoft CRM system and who owns objects in the Microsoft CRM database.
-	/// </summary>
+        /// Person with access to the Microsoft CRM system and who owns objects in the Microsoft CRM database.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemuser")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("Dataverse Model Builder", "2.0.0.11")]
@@ -332,8 +332,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public SystemUser() : 
 				base(EntityLogicalName)
 		{
@@ -366,8 +366,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type of user.
-		/// </summary>
+        /// Type of user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accessmode")]
 		public virtual systemuser_accessmode? AccessMode
 		{
@@ -384,8 +384,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for address 1.
-		/// </summary>
+        /// Unique identifier for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addressid")]
 		public System.Nullable<System.Guid> Address1_AddressId
 		{
@@ -402,8 +402,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type of address for address 1, such as billing, shipping, or primary address.
-		/// </summary>
+        /// Type of address for address 1, such as billing, shipping, or primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecode")]
 		public virtual systemuser_address1_addresstypecode? Address1_AddressTypeCode
 		{
@@ -420,8 +420,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// City name for address 1.
-		/// </summary>
+        /// City name for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_city")]
 		public string Address1_City
 		{
@@ -438,8 +438,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the complete primary address.
-		/// </summary>
+        /// Shows the complete primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_composite")]
 		public string Address1_Composite
 		{
@@ -450,8 +450,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Country/region name in address 1.
-		/// </summary>
+        /// Country/region name in address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_country")]
 		public string Address1_Country
 		{
@@ -468,8 +468,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// County name for address 1.
-		/// </summary>
+        /// County name for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_county")]
 		public string Address1_County
 		{
@@ -486,8 +486,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Fax number for address 1.
-		/// </summary>
+        /// Fax number for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_fax")]
 		public string Address1_Fax
 		{
@@ -504,8 +504,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Latitude for address 1.
-		/// </summary>
+        /// Latitude for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_latitude")]
 		public System.Nullable<double> Address1_Latitude
 		{
@@ -522,8 +522,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// First line for entering address 1 information.
-		/// </summary>
+        /// First line for entering address 1 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line1")]
 		public string Address1_Line1
 		{
@@ -540,8 +540,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Second line for entering address 1 information.
-		/// </summary>
+        /// Second line for entering address 1 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line2")]
 		public string Address1_Line2
 		{
@@ -558,8 +558,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Third line for entering address 1 information.
-		/// </summary>
+        /// Third line for entering address 1 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_line3")]
 		public string Address1_Line3
 		{
@@ -576,8 +576,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Longitude for address 1.
-		/// </summary>
+        /// Longitude for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_longitude")]
 		public System.Nullable<double> Address1_Longitude
 		{
@@ -594,8 +594,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Name to enter for address 1.
-		/// </summary>
+        /// Name to enter for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_name")]
 		public string Address1_Name
 		{
@@ -612,8 +612,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// ZIP Code or postal code for address 1.
-		/// </summary>
+        /// ZIP Code or postal code for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postalcode")]
 		public string Address1_PostalCode
 		{
@@ -630,8 +630,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Post office box number for address 1.
-		/// </summary>
+        /// Post office box number for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postofficebox")]
 		public string Address1_PostOfficeBox
 		{
@@ -648,8 +648,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Method of shipment for address 1.
-		/// </summary>
+        /// Method of shipment for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcode")]
 		public virtual systemuser_address1_shippingmethodcode? Address1_ShippingMethodCode
 		{
@@ -666,8 +666,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// State or province for address 1.
-		/// </summary>
+        /// State or province for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_stateorprovince")]
 		public string Address1_StateOrProvince
 		{
@@ -684,8 +684,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// First telephone number associated with address 1.
-		/// </summary>
+        /// First telephone number associated with address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone1")]
 		public string Address1_Telephone1
 		{
@@ -702,8 +702,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Second telephone number associated with address 1.
-		/// </summary>
+        /// Second telephone number associated with address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone2")]
 		public string Address1_Telephone2
 		{
@@ -720,8 +720,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Third telephone number associated with address 1.
-		/// </summary>
+        /// Third telephone number associated with address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_telephone3")]
 		public string Address1_Telephone3
 		{
@@ -738,8 +738,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// United Parcel Service (UPS) zone for address 1.
-		/// </summary>
+        /// United Parcel Service (UPS) zone for address 1.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_upszone")]
 		public string Address1_UPSZone
 		{
@@ -756,8 +756,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// UTC offset for address 1. This is the difference between local time and standard Coordinated Universal Time.
-		/// </summary>
+        /// UTC offset for address 1. This is the difference between local time and standard Coordinated Universal Time.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_utcoffset")]
 		public System.Nullable<int> Address1_UTCOffset
 		{
@@ -774,8 +774,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for address 2.
-		/// </summary>
+        /// Unique identifier for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addressid")]
 		public System.Nullable<System.Guid> Address2_AddressId
 		{
@@ -792,8 +792,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type of address for address 2, such as billing, shipping, or primary address.
-		/// </summary>
+        /// Type of address for address 2, such as billing, shipping, or primary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecode")]
 		public virtual systemuser_address2_addresstypecode? Address2_AddressTypeCode
 		{
@@ -810,8 +810,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// City name for address 2.
-		/// </summary>
+        /// City name for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_city")]
 		public string Address2_City
 		{
@@ -828,8 +828,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the complete secondary address.
-		/// </summary>
+        /// Shows the complete secondary address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_composite")]
 		public string Address2_Composite
 		{
@@ -840,8 +840,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Country/region name in address 2.
-		/// </summary>
+        /// Country/region name in address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_country")]
 		public string Address2_Country
 		{
@@ -858,8 +858,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// County name for address 2.
-		/// </summary>
+        /// County name for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_county")]
 		public string Address2_County
 		{
@@ -876,8 +876,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Fax number for address 2.
-		/// </summary>
+        /// Fax number for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_fax")]
 		public string Address2_Fax
 		{
@@ -894,8 +894,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Latitude for address 2.
-		/// </summary>
+        /// Latitude for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_latitude")]
 		public System.Nullable<double> Address2_Latitude
 		{
@@ -912,8 +912,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// First line for entering address 2 information.
-		/// </summary>
+        /// First line for entering address 2 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line1")]
 		public string Address2_Line1
 		{
@@ -930,8 +930,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Second line for entering address 2 information.
-		/// </summary>
+        /// Second line for entering address 2 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line2")]
 		public string Address2_Line2
 		{
@@ -948,8 +948,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Third line for entering address 2 information.
-		/// </summary>
+        /// Third line for entering address 2 information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_line3")]
 		public string Address2_Line3
 		{
@@ -966,8 +966,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Longitude for address 2.
-		/// </summary>
+        /// Longitude for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_longitude")]
 		public System.Nullable<double> Address2_Longitude
 		{
@@ -984,8 +984,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Name to enter for address 2.
-		/// </summary>
+        /// Name to enter for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_name")]
 		public string Address2_Name
 		{
@@ -1002,8 +1002,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// ZIP Code or postal code for address 2.
-		/// </summary>
+        /// ZIP Code or postal code for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postalcode")]
 		public string Address2_PostalCode
 		{
@@ -1020,8 +1020,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Post office box number for address 2.
-		/// </summary>
+        /// Post office box number for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postofficebox")]
 		public string Address2_PostOfficeBox
 		{
@@ -1038,8 +1038,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Method of shipment for address 2.
-		/// </summary>
+        /// Method of shipment for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcode")]
 		public virtual systemuser_address2_shippingmethodcode? Address2_ShippingMethodCode
 		{
@@ -1056,8 +1056,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// State or province for address 2.
-		/// </summary>
+        /// State or province for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_stateorprovince")]
 		public string Address2_StateOrProvince
 		{
@@ -1074,8 +1074,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// First telephone number associated with address 2.
-		/// </summary>
+        /// First telephone number associated with address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone1")]
 		public string Address2_Telephone1
 		{
@@ -1092,8 +1092,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Second telephone number associated with address 2.
-		/// </summary>
+        /// Second telephone number associated with address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone2")]
 		public string Address2_Telephone2
 		{
@@ -1110,8 +1110,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Third telephone number associated with address 2.
-		/// </summary>
+        /// Third telephone number associated with address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_telephone3")]
 		public string Address2_Telephone3
 		{
@@ -1128,8 +1128,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// United Parcel Service (UPS) zone for address 2.
-		/// </summary>
+        /// United Parcel Service (UPS) zone for address 2.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_upszone")]
 		public string Address2_UPSZone
 		{
@@ -1146,8 +1146,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// UTC offset for address 2. This is the difference between local time and standard Coordinated Universal Time.
-		/// </summary>
+        /// UTC offset for address 2. This is the difference between local time and standard Coordinated Universal Time.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_utcoffset")]
 		public System.Nullable<int> Address2_UTCOffset
 		{
@@ -1164,8 +1164,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The identifier for the application. This is used to access data in another application.
-		/// </summary>
+        /// identifier for the application. This is used to access data in another application.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("applicationid")]
 		public System.Nullable<System.Guid> ApplicationId
 		{
@@ -1182,8 +1182,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The URI used as a unique logical identifier for the external app. This can be used to validate the application.
-		/// </summary>
+        /// URI used as a unique logical identifier for the external app. This can be used to validate the application.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("applicationiduri")]
 		public string ApplicationIdUri
 		{
@@ -1194,8 +1194,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// This is the application directory object Id.
-		/// </summary>
+        /// 此is the application directory object Id.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("azureactivedirectoryobjectid")]
 		public System.Nullable<System.Guid> AzureActiveDirectoryObjectId
 		{
@@ -1206,8 +1206,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time when the user was set as soft deleted in Azure.
-		/// </summary>
+        /// Date and time when the user was set as soft deleted in Azure.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("azuredeletedon")]
 		public System.Nullable<System.DateTime> AzureDeletedOn
 		{
@@ -1218,8 +1218,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Azure state of user
-		/// </summary>
+        /// Azure state of user
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("azurestate")]
 		public virtual systemuser_azurestate? AzureState
 		{
@@ -1236,8 +1236,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business unit with which the user is associated.
-		/// </summary>
+        /// Unique identifier of the business unit with which the user is associated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
 		public Microsoft.Xrm.Sdk.EntityReference BusinessUnitId
 		{
@@ -1254,8 +1254,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Fiscal calendar associated with the user.
-		/// </summary>
+        /// Fiscal calendar associated with the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("calendarid")]
 		public Microsoft.Xrm.Sdk.EntityReference CalendarId
 		{
@@ -1272,8 +1272,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// License type of user. This is used only in the on-premises version of the product. Online licenses are managed through Microsoft 365 Office Portal
-		/// </summary>
+        /// License type of user. This is used only in the on-premises version of the product. Online licenses are managed through Microsoft 365 Office Portal
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("caltype")]
 		public virtual systemuser_caltype? CALType
 		{
@@ -1290,8 +1290,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the user.
-		/// </summary>
+        /// Unique identifier of the user who created the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
@@ -1302,8 +1302,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time when the user was created.
-		/// </summary>
+        /// Date and time when the user was created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
@@ -1314,8 +1314,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the systemuser.
-		/// </summary>
+        /// Unique identifier of the delegate user who created the systemuser.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
@@ -1326,8 +1326,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Indicates if default outlook filters have been populated.
-		/// </summary>
+        /// Indicates if default outlook filters have been populated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultfilterspopulated")]
 		public System.Nullable<bool> DefaultFiltersPopulated
 		{
@@ -1338,8 +1338,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Select the mailbox associated with this user.
-		/// </summary>
+        /// 选择the mailbox associated with this user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultmailbox")]
 		public Microsoft.Xrm.Sdk.EntityReference DefaultMailbox
 		{
@@ -1350,8 +1350,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Type a default folder name for the user's OneDrive For Business location.
-		/// </summary>
+        /// Type a default folder name for the user's OneDrive For Business location.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultodbfoldername")]
 		public string DefaultOdbFolderName
 		{
@@ -1362,8 +1362,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// User delete state
-		/// </summary>
+        /// User delete state
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("deletedstate")]
 		public virtual systemuser_deletestate? DeletedState
 		{
@@ -1374,8 +1374,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Reason for disabling the user.
-		/// </summary>
+        /// Reason for disabling the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("disabledreason")]
 		public string DisabledReason
 		{
@@ -1386,8 +1386,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Whether to display the user in service views.
-		/// </summary>
+        /// Whether to display the user in service views.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("displayinserviceviews")]
 		public System.Nullable<bool> DisplayInServiceViews
 		{
@@ -1404,8 +1404,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Active Directory domain of which the user is a member.
-		/// </summary>
+        /// Active Directory domain of which the user is a member.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("domainname")]
 		public string DomainName
 		{
@@ -1422,8 +1422,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the status of the primary email address.
-		/// </summary>
+        /// Shows the status of the primary email address.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailrouteraccessapproval")]
 		public virtual systemuser_emailrouteraccessapproval? EmailRouterAccessApproval
 		{
@@ -1440,8 +1440,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Employee identifier for the user.
-		/// </summary>
+        /// Employee identifier for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("employeeid")]
 		public string EmployeeId
 		{
@@ -1458,8 +1458,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the default image for the record.
-		/// </summary>
+        /// Shows the default image for the record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage")]
 		public byte[] EntityImage
 		{
@@ -1494,8 +1494,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimageid")]
 		public System.Nullable<System.Guid> EntityImageId
 		{
@@ -1506,8 +1506,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Exchange rate for the currency associated with the systemuser with respect to the base currency.
-		/// </summary>
+        /// Exchange rate for the currency associated with the systemuser with respect to the base currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
 		public System.Nullable<decimal> ExchangeRate
 		{
@@ -1518,8 +1518,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// First name of the user.
-		/// </summary>
+        /// First name of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("firstname")]
 		public string FirstName
 		{
@@ -1536,8 +1536,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Full name of the user.
-		/// </summary>
+        /// Full name of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fullname")]
 		public string FullName
 		{
@@ -1548,8 +1548,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Government identifier for the user.
-		/// </summary>
+        /// Government identifier for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("governmentid")]
 		public string GovernmentId
 		{
@@ -1566,8 +1566,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Home phone number for the user.
-		/// </summary>
+        /// Home phone number for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("homephone")]
 		public string HomePhone
 		{
@@ -1584,8 +1584,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("identityid")]
 		public System.Nullable<int> IdentityId
 		{
@@ -1596,8 +1596,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the data import or data migration that created this record.
-		/// </summary>
+        /// Unique identifier of the data import or data migration that created this record.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
 		public System.Nullable<int> ImportSequenceNumber
 		{
@@ -1614,8 +1614,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Incoming email delivery method for the user.
-		/// </summary>
+        /// Incoming email delivery method for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incomingemaildeliverymethod")]
 		public virtual systemuser_incomingemaildeliverymethod? IncomingEmailDeliveryMethod
 		{
@@ -1632,8 +1632,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Internal email address for the user.
-		/// </summary>
+        /// Internal email address for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("internalemailaddress")]
 		public string InternalEMailAddress
 		{
@@ -1650,8 +1650,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// User invitation status.
-		/// </summary>
+        /// User invitation status.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("invitestatuscode")]
 		public virtual systemuser_invitestatuscode? InviteStatusCode
 		{
@@ -1668,8 +1668,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether the user is enabled.
-		/// </summary>
+        /// Information about whether the user is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdisabled")]
 		public System.Nullable<bool> IsDisabled
 		{
@@ -1686,8 +1686,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the status of approval of the email address by O365 Admin.
-		/// </summary>
+        /// Shows the status of approval of the email address by O365 Admin.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isemailaddressapprovedbyo365admin")]
 		public System.Nullable<bool> IsEmailAddressApprovedByO365Admin
 		{
@@ -1698,8 +1698,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Check if user is an integration user.
-		/// </summary>
+        /// 检查if user is an integration user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isintegrationuser")]
 		public System.Nullable<bool> IsIntegrationUser
 		{
@@ -1716,8 +1716,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether the user is licensed.
-		/// </summary>
+        /// Information about whether the user is licensed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("islicensed")]
 		public System.Nullable<bool> IsLicensed
 		{
@@ -1734,8 +1734,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Information about whether the user is synced with the directory.
-		/// </summary>
+        /// Information about whether the user is synced with the directory.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("issyncwithdirectory")]
 		public System.Nullable<bool> IsSyncWithDirectory
 		{
@@ -1752,8 +1752,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Job title of the user.
-		/// </summary>
+        /// Job title of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("jobtitle")]
 		public string JobTitle
 		{
@@ -1770,8 +1770,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Last name of the user.
-		/// </summary>
+        /// Last name of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastname")]
 		public string LastName
 		{
@@ -1788,8 +1788,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Middle name of the user.
-		/// </summary>
+        /// Middle name of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("middlename")]
 		public string MiddleName
 		{
@@ -1806,8 +1806,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Mobile alert email address for the user.
-		/// </summary>
+        /// Mobile alert email address for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mobilealertemail")]
 		public string MobileAlertEMail
 		{
@@ -1824,8 +1824,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Items contained with a particular SystemUser.
-		/// </summary>
+        /// Items contained with a particular SystemUser.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mobileofflineprofileid")]
 		public Microsoft.Xrm.Sdk.EntityReference MobileOfflineProfileId
 		{
@@ -1842,8 +1842,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Mobile phone number for the user.
-		/// </summary>
+        /// Mobile phone number for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mobilephone")]
 		public string MobilePhone
 		{
@@ -1860,8 +1860,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the user.
-		/// </summary>
+        /// Unique identifier of the user who last modified the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
@@ -1872,8 +1872,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time when the user was last modified.
-		/// </summary>
+        /// Date and time when the user was last modified.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
@@ -1884,8 +1884,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the systemuser.
-		/// </summary>
+        /// Unique identifier of the delegate user who last modified the systemuser.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
@@ -1896,8 +1896,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Nickname of the user.
-		/// </summary>
+        /// Nickname of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("nickname")]
 		public string NickName
 		{
@@ -1914,8 +1914,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the organization associated with the user.
-		/// </summary>
+        /// Unique identifier of the organization associated with the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
 		public System.Nullable<System.Guid> OrganizationId
 		{
@@ -1926,8 +1926,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Outgoing email delivery method for the user.
-		/// </summary>
+        /// Outgoing email delivery method for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("outgoingemaildeliverymethod")]
 		public virtual systemuser_outgoingemaildeliverymethod? OutgoingEmailDeliveryMethod
 		{
@@ -1944,8 +1944,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Date and time that the record was migrated.
-		/// </summary>
+        /// Date and time that the record was migrated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
 		public System.Nullable<System.DateTime> OverriddenCreatedOn
 		{
@@ -1962,8 +1962,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the manager of the user.
-		/// </summary>
+        /// Unique identifier of the manager of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentsystemuserid")]
 		public Microsoft.Xrm.Sdk.EntityReference ParentSystemUserId
 		{
@@ -1980,8 +1980,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("passporthi")]
 		public System.Nullable<int> PassportHi
 		{
@@ -1998,8 +1998,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("passportlo")]
 		public System.Nullable<int> PassportLo
 		{
@@ -2016,8 +2016,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Personal email address of the user.
-		/// </summary>
+        /// Personal email address of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("personalemailaddress")]
 		public string PersonalEMailAddress
 		{
@@ -2034,8 +2034,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// URL for the Website on which a photo of the user is located.
-		/// </summary>
+        /// URL for the Website on which a photo of the user is located.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("photourl")]
 		public string PhotoUrl
 		{
@@ -2052,8 +2052,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// User's position in hierarchical security model.
-		/// </summary>
+        /// User's position in hierarchical security model.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("positionid")]
 		public Microsoft.Xrm.Sdk.EntityReference PositionId
 		{
@@ -2070,8 +2070,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Preferred address for the user.
-		/// </summary>
+        /// Preferred address for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredaddresscode")]
 		public virtual systemuser_preferredaddresscode? PreferredAddressCode
 		{
@@ -2088,8 +2088,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Preferred email address for the user.
-		/// </summary>
+        /// Preferred email address for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredemailcode")]
 		public virtual systemuser_preferredemailcode? PreferredEmailCode
 		{
@@ -2106,8 +2106,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Preferred phone number for the user.
-		/// </summary>
+        /// Preferred phone number for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredphonecode")]
 		public virtual systemuser_preferredphonecode? PreferredPhoneCode
 		{
@@ -2124,8 +2124,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the ID of the process.
-		/// </summary>
+        /// Shows the ID of the process.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("processid")]
 		public System.Nullable<System.Guid> ProcessId
 		{
@@ -2142,8 +2142,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the default queue for the user.
-		/// </summary>
+        /// Unique identifier of the default queue for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("queueid")]
 		public Microsoft.Xrm.Sdk.EntityReference QueueId
 		{
@@ -2160,8 +2160,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Salutation for correspondence with the user.
-		/// </summary>
+        /// Salutation for correspondence with the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("salutation")]
 		public string Salutation
 		{
@@ -2178,8 +2178,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Check if user is a setup user.
-		/// </summary>
+        /// 检查if user is a setup user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("setupuser")]
 		public System.Nullable<bool> SetupUser
 		{
@@ -2196,8 +2196,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// SharePoint Work Email Address
-		/// </summary>
+        /// SharePoint Work Email Address
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sharepointemailaddress")]
 		public string SharePointEmailAddress
 		{
@@ -2214,8 +2214,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Skill set of the user.
-		/// </summary>
+        /// Skill set of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("skills")]
 		public string Skills
 		{
@@ -2232,8 +2232,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the ID of the stage.
-		/// </summary>
+        /// Shows the ID of the stage.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
 		{
@@ -2250,8 +2250,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// The type of user
-		/// </summary>
+        /// type of user
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemmanagedusertype")]
 		public virtual systemuser_systemmanagedusertype? SystemManagedUserType
 		{
@@ -2268,8 +2268,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier for the user.
-		/// </summary>
+        /// Unique identifier for the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemuserid")]
 		public System.Nullable<System.Guid> SystemUserId
 		{
@@ -2307,8 +2307,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the territory to which the user is assigned.
-		/// </summary>
+        /// Unique identifier of the territory to which the user is assigned.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("territoryid")]
 		public Microsoft.Xrm.Sdk.EntityReference TerritoryId
 		{
@@ -2325,8 +2325,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
 		public System.Nullable<int> TimeZoneRuleVersionNumber
 		{
@@ -2343,8 +2343,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Title of the user.
-		/// </summary>
+        /// Title of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("title")]
 		public string Title
 		{
@@ -2361,8 +2361,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Unique identifier of the currency associated with the systemuser.
-		/// </summary>
+        /// Unique identifier of the currency associated with the systemuser.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
 		{
@@ -2379,8 +2379,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("traversedpath")]
 		public string TraversedPath
 		{
@@ -2397,8 +2397,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Shows the type of user license.
-		/// </summary>
+        /// Shows the type of user license.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("userlicensetype")]
 		public System.Nullable<int> UserLicenseType
 		{
@@ -2415,8 +2415,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		///  User PUID User Identifiable Information
-		/// </summary>
+        ///  User PUID User Identifiable Information
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("userpuid")]
 		public string UserPuid
 		{
@@ -2427,8 +2427,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Time zone code that was in use when the record was created.
-		/// </summary>
+        /// Time zone code that was in use when the record was created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
 		public System.Nullable<int> UTCConversionTimeZoneCode
 		{
@@ -2445,8 +2445,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Version number of the user.
-		/// </summary>
+        /// Version number of the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
@@ -2457,8 +2457,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Windows Live ID
-		/// </summary>
+        /// Windows Live ID
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("windowsliveid")]
 		public string WindowsLiveID
 		{
@@ -2475,8 +2475,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// User's Yammer login email address
-		/// </summary>
+        /// User's Yammer login email address
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yammeremailaddress")]
 		public string YammerEmailAddress
 		{
@@ -2493,8 +2493,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// User's Yammer ID
-		/// </summary>
+        /// User's Yammer ID
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yammeruserid")]
 		public string YammerUserId
 		{
@@ -2511,8 +2511,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Pronunciation of the first name of the user, written in phonetic hiragana or katakana characters.
-		/// </summary>
+        /// Pronunciation of the first name of the user, written in phonetic hiragana or katakana characters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yomifirstname")]
 		public string YomiFirstName
 		{
@@ -2529,8 +2529,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Pronunciation of the full name of the user, written in phonetic hiragana or katakana characters.
-		/// </summary>
+        /// Pronunciation of the full name of the user, written in phonetic hiragana or katakana characters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yomifullname")]
 		public string YomiFullName
 		{
@@ -2541,8 +2541,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Pronunciation of the last name of the user, written in phonetic hiragana or katakana characters.
-		/// </summary>
+        /// Pronunciation of the last name of the user, written in phonetic hiragana or katakana characters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yomilastname")]
 		public string YomiLastName
 		{
@@ -2559,8 +2559,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Pronunciation of the middle name of the user, written in phonetic hiragana or katakana characters.
-		/// </summary>
+        /// Pronunciation of the middle name of the user, written in phonetic hiragana or katakana characters.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yomimiddlename")]
 		public string YomiMiddleName
 		{
@@ -2577,8 +2577,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N contact_owning_user
-		/// </summary>
+        /// 1:N contact_owning_user
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_owning_user")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> contact_owning_user
 		{
@@ -2595,8 +2595,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_accountbase_createdby
-		/// </summary>
+        /// 1:N lk_accountbase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_createdby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> lk_accountbase_createdby
 		{
@@ -2613,8 +2613,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_accountbase_createdonbehalfby
-		/// </summary>
+        /// 1:N lk_accountbase_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_createdonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> lk_accountbase_createdonbehalfby
 		{
@@ -2631,8 +2631,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_accountbase_modifiedby
-		/// </summary>
+        /// 1:N lk_accountbase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_modifiedby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> lk_accountbase_modifiedby
 		{
@@ -2649,8 +2649,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_accountbase_modifiedonbehalfby
-		/// </summary>
+        /// 1:N lk_accountbase_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_accountbase_modifiedonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> lk_accountbase_modifiedonbehalfby
 		{
@@ -2667,8 +2667,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_businessunit_createdonbehalfby
-		/// </summary>
+        /// 1:N lk_businessunit_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunit_createdonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.BusinessUnit> lk_businessunit_createdonbehalfby
 		{
@@ -2685,8 +2685,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_businessunit_modifiedonbehalfby
-		/// </summary>
+        /// 1:N lk_businessunit_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunit_modifiedonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.BusinessUnit> lk_businessunit_modifiedonbehalfby
 		{
@@ -2703,8 +2703,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_businessunitbase_createdby
-		/// </summary>
+        /// 1:N lk_businessunitbase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunitbase_createdby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.BusinessUnit> lk_businessunitbase_createdby
 		{
@@ -2721,8 +2721,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_businessunitbase_modifiedby
-		/// </summary>
+        /// 1:N lk_businessunitbase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunitbase_modifiedby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.BusinessUnit> lk_businessunitbase_modifiedby
 		{
@@ -2739,8 +2739,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_contact_createdonbehalfby
-		/// </summary>
+        /// 1:N lk_contact_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contact_createdonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> lk_contact_createdonbehalfby
 		{
@@ -2757,8 +2757,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_contact_modifiedonbehalfby
-		/// </summary>
+        /// 1:N lk_contact_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contact_modifiedonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> lk_contact_modifiedonbehalfby
 		{
@@ -2775,8 +2775,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_contactbase_createdby
-		/// </summary>
+        /// 1:N lk_contactbase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contactbase_createdby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> lk_contactbase_createdby
 		{
@@ -2793,8 +2793,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_contactbase_modifiedby
-		/// </summary>
+        /// 1:N lk_contactbase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contactbase_modifiedby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> lk_contactbase_modifiedby
 		{
@@ -2811,8 +2811,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_letter_createdby
-		/// </summary>
+        /// 1:N lk_letter_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_letter_createdby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Letter> lk_letter_createdby
 		{
@@ -2829,8 +2829,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_letter_createdonbehalfby
-		/// </summary>
+        /// 1:N lk_letter_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_letter_createdonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Letter> lk_letter_createdonbehalfby
 		{
@@ -2847,8 +2847,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_letter_modifiedby
-		/// </summary>
+        /// 1:N lk_letter_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_letter_modifiedby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Letter> lk_letter_modifiedby
 		{
@@ -2865,8 +2865,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_letter_modifiedonbehalfby
-		/// </summary>
+        /// 1:N lk_letter_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_letter_modifiedonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Letter> lk_letter_modifiedonbehalfby
 		{
@@ -2883,8 +2883,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_role_createdonbehalfby
-		/// </summary>
+        /// 1:N lk_role_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_role_createdonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Role> lk_role_createdonbehalfby
 		{
@@ -2901,8 +2901,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_role_modifiedonbehalfby
-		/// </summary>
+        /// 1:N lk_role_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_role_modifiedonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Role> lk_role_modifiedonbehalfby
 		{
@@ -2919,8 +2919,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_rolebase_createdby
-		/// </summary>
+        /// 1:N lk_rolebase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_rolebase_createdby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Role> lk_rolebase_createdby
 		{
@@ -2937,8 +2937,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_rolebase_modifiedby
-		/// </summary>
+        /// 1:N lk_rolebase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_rolebase_modifiedby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Role> lk_rolebase_modifiedby
 		{
@@ -2955,8 +2955,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_systemuser_createdonbehalfby
-		/// </summary>
+        /// 1:N lk_systemuser_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuser_createdonbehalfby", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.SystemUser> Referencedlk_systemuser_createdonbehalfby
 		{
@@ -2973,8 +2973,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_systemuser_modifiedonbehalfby
-		/// </summary>
+        /// 1:N lk_systemuser_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuser_modifiedonbehalfby", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.SystemUser> Referencedlk_systemuser_modifiedonbehalfby
 		{
@@ -2991,8 +2991,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_systemuserbase_createdby
-		/// </summary>
+        /// 1:N lk_systemuserbase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuserbase_createdby", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.SystemUser> Referencedlk_systemuserbase_createdby
 		{
@@ -3009,8 +3009,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_systemuserbase_modifiedby
-		/// </summary>
+        /// 1:N lk_systemuserbase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuserbase_modifiedby", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.SystemUser> Referencedlk_systemuserbase_modifiedby
 		{
@@ -3027,8 +3027,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_team_createdonbehalfby
-		/// </summary>
+        /// 1:N lk_team_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_team_createdonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Team> lk_team_createdonbehalfby
 		{
@@ -3045,8 +3045,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_team_modifiedonbehalfby
-		/// </summary>
+        /// 1:N lk_team_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_team_modifiedonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Team> lk_team_modifiedonbehalfby
 		{
@@ -3063,8 +3063,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_teambase_administratorid
-		/// </summary>
+        /// 1:N lk_teambase_administratorid
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_administratorid")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Team> lk_teambase_administratorid
 		{
@@ -3081,8 +3081,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_teambase_createdby
-		/// </summary>
+        /// 1:N lk_teambase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_createdby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Team> lk_teambase_createdby
 		{
@@ -3099,8 +3099,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_teambase_modifiedby
-		/// </summary>
+        /// 1:N lk_teambase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_teambase_modifiedby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Team> lk_teambase_modifiedby
 		{
@@ -3117,8 +3117,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_userqueryvisualization_createdby
-		/// </summary>
+        /// 1:N lk_userqueryvisualization_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userqueryvisualization_createdby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.UserQueryVisualization> lk_userqueryvisualization_createdby
 		{
@@ -3135,8 +3135,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_userqueryvisualization_modifiedby
-		/// </summary>
+        /// 1:N lk_userqueryvisualization_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userqueryvisualization_modifiedby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.UserQueryVisualization> lk_userqueryvisualization_modifiedby
 		{
@@ -3153,8 +3153,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_userqueryvisualizationbase_createdonbehalfby
-		/// </summary>
+        /// 1:N lk_userqueryvisualizationbase_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userqueryvisualizationbase_createdonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.UserQueryVisualization> lk_userqueryvisualizationbase_createdonbehalfby
 		{
@@ -3171,8 +3171,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N lk_userqueryvisualizationbase_modifiedonbehalfby
-		/// </summary>
+        /// 1:N lk_userqueryvisualizationbase_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userqueryvisualizationbase_modifiedonbehalfby")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.UserQueryVisualization> lk_userqueryvisualizationbase_modifiedonbehalfby
 		{
@@ -3189,8 +3189,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N system_user_accounts
-		/// </summary>
+        /// 1:N system_user_accounts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_accounts")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> system_user_accounts
 		{
@@ -3207,8 +3207,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N system_user_activity_parties
-		/// </summary>
+        /// 1:N system_user_activity_parties
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_activity_parties")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.ActivityParty> system_user_activity_parties
 		{
@@ -3225,8 +3225,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N system_user_contacts
-		/// </summary>
+        /// 1:N system_user_contacts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_contacts")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Contact> system_user_contacts
 		{
@@ -3243,8 +3243,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N user_accounts
-		/// </summary>
+        /// 1:N user_accounts
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_accounts")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Account> user_accounts
 		{
@@ -3261,8 +3261,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N user_letter
-		/// </summary>
+        /// 1:N user_letter
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_letter")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Letter> user_letter
 		{
@@ -3279,8 +3279,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N user_parent_user
-		/// </summary>
+        /// 1:N user_parent_user
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_parent_user", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.SystemUser> Referenceduser_parent_user
 		{
@@ -3297,8 +3297,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// 1:N user_userqueryvisualizations
-		/// </summary>
+        /// 1:N user_userqueryvisualizations
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_userqueryvisualizations")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.UserQueryVisualization> user_userqueryvisualizations
 		{
@@ -3315,8 +3315,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:N systemuserroles_association
-		/// </summary>
+        /// N:N systemuserroles_association
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("systemuserroles_association")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Role> systemuserroles_association
 		{
@@ -3333,8 +3333,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:N teammembership_association
-		/// </summary>
+        /// N:N teammembership_association
+        /// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("teammembership_association")]
 		public System.Collections.Generic.IEnumerable<MyApp.DataModel.Team> teammembership_association
 		{
@@ -3351,8 +3351,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_system_users
-		/// </summary>
+        /// N:1 business_unit_system_users
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_system_users")]
 		public MyApp.DataModel.BusinessUnit business_unit_system_users
@@ -3370,8 +3370,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_systemuser_createdonbehalfby
-		/// </summary>
+        /// N:1 lk_systemuser_createdonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuser_createdonbehalfby", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.SystemUser Referencinglk_systemuser_createdonbehalfby
@@ -3383,8 +3383,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_systemuser_modifiedonbehalfby
-		/// </summary>
+        /// N:1 lk_systemuser_modifiedonbehalfby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuser_modifiedonbehalfby", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.SystemUser Referencinglk_systemuser_modifiedonbehalfby
@@ -3396,8 +3396,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_systemuserbase_createdby
-		/// </summary>
+        /// N:1 lk_systemuserbase_createdby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuserbase_createdby", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.SystemUser Referencinglk_systemuserbase_createdby
@@ -3409,8 +3409,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 lk_systemuserbase_modifiedby
-		/// </summary>
+        /// N:1 lk_systemuserbase_modifiedby
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_systemuserbase_modifiedby", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.SystemUser Referencinglk_systemuserbase_modifiedby
@@ -3422,8 +3422,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// N:1 user_parent_user
-		/// </summary>
+        /// N:1 user_parent_user
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentsystemuserid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_parent_user", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
 		public MyApp.DataModel.SystemUser Referencinguser_parent_user

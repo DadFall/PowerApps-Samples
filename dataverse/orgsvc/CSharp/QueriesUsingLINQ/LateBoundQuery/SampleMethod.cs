@@ -14,10 +14,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("9.0.0.0")))
             {
-                //The environment version is lower than version 9.0.0.0
+                //environment version is lower than version 9.0.0.0
                 return;
             }
 
@@ -30,12 +30,12 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create 3 contacts.
+            // 创建3 contacts.
             Contact contact = new Contact()
             {
                 FirstName = "Ben",
@@ -66,7 +66,7 @@ namespace PowerApps.Samples
             };
             _contactIds.Add(service.Create(contact));
 
-            // Create 3 leads.
+            // 创建3 leads.
             Lead lead = new Lead()
             {
                 FirstName = "Dan",
@@ -97,7 +97,7 @@ namespace PowerApps.Samples
             };
             _leadIds.Add(service.Create(lead));
 
-            // Create 5 customized Accounts for the LINQ samples.
+            // 创建5 customized Accounts for the LINQ samples.
             Account account = new Account
             {
                 Name = "A. Datum Corporation",
@@ -153,7 +153,7 @@ namespace PowerApps.Samples
             };
             _accountIds.Add(service.Create(account));
 
-            // Create 10 basic Account records.
+            // 创建10 basic Account records.
             for (int i = 1; i <= 10; i++)
             {
                 account = new Account
@@ -169,7 +169,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

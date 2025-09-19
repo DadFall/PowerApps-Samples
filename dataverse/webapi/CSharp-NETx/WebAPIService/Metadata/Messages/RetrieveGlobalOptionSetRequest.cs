@@ -3,16 +3,16 @@
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to retrieve a global optionset (choice)
-    /// </summary>
+        /// Contains the data to retrieve a global optionset (choice)
+        /// </summary>
     public sealed class RetrieveGlobalOptionSetRequest : HttpRequestMessage
     {
         /// <summary>
         /// Returns a RetrieveGlobalOptionSetRequest
         /// </summary>
-        /// <param name="metadataid">The Id of the global optionset</param>
-        /// <param name="name">The name of the global optionset</param>
-        /// <param name="type">Specify the type of option set: Picklist or Boolean. Defaults to Picklist</param>
+        /// <param name="metadataid">Id of the global 选项et</param>
+        /// <param name="name">名称 of the global 选项et</param>
+        /// <param name="type">Specify the 类型 of option set: Pick列表 or Boolean. Defaults to Pick列表</param>
         /// <exception cref="Exception"></exception>
         public RetrieveGlobalOptionSetRequest(
             Guid? metadataid = null,
@@ -29,7 +29,7 @@ namespace PowerApps.Samples.Metadata.Messages
             }
 
 
-            //Get the key to use
+            //获取the key to use
             string key;
             if (metadataid != null)
             {

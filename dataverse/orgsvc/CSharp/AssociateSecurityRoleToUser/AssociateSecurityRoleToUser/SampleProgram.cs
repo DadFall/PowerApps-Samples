@@ -20,11 +20,11 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
 
-                    // Find the role.
+                    // 查找the role.
                     QueryExpression query = new QueryExpression
                     {
                         EntityName = Role.EntityLogicalName,
@@ -44,7 +44,7 @@ namespace PowerApps.Samples
                         }
                     };
 
-                    // Get the role.
+                    // 获取the role.
                     EntityCollection roles = service.RetrieveMultiple(query);
                     if (roles.Entities.Count > 0)
                     {

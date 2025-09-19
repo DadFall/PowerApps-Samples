@@ -26,10 +26,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -55,8 +55,8 @@ namespace PowerApps.Samples
         
         
                     /// <summary>
-                    /// Retrieves the current users timezone code and locale id
-                    /// </summary>
+        /// 检索 the current users timezone code and locale id
+        /// </summary>
                     private static void RetrieveCurrentUsersSettings(CrmServiceClient service)
         {
             var currentUserSettings = service.RetrieveMultiple(
@@ -77,7 +77,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Uses the current locale id to retrieve all the timezones 
+        /// Uses the current locale id to retrieve all the timezones
         /// </summary>
         private static void RetrieveAllTimeZonesForLocale(CrmServiceClient service)
         {
@@ -104,7 +104,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Retrieves a timezone by the name and the locale ID
+        /// 检索 a timezone by the name and the locale ID
         /// </summary>
         private static void GetTimeZoneCodeByLocaleAndName(CrmServiceClient service)
         {
@@ -150,7 +150,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Retrieve time zones less than 50.
+        /// 检索time zones less than 50.
         /// </summary>
         private static void RetrieveTimeZonesLessThan50(CrmServiceClient service)
         {
@@ -210,7 +210,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Retrieves the utc time from the local time
+        /// 检索 the utc time from the local time
         /// </summary>
         /// <param name="localTime"></param>
         private static void RetrieveUTCTimeFromLocalTime(CrmServiceClient service, DateTime localTime)

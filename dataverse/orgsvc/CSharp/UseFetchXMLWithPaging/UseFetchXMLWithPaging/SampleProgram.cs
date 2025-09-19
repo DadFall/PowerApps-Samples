@@ -28,19 +28,19 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Define the fetch attributes.
-                    // Set the number of records per page to retrieve.
+                    // 定义fetch attributes.
+                    // 设置the number of records per page to retrieve.
                     int fetchCount = 3;
-                    // Initialize the page number.
+                    // 初始化the page number.
                     int pageNumber = 1;
-                    // Initialize the number of records.
+                    // 初始化the number of records.
                     int recordCount = 0;
-                    // Specify the current paging cookie. For retrieving the first page, 
+                    // 指定current paging cookie. For retrieving the first page, 
                     // pagingCookie should be null.
                     string pagingCookie = null;
 
-                    // Create the FetchXml string for retrieving all child accounts to a parent account.
-                    // This fetch query is using 1 placeholder to specify the parent account id 
+                    // 创建the FetchXml string for retrieving all child accounts to a parent account.
+                    // 此fetch query is using 1 placeholder to specify the parent account id 
                     // for filtering out required accounts. Filter query is optional.
                     // Fetch query also includes optional order criteria that, in this case, is used 
                     // to order the results in ascending order on the name data column.
@@ -64,7 +64,7 @@ namespace PowerApps.Samples
 
                     while (true)
                     {
-                        // Build fetchXml string with the placeholders.
+                        // 构建fetchXml string with the placeholders.
                         string xml = CreateXml(fetchXml, pagingCookie, pageNumber, fetchCount);
 
                         // Excute the fetch query and get the xml result.
@@ -80,7 +80,7 @@ namespace PowerApps.Samples
                             System.Console.WriteLine("{0}.\t{1}\t\t{2}", ++recordCount, c.Attributes["name"], c.Attributes["emailaddress1"]);
                         }
 
-                        // Check for morerecords, if it returns 1.
+                        // 检查for morerecords, if it returns 1.
                         if (returnCollection.MoreRecords)
                         {
                             Console.WriteLine("\n****************\nPage number {0}\n****************", pageNumber);
@@ -89,12 +89,12 @@ namespace PowerApps.Samples
                             // Increment the page number to retrieve the next page.
                             pageNumber++;
 
-                            // Set the paging cookie to the paging cookie returned from current results.                            
+                            // 设置the paging cookie to the paging cookie returned from current results.                            
                             pagingCookie = returnCollection.PagingCookie;
                         }
                         else
                         {
-                            // If no more records in the result nodes, exit the loop.
+                            // 如果no more records in the result nodes, exit the loop.
                             break;
                         }
                     }
@@ -138,7 +138,7 @@ namespace PowerApps.Samples
             StringReader stringReader = new StringReader(xml);
             var reader = new XmlTextReader(stringReader);
 
-            // Load document
+            // 加载document
             XmlDocument doc = new XmlDocument();
             doc.Load(reader);
 

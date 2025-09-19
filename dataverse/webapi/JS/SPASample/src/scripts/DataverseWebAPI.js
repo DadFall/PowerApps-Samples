@@ -3,10 +3,10 @@
  * @classdesc This class represents the Dataverse Web API Client.
  */
 class Client {
-  // The base URL for the Dataverse Web API
+  // base URL for the Dataverse Web API
   // Something like: https://your-org.api.crm.dynamics.com/api/data/v9.2/
   #apiEndpoint;
-  // The function to get an access token
+  // function to get an access token
   #getTokenFunc;
 
   /**
@@ -124,7 +124,7 @@ class Client {
     try {
       const response = await fetch(requestCopy);
       if (!response.ok) {
-        // Handle 304 Not Modified for GET requests
+        // 处理304 Not Modified for GET requests
         if (response.status === 304 && request.method === "GET") {
           return response;
         }
@@ -299,11 +299,11 @@ class Client {
     }
     //#endregion Parameter Validation
 
-    // This operation can't use the Prefer: odata.include-annotations="*" header
+    // 此operation can't use the Prefer: odata.include-annotations="*" header
     // because it will never return 304 Not Modified.
 
     const columns = columnsMatch[1].split(",");
-    // This operation can't use any $expand query options
+    // 此operation can't use any $expand query options
     // because it will never return 304 Not Modified.
     const query = `$select=${columns}`;
     const entitySetName = entitySetNameMatch[1];
@@ -313,7 +313,7 @@ class Client {
     const request = new Request(new URL(resource, this.apiEndpoint), {
       method: "GET",
     });
-    // This operation can't use the Prefer: odata.include-annotations="*" header
+    // 此operation can't use the Prefer: odata.include-annotations="*" header
     // because it could never return 304 Not Modified when that header is set.
     request.headers.set("If-None-Match", etag);
 
@@ -1215,7 +1215,7 @@ class ChangeSet {
   }
 }
 
-// Group public classes in a namespace object for export
+// 分组public classes in a namespace object for export
 const DataverseWebAPI = {
   Client,
   ChangeSet,

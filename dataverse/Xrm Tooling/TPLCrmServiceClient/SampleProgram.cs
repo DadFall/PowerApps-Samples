@@ -50,7 +50,7 @@ namespace PowerApps.Samples
 
 
 
-                    // Generate a list of account entities to create.
+                    // 生成a list of account entities to create.
 
                     var accountsToImport = new List<Entity>();
                     var count = 0;
@@ -79,7 +79,7 @@ namespace PowerApps.Samples
                         Console.WriteLine($"Deleting {createdAccounts.Count} accounts");
                         var startDelete = DateTime.Now;
 
-                        //Delete the list of accounts created
+                        //删除the list of accounts created
                         DeleteEntities(service, createdAccounts.ToList());
 
                         var secondsToDelete = (DateTime.Now - startDelete).TotalSeconds;
@@ -88,7 +88,7 @@ namespace PowerApps.Samples
                     }
                     catch (AggregateException)
                     {
-                        // Handle exceptions
+                        // 处理exceptions
                     }
 
                     Console.WriteLine("Done.");

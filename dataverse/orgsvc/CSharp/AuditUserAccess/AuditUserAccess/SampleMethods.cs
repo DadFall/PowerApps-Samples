@@ -22,10 +22,10 @@ namespace PowerApps.Samples
         /// <param name="service">Specifies the service to connect to.</param>
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
             CreateRequiredRecords(service);
@@ -37,18 +37,18 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a new account entity. 
+            // 创建a new account entity. 
             var newAccount = new Account { Name = "Example Account" };
             _newAccountId = service.Create(newAccount);
         }
 
         private static bool EnableEntityAuditing(CrmServiceClient service, String entityLogicalName, bool flag)
         {
-            // Retrieve the entity metadata.
+            // 检索the entity metadata.
             var entityRequest = new RetrieveEntityRequest
             {
                 LogicalName = entityLogicalName,
@@ -58,7 +58,7 @@ namespace PowerApps.Samples
             var entityResponse =
                 (RetrieveEntityResponse)service.Execute(entityRequest);
 
-            // Enable auditing on the entity. By default, this also enables auditing
+            // 启用auditing on the entity. By default, this also enables auditing
             // on all the entity's attributes.
 
             EntityMetadata entityMetadata = entityResponse.EntityMetadata;
@@ -75,7 +75,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
@@ -107,19 +107,19 @@ namespace PowerApps.Samples
 
             if (deleteRecords)
             {
-                // Get the list of audit partitions.
+                // 获取the list of audit partitions.
                 var partitionRequest =
                     (RetrieveAuditPartitionListResponse)service.Execute(new RetrieveAuditPartitionListRequest());
                 AuditPartitionDetailCollection partitions = partitionRequest.AuditPartitionDetailCollection;
 
-                // Create a delete request with an end date earlier than possible.
+                // 创建a delete request with an end date earlier than possible.
                 var deleteRequest = new DeleteAuditDataRequest();
                 deleteRequest.EndDate = new DateTime(2000, 1, 1);
 
-                // Check if partitions are not supported as is the case with SQL Server Standard edition.
+                // 检查if partitions are not supported as is the case with SQL Server Standard edition.
                 if (partitions.IsLogicalCollection)
                 {
-                    // Delete all audit records created up until now.
+                    // 删除all audit records created up until now.
                     deleteRequest.EndDate = DateTime.Now;
                 }
 
@@ -140,7 +140,7 @@ namespace PowerApps.Samples
                     }
                 }
 
-                // Delete the audit records.
+                // 删除the audit records.
                 if (deleteRequest.EndDate != new DateTime(2000, 1, 1))
                 {
                     service.Execute(deleteRequest);

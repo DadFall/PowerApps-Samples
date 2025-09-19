@@ -17,8 +17,8 @@ namespace MyApp.DataModel
 	{
 		
 		/// <summary>
-		/// Returns the integer version of an OptionSetValue
-		/// </summary>
+        /// Returns the integer version of an OptionSetValue
+        /// </summary>
 		public static System.Nullable<int> GetEnum(Microsoft.Xrm.Sdk.Entity entity, string attributeLogicalName)
 		{
 			if (entity.Attributes.ContainsKey(attributeLogicalName))
@@ -33,8 +33,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Returns a collection of integer version's of an Multi-Select OptionSetValue for a given attribute on the passed entity
-		/// </summary>
+        /// Returns a collection of integer version's of an Multi-Select OptionSetValue for a given attribute on the passed entity
+        /// </summary>
 		public static System.Collections.Generic.IEnumerable<T> GetMultiEnum<T>(Microsoft.Xrm.Sdk.Entity entity, string attributeLogicalName)
 		
 		{
@@ -49,8 +49,8 @@ namespace MyApp.DataModel
 		}
 		
 		/// <summary>
-		/// Returns a OptionSetValueCollection based on a list of Multi-Select OptionSetValues
-		/// </summary>
+        /// Returns a OptionSetValueCollection based on a list of Multi-Select OptionSetValues
+        /// </summary>
 		public static Microsoft.Xrm.Sdk.OptionSetValueCollection GetMultiEnum<T>(Microsoft.Xrm.Sdk.Entity entity, string attributeLogicalName, System.Collections.Generic.IEnumerable<T> values)
 		
 		{

@@ -16,18 +16,18 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
 
-                    // Retrieve a user.
+                    // 检索a user.
                     var user = service.Retrieve(SystemUser.EntityLogicalName,
                         _userId, new ColumnSet(new String[] { "systemuserid", "firstname", "lastname" })).ToEntity<SystemUser>();
 
                     if (user != null)
                     {
                         Console.WriteLine("{1} {0} user account is retrieved.", user.LastName, user.FirstName);
-                        // Find a role.
+                        // 查找a role.
                         var query = new QueryExpression
                         {
                             EntityName = Role.EntityLogicalName,
@@ -47,7 +47,7 @@ namespace PowerApps.Samples
                             }
                         };
 
-                        // Get the role.
+                        // 获取the role.
                         EntityCollection givenRoles = service.RetrieveMultiple(query);
 
                         if (givenRoles.Entities.Count > 0)
@@ -74,7 +74,7 @@ namespace PowerApps.Samples
                                 }
                             };
 
-                            // Build the query.
+                            // 构建the query.
                             var linkQuery = new QueryExpression()
                             {
                                 EntityName = Role.EntityLogicalName,
@@ -99,7 +99,7 @@ namespace PowerApps.Samples
                                 }
                             };
 
-                            // Retrieve matching roles.
+                            // 检索matching roles.
                             EntityCollection matchEntities = service.RetrieveMultiple(linkQuery);
 
                             // if an entity is returned then the user is a member

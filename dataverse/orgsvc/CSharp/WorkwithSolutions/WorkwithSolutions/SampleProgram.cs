@@ -54,14 +54,14 @@ namespace PowerApps.Samples
                     EntityCollection querySDKSamplePublisherResults = service.RetrieveMultiple(querySDKSamplePublisher);
                     Publisher SDKSamplePublisherResults = null;
 
-                    //If it already exists, use it
+                    //如果it already exists, use it
                     if (querySDKSamplePublisherResults.Entities.Count > 0)
                     {
                         SDKSamplePublisherResults = (Publisher)querySDKSamplePublisherResults.Entities[0];
                         _powerappsSdkPublisherId = (Guid)SDKSamplePublisherResults.PublisherId;
                         _customizationPrefix = SDKSamplePublisherResults.CustomizationPrefix;
                     }
-                    //If it doesn't exist, create it
+                    //如果it doesn't exist, create it
                     if (SDKSamplePublisherResults == null)
                     {
                         _powerappsSdkPublisherId = service.Create(_powerappsSdkPublisher);
@@ -69,9 +69,9 @@ namespace PowerApps.Samples
                         _customizationPrefix = _powerappsSdkPublisher.CustomizationPrefix;
                     }
 
-                    // Retrieve the Default Publisher
+                    // 检索the Default Publisher
 
-                    //The default publisher has a constant GUID value;
+                    //default publisher has a constant GUID value;
                     Guid DefaultPublisherId = new Guid("{d21aab71-79e7-11dd-8874-00188b01e34f}");
 
                     Publisher DefaultPublisher = (Publisher)service.Retrieve(Publisher.EntityLogicalName, DefaultPublisherId, new ColumnSet(new string[] { "friendlyname" }));
@@ -84,7 +84,7 @@ namespace PowerApps.Samples
                     };
                     Console.WriteLine("Retrieved the {0}.", DefaultPublisherReference.Name);
 
-                    // Create a Solution
+                    // 创建a Solution
                     //Define a solution
                     Solution solution = new Solution
                     {
@@ -95,7 +95,7 @@ namespace PowerApps.Samples
                         Version = "1.0"
                     };
 
-                    //Check whether it already exists
+                    //检查whether it already exists
                     QueryExpression queryCheckForSampleSolution = new QueryExpression
                     {
                         EntityName = Solution.EntityLogicalName,
@@ -104,7 +104,7 @@ namespace PowerApps.Samples
                     };
                     queryCheckForSampleSolution.Criteria.AddCondition("uniquename", ConditionOperator.Equal, solution.UniqueName);
 
-                    //Create the solution if it does not already exist.
+                    //创建the solution if it does not already exist.
                     EntityCollection querySampleSolutionResults = service.RetrieveMultiple(queryCheckForSampleSolution);
                     Solution SampleSolutionResults = null;
                     if (querySampleSolutionResults.Entities.Count > 0)
@@ -117,7 +117,7 @@ namespace PowerApps.Samples
                         _solutionsSampleSolutionId = service.Create(solution);
                     }
 
-                    // Retrieve a solution
+                    // 检索a solution
                     String solutionUniqueName = "samplesolution";
                     QueryExpression querySampleSolution = new QueryExpression
                     {
@@ -129,8 +129,8 @@ namespace PowerApps.Samples
                     querySampleSolution.Criteria.AddCondition("uniquename", ConditionOperator.Equal, solutionUniqueName);
                     Solution SampleSolution = (Solution)service.RetrieveMultiple(querySampleSolution).Entities[0];
 
-                    // Add an existing Solution Component
-                    //Add the Account entity to the solution
+                    // 添加an existing Solution Component
+                    //添加the Account entity to the solution
                     RetrieveEntityRequest retrieveForAddAccountRequest = new RetrieveEntityRequest()
                     {
                         LogicalName = Account.EntityLogicalName
@@ -144,8 +144,8 @@ namespace PowerApps.Samples
                     };
                     service.Execute(addReq);
 
-                    // Remove a Solution Component
-                    //Remove the Account entity from the solution
+                    // 移除a Solution Component
+                    //移除the Account entity from the solution
                     RetrieveEntityRequest retrieveForRemoveAccountRequest = new RetrieveEntityRequest()
                     {
                         LogicalName = Account.EntityLogicalName
@@ -215,7 +215,7 @@ namespace PowerApps.Samples
                     Console.WriteLine("Solution Import Result: {0}", SolutionImportResult);
                     Console.WriteLine("");
 
-                    // This code displays the results for Global Option sets installed as part of a solution.
+                    // 此code displays the results for Global Option sets installed as part of a solution.
 
                     System.Xml.XmlNodeList optionSets = doc.SelectNodes("//optionSets/optionSet");
                     foreach (System.Xml.XmlNode node in optionSets)

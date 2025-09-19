@@ -19,18 +19,18 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Query for an an existing report: Account Overview. This is a default report in Microsoft Dynamics CRM.                   
+                    // 查询for an an existing report: Account Overview. This is a default report in Microsoft Dynamics CRM.                   
                     var reportQuery = new QueryByAttribute(Report.EntityLogicalName);
                     reportQuery.AddAttributeValue("name", "Activities");
                     reportQuery.ColumnSet = new ColumnSet("reportid");
 
-                    // Get the report.
+                    // 获取the report.
                     EntityCollection retrieveReports = service.RetrieveMultiple(reportQuery);
 
-                    // Convert retrieved Entity to a report
+                    // 转换retrieved Entity to a report
                     var retrievedReport = (Report)retrieveReports.Entities[0];
                     Console.WriteLine("Retrieved the 'Activities' report.");
 
@@ -42,7 +42,7 @@ namespace PowerApps.Samples
 
                     var rdlResponse = (DownloadReportDefinitionResponse)service.Execute(rdlRequest);
 
-                    // Get the current directory path.
+                    // 获取the current directory path.
                     _currentDirectoryPath = Directory.GetCurrentDirectory();
 
                     // Access the xml data and save to disk

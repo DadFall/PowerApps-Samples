@@ -2,7 +2,7 @@
 
 This topic introduces the capabilities of the DLP SDKs and shows you how DLP can help you manage your tenant and environment policy with experiences ranging from creating, reading, updating to removing DLP policy. More information : [https://learn.microsoft.com/power-platform/admin/wp-data-loss-prevention]([https://learn.microsoft.com/power-platform/admin/wp-data-loss-prevention).
 
-## What this sample does
+## 此示例的功能
 
 This sample calls DLP APIs in Microsoft.PowerApps.Administration.PowerShell to create, read, update and remove DLP policy.
 
@@ -10,7 +10,7 @@ This sample calls DLP APIs in Microsoft.PowerApps.Administration.PowerShell to c
 
 Sample provides some DLP scenarios about how to call DLP APIs for your reference. You can run the sample and see the result.
 
-## How to run this sample
+## 如何运行此示例
 
 1. Install the latest package (your powershell should be run as Admin): <br/>
    `Install-Module -Name Microsoft.PowerApps.Administration.PowerShell -Force`

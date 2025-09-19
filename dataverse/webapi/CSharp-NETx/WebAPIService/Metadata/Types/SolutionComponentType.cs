@@ -5,8 +5,8 @@ namespace PowerApps.Samples.Metadata.Types
 {
 
     /// <summary>
-    /// The types of solution components
-    /// </summary>
+        /// types of solution components
+        /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum SolutionComponentType
     {

@@ -27,10 +27,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -53,7 +53,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates a publisher and a solution to use when adding the Web resources.
+        /// 此method creates a publisher and a solution to use when adding the Web resources.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -81,7 +81,7 @@ namespace PowerApps.Samples
             EntityCollection querySDKSamplePublisherResults = service.RetrieveMultiple(querySDKSamplePublisher);
             Publisher SDKSamplePublisherResults = null;
 
-            //If it already exists, use it
+            //如果it already exists, use it
             if (querySDKSamplePublisherResults.Entities.Count > 0)
             {
                 SDKSamplePublisherResults = (Publisher)querySDKSamplePublisherResults.Entities[0];
@@ -90,18 +90,18 @@ namespace PowerApps.Samples
 
                 Console.WriteLine("Using existing publisher: {0}", SDKSamplePublisherResults.FriendlyName);
             }
-            //If it doesn't exist, create it
+            //如果it doesn't exist, create it
             if (SDKSamplePublisherResults == null)
             {
                 _crmSdkPublisherId = service.Create(_crmSdkPublisher);
                 Console.WriteLine(String.Format("Created publisher: {0}.", _crmSdkPublisher.FriendlyName));
                 _customizationPrefix = _crmSdkPublisher.CustomizationPrefix;
-                // Set this flag to delete the publisher if this sample created it.
+                // 设置this flag to delete the publisher if this sample created it.
                 _createdPublisher = true;
                 Console.WriteLine("Created new publisher: {0}", _crmSdkPublisher.FriendlyName);
             }
 
-            // Create a Solution
+            // 创建a Solution
             //Define a solution
             Solution solution = new Solution
             {
@@ -111,10 +111,10 @@ namespace PowerApps.Samples
                 Description = "This solution was created by the ImportWebResources sample code in the SDK samples.",
                 Version = "1.0"
             };
-            // Save save this variable  to use when creating the Web resources in the context of this solution.
+            // 保存save this variable  to use when creating the Web resources in the context of this solution.
             _ImportWebResourcesSolutionUniqueName = solution.UniqueName;
 
-            //Check whether it already exists
+            //检查whether it already exists
             QueryExpression queryCheckForSampleSolution = new QueryExpression
             {
                 EntityName = Solution.EntityLogicalName,
@@ -123,7 +123,7 @@ namespace PowerApps.Samples
             };
             queryCheckForSampleSolution.Criteria.AddCondition("uniquename", ConditionOperator.Equal, solution.UniqueName);
 
-            //Create the solution if it does not already exist.
+            //创建the solution if it does not already exist.
             EntityCollection querySampleSolutionResults = service.RetrieveMultiple(queryCheckForSampleSolution);
             Solution SampleSolutionResults = null;
             if (querySampleSolutionResults.Entities.Count > 0)
@@ -143,7 +143,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>
@@ -167,7 +167,7 @@ namespace PowerApps.Samples
                     service.Delete(WebResource.EntityLogicalName, id);
                 }
                 Console.WriteLine("Web Resource records have been deleted.");
-                //Delete Solution
+                //删除Solution
 
                 service.Delete(Solution.EntityLogicalName, _importWebResourcesSampleSolutionId);
                 Console.WriteLine("Solution has been deleted.");
@@ -175,7 +175,7 @@ namespace PowerApps.Samples
                 //
                 if (_createdPublisher)
                 {
-                    // Delete the publisher
+                    // 删除the publisher
                     service.Delete(Publisher.EntityLogicalName, _crmSdkPublisherId);
                     Console.WriteLine("Publisher has been deleted.");
                 }

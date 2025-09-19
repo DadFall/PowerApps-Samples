@@ -5,16 +5,16 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to create a new customer lookup attribute, and optionally, to add it to a specified unmanaged solution.
-    /// </summary>
+        /// Contains the data to create a new customer lookup attribute, and optionally, to add it to a specified unmanaged solution.
+        /// </summary>
     public sealed class CreateCustomerRelationshipsRequest : HttpRequestMessage
     {
         /// <summary>
         /// Returns the HttpRequestMessage to create a customer lookup attribute.
         /// </summary>
-        /// <param name="lookup">The metadata for the lookup field used to store the ID of the related record.</param>
-        /// <param name="oneToManyRelationships">The metadata array for the one-to-many relationships to the Account and Contact entity.</param>
-        /// <param name="solutionUniqueName">The name of the unmanaged solution to which you want to add this customer lookup attribute to.</param>
+        /// <param name="lookup">meta数据 for the lookup field used to store the ID of the related record.</param>
+        /// <param name="oneToManyRelationships">meta数据 数组 for the one-to-many relationships to the Account and Contact entity.</param>
+        /// <param name="solutionUniqueName">名称 of the unmanaged solution to which you want to add this customer lookup attribute to.</param>
         public CreateCustomerRelationshipsRequest(
             ComplexLookupAttributeMetadata lookup, 
             List<ComplexOneToManyRelationshipMetadata> oneToManyRelationships, 

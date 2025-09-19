@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace EnhancedQuickStart
 {
     /// <summary>
-    /// Custom HTTP message handler that uses OAuth authentication through 
+        /// Custom HTTP message handler that uses OAuth authentication through 
     /// Microsoft Authentication Library (MSAL).
-    /// </summary>
+        /// </summary>
     class OAuthMessageHandler : DelegatingHandler
     {
         private AuthenticationHeaderValue authHeader;

@@ -2,16 +2,16 @@
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the IsSystemAdminRequest
-    /// </summary>
+        /// Contains the response from the IsSystemAdminRequest
+        /// </summary>
     public sealed class IsSystemAdminResponse : HttpResponseMessage
     {
-        // Cache the async content
+        // 缓存the async content
         private string? _content;
 
         //Provides JObject for property getters

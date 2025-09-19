@@ -20,17 +20,17 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
-                    // Retrieve a user.
+                    // 检索a user.
                     SystemUser user = service.Retrieve(SystemUser.EntityLogicalName,
                         _userId, new ColumnSet(new String[] { "systemuserid", "firstname", "lastname" })).ToEntity<SystemUser>();
 
                     if (user != null)
                     {
                         Console.WriteLine("{1} {0} user account is retrieved.", user.FirstName, user.LastName);
-                        // Find the role.
+                        // 查找the role.
                         var query = new QueryExpression
                         {
                             EntityName = "role",
@@ -50,7 +50,7 @@ namespace PowerApps.Samples
                             }
                         };
 
-                        // Get the role.
+                        // 获取the role.
                         EntityCollection roles = service.RetrieveMultiple(query);
 
                         // Disassociate the role.

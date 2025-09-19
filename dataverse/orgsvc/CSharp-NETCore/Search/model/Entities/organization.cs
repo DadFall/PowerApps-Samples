@@ -13,8 +13,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	
 	
 	/// <summary>
-	/// Indication of whether to display money fields with currency code or currency symbol.
-	/// </summary>
+        /// Indication of whether to display money fields with currency code or currency symbol.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_currencydisplayoption
 	{
@@ -27,8 +27,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Information about how currency symbols are placed throughout Microsoft CRM.
-	/// </summary>
+        /// Information about how currency symbols are placed throughout Microsoft CRM.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_currencyformatcode
 	{
@@ -47,8 +47,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Specifies the default end recurrence range to be used in recurrence dialog.
-	/// </summary>
+        /// Specifies the default end recurrence range to be used in recurrence dialog.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_defaultrecurrenceendrangetype
 	{
@@ -64,8 +64,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Discount calculation Method for the QOOI product
-	/// </summary>
+        /// Discount calculation Method for the QOOI product
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_discountcalculationmethod
 	{
@@ -78,8 +78,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Select whether you want to use the Email Router or server-side synchronization for email processing.
-	/// </summary>
+        /// 选择whether you want to use the Email Router or server-side synchronization for email processing.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_emailconnectionchannel
 	{
@@ -92,8 +92,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Fiscal Period Format
-	/// </summary>
+        /// Fiscal Period Format
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_fiscalperiodformat
 	{
@@ -121,8 +121,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Fiscal Year Format Prefix
-	/// </summary>
+        /// Fiscal Year Format Prefix
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_fiscalyearformatprefix
 	{
@@ -135,8 +135,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Fiscal Year Format Suffix
-	/// </summary>
+        /// Fiscal Year Format Suffix
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_fiscalyearformatsuffix
 	{
@@ -152,8 +152,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Fiscal Year Format
-	/// </summary>
+        /// Fiscal Year Format
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_fiscalyearformatyear
 	{
@@ -169,8 +169,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Order in which names are to be displayed throughout Microsoft CRM.
-	/// </summary>
+        /// Order in which names are to be displayed throughout Microsoft CRM.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_fullnameconventioncode
 	{
@@ -201,8 +201,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Select which IP Based SAS URI restriction will be used.
-	/// </summary>
+        /// 选择which IP Based SAS URI restriction will be used.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum ipbasedstorageaccesssignaturemode
 	{
@@ -221,8 +221,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Flag that determines whether or not MSCRM should be loaded in an browser window that does not have address, tool and menu bars.
-	/// </summary>
+        /// Flag that determines whether or not MSCRM should be loaded in an browser window that does not have address, tool and menu bars.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_isvintegrationcode
 	{
@@ -253,8 +253,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Information that specifies how negative numbers are displayed throughout Microsoft CRM.
-	/// </summary>
+        /// Information that specifies how negative numbers are displayed throughout Microsoft CRM.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_negativeformatcode
 	{
@@ -276,8 +276,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Organization State, indicates if the org is being created, upgraded, updated or active
-	/// </summary>
+        /// Organization State, indicates if the org is being created, upgraded, updated or active
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_organizationstate
 	{
@@ -296,8 +296,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Plug-in Trace Log Setting for the Organization.
-	/// </summary>
+        /// Plug-in Trace Log Setting for the Organization.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_plugintracelogsetting
 	{
@@ -313,8 +313,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Model app refresh channel
-	/// </summary>
+        /// Model app refresh channel
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_releasechannel
 	{
@@ -330,8 +330,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Picklist for selecting the user preference for reporting scripting errors.
-	/// </summary>
+        /// Picklist for selecting the user preference for reporting scripting errors.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_reportscripterrors
 	{
@@ -350,8 +350,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// SharePoint Deployment Type
-	/// </summary>
+        /// SharePoint Deployment Type
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_sharepointdeploymenttype
 	{
@@ -364,8 +364,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Indicates the status of opt-in or opt-out operations for dynamics 365 azure sync.
-	/// </summary>
+        /// Indicates the status of opt-in or opt-out operations for dynamics 365 azure sync.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_syncoptinselectionstatus
 	{
@@ -381,8 +381,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Validation mode for apps in this environment
-	/// </summary>
+        /// Validation mode for apps in this environment
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_validationmode
 	{
@@ -398,8 +398,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Yammer Post Method
-	/// </summary>
+        /// Yammer Post Method
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	public enum organization_yammerpostmethod
 	{
@@ -412,16 +412,16 @@ namespace PowerPlatform.Dataverse.CodeSamples
 	}
 	
 	/// <summary>
-	/// Top level of the Microsoft Dynamics 365 business hierarchy. The organization can be a specific business, holding company, or corporation.
-	/// </summary>
+        /// Top level of the Microsoft Dynamics 365 business hierarchy. The organization can be a specific business, holding company, or corporation.
+        /// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("organization")]
 	public partial class Organization : Microsoft.Xrm.Sdk.Entity
 	{
 		
 		/// <summary>
-		/// Default Constructor.
-		/// </summary>
+        /// Default Constructor.
+        /// </summary>
 		public Organization() : 
 				base(EntityLogicalName)
 		{
@@ -434,8 +434,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		public const string EntitySetName = "organizations";
 		
 		/// <summary>
-		/// ACI Web Endpoint URL.
-		/// </summary>
+        /// ACI Web Endpoint URL.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aciwebendpointurl")]
 		public string ACIWebEndpointUrl
 		{
@@ -450,8 +450,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the template to be used for acknowledgement when a user unsubscribes.
-		/// </summary>
+        /// Unique identifier of the template to be used for acknowledgement when a user unsubscribes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("acknowledgementtemplateid")]
 		public Microsoft.Xrm.Sdk.EntityReference AcknowledgementTemplateId
 		{
@@ -466,8 +466,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information on whether filtering activity based on entity in app.
-		/// </summary>
+        /// Information on whether filtering activity based on entity in app.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activitytypefilter")]
 		public System.Nullable<bool> ActivityTypeFilter
 		{
@@ -482,8 +482,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Whether to show only activities configured in this app or all activities in the 'New activity' button.
-		/// </summary>
+        /// Whether to show only activities configured in this app or all activities in the 'New activity' button.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activitytypefilterv2")]
 		public System.Nullable<bool> ActivityTypeFilterV2
 		{
@@ -498,8 +498,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to indicate if the display column options on a view in model-driven apps is enabled
-		/// </summary>
+        /// Flag to indicate if the display column options on a view in model-driven apps is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("advancedcolumneditorenabled")]
 		public System.Nullable<bool> AdvancedColumnEditorEnabled
 		{
@@ -514,8 +514,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to indicate if the advanced column filtering in a view in model-driven apps is enabled
-		/// </summary>
+        /// Flag to indicate if the advanced column filtering in a view in model-driven apps is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("advancedcolumnfilteringenabled")]
 		public System.Nullable<bool> AdvancedColumnFilteringEnabled
 		{
@@ -530,8 +530,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to indicate if the advanced filtering on all tables in a model-driven app is enabled
-		/// </summary>
+        /// Flag to indicate if the advanced filtering on all tables in a model-driven app is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("advancedfilteringenabled")]
 		public System.Nullable<bool> AdvancedFilteringEnabled
 		{
@@ -546,8 +546,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to indicate if the Advanced Lookup feature is enabled for lookup controls
-		/// </summary>
+        /// Flag to indicate if the Advanced Lookup feature is enabled for lookup controls
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("advancedlookupenabled")]
 		public System.Nullable<bool> AdvancedLookupEnabled
 		{
@@ -562,8 +562,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enables advanced lookup in grid edit filter panel
-		/// </summary>
+        /// Enables advanced lookup in grid edit filter panel
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("advancedlookupineditfilter")]
 		public System.Nullable<int> AdvancedLookupInEditFilter
 		{
@@ -578,8 +578,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether background address book synchronization in Microsoft Office Outlook is allowed.
-		/// </summary>
+        /// Indicates whether background address book synchronization in Microsoft Office Outlook is allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowaddressbooksyncs")]
 		public System.Nullable<bool> AllowAddressBookSyncs
 		{
@@ -594,8 +594,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether all application users are allowed to access the environment
-		/// </summary>
+        /// Information that specifies whether all application users are allowed to access the environment
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowapplicationuseraccess")]
 		public System.Nullable<bool> AllowApplicationUserAccess
 		{
@@ -610,8 +610,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether automatic response creation is allowed.
-		/// </summary>
+        /// Indicates whether automatic response creation is allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowautoresponsecreation")]
 		public System.Nullable<bool> AllowAutoResponseCreation
 		{
@@ -626,8 +626,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether automatic unsubscribe is allowed.
-		/// </summary>
+        /// Indicates whether automatic unsubscribe is allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowautounsubscribe")]
 		public System.Nullable<bool> AllowAutoUnsubscribe
 		{
@@ -642,8 +642,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether automatic unsubscribe acknowledgement email is allowed to send.
-		/// </summary>
+        /// Indicates whether automatic unsubscribe acknowledgement email is allowed to send.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowautounsubscribeacknowledgement")]
 		public System.Nullable<bool> AllowAutoUnsubscribeAcknowledgement
 		{
@@ -658,8 +658,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Outlook Client message bar advertisement is allowed.
-		/// </summary>
+        /// Indicates whether Outlook Client message bar advertisement is allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowclientmessagebarad")]
 		public System.Nullable<bool> AllowClientMessageBarAd
 		{
@@ -674,8 +674,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information on whether connectors on power fx actions is enabled.
-		/// </summary>
+        /// Information on whether connectors on power fx actions is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowconnectorsonpowerfxactions")]
 		public System.Nullable<bool> AllowConnectorsOnPowerFXActions
 		{
@@ -690,8 +690,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies the range of IP addresses that are in allow list for the firewall.
-		/// </summary>
+        /// Information that specifies the range of IP addresses that are in allow list for the firewall.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowediprangeforfirewall")]
 		public string AllowedIpRangeForFirewall
 		{
@@ -706,8 +706,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies the range of IP addresses that are in allowed list for generating the SAS URIs.
-		/// </summary>
+        /// Information that specifies the range of IP addresses that are in allowed list for generating the SAS URIs.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowediprangeforstorageaccesssignatures")]
 		public string AllowedIpRangeForStorageAccessSignatures
 		{
@@ -722,8 +722,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Allow upload or download of certain mime types.
-		/// </summary>
+        /// Allow upload or download of certain mime types.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowedmimetypes")]
 		public string AllowedMimeTypes
 		{
@@ -738,8 +738,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies the List of Service Tags that should be allowed by the firewall.
-		/// </summary>
+        /// Information that specifies the List of Service Tags that should be allowed by the firewall.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowedservicetagsforfirewall")]
 		public string AllowedServiceTagsForFirewall
 		{
@@ -754,8 +754,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether auditing of changes to entity is allowed when no attributes have changed.
-		/// </summary>
+        /// Indicates whether auditing of changes to entity is allowed when no attributes have changed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowentityonlyaudit")]
 		public System.Nullable<bool> AllowEntityOnlyAudit
 		{
@@ -770,8 +770,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enables ends-with searches in grids with the use of a leading wildcard on all tables in the environment
-		/// </summary>
+        /// Enables ends-with searches in grids with the use of a leading wildcard on all tables in the environment
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowleadingwildcardsingridsearch")]
 		public System.Nullable<bool> AllowLeadingWildcardsInGridSearch
 		{
@@ -786,8 +786,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enables ends-with searches in grids with the use of a leading wildcard on all tables in the environment
-		/// </summary>
+        /// Enables ends-with searches in grids with the use of a leading wildcard on all tables in the environment
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowleadingwildcardsinquickfind")]
 		public System.Nullable<int> AllowLeadingWildcardsInQuickFind
 		{
@@ -802,8 +802,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable access to legacy web client UI
-		/// </summary>
+        /// 启用access to legacy web client UI
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowlegacyclientexperience")]
 		public System.Nullable<bool> AllowLegacyClientExperience
 		{
@@ -818,8 +818,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable embedding of certain legacy dialogs in Unified Interface browser client
-		/// </summary>
+        /// 启用embedding of certain legacy dialogs in Unified Interface browser client
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowlegacydialogsembedding")]
 		public System.Nullable<bool> AllowLegacyDialogsEmbedding
 		{
@@ -834,8 +834,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether marketing emails execution is allowed.
-		/// </summary>
+        /// Indicates whether marketing emails execution is allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowmarketingemailexecution")]
 		public System.Nullable<bool> AllowMarketingEmailExecution
 		{
@@ -850,8 +850,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether Microsoft Trusted Service Tags are allowed
-		/// </summary>
+        /// Information that specifies whether Microsoft Trusted Service Tags are allowed
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowmicrosofttrustedservicetags")]
 		public System.Nullable<bool> AllowMicrosoftTrustedServiceTags
 		{
@@ -866,8 +866,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether background offline synchronization in Microsoft Office Outlook is allowed.
-		/// </summary>
+        /// Indicates whether background offline synchronization in Microsoft Office Outlook is allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowofflinescheduledsyncs")]
 		public System.Nullable<bool> AllowOfflineScheduledSyncs
 		{
@@ -882,8 +882,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether scheduled synchronizations to Outlook are allowed.
-		/// </summary>
+        /// Indicates whether scheduled synchronizations to Outlook are allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowoutlookscheduledsyncs")]
 		public System.Nullable<bool> AllowOutlookScheduledSyncs
 		{
@@ -898,8 +898,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Control whether the organization Allow Redirect Legacy Admin Settings To Modern UI
-		/// </summary>
+        /// Control whether the organization Allow Redirect Legacy Admin Settings To Modern UI
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowredirectadminsettingstomodernui")]
 		public System.Nullable<bool> AllowRedirectAdminSettingsToModernUI
 		{
@@ -914,8 +914,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether users are allowed to send email to unresolved parties (parties must still have an email address).
-		/// </summary>
+        /// Indicates whether users are allowed to send email to unresolved parties (parties must still have an email address).
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowunresolvedpartiesonemailsend")]
 		public System.Nullable<bool> AllowUnresolvedPartiesOnEmailSend
 		{
@@ -930,8 +930,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether individuals can select their form mode preference in their personal options.
-		/// </summary>
+        /// Indicates whether individuals can select their form mode preference in their personal options.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowuserformmodepreference")]
 		public System.Nullable<bool> AllowUserFormModePreference
 		{
@@ -946,8 +946,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to indicate if allow end users to hide system views in model-driven apps is enabled
-		/// </summary>
+        /// Flag to indicate if allow end users to hide system views in model-driven apps is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowusershidingsystemviews")]
 		public System.Nullable<bool> AllowUsersHidingSystemViews
 		{
@@ -962,8 +962,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the showing tablet application notification bars in a browser is allowed.
-		/// </summary>
+        /// Indicates whether the showing tablet application notification bars in a browser is allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowusersseeappdownloadmessage")]
 		public System.Nullable<bool> AllowUsersSeeAppdownloadMessage
 		{
@@ -978,8 +978,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Web-based export of grids to Microsoft Office Excel is allowed.
-		/// </summary>
+        /// Indicates whether Web-based export of grids to Microsoft Office Excel is allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowwebexcelexport")]
 		public System.Nullable<bool> AllowWebExcelExport
 		{
@@ -994,8 +994,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// AM designator to use throughout Microsoft Dynamics CRM.
-		/// </summary>
+        /// AM designator to use throughout Microsoft Dynamics CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("amdesignator")]
 		public string AMDesignator
 		{
@@ -1010,8 +1010,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the appDesignerExperience is enabled for the organization.
-		/// </summary>
+        /// Indicates whether the appDesignerExperience is enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("appdesignerexperienceenabled")]
 		public System.Nullable<bool> AppDesignerExperienceEnabled
 		{
@@ -1026,8 +1026,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information on whether rich editing experience for Appointment is enabled.
-		/// </summary>
+        /// Information on whether rich editing experience for Appointment is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("appointmentricheditorexperience")]
 		public System.Nullable<bool> AppointmentRichEditorExperience
 		{
@@ -1042,8 +1042,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information on whether Teams meeting experience for Appointment is enabled.
-		/// </summary>
+        /// Information on whether Teams meeting experience for Appointment is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("appointmentwithteamsmeeting")]
 		public System.Nullable<bool> AppointmentWithTeamsMeeting
 		{
@@ -1058,8 +1058,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Whether Teams meetings experience for appointments is enabled.
-		/// </summary>
+        /// Whether Teams meetings experience for appointments is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("appointmentwithteamsmeetingv2")]
 		public System.Nullable<bool> AppointmentWithTeamsMeetingV2
 		{
@@ -1074,8 +1074,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Audit Retention Period settings stored in Organization Database.
-		/// </summary>
+        /// Audit Retention Period settings stored in Organization Database.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("auditretentionperiod")]
 		public System.Nullable<int> AuditRetentionPeriod
 		{
@@ -1090,8 +1090,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Audit Retention Period settings stored in Organization Database.
-		/// </summary>
+        /// Audit Retention Period settings stored in Organization Database.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("auditretentionperiodv2")]
 		public System.Nullable<int> AuditRetentionPeriodV2
 		{
@@ -1106,8 +1106,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether to auto apply the default customer entitlement on case creation.
-		/// </summary>
+        /// 选择whether to auto apply the default customer entitlement on case creation.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("autoapplydefaultoncasecreate")]
 		public System.Nullable<bool> AutoApplyDefaultonCaseCreate
 		{
@@ -1122,8 +1122,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether to auto apply the default customer entitlement on case update.
-		/// </summary>
+        /// 选择whether to auto apply the default customer entitlement on case update.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("autoapplydefaultoncaseupdate")]
 		public System.Nullable<bool> AutoApplyDefaultonCaseUpdate
 		{
@@ -1138,8 +1138,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether to Auto-apply SLA on case record update after SLA was manually applied.
-		/// </summary>
+        /// Indicates whether to Auto-apply SLA on case record update after SLA was manually applied.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("autoapplysla")]
 		public System.Nullable<bool> AutoApplySLA
 		{
@@ -1154,8 +1154,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("azureschedulerjobcollectionname")]
 		public string AzureSchedulerJobCollectionName
 		{
@@ -1170,8 +1170,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the base currency of the organization.
-		/// </summary>
+        /// Unique identifier of the base currency of the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("basecurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference BaseCurrencyId
 		{
@@ -1186,8 +1186,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Number of decimal places that can be used for the base currency.
-		/// </summary>
+        /// Number of decimal places that can be used for the base currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("basecurrencyprecision")]
 		public System.Nullable<int> BaseCurrencyPrecision
 		{
@@ -1198,8 +1198,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Symbol used for the base currency.
-		/// </summary>
+        /// Symbol used for the base currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("basecurrencysymbol")]
 		public string BaseCurrencySymbol
 		{
@@ -1210,8 +1210,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Api Key to be used in requests to Bing Maps services.
-		/// </summary>
+        /// Api Key to be used in requests to Bing Maps services.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("bingmapsapikey")]
 		public string BingMapsApiKey
 		{
@@ -1226,8 +1226,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prevent upload or download of certain attachment types that are considered dangerous.
-		/// </summary>
+        /// Prevent upload or download of certain attachment types that are considered dangerous.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("blockedattachments")]
 		public string BlockedAttachments
 		{
@@ -1242,8 +1242,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prevent upload or download of certain mime types that are considered dangerous.
-		/// </summary>
+        /// Prevent upload or download of certain mime types that are considered dangerous.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("blockedmimetypes")]
 		public string BlockedMimeTypes
 		{
@@ -1258,8 +1258,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Display cards in expanded state for interactive dashboard
-		/// </summary>
+        /// Display cards in expanded state for interactive dashboard
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("bounddashboarddefaultcardexpanded")]
 		public System.Nullable<bool> BoundDashboardDefaultCardExpanded
 		{
@@ -1274,8 +1274,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix used for bulk operation numbering.
-		/// </summary>
+        /// Prefix used for bulk operation numbering.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("bulkoperationprefix")]
 		public string BulkOperationPrefix
 		{
@@ -1290,8 +1290,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// BusinessCardOptions
-		/// </summary>
+        /// BusinessCardOptions
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businesscardoptions")]
 		public string BusinessCardOptions
 		{
@@ -1306,8 +1306,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business closure calendar of organization.
-		/// </summary>
+        /// Unique identifier of the business closure calendar of organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessclosurecalendarid")]
 		public System.Nullable<System.Guid> BusinessClosureCalendarId
 		{
@@ -1322,8 +1322,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Calendar type for the system. Set to Gregorian US by default.
-		/// </summary>
+        /// Calendar type for the system. Set to Gregorian US by default.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("calendartype")]
 		public System.Nullable<int> CalendarType
 		{
@@ -1338,8 +1338,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix used for campaign numbering.
-		/// </summary>
+        /// Prefix used for campaign numbering.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("campaignprefix")]
 		public string CampaignPrefix
 		{
@@ -1354,8 +1354,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the organization can opt out of the new Relevance search experience (released in Oct 2020)
-		/// </summary>
+        /// Indicates whether the organization can opt out of the new Relevance search experience (released in Oct 2020)
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canoptoutnewsearchexperience")]
 		public System.Nullable<bool> CanOptOutNewSearchExperience
 		{
@@ -1370,8 +1370,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to cascade Update on incident.
-		/// </summary>
+        /// Flag to cascade Update on incident.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("cascadestatusupdate")]
 		public System.Nullable<bool> CascadeStatusUpdate
 		{
@@ -1386,8 +1386,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix to use for all cases throughout Microsoft Dynamics 365.
-		/// </summary>
+        /// Prefix to use for all cases throughout Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("caseprefix")]
 		public string CasePrefix
 		{
@@ -1402,8 +1402,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Type the prefix to use for all categories in Microsoft Dynamics 365.
-		/// </summary>
+        /// Type the prefix to use for all categories in Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("categoryprefix")]
 		public string CategoryPrefix
 		{
@@ -1418,8 +1418,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Client Features to be enabled as an XML BLOB.
-		/// </summary>
+        /// Client Features to be enabled as an XML BLOB.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("clientfeatureset")]
 		public string ClientFeatureSet
 		{
@@ -1434,8 +1434,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Policy configuration for CSP
-		/// </summary>
+        /// Policy configuration for CSP
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contentsecuritypolicyconfiguration")]
 		public string ContentSecurityPolicyConfiguration
 		{
@@ -1450,8 +1450,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Content Security Policy configuration for Canvas apps.
-		/// </summary>
+        /// Content Security Policy configuration for Canvas apps.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contentsecuritypolicyconfigurationforcanvas")]
 		public string ContentSecurityPolicyConfigurationForCanvas
 		{
@@ -1466,8 +1466,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Content Security Policy Options.
-		/// </summary>
+        /// Content Security Policy Options.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contentsecuritypolicyoptions")]
 		public System.Nullable<int> ContentSecurityPolicyOptions
 		{
@@ -1482,8 +1482,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Content Security Policy Report Uri.
-		/// </summary>
+        /// Content Security Policy Report Uri.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contentsecuritypolicyreporturi")]
 		public string ContentSecurityPolicyReportUri
 		{
@@ -1498,8 +1498,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix to use for all contracts throughout Microsoft Dynamics 365.
-		/// </summary>
+        /// Prefix to use for all contracts throughout Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contractprefix")]
 		public string ContractPrefix
 		{
@@ -1514,8 +1514,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Refresh rate for copresence data in seconds.
-		/// </summary>
+        /// Refresh rate for copresence data in seconds.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("copresencerefreshrate")]
 		public System.Nullable<int> CopresenceRefreshRate
 		{
@@ -1530,8 +1530,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature CortanaProactiveExperience Flow processes should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the feature CortanaProactiveExperience Flow processes should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("cortanaproactiveexperienceenabled")]
 		public System.Nullable<bool> CortanaProactiveExperienceEnabled
 		{
@@ -1546,8 +1546,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the organization.
-		/// </summary>
+        /// Unique identifier of the user who created the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
@@ -1558,8 +1558,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Date and time when the organization was created.
-		/// </summary>
+        /// Date and time when the organization was created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
@@ -1570,8 +1570,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the organization.
-		/// </summary>
+        /// Unique identifier of the delegate user who created the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
@@ -1582,8 +1582,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable Initial state of newly created products to be Active instead of Draft
-		/// </summary>
+        /// 启用Initial state of newly created products to be Active instead of Draft
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createproductswithoutparentinactivestate")]
 		public System.Nullable<bool> CreateProductsWithoutParentInActiveState
 		{
@@ -1598,8 +1598,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Number of decimal places that can be used for currency.
-		/// </summary>
+        /// Number of decimal places that can be used for currency.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencydecimalprecision")]
 		public System.Nullable<int> CurrencyDecimalPrecision
 		{
@@ -1614,8 +1614,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether to display money fields with currency code or currency symbol.
-		/// </summary>
+        /// Indicates whether to display money fields with currency code or currency symbol.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencydisplayoption")]
 		public virtual organization_currencydisplayoption? CurrencyDisplayOption
 		{
@@ -1630,8 +1630,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information about how currency symbols are placed throughout Microsoft Dynamics CRM.
-		/// </summary>
+        /// Information about how currency symbols are placed throughout Microsoft Dynamics CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencyformatcode")]
 		public virtual organization_currencyformatcode? CurrencyFormatCode
 		{
@@ -1646,8 +1646,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Symbol used for currency throughout Microsoft Dynamics 365.
-		/// </summary>
+        /// Symbol used for currency throughout Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencysymbol")]
 		public string CurrencySymbol
 		{
@@ -1662,8 +1662,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Current bulk operation number. Deprecated. Use SetAutoNumberSeed message.
-		/// </summary>
+        /// Current bulk operation number. Deprecated. Use SetAutoNumberSeed message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentbulkoperationnumber")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrentBulkOperationNumber
@@ -1679,8 +1679,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Current campaign number. Deprecated. Use SetAutoNumberSeed message.
-		/// </summary>
+        /// Current campaign number. Deprecated. Use SetAutoNumberSeed message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentcampaignnumber")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrentCampaignNumber
@@ -1696,8 +1696,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// First case number to use. Deprecated. Use SetAutoNumberSeed message.
-		/// </summary>
+        /// First case number to use. Deprecated. Use SetAutoNumberSeed message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentcasenumber")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrentCaseNumber
@@ -1713,8 +1713,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enter the first number to use for Categories. Deprecated. Use SetAutoNumberSeed message.
-		/// </summary>
+        /// Enter the first number to use for Categories. Deprecated. Use SetAutoNumberSeed message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentcategorynumber")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrentCategoryNumber
@@ -1730,8 +1730,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// First contract number to use. Deprecated. Use SetAutoNumberSeed message.
-		/// </summary>
+        /// First contract number to use. Deprecated. Use SetAutoNumberSeed message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentcontractnumber")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrentContractNumber
@@ -1747,8 +1747,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Import sequence to use.
-		/// </summary>
+        /// Import sequence to use.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentimportsequencenumber")]
 		public System.Nullable<int> CurrentImportSequenceNumber
 		{
@@ -1759,8 +1759,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// First invoice number to use. Deprecated. Use SetAutoNumberSeed message.
-		/// </summary>
+        /// First invoice number to use. Deprecated. Use SetAutoNumberSeed message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentinvoicenumber")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrentInvoiceNumber
@@ -1776,8 +1776,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enter the first number to use for knowledge articles. Deprecated. Use SetAutoNumberSeed message.
-		/// </summary>
+        /// Enter the first number to use for knowledge articles. Deprecated. Use SetAutoNumberSeed message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentkanumber")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrentKaNumber
@@ -1793,8 +1793,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// First article number to use. Deprecated. Use SetAutoNumberSeed message.
-		/// </summary>
+        /// First article number to use. Deprecated. Use SetAutoNumberSeed message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentkbnumber")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrentKbNumber
@@ -1810,8 +1810,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// First order number to use. Deprecated. Use SetAutoNumberSeed message.
-		/// </summary>
+        /// First order number to use. Deprecated. Use SetAutoNumberSeed message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentordernumber")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrentOrderNumber
@@ -1827,8 +1827,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// First parsed table number to use.
-		/// </summary>
+        /// First parsed table number to use.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentparsedtablenumber")]
 		public System.Nullable<int> CurrentParsedTableNumber
 		{
@@ -1839,8 +1839,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// First quote number to use. Deprecated. Use SetAutoNumberSeed message.
-		/// </summary>
+        /// First quote number to use. Deprecated. Use SetAutoNumberSeed message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currentquotenumber")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrentQuoteNumber
@@ -1856,8 +1856,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// String showing how the date is displayed throughout Microsoft CRM.
-		/// </summary>
+        /// String showing how the date is displayed throughout Microsoft CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("dateformatstring")]
 		public string DateFormatString
 		{
@@ -1872,8 +1872,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Character used to separate the month, the day, and the year in dates throughout Microsoft Dynamics 365.
-		/// </summary>
+        /// Character used to separate the month, the day, and the year in dates throughout Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("dateseparator")]
 		public string DateSeparator
 		{
@@ -1888,8 +1888,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Number of days before we migrate email description to blob.
-		/// </summary>
+        /// Number of days before we migrate email description to blob.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("daysbeforeemaildescriptionismigrated")]
 		public System.Nullable<int> DaysBeforeEmailDescriptionIsMigrated
 		{
@@ -1904,8 +1904,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Days of inactivity before sync is disabled for a Teams Chat.
-		/// </summary>
+        /// Days of inactivity before sync is disabled for a Teams Chat.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("daysbeforeinactiveteamschatsyncdisabled")]
 		public System.Nullable<int> DaysBeforeInactiveTeamsChatSyncDisabled
 		{
@@ -1920,8 +1920,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// The maximum value for the Mobile Offline setting Days since record last modified
-		/// </summary>
+        /// maximum value for the Mobile Offline setting Days since record last modified
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("dayssincerecordlastmodifiedmaxvalue")]
 		public System.Nullable<int> DaysSinceRecordLastModifiedMaxValue
 		{
@@ -1932,8 +1932,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Symbol used for decimal in Microsoft Dynamics 365.
-		/// </summary>
+        /// Symbol used for decimal in Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("decimalsymbol")]
 		public string DecimalSymbol
 		{
@@ -1948,8 +1948,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Text area to enter default country code.
-		/// </summary>
+        /// Text area to enter default country code.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultcountrycode")]
 		public string DefaultCountryCode
 		{
@@ -1964,8 +1964,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Name of the default crm custom.
-		/// </summary>
+        /// Name of the default crm custom.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultcrmcustomname")]
 		public string DefaultCrmCustomName
 		{
@@ -1980,8 +1980,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the default email server profile.
-		/// </summary>
+        /// Unique identifier of the default email server profile.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultemailserverprofileid")]
 		public Microsoft.Xrm.Sdk.EntityReference DefaultEmailServerProfileId
 		{
@@ -1996,8 +1996,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// XML string containing the default email settings that are applied when a user or queue is created.
-		/// </summary>
+        /// XML string containing the default email settings that are applied when a user or queue is created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultemailsettings")]
 		public string DefaultEmailSettings
 		{
@@ -2012,8 +2012,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the default mobile offline profile.
-		/// </summary>
+        /// Unique identifier of the default mobile offline profile.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultmobileofflineprofileid")]
 		public Microsoft.Xrm.Sdk.EntityReference DefaultMobileOfflineProfileId
 		{
@@ -2028,8 +2028,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Type of default recurrence end range date.
-		/// </summary>
+        /// Type of default recurrence end range date.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultrecurrenceendrangetype")]
 		public virtual organization_defaultrecurrenceendrangetype? DefaultRecurrenceEndRangeType
 		{
@@ -2044,8 +2044,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Default theme data for the organization.
-		/// </summary>
+        /// Default theme data for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultthemedata")]
 		public string DefaultThemeData
 		{
@@ -2060,8 +2060,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegated admin user for the organization.
-		/// </summary>
+        /// Unique identifier of the delegated admin user for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("delegatedadminuserid")]
 		public System.Nullable<System.Guid> DelegatedAdminUserId
 		{
@@ -2076,8 +2076,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Reason for disabling the organization.
-		/// </summary>
+        /// Reason for disabling the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("disabledreason")]
 		public string DisabledReason
 		{
@@ -2088,8 +2088,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Social Care is disabled.
-		/// </summary>
+        /// Indicates whether Social Care is disabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("disablesocialcare")]
 		public System.Nullable<bool> DisableSocialCare
 		{
@@ -2104,8 +2104,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Discount calculation method for the QOOI product.
-		/// </summary>
+        /// Discount calculation method for the QOOI product.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("discountcalculationmethod")]
 		public virtual organization_discountcalculationmethod? DiscountCalculationMethod
 		{
@@ -2120,8 +2120,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether or not navigation tour is displayed.
-		/// </summary>
+        /// Indicates whether or not navigation tour is displayed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("displaynavigationtour")]
 		public System.Nullable<bool> DisplayNavigationTour
 		{
@@ -2136,8 +2136,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select if you want to use the Email Router or server-side synchronization for email processing.
-		/// </summary>
+        /// 选择if you want to use the Email Router or server-side synchronization for email processing.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailconnectionchannel")]
 		public virtual organization_emailconnectionchannel? EmailConnectionChannel
 		{
@@ -2152,8 +2152,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to turn email correlation on or off.
-		/// </summary>
+        /// Flag to turn email correlation on or off.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailcorrelationenabled")]
 		public System.Nullable<bool> EmailCorrelationEnabled
 		{
@@ -2168,8 +2168,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Normal polling frequency used for sending email in Microsoft Office Outlook.
-		/// </summary>
+        /// Normal polling frequency used for sending email in Microsoft Office Outlook.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailsendpollingperiod")]
 		public System.Nullable<int> EmailSendPollingPeriod
 		{
@@ -2184,8 +2184,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Determines whether records merged through the merge dialog in UCI are merged asynchronously
-		/// </summary>
+        /// Determines whether records merged through the merge dialog in UCI are merged asynchronously
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enableasyncmergeapiforuci")]
 		public System.Nullable<bool> EnableAsyncMergeAPIForUCI
 		{
@@ -2200,8 +2200,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable Integration with Bing Maps
-		/// </summary>
+        /// 启用Integration with Bing Maps
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablebingmapsintegration")]
 		public System.Nullable<bool> EnableBingMapsIntegration
 		{
@@ -2216,8 +2216,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Note: By enabling this feature, you will also enable the automatic creation of enviornment variables when adding data sources for your apps.
-		/// </summary>
+        /// Note: By enabling this feature, you will also enable the automatic creation of enviornment variables when adding data sources for your apps.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablecanvasappsinsolutionsbydefault")]
 		public System.Nullable<bool> EnableCanvasAppsInSolutionsByDefault
 		{
@@ -2232,8 +2232,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the creation of flows is within a solution by default for this organization.
-		/// </summary>
+        /// Indicates whether the creation of flows is within a solution by default for this organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enableflowsinsolutionbydefault")]
 		public System.Nullable<bool> EnableFlowsInSolutionByDefault
 		{
@@ -2248,8 +2248,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Organizations with this attribute set to true will be granted a grace period and excluded from the initial world wide enablement of 'creation of flows within a solution by default' functionality. Once the grace period expires, the functionality will be enabled in your organization.
-		/// </summary>
+        /// Organizations with this attribute set to true will be granted a grace period and excluded from the initial world wide enablement of 'creation of flows within a solution by default' functionality. Once the grace period expires, the functionality will be enabled in your organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enableflowsinsolutionbydefaultgraceperiod")]
 		public System.Nullable<bool> EnableFlowsInSolutionByDefaultGracePeriod
 		{
@@ -2264,8 +2264,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable Integration with Immersive Skype
-		/// </summary>
+        /// 启用Integration with Immersive Skype
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enableimmersiveskypeintegration")]
 		public System.Nullable<bool> EnableImmersiveSkypeIntegration
 		{
@@ -2280,8 +2280,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether IP based cookie binding is enabled
-		/// </summary>
+        /// Information that specifies whether IP based cookie binding is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enableipbasedcookiebinding")]
 		public System.Nullable<bool> EnableIpBasedCookieBinding
 		{
@@ -2296,8 +2296,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether IP based firewall rule is enabled
-		/// </summary>
+        /// Information that specifies whether IP based firewall rule is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enableipbasedfirewallrule")]
 		public System.Nullable<bool> EnableIpBasedFirewallRule
 		{
@@ -2312,8 +2312,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether IP based firewall rule is enabled in Audit Only Mode
-		/// </summary>
+        /// Information that specifies whether IP based firewall rule is enabled in Audit Only Mode
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enableipbasedfirewallruleinauditmode")]
 		public System.Nullable<bool> EnableIpBasedFirewallRuleInAuditMode
 		{
@@ -2328,8 +2328,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether IP based SAS URI generation rule is enabled
-		/// </summary>
+        /// Information that specifies whether IP based SAS URI generation rule is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enableipbasedstorageaccesssignaturerule")]
 		public System.Nullable<bool> EnableIpBasedStorageAccessSignatureRule
 		{
@@ -2344,8 +2344,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the user has enabled or disabled Live Persona Card feature in UCI.
-		/// </summary>
+        /// Indicates whether the user has enabled or disabled Live Persona Card feature in UCI.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablelivepersonacarduci")]
 		public System.Nullable<bool> EnableLivePersonaCardUCI
 		{
@@ -2360,8 +2360,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the user has enabled or disabled LivePersonCardIntegration in Office.
-		/// </summary>
+        /// Indicates whether the user has enabled or disabled LivePersonCardIntegration in Office.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablelivepersoncardintegrationinoffice")]
 		public System.Nullable<bool> EnableLivePersonCardIntegrationInOffice
 		{
@@ -2376,8 +2376,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select to enable learning path auhtoring.
-		/// </summary>
+        /// 选择to enable learning path auhtoring.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablelpauthoring")]
 		public System.Nullable<bool> EnableLPAuthoring
 		{
@@ -2392,8 +2392,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Control whether the organization Switch Maker Portal to Classic
-		/// </summary>
+        /// Control whether the organization Switch Maker Portal to Classic
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablemakerswitchtoclassic")]
 		public System.Nullable<bool> EnableMakerSwitchToClassic
 		{
@@ -2408,8 +2408,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable Integration with Microsoft Flow
-		/// </summary>
+        /// 启用Integration with Microsoft Flow
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablemicrosoftflowintegration")]
 		public System.Nullable<bool> EnableMicrosoftFlowIntegration
 		{
@@ -2424,8 +2424,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable pricing calculations on a Create call.
-		/// </summary>
+        /// 启用pricing calculations on a Create call.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablepricingoncreate")]
 		public System.Nullable<bool> EnablePricingOnCreate
 		{
@@ -2440,8 +2440,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Use Smart Matching.
-		/// </summary>
+        /// Use Smart Matching.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablesmartmatching")]
 		public System.Nullable<bool> EnableSmartMatching
 		{
@@ -2456,8 +2456,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Leave empty to use default setting. Set to on/off to enable/disable CDN for UCI.
-		/// </summary>
+        /// Leave empty to use default setting. Set to on/off to enable/disable CDN for UCI.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enableunifiedclientcdn")]
 		public System.Nullable<bool> EnableUnifiedClientCDN
 		{
@@ -2472,8 +2472,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable site map and commanding update
-		/// </summary>
+        /// 启用site map and commanding update
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enableunifiedinterfaceshellrefresh")]
 		public System.Nullable<bool> EnableUnifiedInterfaceShellRefresh
 		{
@@ -2488,8 +2488,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Organization setting to enforce read only plugins.
-		/// </summary>
+        /// Organization setting to enforce read only plugins.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enforcereadonlyplugins")]
 		public System.Nullable<bool> EnforceReadOnlyPlugins
 		{
@@ -2504,8 +2504,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// The default image for the entity.
-		/// </summary>
+        /// default image for the entity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage")]
 		public byte[] EntityImage
 		{
@@ -2538,8 +2538,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimageid")]
 		public System.Nullable<System.Guid> EntityImageId
 		{
@@ -2550,8 +2550,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of days to keep change tracking deleted records
-		/// </summary>
+        /// Maximum number of days to keep change tracking deleted records
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("expirechangetrackingindays")]
 		public System.Nullable<int> ExpireChangeTrackingInDays
 		{
@@ -2566,8 +2566,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of days before deleting inactive subscriptions.
-		/// </summary>
+        /// Maximum number of days before deleting inactive subscriptions.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("expiresubscriptionsindays")]
 		public System.Nullable<int> ExpireSubscriptionsInDays
 		{
@@ -2582,8 +2582,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Specify the base URL to use to look for external document suggestions.
-		/// </summary>
+        /// 指定base URL to use to look for external document suggestions.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("externalbaseurl")]
 		public string ExternalBaseUrl
 		{
@@ -2598,8 +2598,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// XML string containing the ExternalPartyEnabled entities correlation keys for association of existing External Party instance entities to newly created IsExternalPartyEnabled entities.For internal use only
-		/// </summary>
+        /// XML string containing the ExternalPartyEnabled entities correlation keys for association of existing External Party instance entities to newly created IsExternalPartyEnabled entities.For internal use only
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("externalpartycorrelationkeys")]
 		public string ExternalPartyCorrelationKeys
 		{
@@ -2614,8 +2614,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// XML string containing the ExternalPartyEnabled entities settings.
-		/// </summary>
+        /// XML string containing the ExternalPartyEnabled entities settings.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("externalpartyentitysettings")]
 		public string ExternalPartyEntitySettings
 		{
@@ -2630,8 +2630,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Features to be enabled as an XML BLOB.
-		/// </summary>
+        /// Features to be enabled as an XML BLOB.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("featureset")]
 		public string FeatureSet
 		{
@@ -2646,8 +2646,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Start date for the fiscal period that is to be used throughout Microsoft CRM.
-		/// </summary>
+        /// 开始date for the fiscal period that is to be used throughout Microsoft CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalcalendarstart")]
 		public System.Nullable<System.DateTime> FiscalCalendarStart
 		{
@@ -2662,8 +2662,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies how the name of the fiscal period is displayed throughout Microsoft CRM.
-		/// </summary>
+        /// Information that specifies how the name of the fiscal period is displayed throughout Microsoft CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalperiodformat")]
 		public string FiscalPeriodFormat
 		{
@@ -2678,8 +2678,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Format in which the fiscal period will be displayed.
-		/// </summary>
+        /// Format in which the fiscal period will be displayed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalperiodformatperiod")]
 		public virtual organization_fiscalperiodformat? FiscalPeriodFormatPeriod
 		{
@@ -2694,8 +2694,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Type of fiscal period used throughout Microsoft CRM.
-		/// </summary>
+        /// Type of fiscal period used throughout Microsoft CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalperiodtype")]
 		public System.Nullable<int> FiscalPeriodType
 		{
@@ -2710,8 +2710,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether the fiscal settings have been updated.
-		/// </summary>
+        /// Information that specifies whether the fiscal settings have been updated.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalsettingsupdated")]
 		[System.ObsoleteAttribute()]
 		public System.Nullable<bool> FiscalSettingsUpdated
@@ -2723,8 +2723,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether the fiscal year should be displayed based on the start date or the end date of the fiscal year.
-		/// </summary>
+        /// Information that specifies whether the fiscal year should be displayed based on the start date or the end date of the fiscal year.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalyeardisplaycode")]
 		public System.Nullable<int> FiscalYearDisplayCode
 		{
@@ -2739,8 +2739,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies how the name of the fiscal year is displayed throughout Microsoft CRM.
-		/// </summary>
+        /// Information that specifies how the name of the fiscal year is displayed throughout Microsoft CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalyearformat")]
 		public string FiscalYearFormat
 		{
@@ -2755,8 +2755,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix for the display of the fiscal year.
-		/// </summary>
+        /// Prefix for the display of the fiscal year.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalyearformatprefix")]
 		public virtual organization_fiscalyearformatprefix? FiscalYearFormatPrefix
 		{
@@ -2771,8 +2771,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Suffix for the display of the fiscal year.
-		/// </summary>
+        /// Suffix for the display of the fiscal year.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalyearformatsuffix")]
 		public virtual organization_fiscalyearformatsuffix? FiscalYearFormatSuffix
 		{
@@ -2787,8 +2787,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Format for the year.
-		/// </summary>
+        /// Format for the year.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalyearformatyear")]
 		public virtual organization_fiscalyearformatyear? FiscalYearFormatYear
 		{
@@ -2803,8 +2803,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies how the names of the fiscal year and the fiscal period should be connected when displayed together.
-		/// </summary>
+        /// Information that specifies how the names of the fiscal year and the fiscal period should be connected when displayed together.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fiscalyearperiodconnect")]
 		public string FiscalYearPeriodConnect
 		{
@@ -2819,8 +2819,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Order in which names are to be displayed throughout Microsoft CRM.
-		/// </summary>
+        /// Order in which names are to be displayed throughout Microsoft CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fullnameconventioncode")]
 		public virtual organization_fullnameconventioncode? FullNameConventionCode
 		{
@@ -2835,8 +2835,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Specifies the maximum number of months in future for which the recurring activities can be created.
-		/// </summary>
+        /// Specifies the maximum number of months in future for which the recurring activities can be created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("futureexpansionwindow")]
 		public System.Nullable<int> FutureExpansionWindow
 		{
@@ -2851,8 +2851,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether alerts will be generated for errors.
-		/// </summary>
+        /// Indicates whether alerts will be generated for errors.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("generatealertsforerrors")]
 		public System.Nullable<bool> GenerateAlertsForErrors
 		{
@@ -2867,8 +2867,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether alerts will be generated for information.
-		/// </summary>
+        /// Indicates whether alerts will be generated for information.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("generatealertsforinformation")]
 		public System.Nullable<bool> GenerateAlertsForInformation
 		{
@@ -2883,8 +2883,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether alerts will be generated for warnings.
-		/// </summary>
+        /// Indicates whether alerts will be generated for warnings.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("generatealertsforwarnings")]
 		public System.Nullable<bool> GenerateAlertsForWarnings
 		{
@@ -2899,8 +2899,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Get Started content is enabled for this organization.
-		/// </summary>
+        /// Indicates whether Get Started content is enabled for this organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("getstartedpanecontentenabled")]
 		public System.Nullable<bool> GetStartedPaneContentEnabled
 		{
@@ -2915,8 +2915,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the append URL parameters is enabled.
-		/// </summary>
+        /// Indicates whether the append URL parameters is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("globalappendurlparametersenabled")]
 		public System.Nullable<bool> GlobalAppendUrlParametersEnabled
 		{
@@ -2931,8 +2931,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// URL for the web page global help.
-		/// </summary>
+        /// URL for the web page global help.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("globalhelpurl")]
 		public string GlobalHelpUrl
 		{
@@ -2947,8 +2947,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the customizable global help is enabled.
-		/// </summary>
+        /// Indicates whether the customizable global help is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("globalhelpurlenabled")]
 		public System.Nullable<bool> GlobalHelpUrlEnabled
 		{
@@ -2963,8 +2963,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Number of days after the goal's end date after which the rollup of the goal stops automatically.
-		/// </summary>
+        /// Number of days after the goal's end date after which the rollup of the goal stops automatically.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("goalrollupexpirytime")]
 		public System.Nullable<int> GoalRollupExpiryTime
 		{
@@ -2979,8 +2979,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Number of hours between automatic rollup jobs .
-		/// </summary>
+        /// Number of hours between automatic rollup jobs .
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("goalrollupfrequency")]
 		public System.Nullable<int> GoalRollupFrequency
 		{
@@ -2995,8 +2995,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("grantaccesstonetworkservice")]
 		public System.Nullable<bool> GrantAccessToNetworkService
 		{
@@ -3011,8 +3011,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum difference allowed between subject keywords count of the email messaged to be correlated
-		/// </summary>
+        /// Maximum difference allowed between subject keywords count of the email messaged to be correlated
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("hashdeltasubjectcount")]
 		public System.Nullable<int> HashDeltaSubjectCount
 		{
@@ -3027,8 +3027,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Filter Subject Keywords
-		/// </summary>
+        /// 过滤Subject Keywords
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("hashfilterkeywords")]
 		public string HashFilterKeywords
 		{
@@ -3043,8 +3043,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of subject keywords or recipients used for correlation
-		/// </summary>
+        /// Maximum number of subject keywords or recipients used for correlation
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("hashmaxcount")]
 		public System.Nullable<int> HashMaxCount
 		{
@@ -3059,8 +3059,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Minimum number of recipients required to match for email messaged to be correlated
-		/// </summary>
+        /// Minimum number of recipients required to match for email messaged to be correlated
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("hashminaddresscount")]
 		public System.Nullable<int> HashMinAddressCount
 		{
@@ -3075,8 +3075,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// High contrast theme data for the organization.
-		/// </summary>
+        /// High contrast theme data for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("highcontrastthemedata")]
 		public string HighContrastThemeData
 		{
@@ -3091,8 +3091,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether incoming email sent by internal Microsoft Dynamics 365 users or queues should be tracked.
-		/// </summary>
+        /// Indicates whether incoming email sent by internal Microsoft Dynamics 365 users or queues should be tracked.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ignoreinternalemail")]
 		public System.Nullable<bool> IgnoreInternalEmail
 		{
@@ -3107,8 +3107,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether an organization has consented to sharing search query data to help improve search results
-		/// </summary>
+        /// Indicates whether an organization has consented to sharing search query data to help improve search results
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("improvesearchloggingenabled")]
 		public System.Nullable<bool> ImproveSearchLoggingEnabled
 		{
@@ -3123,8 +3123,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether Inactivity timeout is enabled
-		/// </summary>
+        /// Information that specifies whether Inactivity timeout is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("inactivitytimeoutenabled")]
 		public System.Nullable<bool> InactivityTimeoutEnabled
 		{
@@ -3139,8 +3139,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Inactivity timeout in minutes
-		/// </summary>
+        /// Inactivity timeout in minutes
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("inactivitytimeoutinmins")]
 		public System.Nullable<int> InactivityTimeoutInMins
 		{
@@ -3155,8 +3155,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Inactivity timeout reminder in minutes
-		/// </summary>
+        /// Inactivity timeout reminder in minutes
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("inactivitytimeoutreminderinmins")]
 		public System.Nullable<int> InactivityTimeoutReminderInMins
 		{
@@ -3171,8 +3171,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Setting for the Async Service Mailbox Queue. Defines the retrieval batch size of exchange server.
-		/// </summary>
+        /// Setting for the Async Service Mailbox Queue. Defines the retrieval batch size of exchange server.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incomingemailexchangeemailretrievalbatchsize")]
 		public System.Nullable<int> IncomingEmailExchangeEmailRetrievalBatchSize
 		{
@@ -3187,8 +3187,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Initial version of the organization.
-		/// </summary>
+        /// Initial version of the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("initialversion")]
 		public string InitialVersion
 		{
@@ -3203,8 +3203,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the integration user for the organization.
-		/// </summary>
+        /// Unique identifier of the integration user for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("integrationuserid")]
 		public System.Nullable<System.Guid> IntegrationUserId
 		{
@@ -3219,8 +3219,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix to use for all invoice numbers throughout Microsoft Dynamics 365.
-		/// </summary>
+        /// Prefix to use for all invoice numbers throughout Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("invoiceprefix")]
 		public string InvoicePrefix
 		{
@@ -3235,8 +3235,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// IP Based SAS mode.
-		/// </summary>
+        /// IP Based SAS mode.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ipbasedstorageaccesssignaturemode")]
 		public virtual ipbasedstorageaccesssignaturemode? IpBasedStorageAccessSignatureMode
 		{
@@ -3251,8 +3251,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature Action Card should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the feature Action Card should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isactioncardenabled")]
 		public System.Nullable<bool> IsActionCardEnabled
 		{
@@ -3267,8 +3267,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether Action Support Feature is enabled
-		/// </summary>
+        /// Information that specifies whether Action Support Feature is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isactionsupportfeatureenabled")]
 		public System.Nullable<bool> IsActionSupportFeatureEnabled
 		{
@@ -3283,8 +3283,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature Relationship Analytics should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the feature Relationship Analytics should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isactivityanalysisenabled")]
 		public System.Nullable<bool> IsActivityAnalysisEnabled
 		{
@@ -3299,8 +3299,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether all money attributes are converted to decimal.
-		/// </summary>
+        /// Indicates whether all money attributes are converted to decimal.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isallmoneydecimal")]
 		public System.Nullable<bool> IsAllMoneyDecimal
 		{
@@ -3311,8 +3311,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether loading of Microsoft Dynamics 365 in a browser window that does not have address, tool, and menu bars is enabled.
-		/// </summary>
+        /// Indicates whether loading of Microsoft Dynamics 365 in a browser window that does not have address, tool, and menu bars is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isappmode")]
 		public System.Nullable<bool> IsAppMode
 		{
@@ -3327,8 +3327,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable or disable attachments sync for outlook and exchange.
-		/// </summary>
+        /// 启用or disable attachments sync for outlook and exchange.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isappointmentattachmentsyncenabled")]
 		public System.Nullable<bool> IsAppointmentAttachmentSyncEnabled
 		{
@@ -3343,8 +3343,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable or disable assigned tasks sync for outlook and exchange.
-		/// </summary>
+        /// 启用or disable assigned tasks sync for outlook and exchange.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isassignedtaskssyncenabled")]
 		public System.Nullable<bool> IsAssignedTasksSyncEnabled
 		{
@@ -3359,8 +3359,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable or disable auditing of changes.
-		/// </summary>
+        /// 启用or disable auditing of changes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isauditenabled")]
 		public System.Nullable<bool> IsAuditEnabled
 		{
@@ -3375,8 +3375,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature Auto Capture should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the feature Auto Capture should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isautodatacaptureenabled")]
 		public System.Nullable<bool> IsAutoDataCaptureEnabled
 		{
@@ -3391,8 +3391,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the V2 feature of Auto Capture should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the V2 feature of Auto Capture should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isautodatacapturev2enabled")]
 		public System.Nullable<bool> IsAutoDataCaptureV2Enabled
 		{
@@ -3420,8 +3420,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information on whether auto save is enabled.
-		/// </summary>
+        /// Information on whether auto save is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isautosaveenabled")]
 		public System.Nullable<bool> IsAutoSaveEnabled
 		{
@@ -3449,8 +3449,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Determines whether users can make use of basic Geospatial featuers in Canvas apps.
-		/// </summary>
+        /// Determines whether users can make use of basic Geospatial featuers in Canvas apps.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isbasicgeospatialintegrationenabled")]
 		public System.Nullable<bool> IsBasicGeospatialIntegrationEnabled
 		{
@@ -3465,8 +3465,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether BPF Entity Customization Feature is enabled
-		/// </summary>
+        /// Information that specifies whether BPF Entity Customization Feature is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isbpfentitycustomizationfeatureenabled")]
 		public System.Nullable<bool> IsBPFEntityCustomizationFeatureEnabled
 		{
@@ -3494,8 +3494,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether conflict detection for mobile client is enabled.
-		/// </summary>
+        /// Information that specifies whether conflict detection for mobile client is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isconflictdetectionenabledformobileclient")]
 		public System.Nullable<bool> IsConflictDetectionEnabledForMobileClient
 		{
@@ -3510,8 +3510,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable or disable mailing address sync for outlook and exchange.
-		/// </summary>
+        /// 启用or disable mailing address sync for outlook and exchange.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscontactmailingaddresssyncenabled")]
 		public System.Nullable<bool> IsContactMailingAddressSyncEnabled
 		{
@@ -3526,8 +3526,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Content Security Policy has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether Content Security Policy has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscontentsecuritypolicyenabled")]
 		public System.Nullable<bool> IsContentSecurityPolicyEnabled
 		{
@@ -3542,8 +3542,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Content Security Policy has been enabled for this organization's Canvas apps.
-		/// </summary>
+        /// Indicates whether Content Security Policy has been enabled for this organization's Canvas apps.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscontentsecuritypolicyenabledforcanvas")]
 		public System.Nullable<bool> IsContentSecurityPolicyEnabledForCanvas
 		{
@@ -3558,8 +3558,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Contextual email experience is enabled on this organization
-		/// </summary>
+        /// Indicates whether Contextual email experience is enabled on this organization
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscontextualemailenabled")]
 		public System.Nullable<bool> IsContextualEmailEnabled
 		{
@@ -3574,8 +3574,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select to enable Contextual Help in UCI.
-		/// </summary>
+        /// 选择to enable Contextual Help in UCI.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscontextualhelpenabled")]
 		public System.Nullable<bool> IsContextualHelpEnabled
 		{
@@ -3590,8 +3590,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Determines whether users can provide feedback for App Copilot.
-		/// </summary>
+        /// Determines whether users can provide feedback for App Copilot.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscopilotfeedbackenabled")]
 		public System.Nullable<bool> IsCopilotFeedbackEnabled
 		{
@@ -3606,8 +3606,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Custom Controls in canvas PowerApps feature has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether Custom Controls in canvas PowerApps feature has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscustomcontrolsincanvasappsenabled")]
 		public System.Nullable<bool> IsCustomControlsInCanvasAppsEnabled
 		{
@@ -3622,8 +3622,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable or disable country code selection.
-		/// </summary>
+        /// 启用or disable country code selection.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdefaultcountrycodecheckenabled")]
 		public System.Nullable<bool> IsDefaultCountryCodeCheckEnabled
 		{
@@ -3638,8 +3638,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable Delegation Access content
-		/// </summary>
+        /// 启用Delegation Access content
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdelegateaccessenabled")]
 		public System.Nullable<bool> IsDelegateAccessEnabled
 		{
@@ -3654,8 +3654,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature Action Hub should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the feature Action Hub should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdelveactionhubintegrationenabled")]
 		public System.Nullable<bool> IsDelveActionHubIntegrationEnabled
 		{
@@ -3670,8 +3670,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether v2 schema for Desktop Flows is enabled in this organization.
-		/// </summary>
+        /// Indicates whether v2 schema for Desktop Flows is enabled in this organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdesktopflowschemav2enabled")]
 		public System.Nullable<bool> IsDesktopFlowSchemaV2Enabled
 		{
@@ -3686,8 +3686,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether the organization is disabled.
-		/// </summary>
+        /// Information that specifies whether the organization is disabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdisabled")]
 		public System.Nullable<bool> IsDisabled
 		{
@@ -3698,8 +3698,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether duplicate detection of records is enabled.
-		/// </summary>
+        /// Indicates whether duplicate detection of records is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isduplicatedetectionenabled")]
 		public System.Nullable<bool> IsDuplicateDetectionEnabled
 		{
@@ -3714,8 +3714,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether duplicate detection of records during import is enabled.
-		/// </summary>
+        /// Indicates whether duplicate detection of records during import is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isduplicatedetectionenabledforimport")]
 		public System.Nullable<bool> IsDuplicateDetectionEnabledForImport
 		{
@@ -3730,8 +3730,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether duplicate detection of records during offline synchronization is enabled.
-		/// </summary>
+        /// Indicates whether duplicate detection of records during offline synchronization is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isduplicatedetectionenabledforofflinesync")]
 		public System.Nullable<bool> IsDuplicateDetectionEnabledForOfflineSync
 		{
@@ -3746,8 +3746,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether duplicate detection during online create or update is enabled.
-		/// </summary>
+        /// Indicates whether duplicate detection during online create or update is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isduplicatedetectionenabledforonlinecreateupdate")]
 		public System.Nullable<bool> IsDuplicateDetectionEnabledForOnlineCreateUpdate
 		{
@@ -3762,8 +3762,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information on whether Smart Email Address Validation is enabled.
-		/// </summary>
+        /// Information on whether Smart Email Address Validation is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isemailaddressvalidationenabled")]
 		public System.Nullable<bool> IsEmailAddressValidationEnabled
 		{
@@ -3778,8 +3778,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Allow tracking recipient activity on sent emails.
-		/// </summary>
+        /// Allow tracking recipient activity on sent emails.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isemailmonitoringallowed")]
 		public System.Nullable<bool> IsEmailMonitoringAllowed
 		{
@@ -3794,8 +3794,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable Email Server Profile content filtering
-		/// </summary>
+        /// 启用Email Server Profile content filtering
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isemailserverprofilecontentfilteringenabled")]
 		public System.Nullable<bool> IsEmailServerProfileContentFilteringEnabled
 		{
@@ -3810,8 +3810,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether appmodule is enabled for all roles
-		/// </summary>
+        /// Indicates whether appmodule is enabled for all roles
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isenabledforallroles")]
 		public System.Nullable<bool> IsEnabledForAllRoles
 		{
@@ -3826,8 +3826,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the organization's files are being stored in Azure.
-		/// </summary>
+        /// Indicates whether the organization's files are being stored in Azure.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isexternalfilestorageenabled")]
 		public System.Nullable<bool> IsExternalFileStorageEnabled
 		{
@@ -3842,8 +3842,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether data can be synchronized with an external search index.
-		/// </summary>
+        /// 选择whether data can be synchronized with an external search index.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isexternalsearchindexenabled")]
 		public System.Nullable<bool> IsExternalSearchIndexEnabled
 		{
@@ -3858,8 +3858,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the fiscal period is displayed as the month number.
-		/// </summary>
+        /// Indicates whether the fiscal period is displayed as the month number.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isfiscalperiodmonthbased")]
 		public System.Nullable<bool> IsFiscalPeriodMonthBased
 		{
@@ -3874,8 +3874,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether folders should be automatically created on SharePoint.
-		/// </summary>
+        /// 选择whether folders should be automatically created on SharePoint.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isfolderautocreatedonsp")]
 		public System.Nullable<bool> IsFolderAutoCreatedonSP
 		{
@@ -3890,8 +3890,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable or disable folder based tracking for Server Side Sync.
-		/// </summary>
+        /// 启用or disable folder based tracking for Server Side Sync.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isfolderbasedtrackingenabled")]
 		public System.Nullable<bool> IsFolderBasedTrackingEnabled
 		{
@@ -3906,8 +3906,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether full-text search for Quick Find entities should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether full-text search for Quick Find entities should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isfulltextsearchenabled")]
 		public System.Nullable<bool> IsFullTextSearchEnabled
 		{
@@ -3922,8 +3922,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether geospatial capabilities leveraging Azure Maps are enabled.
-		/// </summary>
+        /// Indicates whether geospatial capabilities leveraging Azure Maps are enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isgeospatialazuremapsintegrationenabled")]
 		public System.Nullable<bool> IsGeospatialAzureMapsIntegrationEnabled
 		{
@@ -3938,8 +3938,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable Hierarchical Security Model
-		/// </summary>
+        /// 启用Hierarchical Security Model
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ishierarchicalsecuritymodelenabled")]
 		public System.Nullable<bool> IsHierarchicalSecurityModelEnabled
 		{
@@ -3954,8 +3954,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether data collection for ideas in canvas PowerApps has been enabled.
-		/// </summary>
+        /// Indicates whether data collection for ideas in canvas PowerApps has been enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isideasdatacollectionenabled")]
 		public System.Nullable<bool> IsIdeasDataCollectionEnabled
 		{
@@ -3970,8 +3970,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Give Consent to use LUIS in Dynamics 365 Bot
-		/// </summary>
+        /// Give Consent to use LUIS in Dynamics 365 Bot
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isluisenabledford365bot")]
 		public System.Nullable<bool> IsLUISEnabledforD365Bot
 		{
@@ -3986,8 +3986,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable or disable forced unlocking for Server Side Sync mailboxes.
-		/// </summary>
+        /// 启用or disable forced unlocking for Server Side Sync mailboxes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismailboxforcedunlockingenabled")]
 		public System.Nullable<bool> IsMailboxForcedUnlockingEnabled
 		{
@@ -4002,8 +4002,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable or disable mailbox keep alive for Server Side Sync.
-		/// </summary>
+        /// 启用or disable mailbox keep alive for Server Side Sync.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismailboxinactivebackoffenabled")]
 		public System.Nullable<bool> IsMailboxInactiveBackoffEnabled
 		{
@@ -4018,8 +4018,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Manual Sales Forecasting feature has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether Manual Sales Forecasting feature has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismanualsalesforecastingenabled")]
 		public System.Nullable<bool> IsManualSalesForecastingEnabled
 		{
@@ -4034,8 +4034,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether mobile client on demand sync is enabled.
-		/// </summary>
+        /// Information that specifies whether mobile client on demand sync is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismobileclientondemandsyncenabled")]
 		public System.Nullable<bool> IsMobileClientOnDemandSyncEnabled
 		{
@@ -4050,8 +4050,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature MobileOffline should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the feature MobileOffline should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismobileofflineenabled")]
 		public System.Nullable<bool> IsMobileOfflineEnabled
 		{
@@ -4066,8 +4066,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Model Apps can be embedded within Microsoft Teams. This is a tenant admin controlled preview/experimental feature.
-		/// </summary>
+        /// Indicates whether Model Apps can be embedded within Microsoft Teams. This is a tenant admin controlled preview/experimental feature.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismodeldrivenappsinmsteamsenabled")]
 		public System.Nullable<bool> IsModelDrivenAppsInMSTeamsEnabled
 		{
@@ -4082,8 +4082,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Microsoft Teams Collaboration feature has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether Microsoft Teams Collaboration feature has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismsteamscollaborationenabled")]
 		public System.Nullable<bool> IsMSTeamsCollaborationEnabled
 		{
@@ -4098,8 +4098,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Microsoft Teams integration has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether Microsoft Teams integration has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismsteamsenabled")]
 		public System.Nullable<bool> IsMSTeamsEnabled
 		{
@@ -4114,8 +4114,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the user has enabled or disabled Microsoft Teams integration.
-		/// </summary>
+        /// Indicates whether the user has enabled or disabled Microsoft Teams integration.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismsteamssettingchangedbyuser")]
 		public System.Nullable<bool> IsMSTeamsSettingChangedByUser
 		{
@@ -4130,8 +4130,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Microsoft Teams User Sync feature has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether Microsoft Teams User Sync feature has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismsteamsusersyncenabled")]
 		public System.Nullable<bool> IsMSTeamsUserSyncEnabled
 		{
@@ -4146,8 +4146,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether new add product experience is enabled.
-		/// </summary>
+        /// Indicates whether new add product experience is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isnewaddproductexperienceenabled")]
 		public System.Nullable<bool> IsNewAddProductExperienceEnabled
 		{
@@ -4162,8 +4162,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature Notes Analysis should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the feature Notes Analysis should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isnotesanalysisenabled")]
 		public System.Nullable<bool> IsNotesAnalysisEnabled
 		{
@@ -4191,8 +4191,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature OfficeGraph should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the feature OfficeGraph should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isofficegraphenabled")]
 		public System.Nullable<bool> IsOfficeGraphEnabled
 		{
@@ -4207,8 +4207,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature One Drive should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the feature One Drive should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isonedriveenabled")]
 		public System.Nullable<bool> IsOneDriveEnabled
 		{
@@ -4223,8 +4223,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether PAI feature has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether PAI feature has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ispaienabled")]
 		public System.Nullable<bool> IsPAIEnabled
 		{
@@ -4239,8 +4239,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether PDF Generation feature has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether PDF Generation feature has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ispdfgenerationenabled")]
 		public string IsPDFGenerationEnabled
 		{
@@ -4255,8 +4255,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether playbook feature has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether playbook feature has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isplaybookenabled")]
 		public System.Nullable<bool> IsPlaybookEnabled
 		{
@@ -4271,8 +4271,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information on whether IM presence is enabled.
-		/// </summary>
+        /// Information on whether IM presence is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ispresenceenabled")]
 		public System.Nullable<bool> IsPresenceEnabled
 		{
@@ -4287,8 +4287,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the Preview feature for Action Card should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the Preview feature for Action Card should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ispreviewenabledforactioncard")]
 		public System.Nullable<bool> IsPreviewEnabledForActionCard
 		{
@@ -4303,8 +4303,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature Auto Capture should be enabled for the organization at Preview Settings.
-		/// </summary>
+        /// Indicates whether the feature Auto Capture should be enabled for the organization at Preview Settings.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ispreviewforautocaptureenabled")]
 		public System.Nullable<bool> IsPreviewForAutoCaptureEnabled
 		{
@@ -4319,8 +4319,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Is Preview For Email Monitoring Allowed.
-		/// </summary>
+        /// Is Preview For Email Monitoring Allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ispreviewforemailmonitoringallowed")]
 		public System.Nullable<bool> IsPreviewForEmailMonitoringAllowed
 		{
@@ -4335,8 +4335,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether PriceList is mandatory for adding existing products to sales entities.
-		/// </summary>
+        /// Indicates whether PriceList is mandatory for adding existing products to sales entities.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ispricelistmandatory")]
 		public System.Nullable<bool> IsPriceListMandatory
 		{
@@ -4351,8 +4351,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether to use the standard Out-of-box Opportunity Close experience or opt to for a customized experience.
-		/// </summary>
+        /// 选择whether to use the standard Out-of-box Opportunity Close experience or opt to for a customized experience.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isquickcreateenabledforopportunityclose")]
 		public System.Nullable<bool> IsQuickCreateEnabledForOpportunityClose
 		{
@@ -4367,8 +4367,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable or disable auditing of read operations.
-		/// </summary>
+        /// 启用or disable auditing of read operations.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isreadauditenabled")]
 		public System.Nullable<bool> IsReadAuditEnabled
 		{
@@ -4383,8 +4383,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the feature Relationship Insights should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the feature Relationship Insights should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isrelationshipinsightsenabled")]
 		public System.Nullable<bool> IsRelationshipInsightsEnabled
 		{
@@ -4399,8 +4399,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates if the synchronization of user resource booking with Exchange is enabled at organization level.
-		/// </summary>
+        /// Indicates if the synchronization of user resource booking with Exchange is enabled at organization level.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isresourcebookingexchangesyncenabled")]
 		public System.Nullable<bool> IsResourceBookingExchangeSyncEnabled
 		{
@@ -4415,8 +4415,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether rich text editor for notes experience is enabled on this organization
-		/// </summary>
+        /// Indicates whether rich text editor for notes experience is enabled on this organization
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isrichtextnotesenabled")]
 		public System.Nullable<bool> IsRichTextNotesEnabled
 		{
@@ -4431,8 +4431,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether AAD Join for RPA Autoscale is enabled in this organization..
-		/// </summary>
+        /// Indicates whether AAD Join for RPA Autoscale is enabled in this organization..
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isrpaautoscaleaadjoinenabled")]
 		public System.Nullable<bool> IsRpaAutoscaleAadJoinEnabled
 		{
@@ -4447,8 +4447,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Autoscale feature for RPA is enabled in this organization.
-		/// </summary>
+        /// Indicates whether Autoscale feature for RPA is enabled in this organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isrpaautoscaleenabled")]
 		public System.Nullable<bool> IsRpaAutoscaleEnabled
 		{
@@ -4463,8 +4463,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether RPA Box feature is enabled in this organization in locations outside the tenant's geographical location.
-		/// </summary>
+        /// Indicates whether RPA Box feature is enabled in this organization in locations outside the tenant's geographical location.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isrpaboxcrossgeoenabled")]
 		public System.Nullable<bool> IsRpaBoxCrossGeoEnabled
 		{
@@ -4479,8 +4479,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether RPA Box feature is enabled in this organization.
-		/// </summary>
+        /// Indicates whether RPA Box feature is enabled in this organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isrpaboxenabled")]
 		public System.Nullable<bool> IsRpaBoxEnabled
 		{
@@ -4495,8 +4495,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Unattended runs feature for RPA is enabled in this organization.
-		/// </summary>
+        /// Indicates whether Unattended runs feature for RPA is enabled in this organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isrpaunattendedenabled")]
 		public System.Nullable<bool> IsRpaUnattendedEnabled
 		{
@@ -4511,8 +4511,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Sales Assistant mobile app has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether Sales Assistant mobile app has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("issalesassistantenabled")]
 		public System.Nullable<bool> IsSalesAssistantEnabled
 		{
@@ -4540,8 +4540,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable sales order processing integration.
-		/// </summary>
+        /// 启用sales order processing integration.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("issopintegrationenabled")]
 		public System.Nullable<bool> IsSOPIntegrationEnabled
 		{
@@ -4556,8 +4556,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information on whether text wrap is enabled.
-		/// </summary>
+        /// Information on whether text wrap is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("istextwrapenabled")]
 		public System.Nullable<bool> IsTextWrapEnabled
 		{
@@ -4572,8 +4572,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable or disable auditing of user access.
-		/// </summary>
+        /// 启用or disable auditing of user access.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isuseraccessauditenabled")]
 		public System.Nullable<bool> IsUserAccessAuditEnabled
 		{
@@ -4588,8 +4588,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether loading of Microsoft Dynamics 365 in a browser window that does not have address, tool, and menu bars is enabled.
-		/// </summary>
+        /// Indicates whether loading of Microsoft Dynamics 365 in a browser window that does not have address, tool, and menu bars is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isvintegrationcode")]
 		public virtual organization_isvintegrationcode? ISVIntegrationCode
 		{
@@ -4604,8 +4604,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Write-in Products can be added to Opportunity/Quote/Order/Invoice or not.
-		/// </summary>
+        /// Indicates whether Write-in Products can be added to Opportunity/Quote/Order/Invoice or not.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iswriteinproductsallowed")]
 		public System.Nullable<bool> IsWriteInProductsAllowed
 		{
@@ -4620,8 +4620,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Type the prefix to use for all knowledge articles in Microsoft Dynamics 365.
-		/// </summary>
+        /// Type the prefix to use for all knowledge articles in Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kaprefix")]
 		public string KaPrefix
 		{
@@ -4636,8 +4636,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix to use for all articles in Microsoft Dynamics 365.
-		/// </summary>
+        /// Prefix to use for all articles in Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kbprefix")]
 		public string KbPrefix
 		{
@@ -4652,8 +4652,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// XML string containing the Knowledge Management settings that are applied in Knowledge Management Wizard.
-		/// </summary>
+        /// XML string containing the Knowledge Management settings that are applied in Knowledge Management Wizard.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kmsettings")]
 		public string KMSettings
 		{
@@ -4668,8 +4668,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Preferred language for the organization.
-		/// </summary>
+        /// Preferred language for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("languagecode")]
 		public System.Nullable<int> LanguageCode
 		{
@@ -4684,8 +4684,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the locale of the organization.
-		/// </summary>
+        /// Unique identifier of the locale of the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("localeid")]
 		public System.Nullable<int> LocaleId
 		{
@@ -4700,8 +4700,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies how the Long Date format is displayed in Microsoft Dynamics 365.
-		/// </summary>
+        /// Information that specifies how the Long Date format is displayed in Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("longdateformatcode")]
 		public System.Nullable<int> LongDateFormatCode
 		{
@@ -4716,8 +4716,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Minimum number of characters that should be entered in the lookup control before resolving for suggestions
-		/// </summary>
+        /// Minimum number of characters that should be entered in the lookup control before resolving for suggestions
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lookupcharactercountbeforeresolve")]
 		public System.Nullable<int> LookupCharacterCountBeforeResolve
 		{
@@ -4732,8 +4732,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Minimum delay (in milliseconds) between consecutive inputs in a lookup control that will trigger a search for suggestions
-		/// </summary>
+        /// Minimum delay (in milliseconds) between consecutive inputs in a lookup control that will trigger a search for suggestions
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lookupresolvedelayms")]
 		public System.Nullable<int> LookupResolveDelayMS
 		{
@@ -4748,8 +4748,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Lower Threshold For Mailbox Intermittent Issue.
-		/// </summary>
+        /// Lower Threshold For Mailbox Intermittent Issue.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mailboxintermittentissueminrange")]
 		public System.Nullable<int> MailboxIntermittentIssueMinRange
 		{
@@ -4764,8 +4764,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Lower Threshold For Mailbox Permanent Issue.
-		/// </summary>
+        /// Lower Threshold For Mailbox Permanent Issue.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mailboxpermanentissueminrange")]
 		public System.Nullable<int> MailboxPermanentIssueMinRange
 		{
@@ -4780,8 +4780,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of actionsteps allowed in a BPF
-		/// </summary>
+        /// Maximum number of actionsteps allowed in a BPF
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxactionstepsinbpf")]
 		public System.Nullable<int> MaxActionStepsInBPF
 		{
@@ -4796,8 +4796,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum Allowed Pending Rollup Job Count
-		/// </summary>
+        /// Maximum Allowed Pending Rollup Job Count
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxallowedpendingrollupjobcount")]
 		public System.Nullable<int> MaxAllowedPendingRollupJobCount
 		{
@@ -4812,8 +4812,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Percentage Of Entity Table Size For Kicking Off Bootstrap Job
-		/// </summary>
+        /// Percentage Of Entity Table Size For Kicking Off Bootstrap Job
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxallowedpendingrollupjobpercentage")]
 		public System.Nullable<int> MaxAllowedPendingRollupJobPercentage
 		{
@@ -4828,8 +4828,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of days an appointment can last.
-		/// </summary>
+        /// Maximum number of days an appointment can last.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxappointmentdurationdays")]
 		public System.Nullable<int> MaxAppointmentDurationDays
 		{
@@ -4844,8 +4844,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of conditions allowed for mobile offline filters
-		/// </summary>
+        /// Maximum number of conditions allowed for mobile offline filters
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxconditionsformobileofflinefilters")]
 		public System.Nullable<int> MaxConditionsForMobileOfflineFilters
 		{
@@ -4860,8 +4860,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum depth for hierarchy security propagation.
-		/// </summary>
+        /// Maximum depth for hierarchy security propagation.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxdepthforhierarchicalsecuritymodel")]
 		public System.Nullable<int> MaxDepthForHierarchicalSecurityModel
 		{
@@ -4876,8 +4876,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of Folder Based Tracking mappings user can add
-		/// </summary>
+        /// Maximum number of Folder Based Tracking mappings user can add
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxfolderbasedtrackingmappings")]
 		public System.Nullable<int> MaxFolderBasedTrackingMappings
 		{
@@ -4892,8 +4892,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of active business process flows allowed per entity
-		/// </summary>
+        /// Maximum number of active business process flows allowed per entity
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maximumactivebusinessprocessflowsallowedperentity")]
 		public System.Nullable<int> MaximumActiveBusinessProcessFlowsAllowedPerEntity
 		{
@@ -4908,8 +4908,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Restrict the maximum number of product properties for a product family/bundle
-		/// </summary>
+        /// Restrict the maximum number of product properties for a product family/bundle
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maximumdynamicpropertiesallowed")]
 		public System.Nullable<int> MaximumDynamicPropertiesAllowed
 		{
@@ -4924,8 +4924,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of active SLA allowed per entity in online
-		/// </summary>
+        /// Maximum number of active SLA allowed per entity in online
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maximumentitieswithactivesla")]
 		public System.Nullable<int> MaximumEntitiesWithActiveSLA
 		{
@@ -4940,8 +4940,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of SLA KPI per active SLA allowed for entity in online
-		/// </summary>
+        /// Maximum number of SLA KPI per active SLA allowed for entity in online
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maximumslakpiperentitywithactivesla")]
 		public System.Nullable<int> MaximumSLAKPIPerEntityWithActiveSLA
 		{
@@ -4956,8 +4956,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum tracking number before recycling takes place.
-		/// </summary>
+        /// Maximum tracking number before recycling takes place.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maximumtrackingnumber")]
 		public System.Nullable<int> MaximumTrackingNumber
 		{
@@ -4972,8 +4972,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Restrict the maximum no of items in a bundle
-		/// </summary>
+        /// Restrict the maximum no of items in a bundle
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxproductsinbundle")]
 		public System.Nullable<int> MaxProductsInBundle
 		{
@@ -4988,8 +4988,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of records that will be exported to a static Microsoft Office Excel worksheet when exporting from the grid.
-		/// </summary>
+        /// Maximum number of records that will be exported to a static Microsoft Office Excel worksheet when exporting from the grid.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxrecordsforexporttoexcel")]
 		public System.Nullable<int> MaxRecordsForExportToExcel
 		{
@@ -5004,8 +5004,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of lookup and picklist records that can be selected by user for filtering.
-		/// </summary>
+        /// Maximum number of lookup and picklist records that can be selected by user for filtering.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxrecordsforlookupfilters")]
 		public System.Nullable<int> MaxRecordsForLookupFilters
 		{
@@ -5020,8 +5020,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum Rollup Fields Per Entity
-		/// </summary>
+        /// Maximum Rollup Fields Per Entity
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxrollupfieldsperentity")]
 		public System.Nullable<int> MaxRollupFieldsPerEntity
 		{
@@ -5036,8 +5036,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum Rollup Fields Per Organization
-		/// </summary>
+        /// Maximum Rollup Fields Per Organization
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxrollupfieldsperorg")]
 		public System.Nullable<int> MaxRollupFieldsPerOrg
 		{
@@ -5065,8 +5065,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// The maximum version of IE to run browser emulation for in Outlook client
-		/// </summary>
+        /// maximum version of IE to run browser emulation for in Outlook client
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxsupportedinternetexplorerversion")]
 		public System.Nullable<int> MaxSupportedInternetExplorerVersion
 		{
@@ -5077,8 +5077,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum allowed size of an attachment.
-		/// </summary>
+        /// Maximum allowed size of an attachment.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxuploadfilesize")]
 		public System.Nullable<int> MaxUploadFileSize
 		{
@@ -5093,8 +5093,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of mailboxes that can be toggled for verbose logging
-		/// </summary>
+        /// Maximum number of mailboxes that can be toggled for verbose logging
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxverboseloggingmailbox")]
 		public System.Nullable<int> MaxVerboseLoggingMailbox
 		{
@@ -5105,8 +5105,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of sync cycles for which verbose logging will be enabled by default
-		/// </summary>
+        /// Maximum number of sync cycles for which verbose logging will be enabled by default
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("maxverboseloggingsynccycles")]
 		public System.Nullable<int> MaxVerboseLoggingSyncCycles
 		{
@@ -5117,8 +5117,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// (Deprecated) Environment selected for Integration with Microsoft Flow
-		/// </summary>
+        /// (Deprecated) Environment selected for Integration with Microsoft Flow
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("microsoftflowenvironment")]
 		public string MicrosoftFlowEnvironment
 		{
@@ -5133,8 +5133,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Normal polling frequency used for address book synchronization in Microsoft Office Outlook.
-		/// </summary>
+        /// Normal polling frequency used for address book synchronization in Microsoft Office Outlook.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("minaddressbooksyncinterval")]
 		public System.Nullable<int> MinAddressBookSyncInterval
 		{
@@ -5149,8 +5149,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Normal polling frequency used for background offline synchronization in Microsoft Office Outlook.
-		/// </summary>
+        /// Normal polling frequency used for background offline synchronization in Microsoft Office Outlook.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("minofflinesyncinterval")]
 		public System.Nullable<int> MinOfflineSyncInterval
 		{
@@ -5165,8 +5165,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Minimum allowed time between scheduled Outlook synchronizations.
-		/// </summary>
+        /// Minimum allowed time between scheduled Outlook synchronizations.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("minoutlooksyncinterval")]
 		public System.Nullable<int> MinOutlookSyncInterval
 		{
@@ -5181,8 +5181,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Minimum number of user license required for mobile offline service by production/preview organization
-		/// </summary>
+        /// Minimum number of user license required for mobile offline service by production/preview organization
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mobileofflineminlicenseprod")]
 		public System.Nullable<int> MobileOfflineMinLicenseProd
 		{
@@ -5193,8 +5193,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Minimum number of user license required for mobile offline service by trial organization
-		/// </summary>
+        /// Minimum number of user license required for mobile offline service by trial organization
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mobileofflineminlicensetrial")]
 		public System.Nullable<int> MobileOfflineMinLicenseTrial
 		{
@@ -5205,8 +5205,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Sync interval for mobile offline.
-		/// </summary>
+        /// Sync interval for mobile offline.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mobileofflinesyncinterval")]
 		public System.Nullable<int> MobileOfflineSyncInterval
 		{
@@ -5221,8 +5221,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to indicate if the modern advanced find filtering on all tables in a model-driven app is enabled
-		/// </summary>
+        /// Flag to indicate if the modern advanced find filtering on all tables in a model-driven app is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modernadvancedfindfiltering")]
 		public System.Nullable<bool> ModernAdvancedFindFiltering
 		{
@@ -5237,8 +5237,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether coauthoring is enabled in modern app designer
-		/// </summary>
+        /// Indicates whether coauthoring is enabled in modern app designer
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modernappdesignercoauthoringenabled")]
 		public System.Nullable<bool> ModernAppDesignerCoauthoringEnabled
 		{
@@ -5253,8 +5253,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the organization.
-		/// </summary>
+        /// Unique identifier of the user who last modified the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
@@ -5265,8 +5265,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Date and time when the organization was last modified.
-		/// </summary>
+        /// Date and time when the organization was last modified.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
@@ -5277,8 +5277,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the organization.
-		/// </summary>
+        /// Unique identifier of the delegate user who last modified the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
@@ -5289,8 +5289,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Show the sort by button on views
-		/// </summary>
+        /// Show the sort by button on views
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("multicolumnsortenabled")]
 		public System.Nullable<int> MultiColumnSortEnabled
 		{
@@ -5305,8 +5305,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Name of the organization. The name is set when Microsoft CRM is installed and should not be changed.
-		/// </summary>
+        /// Name of the organization. The name is set when Microsoft CRM is installed and should not be changed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
 		public string Name
 		{
@@ -5321,8 +5321,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enables Natural Language Assist Filter.
-		/// </summary>
+        /// Enables Natural Language Assist Filter.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("naturallanguageassistfilter")]
 		public System.Nullable<bool> NaturalLanguageAssistFilter
 		{
@@ -5337,8 +5337,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies how negative currency numbers are displayed throughout Microsoft Dynamics 365.
-		/// </summary>
+        /// Information that specifies how negative currency numbers are displayed throughout Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("negativecurrencyformatcode")]
 		public System.Nullable<int> NegativeCurrencyFormatCode
 		{
@@ -5353,8 +5353,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies how negative numbers are displayed throughout Microsoft CRM.
-		/// </summary>
+        /// Information that specifies how negative numbers are displayed throughout Microsoft CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("negativeformatcode")]
 		public virtual organization_negativeformatcode? NegativeFormatCode
 		{
@@ -5369,8 +5369,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether an organization has enabled the new Relevance search experience (released in Oct 2020) for the organization
-		/// </summary>
+        /// Indicates whether an organization has enabled the new Relevance search experience (released in Oct 2020) for the organization
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("newsearchexperienceenabled")]
 		public System.Nullable<bool> NewSearchExperienceEnabled
 		{
@@ -5385,8 +5385,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Next token to be placed on the subject line of an email message.
-		/// </summary>
+        /// Next token to be placed on the subject line of an email message.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("nexttrackingnumber")]
 		public System.Nullable<int> NextTrackingNumber
 		{
@@ -5401,8 +5401,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether mailbox owners will be notified of email server profile level alerts.
-		/// </summary>
+        /// Indicates whether mailbox owners will be notified of email server profile level alerts.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("notifymailboxownerofemailserverlevelalerts")]
 		public System.Nullable<bool> NotifyMailboxOwnerOfEmailServerLevelAlerts
 		{
@@ -5417,8 +5417,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Specification of how numbers are displayed throughout Microsoft CRM.
-		/// </summary>
+        /// Specification of how numbers are displayed throughout Microsoft CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("numberformat")]
 		public string NumberFormat
 		{
@@ -5433,8 +5433,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Specifies how numbers are grouped in Microsoft Dynamics 365.
-		/// </summary>
+        /// Specifies how numbers are grouped in Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("numbergroupformat")]
 		public string NumberGroupFormat
 		{
@@ -5449,8 +5449,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Symbol used for number separation in Microsoft Dynamics 365.
-		/// </summary>
+        /// Symbol used for number separation in Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("numberseparator")]
 		public string NumberSeparator
 		{
@@ -5465,8 +5465,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the Office Apps auto deployment is enabled for the organization.
-		/// </summary>
+        /// Indicates whether the Office Apps auto deployment is enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("officeappsautodeploymentenabled")]
 		public System.Nullable<bool> OfficeAppsAutoDeploymentEnabled
 		{
@@ -5481,8 +5481,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// The url to open the Delve for the organization.
-		/// </summary>
+        /// url to open the Delve for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("officegraphdelveurl")]
 		public string OfficeGraphDelveUrl
 		{
@@ -5497,8 +5497,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable OOB pricing calculation logic for Opportunity, Quote, Order and Invoice entities.
-		/// </summary>
+        /// 启用OOB pricing calculation logic for Opportunity, Quote, Order and Invoice entities.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("oobpricecalculationenabled")]
 		public System.Nullable<bool> OOBPriceCalculationEnabled
 		{
@@ -5513,8 +5513,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates if this organization will opt-out from automatically enabling schema v2 on the organization.
-		/// </summary>
+        /// Indicates if this organization will opt-out from automatically enabling schema v2 on the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("optoutschemav2enabledbydefault")]
 		public System.Nullable<bool> OptOutSchemaV2EnabledByDefault
 		{
@@ -5529,8 +5529,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix to use for all orders throughout Microsoft Dynamics 365.
-		/// </summary>
+        /// Prefix to use for all orders throughout Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("orderprefix")]
 		public string OrderPrefix
 		{
@@ -5545,8 +5545,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the organization.
-		/// </summary>
+        /// Unique identifier of the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
 		public System.Nullable<System.Guid> OrganizationId
 		{
@@ -5570,8 +5570,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates the organization lifecycle state
-		/// </summary>
+        /// Indicates the organization lifecycle state
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationstate")]
 		public virtual organization_organizationstate? OrganizationState
 		{
@@ -5582,8 +5582,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Organization settings stored in Organization Database.
-		/// </summary>
+        /// Organization settings stored in Organization Database.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("orgdborgsettings")]
 		public string OrgDbOrgSettings
 		{
@@ -5598,8 +5598,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether to turn on OrgInsights for the organization.
-		/// </summary>
+        /// 选择whether to turn on OrgInsights for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("orginsightsenabled")]
 		public System.Nullable<bool> OrgInsightsEnabled
 		{
@@ -5614,8 +5614,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Preview feature has been enabled for the organization.
-		/// </summary>
+        /// Indicates whether Preview feature has been enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("paipreviewscenarioenabled")]
 		public System.Nullable<bool> PaiPreviewScenarioEnabled
 		{
@@ -5630,8 +5630,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix used for parsed table columns.
-		/// </summary>
+        /// Prefix used for parsed table columns.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parsedtablecolumnprefix")]
 		public string ParsedTableColumnPrefix
 		{
@@ -5642,8 +5642,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix used for parsed tables.
-		/// </summary>
+        /// Prefix used for parsed tables.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parsedtableprefix")]
 		public string ParsedTablePrefix
 		{
@@ -5654,8 +5654,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Specifies the maximum number of months in past for which the recurring activities can be created.
-		/// </summary>
+        /// Specifies the maximum number of months in past for which the recurring activities can be created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pastexpansionwindow")]
 		public System.Nullable<int> PastExpansionWindow
 		{
@@ -5670,8 +5670,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Leave empty to use default setting. Set to on/off to enable/disable replacement of default grids with modern ones in model-driven apps.
-		/// </summary>
+        /// Leave empty to use default setting. Set to on/off to enable/disable replacement of default grids with modern ones in model-driven apps.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pcfdatasetgridenabled")]
 		public string PcfDatasetGridEnabled
 		{
@@ -5686,8 +5686,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// This setting contains the date time before an ACT sync can execute.
-		/// </summary>
+        /// 此setting contains the date time before an ACT sync can execute.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("performactsyncafter")]
 		public System.Nullable<System.DateTime> PerformACTSyncAfter
 		{
@@ -5702,8 +5702,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("picture")]
 		public string Picture
 		{
@@ -5731,8 +5731,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Plug-in Trace Log Setting for the Organization.
-		/// </summary>
+        /// Plug-in Trace Log Setting for the Organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("plugintracelogsetting")]
 		public virtual organization_plugintracelogsetting? PluginTraceLogSetting
 		{
@@ -5747,8 +5747,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// PM designator to use throughout Microsoft Dynamics 365.
-		/// </summary>
+        /// PM designator to use throughout Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pmdesignator")]
 		public string PMDesignator
 		{
@@ -5763,8 +5763,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("postmessagewhitelistdomains")]
 		public string PostMessageWhitelistDomains
 		{
@@ -5779,8 +5779,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether bot for makers is enabled.
-		/// </summary>
+        /// Indicates whether bot for makers is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("powerappsmakerbotenabled")]
 		public System.Nullable<bool> PowerAppsMakerBotEnabled
 		{
@@ -5795,8 +5795,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether cross region operations are allowed for the organization
-		/// </summary>
+        /// Indicates whether cross region operations are allowed for the organization
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("powerbiallowcrossregionoperations")]
 		public System.Nullable<bool> PowerBIAllowCrossRegionOperations
 		{
@@ -5811,8 +5811,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether automatic permissions assignment to Power BI has been enabled for the organization
-		/// </summary>
+        /// Indicates whether automatic permissions assignment to Power BI has been enabled for the organization
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("powerbiautomaticpermissionsassignment")]
 		public System.Nullable<bool> PowerBIAutomaticPermissionsAssignment
 		{
@@ -5827,8 +5827,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether creation of Power BI components has been enabled for the organization
-		/// </summary>
+        /// Indicates whether creation of Power BI components has been enabled for the organization
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("powerbicomponentscreate")]
 		public System.Nullable<bool> PowerBIComponentsCreate
 		{
@@ -5843,8 +5843,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the Power BI feature should be enabled for the organization.
-		/// </summary>
+        /// Indicates whether the Power BI feature should be enabled for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("powerbifeatureenabled")]
 		public System.Nullable<bool> PowerBiFeatureEnabled
 		{
@@ -5859,8 +5859,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Number of decimal places that can be used for prices.
-		/// </summary>
+        /// Number of decimal places that can be used for prices.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pricingdecimalprecision")]
 		public System.Nullable<int> PricingDecimalPrecision
 		{
@@ -5875,8 +5875,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Privacy Statement URL
-		/// </summary>
+        /// Privacy Statement URL
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("privacystatementurl")]
 		public string PrivacyStatementUrl
 		{
@@ -5891,8 +5891,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the default privilege for users in the organization.
-		/// </summary>
+        /// Unique identifier of the default privilege for users in the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("privilegeusergroupid")]
 		public System.Nullable<System.Guid> PrivilegeUserGroupId
 		{
@@ -5907,8 +5907,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("privreportinggroupid")]
 		public System.Nullable<System.Guid> PrivReportingGroupId
 		{
@@ -5923,8 +5923,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("privreportinggroupname")]
 		public string PrivReportingGroupName
 		{
@@ -5939,8 +5939,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether to turn on product recommendations for the organization.
-		/// </summary>
+        /// 选择whether to turn on product recommendations for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("productrecommendationsenabled")]
 		public System.Nullable<bool> ProductRecommendationsEnabled
 		{
@@ -5955,8 +5955,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether prompt should be shown for new Qualify Lead Experience
-		/// </summary>
+        /// Indicates whether prompt should be shown for new Qualify Lead Experience
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("qualifyleadadditionaloptions")]
 		public string QualifyLeadAdditionalOptions
 		{
@@ -5971,8 +5971,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to indicate if the feature to use quick action to open records in search side pane is enabled
-		/// </summary>
+        /// Flag to indicate if the feature to use quick action to open records in search side pane is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("quickactiontoopenrecordsinsidepaneenabled")]
 		public System.Nullable<bool> QuickActionToOpenRecordsInSidePaneEnabled
 		{
@@ -5987,8 +5987,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether a quick find record limit should be enabled for this organization (allows for faster Quick Find queries but prevents overly broad searches).
-		/// </summary>
+        /// Indicates whether a quick find record limit should be enabled for this organization (allows for faster Quick Find queries but prevents overly broad searches).
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("quickfindrecordlimitenabled")]
 		public System.Nullable<bool> QuickFindRecordLimitEnabled
 		{
@@ -6003,8 +6003,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix to use for all quotes throughout Microsoft Dynamics 365.
-		/// </summary>
+        /// Prefix to use for all quotes throughout Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("quoteprefix")]
 		public string QuotePrefix
 		{
@@ -6019,8 +6019,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether SLA Recalculation has been enabled for the organization
-		/// </summary>
+        /// Indicates whether SLA Recalculation has been enabled for the organization
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("recalculatesla")]
 		public System.Nullable<bool> RecalculateSLA
 		{
@@ -6035,8 +6035,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Specifies the default value for number of occurrences field in the recurrence dialog.
-		/// </summary>
+        /// Specifies the default value for number of occurrences field in the recurrence dialog.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("recurrencedefaultnumberofoccurrences")]
 		public System.Nullable<int> RecurrenceDefaultNumberOfOccurrences
 		{
@@ -6051,8 +6051,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Specifies the interval (in seconds) for pausing expansion job.
-		/// </summary>
+        /// Specifies the interval (in seconds) for pausing expansion job.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("recurrenceexpansionjobbatchinterval")]
 		public System.Nullable<int> RecurrenceExpansionJobBatchInterval
 		{
@@ -6067,8 +6067,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Specifies the value for number of instances created in on demand job in one shot.
-		/// </summary>
+        /// Specifies the value for number of instances created in on demand job in one shot.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("recurrenceexpansionjobbatchsize")]
 		public System.Nullable<int> RecurrenceExpansionJobBatchSize
 		{
@@ -6083,8 +6083,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Specifies the maximum number of instances to be created synchronously after creating a recurring appointment.
-		/// </summary>
+        /// Specifies the maximum number of instances to be created synchronously after creating a recurring appointment.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("recurrenceexpansionsynchcreatemax")]
 		public System.Nullable<int> RecurrenceExpansionSynchCreateMax
 		{
@@ -6099,8 +6099,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// XML string that defines the navigation structure for the application. This is the site map from the previously upgraded build and is used in a 3-way merge during upgrade.
-		/// </summary>
+        /// XML string that defines the navigation structure for the application. This is the site map from the previously upgraded build and is used in a 3-way merge during upgrade.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("referencesitemapxml")]
 		[System.ObsoleteAttribute()]
 		public string ReferenceSiteMapXml
@@ -6116,8 +6116,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Current orgnization release cadence value
-		/// </summary>
+        /// Current orgnization release cadence value
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("releasecadence")]
 		public System.Nullable<int> ReleaseCadence
 		{
@@ -6132,8 +6132,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Model app refresh channel
-		/// </summary>
+        /// Model app refresh channel
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("releasechannel")]
 		public virtual organization_releasechannel? ReleaseChannel
 		{
@@ -6148,8 +6148,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Release Wave Applied to Environment.
-		/// </summary>
+        /// Release Wave Applied to Environment.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("releasewavename")]
 		public string ReleaseWaveName
 		{
@@ -6164,8 +6164,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether relevance search was enabled for the environment as part of Dataverse's relevance search on-by-default sweep
-		/// </summary>
+        /// Indicates whether relevance search was enabled for the environment as part of Dataverse's relevance search on-by-default sweep
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("relevancesearchenabledbyplatform")]
 		public System.Nullable<bool> RelevanceSearchEnabledByPlatform
 		{
@@ -6180,8 +6180,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// This setting contains the last modified date for relevance search setting that appears as a toggle in PPAC.
-		/// </summary>
+        /// 此setting contains the last modified date for relevance search setting that appears as a toggle in PPAC.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("relevancesearchmodifiedon")]
 		public System.Nullable<System.DateTime> RelevanceSearchModifiedOn
 		{
@@ -6196,8 +6196,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to render the body of email in the Web form in an IFRAME with the security='restricted' attribute set. This is additional security but can cause a credentials prompt.
-		/// </summary>
+        /// Flag to render the body of email in the Web form in an IFRAME with the security='restricted' attribute set. This is additional security but can cause a credentials prompt.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("rendersecureiframeforemail")]
 		public System.Nullable<bool> RenderSecureIFrameForEmail
 		{
@@ -6212,8 +6212,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("reportinggroupid")]
 		public System.Nullable<System.Guid> ReportingGroupId
 		{
@@ -6228,8 +6228,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("reportinggroupname")]
 		public string ReportingGroupName
 		{
@@ -6244,8 +6244,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Picklist for selecting the organization preference for reporting scripting errors.
-		/// </summary>
+        /// Picklist for selecting the organization preference for reporting scripting errors.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("reportscripterrors")]
 		public virtual organization_reportscripterrors? ReportScriptErrors
 		{
@@ -6260,8 +6260,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Send As Other User privilege is enabled.
-		/// </summary>
+        /// Indicates whether Send As Other User privilege is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("requireapprovalforqueueemail")]
 		public System.Nullable<bool> RequireApprovalForQueueEmail
 		{
@@ -6276,8 +6276,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Send As Other User privilege is enabled.
-		/// </summary>
+        /// Indicates whether Send As Other User privilege is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("requireapprovalforuseremail")]
 		public System.Nullable<bool> RequireApprovalForUserEmail
 		{
@@ -6292,8 +6292,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Apply same email address to all unresolved matches when you manually resolve it for one
-		/// </summary>
+        /// Apply same email address to all unresolved matches when you manually resolve it for one
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resolvesimilarunresolvedemailaddress")]
 		public System.Nullable<bool> ResolveSimilarUnresolvedEmailAddress
 		{
@@ -6308,8 +6308,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag to restrict Update on incident.
-		/// </summary>
+        /// Flag to restrict Update on incident.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("restrictstatusupdate")]
 		public System.Nullable<bool> RestrictStatusUpdate
 		{
@@ -6324,8 +6324,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies Reverse Proxy IP addresses from which requests have to be allowed.
-		/// </summary>
+        /// Information that specifies Reverse Proxy IP addresses from which requests have to be allowed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("reverseproxyipaddresses")]
 		public string ReverseProxyIpAddresses
 		{
@@ -6340,8 +6340,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Error status of Relationship Insights provisioning.
-		/// </summary>
+        /// 错误status of Relationship Insights provisioning.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("rierrorstatus")]
 		public System.Nullable<int> RiErrorStatus
 		{
@@ -6356,8 +6356,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the sample data import job.
-		/// </summary>
+        /// Unique identifier of the sample data import job.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sampledataimportid")]
 		public System.Nullable<System.Guid> SampleDataImportId
 		{
@@ -6372,8 +6372,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Prefix used for custom entities and attributes.
-		/// </summary>
+        /// Prefix used for custom entities and attributes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("schemanameprefix")]
 		public string SchemaNamePrefix
 		{
@@ -6388,8 +6388,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether Send Bulk Email in UCI is enabled for the org.
-		/// </summary>
+        /// Indicates whether Send Bulk Email in UCI is enabled for the org.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sendbulkemailinuci")]
 		public System.Nullable<bool> SendBulkEmailInUCI
 		{
@@ -6404,8 +6404,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Serve Static Content From CDN
-		/// </summary>
+        /// Serve Static Content From CDN
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("servestaticresourcesfromazurecdn")]
 		public System.Nullable<bool> ServeStaticResourcesFromAzureCDN
 		{
@@ -6420,8 +6420,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable the session recording feature to record user sessions in UCI
-		/// </summary>
+        /// 启用the session recording feature to record user sessions in UCI
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sessionrecordingenabled")]
 		public System.Nullable<bool> SessionRecordingEnabled
 		{
@@ -6436,8 +6436,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether session timeout is enabled
-		/// </summary>
+        /// Information that specifies whether session timeout is enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sessiontimeoutenabled")]
 		public System.Nullable<bool> SessionTimeoutEnabled
 		{
@@ -6452,8 +6452,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Session timeout in minutes
-		/// </summary>
+        /// Session timeout in minutes
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sessiontimeoutinmins")]
 		public System.Nullable<int> SessionTimeoutInMins
 		{
@@ -6468,8 +6468,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Session timeout reminder in minutes
-		/// </summary>
+        /// Session timeout reminder in minutes
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sessiontimeoutreminderinmins")]
 		public System.Nullable<int> SessionTimeoutReminderInMins
 		{
@@ -6484,8 +6484,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates which SharePoint deployment type is configured for Server to Server. (Online or On-Premises)
-		/// </summary>
+        /// Indicates which SharePoint deployment type is configured for Server to Server. (Online or On-Premises)
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sharepointdeploymenttype")]
 		public virtual organization_sharepointdeploymenttype? SharePointDeploymentType
 		{
@@ -6500,8 +6500,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether to share to previous owner on assign.
-		/// </summary>
+        /// Information that specifies whether to share to previous owner on assign.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sharetopreviousowneronassign")]
 		public System.Nullable<bool> ShareToPreviousOwnerOnAssign
 		{
@@ -6516,8 +6516,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether to display a KB article deprecation notification to the user.
-		/// </summary>
+        /// 选择whether to display a KB article deprecation notification to the user.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("showkbarticledeprecationnotification")]
 		public System.Nullable<bool> ShowKBArticleDeprecationNotification
 		{
@@ -6532,8 +6532,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies whether to display the week number in calendar displays throughout Microsoft CRM.
-		/// </summary>
+        /// Information that specifies whether to display the week number in calendar displays throughout Microsoft CRM.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("showweeknumber")]
 		public System.Nullable<bool> ShowWeekNumber
 		{
@@ -6548,8 +6548,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// CRM for Outlook Download URL
-		/// </summary>
+        /// CRM for Outlook Download URL
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("signupoutlookdownloadfwlink")]
 		public string SignupOutlookDownloadFWLink
 		{
@@ -6564,8 +6564,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// XML string that defines the navigation structure for the application.
-		/// </summary>
+        /// XML string that defines the navigation structure for the application.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sitemapxml")]
 		[System.ObsoleteAttribute()]
 		public string SiteMapXml
@@ -6581,8 +6581,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Contains the on hold case status values.
-		/// </summary>
+        /// Contains the on hold case status values.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slapausestates")]
 		public string SlaPauseStates
 		{
@@ -6597,8 +6597,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag for whether the organization is using Social Insights.
-		/// </summary>
+        /// Flag for whether the organization is using Social Insights.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("socialinsightsenabled")]
 		public System.Nullable<bool> SocialInsightsEnabled
 		{
@@ -6613,8 +6613,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Identifier for the Social Insights instance for the organization.
-		/// </summary>
+        /// Identifier for the Social Insights instance for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("socialinsightsinstance")]
 		public string SocialInsightsInstance
 		{
@@ -6629,8 +6629,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag for whether the organization has accepted the Social Insights terms of use.
-		/// </summary>
+        /// Flag for whether the organization has accepted the Social Insights terms of use.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("socialinsightstermsaccepted")]
 		public System.Nullable<bool> SocialInsightsTermsAccepted
 		{
@@ -6645,8 +6645,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sortid")]
 		public System.Nullable<int> SortId
 		{
@@ -6661,8 +6661,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sqlaccessgroupid")]
 		public System.Nullable<System.Guid> SqlAccessGroupId
 		{
@@ -6677,8 +6677,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sqlaccessgroupname")]
 		public string SqlAccessGroupName
 		{
@@ -6693,8 +6693,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Setting for SQM data collection, 0 no, 1 yes enabled
-		/// </summary>
+        /// Setting for SQM data collection, 0 no, 1 yes enabled
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sqmenabled")]
 		public System.Nullable<bool> SQMEnabled
 		{
@@ -6709,8 +6709,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the support user for the organization.
-		/// </summary>
+        /// Unique identifier of the support user for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("supportuserid")]
 		public System.Nullable<System.Guid> SupportUserId
 		{
@@ -6725,8 +6725,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether SLA is suppressed.
-		/// </summary>
+        /// Indicates whether SLA is suppressed.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("suppresssla")]
 		public System.Nullable<bool> SuppressSLA
 		{
@@ -6741,8 +6741,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Leave empty to use default setting. Set to on/off to enable/disable Admin emails when Solution Checker validation fails.
-		/// </summary>
+        /// Leave empty to use default setting. Set to on/off to enable/disable Admin emails when Solution Checker validation fails.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("suppressvalidationemails")]
 		public System.Nullable<bool> SuppressValidationEmails
 		{
@@ -6757,8 +6757,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Number of records to update per operation in Sync Bulk Pause/Resume/Cancel
-		/// </summary>
+        /// Number of records to update per operation in Sync Bulk Pause/Resume/Cancel
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("syncbulkoperationbatchsize")]
 		public System.Nullable<int> SyncBulkOperationBatchSize
 		{
@@ -6773,8 +6773,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Max total number of records to update in database for Sync Bulk Pause/Resume/Cancel
-		/// </summary>
+        /// Max total number of records to update in database for Sync Bulk Pause/Resume/Cancel
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("syncbulkoperationmaxlimit")]
 		public System.Nullable<int> SyncBulkOperationMaxLimit
 		{
@@ -6789,8 +6789,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates the selection to use the dynamics 365 azure sync framework or server side sync.
-		/// </summary>
+        /// Indicates the selection to use the dynamics 365 azure sync framework or server side sync.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("syncoptinselection")]
 		public System.Nullable<bool> SyncOptInSelection
 		{
@@ -6805,8 +6805,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates the status of the opt-in or opt-out operation for dynamics 365 azure sync.
-		/// </summary>
+        /// Indicates the status of the opt-in or opt-out operation for dynamics 365 azure sync.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("syncoptinselectionstatus")]
 		public virtual organization_syncoptinselectionstatus? SyncOptInSelectionStatus
 		{
@@ -6821,8 +6821,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the system user for the organization.
-		/// </summary>
+        /// Unique identifier of the system user for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemuserid")]
 		public System.Nullable<System.Guid> SystemUserId
 		{
@@ -6837,8 +6837,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Controls the appearance of option to search over a single DV search indexed table in model-driven apps’ global search in the header.
-		/// </summary>
+        /// Controls the appearance of option to search over a single DV search indexed table in model-driven apps’ global search in the header.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("tablescopeddvsearchinapps")]
 		public System.Nullable<bool> TableScopedDVSearchInApps
 		{
@@ -6853,8 +6853,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Maximum number of aggressive polling cycles executed for email auto-tagging when a new email is received.
-		/// </summary>
+        /// Maximum number of aggressive polling cycles executed for email auto-tagging when a new email is received.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("tagmaxaggressivecycles")]
 		public System.Nullable<int> TagMaxAggressiveCycles
 		{
@@ -6869,8 +6869,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Normal polling frequency used for email receive auto-tagging in outlook.
-		/// </summary>
+        /// Normal polling frequency used for email receive auto-tagging in outlook.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("tagpollingperiod")]
 		public System.Nullable<int> TagPollingPeriod
 		{
@@ -6885,8 +6885,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether to turn on task flows for the organization.
-		/// </summary>
+        /// 选择whether to turn on task flows for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("taskbasedflowenabled")]
 		public System.Nullable<bool> TaskBasedFlowEnabled
 		{
@@ -6901,8 +6901,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information on whether Teams Chat Data Sync is enabled.
-		/// </summary>
+        /// Information on whether Teams Chat Data Sync is enabled.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("teamschatdatasync")]
 		public System.Nullable<bool> TeamsChatDataSync
 		{
@@ -6917,8 +6917,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Instrumentation key for Application Insights used to log plugins telemetry.
-		/// </summary>
+        /// Instrumentation key for Application Insights used to log plugins telemetry.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("telemetryinstrumentationkey")]
 		public string TelemetryInstrumentationKey
 		{
@@ -6933,8 +6933,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether to turn on text analytics for the organization.
-		/// </summary>
+        /// 选择whether to turn on text analytics for the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("textanalyticsenabled")]
 		public System.Nullable<bool> TextAnalyticsEnabled
 		{
@@ -6949,8 +6949,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Text for how time is displayed in Microsoft Dynamics 365.
-		/// </summary>
+        /// Text for how time is displayed in Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timeformatstring")]
 		public string TimeFormatString
 		{
@@ -6965,8 +6965,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Text for how the time separator is displayed throughout Microsoft Dynamics 365.
-		/// </summary>
+        /// Text for how the time separator is displayed throughout Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timeseparator")]
 		public string TimeSeparator
 		{
@@ -6981,8 +6981,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
+        /// 对于internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
 		public System.Nullable<int> TimeZoneRuleVersionNumber
 		{
@@ -6997,8 +6997,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Duration used for token expiration.
-		/// </summary>
+        /// Duration used for token expiration.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("tokenexpiry")]
 		public System.Nullable<int> TokenExpiry
 		{
@@ -7013,8 +7013,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Token key.
-		/// </summary>
+        /// Token key.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("tokenkey")]
 		public string TokenKey
 		{
@@ -7029,8 +7029,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Tracelog record maximum age in days
-		/// </summary>
+        /// Tracelog record maximum age in days
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("tracelogmaximumageindays")]
 		public System.Nullable<int> TraceLogMaximumAgeInDays
 		{
@@ -7045,8 +7045,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// History list of tracking token prefixes.
-		/// </summary>
+        /// History list of tracking token prefixes.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("trackingprefix")]
 		public string TrackingPrefix
 		{
@@ -7061,8 +7061,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Base number used to provide separate tracking token identifiers to users belonging to different deployments.
-		/// </summary>
+        /// Base number used to provide separate tracking token identifiers to users belonging to different deployments.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("trackingtokenidbase")]
 		public System.Nullable<int> TrackingTokenIdBase
 		{
@@ -7077,8 +7077,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Number of digits used to represent a tracking token identifier.
-		/// </summary>
+        /// Number of digits used to represent a tracking token identifier.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("trackingtokeniddigits")]
 		public System.Nullable<int> TrackingTokenIdDigits
 		{
@@ -7093,8 +7093,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Number of characters appended to invoice, quote, and order numbers.
-		/// </summary>
+        /// Number of characters appended to invoice, quote, and order numbers.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uniquespecifierlength")]
 		public System.Nullable<int> UniqueSpecifierLength
 		{
@@ -7109,8 +7109,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether email address should be unresolved if multiple matches are found
-		/// </summary>
+        /// Indicates whether email address should be unresolved if multiple matches are found
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("unresolveemailaddressifmultiplematch")]
 		public System.Nullable<bool> UnresolveEmailAddressIfMultipleMatch
 		{
@@ -7125,8 +7125,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Flag indicates whether to Use Inbuilt Rule For DefaultPricelist.
-		/// </summary>
+        /// Flag indicates whether to Use Inbuilt Rule For DefaultPricelist.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("useinbuiltrulefordefaultpricelistselection")]
 		public System.Nullable<bool> UseInbuiltRuleForDefaultPricelistSelection
 		{
@@ -7141,8 +7141,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Select whether to use legacy form rendering.
-		/// </summary>
+        /// 选择whether to use legacy form rendering.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uselegacyrendering")]
 		public System.Nullable<bool> UseLegacyRendering
 		{
@@ -7157,8 +7157,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Use position hierarchy
-		/// </summary>
+        /// Use position hierarchy
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("usepositionhierarchy")]
 		public System.Nullable<bool> UsePositionHierarchy
 		{
@@ -7173,8 +7173,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether searching in a grid should use the Quick Find view for the entity.
-		/// </summary>
+        /// Indicates whether searching in a grid should use the Quick Find view for the entity.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("usequickfindviewforgridsearch")]
 		public System.Nullable<bool> UseQuickFindViewForGridSearch
 		{
@@ -7189,8 +7189,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// The interval at which user access is checked for auditing.
-		/// </summary>
+        /// interval at which user access is checked for auditing.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("useraccessauditinginterval")]
 		public System.Nullable<int> UserAccessAuditingInterval
 		{
@@ -7205,8 +7205,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates whether the read-optimized form should be enabled for this organization.
-		/// </summary>
+        /// Indicates whether the read-optimized form should be enabled for this organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("usereadform")]
 		public System.Nullable<bool> UseReadForm
 		{
@@ -7221,8 +7221,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Unique identifier of the default group of users in the organization.
-		/// </summary>
+        /// Unique identifier of the default group of users in the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("usergroupid")]
 		public System.Nullable<System.Guid> UserGroupId
 		{
@@ -7237,8 +7237,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Enable the user rating feature to show the NSAT score and comment to maker
-		/// </summary>
+        /// 启用the user rating feature to show the NSAT score and comment to maker
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("userratingenabled")]
 		public System.Nullable<bool> UserRatingEnabled
 		{
@@ -7253,8 +7253,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Indicates default protocol selected for organization.
-		/// </summary>
+        /// Indicates default protocol selected for organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("useskypeprotocol")]
 		public System.Nullable<bool> UseSkypeProtocol
 		{
@@ -7269,8 +7269,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Time zone code that was in use when the record was created.
-		/// </summary>
+        /// Time zone code that was in use when the record was created.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
 		public System.Nullable<int> UTCConversionTimeZoneCode
 		{
@@ -7285,8 +7285,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Hash of the V3 callout configuration file.
-		/// </summary>
+        /// Hash of the V3 callout configuration file.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("v3calloutconfighash")]
 		public string V3CalloutConfigHash
 		{
@@ -7297,8 +7297,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Validation mode for apps in this environment
-		/// </summary>
+        /// Validation mode for apps in this environment
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("validationmode")]
 		public virtual organization_validationmode? ValidationMode
 		{
@@ -7313,8 +7313,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Version number of the organization.
-		/// </summary>
+        /// Version number of the organization.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
@@ -7325,8 +7325,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Hash value of web resources.
-		/// </summary>
+        /// Hash value of web resources.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("webresourcehash")]
 		public string WebResourceHash
 		{
@@ -7341,8 +7341,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// For Internal use only.
-		/// </summary>
+        /// 对于Internal use only.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("widgetproperties")]
 		public string WidgetProperties
 		{
@@ -7357,8 +7357,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Denotes the Yammer group ID
-		/// </summary>
+        /// Denotes the Yammer group ID
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yammergroupid")]
 		public System.Nullable<int> YammerGroupId
 		{
@@ -7373,8 +7373,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Denotes the Yammer network permalink
-		/// </summary>
+        /// Denotes the Yammer network permalink
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yammernetworkpermalink")]
 		public string YammerNetworkPermalink
 		{
@@ -7389,8 +7389,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Denotes whether the OAuth access token for Yammer network has expired
-		/// </summary>
+        /// Denotes whether the OAuth access token for Yammer network has expired
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yammeroauthaccesstokenexpired")]
 		public System.Nullable<bool> YammerOAuthAccessTokenExpired
 		{
@@ -7405,8 +7405,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Internal Use Only
-		/// </summary>
+        /// Internal Use Only
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yammerpostmethod")]
 		public virtual organization_yammerpostmethod? YammerPostMethod
 		{
@@ -7421,8 +7421,8 @@ namespace PowerPlatform.Dataverse.CodeSamples
 		}
 		
 		/// <summary>
-		/// Information that specifies how the first week of the year is specified in Microsoft Dynamics 365.
-		/// </summary>
+        /// Information that specifies how the first week of the year is specified in Microsoft Dynamics 365.
+        /// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("yearstartweekcode")]
 		public System.Nullable<int> YearStartWeekCode
 		{

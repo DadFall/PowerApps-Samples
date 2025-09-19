@@ -20,10 +20,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -36,16 +36,16 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.        
+        /// 此method creates any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Get the current user's information.
+            // 获取the current user's information.
             WhoAmIRequest userRequest = new WhoAmIRequest();
             WhoAmIResponse userResponse = (WhoAmIResponse)service.Execute(userRequest);
             _currentUserId = userResponse.UserId;
 
-            // Create another user, Kevin Cook.
+            // 创建another user, Kevin Cook.
             _otherUserId = SystemUserProvider.RetrieveSalesManager(service);
         }
 

@@ -27,7 +27,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Retrieve the current user information.
+                    // 检索the current user information.
                     WhoAmIRequest whoAmIRequest = new WhoAmIRequest();
                     WhoAmIResponse whoAmIResponse = (WhoAmIResponse)service.Execute(
                         whoAmIRequest);
@@ -39,7 +39,7 @@ namespace PowerApps.Samples
                     String currentUserName = currentUser.FullName;
                     _userId = currentUser.Id;
 
-                    // Create an instance of an existing queueitem in order to specify 
+                    // 创建an instance of an existing queueitem in order to specify 
                     // the user that will be working on it using PickFromQueueRequest.
 
                     PickFromQueueRequest pickFromQueueRequest = new PickFromQueueRequest

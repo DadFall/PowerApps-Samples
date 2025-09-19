@@ -17,7 +17,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
         /// <param name="securityRole">Dataverse security role.</param>
-        /// <param name="user">A system user.</param>
+        /// <param name="user">一个system user.</param>
         static public void AssociateSecurityRole(IOrganizationService service, string securityRole, Guid user)
         {
             Role targetRole = GetRoleByName(service, securityRole);
@@ -42,7 +42,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
         /// <param name="securityRole">Dataverse security role.</param>
-        /// <param name="user">A system user.</param>
+        /// <param name="user">一个system user.</param>
         static public void DisassociateSecurityRole(IOrganizationService service, string securityRole, Guid user)
         {
             Role targetRole = GetRoleByName(service, securityRole);
@@ -63,15 +63,15 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
         // <GetRoleByName>
         /// <summary>
-        /// Retrieve a security role using its name attribute.
+        /// 检索a security role using its name attribute.
         /// </summary>
         /// <param name="service">Authenticated web service connection.param>
-        /// <param name="securityRole">Dataverse security role name.</param>
+        /// <param name="securityRole">Dataverse security role 名称.</param>
         /// <returns>Dataverse security role.</returns>
-        /// <exception cref="Exception">General exception when role name not found.</exception>
+        /// <exception cref="Exception">General exception when role name 未找到.</exception>
         private static Role GetRoleByName(IOrganizationService service, string securityRole)
         {
-            // Create a query to find the role by name.
+            // 创建a query to find the role by name.
             QueryExpression query = new QueryExpression
             {
                 EntityName = Role.EntityLogicalName,
@@ -92,7 +92,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
 
             Role targetRole;
 
-            // Retrieve the role.
+            // 检索the role.
             EntityCollection roles = service.RetrieveMultiple(query);
             if (roles.Entities.Count > 0)
             {
@@ -108,21 +108,21 @@ namespace PowerPlatform_Dataverse_CodeSamples
         // </GetRoleByName>
 
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         static IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Constructor. Loads the application settings from a JSON configuration file.
+        /// Constructor. 加载 the application settings from a JSON configuration file.
         /// </summary>
         static Program()
         {
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             if (path == null) path = "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -133,14 +133,14 @@ namespace PowerPlatform_Dataverse_CodeSamples
             // Entity name and reference collection.
             Dictionary<string, EntityReference> entityStore;
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(Configuration.GetConnectionString("default"));
 
             // Pre-create any table rows that Run() requires.
             Setup(serviceClient, out entityStore);
 
-            // Execute the main logic of this program
+            // 执行the main logic of this program
             Run(serviceClient, entityStore);
 
             // Pause program execution before resource cleanup.
@@ -153,7 +153,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         }
 
         /// <summary>
-        /// Initializes any pre-existing data and resources required by the Run() method.
+        /// 初始化 any pre-existing data and resources required by the Run() method.
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
         /// <param name="entityStore">Not used.</param>
@@ -162,12 +162,12 @@ namespace PowerPlatform_Dataverse_CodeSamples
         {
             entityStore = new Dictionary<string, EntityReference>();
 
-            // This sample does not require any setup. It uses an existing
+            // 此sample does not require any setup. It uses an existing
             // system user and role.
         }
 
         /// <summary>
-        /// The main logic of this program being demonstrated.
+        /// main logic of this program being demonstrated.
         /// </summary>
         /// <param name="service">Authenticated web service connection.</param>
         /// <param name="entityStore">Not used.</param>
@@ -175,7 +175,7 @@ namespace PowerPlatform_Dataverse_CodeSamples
         static public bool Run(IOrganizationService service,
             Dictionary<string, EntityReference> entityStore)
         {
-            // Retrieve information about the logged on user.
+            // 检索information about the logged on user.
             Console.Write("Discovering who you are...");
             WhoAmIRequest request = new WhoAmIRequest();
             WhoAmIResponse response = (WhoAmIResponse)service.Execute(request);

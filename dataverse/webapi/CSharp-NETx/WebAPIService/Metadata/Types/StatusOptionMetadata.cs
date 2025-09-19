@@ -9,12 +9,12 @@ namespace PowerApps.Samples.Metadata.Types
         public string ODataType { get; } = "Microsoft.Dynamics.CRM.StatusOptionMetadata";
 
         /// <summary>
-        /// The state that the status is associated with.
+        /// state that the status is associated with.
         /// </summary>
         public int State { get; set; }
 
         /// <summary>
-        /// The status transitions allowed for this status
+        /// status transitions allowed for this status
         /// </summary>
         public string TransitionData { get; set; }
     }

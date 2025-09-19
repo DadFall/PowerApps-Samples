@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -44,7 +44,7 @@ namespace PowerApps.Samples
         /// </summary>
         public static void ImportRecords(CrmServiceClient service)
         {
-            // Create an import map.
+            // 创建an import map.
             var importMap = new ImportMap()
             {
                 Name = "Import Map " + DateTime.Now.Ticks.ToString(),
@@ -56,17 +56,17 @@ namespace PowerApps.Samples
             };
             Guid importMapId = service.Create(importMap);
 
-            // Create column mappings.
+            // 创建column mappings.
 
             #region Column One Mappings
-            // Create a column mapping for a 'text' type field.
+            // 创建a column mapping for a 'text' type field.
             var colMapping1 = new ColumnMapping()
             {
-                // Set source properties.
+                // 设置source properties.
                 SourceAttributeName = "src_name",
                 SourceEntityName = "Account_1",
 
-                // Set target properties.
+                // 设置target properties.
                 TargetAttributeName = "name",
                 TargetEntityName = Account.EntityLogicalName,
 
@@ -79,19 +79,19 @@ namespace PowerApps.Samples
                     new OptionSetValue((int)ColumnMappingProcessCode.Process)
             };
 
-            // Create the mapping.
+            // 创建the mapping.
             Guid colMappingId1 = service.Create(colMapping1);
             #endregion
 
             #region Column Two Mappings
-            // Create a column mapping for a 'lookup' type field.
+            // 创建a column mapping for a 'lookup' type field.
             var colMapping2 = new ColumnMapping()
             {
-                // Set source properties.
+                // 设置source properties.
                 SourceAttributeName = "src_parent",
                 SourceEntityName = "Account_1",
 
-                // Set target properties.
+                // 设置target properties.
                 TargetAttributeName = "parentaccountid",
                 TargetEntityName = Account.EntityLogicalName,
 
@@ -104,15 +104,15 @@ namespace PowerApps.Samples
                     new OptionSetValue((int)ColumnMappingProcessCode.Process),
             };
 
-            // Create the mapping.
+            // 创建the mapping.
             Guid colMappingId2 = service.Create(colMapping2);
 
             // Because we created a column mapping of type lookup, we need to specify lookup details in a lookupmapping.
             // One lookupmapping will be for the parent account, and the other for the current record.
-            // This lookupmapping is important because without it the current record
+            // 此lookupmapping is important because without it the current record
             // cannot be used as the parent of another record.
 
-            // Create a lookup mapping to the parent account.  
+            // 创建a lookup mapping to the parent account.  
             var parentLookupMapping = new LookUpMapping()
             {
                 // Relate this mapping with its parent column mapping.
@@ -123,19 +123,19 @@ namespace PowerApps.Samples
                 ProcessCode =
                     new OptionSetValue((int)LookUpMappingProcessCode.Process),
 
-                // Set the lookup for an account entity by its name attribute.
+                // 设置the lookup for an account entity by its name attribute.
                 LookUpEntityName = Account.EntityLogicalName,
                 LookUpAttributeName = "name",
                 LookUpSourceCode =
                     new OptionSetValue((int)LookUpMappingLookUpSourceCode.System)
             };
 
-            // Create the lookup mapping.
+            // 创建the lookup mapping.
             Guid parentLookupMappingId = service.Create(parentLookupMapping);
 
-            // Create a lookup on the current record's "src_name" so that this record can
+            // 创建a lookup on the current record's "src_name" so that this record can
             // be used as the parent account for another record being imported.
-            // Without this lookup, no record using this account as its parent will be imported.
+            // 不使用this lookup, no record using this account as its parent will be imported.
             var currentLookUpMapping = new LookUpMapping()
             {
                 // Relate this lookup with its parent column mapping.
@@ -146,26 +146,26 @@ namespace PowerApps.Samples
                 ProcessCode =
                     new OptionSetValue((int)LookUpMappingProcessCode.Process),
 
-                // Set the lookup for the current record by its src_name attribute.
+                // 设置the lookup for the current record by its src_name attribute.
                 LookUpAttributeName = "src_name",
                 LookUpEntityName = "Account_1",
                 LookUpSourceCode =
                     new OptionSetValue((int)LookUpMappingLookUpSourceCode.Source)
             };
 
-            // Create the lookup mapping
+            // 创建the lookup mapping
             Guid currentLookupMappingId = service.Create(currentLookUpMapping);
             #endregion
 
             #region Column Three Mappings
-            // Create a column mapping for a 'picklist' type field
+            // 创建a column mapping for a 'picklist' type field
             var colMapping3 = new ColumnMapping()
             {
-                // Set source properties
+                // 设置source properties
                 SourceAttributeName = "src_addresstype",
                 SourceEntityName = "Account_1",
 
-                // Set target properties
+                // 设置target properties
                 TargetAttributeName = "address1_addresstypecode",
                 TargetEntityName = Account.EntityLogicalName,
 
@@ -178,7 +178,7 @@ namespace PowerApps.Samples
                     new OptionSetValue((int)ColumnMappingProcessCode.Process)
             };
 
-            // Create the mapping
+            // 创建the mapping
             Guid colMappingId3 = service.Create(colMapping3);
 
             // Because we created a column mapping of type picklist, we need to specify picklist details in a picklistMapping
@@ -196,7 +196,7 @@ namespace PowerApps.Samples
                     new OptionSetValue((int)PickListMappingProcessCode.Process)
             };
 
-            // Create the mapping
+            // 创建the mapping
             Guid picklistMappingId1 = service.Create(pickListMapping1);
 
             // Need a picklist mapping for every address type code expected
@@ -214,11 +214,11 @@ namespace PowerApps.Samples
                     new OptionSetValue((int)PickListMappingProcessCode.Process)
             };
 
-            // Create the mapping
+            // 创建the mapping
             Guid picklistMappingId2 = service.Create(pickListMapping2);
             #endregion
 
-            // Create Import
+            // 创建Import
             var import = new Import()
             {
                 // IsImport is obsolete; use ModeCode to declare Create or Update.
@@ -227,10 +227,10 @@ namespace PowerApps.Samples
             };
             Guid importId = service.Create(import);
 
-            // Create Import File.
+            // 创建Import File.
             var importFile = new ImportFile()
             {
-                Content = BulkImportHelper.ReadCsvFile("import accounts.csv"), // Read contents from disk.
+                Content = BulkImportHelper.ReadCsvFile("import accounts.csv"), // 读取contents from disk.
                 Name = "Account record import",
                 IsFirstRowHeader = true,
                 ImportMapId = new EntityReference(ImportMap.EntityLogicalName, importMapId),
@@ -248,18 +248,18 @@ namespace PowerApps.Samples
                     new OptionSetValue((int)ImportFileProcessCode.Process)
             };
 
-            // Get the current user to set as record owner.
+            // 获取the current user to set as record owner.
             var systemUserRequest = new WhoAmIRequest();
             var systemUserResponse =
                 (WhoAmIResponse)service.Execute(systemUserRequest);
 
-            // Set the owner ID.				
+            // 设置the owner ID.				
             importFile.RecordsOwnerId =
                 new EntityReference(SystemUser.EntityLogicalName, systemUserResponse.UserId);
 
             Guid importFileId = service.Create(importFile);
 
-            // Retrieve the header columns used in the import file.
+            // 检索the header columns used in the import file.
             GetHeaderColumnsImportFileRequest headerColumnsRequest = new GetHeaderColumnsImportFileRequest()
             {
                 ImportFileId = importFileId
@@ -275,7 +275,7 @@ namespace PowerApps.Samples
                 columnNum++;
             }
 
-            // Parse the import file.
+            // 解析the import file.
             var parseImportRequest = new ParseImportRequest()
             {
                 ImportId = importId
@@ -286,9 +286,9 @@ namespace PowerApps.Samples
             BulkImportHelper.WaitForAsyncJobCompletion(service, parseImportResponse.AsyncOperationId);
             BulkImportHelper.ReportErrors(service, importFileId);
 
-            // Retrieve the first two distinct values for column 1 from the parse table.
-            // NOTE: You must create the parse table first using the ParseImport message.
-            // The parse table is not accessible after ImportRecordsImportResponse is called.
+            // 检索the first two distinct values for column 1 from the parse table.
+            // 注意： You must create the parse table first using the ParseImport message.
+            // parse table is not accessible after ImportRecordsImportResponse is called.
             var distinctValuesRequest = new GetDistinctValuesImportFileRequest()
             {
                 columnNumber = 1,
@@ -308,17 +308,17 @@ namespace PowerApps.Samples
                 cellNum++;
             }
 
-            // Retrieve data from the parse table.
-            // NOTE: You must create the parse table first using the ParseImport message.
-            // The parse table is not accessible after ImportRecordsImportResponse is called.
+            // 检索data from the parse table.
+            // 注意： You must create the parse table first using the ParseImport message.
+            // parse table is not accessible after ImportRecordsImportResponse is called.
             var parsedDataRequest = new RetrieveParsedDataImportFileRequest()
             {
                 ImportFileId = importFileId,
                 PagingInfo = new PagingInfo()
                 {
-                    // Specify the number of entity instances returned per page.
+                    // 指定number of entity instances returned per page.
                     Count = 2,
-                    // Specify the number of pages returned from the query.
+                    // 指定number of pages returned from the query.
                     PageNumber = 1,
                     // Specify a total number of entity instances returned.
                     PagingCookie = "1"
@@ -341,7 +341,7 @@ namespace PowerApps.Samples
                 rowCount++;
             }
 
-            // Transform the import
+            // 转换the import
             var transformImportRequest = new TransformImportRequest()
             {
                 ImportId = importId
@@ -367,7 +367,7 @@ namespace PowerApps.Samples
 
        
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
@@ -394,7 +394,7 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Retrieve all account records created in this sample.
+                // 检索all account records created in this sample.
                 QueryExpression query = new QueryExpression()
                 {
                     EntityName = Account.EntityLogicalName,
@@ -409,7 +409,7 @@ namespace PowerApps.Samples
                 };
                 var accountsCreated = service.RetrieveMultiple(query).Entities;
 
-                // Delete all records created in this sample.
+                // 删除all records created in this sample.
                 foreach (var account in accountsCreated)
                 {
                     service.Delete(Account.EntityLogicalName, account.Id);

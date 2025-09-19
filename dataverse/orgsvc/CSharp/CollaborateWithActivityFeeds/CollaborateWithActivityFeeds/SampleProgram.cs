@@ -17,7 +17,7 @@ namespace PowerApps.Samples
                 if (service.IsReady)
                 {
                     _serviceContext = new ServiceContext(service);
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
                     ConfigureActivityFeeds(service);

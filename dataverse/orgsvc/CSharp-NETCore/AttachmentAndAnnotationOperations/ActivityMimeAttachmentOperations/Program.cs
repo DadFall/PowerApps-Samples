@@ -12,22 +12,22 @@ namespace PowerPlatform.Dataverse.CodeSamples
     class Program
     {
         /// <summary>
-        /// Contains the application's configuration settings. 
+        /// Contains the application's configuration settings.
         /// </summary>
         IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Constructor. Loads the application configuration settings from a JSON file.
+        /// Constructor. 加载 the application configuration settings from a JSON file.
         /// </summary>
         Program()
         {
 
-            // Get the path to the appsettings file. If the environment variable is set,
+            // 获取the path to the appsettings file. If the environment variable is set,
             // use that file path. Otherwise, use the runtime folder's settings file.
             string? path = Environment.GetEnvironmentVariable("DATAVERSE_APPSETTINGS");
             path ??= "appsettings.json";
 
-            // Load the app's configuration settings from the JSON file.
+            // 加载the app's configuration settings from the JSON file.
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: false, reloadOnChange: true)
                 .Build();
@@ -39,7 +39,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
             // Files used in this sample
             FileInfo wordDoc = new("Files/WordDoc.docx");
             FileInfo excelDoc = new("Files/ExcelDoc.xlsx");
-            FileInfo pdfDoc = new("Files/25mb.pdf"); // A large file over default size
+            FileInfo pdfDoc = new("Files/25mb.pdf"); // 一个large file over default size
 
             List<FileInfo> smallFiles = new() { wordDoc, excelDoc };
             List<FileInfo> allFiles = new() { wordDoc, excelDoc, pdfDoc };
@@ -49,7 +49,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Program app = new();
 
-            // Create a Dataverse service client using the default connection string.
+            // 创建a Dataverse service client using the default connection string.
             ServiceClient serviceClient =
                 new(app.Configuration.GetConnectionString("default"))
                 {
@@ -57,7 +57,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 };
 
 
-            // Get current MaxUploadFileSize
+            // 获取current MaxUploadFileSize
             int originalMaxUploadFileSize = Utility.GetMaxUploadFileSize(serviceClient);
             Console.WriteLine($"Current MaxUploadFileSize: {originalMaxUploadFileSize}");
 
@@ -65,7 +65,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("Start: Create single-use attachments");
 
-            // Create email activity
+            // 创建email activity
             Entity email = new("email")
             {
                 Attributes =
@@ -103,7 +103,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("Created two e-mail attachments with small files for the e-mail activity.");
 
-            // Set MaxUploadFileSize to the maximum value
+            // 设置MaxUploadFileSize to the maximum value
             Utility.SetMaxUploadFileSize(serviceClient, 131072000);
 
             Console.WriteLine($"Updated MaxUploadFileSize to: {Utility.GetMaxUploadFileSize(serviceClient)}");
@@ -133,11 +133,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
             Console.WriteLine($"\tUploaded {pdfDoc.Name} as attachment. " +
                 $"\n\t\tActivityMimeAttachmentId:{uploadAttachmentResponse.ActivityMimeAttachmentId} \n\t\tFileSizeInBytes: {uploadAttachmentResponse.FileSizeInBytes}");
 
-            // Retrieve information about the attachments related to the email.
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/org-service/entity-operations-retrieve#retrieve-with-related-rows
+            // 检索information about the attachments related to the email.
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/org-service/entity-operations-retrieve#retrieve-with-related-rows
             RelationshipQueryCollection relationshipQueryCollection = new();
 
-            // The named relationship between email and activitymimeattachment
+            // named relationship between email and activitymimeattachment
             Relationship email_attachments = new("email_activity_mime_attachment");
             // Details about what to retrieve
             QueryExpression relatedAttachments = new("activitymimeattachment")
@@ -176,7 +176,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 Console.WriteLine($"\tSaved the attachment to \\bin\\Debug\\net6.0\\Downloaded{name}.");
             }
 
-            // Delete the email activity and the attachments will be deleted as well
+            // 删除the email activity and the attachments will be deleted as well
             serviceClient.Delete("email", emailid);
 
             #endregion Create single-use attachments
@@ -185,7 +185,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("\nStart: Create re-usable attachments");
 
-            // Create an email template to add the re-usable attachments to.
+            // 创建an email template to add the re-usable attachments to.
             // ActivityMimeAttachment ObjectId and ObjectTypeCode are SystemRequired.
 
             Entity template = new("template")
@@ -225,12 +225,12 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 }
             };
 
-            // Create the template
+            // 创建the template
             Guid templateId = serviceClient.Create(template);
 
             Console.WriteLine("Created an email template.");
 
-            // Add all files (large and small) as attachments to the template in the same way.
+            // 添加all files (large and small) as attachments to the template in the same way.
             allFiles.ForEach(file =>
             {
                 Entity attachment = new("activitymimeattachment")
@@ -246,7 +246,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     }
                 };
 
-                // Create the attachment with upload
+                // 创建the attachment with upload
                 CommitAttachmentBlocksUploadResponse uploadAttachmentResponse = UploadAttachment(
                     service: serviceClient,
                     attachment: attachment,
@@ -259,7 +259,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             Console.WriteLine("Added all files as attachment to email template.");
 
-            // Create new email to re-use attachments from Template
+            // 创建new email to re-use attachments from Template
             Entity email2 = new("email")
             {
                 Attributes =
@@ -292,11 +292,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             }
 
-            // Delete the second email
+            // 删除the second email
             serviceClient.Delete("email", email2Id);
             Console.WriteLine($"Deleted the second email.");
 
-            // Verify the re-used attachments still exist
+            // 验证the re-used attachments still exist
             foreach ((string FileName, Guid ActivityMimeAttachmentId) in reusableAttachments)
             {
                 Entity attachment = serviceClient.Retrieve(
@@ -312,27 +312,27 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             // Clean up
 
-            // Delete the template
+            // 删除the template
             serviceClient.Delete("template", templateId); //Will delete re-usable attachments
 
 
             #endregion Create re-usable attachments
 
-            // Return MaxUploadFileSize to the original value
+            // 返回MaxUploadFileSize to the original value
             Utility.SetMaxUploadFileSize(serviceClient, originalMaxUploadFileSize);
 
             Console.WriteLine($"Current MaxUploadFileSize: {Utility.GetMaxUploadFileSize(serviceClient)}");
         }
 
         /// <summary>
-        /// Creates an activitymimeattachment with file.
+        /// 创建 an activitymimeattachment with file.
         /// </summary>
-        /// <param name="service">The IOrganizationService instance to use.</param>
-        /// <param name="attachment">The activitymimeattachment data to create.</param>
-        /// <param name="fileInfo">A reference to the file to upload.</param>
-        /// <param name="fileMimeType">The mimetype of the file.</param>
+        /// <param name="service">IOrganizationService 实例 to use.</param>
+        /// <param name="attachment">activitymimeattachment 数据 to create.</param>
+        /// <param name="fileInfo">一个reference to the file to upload.</param>
+        /// <param name="fileMimeType">mime类型 of the file.</param>
         /// <returns>CommitAttachmentBlocksUploadResponse containing ActivityMimeAttachmentId and FileSizeInBytes.</returns>
-        /// <exception cref="ArgumentException">The attachment parameter must be an activitymimeattachment entity.</exception>
+        /// <exception cref="ArgumentException">The attachment 参数 must be an activitymimeattachment entity.</exception>
         static CommitAttachmentBlocksUploadResponse UploadAttachment(
                 IOrganizationService service,
                 Entity attachment,
@@ -353,7 +353,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 attachment.Attributes.Remove("body");
             }
 
-            // Try to get the mimetype if not provided.
+            // 尝试to get the mimetype if not provided.
             if (string.IsNullOrEmpty(fileMimeType))
             {
                 var provider = new FileExtensionContentTypeProvider();
@@ -369,7 +369,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                 attachment["mimetype"] = fileMimeType;
             }
 
-            // Initialize the upload
+            // 初始化the upload
             InitializeAttachmentBlocksUploadRequest initializeRequest = new()
             {
                 Target = attachment
@@ -392,14 +392,14 @@ namespace PowerPlatform.Dataverse.CodeSamples
 
             long fileSize = fileInfo.Length;
 
-            // The number of iterations that will be required:
+            // number of iterations that will be required:
             // int blocksCount = (int)Math.Ceiling(fileSize / (float)blockSize);
             int blockNumber = 0;
 
             // While there is unread data from the file
             while ((bytesRead = uploadFileStream.Read(buffer, 0, buffer.Length)) > 0)
             {
-                // The file or final block may be smaller than 4MB
+                // file or final block may be smaller than 4MB
                 if (bytesRead < buffer.Length)
                 {
                     Array.Resize(ref buffer, bytesRead);
@@ -419,7 +419,7 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     FileContinuationToken = fileContinuationToken,
                 };
 
-                // Send the request
+                // 发送the request
                 service.Execute(uploadBlockRequest);
             }
 
@@ -438,10 +438,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         /// <summary>
         /// Downloads the file for an activitymimeattachment.
         /// </summary>
-        /// <param name="service">The IOrganizationService instance to use.</param>
-        /// <param name="target">A reference to the activitymimeattachment containing the file.</param>
+        /// <param name="service">IOrganizationService 实例 to use.</param>
+        /// <param name="target">一个reference to the activitymimeattachment containing the file.</param>
         /// <returns>Tuple of bytes and fileName</returns>
-        /// <exception cref="ArgumentException">"The target parameter must refer to an activitymimeattachment record."</exception>
+        /// <exception cref="ArgumentException">"The target 参数 must refer to an activitymimeattachment record."</exception>
         static (byte[] bytes, string fileName) DownloadAttachment(
             IOrganizationService service,
             EntityReference target)
@@ -486,11 +486,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
                     Offset = offset
                 };
 
-                // Send the request
+                // 发送the request
                 var downloadBlockResponse =
                            (DownloadBlockResponse)service.Execute(downLoadBlockRequest);
 
-                // Add the block returned to the list
+                // 添加the block returned to the list
                 fileBytes.AddRange(downloadBlockResponse.Data);
 
                 // Subtract the amount downloaded,

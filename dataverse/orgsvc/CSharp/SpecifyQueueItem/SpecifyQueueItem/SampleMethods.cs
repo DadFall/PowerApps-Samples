@@ -10,7 +10,7 @@ namespace PowerApps.Samples
 {
    public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         private static Guid _queueItemId;
         private static Guid _letterId;
         private static Guid _queueId;
@@ -23,10 +23,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -39,14 +39,14 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Create a queue record.
-        /// Create a letter record.
-        /// Create a queue item for queue record.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建a queue record.
+        /// 创建a letter record.
+        /// 创建a queue item for queue record.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a private queue instance and set its property values.
+            // 创建a private queue instance and set its property values.
             Queue newQueue = new Queue
             {
                 Name = "Example Queue.",
@@ -54,7 +54,7 @@ namespace PowerApps.Samples
                 QueueViewType = new OptionSetValue((int)QueueQueueViewType.Private)
             };
 
-            // Create a new queue and store its returned GUID in a variable 
+            // 创建a new queue and store its returned GUID in a variable 
             // for later use.
             _queueId = service.Create(newQueue);
 
@@ -69,7 +69,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine("Created {0}.", newLetter.Description);
 
-            // Create a new instance of a queueitem and initialize its 
+            // 创建a new instance of a queueitem and initialize its 
             // properties.
             QueueItem item = new QueueItem
             {
@@ -77,7 +77,7 @@ namespace PowerApps.Samples
                 ObjectId = new EntityReference(Letter.EntityLogicalName, _letterId)
             };
 
-            // Create the queueitem on the server, which will associate 
+            // 创建the queueitem on the server, which will associate 
             // the letter with the queue.
             _queueItemId = service.Create(item);
 
@@ -86,7 +86,7 @@ namespace PowerApps.Samples
             return;
         }
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user to 
         /// delete the records created in this sample.</param>
         /// </summary>

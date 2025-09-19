@@ -30,14 +30,14 @@ namespace PowerApps.Samples
                     #region Demonstrate
 
                     String entityLogicalName = "email"; // Also try "incident"
-                    // Retrieve status options for the Incident entity
+                    // 检索status options for the Incident entity
 
-                    //Retrieve just the incident entity and its attributes
+                    //检索just the incident entity and its attributes
                     MetadataFilterExpression entityFilter = new MetadataFilterExpression(LogicalOperator.And);
                     entityFilter.Conditions.Add(new MetadataConditionExpression("LogicalName", MetadataConditionOperator.Equals, entityLogicalName));
                     MetadataPropertiesExpression entityProperties = new MetadataPropertiesExpression(new string[] { "Attributes" });
 
-                    //Retrieve just the status attribute and the OptionSet property
+                    //检索just the status attribute and the OptionSet property
                     MetadataFilterExpression attributeFilter = new MetadataFilterExpression(LogicalOperator.And);
                     attributeFilter.Conditions.Add(new MetadataConditionExpression("AttributeType", MetadataConditionOperator.Equals, AttributeTypeCode.Status));
                     MetadataPropertiesExpression attributeProperties = new MetadataPropertiesExpression(new string[] { "OptionSet" });
@@ -50,7 +50,7 @@ namespace PowerApps.Samples
                         AttributeQuery = new AttributeQueryExpression() { Criteria = attributeFilter, Properties = attributeProperties }
                     };
 
-                    //Retrieve the metadata
+                    //检索the metadata
                     RetrieveMetadataChangesRequest request = new RetrieveMetadataChangesRequest() { Query = query };
                     RetrieveMetadataChangesResponse response = (RetrieveMetadataChangesResponse)service.Execute(request);
 

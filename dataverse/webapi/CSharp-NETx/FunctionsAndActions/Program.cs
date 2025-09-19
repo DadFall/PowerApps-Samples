@@ -86,9 +86,8 @@ namespace FunctionsAndActions
 
             Console.WriteLine("Starting Section 3: Unbound Functions: InitializeFrom");
             Console.WriteLine();
-            // InitializeFrom returns an entity with default values set based on mapping configuration
-            // for each organization.
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/webapi/create-entity-web-api#create-a-new-record-from-another-record
+            // InitializeFrom 根据每个组织的映射配置返回设置了默认值的实体。
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/create-entity-web-api#create-a-new-record-from-another-record
             JObject originalAccount = new() {
 
                 {"accountcategorycode", 1 }, //Preferred Customer
@@ -113,9 +112,9 @@ namespace FunctionsAndActions
 
             };
 
-            // Create the original record
+            // 创建原始记录
             EntityReference originalAccountReference = await service.Create("accounts", originalAccount);
-            recordsToDelete.Add(originalAccountReference); // To delete later
+            recordsToDelete.Add(originalAccountReference); // 稍后删除
 
             InitializeFromRequest initializeFromRequest = new(
                 entityMoniker: originalAccountReference,
@@ -129,7 +128,7 @@ namespace FunctionsAndActions
             Console.WriteLine();
             //Output when all columns are mapped for account_parent_account relationship using Generate Mappings:
             /*
-            {
+ {
               "@odata.context": "[Organization URI]/api/data/v9.2/$metadata#accounts/$entity",
               "@odata.type": "#Microsoft.Dynamics.CRM.account",
               "territorycode": 1,
@@ -174,12 +173,11 @@ namespace FunctionsAndActions
               "address1_stateorprovince": "WA",
               "ownerid@odata.bind": "systemusers()",
               "parentaccountid@odata.bind": "accounts(fe9873ac-2f1b-ed11-b83e-00224837179f)"
-            }          
-
-            */
+            }
+ */
             JObject newAccount = initializeFromResponse.Record;
 
-            //Set different properties for new record
+            //设置different properties for new record
             newAccount["name"] = "Contoso Consulting Chicago Branch";
             newAccount["address1_city"] = "Chicago";
             newAccount["address1_line1"] = "456 Elm St.";
@@ -189,8 +187,8 @@ namespace FunctionsAndActions
             newAccount["address1_telephone1"] = "(312) 555-3456";
             newAccount["numberofemployees"] = 12;
 
-            // ownerid is set when Generate Mappings used.
-            // It should not be mapped. Error will occur if included in POST request.
+            // 使用生成映射时设置了 ownerid。
+            // 它不应该被映射。如果包含在 POST 请求中将发生错误。
             newAccount.Remove("ownerid@odata.bind");
 
             Console.WriteLine("New Record:");
@@ -198,8 +196,7 @@ namespace FunctionsAndActions
             Console.WriteLine();
 
             /*
-
-            {
+ {
               "@odata.context": "[Organization URI]/api/data/v9.2/$metadata#accounts/$entity",
               "@odata.type": "#Microsoft.Dynamics.CRM.account",
               "territorycode": 1,
@@ -244,11 +241,11 @@ namespace FunctionsAndActions
               "address1_stateorprovince": "IL",
               "parentaccountid@odata.bind": "accounts(561c9519-331b-ed11-b83e-00224837179f)"
             }
-            */
+ */
 
-            //Create the new record with default values copied from the original
+            //创建the new record with default values copied from the original
             EntityReference newAccountReference = await service.Create("accounts", newAccount);
-            recordsToDelete.Add(newAccountReference); //To delete later
+            recordsToDelete.Add(newAccountReference); //稍后删除
 
             #endregion Section 3: Unbound Functions: InitializeFrom
 
@@ -256,8 +253,8 @@ namespace FunctionsAndActions
 
             Console.WriteLine("Starting Section 4: Unbound Functions: RetrieveCurrentOrganization");
             Console.WriteLine();
-            // RetrieveCurrentOrganization function retrieves data about the current organization.
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/retrievecurrentorganization?view=dataverse-latest
+            // RetrieveCurrentOrganization 函数检索有关当前组织的数据。
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/retrievecurrentorganization?view=dataverse-latest
 
             RetrieveCurrentOrganizationRequest retrieveCurrentOrganizationRequest =
                 new(accessType: EndpointAccessType.Default);
@@ -305,9 +302,9 @@ namespace FunctionsAndActions
 
             Console.WriteLine("Starting Section 5: Unbound Functions: RetrieveTotalRecordCount");
             Console.WriteLine();
-            // RetrieveTotalRecordCount Function Returns data on the total number of records for specific entities.
-            // The data retrieved will be from a snapshot within last 24 hours.
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/retrievetotalrecordcount?view=dataverse-latest
+            // RetrieveTotalRecordCount 函数返回特定实体的记录总数数据。
+            // 检索的数据将来自过去 24 小时内的快照。
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/retrievetotalrecordcount?view=dataverse-latest
 
             RetrieveTotalRecordCountRequest retrieveTotalRecordCountRequest = new(
                 entityNames: new string[] { "account", "contact" });
@@ -332,24 +329,24 @@ namespace FunctionsAndActions
             Console.WriteLine("Starting Section 6: Bound Functions: IsSystemAdmin");
             Console.WriteLine();
 
-            // IsSystemAdmin is a Custom API that is bound to the systemuser table.
-            // Because this Custom API is not likely to be in the environment
-            // The ManageIsSystemAdminFunction will install it by importing the 
-            // managed solution found in Resources/IsSystemAdminFunction_1_0_0_0_managed.zip
-            // See: https://learn.microsoft.com/power-apps/developer/data-platform/org-service/samples/issystemadmin-customapi-sample-plugin
+            // IsSystemAdmin 是绑定到 systemuser 表的自定义 API。
+            // 因为此自定义 API 可能不在环境中
+            // ManageIsSystemAdminFunction 将通过导入
+            // Resources/IsSystemAdminFunction_1_0_0_0_managed.zip 中找到的托管解决方案来安装它
+            // 参见: https://learn.microsoft.com/power-apps/developer/data-platform/org-service/samples/issystemadmin-customapi-sample-plugin
 
 
             await ManageIsSystemAdminFunction(service: service, recordsToDelete: recordsToDelete);
 
 
-            //Get top 10 user records that don't start with # character
+            //获取top 10 user records that don't start with # character
             RetrieveMultipleResponse retrieveMultipleUsersResponse =
                 await service.RetrieveMultiple("systemusers?" +
                 "$select=fullname&$filter=not startswith(fullname,'%23')&$top=10");
 
             Console.WriteLine("Top 10 users and whether they have System Administrator role.");
             
-            //Test each for the System Administrator role:
+            //测试each for the System Administrator role:
             retrieveMultipleUsersResponse.Records.ToList().ForEach(user => {
 
                 IsSystemAdminRequest isSystemAdminRequest = new(
@@ -374,8 +371,8 @@ namespace FunctionsAndActions
             Console.WriteLine("Starting Section 7: Unbound Actions: GrantAccess");
             Console.WriteLine();
 
-            // GrantAccess is an action used to share a record with another user
-            // See: https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/grantaccess?view=dataverse-latest
+            // GrantAccess 是用于与另一个用户共享记录的操作
+            // 参见: https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/grantaccess?view=dataverse-latest
 
             JObject accountRecord = new() {
                 {"name","Account to Share" }
@@ -385,9 +382,9 @@ namespace FunctionsAndActions
                     entitySetName: "accounts", 
                     record: accountRecord);
 
-            recordsToDelete.Add(accountToShareRef); // To delete later.
+            recordsToDelete.Add(accountToShareRef); // 稍后删除。
 
-            // Get an enabled user other than current user
+            // 获取除当前用户之外的已启用用户
 
             string firstUserQuery = "systemusers" +
                 $"?$filter=systemuserid ne {WhoIAm.UserId} " +
@@ -404,12 +401,12 @@ namespace FunctionsAndActions
             {
                 Console.WriteLine($"Testing user: {otherUser["fullname"]}");
 
-                //Create a reference to the user;
+                //创建a reference to the user;
                 EntityReference userReference = new(
                     entitySetName: "systemusers",
                     id: (Guid)otherUser["systemuserid"]);
 
-                //Test the other user's access to the record using RetrievePrincipalAccess
+                //测试the other user's access to the record using RetrievePrincipalAccess
                 RetrievePrincipalAccessRequest retrievePrincipalAccessRequest1 = new(
                     principal: userReference,
                     target: accountToShareRef);
@@ -419,10 +416,10 @@ namespace FunctionsAndActions
 
                 Console.WriteLine($"Current users access: {retrievePrincipalAccessResponse1.AccessRights}");
 
-                //If they don't already have Delete Access, grant it to them.
+                //如果they don't already have Delete Access, grant it to them.
                 if (!retrievePrincipalAccessResponse1.AccessRights.HasFlag(AccessRights.DeleteAccess))
                 {
-                    //Create request to share the record with the user
+                    //创建request to share the record with the user
                     GrantAccessRequest grantAccessRequest = new(
                         target: accountToShareRef.AsJObject("account", "accountid"),
                         principalAccess: new PrincipalAccess()
@@ -431,10 +428,10 @@ namespace FunctionsAndActions
                             Principal = userReference.AsJObject("systemuser", "systemuserid")
                         });
                     
-                    // Send the request
+                    // 发送请求
                     await service.SendAsync(grantAccessRequest);
 
-                    //Test the other user's access to the record again
+                    //测试the other user's access to the record again
                     RetrievePrincipalAccessRequest retrievePrincipalAccessRequest2 = new(
                         principal: userReference,
                         target: accountToShareRef);
@@ -457,10 +454,10 @@ namespace FunctionsAndActions
             Console.WriteLine("Starting Section 8: Bound Actions: AddPrivilegesRole");
             Console.WriteLine();
 
-            // AddPrivilegesRole adds a set of existing privileges to an existing role.
-            // See https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/addprivilegesrole?view=dataverse-latest
+            // AddPrivilegesRole 向现有角色添加一组现有权限。
+            // 参见 https://learn.microsoft.com/power-apps/developer/data-platform/webapi/reference/addprivilegesrole?view=dataverse-latest
 
-            //Create a role
+            //创建a role
 
             JObject role = new() {
                 //Role must be associated to a business unit
@@ -470,7 +467,7 @@ namespace FunctionsAndActions
 
 
             EntityReference roleReference = await service.Create("roles", role);
-            recordsToDelete.Add(roleReference); //To delete later
+            recordsToDelete.Add(roleReference); //稍后删除
 
             JObject retrievedRole = await service.Retrieve(
                 entityReference: roleReference, 
@@ -487,7 +484,7 @@ namespace FunctionsAndActions
             Console.WriteLine();
 
             /*
-             Number of privileges in new role: 9
+ Number of privileges in new role: 9
                 prvReadSharePointData
                 prvReadSdkMessage
                 prvWriteSharePointData
@@ -496,12 +493,12 @@ namespace FunctionsAndActions
                 prvReadPluginAssembly
                 prvCreateSharePointData
                 prvReadPluginType
-                prvReadSharePointDocument 
-            */
+                prvReadSharePointDocument
+ */
 
-            //Add privileges to the role
+            //添加privileges to the role
 
-            //Retrieve the prvCreateAccount and prvReadAccount privileges
+            //检索the prvCreateAccount and prvReadAccount privileges
             RetrieveMultipleResponse rolequery = 
                 await service.RetrieveMultiple(
                 queryUri: "privileges" +
@@ -528,10 +525,10 @@ namespace FunctionsAndActions
                 roleId: roleReference.Id.Value,
                 privileges: rolePrivileges);
 
-            //Add new privileges prvCreateAccount and prvReadAccount
+            //添加new privileges prvCreateAccount and prvReadAccount
             await service.SendAsync(request);
 
-            //Retrieve the role privileges again
+            //检索the role privileges again
             retrievedRole = 
                 await service.Retrieve(
                     entityReference: roleReference, 
@@ -548,8 +545,7 @@ namespace FunctionsAndActions
             Console.WriteLine();
 
             /*
-
-            Number of privileges after: 11
+ Number of privileges after: 11
                     prvReadAccount          <- New
                     prvReadSharePointData
                     prvReadSdkMessage
@@ -560,15 +556,15 @@ namespace FunctionsAndActions
                     prvReadPluginAssembly
                     prvCreateSharePointData
                     prvReadPluginType
-                    prvReadSharePointDocument 
-            */
+                    prvReadSharePointDocument
+ */
 
             #endregion Section 8: Bound Actions: AddPrivilegesRole
 
             #region Section 9: Delete sample records  
             Console.WriteLine("Starting Section 9: Delete sample records");
             Console.WriteLine();
-            // Delete all the created sample records.
+            // 删除所有创建的示例记录。
 
             if (!deleteCreatedRecords)
             {
@@ -610,15 +606,15 @@ namespace FunctionsAndActions
         }
 
         /// <summary>
-        /// Detects whether the Custom API is installed and installs it.
+        /// 检测是否已安装自定义 API 并进行安装。
         /// </summary>
-        /// <param name="service">The service</param>
-        /// <param name="recordsToDelete">References to records to delete.</param>
+        /// <param name="service">服务</param>
+        /// <param name="recordsToDelete">要删除的记录引用。</param>
         /// <returns></returns>
         private static async Task ManageIsSystemAdminFunction(Service service, List<EntityReference> recordsToDelete)
         {
 
-            // See if it is already there
+            // 查看它是否已经存在
             RetrieveMultipleResponse isSystemAdminResponse =
                 await service.RetrieveMultiple(queryUri: "sdkmessages?$select=name&$filter=name eq 'sample_IsSystemAdmin'");
             if (isSystemAdminResponse.Records.Count > 0)
@@ -630,7 +626,7 @@ namespace FunctionsAndActions
             Console.WriteLine("Importing IsSystemAdminFunction_1_0_0_0_managed.zip...");
             Console.WriteLine();
 
-            // Import it if it isn't there
+            // 如果不存在则导入它
             ImportSolutionParameters importSolutionParameters = new()
             {
                 CustomizationFile = File.ReadAllBytes("Resources\\IsSystemAdminFunction_1_0_0_0_managed.zip")
@@ -642,8 +638,8 @@ namespace FunctionsAndActions
 
             EntityReference solutionReference = await GetReferenceToIsSystemAdminFunctionSolution(service);
 
-            // Delete the solution at the end of the sample if it was added.
-            recordsToDelete.Add(solutionReference); // To delete later
+            // 如果添加了解决方案，则在示例结束时删除它。
+            recordsToDelete.Add(solutionReference); // 稍后删除
 
         }
 

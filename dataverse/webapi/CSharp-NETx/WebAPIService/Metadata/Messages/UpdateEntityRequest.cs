@@ -6,17 +6,17 @@ using System.Text;
 namespace PowerApps.Samples.Metadata.Messages
 {
     /// <summary>
-    /// Contains the data to update a table definition.
-    /// </summary>
+        /// Contains the data to update a table definition.
+        /// </summary>
     public sealed class UpdateEntityRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the UpdateEntityRequest
+        /// 初始化 the UpdateEntityRequest
         /// </summary>
-        /// <param name="entityLogicalName">The logical name of the table</param>
-        /// <param name="entityMetadata">The table definition with changes.</param>
-        /// <param name="solutionUniqueName">The solution name to associate the changes with.</param>
-        /// <param name="doNotMergeLabels">Whether to merge any lables included in the data.</param>
+        /// <param name="entityLogicalName">logical 名称 of the table</param>
+        /// <param name="entityMetadata">table definition with changes.</param>
+        /// <param name="solutionUniqueName">solution 名称 to associate the changes with.</param>
+        /// <param name="doNotMergeLabels">Whether to merge any lables included in the 数据.</param>
         public UpdateEntityRequest(
             string entityLogicalName,
             EntityMetadata entityMetadata,

@@ -26,14 +26,14 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create the request
+                    // 创建the request
                     var validateRequest = new ValidateSavedQueryRequest()
                     {
                         FetchXml = savedQuery.FetchXml,
                         QueryType = savedQuery.QueryType.Value
                     };
 
-                    // Send the request
+                    // 发送the request
                     Console.WriteLine("  Validating Saved Query");
                     try
                     {
@@ -51,18 +51,18 @@ namespace PowerApps.Samples
 
                     #region Execute saved query
 
-                    // Create the request
+                    // 创建the request
                     var executeSavedQueryRequest = new ExecuteByIdSavedQueryRequest()
                     {
                         EntityId = savedQuery.Id
                     };
 
-                    // Execute the request
+                    // 执行the request
                     Console.WriteLine("  Executing Saved Query");
                     var executeSavedQueryResponse =
                         (ExecuteByIdSavedQueryResponse)service.Execute(executeSavedQueryRequest);
 
-                    // Check results
+                    // 检查results
                     if (String.IsNullOrEmpty(executeSavedQueryResponse.String))
                         throw new Exception("Saved Query did not return any results");
 
@@ -71,13 +71,13 @@ namespace PowerApps.Samples
 
                     #region Execute user query
 
-                    // Create the request
+                    // 创建the request
                     var executeUserQuery = new ExecuteByIdUserQueryRequest()
                     {
                         EntityId = userQuery.ToEntityReference()
                     };
 
-                    // Send the request
+                    // 发送the request
                     Console.WriteLine("  Executing User Query");
                     var executeUserQueryResponse =
                         (ExecuteByIdUserQueryResponse)service.Execute(executeUserQuery);

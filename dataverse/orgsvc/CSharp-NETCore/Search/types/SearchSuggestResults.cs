@@ -4,8 +4,8 @@ using PowerApps.Samples.Search.Types;
 namespace PowerPlatform.Dataverse.CodeSamples.types
 {
     /// <summary>
-    /// Contains the data from the searchsuggest response
-    /// </summary>
+        /// Contains the data from the searchsuggest response
+        /// </summary>
     class SearchSuggestResults
     {
         /// <summary>
@@ -15,12 +15,12 @@ namespace PowerPlatform.Dataverse.CodeSamples.types
         public ErrorDetail? Error { get; set; }
 
         /// <summary>
-        /// A collection of matching records.
+        /// 一个collection of matching records.
         /// </summary>
         public List<SuggestResult>? Value { get; set; }
 
         /// <summary>
-        /// The query context returned as part of response.
+        /// query context returned as part of response.
         /// </summary>
         public QueryContext? QueryContext { get; set; }
     }

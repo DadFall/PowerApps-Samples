@@ -12,7 +12,7 @@ namespace PowerApps.Samples
     {
         // Specify which language code to use in the sample. If you are using a language
         // other than US English, you will need to modify this value accordingly.
-        // See https://learn.microsoft.com/previous-versions/windows/embedded/ms912047(v=winembedded.10)
+        // 参见 https://learn.microsoft.com/previous-versions/windows/embedded/ms912047(v=winembedded.10)
         public const int _languageCode = 1033;
 
 
@@ -72,7 +72,7 @@ namespace PowerApps.Samples
 
         public DiagramBuilder(ServiceClient service)
         {
-            // Build a hashtable from the array of excluded entities. This will
+            // 构建a hashtable from the array of excluded entities. This will
             // allow for faster lookups when determining if an entity is to be excluded.
             for (int n = 0; n < _excludedEntities.Length; n++)
             {
@@ -88,25 +88,25 @@ namespace PowerApps.Samples
         }
 
        /// <summary>
-        /// Create a new page in a Visio file showing all the direct entity relationships participated in
+        /// 创建a new page in a Visio file showing all the direct entity relationships participated in
         /// by the passed-in array of entities.
         /// </summary>
         /// <param name="entities">Core entities for the diagram</param>
         /// <param name="pageTitle">Page title</param>
        private void BuildDiagram(ServiceClient service, string[] entities, string pageTitle)
         {
-            // Get the default page of our new document
+            // 获取the default page of our new document
             VisioApi.Page page = _document.Pages[1];
             page.Name = pageTitle;
 
-            // Get the metadata for each passed-in entity, draw it, and draw its relationships.
+            // 获取the metadata for each passed-in entity, draw it, and draw its relationships.
             foreach (string entityName in entities)
             {
                 Console.Write("Processing entity: {0} ", entityName);
 
                 EntityMetadata entity = GetEntityMetadata(service, entityName);
 
-                // Create a Visio rectangle shape.
+                // 创建a Visio rectangle shape.
                 VisioApi.Shape rect;
 
                 try
@@ -162,7 +162,7 @@ namespace PowerApps.Samples
                 {
                     isManyToMany = true;
                     currentManyToManyRelationship = entityRelationship as ManyToManyRelationshipMetadata;
-                    // The entity passed in is not necessarily the originator of this relationship.
+                    // entity passed in is not necessarily the originator of this relationship.
                     if (String.Compare(entity.LogicalName, currentManyToManyRelationship.Entity1LogicalName, true) != 0)
                     {
                         entity2 = GetEntityMetadata(service, currentManyToManyRelationship.Entity1LogicalName);
@@ -184,7 +184,7 @@ namespace PowerApps.Samples
                     attribute = GetAttributeMetadata(service, entity, areReferencingRelationships ? currentOneToManyRelationship.ReferencedAttribute : currentOneToManyRelationship.ReferencingAttribute);
                     metadataID = currentOneToManyRelationship.MetadataId.Value;
                 }
-                // Verify relationship is either ManyToManyMetadata or OneToManyMetadata
+                // 验证relationship is either ManyToManyMetadata or OneToManyMetadata
                 if (entity2 != null)
                 {
                     if (_processedRelationships.Contains(metadataID))
@@ -222,7 +222,7 @@ namespace PowerApps.Samples
                                     rect2.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowXFormOut, (short)VisioApi.VisCellIndices.visXFormHeight).ResultIU += 0.25;
                                     rect2.Text += "\n" + attribute2.SchemaName;
 
-                                    // If the attribute is a primary key for the entity, append a [PK] label to the attribute name to indicate this.
+                                    // 如果the attribute is a primary key for the entity, append a [PK] label to the attribute name to indicate this.
                                     if (String.Compare(entity2.PrimaryIdAttribute, attribute2.LogicalName) == 0)
                                     {
                                         rect2.Text += "  [PK]";
@@ -234,27 +234,27 @@ namespace PowerApps.Samples
                                 rect2 = DrawEntityRectangle(service, rect.ContainingPage, entity2.SchemaName, entity2.OwnershipType.Value);
                                 rect2.Text += "\n" + attribute2.SchemaName;
 
-                                // If the attribute is a primary key for the entity, append a [PK] label to the attribute name to indicate so.
+                                // 如果the attribute is a primary key for the entity, append a [PK] label to the attribute name to indicate so.
                                 if (String.Compare(entity2.PrimaryIdAttribute, attribute2.LogicalName) == 0)
                                 {
                                     rect2.Text += "  [PK]";
                                 }
                             }
 
-                            // Add the name of the involved attribute to the core entity's text, if not already present.
+                            // 添加the name of the involved attribute to the core entity's text, if not already present.
                             if (rect.Text.IndexOf(attribute.SchemaName) == -1)
                             {
                                 rect.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowXFormOut, (short)VisioApi.VisCellIndices.visXFormHeight).ResultIU += HEIGHT;
                                 rect.Text += "\n" + attribute.SchemaName;
 
-                                // If the attribute is a primary key for the entity, append a [PK] label to the attribute name to indicate so.
+                                // 如果the attribute is a primary key for the entity, append a [PK] label to the attribute name to indicate so.
                                 if (String.Compare(entity.PrimaryIdAttribute, attribute.LogicalName) == 0)
                                 {
                                     rect.Text += "  [PK]";
                                 }
                             }
 
-                            // Update the style of the entity name
+                            // 更新the style of the entity name
                             VisioApi.Characters characters = rect.Characters;
                             VisioApi.Characters characters2 = rect2.Characters;
 
@@ -307,10 +307,10 @@ namespace PowerApps.Samples
         /// <summary>
         /// Draw an "Entity" Rectangle
         /// </summary>
-        /// <param name="page">The Page on which to draw</param>
-        /// <param name="entityName">The name of the entity</param>
-        /// <param name="ownership">The ownership type of the entity</param>
-        /// <returns>The newly drawn rectangle</returns>
+        /// <param name="page">Page on which to draw</param>
+        /// <param name="entityName">名称 of the entity</param>
+        /// <param name="ownership">ownership 类型 of the entity</param>
+        /// <returns>newly drawn rectangle</returns>
         private VisioApi.Shape DrawEntityRectangle(ServiceClient service, VisioApi.Page page, string entityName, OwnershipTypes ownership)
         {
             VisioApi.Shape rect = page.DrawRectangle(X_POS1, Y_POS1, X_POS2, Y_POS2);
@@ -320,7 +320,7 @@ namespace PowerApps.Samples
             // Determine the shape fill color based on entity ownership.
             string fillColor;
 
-            // Update the style of the entity name
+            // 更新the style of the entity name
             VisioApi.Characters characters = rect.Characters;
             characters.Begin = 0;
             characters.End = entityName.Length;
@@ -350,7 +350,7 @@ namespace PowerApps.Samples
                     break;
             }
 
-            // Set the fill color, placement properties, and line weight of the shape.
+            // 设置the fill color, placement properties, and line weight of the shape.
             rect.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowMisc, (short)VisioApi.VisCellIndices.visLOFlags).FormulaU = ((int)VisioApi.VisCellVals.visLOFlagsPlacable).ToString();
             rect.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowFill, (short)VisioApi.VisCellIndices.visFillForegnd).FormulaU = fillColor;
             return rect;
@@ -364,10 +364,10 @@ namespace PowerApps.Samples
         /// <param name="isManyToMany">Whether or not it is a many-to-many entity relationship</param>
         private void DrawDirectionalDynamicConnector(ServiceClient service, VisioApi.Shape shapeFrom, VisioApi.Shape shapeTo, bool isManyToMany)
         {
-            // Add a dynamic connector to the page.
+            // 添加a dynamic connector to the page.
             VisioApi.Shape connectorShape = shapeFrom.ContainingPage.Drop(_application.ConnectorToolDataObject, 0.0, 0.0);
 
-            // Set the connector properties, using different arrows, colors, and patterns for many-to-many relationships.
+            // 设置the connector properties, using different arrows, colors, and patterns for many-to-many relationships.
             connectorShape.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowFill, (short)VisioApi.VisCellIndices.visFillShdwPattern).ResultIU = SHDW_PATTERN;
             connectorShape.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowLine, (short)VisioApi.VisCellIndices.visLineBeginArrow).ResultIU = isManyToMany ? BEGIN_ARROW_MANY : BEGIN_ARROW;
             connectorShape.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowLine, (short)VisioApi.VisCellIndices.visLineEndArrow).ResultIU = END_ARROW;
@@ -375,19 +375,19 @@ namespace PowerApps.Samples
             connectorShape.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowLine, (short)VisioApi.VisCellIndices.visLinePattern).ResultIU = isManyToMany ? LINE_PATTERN : LINE_PATTERN;
             connectorShape.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowFill, (short)VisioApi.VisCellIndices.visLineRounding).ResultIU = ROUNDING;
 
-            // Connect the starting point.
+            // 连接the starting point.
             VisioApi.Cell cellBeginX = connectorShape.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowXForm1D, (short)VisioApi.VisCellIndices.vis1DBeginX);
             cellBeginX.GlueTo(shapeFrom.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowXFormOut, (short)VisioApi.VisCellIndices.visXFormPinX));
 
-            // Connect the ending point.
+            // 连接the ending point.
             VisioApi.Cell cellEndX = connectorShape.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowXForm1D, (short)VisioApi.VisCellIndices.vis1DEndX);
             cellEndX.GlueTo(shapeTo.get_CellsSRC(VISIO_SECTION_OJBECT_INDEX, (short)VisioApi.VisRowIndices.visRowXFormOut, (short)VisioApi.VisCellIndices.visXFormPinX));
         }
 
         /// <summary>
-        /// Retrieves an entity from the local copy of CRM Metadata
+        /// 检索 an entity from the local copy of CRM Metadata
         /// </summary>
-        /// <param name="entityName">The name of the entity to find</param>
+        /// <param name="entityName">名称 of the entity to find</param>
         /// <returns>NULL if the entity was not found, otherwise the entity's metadata</returns>
         private EntityMetadata GetEntityMetadata(ServiceClient service, string entityName)
         {
@@ -403,10 +403,10 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Retrieves an attribute from an EntityMetadata object
+        /// 检索 an attribute from an EntityMetadata object
         /// </summary>
-        /// <param name="entity">The entity metadata that contains the attribute</param>
-        /// <param name="attributeName">The name of the attribute to find</param>
+        /// <param name="entity">entity meta数据 that contains the attribute</param>
+        /// <param name="attributeName">名称 of the attribute to find</param>
         /// <returns>NULL if the attribute was not found, otherwise the attribute's metadata</returns>
         private AttributeMetadata GetAttributeMetadata(ServiceClient service, EntityMetadata entity, string attributeName)
         {

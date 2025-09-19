@@ -1,5 +1,5 @@
 /*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -14,7 +14,7 @@ import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
 export class WebAPIControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 	// Reference to the control container HTMLDivElement
-	// This element contains all elements of our custom control example
+	// 此element contains all elements of our custom control example
 	private _container: HTMLDivElement;
 
 	// Reference to ComponentFramework Context object
@@ -114,7 +114,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 	 * Renders example use of CreateRecord Web API
 	 */
 	private renderCreateExample() {
-		// Create header label for Web API sample
+		// 创建header label for Web API sample
 		const headerDiv: HTMLDivElement = this.createHTMLDivElement(
 			"create_container",
 			true,
@@ -122,7 +122,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 		);
 		this._container.appendChild(headerDiv);
 
-		// Create button 1 to create record with revenue field set to 100
+		// 创建button 1 to create record with revenue field set to 100
 		const value1 = "100";
 		this._createEntity1Button = this.createHTMLButtonElement(
 			this.getCreateRecordButtonLabel(value1),
@@ -131,7 +131,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 			this.createButtonOnClickHandler.bind(this)
 		);
 
-		// Create button 2 to create record with revenue field set to 200
+		// 创建button 2 to create record with revenue field set to 200
 		const value2 = "200";
 		this._createEntity2Button = this.createHTMLButtonElement(
 			this.getCreateRecordButtonLabel(value2),
@@ -140,7 +140,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 			this.createButtonOnClickHandler.bind(this)
 		);
 
-		// Create button 3 to create record with revenue field set to 300
+		// 创建button 3 to create record with revenue field set to 300
 		const value3 = "300";
 		this._createEntity3Button = this.createHTMLButtonElement(
 			this.getCreateRecordButtonLabel(value3),
@@ -159,7 +159,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 	 * Renders example use of DeleteRecord Web API
 	 */
 	private renderDeleteExample(): void {
-		// Create header label for Web API sample
+		// 创建header label for Web API sample
 		const headerDiv: HTMLDivElement = this.createHTMLDivElement(
 			"delete_container",
 			true,
@@ -185,7 +185,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 	private renderODataRetrieveMultipleExample(): void {
 		const containerClassName = "odata_status_container";
 
-		// Create header label for Web API sample
+		// 创建header label for Web API sample
 		const statusDivHeader: HTMLDivElement = this.createHTMLDivElement(
 			containerClassName,
 			true,
@@ -193,7 +193,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 		);
 		this._odataStatusContainerDiv = this.createHTMLDivElement(containerClassName, false, undefined);
 
-		// Create button to invoke OData RetrieveMultiple Example
+		// 创建button to invoke OData RetrieveMultiple Example
 		this._fetchXmlRefreshButton = this.createHTMLButtonElement(
 			"Refresh record count",
 			"odata_refresh",
@@ -213,7 +213,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 	private renderFetchXmlRetrieveMultipleExample(): void {
 		const containerName = "fetchxml_status_container";
 
-		// Create header label for Web API sample
+		// 创建header label for Web API sample
 		const statusDivHeader: HTMLDivElement = this.createHTMLDivElement(
 			containerName,
 			true,
@@ -221,7 +221,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 		);
 		const statusDiv: HTMLDivElement = this.createHTMLDivElement(containerName, false, undefined);
 
-		// Create button to invoke Fetch XML RetrieveMultiple Web API example
+		// 创建button to invoke Fetch XML RetrieveMultiple Web API example
 		this._oDataRefreshButton = this.createHTMLButtonElement(
 			`Calculate average value of ${WebAPIControl._currencyAttributeNameFriendlyName}`,
 			"odata_refresh",
@@ -260,29 +260,29 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 	 * @param event : click event
 	 */
 	private createButtonOnClickHandler(event: Event): Promise<void> {
-		// Retrieve the value to set the currency field to from the button's attribute
+		// 检索the value to set the currency field to from the button's attribute
 		const currencyAttributeValue: number = parseInt(
 			(event.target as Element)?.attributes?.getNamedItem("buttonvalue")?.value ?? "0"
 		);
 
-		// Generate unique record name by appending timestamp to _requiredAttributeValue
+		// 生成unique record name by appending timestamp to _requiredAttributeValue
 		const recordName = `${WebAPIControl._requiredAttributeValue}_${Date.now()}`;
 
-		// Set the values for the attributes we want to set on the new record
-		// If you want to set additional attributes on the new record, add to data dictionary as key/value pair
+		// 设置the values for the attributes we want to set on the new record
+		// 如果you want to set additional attributes on the new record, add to data dictionary as key/value pair
 		const data: ComponentFramework.WebApi.Entity = {};
 		data[WebAPIControl._requiredAttributeName] = recordName;
 		data[WebAPIControl._currencyAttributeName] = currencyAttributeValue;
 
-		// Invoke the Web API to creat the new record
+		// 调用the Web API to creat the new record
 		return this._context.webAPI.createRecord(WebAPIControl._entityName, data).then(
 			(response: ComponentFramework.LookupValue) => {
 				// Callback method for successful creation of new record
 
-				// Get the ID of the new record created
+				// 获取the ID of the new record created
 				const id: string = response.id;
 
-				// Generate HTML to inject into the result div to showcase the fields and values of the new record created
+				// 生成HTML to inject into the result div to showcase the fields and values of the new record created
 				let resultHtml = `Created new ${WebAPIControl._entityName} record with below values:`;
 				resultHtml += "<br />";
 				resultHtml += "<br />";
@@ -298,7 +298,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 				return;
 			},
 			(errorResponse) => {
-				// Error handling code here - record failed to be created
+				// 错误handling code here - record failed to be created
 				this.updateResultContainerTextWithErrorResponse(errorResponse);
 			}
 		);
@@ -309,7 +309,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 	 * @param event : click event
 	 */
 	private deleteButtonOnClickHandler(): Promise<void> {
-		// Invoke a lookup dialog to allow the user to select an existing record of type _entityName to delete
+		// 调用a lookup dialog to allow the user to select an existing record of type _entityName to delete
 		const lookUpOptions = {
 			entityTypes: [WebAPIControl._entityName],
 		};
@@ -321,23 +321,23 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 			// Data parameter is the item selected in the lookup dialog
 			(data: ComponentFramework.LookupValue[]) => {
 				if (data?.[0]) {
-					// Get the ID and entityType of the record selected by the lookup
+					// 获取the ID and entityType of the record selected by the lookup
 					const id: string = data[0].id;
 					const entityType: string = data[0].entityType;
 
-					// Invoke the deleteRecord method of the WebAPI to delete the selected record
+					// 调用the deleteRecord method of the WebAPI to delete the selected record
 					return this._context.webAPI.deleteRecord(entityType, id).then(
 						(response: ComponentFramework.LookupValue) => {
 							// Record was deleted successfully
 							const responseId: string = response.id;
 							const responseEntityType: string = response.entityType;
 
-							// Generate HTML to inject into the result div to showcase the deleted record
+							// 生成HTML to inject into the result div to showcase the deleted record
 							this.updateResultContainerText(`Deleted ${responseEntityType} record with ID: ${responseId}`);
 							return;
 						},
 						(errorResponse) => {
-							// Error handling code here
+							// 错误handling code here
 							this.updateResultContainerTextWithErrorResponse(errorResponse);
 						}
 					);
@@ -345,7 +345,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 				return;
 			},
 			(error) => {
-				// Error handling code here
+				// 错误handling code here
 				this.updateResultContainerTextWithErrorResponse(error);
 			}
 		);
@@ -356,8 +356,8 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 	 * @param event : click event
 	 */
 	private calculateAverageButtonOnClickHandler(): Promise<void> {
-		// Build FetchXML to retrieve the average value of _currencyAttributeName field for all _entityName records
-		// Add a filter to only aggregate on records that have _currencyAttributeName not set to null
+		// 构建FetchXML to retrieve the average value of _currencyAttributeName field for all _entityName records
+		// 添加a filter to only aggregate on records that have _currencyAttributeName not set to null
 		let fetchXML = "<fetch distinct='false' mapping='logical' aggregate='true'>";
 		fetchXML += `<entity name='${WebAPIControl._entityName}'>`;
 		fetchXML += `<attribute name='${WebAPIControl._currencyAttributeName}' aggregate='avg' alias='average_val' />`;
@@ -367,19 +367,19 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 		fetchXML += "</entity>";
 		fetchXML += "</fetch>";
 
-		// Invoke the Web API RetrieveMultipleRecords method to calculate the aggregate value
+		// 调用the Web API RetrieveMultipleRecords method to calculate the aggregate value
 		return this._context.webAPI.retrieveMultipleRecords(WebAPIControl._entityName, `?fetchXml=${fetchXML}`).then(
 			(response: ComponentFramework.WebApi.RetrieveMultipleResponse) => {
-				// Retrieve multiple completed successfully -- retrieve the averageValue
+				// 检索multiple completed successfully -- retrieve the averageValue
 				const averageVal: number = response.entities[0].average_val as number;
 
-				// Generate HTML to inject into the result div to showcase the result of the RetrieveMultiple Web API call
+				// 生成HTML to inject into the result div to showcase the result of the RetrieveMultiple Web API call
 				const resultHTML = `Average value of ${WebAPIControl._currencyAttributeNameFriendlyName} attribute for all ${WebAPIControl._entityName} records: ${averageVal}`;
 				this.updateResultContainerText(resultHTML);
 				return;
 			},
 			(errorResponse) => {
-				// Error handling code here
+				// 错误handling code here
 				this.updateResultContainerTextWithErrorResponse(errorResponse);
 			}
 		);
@@ -390,24 +390,24 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 	 * @param event : click event
 	 */
 	private refreshRecordCountButtonOnClickHandler(): Promise<void> {
-		// Generate OData query string to retrieve the _currencyAttributeName field for all _entityName records
-		// Add a filter to only retrieve records with _requiredAttributeName field which contains _requiredAttributeValue
+		// 生成OData query string to retrieve the _currencyAttributeName field for all _entityName records
+		// 添加a filter to only retrieve records with _requiredAttributeName field which contains _requiredAttributeValue
 		const queryString = `?$select=${WebAPIControl._currencyAttributeName}&$filter=contains(${WebAPIControl._requiredAttributeName},'${WebAPIControl._requiredAttributeValue}')`;
 
-		// Invoke the Web API Retrieve Multiple call
+		// 调用the Web API Retrieve Multiple call
 		return this._context.webAPI.retrieveMultipleRecords(WebAPIControl._entityName, queryString).then(
 			(response: ComponentFramework.WebApi.RetrieveMultipleResponse) => {
-				// Retrieve Multiple Web API call completed successfully
+				// 检索Multiple Web API call completed successfully
 				let count1 = 0;
 				let count2 = 0;
 				let count3 = 0;
 
 				// Loop through each returned record
 				for (const entity of response.entities) {
-					// Retrieve the value of _currencyAttributeName field
+					// 检索the value of _currencyAttributeName field
 					const value: number = entity[WebAPIControl._currencyAttributeName] as number;
 
-					// Check the value of _currencyAttributeName field and increment the correct counter
+					// 检查the value of _currencyAttributeName field and increment the correct counter
 					if (value == 100) {
 						count1++;
 					} else if (value == 200) {
@@ -417,7 +417,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 					}
 				}
 
-				// Generate HTML to inject into the fetch xml status div to showcase the results of the OData retrieve example
+				// 生成HTML to inject into the fetch xml status div to showcase the results of the OData retrieve example
 				let innerHtml = "Use above buttons to create or delete a record to see count update";
 				innerHtml += "<br />";
 				innerHtml += "<br />";
@@ -437,7 +437,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 				return;
 			},
 			(errorResponse) => {
-				// Error handling code here
+				// 错误handling code here
 				this.updateResultContainerTextWithErrorResponse(errorResponse);
 			}
 		);
@@ -459,7 +459,7 @@ export class WebAPIControl implements ComponentFramework.StandardControl<IInputs
 	 */
 	private updateResultContainerTextWithErrorResponse(errorResponse: unknown): void {
 		if (this._resultContainerDiv) {
-			// Retrieve the error message from the errorResponse and inject into the result div
+			// 检索the error message from the errorResponse and inject into the result div
 			let errorHTML = "Error with Web API call:";
 			errorHTML += "<br />";
 			errorHTML += (errorResponse as { message: string }).message;

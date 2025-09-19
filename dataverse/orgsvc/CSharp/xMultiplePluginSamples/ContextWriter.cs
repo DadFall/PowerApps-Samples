@@ -6,15 +6,15 @@ using System.Text;
 namespace xMultiplePluginSamples
 {
     /// <summary>
-    /// Plugin development guide: https://learn.microsoft.com/powerapps/developer/common-data-service/plug-ins
+        /// Plugin development guide: https://learn.microsoft.com/powerapps/developer/common-data-service/plug-ins
     /// Best practices and guidance: https://learn.microsoft.com/powerapps/developer/common-data-service/best-practices/business-logic/
-    /// </summary>
+        /// </summary>
     public class ContextWriter : PluginBase
     {
         public ContextWriter(string unsecureConfiguration, string secureConfiguration)
             : base(typeof(ContextWriter))
         {
-            // TODO: Implement your custom configuration handling
+            // 待办： Implement your custom configuration handling
             // https://learn.microsoft.com/powerapps/developer/common-data-service/register-plug-in#set-configuration-data
         }
 
@@ -26,7 +26,7 @@ namespace xMultiplePluginSamples
                 throw new ArgumentNullException(nameof(localPluginContext));
             }
 
-            // Update default PluginBase.cs and replace IPluginExecutionContext with IPluginExecutionContext4.
+            // 更新default PluginBase.cs and replace IPluginExecutionContext with IPluginExecutionContext4.
             IPluginExecutionContext4 context = localPluginContext.PluginExecutionContext;
 
             // Custom business logic starts here

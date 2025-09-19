@@ -27,16 +27,16 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Retrieve the sales people that will be added to the team.
+                    // 检索the sales people that will be added to the team.
                     salesPersons = SystemUserProvider.RetrieveSalespersons(service, ref ldapPath);
 
-                    // Get the ID's of the current user and business unit.
+                    // 获取the ID's of the current user and business unit.
                     var who = new WhoAmIRequest();
                     var whoResponse = (WhoAmIResponse)service.Execute(who);
                     _currentUserId = whoResponse.UserId;
                     businessUnitId = whoResponse.BusinessUnitId;
 
-                    // Create a access team.
+                    // 创建a access team.
                     var team = new Team
                     {
                         AdministratorId = new EntityReference(
@@ -50,7 +50,7 @@ namespace PowerApps.Samples
                     _teamId = service.Create(team);
                     Console.WriteLine("Created an access team named '{0}'.", team.Name);
 
-                    // Add two sales people to the access team.
+                    // 添加two sales people to the access team.
                     var addToTeamRequest = new AddMembersTeamRequest
                     {
                         TeamId = _teamId,
@@ -74,7 +74,7 @@ namespace PowerApps.Samples
                     service.Execute(grantAccessRequest);
                     Console.WriteLine("Granted read/write access on the account record to the team.");
 
-                    // Retrieve and display access information for the account.
+                    // 检索and display access information for the account.
                     RetrieveAndDisplayEntityAccess(service, accountReference);
 
                     // Display the account access for the team and its members.

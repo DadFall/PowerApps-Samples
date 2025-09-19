@@ -14,7 +14,7 @@ namespace PowerApps.Samples
     public partial class SampleProgram
     {
 
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         private static Guid _queueId;
         private static Guid _teamId;
         private static Guid _roleId;
@@ -26,10 +26,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -42,8 +42,8 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Creates the email activity.
+        /// 此method creates any entity records that this sample requires.
+        /// 创建 the email activity.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -53,7 +53,7 @@ namespace PowerApps.Samples
                 Private = 1
             };
 
-            // Create a queue instance and set its property values.
+            // 创建a queue instance and set its property values.
             var newQueue = new Queue
             {
                 Name = "Example Queue",
@@ -61,11 +61,11 @@ namespace PowerApps.Samples
                 QueueViewType = new OptionSetValue(QueueViewType.Private)
             };
 
-            // Create a new queue and store its returned GUID in a variable for later use.
+            // 创建a new queue and store its returned GUID in a variable for later use.
             _queueId = service.Create(newQueue);
             Console.WriteLine("Created {0}", newQueue.Name);
 
-            // Retrieve the default business unit for the creation of the team and role. 
+            // 检索the default business unit for the creation of the team and role. 
             var queryDefaultBusinessUnit = new QueryExpression
             {
                 EntityName = BusinessUnit.EntityLogicalName,
@@ -86,7 +86,7 @@ namespace PowerApps.Samples
             var defaultBusinessUnit =(BusinessUnit)service.RetrieveMultiple(
                 queryDefaultBusinessUnit).Entities[0];
 
-            // Create a new example team.
+            // 创建a new example team.
             var setupTeam = new Team
             {
                 Name = "Example Team",
@@ -96,7 +96,7 @@ namespace PowerApps.Samples
             _teamId = service.Create(setupTeam);
             Console.WriteLine("Created {0}", setupTeam.Name);
 
-            // Create a new example role.
+            // 创建a new example role.
             var setupRole = new Role
             {
                 Name = "Example Role",
@@ -106,7 +106,7 @@ namespace PowerApps.Samples
             _roleId = service.Create(setupRole);
             Console.WriteLine("Created {0}", setupRole.Name);
 
-            // Retrieve the prvReadQueue and prvAppendToQueue privileges.
+            // 检索the prvReadQueue and prvAppendToQueue privileges.
             var queryQueuePrivileges = new QueryExpression
             {
                 EntityName = Privilege.EntityLogicalName,
@@ -140,7 +140,7 @@ namespace PowerApps.Samples
                 rolePrivileges.Add(rolePrivilege);
             }
 
-            // Add the prvReadQueue and prvAppendToQueue privileges to the example role.
+            // 添加the prvReadQueue and prvAppendToQueue privileges to the example role.
             var addPrivilegesRequest = new AddPrivilegesRoleRequest
             {
                 RoleId = _roleId,
@@ -150,7 +150,7 @@ namespace PowerApps.Samples
             Console.WriteLine("Retrieved privileges are added to {0}.", setupRole.Name);
 
 
-            // Add the example role to the example team.
+            // 添加the example role to the example team.
             service.Associate(
                        Team.EntityLogicalName,
                        _teamId,
@@ -158,7 +158,7 @@ namespace PowerApps.Samples
                        new EntityReferenceCollection() { new EntityReference(Role.EntityLogicalName, _roleId) });
 
             // It takes some time for the privileges to propogate to the team.  
-            // Verify this is complete before continuing.
+            // 验证this is complete before continuing.
 
             bool teamLacksPrivilege = true;
             while (teamLacksPrivilege)
@@ -193,7 +193,7 @@ namespace PowerApps.Samples
 
 
         /// <summary>
-        /// Deletes the custom entity record that was created for this sample.
+        /// 删除 the custom entity record that was created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the entity created in this sample.</param>
         /// </summary>

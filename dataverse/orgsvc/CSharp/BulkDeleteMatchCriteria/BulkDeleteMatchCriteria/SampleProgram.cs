@@ -22,7 +22,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // This statments checks whether Standard Email templates are present
+                    // 此statments checks whether Standard Email templates are present
                     _context = new ServiceContext(service);
                     var emailTemplateId = (
                                        from emailTemplate in _context.TemplateSet

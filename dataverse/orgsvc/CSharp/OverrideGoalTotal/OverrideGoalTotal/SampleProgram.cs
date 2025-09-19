@@ -25,7 +25,7 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Create the count metric, setting the Metric Type to 'Count' by
+                    // 创建the count metric, setting the Metric Type to 'Count' by
                     // setting IsAmount to false.
                     Metric sampleMetric = new Metric()
                     {
@@ -39,7 +39,7 @@ namespace PowerApps.Samples
 
                     #region Create RollupFields
 
-                    // Create RollupField which targets completed (received) phone calls.
+                    // 创建RollupField which targets completed (received) phone calls.
                     RollupField actual = new RollupField()
                     {
                         SourceEntity = PhoneCall.EntityLogicalName,
@@ -54,7 +54,7 @@ namespace PowerApps.Samples
 
                     Console.Write("created actual revenue RollupField, ");
 
-                    // Create RollupField which targets open (in-progress) phone calls.
+                    // 创建RollupField which targets open (in-progress) phone calls.
                     RollupField inprogress = new RollupField()
                     {
                         SourceEntity = PhoneCall.EntityLogicalName,
@@ -76,7 +76,7 @@ namespace PowerApps.Samples
                     // rollup queries causes the length property to be greater than 1,000
                     // chars and will cause an exception.
 
-                    // The following query locates closed incoming phone calls.
+                    // following query locates closed incoming phone calls.
                     GoalRollupQuery goalRollupQuery = new GoalRollupQuery()
                     {
                         Name = "Example Goal Rollup Query - Actual",
@@ -86,7 +86,7 @@ namespace PowerApps.Samples
                     _rollupQueryIds.Add(service.Create(goalRollupQuery));
                     goalRollupQuery.Id = _rollupQueryIds[0];
 
-                    // The following query locates open incoming phone calls.
+                    // following query locates open incoming phone calls.
                     GoalRollupQuery inProgressGoalRollupQuery = new GoalRollupQuery()
                     {
                         Name = "Example Goal Rollup Query - InProgress",
@@ -103,7 +103,7 @@ namespace PowerApps.Samples
 
                     #region Create a goal to track the open incoming phone calls.
 
-                    // Create the goal.
+                    // 创建the goal.
                     Goal goal = new Goal()
                     {
                         Title = "Sample Goal",
@@ -144,7 +144,7 @@ namespace PowerApps.Samples
 
                     #region Calculate rollup and display result
 
-                    // Calculate roll-up of the goal.
+                    // 计算roll-up of the goal.
                     RecalculateRequest recalculateRequest = new RecalculateRequest()
                     {
                         Target = goal.ToEntityReference()
@@ -154,7 +154,7 @@ namespace PowerApps.Samples
                     Console.WriteLine("Calculated roll-up of goal.");
                     Console.WriteLine();
 
-                    // Retrieve and report 3 different computed values for the goal
+                    // 检索and report 3 different computed values for the goal
                     // - Percentage
                     // - Actual (Integer)
                     // - In-Progress (Integer)
@@ -198,7 +198,7 @@ namespace PowerApps.Samples
                     goal.ActualInteger = 10;
                     goal.InProgressInteger = 5;
 
-                    // Update the goal.
+                    // 更新the goal.
                     UpdateRequest update = new UpdateRequest()
                     {
                         Target = goal
@@ -212,7 +212,7 @@ namespace PowerApps.Samples
 
                     #region Retrieve result of manual override
 
-                    // Retrieve and report 3 different computed values for the goal
+                    // 检索and report 3 different computed values for the goal
                     // - Percentage
                     // - Actual (Integer)
                     // - In-Progress (Integer)
@@ -248,7 +248,7 @@ namespace PowerApps.Samples
 
                     #region Close the goal
 
-                    // Close the goal.
+                    // 关闭the goal.
                     SetStateRequest closeGoal = new SetStateRequest()
                     {
                         EntityMoniker = goal.ToEntityReference(),

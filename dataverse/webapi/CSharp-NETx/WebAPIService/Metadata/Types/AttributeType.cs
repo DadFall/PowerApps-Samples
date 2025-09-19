@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Converters;
 using System.Text.Json.Serialization;
 
-//This type created to support the RetrieveAttributeRequest class.
+//此type created to support the RetrieveAttributeRequest class.
 //These are the names used when casting specific types of attributes
 
 namespace PowerApps.Samples.Metadata.Types
@@ -9,7 +9,7 @@ namespace PowerApps.Samples.Metadata.Types
     [JsonConverter(typeof(StringEnumConverter))]
     public enum AttributeType
     {
-        AttributeMetadata, //When you don't need properties of a specific type
+        AttributeMetadata, //当you don't need properties of a specific type
         BigIntAttributeMetadata,
         BooleanAttributeMetadata,
         DateTimeAttributeMetadata,

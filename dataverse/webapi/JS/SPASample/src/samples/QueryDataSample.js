@@ -5,8 +5,8 @@ export class QueryDataSample {
    * @type {dv.Client}
    * @private
    */
-  #client; // The DataverseWebAPIClient instance
-  #container; // The container element to display messages
+  #client; // DataverseWebAPIClient instance
+  #container; // container element to display messages
   #entityStore = []; // Store for created records to delete at the end of the sample
   #util; //Common functions for samples
   #name = "Query data";
@@ -22,7 +22,7 @@ export class QueryDataSample {
 
   // Public functions to set up, run, and clean up data created by the sample
   async SetUp() {
-    // Clear the container
+    // 清除the container
     this.#container.replaceChildren();
     this.#util.appendMessage(this.#name + " sample started...");
 
@@ -256,9 +256,9 @@ export class QueryDataSample {
         },
       ],
     };
-    // Create the records that are all related to the account
+    // 创建the records that are all related to the account
     this.#contosoAccountId = await this.#createRecords(contosoAccount);
-    // Add the primary contact to the entity store
+    // 添加the primary contact to the entity store
     this.#contactYvonneId = await this.#addPrimaryContactToEntityStore(
       this.#contosoAccountId
     );
@@ -266,7 +266,7 @@ export class QueryDataSample {
 
   //#region Section 0: Create records to query
 
-  // Create records to query
+  // 创建records to query
   async #createRecords(contosoAccount) {
     try {
       const contosoAccountId = await this.#client.Create(
@@ -274,7 +274,7 @@ export class QueryDataSample {
         contosoAccount
       );
       this.#util.appendMessage("Created records for this sample");
-      // To delete later
+      // 稍后删除
       this.#entityStore.push({
         name: `${contosoAccount.name}`,
         entityName: "account",
@@ -288,7 +288,7 @@ export class QueryDataSample {
     }
   }
 
-  // Add the primary contact to the entity store
+  // 添加the primary contact to the entity store
   async #addPrimaryContactToEntityStore(contosoAccountId) {
     try {
       const contoso = await this.#client.Retrieve(
@@ -296,7 +296,7 @@ export class QueryDataSample {
         contosoAccountId,
         "$select=accountid&$expand=primarycontactid($select=contactid,fullname)"
       );
-      // To delete later
+      // 稍后删除
       this.#entityStore.push({
         name: `${contoso.primarycontactid.fullname}`,
         entityName: "contact",
@@ -314,7 +314,7 @@ export class QueryDataSample {
   }
   //#endregion Section 0: Create records to query
 
-  // Run the sample
+  // 运行the sample
   async Run() {
     try {
       // Section 1: Select specific properties
@@ -332,7 +332,7 @@ export class QueryDataSample {
       await this.#retrieveContactsCreatedInLastHour();
       // Use operators
       await this.#retrieveHighIncomeContacts();
-      // Set Set precedence
+      // 设置Set precedence
       await this.#retrieveHighIncomeSeniorOrManagerContacts();
       // Section 3: Ordering and aliases
       this.#util.appendMessage("<h2>Section 3: Ordering and aliases</h2>");
@@ -378,7 +378,7 @@ export class QueryDataSample {
       await this.#showUserQueryResults(userQueryId);
     } catch (error) {
       this.#util.showError(error.message);
-      // Try to clean up even if an error occurs
+      // 尝试to clean up even if an error occurs
       await this.CleanUp();
     }
   }
@@ -501,7 +501,7 @@ export class QueryDataSample {
     }
   }
 
-  // Set precedence
+  // 设置precedence
 
   async #retrieveHighIncomeSeniorOrManagerContacts() {
     const columns = ["fullname", "jobtitle", "annualincome"];
@@ -744,7 +744,7 @@ export class QueryDataSample {
         return;
       }
 
-      // The GetNextLink function
+      // GetNextLink function
       const nextPageResults = await this.#client.GetNextLink(nextLink, 4);
 
       this.#util.appendMessage("<strong>Next page of 4 contacts:</strong>");
@@ -1097,7 +1097,7 @@ export class QueryDataSample {
   // FetchXML pagination
 
   async #retrieveFirstPageOfContactsWithFetchXml() {
-    // Query to retrieve the first page of three contacts
+    // 查询to retrieve the first page of three contacts
     const fetchXmlPage1 = `<fetch count='3' page='1'>
       <entity name='contact'>  
         <attribute name='fullname' />  
@@ -1138,7 +1138,7 @@ export class QueryDataSample {
       throw e;
     }
 
-    // Check if there are more pages of results
+    // 检查if there are more pages of results
     if (contactsPage1["@Microsoft.Dynamics.CRM.morerecords"]) {
       const pagingCookie =
         contactsPage1["@Microsoft.Dynamics.CRM.fetchxmlpagingcookie"];
@@ -1157,16 +1157,16 @@ export class QueryDataSample {
     }
   }
 
-  // This example demonstrates simple pagination using the page attribute in FetchXML.
+  // 此example demonstrates simple pagination using the page attribute in FetchXML.
   // https://learn.microsoft.com/power-apps/developer/data-platform/fetchxml/page-results?tabs=webapi#simple-paging
 
   async #retrieveSecondPageOfContactsWithFetchXml(fetchXmlPage1, pagingCookie) {
     // To programmatically change the page attribute in the FetchXML
-    // Parse the XML string into a DOM Document
+    // 解析the XML string into a DOM Document
 
     const xmlDoc = new DOMParser().parseFromString(fetchXmlPage1, "text/xml");
 
-    // Select the root fetch element
+    // 选择the root fetch element
     const fetchElement = xmlDoc.getElementsByTagName("fetch")[0];
 
     // Change the page attribute value
@@ -1211,7 +1211,7 @@ export class QueryDataSample {
     let activeAccountsSavedQueryId = null;
 
     try {
-      // Get the ID of the Active Accounts query
+      // 获取the ID of the Active Accounts query
       savedqueries = await this.#client.RetrieveMultiple(
         "savedqueries",
         "$select=savedqueryid,columnsetxml&$filter=name eq 'Active Accounts'"
@@ -1230,7 +1230,7 @@ export class QueryDataSample {
     }
 
     try {
-      // Retrieve first three records using the Active Accounts query
+      // 检索first three records using the Active Accounts query
       const results = await this.#client.RetrieveMultiple(
         "accounts",
         `savedQuery=${activeAccountsSavedQueryId}`,
@@ -1280,7 +1280,7 @@ export class QueryDataSample {
       this.#util.appendMessage(
         `<strong>User query created with ID: ${userQueryId}</strong>`
       );
-      // To delete later
+      // 稍后删除
       this.#entityStore.push({
         name: `${userQuery.name}`,
         entityName: "userquery",
@@ -1297,7 +1297,7 @@ export class QueryDataSample {
 
   async #showUserQueryResults(userQueryId) {
     try {
-      // Retrieve first three records using the user query
+      // 检索first three records using the user query
       const results = await this.#client.RetrieveMultiple(
         "contacts",
         `userQuery=${userQueryId}`,
@@ -1324,7 +1324,7 @@ export class QueryDataSample {
   // Clean up the created records
   async CleanUp() {
     if (this.#entityStore.length === 0) {
-      // No records to delete
+      // 没有records to delete
       return;
     }
     // Section 10: Delete sample records
@@ -1365,7 +1365,7 @@ export class QueryDataSample {
       "Related contact records deleted due to cascade delete."
     );
 
-    // Set the entity store to an empty array
+    // 设置the entity store to an empty array
     this.#entityStore = [];
     this.#util.appendMessage(this.#name + " sample completed.");
     this.#util.appendMessage("<a href='#'>Go to top</a>");

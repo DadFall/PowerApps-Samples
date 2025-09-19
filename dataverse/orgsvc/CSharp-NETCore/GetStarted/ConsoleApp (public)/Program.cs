@@ -3,9 +3,9 @@ using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;
 
 /// <summary>
-/// Public client authentication followed by a web service request.
+        /// Public client authentication followed by a web service request.
 /// Use of username and password for authentication.
-/// </summary>
+        /// </summary>
 /// <remarks>This sample uses a standard app registration used for
 /// demonstrating SDK code samples.</remarks>
 class Program
@@ -15,8 +15,8 @@ class Program
     static string userName = "someone@myorg.onmicrosoft.com";
     static string password = "password";
 
-    // This service connection string uses the info provided above.
-    // The standard AppId and RedirectUri are provided for sample code demonstration only.
+    // 此service connection string uses the info provided above.
+    // standard AppId and RedirectUri are provided for sample code demonstration only.
     static string connectionString = $@"
     AuthType = OAuth;
     Url = {url};

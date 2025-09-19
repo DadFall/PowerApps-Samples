@@ -23,10 +23,10 @@ namespace PowerApps.Samples
                     #endregion Set up
                     #region Demonstrate
 
-                    // Retrieve the fax.
+                    // 检索the fax.
                     Fax retrievedFax = (Fax)service.Retrieve(Fax.EntityLogicalName, _faxId, new ColumnSet(true));
 
-                    // Create a task.
+                    // 创建a task.
                     Task task = new Task()
                     {
                         Subject = "Follow Up: " + retrievedFax.Subject,
@@ -34,7 +34,7 @@ namespace PowerApps.Samples
                     };
                     _taskId = service.Create(task);
 
-                    // Verify that the task has been created                    
+                    // 验证that the task has been created                    
                     if (_taskId != Guid.Empty)
                     {
                         Console.WriteLine("Created a task for the fax: '{0}'.", task.Subject);

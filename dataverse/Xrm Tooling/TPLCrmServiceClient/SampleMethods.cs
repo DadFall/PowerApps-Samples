@@ -17,19 +17,19 @@ namespace PowerApps.Samples
         ///
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
         }
 
         /// <summary>
-        /// Creates entities in parallel
+        /// 创建 entities in parallel
         /// </summary>
-        /// <param name="svc">The CrmServiceClient instance to use</param>
-        /// <param name="entities">A List of entities to create.</param>
+        /// <param name="svc">CrmServiceClient 实例 to use</param>
+        /// <param name="entities">一个List of entities to create.</param>
         /// <returns></returns>
         private static ConcurrentBag<EntityReference> CreateEntities(CrmServiceClient svc, List<Entity> entities)
         {
@@ -64,15 +64,15 @@ namespace PowerApps.Samples
                     }
                 });
 
-            //Return the ConcurrentBag of EntityReferences
+            //返回the ConcurrentBag of EntityReferences
             return createdEntityReferences;
         }
 
         /// <summary>
-        /// Deletes a list of entity references
+        /// 删除 a list of entity references
         /// </summary>
-        /// <param name="svc">The CrmServiceClient instance to use</param>
-        /// <param name="entityReferences">A List of entity references to delete.</param>
+        /// <param name="svc">CrmServiceClient 实例 to use</param>
+        /// <param name="entityReferences">一个List of entity references to delete.</param>
         private static void DeleteEntities(CrmServiceClient svc, List<EntityReference> entityReferences)
         {
             Parallel.ForEach(entityReferences,
@@ -100,17 +100,17 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Gets web service connection information from the app.config file.
-        /// If there is more than one available, the user is prompted to select
+        /// 获取 web service connection information from the app.config file.
+        /// 如果there is more than one available, the user is prompted to select
         /// the desired connection configuration by name.
         /// </summary>
-        /// <returns>A string containing web service connection configuration information.</returns>
+        /// <returns>一个string containing web service connection configuration information.</returns>
         private static string GetServiceConfiguration()
         {
-            // Get available connection strings from app.config.
+            // 获取available connection strings from app.config.
             int count = ConfigurationManager.ConnectionStrings.Count;
 
-            // Create a filter list of connection strings so that we have a list of valid
+            // 创建a filter list of connection strings so that we have a list of valid
             // connection strings for Common Data Service only.
             List<KeyValuePair<String, String>> filteredConnectionStrings =
                 new List<KeyValuePair<String, String>>();
@@ -124,7 +124,7 @@ namespace PowerApps.Samples
                             ConfigurationManager.ConnectionStrings[a].ConnectionString));
             }
 
-            // No valid connections strings found. Write out and error message.
+            // 没有valid connections strings found. Write out and error message.
             if (filteredConnectionStrings.Count == 0)
             {
                 Console.WriteLine("An app.config file containing at least one valid Common Data Service " +
@@ -135,13 +135,13 @@ namespace PowerApps.Samples
                 return null;
             }
 
-            // If one valid connection string is found, use that.
+            // 如果one valid connection string is found, use that.
             if (filteredConnectionStrings.Count == 1)
             {
                 return filteredConnectionStrings[0].Value;
             }
 
-            // If more than one valid connection string is found, let the user decide which to use.
+            // 如果more than one valid connection string is found, let the user decide which to use.
             if (filteredConnectionStrings.Count > 1)
             {
                 Console.WriteLine("The following connections are available:");

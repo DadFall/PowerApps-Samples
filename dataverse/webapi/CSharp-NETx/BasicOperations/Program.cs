@@ -21,7 +21,7 @@ namespace BasicOperations
 
             #region Section 1: Basic Create and Update operations
 
-            // This sample begins by using Service.SendAsyc with
+            // 此sample begins by using Service.SendAsyc with
             // HttpRequestMessage and HttpResponseMessage but
             // will then use the corresponding Messages/
             // *Request and *Response classes and the 
@@ -29,7 +29,7 @@ namespace BasicOperations
 
             Console.WriteLine("--Section 1 started--");
 
-            // Create a contact with HttpRequestMessage
+            // 创建a contact with HttpRequestMessage
             var contactRafelShillo = new JObject
                         {
                             { "firstname", "Rafel" },
@@ -63,7 +63,7 @@ namespace BasicOperations
             Console.WriteLine($"Contact URI: {rafelShilloUri}");
             Console.WriteLine($"Contact relative Uri: {rafelShilloReference.Path}");
 
-            // Update a contact with HttpRequestMessage
+            // 更新a contact with HttpRequestMessage
             JObject rafelShilloUpdate1 = new()
             {
                 { "annualincome", 80000 },
@@ -88,7 +88,7 @@ namespace BasicOperations
             $"Contact '{contactRafelShillo["firstname"]} {contactRafelShillo["lastname"]}' " +
             $"updated with jobtitle and annual income");
 
-            // Retrieve a contact with HttpRequestMessage
+            // 检索a contact with HttpRequestMessage
             HttpRequestMessage retrieveRequest = new(
              method: HttpMethod.Get,
              requestUri: rafelShilloUri + "?$select=fullname,annualincome,jobtitle,description");
@@ -113,7 +113,7 @@ namespace BasicOperations
                 { "description", "Assignment to-be-determined" }
             };
 
-            // Update using Messages/UpdateRequest
+            // 更新using Messages/UpdateRequest
             UpdateRequest rafelShilloUpdateRequest2 = new(
                 entityReference: rafelShilloReference,
                 record: rafelShilloUpdate2);
@@ -165,15 +165,15 @@ namespace BasicOperations
             #endregion Section 1: Basic Create and Update operations
 
             #region Section 2: Create record associated to another
-            /// <summary>  
-            /// Demonstrates creation of records and simultaneous association to another, 
-            ///  existing record. 
-            /// </summary>
+            /// <summary>
+        /// Demonstrates creation of records and simultaneous association to another, 
+            ///  existing record.
+        /// </summary>
             /// 
 
             Console.WriteLine("\n--Section 2 started--");
 
-            // Create a new account and associate with existing contact in one operation. 
+            // 创建a new account and associate with existing contact in one operation. 
             var accountContoso = new JObject
             {
                 { "name", "Contoso Ltd" },
@@ -182,18 +182,18 @@ namespace BasicOperations
                 { "primarycontactid@odata.bind", rafelShilloReference.Path }
             };
 
-            //Create using Methods/Create method
+            //创建using Methods/Create method
             EntityReference accountContosoReference =
                 await service.Create(
                 entitySetName: "accounts",
                 record: accountContoso);
 
-            recordsToDelete.Add(accountContosoReference); //To delete later
+            recordsToDelete.Add(accountContosoReference); //稍后删除
 
             Console.WriteLine($"Account '{accountContoso["name"]}' created.");
             Console.WriteLine($"Account URI: {accountContosoReference.Path}");
 
-            // Retrieve account name and primary contact info
+            // 检索account name and primary contact info
             // Using Methods/Retrieve method
             JObject retrievedAccountContoso =
                 await service.Retrieve(
@@ -209,12 +209,12 @@ namespace BasicOperations
             #endregion Section 2: Create record associated to another
 
             #region Section 3: Create related entities
-            /// <summary>  
-            /// Demonstrates creation of entity instance and related entities in a single operation.  
-            /// </summary>
+            /// <summary>
+        /// Demonstrates creation of entity instance and related entities in a single operation.
+        /// </summary>
             /// 
             Console.WriteLine("\n--Section 3 started--");
-            //Create the following entries in one operation: an account, its 
+            //创建the following entries in one operation: an account, its 
             // associated primary contact, and open tasks for that contact.  These 
             // entity types have the following relationships:
             //    Accounts 
@@ -303,11 +303,11 @@ namespace BasicOperations
                     entitySetName: "accounts",
                     record: accountFourthCoffee);
 
-            recordsToDelete.Add(accountFourthCoffeeReference); //To delete later
+            recordsToDelete.Add(accountFourthCoffeeReference); //稍后删除
 
             Console.WriteLine($"Account '{accountFourthCoffee["name"]}  created.");
 
-            // Retrieve account, primary contact info, and assigned tasks for contact.
+            // 检索account, primary contact info, and assigned tasks for contact.
             // Dataverse only supports querying-by-expansion one level deep, so first query 
             // account-primary contact.
 
@@ -333,7 +333,7 @@ namespace BasicOperations
 
             recordsToDelete.Add(contactSusieCurtisReference);
 
-            //Retrieve the contact
+            //检索the contact
             JObject retrievedContactSusieCurtis =
                 await service.Retrieve(
                     entityReference: contactSusieCurtisReference,
@@ -353,12 +353,12 @@ namespace BasicOperations
             #endregion Section 3: Create related entities
 
             #region Section 4: Associate and Disassociate entities
-            /// <summary>  
-            /// Demonstrates associating and disassociating of existing entity instances. 
-            /// </summary>
+            /// <summary>
+        /// Demonstrates associating and disassociating of existing entity instances.
+        /// </summary>
             Console.WriteLine("\n--Section 4 started--");
 
-            // Add 'Rafel Shillo' to the contact list of 'Fourth Coffee', 
+            // 添加'Rafel Shillo' to the contact list of 'Fourth Coffee', 
             // a 1-to-N relationship.
             // Using HttpRequestMessage rather than Messages/AssociateRequest
             HttpRequestMessage associateContactToAccountRequest = new(
@@ -376,7 +376,7 @@ namespace BasicOperations
             //Response has no content
             await service.SendAsync(request: associateContactToAccountRequest);
 
-            // Retrieve and output all contacts for account 'Fourth Coffee'.
+            // 检索and output all contacts for account 'Fourth Coffee'.
             // Using HttpRequestMessage rather than Messages/RetrieveMultipleRequest
             HttpRequestMessage fourthCoffeeContactsRequest = new(
                 method: HttpMethod.Get,
@@ -407,9 +407,9 @@ namespace BasicOperations
             await service.SendAsync(request: disassociateContactFromAccountRequest);
 
 
-            // Create role and assign it to systemuser using systemuserroles_association
+            // 创建role and assign it to systemuser using systemuserroles_association
 
-            // Get your BusinessUnitId and UserId using WhoAmI
+            // 获取your BusinessUnitId and UserId using WhoAmI
             var whoIAm = await service.SendAsync<WhoAmIResponse>(new WhoAmIRequest());
 
             //Define a new security role
@@ -419,10 +419,10 @@ namespace BasicOperations
                 { "name", "Example Security Role"}
 
             };
-            //Create the security role
+            //创建the security role
             EntityReference exampleSecurityRoleRef = await service.Create("roles", exampleSecurityRole);
 
-            recordsToDelete.Add(exampleSecurityRoleRef); //To delete later
+            recordsToDelete.Add(exampleSecurityRoleRef); //稍后删除
 
 
             // Associate role to systemuser via systemuserroles_association.
@@ -441,7 +441,7 @@ namespace BasicOperations
                         mediaType: "application/json")
             };
 
-            // The Messages/AssociateRequest class could be used instead to simplify the HttpRequestMessage above:
+            // Messages/AssociateRequest class could be used instead to simplify the HttpRequestMessage above:
             // AssociateRequest associateRoleToMeRequest = new(
             //    baseAddress: service.BaseAddress,
             //    entityWithCollection: new EntityReference("systemusers", whoIAm.UserId),
@@ -453,7 +453,7 @@ namespace BasicOperations
 
             Console.WriteLine($"Security Role '{exampleSecurityRole["name"]}' associated with to your user account.");
 
-            //Retrieve the new security role as part via the systemuserroles_association
+            //检索the new security role as part via the systemuserroles_association
             RetrieveMultipleRequest retrieveRoleViaUserRequest = new(
                 queryUri: $"systemusers({whoIAm.UserId})/systemuserroles_association?$select=name&$filter=roleid eq {exampleSecurityRoleRef.Id}"
                 );
@@ -474,7 +474,7 @@ namespace BasicOperations
                     uriKind: UriKind.Relative)
             };
 
-            // The Messages/DisassociateRequest class could be used instead to simplify the HttpRequestMessage above:
+            // Messages/DisassociateRequest class could be used instead to simplify the HttpRequestMessage above:
             // DisassociateRequest disassociateRoleToMeRequest = new(
             //    entityWithCollection: new EntityReference("systemusers", whoIAm.UserId),
             //    collectionName: "systemuserroles_association", 
@@ -488,7 +488,7 @@ namespace BasicOperations
 
             #region Section 5: Delete sample entities  
             Console.WriteLine("\n--Section 5 started--");
-            // Delete all the created sample records.  Note that explicit deletion is not required  
+            // 删除all the created sample records.  Note that explicit deletion is not required  
             // for contact tasks because these are automatically cascade-deleted with owner.  
 
             if (!deleteCreatedRecords)
@@ -510,7 +510,7 @@ namespace BasicOperations
 
             foreach (EntityReference recordToDelete in recordsToDelete)
             {
-                // Delete a record with HttpRequestMessage
+                // 删除a record with HttpRequestMessage
                 // See PowerApps.Samples.Messages DeleteRequest class use in later samples.
                 // See Service.Delete method.
                 HttpRequestMessage deleteRequest = new(

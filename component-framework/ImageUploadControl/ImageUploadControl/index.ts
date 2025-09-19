@@ -1,5 +1,5 @@
 ﻿/*
-	This file is part of the Microsoft PowerApps code samples.
+ This file is part of the Microsoft PowerApps code samples.
 	Copyright (C) Microsoft Corporation.  All rights reserved.
 	This source code is intended only as a supplement to Microsoft Development Tools and/or
 	on-line documentation.  See these other materials for detailed information regarding
@@ -20,7 +20,7 @@ const DefaultImageFileName = "default.png";
 // Show Error css classname
 const ShowErrorClassName = "ShowError";
 
-// No Image css classname
+// 没有Image css classname
 const NoImageClassName = "NoImage";
 
 // 'RemoveButton' css class name
@@ -76,26 +76,26 @@ export class ImageUploadControl implements ComponentFramework.StandardControl<II
 		this._notifyOutputChanged = notifyOutputChanged;
 		this.controlContainer = document.createElement("div");
 
-		//Create an upload button to upload the image
+		//创建an upload button to upload the image
 		this.uploadButton = document.createElement("button");
-		// Get the localized string from localized string
+		// 获取the localized string from localized string
 		this.uploadButton.innerHTML = context.resources.getString("PCF_ImageUploadControl_Upload_ButtonLabel");
 		this.uploadButton.addEventListener("click", this.onUploadButtonClick.bind(this));
 
 		// Creating the label for the control and setting the relevant values.
 		this.imgElement = document.createElement("img");
 
-		//Create a remove button to reset the image
+		//创建a remove button to reset the image
 		this.removeButton = document.createElement("button");
 		this.removeButton.classList.add(RemoveButtonClassName);
-		// Get the localized string from localized string
+		// 获取the localized string from localized string
 		this.removeButton.innerHTML = context.resources.getString("PCF_ImageUploadControl_Remove_ButtonLabel");
 		this.removeButton.addEventListener("click", this.onRemoveButtonClick.bind(this));
 
-		// Create an error label element
+		// 创建an error label element
 		this.errorLabelElement = document.createElement("label");
 
-		// If there is a raw value bound means there already have an image
+		// 如果there is a raw value bound means there already have an image
 		if (this._context.parameters.value.raw) {
 			this.imgElement.src = this._context.parameters.value.raw;
 		} else {
@@ -176,7 +176,7 @@ export class ImageUploadControl implements ComponentFramework.StandardControl<II
 		);
 		this.controlContainer.classList.add(NoImageClassName);
 
-		// If it already has value, we need to update the output
+		// 如果it already has value, we need to update the output
 		if (this._context.parameters.value.raw) {
 			this._value = null;
 			this._notifyOutputChanged();

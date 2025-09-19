@@ -19,17 +19,17 @@ namespace PowerApps.Samples.Metadata.Types
         public bool IsPrimaryImage { get; set; }
 
         /// <summary>
-        /// The maximum height of the image.
+        /// maximum height of the image.
         /// </summary>
         public short MaxHeight { get; set; }
 
         /// <summary>
-        /// The maximum width of the image.
+        /// maximum width of the image.
         /// </summary>
         public short MaxWidth { get; set; }
 
         /// <summary>
-        /// The maximum size for the image.
+        /// maximum size for the image.
         /// </summary>
         public int MaxSizeInKB { get; set; }
 

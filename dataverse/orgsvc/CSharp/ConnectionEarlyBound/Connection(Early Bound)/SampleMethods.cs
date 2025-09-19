@@ -12,7 +12,7 @@ namespace PowerApps.Samples
     
    public partial class SampleProgram
     {
-        // Define the IDs needed for this sample.
+        // 定义IDs needed for this sample.
         public static Guid _connectionRoleId;
         public static Guid _connectionId;
         public static Guid _accountId;
@@ -27,10 +27,10 @@ namespace PowerApps.Samples
 
         {
 
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -42,14 +42,14 @@ namespace PowerApps.Samples
             DeleteRequiredRecords(service, prompt);
         }
         /// <summary>
-        /// This method creates any entity records that this sample requires.
-        /// Create a new connectionrole instance. 
-        /// Create related Connection Role Object Type Code records
+        /// 此method creates any entity records that this sample requires.
+        /// 创建a new connectionrole instance. 
+        /// 创建related Connection Role Object Type Code records
         /// for the account and the contact entities.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
-            // Create a Connection Role for account and contact
+            // 创建a Connection Role for account and contact
             var newConnectionRole = new ConnectionRole
             {
                 Name = "Example Connection Role",
@@ -59,7 +59,7 @@ namespace PowerApps.Samples
             _connectionRoleId = service.Create(newConnectionRole);
             Console.WriteLine("Created {0}.", newConnectionRole.Name);
 
-            // Create a related Connection Role Object Type Code record for Account
+            // 创建a related Connection Role Object Type Code record for Account
             var newAccountConnectionRoleTypeCode
                 = new ConnectionRoleObjectTypeCode
                 {
@@ -73,7 +73,7 @@ namespace PowerApps.Samples
                 "Created a related Connection Role Object Type Code record for Account."
                 );
 
-            // Create a related Connection Role Object Type Code record for Contact
+            // 创建a related Connection Role Object Type Code record for Contact
             var newContactConnectionRoleTypeCode
                 = new ConnectionRoleObjectTypeCode
                 {
@@ -97,7 +97,7 @@ namespace PowerApps.Samples
                             new EntityReference(ConnectionRole.EntityLogicalName,
                                 _connectionRoleId)
                         },
-                // The name of the relationship connection role association 
+                // name of the relationship connection role association 
                 // relationship in MS CRM.
                 Relationship = new Relationship()
                 {
@@ -109,12 +109,12 @@ namespace PowerApps.Samples
             service.Execute(associateConnectionRoles);
             Console.WriteLine("Associated the connection role with itself.");
 
-            // Create an Account
+            // 创建an Account
             var setupAccount = new Account { Name = "Example Account" };
             _accountId = service.Create(setupAccount);
             Console.WriteLine("Created {0}.", setupAccount.Name);
 
-            // Create a Contact
+            // 创建a Contact
             var setupContact = new Contact { LastName = "Example Contact" };
             _contactId = service.Create(setupContact);
             Console.WriteLine("Created {0}.", setupContact.LastName);
@@ -123,7 +123,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>

@@ -4,16 +4,16 @@ using PowerApps.Samples.Search.Types;
 
 namespace PowerApps.Samples.Search.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the SearchStatusRequest
-    /// </summary>
+        /// Contains the response from the SearchStatusRequest
+        /// </summary>
     public sealed class SearchStatusResponse : HttpResponseMessage
     {
-        // Cache the async content
+        // 缓存the async content
         private string? _content;
 
         //Provides JObject for property getters

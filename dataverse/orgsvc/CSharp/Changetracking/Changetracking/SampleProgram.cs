@@ -30,12 +30,12 @@ namespace PowerApps.Samples
                     #region Demonstrate
 
                     /*
-                        The Sample setup will import a ChangeTracking solution that contains 
+ The Sample setup will import a ChangeTracking solution that contains 
                         a sample_book entity that has an alternate key named sample_bookcode.
 
                         10 initial sample_book entity records are created so that changes to those
                         entities can be tracked.
-                    */
+ */
 
                     //To cache the RetrieveEntityChangesResponse.EntityChanges.DataToken value
                     string dataVersionToken;
@@ -43,7 +43,7 @@ namespace PowerApps.Samples
                     //To cache information about the inital set of book records created.
                     List<Entity> initialRecords = new List<Entity>();
 
-                    //Retrieve initial records with tracked changes
+                    //检索initial records with tracked changes
                     RetrieveEntityChangesRequest initialRequest = new RetrieveEntityChangesRequest()
                     {
                         EntityName = "sample_book",
@@ -66,15 +66,15 @@ namespace PowerApps.Samples
                     Console.WriteLine("Waiting 10 seconds until next operation..");
                     Thread.Sleep(10000);
 
-                    //Add another 10 records, 1 update, and 1 delete
+                    //添加another 10 records, 1 update, and 1 delete
                     UpdateBookRecordsForSample(service);
 
                     // Instantiate cache for changed and deleted records
                     List<Entity> updatedRecords = new List<Entity>();
                     List<EntityReference> deletedRecords = new List<EntityReference>();
 
-                    //Retrieve Changes since the initial records were created
-                    //The request is identical except it now has the DataVersion value set to the DataToken of the previous request.
+                    //检索Changes since the initial records were created
+                    //request is identical except it now has the DataVersion value set to the DataToken of the previous request.
                     RetrieveEntityChangesRequest secondRequest = new RetrieveEntityChangesRequest()
                     {
                         EntityName = "sample_book",
@@ -84,7 +84,7 @@ namespace PowerApps.Samples
                         DataVersion = dataVersionToken
                     };
 
-                    //Get the results from the second request
+                    //获取the results from the second request
                     RetrieveEntityChangesResponse results = (RetrieveEntityChangesResponse)service.Execute(secondRequest);
 
                     //Separate the results by type: NewOrUpdated or RemoveOrDeleted
@@ -96,14 +96,14 @@ namespace PowerApps.Samples
                         .Where(x => x.Type == ChangeType.RemoveOrDeleted)
                         .Select(x => (x as RemovedOrDeletedItem).RemovedItem).ToArray());
 
-                    //Test results
+                    //测试results
                     Console.WriteLine("\nList of updated records:");
                     updatedRecords.ForEach(e =>
                     {
                         Console.WriteLine(" name: {0}", e["sample_name"]);
 
                             /*
-                             Expected:
+ Expected:
                                name: Demo Book 10
                                name: Demo Book 11
                                name: Demo Book 12
@@ -115,7 +115,7 @@ namespace PowerApps.Samples
                                name: Demo Book 18
                                name: Demo Book 19
                                name: Demo Book 0 updated < Time record was updated >
-                            */
+ */
                     }
                     );
 
@@ -125,9 +125,9 @@ namespace PowerApps.Samples
                         Console.WriteLine(" LogicalName: {0} Id:{1}", e.LogicalName, e.Id);
 
                             /*
-                             Expected:
+ Expected:
                                LogicalName: sample_book Id:< GUID of record that was deleted >
-                            */
+ */
 
                     }
                     );

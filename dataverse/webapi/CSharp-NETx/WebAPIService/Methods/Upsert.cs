@@ -8,9 +8,9 @@ namespace PowerApps.Samples.Methods
         /// <summary>
         /// Performs an Upsert operation on a record
         /// </summary>
-        /// <param name="service">The Service</param>
-        /// <param name="entityReference">A reference to the record to upsert.</param>
-        /// <param name="record">The data for the record.</param>
+        /// <param name="service">Service</param>
+        /// <param name="entityReference">一个reference to the record to upsert.</param>
+        /// <param name="record">数据 for the record.</param>
         /// <param name="upsertBehavior">Controls whether to block Create or Update operations.</param>
         /// <returns></returns>
         public static async Task<EntityReference> Upsert(

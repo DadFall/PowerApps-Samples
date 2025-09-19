@@ -5,15 +5,15 @@ using System.ServiceModel;
 namespace xMultiplePluginSamples
 {
     /// <summary>
-    /// Plugin development guide: https://learn.microsoft.com/powerapps/developer/common-data-service/plug-ins
+        /// Plugin development guide: https://learn.microsoft.com/powerapps/developer/common-data-service/plug-ins
     /// Best practices and guidance: https://learn.microsoft.com/powerapps/developer/common-data-service/best-practices/business-logic/
-    /// </summary>
+        /// </summary>
     public class FollowupPluginMultiple : PluginBase
     {
         public FollowupPluginMultiple(string unsecureConfiguration, string secureConfiguration)
             : base(typeof(FollowupPluginMultiple))
         {
-            // TODO: Implement your custom configuration handling
+            // 待办： Implement your custom configuration handling
             // https://learn.microsoft.com/powerapps/developer/common-data-service/register-plug-in#set-configuration-data
         }
 
@@ -25,16 +25,16 @@ namespace xMultiplePluginSamples
                 throw new ArgumentNullException(nameof(localPluginContext));
             }
 
-            // Update default PluginBase.cs and replace IPluginExecutionContext with IPluginExecutionContext4.
+            // 更新default PluginBase.cs and replace IPluginExecutionContext with IPluginExecutionContext4.
             IPluginExecutionContext4 context = localPluginContext.PluginExecutionContext;
 
             // Custom business logic starts here
 
-            // Check for the Targets parameter containing the entities
+            // 检查for the Targets parameter containing the entities
             if (context.InputParameters.Contains("Targets") && context.InputParameters["Targets"] is EntityCollection entityCollection)
             {
 
-                // Check for entity name on which this plugin would be registered
+                // 检查for entity name on which this plugin would be registered
                 if (entityCollection.EntityName == "sample_example")
                 {
                     int count = 0;
@@ -43,7 +43,7 @@ namespace xMultiplePluginSamples
                         try
                         {
 
-                            // Create a task activity to follow up with the sample_example in 7 days. 
+                            // 创建a task activity to follow up with the sample_example in 7 days. 
                             Entity followup = new Entity("task");
 
                             followup["subject"] = "Example task record";
@@ -52,7 +52,7 @@ namespace xMultiplePluginSamples
                             followup["scheduledend"] = DateTime.Now.AddDays(7);
                             followup["regardingobjectid"] =
                             new EntityReference(entityCollection.EntityName, entity.Id);
-                            // Create the task in Dataverse.
+                            // 创建the task in Dataverse.
                             localPluginContext.InitiatingUserService.Create(followup);
                         }
 

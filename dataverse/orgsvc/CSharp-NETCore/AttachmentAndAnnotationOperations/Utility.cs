@@ -8,10 +8,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
     {
 
         /// <summary>
-        /// Gets the mimetype for a file
+        /// 获取 the mimetype for a file
         /// </summary>
-        /// <param name="file">A reference to the file.</param>
-        /// <returns>The mimetype</returns>
+        /// <param name="file">一个reference to the file.</param>
+        /// <returns>mimetype</returns>
         public static string GetMimeType(FileInfo file)
         {
             var provider = new FileExtensionContentTypeProvider();
@@ -22,10 +22,10 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Gets the MaxUploadFileSize in bytes
+        /// 获取 the MaxUploadFileSize in bytes
         /// </summary>
-        /// <param name="service">The IOrganizationService to use.</param>
-        /// <returns>The current system configured MaxUploadFileSize</returns>
+        /// <param name="service">IOrganizationService to use.</param>
+        /// <returns>current system configured MaxUploadFileSize</returns>
         public static int GetMaxUploadFileSize(IOrganizationService service) {
             QueryExpression query = new("organization") { 
                  ColumnSet = new ColumnSet("maxuploadfilesize")
@@ -38,11 +38,11 @@ namespace PowerPlatform.Dataverse.CodeSamples
         }
 
         /// <summary>
-        /// Set the current system configured MaxUploadFileSize
+        /// 设置the current system configured MaxUploadFileSize
         /// </summary>
-        /// <param name="service">The IOrganizationService to use.</param>
-        /// <param name="maxUploadFileSizeInBytes">The value to set.</param>
-        /// <exception cref="ArgumentOutOfRangeException">The maxUploadFileSizeInBytes parameter must be less than 131072000 bytes and greater than 0 bytes.</exception>
+        /// <param name="service">IOrganizationService to use.</param>
+        /// <param name="maxUploadFileSizeInBytes">值 to set.</param>
+        /// <exception cref="ArgumentOutOfRangeException">The maxUploadFileSizeInBytes 参数 must be less than 131072000 bytes and greater than 0 bytes.</exception>
         public static void SetMaxUploadFileSize(IOrganizationService service, int maxUploadFileSizeInBytes)
         {
             if (maxUploadFileSizeInBytes > 131072000 || maxUploadFileSizeInBytes < 1) {

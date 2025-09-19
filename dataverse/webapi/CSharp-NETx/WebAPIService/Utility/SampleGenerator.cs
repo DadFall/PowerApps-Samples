@@ -5,17 +5,17 @@ using System.Web;
 namespace PowerApps.Samples
 {
     /// <summary>
-    /// Contains method to generate Http samples in Markdown
-    /// </summary>
+        /// Contains method to generate Http samples in Markdown
+        /// </summary>
     public class SampleGenerator
     {
         /// <summary>
-        /// Generates an Http sample
+        /// 生成 an Http sample
         /// </summary>
-        /// <param name="request">The request</param>
-        /// <param name="response">The response</param>
-        /// <param name="baseAddress">The service base address</param>
-        /// <param name="outputFolder">The location to save the markdown text of the sample.</param>
+        /// <param name="request">请求</param>
+        /// <param name="response">响应</param>
+        /// <param name="baseAddress">服务 base address</param>
+        /// <param name="outputFolder">location to save the markdown text of the sample.</param>
         /// <returns></returns>
         public static async Task WriteHttpSample(HttpRequestMessage request, HttpResponseMessage response, Uri baseAddress, string outputFolder)
         {
@@ -52,7 +52,7 @@ namespace PowerApps.Samples
                     sb.AppendLine($"{item.Key}: {value}");
                 }
             }
-            // Add example Authorization header
+            // 添加example Authorization header
             sb.AppendLine("Authorization: Bearer <access token>");
 
             if (request.Content != null)

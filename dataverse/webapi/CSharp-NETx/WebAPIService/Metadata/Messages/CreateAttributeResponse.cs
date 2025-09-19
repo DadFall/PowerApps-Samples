@@ -1,16 +1,16 @@
 ﻿namespace PowerApps.Samples.Metadata.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the response from the CreateAttributeRequest
-    /// </summary>
+        /// Contains the response from the CreateAttributeRequest
+        /// </summary>
     public sealed class CreateAttributeResponse : HttpResponseMessage
     {
         /// <summary>
-        /// The Id of the column created.
+        /// Id of the column created.
         /// </summary>
         public Guid AttributeId
         {

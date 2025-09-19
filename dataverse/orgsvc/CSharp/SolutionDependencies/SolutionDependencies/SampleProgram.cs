@@ -46,7 +46,7 @@ namespace PowerApps.Samples
 
                     foreach (SolutionComponent component in allComponents)
                     {
-                        // For each solution component, retrieve all dependencies for the component.
+                        // 对于each solution component, retrieve all dependencies for the component.
                         RetrieveDependentComponentsRequest dependentComponentsRequest =
                             new RetrieveDependentComponentsRequest
                             {
@@ -56,18 +56,18 @@ namespace PowerApps.Samples
                         RetrieveDependentComponentsResponse dependentComponentsResponse =
                             (RetrieveDependentComponentsResponse)service.Execute(dependentComponentsRequest);
 
-                        // If there are no dependent components, we can ignore this component.
+                        // 如果there are no dependent components, we can ignore this component.
                         if (dependentComponentsResponse.EntityCollection.Entities.Any() == false)
                             continue;
 
-                        // If there are dependencies upon this solution component, and the solution
+                        // 如果there are dependencies upon this solution component, and the solution
                         // itself is managed, then you will be unable to delete the solution.
                         Console.WriteLine("Found {0} dependencies for Component {1} of type {2}",
                             dependentComponentsResponse.EntityCollection.Entities.Count,
                             component.ObjectId.Value,
                             component.ComponentType.Value
                             );
-                        //A more complete report requires more code
+                        //一个more complete report requires more code
                         foreach (Dependency d in dependentComponentsResponse.EntityCollection.Entities)
                         {
                             DependencyReport(service, d);
@@ -83,7 +83,7 @@ namespace PowerApps.Samples
                             Name = _globalOptionSetName
                         };
 
-                    // Execute the request.
+                    // 执行the request.
                     RetrieveOptionSetResponse retrieveOptionSetResponse =
                         (RetrieveOptionSetResponse)service.Execute(
                         retrieveOptionSetRequest);

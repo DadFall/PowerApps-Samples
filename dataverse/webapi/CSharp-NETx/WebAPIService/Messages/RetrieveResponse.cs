@@ -2,17 +2,17 @@
 
 namespace PowerApps.Samples.Messages
 {
-    // This class must be instantiated by either:
+    // 此class must be instantiated by either:
     // - The Service.SendAsync<T> method
     // - The HttpResponseMessage.As<T> extension in Extensions.cs
 
     /// <summary>
-    /// Contains the data from the RetrieveRequest
-    /// </summary>
+        /// Contains the data from the RetrieveRequest
+        /// </summary>
     public sealed class RetrieveResponse : HttpResponseMessage
     {
         /// <summary>
-        /// The record returned.
+        /// record returned.
         /// </summary>
         public JObject Record
         {

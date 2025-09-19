@@ -21,116 +21,116 @@ namespace PowerApps.Samples
                 if (service.IsReady)
                 {
 
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
 
                     _productVersion = Version.Parse(((RetrieveVersionResponse)service.Execute(new RetrieveVersionRequest())).Version);
 
                     #region How to create columns
-                    // Create storage for new  being created
+                    // 创建storage for new  being created
                     addedColumns = new List<AttributeMetadata>();
 
-                    // Create a yes/no column
+                    // 创建a yes/no column
                     var boolColumn = new BooleanAttributeMetadata
                     {
-                        // Set base properties
+                        // 设置base properties
                         SchemaName = "new_Boolean",
                         LogicalName = "new_boolean",
                         DisplayName = new Label("Sample Boolean", _languageCode),
                         RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.None),
                         Description = new Label("Boolean Column", _languageCode),
-                        // Set extended properties
+                        // 设置extended properties
                         OptionSet = new BooleanOptionSetMetadata(
                             new OptionMetadata(new Label("True", _languageCode), 1),
                             new OptionMetadata(new Label("False", _languageCode), 0)
                             )
                     };
 
-                    // Add to list
+                    // 添加to list
                     addedColumns.Add(boolColumn);
 
-                    // Create a date time column
+                    // 创建a date time column
                     var dateTimeColumn = new DateTimeAttributeMetadata
                     {
-                        // Set base properties
+                        // 设置base properties
                         SchemaName = "new_Datetime",
                         LogicalName = "new_datetime",
                         DisplayName = new Label("Sample DateTime", _languageCode),
                         RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.None),
                         Description = new Label("DateTime Column", _languageCode),
-                        // Set extended properties
+                        // 设置extended properties
                         Format = DateTimeFormat.DateOnly,
                         ImeMode = ImeMode.Disabled
                     };
 
-                    // Add to list
+                    // 添加to list
                     addedColumns.Add(dateTimeColumn);
 
-                    // Create a decimal column	
+                    // 创建a decimal column	
                     var decimalColumn = new DecimalAttributeMetadata
                     {
-                        // Set base properties
+                        // 设置base properties
                         SchemaName = "new_Decimal",
                         LogicalName = "new_decimal",
                         DisplayName = new Label("Sample Decimal", _languageCode),
                         RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.None),
                         Description = new Label("Decimal Column", _languageCode),
-                        // Set extended properties
+                        // 设置extended properties
                         MaxValue = 100,
                         MinValue = 0,
                         Precision = 1
                     };
 
-                    // Add to list
+                    // 添加to list
                     addedColumns.Add(decimalColumn);
 
-                    // Create a integer column	
+                    // 创建a integer column	
                     var integerColumn = new IntegerAttributeMetadata
                     {
-                        // Set base properties
+                        // 设置base properties
                         SchemaName = "new_Integer",
                         LogicalName = "new_integer",
                         DisplayName = new Label("Sample Integer", _languageCode),
                         RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.None),
                         Description = new Label("Integer Column", _languageCode),
-                        // Set extended properties
+                        // 设置extended properties
                         Format = IntegerFormat.None,
                         MaxValue = 100,
                         MinValue = 0
                     };
 
-                    // Add to list
+                    // 添加to list
                     addedColumns.Add(integerColumn);
 
-                    // Create a memo column 
+                    // 创建a memo column 
                     var memoColumn = new MemoAttributeMetadata
                     {
-                        // Set base properties
+                        // 设置base properties
                         SchemaName = "new_Memo",
                         LogicalName = "new_memo",
                         DisplayName = new Label("Sample Memo", _languageCode),
                         RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.None),
                         Description = new Label("Memo Column", _languageCode),
-                        // Set extended properties
+                        // 设置extended properties
                         Format = StringFormat.TextArea,
                         ImeMode = ImeMode.Disabled,
                         MaxLength = 500
                     };
 
-                    // Add to list
+                    // 添加to list
                     addedColumns.Add(memoColumn);
 
-                    // Create a money column	
+                    // 创建a money column	
                     var moneyColumn = new MoneyAttributeMetadata
                     {
-                        // Set base properties
+                        // 设置base properties
                         SchemaName = "new_Money",
                         LogicalName = "new_money",
                         DisplayName = new Label("Sample Money", _languageCode),
                         RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.None),
                         Description = new Label("Money Column", _languageCode),
-                        // Set extended properties
+                        // 设置extended properties
                         MaxValue = 1000.00,
                         MinValue = 0.00,
                         Precision = 1,
@@ -138,21 +138,21 @@ namespace PowerApps.Samples
                         ImeMode = ImeMode.Disabled
                     };
 
-                    // Add to list
+                    // 添加to list
                     addedColumns.Add(moneyColumn);
 
-                    // Create a choice column	
+                    // 创建a choice column	
                     var picklistColumn =
                         new PicklistAttributeMetadata
                         {
-                            // Set base properties
+                            // 设置base properties
                             SchemaName = "new_Picklist",
                             LogicalName = "new_picklist",
                             DisplayName = new Label("Sample Picklist", _languageCode),
                             RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.None),
                             Description = new Label("Picklist Attribute", _languageCode),
-                            // Set extended properties
-                            // Build local picklist options
+                            // 设置extended properties
+                            // 构建local picklist options
                             OptionSet = new OptionSetMetadata
                             {
                                 IsGlobal = false,
@@ -169,31 +169,31 @@ namespace PowerApps.Samples
                             }
                         };
 
-                    // Add to list
+                    // 添加to list
                     addedColumns.Add(picklistColumn);
 
-                    // Create a string column
+                    // 创建a string column
                     var stringColumn = new StringAttributeMetadata
                     {
-                        // Set base properties
+                        // 设置base properties
                         SchemaName = "new_String",
                         LogicalName = "new_string",
 
                         DisplayName = new Label("Sample String", _languageCode),
                         RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.None),
                         Description = new Label("String Column", _languageCode),
-                        // Set extended properties
+                        // 设置extended properties
                         MaxLength = 100
                     };
 
-                    // Add to list
+                    // 添加to list
                     addedColumns.Add(stringColumn);
 
                     //Multi-select column requires version 9.0 or higher.
                     if (_productVersion > new Version("9.0"))
                     {
 
-                        // Create a multi-select Choices column
+                        // 创建a multi-select Choices column
                         var multiSelectChoiceColumn = new MultiSelectPicklistAttributeMetadata()
                         {
                             SchemaName = "new_MultiSelectOptionSet",
@@ -212,13 +212,13 @@ namespace PowerApps.Samples
                             }
                             }
                         };
-                        // Add to list
+                        // 添加to list
                         addedColumns.Add(multiSelectChoiceColumn);
 
-                        // Create a BigInt column
+                        // 创建a BigInt column
                         var bigIntColumn = new BigIntAttributeMetadata
                         {
-                            // Set base properties
+                            // 设置base properties
                             SchemaName = "new_BigInt",
                             LogicalName = "new_bigint",
                             DisplayName = new Label("Sample Big Int", _languageCode),
@@ -227,26 +227,26 @@ namespace PowerApps.Samples
                            
 
                         };
-                        // Add to list
+                        // 添加to list
                         addedColumns.Add(bigIntColumn);
 
                     }
 
-                    // NOTE: LookupAttributeMetadata cannot be created outside the context of a relationship.
+                    // 注意： LookupAttributeMetadata cannot be created outside the context of a relationship.
                     // Refer to the WorkWithRelationships.cs reference SDK sample for an example of this column type.
 
-                    // NOTE: StateAttributeMetadata and StatusAttributeMetadata cannot be created via the SDK.
+                    // 注意： StateAttributeMetadata and StatusAttributeMetadata cannot be created via the SDK.
 
                     foreach (AttributeMetadata aColumn in addedColumns)
                     {
-                        // Create the request.
+                        // 创建the request.
                         var createAttributeRequest = new CreateAttributeRequest
                         {
                             EntityName = Contact.EntityLogicalName,
                             Attribute = aColumn
                         };
 
-                        // Execute the request.
+                        // 执行the request.
                         service.Execute(createAttributeRequest);
 
                         Console.WriteLine($"Created the {aColumn.SchemaName} column.");
@@ -256,7 +256,7 @@ namespace PowerApps.Samples
                     #region How to insert status
                     // Use InsertStatusValueRequest message to insert a new status 
                     // in an existing status column. 
-                    // Create the request.
+                    // 创建the request.
                     var insertStatusValueRequest =
                         new InsertStatusValueRequest
                         {
@@ -266,7 +266,7 @@ namespace PowerApps.Samples
                             StateCode = 0
                         };
 
-                    // Execute the request and store newly inserted value 
+                    // 执行the request and store newly inserted value 
                     // for cleanup, used later part of this sample. 
                     _insertedStatusValue = ((InsertStatusValueResponse)service.Execute(
                         insertStatusValueRequest)).NewOptionValue;
@@ -277,7 +277,7 @@ namespace PowerApps.Samples
                     #endregion How to insert status
 
                     #region How to retrieve a column
-                    // Create the request
+                    // 创建the request
                     var attributeRequest = new RetrieveAttributeRequest
                     {
                         EntityLogicalName = Contact.EntityLogicalName,
@@ -285,7 +285,7 @@ namespace PowerApps.Samples
                         RetrieveAsIfPublished = true
                     };
 
-                    // Execute the request
+                    // 执行the request
                     RetrieveAttributeResponse attributeResponse =
                         (RetrieveAttributeResponse)service.Execute(attributeRequest);
 
@@ -299,7 +299,7 @@ namespace PowerApps.Samples
                     retrievedAttributeMetadata.DisplayName =
                         new Label("Update String Attribute", _languageCode);
 
-                    // Update an column retrieved via RetrieveAttributeRequest
+                    // 更新an column retrieved via RetrieveAttributeRequest
                     var updateRequest = new UpdateAttributeRequest
                     {
                         Attribute = retrievedAttributeMetadata,
@@ -307,7 +307,7 @@ namespace PowerApps.Samples
                         MergeLabels = false
                     };
 
-                    // Execute the request
+                    // 执行the request
                     service.Execute(updateRequest);
 
                     Console.WriteLine($"Updated the {retrievedAttributeMetadata.SchemaName} column.");
@@ -315,7 +315,7 @@ namespace PowerApps.Samples
 
                     #region How to update state value
                     // Modify the state value label from Active to Open.
-                    // Create the request.
+                    // 创建the request.
                     var updateStateValue = new UpdateStateValueRequest
                     {
                         AttributeLogicalName = "statecode",
@@ -324,7 +324,7 @@ namespace PowerApps.Samples
                         Label = new Label("Open", _languageCode)
                     };
 
-                    // Execute the request.
+                    // 执行the request.
                     service.Execute(updateStateValue);
 
                     Console.WriteLine(
@@ -336,7 +336,7 @@ namespace PowerApps.Samples
                     #endregion How to update state value
 
                     #region How to insert a new option item in a local option set
-                    // Create a request.
+                    // 创建a request.
                     var insertOptionValueRequest =
                         new InsertOptionValueRequest
                         {
@@ -345,7 +345,7 @@ namespace PowerApps.Samples
                             Label = new Label("New Picklist Label", _languageCode)
                         };
 
-                    // Execute the request.
+                    // 执行the request.
                     int insertOptionValue = ((InsertOptionValueResponse)service.Execute(
                         insertOptionValueRequest)).NewOptionValue;
 
@@ -365,7 +365,7 @@ namespace PowerApps.Samples
                             RetrieveAsIfPublished = true
                         };
 
-                    // Execute the request.
+                    // 执行the request.
                     RetrieveAttributeResponse retrieveAttributeResponse =
                         (RetrieveAttributeResponse)service.Execute(
                         retrieveAttributeRequest);
@@ -375,40 +375,40 @@ namespace PowerApps.Samples
                         (PicklistAttributeMetadata)
                         retrieveAttributeResponse.AttributeMetadata;
 
-                    // Get the current options list for the retrieved column.
+                    // 获取the current options list for the retrieved column.
                     OptionMetadata[] optionList =
                         retrievedPicklistAttributeMetadata.OptionSet.Options.ToArray();
 
                     // Change the order of the original option's list.
                     // Use the OrderBy (OrderByDescending) linq function to sort options in  
                     // ascending (descending) order according to label text.
-                    // For ascending order use this:
+                    // 对于ascending order use this:
                     var updateOptionList =
                         optionList.OrderBy(x => x.Label.LocalizedLabels[0].Label).ToList();
 
-                    // For descending order use this:
+                    // 对于descending order use this:
                     // var updateOptionList =
                     //      optionList.OrderByDescending(
                     //      x => x.Label.LocalizedLabels[0].Label).ToList();
 
-                    // Create the request.
+                    // 创建the request.
                     var orderOptionRequest = new OrderOptionRequest
                     {
-                        // Set the properties for the request.
+                        // 设置the properties for the request.
                         AttributeLogicalName = "new_picklist",
                         EntityLogicalName = Contact.EntityLogicalName,
-                        // Set the changed order using Select linq function 
+                        // 设置the changed order using Select linq function 
                         // to get only values in an array from the changed option list.
                         Values = updateOptionList.Select(x => x.Value.Value).ToArray()
                     };
 
-                    // Execute the request
+                    // 执行the request
                     service.Execute(orderOptionRequest);
 
                     Console.WriteLine("Option Set option order changed");
                     #endregion How to change the order of options of a global option set
 
-                    // NOTE: All customizations must be published before they can be used.
+                    // 注意： All customizations must be published before they can be used.
                     //service.Execute(new PublishAllXmlRequest());
                     //Console.WriteLine("Published all customizations.");
                     #endregion Demonstrate

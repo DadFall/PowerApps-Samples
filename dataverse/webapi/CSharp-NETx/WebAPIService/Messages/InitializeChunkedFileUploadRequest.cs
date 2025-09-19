@@ -1,8 +1,8 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to initialize a chunked file upload
-    /// </summary>
+        /// Contains the data to initialize a chunked file upload
+        /// </summary>
     public sealed class InitializeChunkedFileUploadRequest : HttpRequestMessage
     {
         public InitializeChunkedFileUploadRequest(EntityReference entityReference,

@@ -1,17 +1,17 @@
 ﻿namespace PowerApps.Samples.Messages
 {
     /// <summary>
-    /// Contains the data to delete a record
-    /// </summary>
+        /// Contains the data to delete a record
+        /// </summary>
     public sealed class DeleteRequest : HttpRequestMessage
     {
         /// <summary>
-        /// Initializes the DeleteRequest
+        /// 初始化 the DeleteRequest
         /// </summary>
-        /// <param name="entityReference">A reference to the record to delete.</param>
-        /// <param name="partitionId">The partition key to use.</param>
+        /// <param name="entityReference">一个reference to the record to delete.</param>
+        /// <param name="partitionId">partition key to use.</param>
         /// <param name="strongConsistency">Whether strong consistency should be applied.</param>
-        /// <param name="eTag">The current ETag value to compare.</param>
+        /// <param name="eTag">current ETag 值 to compare.</param>
         public DeleteRequest(EntityReference entityReference, string? partitionId = null, bool strongConsistency = false, string? eTag = null)
         {
             string path;

@@ -18,11 +18,11 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
 
                     #region Demonstrate
-                    // Create the ServiceContext object that will generate
+                    // 创建the ServiceContext object that will generate
                     // the IQueryable collections for LINQ calls.
 
                     ServiceContext svcContext = new ServiceContext(service);
@@ -59,7 +59,7 @@ namespace PowerApps.Samples
 
 
 
-                    // Retrieve all accounts owned by the user who has read access rights
+                    // 检索all accounts owned by the user who has read access rights
                     // to the accounts and where the last name of the user is not Cannon.
                     //<snippetCreateALinqQuery2>
                     var queryAccounts = from a in svcContext.AccountSet
@@ -95,7 +95,7 @@ namespace PowerApps.Samples
 
 
 
-                    // Return a count of all accounts which have a county specified
+                    // 返回a count of all accounts which have a county specified
                     // in their address.
                     //<snippetCreateALinqQuery3>
                     int accountsWithCounty = (from a in svcContext.AccountSet
@@ -115,7 +115,7 @@ namespace PowerApps.Samples
 
 
 
-                    // Return a count of states in which we have an account. This
+                    // 返回a count of states in which we have an account. This
                     // uses the 'distinct' keyword which counts a state only one time.
                     //<snippetCreateALinqQuery4>
                     int statesWithAccounts = (from a in svcContext.AccountSet
@@ -132,7 +132,7 @@ namespace PowerApps.Samples
 
 
 
-                    // Return contacts where the city equals Redmond AND the first
+                    // 返回contacts where the city equals Redmond AND the first
                     // name is Joe OR John.
                     //<snippetCreateALinqQuery5>
                     var queryContacts = from c in svcContext.ContactSet

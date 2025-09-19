@@ -1,6 +1,6 @@
 
 // Contains the base64 encoded data for the IsSystemAdminFunction_1_0_0_0_managed.zip solution file
-// This file supports the samples/FunctionsAndActions.js sample.
+// 此file supports the samples/FunctionsAndActions.js sample.
 export const customizationFile = [
   "UEsDBBQAAgAIANS5cFQlsye0awIAAIEFAAASABwAY3VzdG9taXphdGlvbnMueG1sIKIYACigFAAAAAAAAAAAAAAAAAAAAAAAAAAAALVUXW+bMBR9n7T",
   "/gHgO4SNAoAKkrC1StHbLSrX11eBLatVghE1T+utnIIHQdtNepkjEPvfzHF872BYVq8X1S/d9KKjyUtCSX7xwEqqPQlQXun44HJaH1ZLVe90yDFN/uL",

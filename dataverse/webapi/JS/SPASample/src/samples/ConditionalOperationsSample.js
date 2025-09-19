@@ -5,8 +5,8 @@ export class ConditionalOperationsSample {
    * @type {dv.Client}
    * @private
    */
-  #client; // The DataverseWebAPIClient instance
-  #container; // The container element to display messages
+  #client; // DataverseWebAPIClient instance
+  #container; // container element to display messages
   #entityStore = []; // Store for created records to delete at the end of the sample
   #whoIAm; // Store for the current user's information
   #util; //Common functions for samples
@@ -21,17 +21,17 @@ export class ConditionalOperationsSample {
 
   // Public functions to set up, run, and clean up data created by the sample
   async SetUp() {
-    // Clear the container
+    // 清除the container
     this.#container.replaceChildren();
     this.#util.appendMessage(this.#name + " sample started");
-    // Get the current user's information
+    // 获取the current user's information
     try {
       this.#whoIAm = await this.#client.WhoAmI();
     } catch (error) {
       this.#util.showError(error.message);
     }
   }
-  // Run the sample
+  // 运行the sample
   async Run() {
     try {
       //Section 0: Create sample record
@@ -50,7 +50,7 @@ export class ConditionalOperationsSample {
         "accountid"
       );
 
-      // Update the account record's telephone number
+      // 更新the account record's telephone number
       await this.#updatePhoneNumber(accountRecord.accountid);
 
       // Uses the client.Refresh method to refresh the account record with changed data from the server
@@ -70,19 +70,19 @@ export class ConditionalOperationsSample {
       this.#util.appendMessage(
         "<h2>2: Optimistic concurrency on delete and update</h2>"
       );
-      // This should fail because the record has been changed
+      // 此should fail because the record has been changed
       this.#util.appendMessage(
         "Attempting to delete the account record with the <strong>original</strong> etag value: " +
           initialETagValue
       );
       await this.#tryDelete(accountRecord.accountid, initialETagValue);
-      // This should fail because the record has been changed
+      // 此should fail because the record has been changed
       this.#util.appendMessage(
         "Attempting to update the account record with the <strong>original</strong> etag value: " +
           initialETagValue
       );
       await this.#tryUpdate(accountRecord.accountid, initialETagValue);
-      // This should succeed because the etag value is current.
+      // 此should succeed because the etag value is current.
       this.#util.appendMessage(
         "Updating the account record with the <strong>updated</strong> etag value: " +
           updatedETagValue
@@ -92,14 +92,14 @@ export class ConditionalOperationsSample {
       await this.#getRecord(accountRecord.accountid);
     } catch (error) {
       this.#util.showError(error.message);
-      // Try to clean up even if an error occurs
+      // 尝试to clean up even if an error occurs
       await this.CleanUp();
     }
   }
 
   //#region Section 0: Create sample records
 
-  // Create and retrieve an account record using the CreateRetrieve method
+  // 创建and retrieve an account record using the CreateRetrieve method
   async #createRetrieveAccount() {
     const contosoAccount = {
       name: "Contoso Ltd",
@@ -115,7 +115,7 @@ export class ConditionalOperationsSample {
         "$select=name,revenue,telephone1,description",
         false
       );
-      // To delete later
+      // 稍后删除
       this.#entityStore.push({
         entitySetName: "accounts",
         id: createdRetrievedAccount.accountid,
@@ -158,7 +158,7 @@ export class ConditionalOperationsSample {
     }
   }
 
-  // Update the account record's telephone number
+  // 更新the account record's telephone number
   async #updatePhoneNumber(accountId) {
     const newPhoneNumber = "555-0001";
     try {
@@ -233,7 +233,7 @@ export class ConditionalOperationsSample {
 
   async #getRecord(accountId) {
     try {
-      // Retrieve the account record with updated data
+      // 检索the account record with updated data
       const record = await this.#client.Retrieve(
         "accounts",
         accountId,
@@ -274,7 +274,7 @@ export class ConditionalOperationsSample {
       }
     }
 
-    // Set the entity store to an empty array
+    // 设置the entity store to an empty array
     this.#entityStore = [];
     this.#util.appendMessage(this.#name + " sample completed.");
     this.#util.appendMessage("<a href='#'>Go to top</a>");

@@ -12,10 +12,10 @@ namespace PowerApps.Samples
         /// <summary>
         /// Imports a solution if it is not already installed.
         /// </summary>
-        /// <param name="service">The service to use to import the solution. </param>
-        /// <param name="uniqueName">The unique name of the solution to install.</param>
-        /// <param name="pathToFile">The path to the solution file.</param>
-        /// <returns>true if the solution was installed, otherwise false.</returns>
+        /// <param name="service">服务 to use to import the solution. </param>
+        /// <param name="uniqueName">unique 名称 of the solution to install.</param>
+        /// <param name="pathToFile">path to the solution file.</param>
+        /// <returns>如果为真则返回 true the solution was installed, otherwise false.</returns>
         public static bool ImportSolution(ServiceClient service, string uniqueName, string pathToFile)
         {
 
@@ -40,10 +40,10 @@ namespace PowerApps.Samples
             }
         }
         /// <summary>
-        /// Prompts user to delete solution. Deletes solution if they choose.
+        /// Prompts user to delete solution. 删除 solution if they choose.
         /// </summary>
-        /// <param name="service">The service to use to delete the solution. </param>
-        /// <param name="uniqueName">The unique name of the solution to delete.</param>
+        /// <param name="service">服务 to use to delete the solution. </param>
+        /// <param name="uniqueName">unique 名称 of the solution to delete.</param>
         /// <returns>true when the solution was deleted, otherwise false.</returns>
         public static bool DeleteSolution(ServiceClient service, string uniqueName)
         {
@@ -83,9 +83,9 @@ namespace PowerApps.Samples
             return false;
         }
         /// <summary>
-        /// A function to manage exceptions thrown by console application samples
+        /// 一个function to manage exceptions thrown by console application samples
         /// </summary>
-        /// <param name="exceptionFromSample">The exception thrown</param>
+        /// <param name="exceptionFromSample">exception thrown</param>
         public static void HandleException(Exception exceptionFromSample) {
             Console.WriteLine("The application terminated with an error.");
 

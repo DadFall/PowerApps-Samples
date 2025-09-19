@@ -20,7 +20,7 @@ namespace PowerApps.Samples
                 service = SampleHelpers.Connect("Connect");
                 if (service.IsReady)
                 {
-                    // Create any entity records that the demonstration code requires
+                    // 创建any entity records that the demonstration code requires
                     SetUpSample(service);
                     #region Demonstrate
                     var query = new QueryExpression
@@ -31,7 +31,7 @@ namespace PowerApps.Samples
                     };
 
                     EntityCollection entities = service.RetrieveMultiple(query);
-                    // Write the name and ID of each role to the console.
+                    // 写入the name and ID of each role to the console.
                     foreach (Entity item in entities.Entities)
                     {
                         Role role = item.ToEntity<Role>();

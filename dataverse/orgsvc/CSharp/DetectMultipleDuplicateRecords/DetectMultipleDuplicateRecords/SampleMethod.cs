@@ -24,10 +24,10 @@ namespace PowerApps.Samples
         /// 
         private static void SetUpSample(CrmServiceClient service)
         {
-            // Check that the current version is greater than the minimum version
+            // 检查that the current version is greater than the minimum version
             if (!SampleHelpers.CheckVersion(service, new Version("7.1.0.0")))
             {
-                //The environment version is lower than version 7.1.0.0
+                //environment version is lower than version 7.1.0.0
                 return;
             }
 
@@ -40,7 +40,7 @@ namespace PowerApps.Samples
         }
 
         /// <summary>
-        /// Creates any entity records that this sample requires.
+        /// 创建 any entity records that this sample requires.
         /// </summary>
         public static void CreateRequiredRecords(CrmServiceClient service)
         {
@@ -51,7 +51,7 @@ namespace PowerApps.Samples
 
             Console.WriteLine("  Creating duplicate records (Account name={0}, Website URL={1})", accountName,
                 websiteUrl);
-            // Create some duplicate records
+            // 创建some duplicate records
             for (int i = 0; i < 2; i++)
             {
                 var account = new Account()
@@ -67,7 +67,7 @@ namespace PowerApps.Samples
             Console.WriteLine("  Creating a non-duplicate record (Account name={0}, Website URL={1})",
                 accountName, websiteUrl);
 
-            // Create a record that is NOT a duplicate
+            // 创建a record that is NOT a duplicate
             var distinctAccount = new Account()
             {
                 Name = accountName,
@@ -78,7 +78,7 @@ namespace PowerApps.Samples
 
             
             Console.WriteLine("  Creating a duplicate detection rule");
-            // Create a duplicate detection rule
+            // 创建a duplicate detection rule
             rule = new DuplicateRule()
             {
                 Name = "Accounts with the same Account name and website url",
@@ -87,7 +87,7 @@ namespace PowerApps.Samples
             };
             rule.Id = service.Create(rule);
 
-            // Create a duplicate detection rule condition
+            // 创建a duplicate detection rule condition
             var nameCondition = new DuplicateRuleCondition()
             {
                 BaseAttributeName = "name",
@@ -116,7 +116,7 @@ namespace PowerApps.Samples
             };
             var publishResponse = (PublishDuplicateRuleResponse)service.Execute(publishRequest);
 
-            // The PublishDuplicateRule request returns before the publish is completed,
+            // PublishDuplicateRule request returns before the publish is completed,
             // so we keep retrieving the async job state until it is "Completed"
             Console.WriteLine("  Checking to see if duplicate detection rule has finished publishing");
             WaitForAsyncJobToFinish(service, publishResponse.JobId, 120);
@@ -140,7 +140,7 @@ namespace PowerApps.Samples
             ));
         }
         /// <summary>
-        /// Deletes any entity records that were created for this sample.
+        /// 删除 any entity records that were created for this sample.
         /// <param name="prompt">Indicates whether to prompt the user 
         /// to delete the records created in this sample.</param>
         /// </summary>
@@ -167,15 +167,15 @@ namespace PowerApps.Samples
 
             if (toBeDeleted)
             {
-                // Delete the job
+                // 删除the job
                 Console.WriteLine("  Deleting the job");
                 service.Delete(AsyncOperation.EntityLogicalName, response.JobId);
 
-                // Delete the duplicate detection rule
+                // 删除the duplicate detection rule
                 Console.WriteLine("  Deleting the duplicate detection rule");
                 service.Delete(DuplicateRule.EntityLogicalName, rule.Id);
 
-                // Delete the accounts
+                // 删除the accounts
                 Console.WriteLine("  Deleting the accounts");
                 foreach (Account account in duplicateAccounts)
                     service.Delete(Account.EntityLogicalName, account.Id);
